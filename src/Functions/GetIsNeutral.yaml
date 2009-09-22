@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetIsNeutral
+shortdesc: Check whether a creature considers another creature to be neutral to them.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature to be checked for neutral status.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The creature whose opinion is queried. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oSource considers oTarget as neutral, otherwise FALSE.
+version: 1.22
+example: |
+  // Gives a warning to an attacker that is neutral or a friend to the attackee
+  main()
+  {
+     object oAttacker = GetLastAttacker();
+     if(GetIsObjectValid(oAttacker))
+     {
+        if (GetIsNeutral(OBJECT_SELF,oAttacker) || GetIsFriend(OBJECT_SELF,oAttacker))
+        {
+           ActionStartConversation(oAttacker,"Warning");
+        }
+     }
+  }
+seealso:
+  functions:
+    - GetIsEnemy
+    - GetIsFriend
+    - GetIsReactionTypeNeutral
+  categories:
+    - Miscellaneous
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Kristian Markon
+

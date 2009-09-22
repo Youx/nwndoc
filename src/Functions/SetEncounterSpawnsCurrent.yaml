@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetEncounterSpawnsCurrent
+shortdesc: Sets the number of times that an encounter has spawned.
+return: void
+parameters:
+  - type: int
+    name: nNewValue
+    desc: | The new number of times the encounter has spawned.
+
+  - type: object
+    name: oEncounter
+    default: OBJECT_SELF
+    desc: | The encounter to change the value of. (Default: OBJECT_SELF)
+
+description: |
+  Sets the number of times that oEncounter has spawned so far.
+remarks: |
+  The spawn-part of an encounter fires BEFORE the encounter's OnEnter does. Thus, if you call this in the OnEnter event, it will not have any effect on the group being spawned. You can draw a trigger around the encounter and call this function from OnEnter of that trigger instead as a workaround.
+version: 1.61
+seealso:
+  functions:
+    - GetEncounterSpawnsCurrent
+  categories:
+    - Encounter
+author: Tom Cassiotis
+editor: Lilac Soul
+

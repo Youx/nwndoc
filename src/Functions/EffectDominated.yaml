@@ -1,0 +1,45 @@
+---
+type: Function
+name: EffectDominated
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+description: |
+  Create a Dominate effect. 
+  A dominated creature is added to the effect creators party: Thus note, it cannot be created/cast by a non-creature! This means they will become instantly friendly and not attack each other, and they are treated as a normal friend as a henchman would be. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  You cannot dominate yourself.
+remarks: |
+  More on Domination: the dominated creature runs a new set of AI scripts to make srue they attack the new enemies - normally thier former allies. They will follow commands of the master, too. 
+  Domination can only affect 1 creature at a time, dominate another, it will remove the domination from the previous. The only exception is with EffectCutseenDomination. 
+  Domination is a mind effect, and immunity to mind spells or domination will stop this working. 
+  The author is unsure as to what effect it would have if a PC was dominated by an NPC. It should be possible. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying domination to a target -
+  // - not OBJECT_SELF, and creator must be a creature.
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = GetPCSpeaker();
+      // Create the effect to apply
+      effect eDom = EffectDominated();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_DOMINATE_S);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDom, oTarget);
+  }
+seealso:
+  functions:
+    - EffectCutsceneDominated
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

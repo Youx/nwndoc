@@ -1,0 +1,34 @@
+---
+type: Function
+name: SetSpawnInCondition
+shortdesc: Sets custom flags that influence the default AI scripts provided by BioWare.
+return: void
+parameters:
+  - type: int
+    name: nCondition
+    desc: | NW_FLAG_*
+
+  - type: int
+    name: bValid
+    default: TRUE
+    desc: | Turns the specified condition to TRUE or FALSE (on/off). (Default: TRUE)
+
+description: |
+  Sets the spawn flag (NW_FLAG_*) specified by nCondition to bValid. 
+  See NW_FLAG_* for a detailed listing of the flags and their affect on the creature's AI.
+remarks: |
+  This uses bit arithmatic and is stored as a local integer to the creature calling this function (OBJECT_SELF). 
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  functions:
+    - GetSpawnInCondition
+    - PlayImmobileAmbientAnimations
+  categories:
+    - Core AI
+  constants:
+    - NW_FLAG_* Constants
+author: Charles Feduke
+editor: Tom Cassiotis
+

@@ -1,0 +1,51 @@
+---
+type: Function
+name: EffectDamageImmunityDecrease
+shortdesc: Create a Damage Immunity Decrease effect.
+return: effect
+parameters:
+  - type: int
+    name: nDamageType
+    desc: | DAMAGE_TYPE_*
+
+  - type: int
+    name: nPercentImmunity
+    desc: | The percent amount to lower the targets immunity by.
+
+description: |
+  Returns a new effect object that when applied to a target will lower the amount of immunity the target has against damage when it is done to them by a certain type defined in the DAMAGE_TYPE constants group. 
+  This effect means if we have 50% damage immunity decrease to fire, we take 50% more damage from any fire damage - so 50 damage would become 75. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This will increase damage done to the target if it had no immunity to start with - noting that all increases and decreases of immunity to damage will stack (on hides, items, from effects or whaever) and the maximum is going to be 100% vunrability (decrease immunity, double damage) or 100% immunity (increased immunity, no damage). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 50% vunrability to fire to a target
+  // (or, in other words, a 50% decrease to any immunity it has).
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDamageImmunityDecrease = EffectDamageImmunityDecrease(DAMAGE_TYPE_FIRE, 50);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDamageImmunityDecrease, oTarget);
+  }
+seealso:
+  functions:
+    - EffectDamageImmunityIncrease
+  categories:
+    - Effects
+  constants:
+    - DAMAGE_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

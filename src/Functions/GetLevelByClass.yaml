@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetLevelByClass
+shortdesc: Get the level of an object in a given class.
+return: int
+parameters:
+  - type: int
+    name: nClassType
+    desc: | The class to check for using CLASS_TYPE_* constants.
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The object to check for the class. (Default: OBJECT_SELF)
+
+description: |
+  Returns an integer that describes the level of oCreature in the class described by CLASS_TYPE_*. Integers from 1 to 20 indicate levels in the class. A value of 0 indicates the absence of a level in the class. For example, a placeable chair object has no classes, so for any requests 0 will be returned.
+version: 1.22
+example: |
+  // Determins the PC level in the class PALADIN (CLASS_TYPE_PALADIN)
+  void main()
+  {
+      int i;
+      i = GetLevelByClass(CLASS_TYPE_PALADIN,GetFirstPC());
+      SendMessageToPC(GetFirstPC(),"Your Level in Paladin == " + IntToString(i));
+  }
+seealso:
+  functions:
+    - GetCharacterLevel
+    - GetHitDice
+    - GetLevelByPosition
+  categories:
+    - Get Data from Creature
+    - Party
+  constants:
+    - CLASS_TYPE_* Constants
+author: GoLeM
+editor: Kristian Markon
+

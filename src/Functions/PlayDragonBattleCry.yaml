@@ -1,0 +1,19 @@
+---
+type: Function
+name: PlayDragonBattleCry
+shortdesc: Makes a dragon sound its battle cry.
+return: void
+parameters:
+description: |
+  Randomly chooses between two battlecries, 50/50.
+remarks: |
+  Found in nw_i0_spells.nss on line 39 
+  Though the description to the battlecry states that the battlecry is based on the dragon’s age, this is not the case – a d100 is rolled, and which battlecry to play is based solely on that roll.
+requirements: |
+  #include "nw_i0_spells"
+version: 1.28
+seealso:
+  categories:
+    - Sound Effects
+author: Lilac Soul
+

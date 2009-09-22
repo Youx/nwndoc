@@ -1,0 +1,49 @@
+---
+type: Function
+name: EffectNegativeLevel
+shortdesc: Create a Negative Level effect that will decrease the level of the target.
+return: effect
+parameters:
+  - type: int
+    name: nNumLevels
+    desc: | the number of negative levels to apply.
+
+description: |
+  Returns a new effect object that when applied to a target will decrease their level by nNumLevels. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nNumLevels > 100. 
+  Negative levels can kill a creature, if they ever go over their hit dice. Statistics affected include the targets Base attack Bonus, Saves, Skills and hit points (and possibly more), and penalties appear red on the creatures statistic page. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  The limit of nNumLevels is unknown.
+remarks: |
+  Since the loss of a level is simply a negative effect, it can be easily recovered with a restoration spell or potion. 
+  Level loss can also come from, apart from spells, creature weapon On Hit effects, such as a Vampires bite. 
+  By default, the creature On Hit negative levels are supernatural. Really, all negative levels should be permament in this way until removed by a spell or cure (or death). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 3 negative levels to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDrain = EffectNegativeLevel(3);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_NEGATIVE_ENERGY);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDrain, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+    - Experience
+  constants:
+    - EFFECT_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

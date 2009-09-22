@@ -1,0 +1,26 @@
+---
+type: Function
+name: RemoveEffectOfType
+shortdesc: Remove an effect of the given type.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to remove the effect from.
+
+  - type: int
+    name: nEffectType
+    desc: | The effect to be removed.
+
+description: |
+  Removes an effect of the given type (nEffectType) from the supplied object (oTarget).
+requirements: |
+  #include "x0_i0_petrify"
+version: 1.61
+seealso:
+  functions:
+    - RemoveEffect
+  categories:
+    - Effects
+author: Grimlar
+

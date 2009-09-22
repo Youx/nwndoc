@@ -1,0 +1,37 @@
+---
+type: Function
+name: EndGame
+shortdesc: Ends the currently running game.
+return: void
+parameters:
+  - type: string
+    name: sEndMovie
+    desc: | File name (without ".bik" extension) found in "movies" subdirectory.
+
+description: |
+  End the currently running game, play sEndMovie, then returns all players to the game's main menu. sEndMovie must be the file name of the movie to play, without the ".bik" file name extension, found in the "movies" subdirectory under the NWN installation folder. Specifying a file name that does not exist causes the "credits.bik" movie to be played. 
+  After any movie has completed playing, the movie "credits.bik" will automatically play.
+remarks: |
+  To have a movie play and no Bioware credits appear (however, they are nice credits, and they did make the game) you can StartNewModule(), and make sure that you create a mainly blank "end-module" which perhaps just leaves it up to the PC to exit. However, this module should therefore have the starting movie as your credits/end movie, and therefore play no Bioware credits after it, and the PC can exit/save thier character as they wish.
+version: 1.64
+example: |
+  // Example 1 - Ends the game using the Ending movie
+  // "Ending.bik" found under the "movies" directory.
+  // yes placing this in a module's OnModuleLoad (found 
+  // under "Edit > Module Properties" on the Aurora Toolset)
+  // does indeed cause the movie to play when the module 
+  // loads
+  void main()
+  {
+       EndGame("Ending");
+  }
+seealso:
+  categories:
+    - Module
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Mark
+  - Max Aller
+  - Charles Feduke
+  - Jasperre

@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetPCPublicCDKey
+shortdesc: Retrieves the public version of the PC's CD key.
+return: string
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | The player whose CD key to retrieve.
+
+  - type: int
+    name: nSinglePlayerCDKey
+    default: FALSE
+    desc: | If set to TRUE, the player's public CD key will be returned when the player is playing in single player mode. Otherwise returns an empty string in single player mode. (Default: FALSE)
+
+description: |
+  Returns the public version of the CD Key that oPlayer uses. The public CD key is 8 characters long and is not the CD key used to install NWN or an expansion.
+remarks: |
+  Most likely used with functions such as BootPC() to combat mischievious players from causing havok on persistant worlds. 
+bugs: |
+  Not a bug, but a caveat 
+  OnClientLeave, the PC object (GetExitingObject) is still valid, but the player object (i.e. the human being logged into the server) is not. This means that there are a few things you can't do OnClientLeave. Namely, the GetPCPlayerName, GetPCIPAddress, and GetPCPublicCDKey will not work, since the player is no longer around to get that information from. This can be worked around by storing them as local strings on the PC, for instance OnClientEnter. See workaround below.
+version: 1.67
+example: |
+  //Workaround for the caveat above 
+  void main() 
+  { 
+  object oPC=GetEnteringObject(); 
+  string sPlayerName=GetPCPlayerName(oPC); 
+  string sIP=GetPCIPAddress(oPC); 
+  string sKey=GetPCPublicCDKey(oPC); 
+  SetLocalString(oPC, "player_name", sPlayerName); 
+  SetLocalString(oPC, "player_ip", sIP); 
+  SetLocalString(oPC, "player_cdkey", sKey); 
+  } 
+seealso:
+  functions:
+    - BootPC
+  categories:
+    - PC Only
+author: Sarev0k
+editor: Lilac Soul

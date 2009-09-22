@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetGoodEvilValue
+shortdesc: Determines a creature's relative good/evil rating.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to inspect.
+
+description: |
+  Returns an integer between 0 and 100 (inclusive) that represents oCreature's Good/Evil alignment, and -1 if oCreature is not a valid creature. 
+remarks: |
+  100 is the most good and 0 is the most evil. 
+version: 1.22
+example: |
+  // Sends a message to the first player indicating their good/evil value.
+  void main()
+  {
+      int iGoodEvil = GetGoodEvilValue(GetFirstPC());
+      SendMessageToPC(GetFirstPC(),"Your Good/Evil Value == " + IntToString(iGoodEvil));
+  }
+seealso:
+  functions:
+    - GetFactionAverageGoodEvilAlignment
+    - GetFactionAverageLawChaosAlignment
+    - GetLawChaosValue
+  categories:
+    - Alignment
+author: Tom Cassiotis
+editor: Jeremy Spilinek
+

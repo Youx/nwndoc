@@ -1,0 +1,27 @@
+---
+type: Function
+name: EquipAppropriateWeapons
+shortdesc: Cause a creature to ready an appropriate weapon.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Creature to examine.
+
+description: |
+  Causes the calling creature to equip weapons that are best suited for combat with oTarget. For example, if a lizardman with a club and a magical spear +1 is combatting a skeleton, it will equip the club (as a bludgeoning weapon will deal more damage to a skeleton). The same lizardman, when confronted with a human commoner, will draw the magical spear +1. Will check for most powerful ranged weapon first, then melee.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.28
+seealso:
+  functions:
+    - ActionEquipItem
+    - ActionEquipMostDamagingMelee
+    - ActionEquipMostDamagingRanged
+  categories:
+    - Action on Object
+    - Henchmen/Familiars/Summoned
+author: Jody Fletcher
+editor: Charles Feduke
+additional_contributors:
+  - Koen Vanderstraeten

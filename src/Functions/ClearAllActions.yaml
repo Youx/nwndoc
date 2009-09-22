@@ -1,0 +1,44 @@
+---
+type: Function
+name: ClearAllActions
+shortdesc: Removes all actions from an action queue.
+return: void
+parameters:
+  - type: int
+    name: nClearCombatState
+    default: FALSE
+    desc: | Stop combat along with all other actions. (Default: FALSE)
+
+description: |
+  Clear all the actions of the caller's action queue. Use this to cancel any previous instructions to an object (often an NPC), before assigning new orders. Note that unless TRUE is passed for nClearCombatState, any current fighting involving the caller of ClearAllActions will continue.
+remarks: |
+  This functions remarks were out of date, or entirely wrong. 
+  Only exsisting Action* functions will be cleared by this call. This includes ActionDoCommand(). It also doesn't clear any DelayCommand() functions or actions. 
+  See the example for all possible ways of use, and how each part is affected. Anything that can have actions assigned to it (even just ActionDoCommand()) can have those actions cleared. Functions are instant - and are not actions.
+version: 1.64
+example: |
+  // All scripts run on a creature. It just uses OBJECT_SELF as an
+  // example object that ClearAllActions() will run on.
+  // * Best way to test stuff like this might be the use of a creatures
+  //    OnHeartbeat event.
+  void main()
+  {
+      // First, we do the default way of clearing actions. We assign
+      // ourself an action
+  }
+seealso:
+  functions:
+    - ActionDoCommand
+    - ActionSit
+    - AssignCommand
+    - DelayCommand
+  categories:
+    - Action on Object
+    - Combat Actions
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Richard Dobkins
+  - Jassper
+  - Axe
+  - Jasperre

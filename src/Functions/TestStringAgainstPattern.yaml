@@ -1,0 +1,57 @@
+---
+type: Function
+name: TestStringAgainstPattern
+shortdesc: Returns whether or not the given text matches the pattern.
+return: int
+parameters:
+  - type: string
+    name: sPattern
+  - type: string
+    name: sStringToTest
+remarks: |
+  sStringToTest
+  The string that will be checked for the pattern.
+description: |
+  Returns TRUE if sStringToTest matches sPattern, otherwise FALSE.
+remarks: |
+  From Noel (Bioware): 
+  ** will match zero or more characters 
+  *w one or more whitespace 
+  *n one or more numeric 
+  *p one or more punctuation 
+  *a one or more alphabetic 
+  | is or 
+  ( and ) can be used for blocks 
+  - setting a creature to listen for "**" will match any string 
+  - telling him to listen for "**funk**" will match any string that contains the word "funk". 
+  - "**(bash|open|unlock)**(chest|door)" will match strings like "open the door please" or "he just bashed that chest!" 
+bugs: |
+  Do not test for this: 
+  if (TestStringAgainstPattern("**/**", ANY STRING)) 
+  It will hang the Toolset, forcing you to shut it down by external means. And if you then reopen the Toolset, say that you want to restore the unsaved module, and go to edit that script, it will hang your Toolset once again. BioWare has been informed of this. 
+  Both "/**" and "**/" are okay, though, it's just the "**/**" that should be avoided.
+version: 1.61
+example: |
+  //Return TRUE in a conversation if a PC has an item with
+  //TOKEN as part of its tag. Will return TRUE for, eg:
+  //TOKEN, TOKENIZER, THETOKEN, THETOKENIZER
+  //Note, it might be easier to use FindSubString for this...
+  int StartingConditional()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem=GetFirstItemInInventory(oPC);
+  while (GetIsObjectValid(oItem))
+     {
+     if (TestStringAgainstPattern("**TOKEN**", GetTag(oItem))) return TRUE;
+     oItem=GetNextItemInInventory(oPC);
+     }
+  return FALSE;
+  }
+seealso:
+  functions:
+    - FindSubString
+  categories:
+    - String
+author: Tom Cassiotis
+editor: Lilac Soul
+

@@ -1,0 +1,65 @@
+---
+type: Function
+name: ActionPlayAnimation
+shortdesc: Plays an animation (fire and forget, looping, or placeable) before executing the next action in the queue.
+return: void
+parameters:
+  - type: int
+    name: nAnimation
+    desc: | ANIMATION_* type constant.
+
+  - type: float
+    name: fSpeed
+    default: 1.0
+    desc: | Speed to play the animation. Higher is faster (not used for ANIMATION_LOOPING_* animations). (Default: 1.0)
+
+  - type: float
+    name: fDurationSeconds
+    default: 0.0f
+    desc: | Duration of the animation; if left at the default value, the animation will play for a split second if at all (not used for Fire and Forget animations) (Default: 0.0f)
+
+description: |
+  Cause the action subject to play the animation specified by the constant ANIMATION_*. 
+  This is an action, and is not played immediantly.
+remarks: |
+  There are two types of creature animations: 'fire-and-forget' (or FNF), which only plays once and no duration is needed, and 'looping' which play as long as needed and a duration is required for. 
+  NOT ALL MODELS HAVE ALL ANIMATIONS. The animations listed in the constants are not every animation that a model is capable of (there is a dying animation, after all, as well as combat animations and others)... this is just the current list of the ones that can be played via script. 
+  For placeable objects that are a source of illumination (such as the lamp post), it is not enough to just use its ANIMATION_PLACEABLE_DEACTIVATE or ANIMATION_PLACEABLE_ACTIVATE. That just affects the glowing part of the animation, itself. You must also use the SetPlaceableIllumination command set to TRUE and tell the area it's in to RecomputeStaticLighting.
+version: 1.62
+example: |
+  // An example of placeable illumination use:
+  // will turn the lightable object on and off when selected
+  // placed in its OnUsed event
+  // Of course, for a placable, you might as well always use PlayAnimation().
+  void main()
+  {
+      if (GetLocalInt (OBJECT_SELF,"NW_L_AMION") == 0)
+      {
+          SetLocalInt (OBJECT_SELF,"NW_L_AMION",1);
+          ActionPlayAnimation (ANIMATION_PLACEABLE_ACTIVATE);
+          SetPlaceableIllumination (OBJECT_SELF, TRUE);
+          RecomputeStaticLighting (GetArea(OBJECT_SELF));
+      }
+      else
+      {
+          SetLocalInt (OBJECT_SELF,"NW_L_AMION",0);
+          ActionPlayAnimation (ANIMATION_PLACEABLE_DEACTIVATE);
+          SetPlaceableIllumination (OBJECT_SELF, FALSE);
+          RecomputeStaticLighting (GetArea(OBJECT_SELF));
+      }
+  }
+seealso:
+  functions:
+    - PlayAnimation
+  categories:
+    - Action on Object
+    - Visual Effects
+  constants:
+    - ANIMATION_* Constants
+author: Ryan Hunt
+editor: Jasperre
+additional_contributors:
+  - David Gaider
+  - Joseph Berkley
+  - Charles Feduke
+  - Jasperre

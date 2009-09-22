@@ -1,0 +1,29 @@
+---
+type: Function
+name: DrinkIt
+shortdesc: Makes a creature speak a string that signifies they drank alcohol.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature to speak a drinking message.
+
+description: |
+  Makes a creature speak a string that signifies they drank alcohol.
+remarks: |
+  This use to cause a visual effect, however it currently just makes oTarget speak a string.
+requirements: |
+  #include "nw_s3_alcohol"
+version: 1.22
+example: |
+  // 1.24 source for this function
+  void DrinkIt(object oTarget)
+  {
+     // AssignCommand(oTarget, ActionPlayAnimation(ANIMATION_FIREFORGET_DRINK));
+     AssignCommand(oTarget,ActionSpeakStringByStrRef(10499));
+  }
+seealso:
+  categories:
+    - Miscellaneous
+author: Tom Cassiotis
+

@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetFamiliarName
+shortdesc: Get a creature's animal companion name.
+return: string
+parameters:
+  - type: object
+    name: oCreature
+    desc: | PC or NPC that may have an Animal Companion.
+
+description: |
+  Returns oCreature's animal companion's name. 
+  Returns "" if oCreature is invalid, does not currently have an animal companion or if the animal companion's name is blank.
+remarks: |
+  Returns no information for summoned creatures. Note that an animal companion is different from a familiar.
+bugs: |
+  GetAnimalCompanion* and GetFamiliar* functions are reversed - GetAnimalCompanion* returns for Sorcerer and Wizard familiars and GetFamiliar* returns for Ranger and Druid animal companions.
+version: 1.29
+seealso:
+  functions:
+    - GetAnimalCompanionCreatureType
+    - GetAnimalCompanionName
+    - GetFamiliarCreatureType
+    - GetHenchman
+    - SummonFamiliar
+  categories:
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Jody Fletcher
+additional_contributors:
+  - Jody Fletcher
+  - Gene Koo

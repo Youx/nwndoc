@@ -1,0 +1,34 @@
+---
+type: Function
+name: HoursToSeconds
+shortdesc: This function calculates the number of actual seconds in n game hour(s).
+return: float
+parameters:
+  - type: int
+    name: nHours
+    desc: | The number of hours to turn into seconds.
+
+description: |
+  Converts nHours into a number of seconds. The result will depend on how many minutes there are per hour, configured in the advanced properties of the module (default is 2 minutes per hour, so the default settings would return 120 seconds if nHours were 1).
+version: 1.28
+example: |
+  // Delay a speakstring command for 1 hour (executed on the object that calls it)
+  void main()
+  {
+      // Declare the variables
+      string sHello = "Hello";
+      float fSeconds = HoursToSeconds(1);
+      // Delay the speakstring
+      DelayCommand(fSeconds, SpeakString(sHello));
+  }
+seealso:
+  functions:
+    - GetTimeHour
+    - GetTimeSecond
+    - SetTime
+  categories:
+    - Time
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul

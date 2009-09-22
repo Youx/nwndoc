@@ -1,0 +1,27 @@
+---
+type: Function
+name: Petrify
+shortdesc: Permanently turn a creature to stone. (Until depetrified anyway.)
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature to be turned to stone.
+
+description: |
+  Turns a creature (oTarget) to stone. Permanent until the effect is removed.
+remarks: |
+  This function is just a wrapper for the standard EffectPetrify and ApplyEffectToObject functions.
+requirements: |
+  #include "x0_i0_petrify"
+version: 1.61
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - Depetrify
+    - EffectPetrify
+    - PetrifyWood
+  categories:
+    - Effects
+author: Grimlar
+

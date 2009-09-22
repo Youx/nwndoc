@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetTransitionTarget
+shortdesc: Gets the associated transitional target.
+return: object
+parameters:
+  - type: object
+    name: oTransition
+    desc: | Transitional object to return the target of.
+
+description: |
+  Returns the destination (a waypoint or a door) for a trigger or a door. 
+  Returns OBJECT_INVALID if oTransition is not a valid trigger or door.
+remarks: |
+  If you place a script in the OnAreaTransitionClick of a door or the OnClick of a transition trigger, that script will override the transition. You can then use GetTransitionTarget to get the destination target of the transition, without having to hardcode it in the script (for instance, you might change the destination of a door, and then you won't have to remember to update the script as well). 
+  The target is the object declared in the properties of the trigger/door, which normally is added via. a wizard and map system included there.
+bugs: |
+  1.64: Fixed problem with GetTransitionTarget() scripting command returning a random valid object ID if the destination on the trigger did not exist. It will now return OBJECT_INVALID in this case.
+version: 1.64
+example: |
+  // We float some text - the next name of the area the target of this
+  // door is in, before delaying moving them to the target.
+  void main()
+  {
+      // Declare who is moving, and the target.
+      object oClicker = GetClickingObject();
+      object oTarget = GetTransitionTarget(OBJECT_SELF);
+      // Float the name of the target's area above the PC's head
+      FloatingTextStringOnCreature(GetName(GetArea(oTarget)), oClicker, FALSE);
+      // Delay moving them to the target
+      DelayCommand(3.0, AssignCommand(oClicker, JumpToObject(oTarget)));
+  }
+seealso:
+  categories:
+    - Get Data from Object
+    - Movement
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jeremy Sager
+  - Lilac Soul
+  - Jasperre

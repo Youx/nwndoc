@@ -1,0 +1,29 @@
+---
+type: Function
+name: IPGetIPConstCastSpellFromSpellID
+shortdesc: Returns a spell's corresponding itemproperty constant.
+return: int
+parameters:
+  - type: int
+    name: nSpellID
+    desc: | SPELL_*
+
+description: |
+  Return the IP_CONST_CASTSPELL_* ID matching to the SPELL_* constant given in nSPELL_ID 
+  This uses Get2DAstring, so it is slow. Avoid using in loops! 
+  Returns -1 if there is no matching property for a spell
+bugs: |
+  This function returns 0, not -1, if there's no matching IP_CONST_CASTSPELL_* ID for the nSpellID parameter. This is unfortunate since 0 is the same value as IP_CONST_ONHIT_CASTSPELL_ACID_FOG.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+    - Item Properties
+    - Spells
+  constants:
+    - IP_CONST_CASTSPELL_* Constants
+    - SPELL_* Constants
+author: Lilac Soul
+

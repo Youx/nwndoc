@@ -1,0 +1,25 @@
+---
+type: Function
+name: IPGetIPWorkContainer
+shortdesc: Returns the container used for item property and appearance modifications in the module
+return: object
+parameters:
+  - type: object
+    name: oCaller
+    default: OBJECT_SELF
+    desc: | Object "calling" this function (Default: OBJECT_SELF)
+
+description: |
+  Returns the container used for item property and appearance modifications in the module. If it does not exist, it is created.
+bugs: |
+  There are no bugs or issues with this function. Previously noted issues were caused by me not doing a test, but somehow thinking I had done it.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Get Data
+    - Item Creation
+    - Item Properties
+author: Lilac Soul
+

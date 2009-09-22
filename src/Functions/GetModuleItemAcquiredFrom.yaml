@@ -1,0 +1,44 @@
+---
+type: Function
+name: GetModuleItemAcquiredFrom
+shortdesc: Get the last owner of the item acquired on an OnAcquiredItem event.
+return: object
+parameters:
+description: |
+  Returns the object that last owned the item in an OnAcquiredItem event (even if the item was set on the ground between ownership).
+remarks: |
+  As GetModuleItemAcquired has an error component it should also be possible for this function to fail; be aware that triggering the OnAcquiredItem event manually may cause an error in this function.
+version: 1.29
+example: |
+  // this will find the name of the creature the item was acquired
+  // from in an OnAcquiredItem event.
+  void main()
+  {
+      object a = GetModuleItemAcquired();
+      if(a == OBJECT_INVALID)
+          SendMessageToPC(GetFirstPC(),"OOPS A CRASH ME THINKS");
+      else {
+          SendMessageToPC(GetFirstPC(),GetTag(a));
+          a = GetModuleItemAcquiredFrom();
+          if(a == OBJECT_INVALID)
+              SendMessageToPC(GetFirstPC(),"And was picked up off the ground");
+          else
+              SendMessageToPC(GetFirstPC(),"And was taken off " + GetTag(a));
+          }
+  }
+seealso:
+  functions:
+    - GetModuleItemAcquired
+    - GetModuleItemAcquiredBy
+    - GetModuleItemLost
+    - GetModuleItemLostBy
+  categories:
+    - Inventory
+    - Module
+  events:
+    - OnAcquireItem
+    - OnUnAcquireItem
+author: GoLeM
+editor: Charles Feduke
+additional_contributors:
+  - Eric Zaat

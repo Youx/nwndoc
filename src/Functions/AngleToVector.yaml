@@ -1,0 +1,48 @@
+---
+type: Function
+name: AngleToVector
+shortdesc: Converts an angle into a vector.
+return: vector
+parameters:
+  - type: float
+    name: fAngle
+    desc: | The degrees of an angle to convert into a vector.
+
+description: |
+  Returns the value of fAngle converted into a vector.
+version: 1.30
+example: |
+  // stalker script (but in an NPC's OnHeartbeat script)
+  // supplied by Cheiron
+  void main()
+  {
+       object oTarget = GetNearestCreature(
+            CREATURE_TYPE_PLAYER_CHAR,
+            PLAYER_CHAR_IS_PC
+       );
+       ClearAllActions();
+       object oArea = GetArea(oTarget);
+       vector vPosition = GetPosition(oTarget);
+       float fOrientation = GetFacing(oTarget);
+       // this is where AngleToVector shows it's powers!!
+       vector vNewPos = AngleToVector(fOrientation); 
+       float vX = vPosition.x - vNewPos.x;
+       float vY = vPosition.y - vNewPos.y;
+       float vZ = vPosition.z;
+       vNewPos = Vector(vX, vY, vZ);
+       ActionMoveToLocation(
+            Location(oArea, vNewPos, fOrientation)
+       ); // go stand right behind the PC (if he's still there)
+       ActionDoCommand(SetFacing(fOrientation)); // turn towards PC
+  }
+seealso:
+  functions:
+    - Vector
+    - VectorToAngle
+  categories:
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Cheiron
+  - Lilac Soul

@@ -1,0 +1,58 @@
+---
+type: Function
+name: EffectSleep
+shortdesc: Returns a sleep effect.
+return: effect
+parameters:
+description: |
+  Returns a sleep effect which can then be applied to an object. 
+  Sleep is deadly to creatures or PC's with 4 or less hit dice - a coup de grace can be performed on them to instantly kill them. Otherwise, they are prone and of course all sneak attacks hit and people get a bonus to hit them (and they get no dodge or dexterity bonuses). A sleeping creature cannot move, cast spells or do anything. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Sleep only work if they are not immune - by a variety of ways. Immunity: Mind Spells, Immunity: Sleep and the elven ability to be immune all stop it. 
+  Sleep also has no real duration visual - however, it does have a heartbeat script - "nw_g0_sleep" (as defined in the statescripts.2da file), and there you can add extra Zzz's. The impact effect is a one-time ZZzz on the target. NPC's heartbeats may well apply ZZzz's if it is the default AI. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying sleep to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eSleep = EffectSleep();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SLEEP);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSleep, oTarget);
+  }
+  // Example 1 - Create a sleep effect and apply it to a PC for a duration of 3 minutes.
+  void main()
+  {
+      object oPC = GetLastUsedBy();
+      effect eSleepEffect = EffectSleep();
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eSleepEffect, oPC, 180.0f);
+  }
+  // Example 2 - Use EffectSleep() directly without an effect 
+  // variable.
+  void main()
+  {
+      object oPC = GetLastUsedBy();
+      ApplyEffectToObject( DURATION_TYPE_TEMPORARY, EffectSleep(), oPC, 180.0f);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - RemoveAmbientSleep
+  categories:
+    - Effects
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Wayne Miller
+  - Lilac Soul
+  - Jasperre

@@ -1,0 +1,35 @@
+---
+type: Function
+name: DeleteCampaignVariable
+shortdesc: Deletes a campaign variable from the database.
+return: void
+parameters:
+  - type: string
+    name: sCampaignName
+    desc: | Campaign to delete the variable from (case-sensitive).
+
+  - type: string
+    name: sVarName
+    desc: | Variable name to delete.
+
+  - type: object
+    name: oPlayer
+    default: OBJECT_INVALID
+    desc: | Player associated with a variable. (Default: OBJECT_INVALID)
+
+description: |
+  Marks a campaign variable of any type within the database for deletion. 
+  Important Note: If sCampaignName has a limit of 16 characters. Any spaces in the string put in will be stripped, anything more then 16 characters will be cut down. A string consisting of "Hello there" will become "Hellothere" (Note: Cases sensitive), and thus may cause problems when deleting databases (See Also DestroyCampaignDatabase).
+remarks: |
+  Note that by normal database standards, deleting does not actually removed the entry from the database, but flags it as deleted. Do not expect the database files to shrink in size from this command. If you want to 'pack' the database, you will have to do it externally from the game. 
+  Unknown how to restore a deleted variable within the database from outside the game.
+version: 1.62
+seealso:
+  categories:
+    - Database
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre
+  - Mike Hodgkinson

@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetIsEffectValid
+shortdesc: Determines whether an effect is valid.
+return: int
+parameters:
+  - type: effect
+    name: eEffect
+    desc: | The effect to check for validity.
+
+description: |
+  Returns TRUE if eEffect is a valid effect, otherwise FALSE.
+remarks: |
+  Typically used on functions that return effects, like GetFirstEffect or GetNextEffect. 
+  This should return TRUE if you just pass a new effect into it, such as passing GetIsEffectValid(EffectStun()) will return true.
+version: 1.22
+example: |
+  // Remove the Paralysis effect
+  // - Jasperre. This was an incorrect loop, you cannot have eFind == EffectTypeX().
+  effect eFind = GetFirstEffect(oTarget);
+  while (GetIsEffectValid(eFind))
+  {
+      if (GetEffectType(eFind) == EFFECT_TYPE_PARALYZE)
+      {
+          RemoveEffect(oTarget, eFind);
+      }
+      eFind = GetNextEffect(oTarget);
+  }
+seealso:
+  functions:
+    - RemoveEffect
+  categories:
+    - Effects
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

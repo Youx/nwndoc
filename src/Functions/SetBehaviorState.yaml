@@ -1,0 +1,38 @@
+---
+type: Function
+name: SetBehaviorState
+shortdesc: Sets an NPC's behavior.
+return: void
+parameters:
+  - type: int
+    name: nCondition
+    desc: | NW_FLAG_BEHAVIOR_*
+
+  - type: int
+    name: bValid
+    default: TRUE
+    desc: | Status of nCondition behavior (on/off). (Default: TRUE)
+
+description: |
+  Behavior of NPC is turned on/off by use of bValid. Behaviors follow the NW_FLAG_BEHAVIOR_* constant list.
+bugs: |
+  Some reports of SetBehaviorState auto-switching bValid have been seen.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.28
+seealso:
+  functions:
+    - DetermineSpecialBehavior
+    - GetBehaviorState
+  categories:
+    - Core AI
+    - Targeting
+  constants:
+    - NW_FLAG_BEHAVIOR_* Constants
+  events:
+    - OnPerception
+    - OnSpawn
+author: Jody Fletcher
+editor: Charles Feduke
+additional_contributors:
+  - Kai

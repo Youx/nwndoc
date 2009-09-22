@@ -1,0 +1,133 @@
+---
+type: Function
+name: EffectDisease
+shortdesc: Create a Disease effect.
+return: effect
+parameters:
+  - type: int
+    name: nDiseaseType
+    desc: | The type of disease this effect should apply, chosen from DISEASE_*constant group.
+
+description: |
+  Returns a new effect object that when applied to a target will cause them to be diseased. The disease can be chosen from the DISEASE_* constants group. 
+  Diseases' specifications can be looked at in the 2da array file called "disease.2da". Most are Extraodinary or Supernatural, so cannot be dispelled. 
+  Please note that no more then one disease can be applied to a target at once - wether from a creature weapon (EG: mummy hit) or a script. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly or temporarily, only permanently.
+remarks: |
+  Diseases cannot be added to the game - seems new columns cannot be added to the disease.2da file. 
+  You do not need to change thier subtype - as noted, it is already specified. 
+  You should always apply it permamently - else the incubation and natural decline and effects of it may not work correctly. 
+  Advancing the time (IE: SetTime) will speed up "incubation". Resting also counts as a "Personal" advancement of 24 hours on the PC, and so saves are made instantly. It is personal because Resting will not advance the game clock, only the PC's effects are affected. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  /*
+       Place this in the OnUsed event of an object.
+       It will cause a new disease to attempt to
+       infect the user of the object each time it is used
+       and advances the time by an hour to rush ahead through
+       the Disease's Incubation period.
+       It loops through all diseases defined in the game.
+  */
+  #include "nw_i0_plot"
+  // Used to report the name of the current and next Disease.
+  string GetDiseaseName(int nCurrentEffect);
+  void main()
+  {
+       int nCurrentEffect;
+       int nNextEffect;
+       effect eDisease;
+       object oPC;
+       string sDisease;
+       nCurrentEffect = GetLocalInt(OBJECT_SELF,"nCurrentEffect");
+       eDisease = EffectDisease(nCurrentEffect);
+       oPC = GetLastUsedBy();
+       RemoveEffects(oPC);
+       sDisease = GetDiseaseName(nCurrentEffect);
+       SendMessageToPC(oPC,"Applying Disease number " + IntToString(nCurrentEffect) + " " + sDisease);
+       ApplyEffectToObject(DURATION_TYPE_TEMPORARY,eDisease,oPC,30.0f);
+       if( nCurrentEffect == 16)
+       {
+            nNextEffect=0;
+       }
+       else
+       {
+            nNextEffect=nCurrentEffect+1;
+       }
+       SetLocalInt(OBJECT_SELF,"nCurrentEffect",nNextEffect);
+       sDisease = GetDiseaseName(nNextEffect);
+       SendMessageToPC(oPC,"Advancing 1 hour to End of Incubation Stage in 10 seconds.");
+       DelayCommand(10.0, SetTime(1,0,0,0));
+       DelayCommand(3600.0, SendMessageToPC(oPC,"Next Disease number " + IntToString(nNextEffect) + " - " + sDisease));
+       return;
+  }
+  string GetDiseaseName(int nCurrentEffect)
+  {
+       string sDisease = "";
+       switch (nCurrentEffect)
+       {
+          case 0:
+              sDisease = "DISEASE_BLINDING_SICKNESS";
+          break;
+          case 1:
+              sDisease = "DISEASE_CACKLE_FEVER";
+          break;
+          case 2:
+              sDisease = "DISEASE_DEVIL_CHILLS";
+          break;
+          case 3:
+              sDisease = "DISEASE_DEMON_FEVER";
+          break;
+          case 4:
+              sDisease = "DISEASE_FILTH_FEVER";
+          break;
+          case 5:
+              sDisease = "DISEASE_MINDFIRE";
+          break;
+          case 6:
+              sDisease = "DISEASE_MUMMY_ROT";
+          break;
+          case 7:
+              sDisease = "DISEASE_RED_ACHE";
+          break;
+          case 8:
+              sDisease = "DISEASE_SHAKES";
+          break;
+          case 9:
+              sDisease = "DISEASE_SLIMY_DOOM";
+          break;
+          case 10:
+              sDisease = "DISEASE_RED_SLAAD_EGGS";
+          break;
+          case 11:
+              sDisease = "DISEASE_GHOUL_ROT";
+          break;
+          case 12:
+              sDisease = "DISEASE_ZOMBIE_CREEP";
+          break;
+          case 13:
+              sDisease = "DISEASE_DREAD_BLISTERS";
+          break;
+          case 14:
+              sDisease = "DISEASE_BURROW_MAGGOTS";
+          break;
+          case 15:
+              sDisease = "DISEASE_SOLDIER_SHAKES";
+          break;
+          case 16:
+              sDisease = "DISEASE_VERMIN_MADNESS";
+          break;
+       }
+       return sDisease;
+  }
+seealso:
+  functions:
+    - EffectPoison
+  categories:
+    - Effects
+  constants:
+    - DISEASE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

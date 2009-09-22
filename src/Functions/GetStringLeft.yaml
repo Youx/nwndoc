@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetStringLeft
+shortdesc: Gets a substring from within a string.
+return: string
+parameters:
+  - type: string
+    name: sString
+    desc: | Target string.
+
+  - type: int
+    name: nCount
+    desc: | Length of substring.
+
+description: |
+  Returns a substring containing nCount characters from the left side of sString. Returns an empty string on error.
+remarks: |
+  A negative value for nCount is considered invalid and an empty string will be returned.
+version: 1.22
+example: |
+  void main()
+  {
+      // say "Hello"
+      string sMessage = "Hello World!";
+      SpeakString(GetStringLeft(sMessage, 5));
+  }
+seealso:
+  functions:
+    - GetStringRight
+    - GetSubString
+  categories:
+    - String
+author: Kristian Markon
+editor: Daniel Beckman
+

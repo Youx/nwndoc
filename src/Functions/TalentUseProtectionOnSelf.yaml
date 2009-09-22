@@ -1,0 +1,22 @@
+---
+type: Function
+name: TalentUseProtectionOnSelf
+shortdesc: Returns TRUE on successful use of such a talent, FALSE otherwise.
+return: int
+parameters:
+description: |
+  Calls GetCreatureTalentBest to determine a talent to use, then returns the value returned by TryTalent.
+remarks: |
+  Part of Bioware's AI, this function is in nw_i0_generic in non-SoU and x0_i0_talent in SoU. Including nw_i0_generic will suffice in SoU, though.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.30
+seealso:
+  functions:
+    - StartProtectionLoop
+    - TalentAdvancedProtectSelf
+    - TalentHealingSelf
+  categories:
+    - Core AI Talent
+author: Lilac Soul
+

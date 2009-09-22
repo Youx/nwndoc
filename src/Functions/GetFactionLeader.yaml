@@ -1,0 +1,51 @@
+---
+type: Function
+name: GetFactionLeader
+shortdesc: Gets the leader of a players party.
+return: object
+parameters:
+  - type: object
+    name: oMemberOfFaction
+    desc: | Player object that is in the party of the leader you are seeking.
+
+description: |
+  Returns the leader (in an object variable) of the faction (party) of which oMemberOfFaction is a member. 
+  Return value is OBJECT_INVALID if oMemberOfFaction is not a valid creature, or is a NPC faction.
+remarks: |
+  Used to get the leader of a player run party. Usually, the "leader" is hardly ever used, and is mearly the person who has control of who to kick from a party more then anything else. 
+  Cannot be used for NPC factions as there is no way to define a leader for them. 
+  This cannot be reproduced using anything else, and is one of the few totally unique GetFactionXXX() function calls.
+version: 1.62
+example: |
+  // Placed in the Modules OnPlayerDeath Event, this will send a 
+  // message to the player's party leader, informing them that
+  // this player has died.
+  void main()
+  {
+      // Get the last player who died
+      object oPC = GetLastPlayerDied();
+      // Get thier "leader", the one with a little crown
+      object oLeader = GetFactionLeader(oPC);
+      // Get the name of the player who died
+      string sName = GetName(oPC);
+      // Now, if the leader is valid and NOT the person who died (um, 
+      // duh, who'd want a message about thier own death?) then 
+      // send the message.
+      if(GetIsObjectValid(oLeader) == TRUE &&
+         oLeader != oPC)
+      {
+          SendMessageToPC(oLeader, sName + " has died!");
+      }
+  }
+seealso:
+  functions:
+    - GetFactionGold
+  categories:
+    - Party
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Nils Jeppe
+  - Charles Feduke
+  - Jasperre

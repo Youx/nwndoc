@@ -1,0 +1,41 @@
+---
+type: Function
+name: SetPanelButtonFlash
+shortdesc: Make a panel button in the player's client start or stop flashing.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | Target Player.
+
+  - type: int
+    name: nButton
+    desc: | PANEL_BUTTON_*
+
+  - type: int
+    name: bEnableFlash
+    desc: | TRUE or FALSE to start or stop flashing.
+
+description: |
+  Causes the panel button nButton in oPlayer's client start or stop flashing. The parameter bEnableFlash can be either TRUE or FALSE to start or stop flashing the panel button.
+remarks: |
+  Flashing panel buttons will stop flashing once a player clicks the panel button with the mouse, or opens the panel using the corresponding keystroke. Setting the bEnableFlash parameter to FALSE is usually unecessary. 
+  Updating a PC's journal will automatically cause the journal button to start flashing.
+version: 1.22
+example: |
+  void main()
+  {
+      object oPlayer = GetFirstPC();
+      // flash the journal panel button to indicate a new quest
+      SetPanelButtonFlash(oPlayer, PANEL_BUTTON_JOURNAL, TRUE);
+      // stop flashing the panel button
+      SetPanelButtonFlash(oPlayer, PANEL_BUTTON_JOURNAL, FALSE);
+  }
+seealso:
+  categories:
+    - Server
+  constants:
+    - PANEL_BUTTON_* Constants
+author: Daniel Beckman
+editor: Lilac Soul
+

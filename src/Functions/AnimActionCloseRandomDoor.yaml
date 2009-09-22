@@ -1,0 +1,17 @@
+---
+type: Function
+name: AnimActionCloseRandomDoor
+shortdesc: Causes an NPC to close a nearby open door.
+return: int
+parameters:
+description: |
+  If there's an open door nearby, the NPC will walk over to it an close it, then return to their previous spot. 
+  Returns TRUE on success, FALSE on failure.
+requirements: |
+  #include "x0_i0_anims"
+version: 1.61
+seealso:
+  categories:
+    - Animation
+author: Charles Feduke
+

@@ -1,0 +1,67 @@
+---
+type: Function
+name: GetMatchedSubstring
+shortdesc: Get a matched substring specified by a listen pattern.
+return: string
+parameters:
+  - type: int
+    name: nString
+    desc: | Index of the matched substring. Begins at 0.
+
+description: |
+  Returns a matched substring specified by a listen pattern. The matched substring to be returned is indexed by nString (described below). This function should only be run in an OnConversation script when a listen pattern has been set using SetListenPattern with wildcards (e.g., SetListenPattern(OBJECT_SELF, "FOO**", 500) will match "FOO", "FOOTER" "FOOBAR", and "FOOT"; the patterns are case insensitive meaning that “FoOBaR” and “fooBAR” will also match). 
+  As an example, consider the listen pattern specified by SetListenPattern(OBJECT_SELF, "FOO**", 500). Suppose an NPC heard the string "foobar": 
+  First, a pattern match is checked for: 
+  GetListenPatternNumber() returns 500. 
+  Then the number of matched substrings is determined: 
+  GetMatchedSubstringsCount() returns 2. 
+  Indexes of the matched substrings begin at 0 (like an array in C, with a 0 index). For example: 
+  GetMatchedSubstring(0) returns "foo". 
+  GetMatchedSubstring(1) returns "bar". 
+  As another example, if you have a listen pattern like SetListenPattern(OBJECT_SELF, "**foo**bar**", 500), and the NPC hears "foofoofoobarbarbar": 
+  GetMatchedSubstring(0) returns "". 
+  GetMatchedSubstring(1) returns "foo". 
+  GetMatchedSubstring(2) returns "foofoo". 
+  GetMatchedSubstring(3) returns "bar". 
+  GetMatchedSubstring(4) returns "barbar". 
+remarks: |
+  Special thanks to Temple for the HOW TO of this function. If you want your real name posted comment on this page. 
+version: 1.22
+example: |
+  // This program will cause an npc to listen out for woot and then respond.
+  // OnSpawn
+  void main()
+  {
+      SetListening(OBJECT_SELF,TRUE);
+      SetListenPattern(OBJECT_SELF,"Woot**",2001);
+  }
+  // OnConversation
+  void main()
+  {
+      int i = 0;
+      int nMatch = GetListenPatternNumber();
+      if(nMatch == 2001)
+          SpeakString("YEAH IT WORKS");
+      nMatch = GetMatchedSubstringsCount();
+      SpeakString(IntToString(nMatch));
+      while(i<nMatch)
+      {
+          SpeakString(IntToString(i) + ". " + GetMatchedSubstring(i));
+          i++;
+      }
+  }
+seealso:
+  functions:
+    - GetListenPatternNumber
+    - GetMatchedSubstringsCount
+    - SetListening
+    - SetListeningPatterns
+    - SetListenPattern
+  categories:
+    - Conversation
+    - Henchmen/Familiars/Summoned
+  events:
+    - OnConversation
+author: GoLeM
+editor: Kristian Markon
+

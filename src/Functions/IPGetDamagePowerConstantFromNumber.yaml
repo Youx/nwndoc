@@ -1,0 +1,29 @@
+---
+type: Function
+name: IPGetDamagePowerConstantFromNumber
+shortdesc: Converts a number to a damage power constant
+return: int
+parameters:
+  - type: int
+    name: nNumber
+    desc: | Damage power.
+
+description: |
+  Mapping between numbers and power constants for ITEM_PROPERTY_DAMAGE_BONUS returns the appropriate ITEM_PROPERTY_DAMAGE_POWER_* constant for nNumber.
+remarks: |
+  This function is only useful for effects, since effects are the only functions using DAMAGE_POWER_*. 
+  Used by the arcane archer scripts in x0_i0_spells / x0_s2_hailarrows.
+bugs: |
+  It claims to return ITEM_PROPERTY_DAMAGE_POWER_* but this doesn't exist. It returns DAMAGE_POWER_* instead.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+    - Item Properties
+    - Type Casting/Conversion
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Lilac Soul
+

@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetHasEffect
+shortdesc: Determines whether a creature has an effect.
+return: int
+parameters:
+  - type: int
+    name: nEffectType
+    desc: | The type of effect, from the constant list EFFECT_TYPE_*, we are interested in.
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The object to investigate. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oTarget has the effect nEffectType active, otherwise FALSE.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.28
+example: |
+  #include "NW_I0_GENERIC"
+  main()
+  {
+     int isPoisoned = GetHasEffect(EFFECT_TYPE_POISON, GetFirstPC());
+     int isParalyzed = GetHasEffect(EFFECT_TYPE_PARALYZE, GetFirstPC());
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+

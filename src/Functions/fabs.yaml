@@ -1,0 +1,30 @@
+---
+type: Function
+name: fabs
+shortdesc: Gets the absolute value of a number.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Float to retrieve the absolute value of.
+
+description: |
+  Returns the absolute (non-negative; numeric distance from the number 0) value of fValue.
+remarks: |
+  Useful when subtracting two numbers, without first having to find find out which is higher, when all you're interested in is the difference between the two.
+version: 1.61
+example: |
+  void main()
+  {
+  //Both fFloat1 and fFloat2 will be 1.0
+  float fFloat1=fabs(3.0 - 2.0);
+  float fFloat2=fabs(2.0 - 3.0);
+  }
+seealso:
+  functions:
+    - abs
+  categories:
+    - Math
+author: Charles Feduke
+editor: Lilac Soul
+

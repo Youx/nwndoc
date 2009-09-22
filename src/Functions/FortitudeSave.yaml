@@ -1,0 +1,42 @@
+---
+type: Function
+name: FortitudeSave
+shortdesc: Returns the result of a Fortitude Save check.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | nDC
+
+  - type: int
+    name: nDC
+  - type: int
+    name: nSaveType
+    default: SAVING_THROW_TYPE_NONE
+  - type: object
+    name: oSaveVersus
+    default: OBJECT_SELF
+description: |
+  Returns the result of a Fortitude Save check for the given Difficulty Check. 
+  Returns: 0 if the saving throw roll failed. 
+  Returns: 1 if the saving throw roll succeeded. 
+  Returns: 2 if the target was immune to the save type specified.
+version: 1.22
+example: |
+  // Example 1 - Simple use.
+  nSaveResult = FortitudeSave(oTarget, nDifficultyCheck);
+  // Example 2 - Full parameter use.
+  nSaveResult = FortitudeSave(oTarget, nDifficultyCheck, SAVING_THROW_TYPE_COLD, OBJECT_SELF);
+seealso:
+  functions:
+    - GetFortitudeSavingThrow
+    - SetFortitudeSavingThrow
+    - ReflexSave
+    - WillSave
+  categories:
+    - Saving Throw
+  constants:
+    - SAVING_THROW_TYPE_* Constants
+author: Brett Lathrope
+editor: Mistress
+

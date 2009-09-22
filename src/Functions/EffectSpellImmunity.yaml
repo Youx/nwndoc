@@ -1,0 +1,55 @@
+---
+type: Function
+name: EffectSpellImmunity
+shortdesc: Returns an effect of spell immunity.
+return: effect
+parameters:
+  - type: int
+    name: nImmunityToSpell
+    default: SPELL_ALL_SPELLS
+    desc: | SPELL_* (Default: SPELL_ALL_SPELLS)
+
+description: |
+  Returns an effect of spell immunity to SPELL_* type spells. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nImmunityToSpell is invalid. 
+  nImmunityToSpell can be any integer value from the spells.2da file (thus constants SPELL_* are valid), or SPELL_ALL_SPELLS for all spells. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This will provide direct and total immunity to nImmunityToSpell, *if* that spell uses the function ResistSpell() within it. 
+  The fact that no friendly spell uses ResistSpell() means that friendly spells will never be resisted, directly or not. 
+  Also, natural abilites obviously are not spells, so will also not be affected by this. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  Previously noted bug has been fixed in a patch some time ago.
+version: 1.62
+example: |
+  // Sample code for applying direct Immunity to the Fireball spell,
+  // to a target (lucky him!)
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eImmunity = EffectSpellImmunity(SPELL_FIREBALL);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_MAGIC_RESISTANCE_USE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eImmunity, oTarget);
+  }
+seealso:
+  functions:
+    - GetIsImmune
+  categories:
+    - Effects
+    - Spells
+  constants:
+    - SPELL_* Constants
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

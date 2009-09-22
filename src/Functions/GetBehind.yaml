@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetBehind
+shortdesc: Causes the caller to move behind the player who is considered their Master.
+return: void
+parameters:
+description: |
+  Causes the Henchmen calling this function to attempt to move behind their Master.
+remarks: |
+  Function found in nw_i0_assoc.nss on line 194. 
+  Im unsure if this works as advertised. BioWare only uses it once in their DoFollowMaster() function, but then it was commented out.
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.22
+seealso:
+  functions:
+    - DoFollowMaster
+  categories:
+    - Henchmen/Familiars/Summoned
+author: John Shuell
+

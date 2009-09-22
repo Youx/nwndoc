@@ -1,0 +1,27 @@
+---
+type: Function
+name: AmbientSoundStop
+shortdesc: Stops ambient sounds playing in an area.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area whose ambient soundtrack you want to stop.
+
+description: |
+  Stop the ambient sound for oArea.
+remarks: |
+  Ambient sounds won't be cut off abruptly, a short fade is added automatically
+version: 1.22
+seealso:
+  functions:
+    - AmbientSoundChangeDay
+    - AmbientSoundChangeNight
+    - AmbientSoundPlay
+    - AmbientSoundSetDayVolume
+    - AmbientSoundSetNightVolume
+  categories:
+    - Area
+    - Sound Effects
+author: Iskander Merriman
+

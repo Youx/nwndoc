@@ -1,0 +1,68 @@
+---
+type: Function
+name: DetermineEnemies
+shortdesc: Returns number of enemies perceived and their combined levels.
+return: struct
+parameters:
+description: |
+  Uses four general categories to determine what kinds of enemies the NPC is facing. 4 categories are: fighter, cleric, mage, and monster. Function uses only first class-slot of a perceived creature to determine enemy class.
+remarks: |
+  The following classes count as fighters: animals, barbarians, beasts, commoners, constructs, elementals, fighters, giants humanoid, monstrous, paladins, rangers, rogues, vermin, monks, and shapechangers. 
+  The following classes count as clerics: clerics and druids. 
+  The following classes count as mages: bards, fey, sorcerers, and wizards. 
+  The following classes count as monsters: aberrations, dragons, magical beasts, and outsiders. 
+  The struct used by DetermineEnemies is called sEnemies and looks like this (the spelling mistake in MONTERS_LEVELS is Bioware’s, not mine): 
+  struct sEnemies 
+  { 
+  int FIGHTERS; 
+  int FIGHTER_LEVELS; 
+  int CLERICS; 
+  int CLERIC_LEVELS; 
+  int MAGES; 
+  int MAGE_LEVELS; 
+  int MONSTERS; 
+  int MONTERS_LEVELS; 
+  int TOTAL; 
+  int TOTAL_LEVELS; 
+  }; 
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.28
+example: |
+  #include "nw_i0_generic"
+  void main()
+  {
+  struct sEnemies strEnemies=DetermineEnemies();
+  //how many fighter-types are we facing
+  int nFighters=strEnemies.FIGHTERS;
+  //what are their combined levels
+  int nFighterLevels=strEnemies.FIGHTER_LEVELS;
+  //how many cleric-types are we facing
+  int nClerics=strEnemies.CLERICS;
+  //what are their combined levels
+  int nClericLevels=strEnemies.CLERIC_LEVELS;
+  //how many mage-types are we facing
+  int nMages=strEnemies.MAGES;
+  //what are their combined levels
+  int nMageLevels=strEnemies.MAGE_LEVELS;
+  //how many monster-types are we facing
+  int nMonsters=strEnemies.MONSTERS;
+  //what are their combined levels - I've made no spelling
+  //mistakes, Bioware has: it really does say MONTERS
+  int nMonsterLevels=strEnemies.MONTERS_LEVELS;
+  //how many enemies are there all in all (we could
+  //also just add up all the previous numbers)
+  int nTotal=strEnemies.TOTAL;
+  //what are their combined levels
+  int nTotalLevels=strEnemies.TOTAL_LEVELS;
+  }
+seealso:
+  functions:
+    - TalentAdvancedProtectSelf
+  categories:
+    - Combat Information
+    - Perception
+author: Jody Fletcher
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

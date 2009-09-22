@@ -1,0 +1,62 @@
+---
+type: Function
+name: FakeRestore
+shortdesc: Encapsulates removal of bad effects and healing of oTarget.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target creature to heal.
+
+description: |
+  Cycles through all effects on oTarget (probably a PC) and removes them if they are “bad”, as well as heals the oPC. This is encapsulated in a function to be able to add this to the action queue.
+remarks: |
+  Found in nw_d1_templeheal.nss on line 14. 
+  Note that nw_d1_templeheal is not an include file – you cannot include that file and then call FakeRestore from your script, because nw_d1_templeheal already has a void main() function. You can, however, copy it directly into your own script, or just the nw_d1_templeheal script for healing characters. Below is a transcription of the function:
+version: 1.28
+example: |
+  void FakeRestore(object oTarget)
+  {
+      effect eVisual = EffectVisualEffect(VFX_IMP_RESTORATION_GREATER);
+      effect eBad = GetFirstEffect(oTarget);
+      //Search for negative effects
+      while(GetIsEffectValid(eBad))
+      {
+          if (GetEffectType(eBad) == EFFECT_TYPE_ABILITY_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_AC_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_ATTACK_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_DAMAGE_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_DAMAGE_IMMUNITY_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_SAVING_THROW_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_SPELL_RESISTANCE_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_SKILL_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_BLINDNESS ||
+              GetEffectType(eBad) == EFFECT_TYPE_DEAF ||
+              GetEffectType(eBad) == EFFECT_TYPE_CURSE ||
+              GetEffectType(eBad) == EFFECT_TYPE_DISEASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_POISON ||
+              GetEffectType(eBad) == EFFECT_TYPE_PARALYZE ||
+              GetEffectType(eBad) == EFFECT_TYPE_NEGATIVELEVEL)
+          {
+              //Remove effect if it is negative.
+              RemoveEffect(oTarget, eBad);
+          }
+          eBad = GetNextEffect(oTarget);
+      }
+      if(GetRacialType(oTarget) != RACIAL_TYPE_UNDEAD)
+      {
+          //Apply the VFX impact and effects
+          int nHeal = GetMaxHitPoints(oTarget) - GetCurrentHitPoints(oTarget);
+          effect eHeal = EffectHeal(nHeal);
+          if (nHeal > 0)
+              ApplyEffectToObject(DURATION_TYPE_INSTANT, eHeal, oTarget);
+      }
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVisual, oTarget);
+  }
+seealso:
+  categories:
+    - Private
+author: Lilac Soul
+editor: Charles Feduke
+additional_contributors:
+  - Lilac Soul

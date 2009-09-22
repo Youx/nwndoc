@@ -1,0 +1,27 @@
+---
+type: Function
+name: AmbientSoundPlay
+shortdesc: Starts the ambient soundtrack of an area playing.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area that should start playing its ambient soundtrack.
+
+description: |
+  Play the ambient sound for oArea.
+remarks: |
+  See AmbientSoundChangeDay for an example
+version: 1.22
+seealso:
+  functions:
+    - AmbientSoundChangeDay
+    - AmbientSoundChangeNight
+    - AmbientSoundSetDayVolume
+    - AmbientSoundSetNightVolume
+    - AmbientSoundStop
+  categories:
+    - Area
+    - Sound Effects
+author: Iskander Merriman
+

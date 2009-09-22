@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetUserDefinedEventNumber
+shortdesc: Determines the specific user-defined number that has been sent to it.
+return: int
+parameters:
+description: |
+  This is for use in a user-defined script, it gets the event number.
+remarks: |
+  When you signal the user defined event to be triggered, you do so using a call like: 
+  event eMyEvent=EventUserDefined(3333); 
+  SignalEvent(OBJECT_SELF, eMyEvent); 
+  In the above case, you could then use GetUserDefinedEventNumber inside the user-defined event script, and it would return 3333.
+version: 1.61
+example: |
+  //Example structure of a user defined event script.
+  void main()
+  {
+  int nEvent=GetUserDefinedEventNumber();
+  switch (nEvent)
+     {
+     case 3333:
+        SpeakString("I'm in event 3333");
+        break;
+     case 3334:
+        SpeakString("This is event 3334");
+        break;
+     default:
+        SpeakString("I don't know what to do with this event number");
+     }
+  }
+seealso:
+  functions:
+    - EventUserDefined
+  categories:
+    - Miscellaneous
+author: Jody Fletcher
+editor: Lilac Soul
+

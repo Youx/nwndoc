@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetHas2Q4PlotItem
+shortdesc: Test if the object has the specified plot item
+return: int
+parameters:
+  - type: object
+    name: oItemPossesser
+    desc: | The object, creature or player you wish to search for the plot item.
+
+  - type: int
+    name: nPlotItemConstant
+    desc: | The constant name that refers to the plot iem you want to search for.
+
+description: |
+  Returns TRUE if the oItemPossesser has an item that is defined by the nPlotItemConstant variable. 
+  This script is a wrapper function that calls GetItemPossessedBy() to check for an item and then tests with GetIsObjectValid to see if the item exists in their inventories. 
+  It only checks for three possible items: 
+  PLOT_2Q4_ITEM_KURTH_BASE_KEY 
+  PLOT_2Q4_ITEM_BARAM_BASE_KEY 
+  PLOT_2Q4_ITEM_ERBS_RING
+remarks: |
+  This function is defined in nw_i0_2q4luskan.nss on line 24.
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.22
+seealso:
+  functions:
+    - GetItemPossessedBy
+  categories:
+    - Module Specific
+author: John Shuell
+

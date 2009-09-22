@@ -1,0 +1,48 @@
+---
+type: Function
+name: EffectEthereal
+shortdesc: Creates an effect like the Sanctuary spell, but the observers get no saving throw.
+return: effect
+parameters:
+description: |
+  Returns an effect of type EFFECT_TYPE_ETHEREAL (But see bug notes). This effect works just like EffectSanctuary, but the observers receive no Will saving throw and the target this effect is applied to appears ethereal. 
+  Ethrealness is cancled as invisiblity is - when you perform a hostile action or it runs out naturally. An AOE dispel can also remove it, of course. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  1.64 seems to introduce True seeing as allowing you to see ethereal creature - but not target them. This is changed from previous patches - it isn't all dominating, and counters can be taken against the creatures (immunity to targeted spells is a great benefit however). 
+  No normal spot, listen, or other types of non-trueseeing effects work against the Etherealness effect still. 
+  As with Invisibility, this should give the attacker (who has Etherealness) a +4 attack against an unaware opponent. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  EffectEthereal does not appear to create an effect of type EFFECT_TYPE_ETHEREAL but one of EFFECT_TYPE_SANCTUARY. 
+  The Greater Sanctuary spell (SPELL_ETHEREALNESS, x0_s0_ether.nss found in SoU or HotU) uses EffectEthereal, it is the only non-visual effect this spell uses. However recipients of this spell have no effect of type EFFECT_TYPE_ETHEREAL; they have instead EFFECT_TYPE_SANCTUARY. Nothing can be found to indicate the DC used for EFFECT_TYPE_SANCTUARY, so no way to distinguish it from EffectSancuary() apart from what spell it is from.
+version: 1.64
+example: |
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eEthereal = EffectEthereal();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_AC_BONUS);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eEthereal, oTarget);
+  }
+seealso:
+  functions:
+    - EffectSanctuary
+  categories:
+    - Cut-Scene
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Christopher Smith
+  - Jasperre

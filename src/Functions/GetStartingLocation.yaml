@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetStartingLocation
+shortdesc: Determines the starting location of the module.
+return: location
+parameters:
+description: |
+  Returns the starting location of the player(s) in the module.
+remarks: |
+  Patch message for 1.25 lists GetStartLocation as a valid function; it is unknown as to whether this function (GetStartingLocation) is incorrect or two functions exist.
+version: 1.25
+example: |
+  // teleports subject to the module's starting location
+  void main()
+  {
+      location lStartingLoc = GetStartingLocation();
+      ActionJumpToLocation(lStartingLoc);
+  }
+seealso:
+  functions:
+    - ActionJumpToLocation
+    - GetLocation
+  categories:
+    - Module
+author: Daniel Beckman
+editor: Charles Feduke
+

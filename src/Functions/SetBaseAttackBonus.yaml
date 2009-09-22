@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetBaseAttackBonus
+shortdesc: Sets the number of base attacks for the specified creature
+return: void
+parameters:
+  - type: int
+    name: nBaseAttackBonus
+    desc: | Attack bonus to set
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | Creature to set the bonus on (Default: OBJECT_SELF)
+
+description: |
+  Sets the number of base attacks for the specified creatures. The range of values accepted are from 1 to 6 
+  Note: This function does not work on Player Characters
+version: 1.61
+seealso:
+  functions:
+    - EffectModifyAttacks
+    - RestoreBaseAttackBonus
+  categories:
+    - Combat
+author: Lilac Soul
+

@@ -1,0 +1,26 @@
+---
+type: Function
+name: RemoveAmbientSleep
+shortdesc: Removes a sleep effect on a successfull listen check.
+return: void
+parameters:
+description: |
+  This utility function can be used to wake creatures that have been set to simulated sleep (they are the creators of the sleep effect). 
+  If the creature from which this function is called rolls a successful DC 15 listen check (with wisdom modifiers) then the sleep effect is removed.
+remarks: |
+  You can simulate "I'm going to bed" sleep (as opposed to the sleep spell) by applying SleepEffect in the OnSpawn of the creature so the creator of the sleep effect is the creature (OBJECT_SELF). This function can then be used, as it is in the core AI, to do proper listen checks to help faction members that are calling for help. 
+  Also see David Gaider's Scripting FAQ for more information on sleep.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.29
+seealso:
+  functions:
+    - EffectSleep
+  categories:
+    - Core AI
+  events:
+    - OnPlayerRest
+    - OnRested
+author: Tom Cassiotis
+editor: Jody Fletcher
+

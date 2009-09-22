@@ -1,0 +1,37 @@
+---
+type: Function
+name: CheckIsUnlocked
+shortdesc: Plays voice chat messages that indicates the locked status of a door or placeable.
+return: void
+parameters:
+  - type: object
+    name: oLastObject
+    desc: | The door or placeable to report the locked status of.
+
+description: |
+  Makes the caller of script do a voice chat that indicates the locked status of a door or placeable. 
+  (Does not lock or unlock the object and does not make the creature do anything else).
+remarks: |
+  This function is not used in any Bioware scripts.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // This is the exact function
+  void CheckIsUnlocked(object oLastObject)
+  {
+      if(GetLocked(oLastObject))
+      {
+          ActionDoCommand(PlayVoiceChat(VOICE_CHAT_CUSS));
+      }
+      else
+      {
+          ActionDoCommand(PlayVoiceChat(VOICE_CHAT_CANDO));
+      }
+  }
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Tom Cassiotis
+editor: John Shuell
+

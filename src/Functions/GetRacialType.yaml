@@ -1,0 +1,47 @@
+---
+type: Function
+name: GetRacialType
+shortdesc: Determines the race of a creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature whose race we are interested in.
+
+description: |
+  Returns the racial type (RACIAL_TYPE_*) of oCreature and RACIAL_TYPE_INVALID If oCreature is invalid.
+remarks: |
+  this is most useful, no, the best function, if only, for getting thier race. It mearly returns a value from the racialtypes.2da file, and so new races can be added in sucessfully. 
+  This is widly used in most conversations, and places where race relations comes into play. Giving a special conversation option to cirtain races, and getting NPC's to react accordingly according to race, it usually a good way to add some depth to a world.
+bugs: |
+  1.64 makes sure that RACIAL_TYPE_INVALID is returned for any invalid object type when using this function.
+version: 1.64
+example: |
+  // Area transition script
+  // Dwarves go to "MORIA",
+  // Everybody else goes to the default transition
+  // (I know, stupid example, but still...)
+  void main()
+  {
+      object oPC=GetClickingObject();
+      object oTarget;
+      if (GetRacialType(oPC)==RACIAL_TYPE_DWARF)
+      {
+          oTarget = GetObjectByTag("MORIA");
+      }
+      else
+      {
+          oTarget = GetTransitionTarget(OBJECT_SELF);
+      }
+      AssignCommand(oPC, JumpToObject(oTarget));
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+  constants:
+    - RACIAL_TYPE_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

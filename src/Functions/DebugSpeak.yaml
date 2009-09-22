@@ -1,0 +1,22 @@
+---
+type: Function
+name: DebugSpeak
+shortdesc: Speak a string used for debugging.
+return: void
+parameters:
+  - type: string
+    name: sMessage
+    desc: | Message to speak.
+
+description: |
+  Simply calls SpeakString with default volume.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - SpeakString
+  categories:
+    - Debug
+author: Tom Cassiotis
+

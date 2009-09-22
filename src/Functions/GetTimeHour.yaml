@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetTimeHour
+shortdesc: Gets the current hour.
+return: int
+parameters:
+description: |
+  Returns the current hour as an integer between 0 and 23.
+version: 1.26
+example: |
+  void main()
+  {
+      int nHour = GetTimeHour();
+      if (nHour != GetLocalInt(OBJECT_SELF, "nLastHour"))
+      {
+          SpeakString("Hour is: " + IntToString(nHour));
+          SetLocalInt(OBJECT_SELF, "nLastHour", nHour);
+      }
+      return;
+  }
+seealso:
+  functions:
+    - GetIsDawn
+    - GetIsDay
+    - GetIsDusk
+    - GetIsNight
+    - GetTimeMillisecond
+    - GetTimeMinute
+    - GetTimeSecond
+    - HoursToSeconds
+    - SetTime
+  categories:
+    - Time
+author: Charles Feduke
+additional_contributors:
+  - Dana C.
+  - Michael Janicki

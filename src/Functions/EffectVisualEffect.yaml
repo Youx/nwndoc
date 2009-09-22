@@ -1,0 +1,80 @@
+---
+type: Function
+name: EffectVisualEffect
+shortdesc: Creates a new visual effect object
+return: effect
+parameters:
+  - type: int
+    name: nVisualEffectId
+    desc: | The visual effect to be applied
+
+  - type: int
+    name: nMissEffect
+    default: FALSE
+    desc: | if this is TRUE, a random vector near or past the target will be generated, on which to play the effect (Default: FALSE)
+
+description: |
+  This function creates a new Visual Effect. 
+  Visual effects are all in the file "visualeffects.2da" and there are normally several which do not have effect constants (under VFX_ in the constants list). 
+  If nMissEffect is TRUE, a random location is chosen for where the effect will be applied to. 
+  The target and the duration of this effect depend on what kind of VFX_ constant is being used. Testing usually helps. See below.
+remarks: |
+  There are several "Categories" of visual effects, all which should have a cirtain type of application to a target or location: 
+  - VFX_BEAM_ - Only apply this effect with EffectBeam(). 
+  - VFX_COM_ - "Combat" visual (like an acid weapon hitting a target), which act like VFX_IMP_. 
+  - VFX_IMP_ "Impact" visual. This requires the use of a an instantly-applied, ApplyEffectToObject(). Normally can never be applied at an location, as it requires cirtain "nodes" to fire effects from. 
+  - VFX_FNF_ "Fire and Forget" visual. Normally you apply these instantly with ApplyEffectAtLocation(), although you can apply them to a target, it usually doesn't look as good. 
+  - VFX_DUR_ - "Duration" visual. You normally only apply these to objects, as VFX_IMP_, but with a duration. 
+  Also note that many visual effects have sounds. Also, this can be a cause of slowdown in FPS, as visual effects are of course, along with the sounds they produce, memory and graphically intensive.
+  Visual effects, because they can be applied instantly and for durations, can be put in EffectLinkEffects() as long as they are no the only effects in the link. They can be got as normal if they are applied for a duration with GetFirstEffect()/GetNextEffect().
+version: 1.62
+example: |
+  // Sample code for applying a VFX_IMP_ visual, a AC-bonus
+  // (Mage armor) visual, to a target.
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the visual portion of the effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_AC_BONUS);
+      // Apply the visual effect to the target.
+      // - We apply VFX_IMP_ constants instantly, to a target.
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+  }
+  // Sample code for applying a VFX_DUR_ visual, a 
+  // stoneskin visual, to a target.
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the visual portion of the effect
+      effect eDur = EffectVisualEffect(VFX_DUR_PROT_STONESKIN);
+      // Apply the visual effect to the target.
+      // - We apply VFX_DUR_ constants for a duration, here 
+      //    it is permanent (could be temporary), to a target.
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDur, oTarget);
+  }
+  // Sample code for applying a VFX_FNF_ visual, a fireball, 
+  // to a location.
+  void main()
+  {
+      // This is the Target to apply the effect at.
+      location lTarget = GetLocation(OBJECT_SELF);
+      // Create the visual portion of the effect
+      effect eAOE = EffectVisualEffect(VFX_FNF_FIREBALL);
+      // Apply the visual effect to the target.
+      // - We apply VFX_FNF_ constants instantly, and only
+      //   at a location.
+      ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eAOE, lTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+    - ItemPropertyVisualEffect
+  categories:
+    - Effects
+    - Visual Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

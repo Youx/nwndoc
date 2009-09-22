@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetIsFriend
+shortdesc: Check whether a creature considers another creature a friend.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature whose friend status is to be checked.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The creature whose opinion will be queried. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oSource considers oTarget as a friend, otherwise FALSE.
+remarks: |
+  This function considers faction feeling as well as personal reputation between the two creatures.
+version: 1.22
+seealso:
+  functions:
+    - CheckFriendlyFireOnTarget
+    - GetIsNeutral
+    - GetIsReactionTypeFriendly
+    - TalentCureCondition
+  categories:
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Kristian Markon
+

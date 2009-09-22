@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetObjectType
+shortdesc: Determines what type the object is.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object to find its type.
+
+description: |
+  Returns the object type (OBJECT_TYPE_*) of oTarget and 0 if oTarget is not a valid object.
+bugs: |
+  This function doesn't return -1 on error as it claims in the function's description in the Script Editor. Nor does it return OBJECT_TYPE_INVALID for invalid objects. Return value on error was, in my testing, always 0.
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Object
+  constants:
+    - OBJECT_TYPE_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Sunjammer

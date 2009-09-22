@@ -1,0 +1,28 @@
+---
+type: Function
+name: GiveFetchItemToPC
+shortdesc: Gives the fetch item to the PC.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The PC to get the item.
+
+description: |
+  If oPC doesn’t have the current fetch item, it is created on him / her.
+remarks: |
+  Found in nw_j_fetch.nss on line 220 
+  The current fetch item is stored in a local variable, and then checked for by this function. 
+  The item is given to oPC using ActionGiveItem, so this function should probably only be called by someone who possesses that item, and is capable of having an action queue. 
+requirements: |
+  #include "nw_j_fetch"
+version: 1.28
+seealso:
+  functions:
+    - GetFetchee
+  categories:
+    - Item Creation
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

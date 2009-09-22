@@ -1,0 +1,46 @@
+---
+type: Function
+name: GetItemAppearance
+shortdesc: Returns the appearance of an item
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to get the appearance of.
+
+  - type: int
+    name: nType
+    desc: | See remarks.
+
+  - type: int
+    name: nIndex
+    desc: | See remarks.
+
+description: |
+  Queries the current value of the appearance settings on an item. The parameters are identical to those of CopyItemAndModify().
+remarks: |
+  Helmet models and simple items ignore iIndex. 
+  Combinations (from CopyItemAndModify): 
+  iType: ITEM_APPR_TYPE_SIMPLE_MODEL 
+  iIndex: [Ignored] 
+  Function returns: Model # 
+  iType: ITEM_APPR_TYPE_WEAPON_COLOR 
+  iIndex: ITEM_APPR_WEAPON_COLOR_* 
+  Function returns: 1-4 
+  iType: ITEM_APPR_TYPE_WEAPON_MODEL 
+  iIndex: ITEM_APPR_WEAPON_MODEL_* 
+  Function returns: Model # 
+  iType: ITEM_APPR_TYPE_ARMOR_MODEL 
+  iIndex: ITEM_APPR_ARMOR_MODEL_* 
+  Function returns: Model # 
+  iType: ITEM_APPR_TYPE_ARMOR_COLOR 
+  iIndex: ITEM_APPR_ARMOR_COLOR_* 
+  Function returns: 0-63
+version: 1.61
+seealso:
+  functions:
+    - CopyItemAndModify
+  categories:
+    - Get Data from Object
+author: Lilac Soul
+

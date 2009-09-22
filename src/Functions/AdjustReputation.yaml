@@ -1,0 +1,56 @@
+---
+type: Function
+name: AdjustReputation
+shortdesc: Adjusts positively or negatively how a whole faction views a specific person.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature who will be viewed differently by an entire faction.
+
+  - type: object
+    name: oSourceFactionMember
+    desc: | The member of the faction that will have it's opinion changed.
+
+  - type: int
+    name: nAdjustment
+    desc: | The amount (positive or negative) that the factions opinion will change.
+
+description: |
+  Adjust how oSourceFactionMember's faction feels about oTarget by the specified amount.
+remarks: |
+  This adjusts Faction Reputation, how the entire faction that oSourceFactionMember is in, feels about oTarget. 
+  One method of maximizing the versatility of the AdjustReputation function in conjunction with custom factions is to create an inaccesible area devoted to holding custom faction holders. Let's say your custom faction is titled "CLO" . You would give a creature the tag "CustomFactionHolderCLO", set "CLO" as the faction on the creature and place it in the custom faction holder bed. Keep it isolated from all other custom faction holders. Do not check the "plot" flag on your creature (or this won't work). You are using a creature rather than a placeable because AdjustReputation does not work with placeables. Now, for example, if you want the entire custom faction to turn hostile against your PC, you would script: 
+  AdjustReputation(PC, GetObjectByTag("CustomFactionHolderCLO"), -100) 
+  You can even create a custom faction holder for a standard faction so that you can easily use AdjustReputation with that standard faction.
+version: 1.61
+example: |
+  // this function will lower by 35 points how the attackee's 
+  // faction will view the attacker.
+  main()
+  {
+       object oAttacker = GetLastAttacker();
+       if(GetIsObjectValid(oAttacker))
+       {
+            AdjustReputation(oAttacker, OBJECT_SELF, -35);
+       }
+  }
+seealso:
+  functions:
+    - AdjustAlignment
+    - ClearAllFactionMembers
+    - ClearPersonalReputation
+    - GetAlignmentGoodEvil
+    - GetAlignmentLawChaos
+    - GetFactionAverageReputation
+    - GetReputation
+    - SetIsTemporaryEnemy
+    - SurrenderAllToEnemies
+    - SurrenderToEnemies
+  categories:
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Jeff Modell
+  - Lilac Soul

@@ -1,0 +1,25 @@
+---
+type: Function
+name: NextTag
+shortdesc: Gets the tag of the next waypoint to walk to.
+return: void
+parameters:
+  - type: object
+    name: oWayTarget
+    desc: | If close enough to this waypoint, get the tag of next waypoint
+
+description: |
+  If caller is less than 3 metres from oWayTarget, the function will store the tag of the next waypoint as a local variable.
+remarks: |
+  Found in nw_c3_waypoint1.nss line 26 
+  First of all, this isn’t in an include file, so you can’t use it the ‘normal’ way. Second of all, I have a nagging suspicion that this is an outdated function from before the WalkWayPoint days. I suggest using that function (from nw_i0_generic) rather than this one.
+version: 1.28
+seealso:
+  functions:
+    - SetWayPointTo1
+  categories:
+    - Module Specific
+    - Private
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

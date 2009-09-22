@@ -1,0 +1,50 @@
+---
+type: Function
+name: GetFirstItemProperty
+shortdesc: Determines the first itemproperty on an item
+return: itemproperty
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to get the itemproperty from
+
+description: |
+  Gets the first item property on an item.
+remarks: |
+  Used together with GetNextItemProperty and GetIsItemPropertyValid, this can be used to loop through an item's properties. It can also be used on its own to check if the item has ANY itemproperties, as that is only instance (except when oItem isn't a valid item) that this function will return an invalid itemproperty. 
+  Thus, it does with itemproperties what GetFirstEffect does with effects and GetFirstItemInInventory does with items.
+version: 1.61
+example: |
+  //Remove true seeing from the entering PC's headgear
+  void main()
+  {
+  //Entering object
+  object oPC=GetEnteringObject();
+  //Only PCs
+  if (!GetIsPC(oPC)) return;
+  //That PC's helmet
+  object oItem=GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  //Stop script if the PC had no helmet on
+  if (!GetIsObjectValid(oItem)) return;
+  //Get the first itemproperty on the helmet
+  itemproperty ipLoop=GetFirstItemProperty(oItem);
+  //Loop for as long as the ipLoop variable is valid
+  while (GetIsItemPropertyValid(ipLoop))
+     {
+     //If ipLoop is a true seeing property, remove it
+     if (GetItemPropertyType(ipLoop)==ITEM_PROPERTY_TRUE_SEEING)
+        RemoveItemProperty(oItem, ipLoop);
+     //Next itemproperty on the list...
+     ipLoop=GetNextItemProperty(oItem);
+     }
+  }
+seealso:
+  functions:
+    - GetIsItemPropertyValid
+    - GetItemPropertyType
+    - GetNextItemProperty
+    - RemoveItemProperty
+  categories:
+    - Get Data from Object
+author: Lilac Soul
+

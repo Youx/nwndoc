@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetMaxHitPoints
+shortdesc: Get the maximum hit points (HP) of an object.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | The object whose HP are to be returned. (Default: OBJECT_SELF)
+
+description: |
+  Returns an integer that indicates the total hit points (HP) of an object. This function will return the number 0 if an error occurs (e.g., if the object has no hit points). Hit points attained through spell effects and similar devices are not counted. For example, assume a PC has the virtue spell applied to him or her, giving 1 extra HP--this would not be counted (e.g., with 52/52 HP normally but with virtue 53/52, the value 52 would be returned).
+version: 1.27
+example: |
+  // Finds the maximum hit points for a PC
+  void main()
+  {
+      int i = GetMaxHitPoints(GetFirstPC());
+      SendMessageToPC(GetFirstPC(),IntToString(i));
+  }
+seealso:
+  functions:
+    - GetCurrentHitPoints
+    - GetPercentageHPLoss
+    - GetTotalDamageDealt
+  categories:
+    - Get Data from Creature
+author: GoLeM
+editor: Charles Feduke
+

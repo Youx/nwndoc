@@ -1,0 +1,41 @@
+---
+type: Function
+name: GetItemStackSize
+shortdesc: Retrieves the number of similar items in a stack.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to determine the stack count of.
+
+description: |
+  Returns the number of items in a stack attached to oObject. Only items that are the same may be stacked; i.e. two gems of the same name can be stacked, but a sword and an arrow cannot. Returns 0 if the object is invalid.
+remarks: |
+  Returns 0 if an invalid object is provided for oItem, or if oItem isn't an item (like a creature or a placeable). 
+  This function can also be used to determine if an item is stackable or not. See code sample below.
+version: 1.30
+example: |
+  //Returns TRUE if oItem is stackable
+  int GetIsStackableItem(object oItem)
+  {
+  //Must have a chest tagged checkchest
+  object oCopy=CopyItem(oItem, GetObjectByTag("checkchest"));
+  //Set the stacksize to two
+  SetItemStackSize(oCopy, 2);
+  //Check if it really is two - otherwise, not stackable!
+  int bStack=GetItemStackSize(oCopy)==2;
+  //Destroy the test copy
+  DestroyObject(oCopy);
+  //Return bStack which is TRUE if item is stackable
+  return bStack;
+  }
+seealso:
+  functions:
+    - GetModuleItemAcquiredStackSize
+    - SetItemStackSize
+  categories:
+    - Get Data from Object
+    - Inventory
+author: Charles Feduke
+editor: Lilac Soul
+

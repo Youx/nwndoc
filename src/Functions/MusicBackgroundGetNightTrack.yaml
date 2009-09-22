@@ -1,0 +1,26 @@
+---
+type: Function
+name: MusicBackgroundGetNightTrack
+shortdesc: Gets the nighttime background track for an area.
+return: int
+parameters:
+  - type: object
+    name: oArea
+    desc: | Area to determine the background music track of.
+
+description: |
+  This function returns an integer value that is associated with the currently set nighttime background track.
+remarks: |
+  There are no constants for the returned track number; instead please refer to Resources > Sounds & Music > Music for track numbers.
+version: 1.29
+example: |
+  object oArea = GetArea(OBJECT_SELF);
+  int iBattleTrack = MusicBackgroundGetNightTrack(oArea);
+seealso:
+  categories:
+    - Area
+    - Music Effects
+author: Michael Nork
+editor: Charles Feduke
+additional_contributors:
+  - Tyson McCann

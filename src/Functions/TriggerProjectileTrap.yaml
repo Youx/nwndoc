@@ -1,0 +1,54 @@
+---
+type: Function
+name: TriggerProjectileTrap
+shortdesc: Causes an origin object to fire a specified spell at a target.
+return: void
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+  - type: object
+    name: oTarget
+    desc: | Target to fire a spell at.
+
+  - type: int
+    name: nCasterLevel
+    default: 20
+    desc: | Caster level with which to cast the spell at. (Default: 20)
+
+  - type: object
+    name: oOrigin
+    default: OBJECT_INVALID
+    desc: | Origin object of the spell. (Default: OBJECT_INVALID)
+
+  - type: object
+    name: oTrigger
+    default: OBJECT_SELF
+    desc: | Used when oOrigin is OBJECT_INVALID to find an object closest to oTrigger with the same tag as oTrigger. (Default: OBJECT_SELF)
+
+  - type: int
+    name: nProjectilePath
+    default: PROJECTILE_PATH_TYPE_DEFAULT
+    desc: | PROJECTILE_PATH_TYPE_* (Default: PROJECTILE_PATH_TYPE_DEFAULT)
+
+description: |
+  Causes oOrigin to fire a spell at oTarget cast at the specified nCasterLevel. 
+  If oOrigin is OBJECT_INVALID, the function will attempt to find the object nearest oTarget that has the same tag as oTrigger. If no such object exists, we assume that the origin of the trap has been destroyed, and don't fire the trap. 
+  Only creatures, placeables, and items can be used as trap origins.
+remarks: |
+  Note that a few spells (notably the arrow/bolt/dart/shuriken) require PROJECTILE_PATH_TYPE_HOMING to work correctly.
+bugs: |
+  The specified level doesn't work. Instead, the reflex save of the origin is used as the caster level and this only works for a few spells currently. Other spells will fire typically at the highest caster level allowed for that spell. Spells which this work with specifically are not known.
+requirements: |
+  #include "x0_i0_projtrap"
+version: 1.61
+seealso:
+  categories:
+    - Traps
+  constants:
+    - PROJECTILE_PATH_TYPE_* Constants
+    - SPELL_* Constants
+author: Charles Feduke
+editor: Lilac Soul
+

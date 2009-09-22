@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetQuestTag
+shortdesc: Gets the giver's quest tag.
+return: string
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | Giver of the quest (Default: OBJECT_SELF)
+
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | This quest's number (Default: 1)
+
+description: |
+  Get the tag for the given quest
+remarks: |
+  Takes the tag of oTarget, appends _Q and nQuest, and returns it. So, if oTarget's tag is "BOB", and nQuest is 1, this function returns BOB_Q1 - this string is used by other functions as a local variable name. 
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+

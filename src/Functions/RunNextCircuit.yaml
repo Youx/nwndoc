@@ -1,0 +1,26 @@
+---
+type: Function
+name: RunNextCircuit
+shortdesc: Makes an NPC move to their initial waypoint.
+return: void
+parameters:
+  - type: int
+    name: nRun
+    default: FALSE
+    desc: | Walk or Run during waypoint travel. (Default: FALSE)
+
+  - type: float
+    name: fPause
+    default: 1.0
+    desc: | Amount of pause when reaching waypoint. (Default: 1.0)
+
+description: |
+  Used by Core AI to send NPCs back to their initial waypoint "WP_XXX_01".
+version: 1.22
+seealso:
+  categories:
+    - Core AI
+    - Movement
+author: Jody Fletcher
+editor: Charles Feduke
+

@@ -1,0 +1,24 @@
+---
+type: Function
+name: DestroyAllPersonalItems
+shortdesc: Destroys all henchman items.
+return: void
+parameters:
+  - type: object
+    name: oPC
+description: |
+  Destroys all the little tokens etc oPC has received from henchmen in the original campaign.
+remarks: |
+  Found in: nw_i0_henchman.nss: 222 
+  Destroys all the little tokens etc oPC has received from henchmen in the original campaign. Hardly useful for the rest of us.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  functions:
+    - StripAllPersonalItemsFromEveryone
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

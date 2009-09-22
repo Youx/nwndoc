@@ -1,0 +1,22 @@
+---
+type: Function
+name: SoundObjectStop
+shortdesc: Stops a sound object from playing.
+return: void
+parameters:
+  - type: object
+    name: oSound
+    desc: | Sound object to play
+
+description: |
+  Stop playing oSound that was either started by SoundObjectPlay() or just set to active when created in the Toolset.
+version: 1.61
+seealso:
+  functions:
+    - SoundObjectPlay
+    - SoundObjectSetVolume
+  categories:
+    - Sound Effects
+author: Tom Cassiotis
+editor: Lilac Soul
+

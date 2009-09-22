@@ -1,0 +1,50 @@
+---
+type: Function
+name: GetNearestObjectToLocation
+shortdesc: Returns the nearest object, which is of a specified type, to a given location.
+return: object
+parameters:
+  - type: int
+    name: nObjectType
+    desc: | OBJECT_TYPE_*
+
+  - type: location
+    name: lLocation
+    desc: | Location to find a nearby object from.
+
+  - type: int
+    name: nNth
+    default: 1
+    desc: | Which object to find. (Default: 1)
+
+description: |
+  Get the nNth object nearest to lLocation that is of the specified type. 
+  Return value on error: OBJECT_INVALID 
+  The function selects the Nth (default is 1, i.e. nearest) nearest object that is of a certain type to the given location. By default ‘type’ is set to OBJECT_TYPE_ALL, therefore the function will return the Nth nearest valid object to a given location by simply passing a location value to the function, unless you specify a ‘type’ in the form OBJECT_TYPE_*. You can 'or' several OBJECT_TYPE_* constants together using the bitwise | (or) operator. See code sample below.
+remarks: |
+  It seems that this function returns OBJECT_INVALID if the location of the object is identical to the location passed to the function. In other words, if there is an object at the exact location that is fed into the function it will NOT be returned by the function. Simply put, the function does not consider an identical location to be the nearest location.
+bugs: |
+  1.64 made sure this function is now consistant - it will return the nearest objects every time it is called from the same location.
+version: 1.64
+example: |
+  // Find the nearest creature, placeable, or item to the
+  // module's starting location.
+  void main()
+  {
+      location lLoc=GetStartingLocation();
+      object oTarget = GetNearestObjectToLocation(OBJECT_TYPE_CREATURE | OBJECT_TYPE_PLACEABLE | OBJECT_TYPE_ITEM, lLoc);
+  }
+seealso:
+  functions:
+    - GetNearestObject
+    - GetObjectByTag
+  categories:
+    - Get Data from Object
+  constants:
+    - OBJECT_TYPE_* Constants
+author: Jason Simpson
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Heed
+  - Jasperre

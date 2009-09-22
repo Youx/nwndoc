@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetStringUpperCase
+shortdesc: Convert string to upper case.
+return: string
+parameters:
+  - type: string
+    name: sString
+    desc: | Target string to convert to upper case.
+
+description: |
+  Returns sString converted to upper case. Returns an empty string on error.
+version: 1.22
+example: |
+  void main()
+  {
+      // say "HELLO WORLD!"
+      string sMessage = "hello world!";
+      SpeakString(GetStringUpperCase(sMessage));
+  }
+seealso:
+  functions:
+    - GetStringLowerCase
+  categories:
+    - String
+author: Kristian Markon
+editor: Daniel Beckman
+

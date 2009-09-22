@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetCurrentHitPoints
+shortdesc: Determines the number of hit points someone currently has.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | The object whose hitpoints we are to retrieve. (Default: OBJECT_SELF)
+
+description: |
+  Returns the number of hitpoints oObject has and 0 if oObject is invalid.
+remarks: |
+  This can be called upon any object with hit points - Doors, Placeables and so on therefore have values for this. 
+  It can also be negative, if dying or dead.
+version: 1.22
+seealso:
+  functions:
+    - GetMaxHitPoints
+    - GetPercentageHPLoss
+  categories:
+    - Get Data from Creature
+    - Get Data from Object
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

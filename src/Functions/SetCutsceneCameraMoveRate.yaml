@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetCutsceneCameraMoveRate
+shortdesc: Sets the current movement rate factor for the cutscene cameraman
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The cutscene "cameraman"
+
+  - type: float
+    name: fRate
+    desc: | Movement rate, 0.1 - 2.0
+
+description: |
+  Sets the current movement rate factor for the cutscene camera man. 
+  NOTE: You can only set values between 0.1, 2.0 (10%-200%)
+version: 1.61
+seealso:
+  functions:
+    - GetCutsceneCameraMoveRate
+  categories:
+    - Cut-Scene
+    - Movement
+author: Lilac Soul
+

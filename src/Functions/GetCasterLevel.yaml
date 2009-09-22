@@ -1,0 +1,45 @@
+---
+type: Function
+name: GetCasterLevel
+shortdesc: Determines the level of caster for a creature or PC casting a spell.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature or PC casting a spell.
+
+description: |
+  Get the Caster Level of oCreature. If the creature or PC is multiclassed, this function returns the level of the class used to cast the spell. 
+  Return a value of 0 on error.
+remarks: |
+  This only works with PC and creature type objects, else it returns 0. 
+  This function only works properly when oCreature is casting a spell. It is cirtainly the only reliable place. If used outside a spell script, it will return the last caster level of the last spell cast by oCreature - IE, some Area-of-Effect spells do this, to get how much damage dice to use.
+version: 1.61
+example: |
+  // Example 1 - Gets the casting level of the object that last cast
+  // a spell, if that object is a PC or Creature.  For fun, the object
+  // then says its caster level.
+  /* note the bug above; this example may not work properly */
+  void main()
+  {
+    // Get the object that last cast a spell.
+    object oCreature = GetLastSpellCaster();
+    // Get out if it is not a creature (PC or mob)
+    if (GetObjectType(oCreature) != OBJECT_TYPE_CREATURE) return;
+    // Get the casting level of the creature.
+    int nCLevel = GetCasterLevel(oCreature);
+    // Just for fun...
+    string sLevel = IntToString(nCLevel);
+    AssignCommand(oCreature,SpeakString("I'm a level " + sLevel + " caster!",TALKVOLUME_TALK));
+  }
+seealso:
+  functions:
+    - GetCharacterLevel
+    - GetLastSpellCaster
+  categories:
+    - Get Data from Creature
+    - Spells
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Alec Usticke

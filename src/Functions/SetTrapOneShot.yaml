@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetTrapOneShot 
+shortdesc: Sets whether or not the trap is a one-shot trap. Meaning whether or not the trap resets itself after firing.
+return: void
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | A placeable, door or trigger.
+
+  - type: int
+    name: nOneShot
+    default: TRUE
+    desc: | TRUE or FALSE. Defaults to TRUE (one-shot) if no value set.
+
+description: |
+  Sets whether or not the trap is a one-shot trap. Meaning whether or not the trap resets itself after firing.
+version: 1.67
+seealso:
+  functions:
+    - GetTrapOneShot
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress
+editor: KooKoo

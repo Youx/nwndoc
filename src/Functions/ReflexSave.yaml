@@ -1,0 +1,41 @@
+---
+type: Function
+name: ReflexSave
+shortdesc: Performs a ReflexSave check.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature that needs to roll a saving throw.
+
+  - type: int
+    name: nDC
+    desc: | The difficulty check of the saving throw.
+
+  - type: int
+    name: nSaveType
+    default: SAVING_THROW_TYPE_NONE
+    desc: | SAVING_THROW_TYPE_* (Default: SAVING_THROW_TYPE_NONE)
+
+  - type: object
+    name: oSaveVersus
+    default: OBJECT_SELF
+    desc: | The source cause for the saving throw. (Default: OBJECT_SELF)
+
+description: |
+  Does a Reflex Save check for the given DC. 
+  Returns 0 if the saving throw roll failed, 1 if the saving throw roll succeeded and 2 if the target was immune to the save type specified. 
+  Note: If used within an Area of Effect Object Script (On Enter, OnExit, OnHeartbeat), you MUST pass GetAreaOfEffectCreator() into oSaveVersus!!
+version: 1.61
+seealso:
+  functions:
+    - GetReflexSavingThrow
+    - SetReflexSavingThrow
+    - FortitudeSave
+    - WillSave
+  categories:
+    - Saving Throw
+  constants:
+    - SAVING_THROW_TYPE_*
+author: Tom Cassiotis
+editor: Lilac Soul

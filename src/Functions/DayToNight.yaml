@@ -1,0 +1,32 @@
+---
+type: Function
+name: DayToNight
+shortdesc: Changes the current Day/Night cycle for this player to night
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | Player to dump into darkness
+
+  - type: float
+    name: fTransitionTime
+    default: 0.0f
+    desc: | Time it takes to become night (Default: 0.0f)
+
+description: |
+  Changes the current Day/Night cycle for this player to night.
+remarks: |
+  If called while it is night, the player might see the screen go light for a short while and then fade back out. This doesn't look so good, so it may be a good idea to use this together with the GetIsDay / GetIsNight functions. 
+  This doesn't cause the game time to change at all.
+version: 1.61
+seealso:
+  functions:
+    - GetIsDay
+    - GetIsNight
+    - NightToDay
+  categories:
+    - Action on Object
+    - Lighting Effects
+    - PC Only
+author: Lilac Soul
+

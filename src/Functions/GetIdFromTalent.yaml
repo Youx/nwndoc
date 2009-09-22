@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetIdFromTalent
+shortdesc: Determines the identifier of a talent.
+return: int
+parameters:
+  - type: talent
+    name: tTalent
+    desc: | The talent to get the ID of.
+
+description: |
+  Returns the identifier of tTalent from SPELL_*, FEAT_* or SKILL_*.
+remarks: |
+  When writing generic AI for creatures there are functions, like GetCreatureTalentBest, that return talents that can be used in a situation but a lot of functions require the identifiers to be used. This converts from 'talent' to those identifiers. 
+  You probably want to use this function in conjunction with GetTypeFromTalent, because a lot of the SPELL_*, FEAT_*, and SKILL_* constants correspond to the same value. Thus, this would be TRUE even for FEAT_ALERTNESS and SKILL_ANIMAL_EMPATHY, because they're all just the integer value 0: 
+  if (GetIdFromTalent(tTalent)==SPELL_ACID_FOG)
+version: 1.61
+seealso:
+  functions:
+    - GetCreatureTalentBest
+    - GetCreatureTalentRandom
+    - GetTypeFromTalent
+    - TalentAdvancedProtectSelf
+    - TalentBuffSelf
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - SPELL_* Constants
+author: Tom Cassiotis
+editor: Lilac Soul
+

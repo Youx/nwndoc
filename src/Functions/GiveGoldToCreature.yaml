@@ -1,0 +1,65 @@
+---
+type: Function
+name: GiveGoldToCreature
+shortdesc: Creates the specified amount of gold on the creature.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature set to receive the windfall.
+
+  - type: int
+    name: nGP
+    desc: | Amount of gold to give to oCreature.
+
+description: |
+  Give nGP gold to oCreature. 
+  nGP must be positive - to remove gold use TakeGoldFromCreature().
+remarks: |
+  This mearly creates new gold, it does in no sense pass over gold from the calling object - the name is deceptive!
+version: 1.61
+example: |
+  // Put OnClientEnter of the module's properties
+  // to have all PCs start out with exactly 500 gold pieces
+  void main()
+  {
+      object oPC=GetEnteringObject();
+      // Make sure it only happens on the first entry of the player
+      // * Note: If the module resets (multiplayer), they'll yet 
+      //    again get a minimum of 500 gold because 
+      //    SetLocalInt isn't persistant over resets.
+      if (GetLocalInt(oPC, "gold_reset")) return;
+      // Set so they can't get the gold again. This won't be persistant
+      // over module resets.
+      SetLocalInt(oPC, "gold_reset", TRUE);
+      // How much gold does the PC already have?
+      int nGold=GetGold(oPC);
+      //Too much, too little, or just enough?
+      if (nGold>500)
+      {
+          //Too much!
+          // * See the TakeGoldFromCreature() comments to see why
+          //    it requires AssignCommand().
+          AssignCommand(oPC, TakeGoldFromCreature(nGold-500, oPC, TRUE));
+      }
+      else if (nGold<500)
+      {
+          //Too little!
+          GiveGoldToCreature(oPC, 500-nGold);
+      }
+  }
+seealso:
+  functions:
+    - GetFactionGold
+    - GetGold
+    - GetGoldPieceValue
+    - RewardPartyGP
+    - TakeGoldFromCreature
+  categories:
+    - Action on Object
+    - Money
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

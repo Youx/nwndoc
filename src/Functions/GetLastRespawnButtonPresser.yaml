@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetLastRespawnButtonPresser
+shortdesc: Gets the last PC that clicked the Respawn button.
+return: object
+parameters:
+description: |
+  Returns an object representing the player who last pressed the respawn button. Use this in an OnPlayerRespawn module script.
+remarks: |
+  This is THE function that makes custom respawn scripts possible. With it we can tell who last requested to be respawned and do with them as we will. 
+  Note that pressing this button doesn't actually respawn the PC. It triggers the OnPlayerRespawn event, which by default uses the script nw_o0_respawn. You don't have to use this script, but have a look at it. I have posted an exerpt below - that bit of script will resurrect, heal, and remove negative effects from the PC. There is also a function in that script called ApplyPenalty, which is used to take XP and gold from the respawning PC.
+version: 1.61
+example: |
+  #include "nw_i0_plot"
+  void main()
+  {
+      object oRespawner = GetLastRespawnButtonPresser();
+      ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectResurrection(),oRespawner);
+      ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectHeal(GetMaxHitPoints(oRespawner)), oRespawner);
+      RemoveEffects(oRespawner);
+  //Rest of script follows, e.g. if you want to teleport the PC away
+  }
+seealso:
+  categories:
+    - Miscellaneous
+    - PC Only
+  events:
+    - OnPlayerDeath
+    - OnPlayerRespawn
+author: John Shuell
+editor: Lilac Soul
+

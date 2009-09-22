@@ -1,0 +1,25 @@
+---
+type: Function
+name: JumpToWeakestEnemy
+shortdesc: Makes the caller jump to the most damaged enemy.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | A member of the faction to find an enemy within
+
+description: |
+  Makes the caller jump to the member of oTarget’s faction that has taken the most damage. It will not jump to creatures less than 4 meters away, and not to creatures it hasn’t seen (so there’s no risk of this causing the caller to jump to another area). The summon undead visual effect is applied, and the caller will attack the creature it jumped to.
+remarks: |
+  Found in nw_c2_dimdoor.nss on line 14 
+  Note that nw_c2_dimdoor is not an include file, so you can’t include the function in your script the normal way. You can copy – paste it, though. 
+  This script is used by the blink dog. Check the blink dog’s OnSpawn and OnUserDefined scripts for one way of using this function. The blink dog can be found in the standard palette – monsters – planar – other. 
+version: 1.28
+seealso:
+  categories:
+    - Combat
+    - Combat Actions
+    - Private
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

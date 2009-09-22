@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetIsValidCombination
+shortdesc: Determines if items within a container are valid for combining into a new item.
+return: int
+parameters:
+  - type: int
+    name: bDeleteItem
+    desc: | Determines if items in oContainer will be deleted.
+
+  - type: object
+    name: oContainer
+    default: OBJECT_INVALID
+    desc: | Container to check for reagent combinations. (Default: OBJECT_INVALID)
+
+description: |
+  Returns TRUE is items placed within oContainer are a valid combination for the creation of a new item, FALSE otherwise. When bDeleteItem is TRUE, items within oContainer are deleted only on a successful match.
+remarks: |
+  If oContainer remains OBJECT_INVALID, an object with the tag stored on the object calling this script aliased "NW_L_MYFORGE" is used as the container instead. 
+  If bDeleteItem is TRUE, then not only are the items in oContainer deleted if used, the item created should not be attainable in the future by the same PC.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.29
+seealso:
+  categories:
+    - Item Creation
+author: Charles Feduke
+

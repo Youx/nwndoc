@@ -1,0 +1,30 @@
+---
+type: Function
+name: SetLastGenericSpellCast
+shortdesc: Sets a local variable that stores the spell ID of the last spell cast.
+return: void
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+description: |
+  Sets a local variable for the last spell used so the BioWare core AI system doesn't keep casting the same spell. 
+  Used in conjuction with GetLastGenericSpellCast() and CompareLastSpellCast().
+remarks: |
+  Uses the local variable name "NW_GENERIC_LAST_SPELL". 
+  This is part the Core AI programming to make NPC actions appear more dynamic.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.29
+seealso:
+  functions:
+    - CompareLastSpellCast
+    - GetLastGenericSpellCast
+  categories:
+    - Core AI
+  constants:
+    - SPELL_* Constants
+author: Tom Cassiotis
+editor: Jody Fletcher
+

@@ -1,0 +1,60 @@
+---
+type: Function
+name: EffectDamageResistance
+shortdesc: Returns a new effect object that makes the target more resistant to certain types of damage.
+return: effect
+parameters:
+  - type: int
+    name: nDamageType
+    desc: | The type of damage to resist as defined in the DAMAGE_TYPE_* constants group.
+
+  - type: int
+    name: nAmount
+    desc: | The amount of damage to soak each time the target is damaged.
+
+  - type: int
+    name: nLimit
+    default: 0
+    desc: | The maximum amount of damage that can ever be soaked by the effect before being dispersed. If set to 0, the effect will be infinite. (Default: 0)
+
+description: |
+  Returns a Damage Resistance effect that removes the first nAmount points of damage of type nDamageType, up to nLimit (or infinite if nLimit is 0). 
+  Damage Resistance differs to Damage Reduction as it affects a specific type, or range of types, up to a limit, and doesn't in any way use Damage Power ratings, even if physical damage is put as the damage type. 
+  These do not stack, and only the highest damage resistance will apply to an attack of nDamageType. Damage resistance and Reduction may stack for physical damage, but the author is unsure. 
+  The limit of nAmount and nLimit (Apart from 0, unlimited) is unknown.
+remarks: |
+  A special, and undocumented use of this is when several different damages (with the same nAmount and nLimit) are linked together in one effect, using EffectLinkEffects(), will decrease all of them until nLimit. (EG: Damage resistance 10 against fire and cold, with a limit of 30, and linked together, will reduce damage from fire or cold, up to 10, however, either one will decrease the 30 until it reaches 0 and expires). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 5 resistance, limit of 10 to absorb,
+  // to fire damage, to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDamResist = EffectDamageResistance(DAMAGE_TYPE_FIRE, 5, 10);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SUPER_HEROISM);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDamResist, oTarget);
+  }
+seealso:
+  functions:
+    - EffectDamageDecrease
+    - EffectDamageReduction
+    - EffectDamageShield
+  categories:
+    - Combat
+    - Effects
+  constants:
+    - DAMAGE_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

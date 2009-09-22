@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetNumStackedItems
+shortdesc: Determines the number of stacked items contained within an inventory object.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | The inventory item to find how many are of which are stacked.
+
+description: |
+  Returns the number of stacked items that are comprised of the inventory object, oItem.
+version: 1.22
+example: |
+  // Demonstrates how to check an NPC's arrow supply and yield speach when it is depleted.
+  void main()
+  {
+       //retrieves NPC's arrow object
+       object arrows = GetObjectByTag("MY_ARROWS");
+       if(GetNumStackedItems(arrows)==0)
+       {
+            ActionSpeakString("My arrow supply is depleted!");
+       }
+  }
+seealso:
+  functions:
+    - GetNumItems
+  categories:
+    - Inventory
+author: Sarev0k
+editor: Tom Cassiotis
+

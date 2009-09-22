@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetGoingToBeAttackedBy
+shortdesc: Determines the creature that is going to attack another creature in the current combat round.
+return: object
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature that is going to be attacked.
+
+description: |
+  Returns the creature that is going to attack oTarget, and OBJECT_INVALID if oTarget is not a valid creature or if oTarget isn't being attacked.
+remarks: |
+  This value is cleared out at the end of every combat round and should not be used in any case except when getting a "going to be attacked" shout from the master creature (and this creature is a henchman).
+version: 1.22
+seealso:
+  categories:
+    - Combat
+    - Core AI
+    - Henchmen/Familiars/Summoned
+author: Tom Cassiotis
+

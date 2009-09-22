@@ -1,0 +1,24 @@
+---
+type: Function
+name: DoFollowMaster
+shortdesc: Make the henchman approach its master if it is too far away, depending on the distance it has been asked to keep
+return: void
+parameters:
+description: |
+  Make the henchman approach its master if it is too far away, depending on the distance it has been asked to keep
+remarks: |
+  nw_i0_assoc.nss: 25 
+  While probably a very sound function, you will never be using this, at least not from nw_i0_assoc, because of the fact that that include file has an error which means that you can never compile any scripts using this as an include.
+bugs: |
+  Will not work from nw_i0_assoc, for the reasons noted under remarks.
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.28
+seealso:
+  functions:
+    - GetBehind
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

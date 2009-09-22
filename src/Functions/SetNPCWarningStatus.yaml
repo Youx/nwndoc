@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetNPCWarningStatus
+shortdesc: Stores the condition of an NPC warning status.
+return: void
+parameters:
+  - type: int
+    name: bStatus
+    default: TRUE
+    desc: | The value of the warning status. (Default: TRUE)
+
+description: |
+  This function sets a local variable (NW_GENERIC_WARNING_STATUS) to bStatus on a creature. 
+  The value is retrieved by the function GetNPCWarningStatus().
+remarks: |
+  This function is not used by BioWare and should not be of interest to anyone.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  functions:
+    - GetNPCWarningStatus
+  categories:
+    - Core AI
+author: Tom Cassiotis
+

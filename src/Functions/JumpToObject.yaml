@@ -1,0 +1,37 @@
+---
+type: Function
+name: JumpToObject
+shortdesc: Teleports the calling object to the nearest valid location by the target.
+return: void
+parameters:
+  - type: object
+    name: oToJumpTo
+    desc: | Target object that will be jumped to.
+
+  - type: int
+    name: nWalkStraightLineToPoint
+    default: TRUE
+    desc: | Unused. (Default: TRUE)
+
+description: |
+  The calling object will be instantly relocated to the position of oTarget (or as near as possible). This function will work within or across area borders. 
+  If oTarget isn't a valid object (or is unspecified) the function call will fail. 
+  The action produces no visual effect.
+remarks: |
+  Like all spawn and jump-type commands, this will place the calling object in the nearest valid location to the oToJumpTo. 
+  When a PC leaves an Area or Trigger because you've jumped to a location causes the OnExit event of the departed object to fire. 
+  Does not affect creatures that are dead; they must have HP above 0 for this function to work properly, and must be commandable (GetCommandable()). 
+  Speculation: The nWalkStraightLineToPoint parameter should make the caller of the function walk to the target if very close to it. This does not happen, and in fact, changing it to FALSE doesn't seem to have any effect. If anyone figures out what this parameter is for, please use the link at the bottom of the page to send the Lexicon's authors a comment on this function.
+version: 1.61
+seealso:
+  functions:
+    - ActionJumpToObject
+    - JumpToLocation
+  categories:
+    - Action on Object
+    - Movement
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Keven Knuth
+  - Enigmatic

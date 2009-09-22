@@ -1,0 +1,45 @@
+---
+type: Function
+name: SetItemStackSize
+shortdesc: Set the number of items in a given stack.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to set the stack size of.
+
+  - type: int
+    name: nSize
+    desc: | New stack size.
+
+description: |
+  Sets the number of items in a given stack. If a number less than 1 is passed, then the stack size is set to 1 (not destroyed like the SetItemCharges function). If a number greater than the maximum stack size for an item of its type is passed, the number of items in the stack is set to the item's maximum stack size.
+remarks: |
+  Other than removing a single item from a stack of, say, potions (or adding one), this function can be used to determine if an item is stackable or not. See code sample below.
+version: 1.30
+example: |
+  //Returns TRUE if oItem is stackable
+  int GetIsStackableItem(object oItem)
+  {
+  //Must have a chest tagged checkchest
+  object oCopy=CopyItem(oItem, GetObjectByTag("checkchest"));
+  //Set the stacksize to two
+  SetItemStackSize(oCopy, 2);
+  //Check if it really is two - otherwise, not stackable!
+  int bStack=GetItemStackSize(oCopy)==2;
+  //Destroy the test copy
+  DestroyObject(oCopy);
+  //Return bStack which is TRUE if item is stackable
+  return bStack;
+  }
+seealso:
+  functions:
+    - GetItemStackSize
+    - TakeNumItems
+  categories:
+    - Action on Object
+    - Inventory
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

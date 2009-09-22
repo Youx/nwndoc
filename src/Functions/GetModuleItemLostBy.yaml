@@ -1,0 +1,50 @@
+---
+type: Function
+name: GetModuleItemLostBy
+shortdesc: Get the creature that lost the item on an OnUnAcquiredItem event.
+return: object
+parameters:
+description: |
+  Returns the object that dropped an item triggering the OnUnAcquiredItem event. On error this function will return OBJECT_INVALID; this should not be possible as the event is triggered by an item drop, but if you trigger the event manually then be aware of this error.
+remarks: |
+  We know that the OnUnacquireItem fires for objects destroyed by 
+  DestroyObject, right? Well, the object returned by this function is not 
+  OBJECT_INVALID in this case, but it is also not an existing object so any 
+  usage of it does not function correctly. Instead of checking for 
+  OBJECT_INVALID, the users of this function should always use 
+  GetIsObjectValid, which returns FALSE for the case mentioned above. 
+version: 1.28
+example: |
+  // This will find the name of the creature the item was dropped by.
+  void main()
+  {
+      object a = GetModuleItemLost();
+      if(a == OBJECT_INVALID)
+          SendMessageToPC(GetFirstPC(),"OOPS A CRASH ME THINKS");
+      else {
+          SendMessageToPC(GetFirstPC(),GetTag(a));
+          a = GetModuleItemLostBy();
+          if(a == OBJECT_INVALID)
+              SendMessageToPC(GetFirstPC(),"OOPS A CRASH ME THINKS");
+          else
+              SendMessageToPC(GetFirstPC(),"And was dropped by " + GetTag(a));
+          }
+  }
+seealso:
+  functions:
+    - GetModuleItemAcquired
+    - GetModuleItemAcquiredFrom
+    - GetModuleItemLost
+  categories:
+    - Inventory
+    - Module
+  events:
+    - OnAcquireItem
+    - OnUnAcquireItem
+author: GoLeM
+editor: Charles Feduke
+additional_contributors:
+  - Charles Mead
+  - Timothy Dang
+  - Matthew Green
+  - David Kondrad

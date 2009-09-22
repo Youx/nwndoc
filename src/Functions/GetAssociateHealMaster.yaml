@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetAssociateHealMaster
+shortdesc: <Placeholder description>
+return: int
+parameters:
+description: |
+  Determines if the associate NPC should heal their associated master PC. 
+  Returns TRUE depending on the NW_ASC_HEAL_AT_* setting of the associate and the master's current hitpoints. Returns FALSE if the master's hit points do not fall below the specified percentage threshold.
+version: 1.22
+seealso:
+  functions:
+    - GetAssociate
+    - GetAssociateState
+    - SetAssociateState
+  categories:
+    - Henchmen/Familiars/Summoned
+  constants:
+    - NW_ASC_HEAL_AT_* Constants
+author: Charles Feduke
+

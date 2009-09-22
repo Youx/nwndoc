@@ -1,0 +1,31 @@
+---
+type: Function
+name: DecrementRemainingFeatUses
+shortdesc: Decrements the remaining number of uses of a particular feat for a creature.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to decrement the remaining feat uses of.
+
+  - type: int
+    name: nFeat
+    desc: | FEAT_*
+
+description: |
+  Decrements the remaining uses per day of a particular feat (FEAT_* constant) for the specified oCreature.
+remarks: |
+  You must have at least one feat use remaining to be able to decrement it. It won't do anything if they have run out of uses already. 
+  Feats which you can use unlimited amounts of time/day, or are not used, cannot be decremented or supressed. 
+  Obviously, you must loop until GetHasFeat() is 0 to remove all uses of nFeat on a creature.
+bugs: |
+  A previous bug with the function actually allowing constant use if the function was used on a creature who had used up thier allowance of a feat, then using this set the amount remaining to -1 (constant/unlimited use) has been fixed.
+version: 1.27
+seealso:
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - FEAT_* Constants
+author: Charles Feduke
+editor: Jasperre
+

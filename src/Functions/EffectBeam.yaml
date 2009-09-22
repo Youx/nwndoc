@@ -1,0 +1,62 @@
+---
+type: Function
+name: EffectBeam
+shortdesc: Create a Beam effect.
+return: effect
+parameters:
+  - type: int
+    name: nBeamVisualEffect
+    desc: | VFX_BEAM_* Constant defining the visual type of beam to use.
+
+  - type: object
+    name: oEffector
+    desc: | The beam is emitted from this creature
+
+  - type: int
+    name: nBodyPart
+    desc: | BODY_NODE_* Constant defining where on the creature the beam originates from.
+
+  - type: int
+    name: bMissEffect
+    default: FALSE
+    desc: | If this is TRUE, the beam will fire to a random vector near or past the target (Default: FALSE)
+
+description: |
+  Returns a new effect object defining the beam's properties to use when the effect is applied. This should only be applied to another object. Firing it at a location will not work. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nBeamVisualEffect is not valid. 
+  The target you can apply this to can be any valid (non static) object that ApplyEffectToObject works on, but not a location. This effect cannot be applied instantly, only temporarily or permanently. 
+  The objects do not have to be creatures, and placeables work well with beams. Try to use the default chest body node.
+remarks: |
+  Constructors are special methods that return a new instance of an object. In NWN Script each effect that you can place on an object has it’s own constructor that creates a new instance of the specified effect. This effect object can then be used in an ApplyEffectToObject() Command. See Effect Constructor for more details. 
+  Currently only two Body Nodes are defined for us, the Hand and the Chest, for standard NwN. For Hordes (and probably 1.61+) there are nodes for the seperate Beholder eyestalks too. 
+  Note that beams with sound, which are not dictated by _SILENT at the end, usually should not be used many at a time, because of the constant sound effect being played. For visuals only, use the _SILENT version of a beam. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Apply a beam between 2 placeables, tagged as "BEAM1" 
+  // and "BEAM2". They could, of course, be any kind of 
+  // visible object, like a Creature or Door.
+  void main()
+  {
+      // Get the 2 objects
+      object oSource = GetObjectByTag("BEAM1");
+      object oTarget = GetObjectByTag("BEAM2");
+      // Declare the fire beam effect
+      effect eBeam = EffectBeam(VFX_BEAM_FIRE, oSource, BODY_NODE_CHEST);
+      // Apply it permamently
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eBeam, oTarget);
+  }
+seealso:
+  functions:
+    - EffectLinkEffects
+  categories:
+    - Effects
+    - Spell Casting Effects
+  constants:
+    - BODY_NODE_* Constants
+    - EFFECT_TYPE_* Constants
+    - VFX_BEAM_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

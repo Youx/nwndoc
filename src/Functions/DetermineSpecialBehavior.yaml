@@ -1,0 +1,32 @@
+---
+type: Function
+name: DetermineSpecialBehavior
+shortdesc: Makes a creature use behave a special way overriding default behavior.
+return: void
+parameters:
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | Object to determine behavior for. (Default: OBJECT_INVALID)
+
+description: |
+  Forces a creature to behave a certain way towards the nearest creature that it regards as an enemy that it visually perceives. oIntruder is only tested when the creature is an omnivore (has the behavior NW_FLAG_BEHAVIOR_OMNIVORE set), and even then the nearest enemy creature who is seen is the focus of its behavior. 
+  Basically this function determines if the creature has either behavior state NW_FLAG_BEHAVIOR_OMNIVORE (omnivore - eats both plants and animals - and PCs apparently), NW_FLAG_BEHAVIOR_HERBIVORE (eats just plants), or neither (NW_FLAG_CARNIVORE or no behavior set) and attacks, flees, or walks about. Omnivores attack non-Druids and non-Rangers, herbivores flee from non-Druids and non-Rangers, and everyone else just walks. Usually a check for the NW_FLAG_BEHAVIOR_SPECIAL constant (using GetBehaviorState(int)) on OBJECT_SELF results in this void being called in the default scripts. 
+  DetermineSpecialBehavior applies to OBJECT_SELF, so it should be placed in a creature's OnDamaged script and used in instances that would make a creature attack someone who last attacked it or invaded its den.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.28
+seealso:
+  functions:
+    - GetBehaviorState
+    - SetBehaviorState
+  categories:
+    - Core AI
+  constants:
+    - NW_FLAG_BEHAVIOR_* Constants
+  events:
+    - OnDamaged
+    - OnDisturbed
+author: Jody Fletcher
+editor: Charles Feduke
+

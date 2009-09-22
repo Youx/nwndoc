@@ -1,0 +1,39 @@
+---
+type: Function
+name: SetStandardFactionReputation
+shortdesc: Set a creature's faction standing within a given standard faction group.
+return: void
+parameters:
+  - type: int
+    name: nStandardFaction
+    desc: | STANDARD_FACTION_*
+
+  - type: int
+    name: nNewReputation
+    desc: | New faction standing. Must be a value between 0 and 100. (inclusive)
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | Target creature to set faction standing. (Default: OBJECT_SELF)
+
+description: |
+  Sets the current faction standing of oCreature within the standard faction group nStandardFaction to the new faction standing indicated by nNewReputation. The parameter nNewReputation must be a number between 0 and 100.
+remarks: |
+  The "cut-off points" are as follows: 
+  90-100: Friendly (defends when attacked by others). 
+  11-89: Neutral (won't attack, but won't help either). 
+  0-10: Hostile (will attack on sight).
+version: 1.61
+seealso:
+  functions:
+    - ClearAllFactionMembers
+    - ClearPersonalReputation
+    - GetStandardFactionReputation
+  categories:
+    - Reputation/Faction
+  constants:
+    - STANDARD_FACTION_* Constants
+author: Daniel Beckman
+editor: Lilac Soul
+

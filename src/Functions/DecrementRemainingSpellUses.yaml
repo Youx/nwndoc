@@ -1,0 +1,49 @@
+---
+type: Function
+name: DecrementRemainingSpellUses
+shortdesc: Decrease the number of spell uses of a particular spell for a given creature.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to decrement the remaining spell uses of a particular spell.
+
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+description: |
+  Decreases the remaining number of spell uses per day for a creature by one. A creature must have at least one spell use for this function to work. To make this work correctly, it should be used with GetHasSpell(). 
+  nSpell doesn't have to be a spell. It can be any entry in the spells.2da file. 
+  If they do not have any castings of nSpell memorised, then nothing will happen. 
+  Note that this has to be added into a loop, with GetHasSpell(), to remove all the avalible castings of nSpell.
+remarks: |
+  This is most useful for removing uses of spells that, for example, get used up in special ways (sacrificing spells to power an item for example). 
+  There is NO WAY to increment a spell, and there is no way to check if a spell *was* memorised either (so, there is no way to check if they *had* magic missile, but cast it earlier on). This will likely never be added - the only way to get back spells is resting (or ForceRest()). 
+  Note: There is no way to specifiy which classes spells go first. If anyone knows the order (wether it is in order of primary class, secondary class, or order of Cleric, Druid etc.) please report it so everyone can know, although it is rarely important.
+bugs: |
+  Prior to patch 1.28 this function did not work properly with spontaneously cast spells. Prior to 1.61, it didn't work with metamagic spells. Prior to 1.64, it didn't work with clerical domain spells. 
+  Whew! After all of that, it should now work correctly for any spells.2da entry, including all domain spells, sub-spells, metamagic spells, and spontaneous spells.
+version: 1.64
+example: |
+  // Decrement thier remaining magic missile uses by 1, in a 
+  // conversation.
+  // * Note: A conversation conditional script should check if they
+  //    have magic missile memorised to start with, before this fires.
+  void main()
+  {
+      // Get the PC
+      object oPC = GetPCSpeaker();
+      // Decrement the spell uses
+      DecrementRemainingSpellUses(oPC, SPELL_MAGIC_MISSILE);
+  }
+seealso:
+  categories:
+    - Spells
+  constants:
+    - SPELL_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Justin Koch
+  - Jasperre

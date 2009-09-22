@@ -1,0 +1,25 @@
+---
+type: Function
+name: ActivePortal
+shortdesc: NON-EXISTING IN VERSION 1.32
+return: void
+parameters:
+  - type: string
+    name: sWaypointTag
+    desc: | (case sensitive)
+
+description: |
+  NON-EXISTING IN VERSION 1.32
+remarks: |
+  This function has always been marked as unknown. There is no such function in version 1.32 (SoU). If you run a previous patch version of Neverwinter Nights, and this function is available, and you know what it does, please contact the Lexicon makers with details so we can update this entry. 
+  SPECULATION: This Lexicon entry might just be a misspelling of ActivatePortal
+version: 1.32
+seealso:
+  functions:
+    - ActivatePortal
+  categories:
+    - Prototyped but Unused
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,36 @@
+---
+type: Function
+name: DetermineCombatRound
+shortdesc: Determines NPC actions during any given round.
+return: void
+parameters:
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | (Default: OBJECT_INVALID)
+
+  - type: int
+    name: nAIDifficulty
+    default: 10
+    desc: | Not Used (Default: 10)
+
+description: |
+  This function is the master function for the generic include and is called from the main script. This function is used in lieu of any actual scripting. This function examines the NPC for spell-casting ability, and other possible actions.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.28
+seealso:
+  functions:
+    - ActionAttack
+    - chooseTactics
+    - DetermineAssociateCombatRound
+    - DetermineClassToUse
+  categories:
+    - Combat
+    - Core AI
+  events:
+    - OnPhysicalAttacked
+author: Jody Fletcher
+editor: Charles Feduke
+additional_contributors:
+  - Tim Stokman

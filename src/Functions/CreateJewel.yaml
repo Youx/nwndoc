@@ -1,0 +1,37 @@
+---
+type: Function
+name: CreateJewel
+shortdesc: Creates a Jewel in the container as part of the NWN trasure distribution system
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Container to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | a Player object
+
+  - type: int
+    name: nTreasureType
+    desc: | The Type of treasure
+
+  - type: int
+    name: nModifier
+    default: 0
+    desc: | PC Level modifier (Default: 0)
+
+description: |
+  This function creates a Jewel in the container based on the level of the PC opening the container + nModifier
+remarks: |
+  Found in nw_o2_coninclude.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

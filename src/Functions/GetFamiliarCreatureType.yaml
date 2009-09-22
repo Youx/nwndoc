@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetFamiliarCreatureType
+shortdesc: Gets the PC's animal companion creature type.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The PC who has an animal companion.
+
+description: |
+  Returns oCreature's animal companion creature type (ANIMAL_COMPANION_CREATURE_TYPE_*). 
+  Returns ANIMAL_COMPANION_CREATURE_TYPE_NONE if oCreature is invalid or does not currently have an animal companion.
+remarks: |
+  Returns no information for summoned creatures. Note that an animal companion is different from a familiar. 
+  This function returns the type of familiar that can be summoned, not the type of familiar that is currently summoned, so you can't use this to determine if a familiar has been summoned or not. 
+  If oCreature is possessing the familiar when this function is called, it will return FAMILIAR_TYPE_NONE. Presumably this is because a possessed familiar can't summon a familiar.
+bugs: |
+  GetAnimalCompanion* and GetFamiliar* functions are reversed - GetAnimalCompanion* returns for Sorcerer and Wizard familiars and GetFamiliar* returns for Ranger and Druid animal companions.
+version: 1.61
+seealso:
+  functions:
+    - GetAnimalCompanionCreatureType
+    - GetAnimalCompanionName
+    - GetAssociate
+    - GetFamiliarName
+    - GetHenchman
+    - SummonFamiliar
+  categories:
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+  constants:
+    - ANIMAL_COMPANION_CREATURE_TYPE_* Constants
+author: Charles Feduke
+editor: Jody Fletcher
+additional_contributors:
+  - Jody Fletcher
+  - Gene Koo
+  - Don Allman

@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetDroppableFlag
+shortdesc: Determines if an item can be dropped.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to test to see if it can be dropped.
+
+description: |
+  Returns TRUE if an item can be dropped, FALSE otherwise.
+remarks: |
+  The droppable flag only applies to items on NPCs. PCs will still be able to drop the item at will.
+version: 1.61
+seealso:
+  functions:
+    - SetDroppableFlag
+  categories:
+    - Inventory
+author: Charles Feduke
+editor: Lilac Soul
+

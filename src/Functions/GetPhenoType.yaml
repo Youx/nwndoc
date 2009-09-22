@@ -1,0 +1,40 @@
+---
+type: Function
+name: GetPhenoType
+shortdesc: Returns the creature's currently set PhenoType (body type).
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to check the phenotype of
+
+description: |
+  This will return the creature's currently set PhenoType (body type). 
+  The valid constants are PHENOTYPE_BIG, PHENOTYPE_NORMAL, and PHENOTYPE_CUSTOM.
+remarks: |
+  Note that a phenotype is only valid for the default 7 PC races (Dwarf, Human, Half Elf, Half Orc, Elf, Gnome and Halfling). 
+  It is basically the "Fat/Thin" option given when you create your character, however, custom content creators can have a better and more varied use for it as there will no doubt be.
+version: 1.64
+example: |
+  // If the PC's phenotype is big, we comment on it, in a conversation
+  void main()
+  {
+      // PC speaker
+      object oPC = GetPCSpeaker();
+      if(GetPhenoType(oPC) == PHENOTYPE_BIG)
+      {
+          // Comment on it dramatically and respectfully, as a Halfling might
+          SpeakString("oooh, we got a well-fed kind of a person here, ain't we!");
+      }
+  }
+seealso:
+  functions:
+    - SetPhenoType
+  categories:
+    - Get Data
+    - Get Data from Creature
+  constants:
+    - PHENOTYPE_* Constants
+author: Jasperre
+additional_contributors:
+  - Jasperre

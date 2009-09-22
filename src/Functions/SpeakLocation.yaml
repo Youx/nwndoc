@@ -1,0 +1,33 @@
+---
+type: Function
+name: SpeakLocation
+shortdesc: Make the caller of the function speak a string representation of its current location.
+return: void
+parameters:
+  - type: location
+    name: lLoc
+    desc: | Location to speak
+
+description: |
+  Makes the caller of the function speak a string representation of its current location.
+remarks: |
+  Simply calls LocationToString and SpeakString's that. 
+  This function will probably only be useful in debugging. 
+  Function is found in x0_i0_position, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+example: |
+  #include "nw_i0_generic"
+  //Speak my current location for debugging purposes
+  void main()
+  {
+  SpeakLocation(GetLocation(OBJECT_SELF));
+  }
+seealso:
+  functions:
+    - LocationToString
+  categories:
+    - Debug
+author: Lilac Soul
+

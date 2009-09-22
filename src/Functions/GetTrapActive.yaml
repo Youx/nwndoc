@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetTrapActive 
+shortdesc: Determines if a trap is active.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | A placeable, door or trigger.
+
+description: |
+  Determines if a trap is active.
+remarks: |
+  Returns TRUE if oTrapObject is active.
+version: 1.67
+seealso:
+  functions:
+    - SetTrapActive
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress

@@ -1,0 +1,30 @@
+---
+type: Function
+name: RemoveSpellEffects
+shortdesc: Removes the effects of a spell cast on a creature.
+return: void
+parameters:
+  - type: int
+    name: nSpellID
+    desc: | The spell whose effects are to be removed.
+
+  - type: object
+    name: oCaster
+    desc: | The caster of the spell.
+
+  - type: object
+    name: oTarget
+    desc: | The target of the spell who has the effects that are gonig to be removed.
+
+description: |
+  RemoveSpellEffects searchs through the effects on oTarget and removes those effects that were caused by the spell nSpell_ID and cast by oCaster.
+remarks: |
+  nw_i0_spells.nss: 21
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  categories:
+    - Spells
+author: Tom Cassiotis
+

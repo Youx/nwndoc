@@ -1,0 +1,28 @@
+---
+type: Function
+name: CreateBastardSword
+shortdesc: Creates a Bastard sword for the containers treasure
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Container to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | a Player object
+
+description: |
+  Spawns in a magical weapon of questionable leiniege as part of the random treasure distribution.
+remarks: |
+  Found in nw_o2_feat.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_feat"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

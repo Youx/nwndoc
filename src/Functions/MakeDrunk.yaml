@@ -1,0 +1,43 @@
+---
+type: Function
+name: MakeDrunk
+shortdesc: Gets a creature drunk.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Creature to get drunk.
+
+  - type: int
+    name: nPoints
+    desc: | Points to lower intelligence by
+
+description: |
+  Has oTarget play one of two animations (ANIMATION_LOOPING_PAUSE_DRUNK or ANIMATION_LOOPING_TALK_LAUGHING) and lowers his / her intelligence by nPoints for 60 seconds.
+remarks: |
+  nw_s3_alcohol.nss: 20 
+  Only creatures have intelligence and can do these animations, so this will only work on creatures (obviously). However, not all creatures have all animations, so the animation bit might not work for all creatures. Should work for all NPC-type creatures.
+requirements: |
+  #include "nw_s3_alcohol"
+version: 1.28
+example: |
+  //version 1.28 source, in nw_s3_alcohol
+  void MakeDrunk(object oTarget, int nPoints)
+  {
+      if (Random(100) + 1 < 40)
+          AssignCommand(oTarget, ActionPlayAnimation(ANIMATION_LOOPING_TALK_LAUGHING));
+      else
+          AssignCommand(oTarget, ActionPlayAnimation(ANIMATION_LOOPING_PAUSE_DRUNK));
+      effect eDumb = EffectAbilityDecrease(ABILITY_INTELLIGENCE, nPoints);
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eDumb, oTarget, 60.0);
+   //   AssignCommand(oTarget, SpeakString(IntToString(GetAbilityScore(oTarget,ABILITY_INTELLIGENCE))));
+  }
+seealso:
+  categories:
+    - Action on Object
+    - Effects
+  constants:
+    - ANIMATION_* Constants
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

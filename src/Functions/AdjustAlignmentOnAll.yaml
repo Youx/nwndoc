@@ -1,0 +1,43 @@
+---
+type: Function
+name: AdjustAlignmentOnAll
+shortdesc: Adjusts the alignment of the party.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The character whose party will be adjusted.
+
+  - type: int
+    name: nAlignment
+    desc: | ALIGNMENT_*
+
+  - type: int
+    name: nShift
+    desc: | The desired amount to shift the alignment (numeric range from -100 to 100).
+
+description: |
+  Adjust the alignment of every member of oPCs party including associates. 
+  ALIGNMENT_LAWFUL, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD, ALIGNMENT_EVIL: alignment will be shifted in the direction specified. 
+  ALIGNMENT_ALL: nShift will be added to oSubject's law/chaos and good/evil alignment values (thus adding/subtracting the same amount to both). 
+  ALIGNMENT_NEUTRAL: nShift is applied to oSubject's law/chaos and good/evil alignment values in the direction which is towards neutrality. 
+remarks: |
+  This function is a wrapper for the AdjustAlignment function. Because of its complex behaviour, the description and remarks for that function should be examined in detail before using AdjustAlignmentOnAll. 
+  Also note that x0_i0_partywide is already included in x0_i0_common. So you will only need to include one, not both.
+bugs: |
+  The behaviour of this function is not what you might expect. 
+  AdjustAlignment already applies a 20% knock on adjustment to every player in the party when the alignment for any PC is adjusted. 
+  As such using the AdjustAlignmentOnAll function will cause each PC to have its alignment adjusted multiple times, once by nShift, then additional knock on adjustments for each PC in the party and finally knock on adjustments for each associate the PC has.
+requirements: |
+  #include "x0_i0_partywide"
+version: 1.61
+seealso:
+  functions:
+    - AdjustAlignment
+  categories:
+    - Alignment
+    - Party
+  constants:
+    - ALIGNMENT_* Constants
+author: Grimlar
+

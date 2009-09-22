@@ -1,0 +1,48 @@
+---
+type: Function
+name: GetChangedPosition
+shortdesc: Convenience function that returns a vector that is fDistance away in fAngle direction
+return: vector
+parameters:
+  - type: vector
+    name: vOriginal
+    desc: | Original Position as a Vector
+
+  - type: float
+    name: fDistance
+    desc: | Distance to new location
+
+  - type: float
+    name: fAngle
+    desc: | Direction to new location
+
+description: |
+  This is a convenience function that returns a vector representing the position that is [(fDistance:float*meters) at fAngle:float] from vOriginal:vector. The function does not calculate any change in the Z-axis, instead assigning the current Z-axis to the new position. If a negative coordinate is generated, the absolute value will be used instead. 
+  Calls 
+  float GetChangeInX(float fDistance, float fAngle) 
+  float GetChangeInY(float fDistance, float fAngle) 
+remarks: |
+  This writer has to wonder why the author of this function didn’t simply write it as follows: 
+  vector vChanged; 
+  vChanged.z = vOriginal.z; 
+  vChanged.x = vOriginal.x + (fDistance* Cos(fAngle)); 
+  if (vChanged.x < 0.0) 
+  vChanged.x = - vChanged.x; 
+  vChanged.y = vOriginal.y + (fDistance* Sin(fAngle)); 
+  if (vChanged.y < 0.0) 
+  vChanged.y = - vChanged.y; 
+  return vChanged; 
+  This would have avoided the cognitive overhead of two extra functions (GetChangeInX, and GetChangeInY). Although I can see the need for a AbsFloat(fNum:Float):float that returns the absolute value of a float (since the Abs function takes an int)... 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  functions:
+    - GetChangeInX
+    - GetChangeInY
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

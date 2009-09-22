@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetStringLength
+shortdesc: Determines the length of a string.
+return: int
+parameters:
+  - type: string
+    name: sString
+    desc: | Target string to determine length of.
+
+description: |
+  Returns the length of sString. Returns -1 on error.
+remarks: |
+  This functions is supposed to return -1 on error, but I can't think when you could ever get this function to err. Both of the following scenarios return 0, not -1: 
+  string sBla=""; 
+  int nLength=GetStringLength(sBla); 
+  --- 
+  string sBla; 
+  int nLength=GetStringLength(sBla);
+version: 1.61
+example: |
+  void main()
+  {
+      string sStr = "Hello World";
+      int nLen = GetStringLength(sStr);
+      //nLen is now 11
+  }
+seealso:
+  categories:
+    - String
+author: Daniel Beckman
+editor: Lilac Soul
+

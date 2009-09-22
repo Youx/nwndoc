@@ -1,0 +1,47 @@
+---
+type: Function
+name: CreateTrapOnObject 
+shortdesc: Creates a Trap on the object specified.
+return: void
+parameters:
+  - type: int
+    name: nTrapType
+    desc: | The base type of trap. TRAP_BASE_TYPE_*
+
+  - type: object
+    name: oObject
+    desc: | The object that the trap will be created on. Works only on Doors and Placeables.
+
+  - type: int
+    name: nFaction
+    default: STANDARD_FACTION_HOSTILE
+    desc: | The faction of the trap. STANDARD_FACTION_*
+
+  - type: sOnDisarmScript
+    name: =
+  - type: sOnTrapTriggeredScript
+    name: =
+description: |
+  Creates a Trap on the object (doors and placeables only!) specified.
+remarks: |
+  After creating a trap on an object, you can change the trap's properties using the various SetTrap* scripting commands by passing in the object that the trap was created on (i.e. oObject) to any subsequent SetTrap* commands.
+version: 1.67
+seealso:
+  functions:
+    - CreateTrapAtLocation
+    - SetTrapActive
+    - SetTrapDetectable
+    - SetTrapDetectDC
+    - SetTrapDisabled
+    - SetTrapDisarmable
+    - SetTrapDisarmDC
+    - SetTrapKeyTag
+    - SetTrapOneShot
+    - SetTrapRecoverable
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress
+

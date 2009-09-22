@@ -1,0 +1,38 @@
+---
+type: Function
+name: GetSittingCreature
+shortdesc: Determines which creature sitting on a particular object.
+return: object
+parameters:
+  - type: object
+    name: oChair
+    desc: | The object to check who is sitting on.
+
+description: |
+  Returns the creature that is currently sitting on the oChair 
+  Returns OBJECT_INVALID if oChair is not a valid placeable or no creature is sitting on oChair.
+version: 1.61
+example: |
+  //Make everybody stop sitting in chairs tagged "SITTING_CHAIR"
+  void main()
+  {
+  int nCount=0;
+  object oSitter;
+  object oChair=GetObjectByTag("SITTING_CHAIR", nCount);
+  while (GetIsObjectValid(oChair))
+     {
+     oSitter=GetSittingCreature(oChair);
+     if (GetIsObjectValid(oSitter))
+           AssignCommand(oSitter, ClearAllActions());
+     nCount++;
+     oChair=GetObjectByTag("SITTING_CHAIR", nCount);
+     }
+  }
+seealso:
+  functions:
+    - ActionSit
+  categories:
+    - Get Data from Object
+author: Tom Cassiotis
+editor: Lilac Soul
+

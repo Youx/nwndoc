@@ -1,0 +1,44 @@
+---
+type: Function
+name: ActionMoveToObject
+shortdesc: Cause action subject to move to a certain distance of a target object.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to move action subject to.
+
+  - type: int
+    name: bRun
+    default: FALSE
+    desc: | If this is TRUE, the action subject will run rather than walk. (Default: FALSE)
+
+  - type: float
+    name: fRange
+    default: 1.0f
+    desc: | The desired distance between the action subject and oTarget. (Default: 1.0f)
+
+description: |
+  The action subject will move to within fRange of oTarget. If there is no path to oTarget, the function will do nothing. The function call waits for the subject to reach oTarget before executing further actions in the action queue. 
+  If an error occurs the log file will contain "ActionMoveToObject failed."
+remarks: |
+  Move to object functions (ActionForceMoveToObject, ActionMoveToObject) actually do path finding, unlike their move to location (ActionForceMoveToLocation, ActionMoveToLocation) counterparts.
+bugs: |
+  PCs ignore the value of bRun and always run to the target object. If you want a PC to walk rather than run, you must use ActionMoveToLocation instead.
+version: 1.61
+seealso:
+  functions:
+    - ActionForceMoveToLocation
+    - ActionForceMoveToObject
+    - ActionJumpToObject
+    - ActionMoveAwayFromObject
+    - ActionMoveToLocation
+  categories:
+    - Action on Object
+    - Core AI
+    - Movement
+author: Ryan Hunt
+editor: Lilac Soul
+additional_contributors:
+  - Harold Myles
+  - Lilac Soul

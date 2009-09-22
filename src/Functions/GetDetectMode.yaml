@@ -1,0 +1,47 @@
+---
+type: Function
+name: GetDetectMode
+shortdesc: Determines if a creature is currently searching.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to determine if it is detecting for stealthy creatures.
+
+description: |
+  Returns DETECT_MODE_ACTIVE if oCreature is in search mode and DETECT_MODE_PASSIVE if not.
+bugs: |
+  Sometimes returns a 2 for DETECT_MODE_PASSIVE instead of 0. A work around appears at the bottom of the code sample.
+version: 1.29
+example: |
+  // See if a search for a hidden item works when entering a trigger
+  int nDC = 20;       // Difficulty of search, "20" is just an example
+  object oPC = GetEnteringObject();
+  if ( GetIsPC(oPC) ) {
+      int nSearch = GetSkillRank( SKILL_SEARCH, oPC );
+      // Use only half the search value if not actively searching
+      if ( GetDetectMode(oPC) == DETECT_MODE_PASSIVE ) {
+          nSearch = nSearch / 2;
+      }
+      // Use a standard D&D style skill check
+      if ( d20() + nSearch >= nDC ) {
+          // Search successful - place code here 
+      }
+  }
+  // fix for GetDetectMode and DETECT_MODE_PASSIVE
+  // contributed by: Slow Slosh
+  int GetDetectModeBugFix(object oCreature) 
+  {
+      int iMode = GetDetectMode(oCreature);
+      if(iMode == 2) {iMode = DETECT_MODE_PASSIVE;}
+      return iMode;
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+  constants:
+    - DETECT_MODE_* Constants
+author: Drake Coker
+editor: Charles Feduke
+additional_contributors:
+  - Slow Slosh

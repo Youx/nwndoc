@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetRange
+shortdesc: Determines whether the HD falls in a range category.
+return: int
+parameters:
+  - type: int
+    name: nCategory
+    desc: | The category to test if nHD falls in (1-6).
+
+  - type: int
+    name: nHD
+    desc: | The HD to test.
+
+description: |
+  Returns TRUE if nHD matches the correct level range for the indicated nCategory, otherwise returns FALSE. 
+  For example, First to Fifth level characters are considered category 1.
+remarks: |
+  BioWare uses this function to help scale many aspects of the module including treasure generation, trap kits. 
+  Range 1: 0-5 HD 
+  Range 2: 6-8 HD 
+  Range 3: 9-10 HD 
+  Range 4: 11-13 HD 
+  Range 5: 14-16 HD 
+  Range 6: 17-100 HD 
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetName
+shortdesc: Retrieves the name of an object.
+return: string
+parameters:
+  - type: object
+    name: oObject
+    desc: | Object who's name is sought.
+
+  - type: int
+    name: bOriginalName
+    default: FALSE
+    desc: | If set to TRUE any new name specified via SetName() is ignored and the original object's name is returned instead. (Default: FALSE)
+
+description: |
+  Returns the first and last name of oObject. In the case of creatures, returns first and last names together as single concatenated string.
+remarks: |
+  GetName() returns the name of modules and areas (pre-1.25 it returned a null string).
+bugs: |
+  Returns "" for stores.
+version: 1.67
+seealso:
+  functions:
+    - SetName
+  categories:
+    - Get Data from Object
+author: Kristian Markon
+editor: Lilac Soul

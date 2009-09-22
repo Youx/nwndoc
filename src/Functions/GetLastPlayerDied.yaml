@@ -1,0 +1,53 @@
+---
+type: Function
+name: GetLastPlayerDied
+shortdesc: Determines the last PC that died.
+return: object
+parameters:
+description: |
+  Use this function in an OnPlayerDeath() module script to get the last player that died. 
+  Returns the last PC that died.
+remarks: |
+  Use this in OnPlayerDeath() script to create custom death penalties, respawning conditions, reset reputation etc.
+version: 1.22
+example: |
+  // From Bioware's David Gaider Scripting FAQ
+  // I'm creating a custom 'ClearAll FactionMembers' command, here
+  // first declaring the api for the new command, then what it does
+  // I could reasonably have put this in a seperate script and
+  // used #include to put it into this script (and others), as well
+  void ClearAllFactionMembers (object oMember, object oPlayer)
+  {
+      object oClear = GetFirstFactionMember (oMember, FALSE);
+      while (GetIsObjectValid(oClear) == TRUE)
+      {
+          ClearPersonalReputation (oPlayer, oClear);
+          oClear = GetNextFactionMember (oMember, FALSE);
+      }
+  }
+  // here's the main body of my script
+  void main()
+  {
+      // identify the player
+      object oPlayer = GetLastPlayerDied();
+      // identify a member of the faction. I'm assuming these members are alive.
+      // Otherwise, I would have to try several things to turn up a member that is
+      // first valid and then do the if command
+      object oGoblin = GetObjectByTag("GOBLIN1");
+      if (GetIsObjectValid(oGoblin))
+      {
+          // adjust the faction relation back up by 100
+          AdjustReputation (oPlayer, oGoblin, 100);
+          // run my custom command to cycle through the faction
+          ClearAllFactionMembers (oGoblin, oPlayer);
+      }
+  }
+seealso:
+  functions:
+    - GetLastPlayerDying
+  categories:
+    - PC Only
+  events:
+    - OnDeath
+author: Tom Cassiotis
+

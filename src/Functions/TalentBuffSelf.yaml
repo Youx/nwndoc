@@ -1,0 +1,31 @@
+---
+type: Function
+name: TalentBuffSelf
+shortdesc: Used for Potions of Enhancement and Protection
+return: int
+parameters:
+description: |
+  Returns TRUE if the calling creature can find the best Protection potion and use it, or find the best enhancement potion and use it. Otherwise will return FALSE.
+remarks: |
+  The breakdown of steps taken by this function are the following: 
+  Find the best protection potion the creature has. 
+  If the creature doesnt have a protection potion then get the best enhancement potion the creature has. 
+  Make sure that the same effects of the potion chosen are not already being applied to the creature 
+  If all is well, drink the potion 
+  --- 
+  This function is actually located in x0_i0_talent, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  functions:
+    - TalentEnhanceOthers
+    - TalentHealingSelf
+    - TalentUseEnhancementOnSelf
+  categories:
+    - Core AI Talent
+    - Inventory
+    - Talents/Skills/Feats
+author: John Shuell
+editor: Lilac Soul
+

@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetModuleName
+shortdesc: Get the module name.
+return: string
+parameters:
+description: |
+  Returns a string that is the name of the module in the language of the server. If there is no entry for the language of the server, then the function will return “”.
+version: 1.22
+example: |
+  // This will get the name of the module.
+  void main()
+  {
+      SendMessageToPC(GetFirstPC(),GetModuleName());
+  }
+seealso:
+  functions:
+    - GetModule
+  categories:
+    - Module
+author: GoLeM
+editor: Kristian Markon
+

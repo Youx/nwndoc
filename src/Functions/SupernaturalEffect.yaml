@@ -1,0 +1,46 @@
+---
+type: Function
+name: SupernaturalEffect
+shortdesc: Modifies an effect to make it a Supernatural effect.
+return: effect
+parameters:
+  - type: effect
+    name: eEffect
+    desc: | An effect to categorise as being SUBTYPE_SUPERNATURAL.
+
+description: |
+  Sets the subtype of eEffect to SUBTYPE_SUPERNATURAL and returns the modified eEffect, now a Supernatural effect. This allows the engine to apply the effect with the same rules as Supernatural Abilities (3rd edition DMG page 71, MM page 7). 
+  Permanent supernatural effects aren't removed by resting, and cannot be dispelled if applied from a spell script. 
+  If you put a link of effects as eEffect, then the entire link and all the effects within it are made supernatural. 
+  You cannot change exsisting effect's subtypes with this function, only ones you have created via. the "effect" declaration.
+remarks: |
+  The extent to which the Aurora Engine follows the 3rd Edition rules for Supernatural effects and abilities are not fully measured. 
+  However, tests by me (Jasperre) am definatly sure any supernatural effects are: 
+  - Undispellable 
+  - Cannot be removed by resting 
+  Permament monster abilities will be Supernatural, especially ones used on other beings, such as Curses, Ability Drain and Level Drain. 
+  Magical effects can be dispelled and removed by resting, and extraodinary effects can only be removed by resting.
+version: 1.61
+example: |
+  // Decrease entering PC's strength by 1 as a supernatural effect.
+  void main()
+  {
+      object oPC=GetEnteringObject();
+      if(!GetIsPC(oPC)) return;
+      effect eBad=EffectAbilityDecrease(ABILITY_STRENGTH, 1);
+      eBad=SupernaturalEffect(eBad);
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eBad, oPC);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - ExtraordinaryEffect
+    - MagicalEffect
+  categories:
+    - Effects
+  constants:
+    - SUBTYPE_* Constants
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Jasperre

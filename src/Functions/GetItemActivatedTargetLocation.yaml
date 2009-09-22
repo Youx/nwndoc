@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetItemActivatedTargetLocation
+shortdesc: Determine the location of the activated item's target.
+return: location
+parameters:
+description: |
+  Returns the location of the target of the activated item. Use this in a module's OnActivateItem event script to get the location of the item's target. 
+  Use this instead of GetItemActivatedTarget() if you need the location of the target object, or if the item can target empty locations as well as objects (for example, items with an "area of effect" spell).
+remarks: |
+  This function should only be called from the module's OnActivateItem event, because that's the only place it makes sense to refer to an activated item. 
+  Note that "item" refers to inventory objects. You can't use OnActivateItem to refer to a placeable object, such as a trap or switch. In those cases, use the placeable object's OnUsed event, or the trap's OnEnter event.
+version: 1.22
+seealso:
+  functions:
+    - GetItemActivated
+    - GetItemActivatedTarget
+  categories:
+    - Action on Object
+  events:
+    - OnActivateItem
+author: Jason Harris
+editor: Kristian Markon
+

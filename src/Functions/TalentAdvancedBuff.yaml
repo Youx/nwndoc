@@ -1,0 +1,87 @@
+---
+type: Function
+name: TalentAdvancedBuff
+shortdesc: Causes the NPC/Creature to buff themselves using a priority aligned list of spells if they have them.
+return: int
+parameters:
+  - type: float
+    name: fDistance
+    desc: | The safest distance to the nearest NPC in considering whether to cast buff spells on the calling object.
+
+  - type: int
+    name: bInstant
+    default: TRUE
+    desc: | Cast spells instantenously (TRUE or FALSE) (Default: TRUE)
+
+description: |
+  Causes creatures to buff themselves if the nearest NPC is less than or equal to fDistance. 
+  Uses ActionCastSpellAtObject, and uses the bInstant parameter as the bInstantSpell in the spell casting function.
+remarks: |
+  Causes creatures to buff themselves if the nearest PC is less than or equal to fDistance. The spells chosen are picked from the following groups of spells. One spell from each group, in the following order of preference, will be cast if the calling object has at least one spell in the category ready for casting: 
+  Combat Protection Spells 
+  Premonition 
+  Greater Stoneskin 
+  Stoneskin 
+  Visage Protection Spells 
+  Shadow Shield 
+  Ethereal Visage 
+  Ghostly Visage 
+  Mantle Protection Spells 
+  Greater Mantle 
+  Mantle 
+  Lesser Breach 
+  Globe Spells 
+  Globe Of Invulnerability 
+  Minor Globe Of Invulnerability 
+  Misc Protection Spells 
+  Elemental Shield 
+  Elemental Protection Spells 
+  Protection From Elements 
+  Resist Elements 
+  Endure Elements 
+  Mental Protection Spells 
+  Mind Blank 
+  Lesser Mind Blank 
+  Clarity 
+  Summon Allies 
+  Summon Creature IX 
+  Summon Creature VIII 
+  Summon Creature VII 
+  Summon Creature VI 
+  Summon Creature V 
+  Summon Creature IV 
+  Summon Creature III 
+  Summon Creature II 
+  Summon Creature I 
+  --- 
+  This function is actually located in x0_i0_talent, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+example: |
+  // Place in the OnPerceived User Defined Event of a creature to have it buff itself on sighting PCs closer than 40 units distance.  If it does not have the spells to do so, it will call to a nearby Orc Shaman to buff it.
+  void main()
+  {
+  	int nUser = GetUserDefinedEventNumber();
+  	if(nUser == 1002) //PERCEIVE
+  	{
+  		int EVENT_BUFF_ALLY = 5000;
+  		if(GetIsPC(GetLastPerceived())){
+  			if(!TalentAdvancedBuff(40.0)){
+  				object oOrcShaman = GetObjectByTag("OrcShaman");
+  				if(GetDistanceToObject(oOrcShaman) <= 30.0){
+  					SignalEvent(oOrcShaman, EventUserDefined(EVENT_BUFF_ALLY));
+  				}
+  			}
+  		}
+  	}
+  }
+seealso:
+  categories:
+    - Combat Actions
+    - Core AI Talent
+    - Spells
+    - Talents/Skills/Feats
+author: John Shuell
+editor: Lilac Soul
+

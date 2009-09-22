@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetAheadLocation
+shortdesc: This function returns a location directly in front of the tartget
+return: location
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target to be in front of
+
+description: |
+  Returns location directly ahead of the target and facing same direction as the target (think leading the target). 
+  Calls 
+  location GenerateNewLocation(object oTarget, float DISTANCE_MEDIUM, float fAngleToRightFlank, float fDir) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Area
+    - Combat
+    - Movement
+  constants:
+    - DISTANCE_* Constants
+author: Michael Nork
+

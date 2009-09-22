@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetAreaSize 
+shortdesc: Gets the size of the area.
+return: int
+parameters:
+  - type: int
+    name: nAreaDimension
+    desc: | The area dimension that you wish to determine. AREA_HEIGHT or AREA_WIDTH.
+
+  - type: object
+    name: oArea
+    desc: | The area that you wish to get the size of.
+
+description: |
+  Gets the size of the area.
+  nAreaDimension: AREA_HEIGHT returns the height of oArea. AREA_WIDTH returns the width of oArea.
+version: 1.67
+seealso:
+  functions:
+    - GetArea
+  categories:
+    - Area
+author: bernosky
+editor: Mistress

@@ -1,0 +1,35 @@
+---
+type: Function
+name: SendMessageToAllDMs
+shortdesc: Sends a message to all Dungeon Masters on server.
+return: void
+parameters:
+  - type: string
+    name: szMessage
+    desc: | Message to be sent to all DMs logged into server.
+
+description: |
+  Sends szMessage to all the Dungeon Masters currently on the server.
+remarks: |
+  Send a 'Shout' type chat message (sMessage) to all DMs. Messages appear as blue text prefixed by SERVER: (in purple)
+bugs: |
+  Messages do not display in 'DM Messages' chat windows.
+version: 1.30
+example: |
+  // sample debug call, covers many testing bases:
+  void debug( string sMessage ) {
+    SendMessageToPC( GetFirstPC(), sMessage );
+    SendMessageToAllDMs( sMessage );
+    PrintString( sMessage );
+  }
+seealso:
+  functions:
+    - PrintString
+    - SendMessageToPC
+  categories:
+    - Server
+    - String
+author: Iskander Merriman
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

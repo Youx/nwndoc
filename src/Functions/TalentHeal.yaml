@@ -1,0 +1,26 @@
+---
+type: Function
+name: TalentHeal
+shortdesc: Determines if creatures master (as a henchman) or fellow party members are damaged, if so, attempts to heal if has that ability.
+return: int
+parameters:
+  - type: int
+    name: nForce
+    default: FALSE
+    desc: | Select TRUE to force creature to only heal master PC. (Default: FALSE)
+
+description: |
+  Causes the creature to heal its master (if henchman) or fellow party members if GetAssociateHealMaster returns TRUE it heals the master, (or if nForce is set TRUE). 
+  It then checks fellow faction members to see most damaged member, sees if they are below 1/2 their maximum HP total. 
+  Determines whether or not the current creature can cast a heal spell, AND also verifies that the party member is NOT undead.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.29
+seealso:
+  functions:
+    - TalentCureCondition
+    - TalentHealingSelf
+  categories:
+    - Core AI Talent
+author: Jody Fletcher
+

@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetAssociateType
+shortdesc: Returns the associate type of the specified creature
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to get the associate type of
+
+description: |
+  Returns the associate type of the specified creature. 
+  Returns ASSOCIATE_TYPE_NONE if the creature is not the associate of anyone.
+remarks: |
+  Returns an ASSOCIATE_TYPE_* constant.
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+  constants:
+    - ASSOCIATE_TYPE_* Constants
+author: Lilac Soul
+

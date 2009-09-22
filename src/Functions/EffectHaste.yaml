@@ -1,0 +1,42 @@
+---
+type: Function
+name: EffectHaste
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+description: |
+  Create a Haste effect. 
+  Haste effects add +4 dodge AC, +1 action/round (be it a spell, so can cast 1 every 3 seconds, or an extra attack (be it spell or attack)) and 50% movement speed increase. 
+  Haste doesn't stack - item haste is exactly the same as these effects, even down to the dodge AC. Two hastes can be applied at once. I highly HIGHLY recommend no permament haste items in a module, they are highly unbalancing and worth a great many vorpal weapons. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This can be emulated by linking suitable other effects (EffectBonusAttacks(), EffectACIncrease(), EffectMovementSpeedIncrease()) if you do not want to give them an extra spell each round, which is not included in the 3.5E rules because it wasn't the aim of the spell to make mages that quick at casting spells. 
+  Haste is not overriden or dispelled by, but mearly overlaps with Slow, as in they just cancle each other. 
+  The dodge AC stacks as if it were a normal EffectACIncrease(). 
+  The extra attack can be a normal bonus melee attack (at your full, highest, base attack bonus), or even another spell - that is, spells take 3 seocnds to cast and you can cast 2 in a round. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 1 strength damage to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eHaste = EffectHaste();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HASTE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eHaste, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

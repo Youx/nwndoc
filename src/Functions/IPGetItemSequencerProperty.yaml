@@ -1,0 +1,23 @@
+---
+type: Function
+name: IPGetItemSequencerProperty
+shortdesc: Checks the sequencer property of an item.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to check for spell sequencer property.
+
+description: |
+  Returns FALSE it the item has no sequencer property 
+  returns number of spells that can be stored in any other case
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+    - Item Properties
+    - Spells
+author: Lilac Soul
+

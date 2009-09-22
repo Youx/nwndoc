@@ -1,0 +1,51 @@
+---
+type: Function
+name: SetPCDislike
+shortdesc: Sets the fact that a player dislikes a creature (or object).
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | The PC to set their attitude.
+
+  - type: object
+    name: oTarget
+    desc: | The creature that dislikes the PC (and the PC dislike it).
+
+description: |
+  Sets oPlayer and oTarget to dislike each other. 
+  "Like" is a neutral, non-hostile stance towards the oTarget. 
+  "Party" is a friendly stance towards oTarget. 
+  "Dislike" makes you an enemy of the person. When moused-over, you will glow with the same red aura as NPC enemies, and will function the same in other ways as well (mouse changes to the sword "attack" command, etc...) If any NPC creatures under your command (familiar, animal companion, summons, mercs) see a player you dislike, the will attack immediately. Also, note that these states are two-way. If you dislike another player, they will automatically dislike you. If you like someone when a state of dislike is in place, they will automatically like you as well.
+remarks: |
+  If oPlayer and oTarget are in the same party, you can't force them to dislike each other as "Party" is automatically on.
+version: 1.28
+example: |
+  // The PC who entered the trigger is set to dislike all the PC's in the module
+  void main()
+  {
+      // Get entering PC
+      object oEnterer = GetEnteringObject();
+      // make sure they are not a DM
+      if(GetIsPC(oEnterer) && !GetIsDM(oEnterer))
+      {
+          // Loop all PC's in the module and set this PC to dislike them - uh oh
+          object oPC = GetFirstPC();
+          while(GetIsObjectValid(oPC))
+          {
+              // Set to dislike
+              SetPCDislike(oEnterer, oPC);
+              // Get next PC
+              oPC = GetNextPC();
+          }
+      }
+  }
+seealso:
+  functions:
+    - SetPCLike
+  categories:
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Karl Frauendienst

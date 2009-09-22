@@ -1,0 +1,50 @@
+---
+type: Function
+name: CheckPartyForItem
+shortdesc: Check party for possession of an item.
+return: int
+parameters:
+  - type: object
+    name: oMember
+    desc: | Member of party to be checked.
+
+  - type: string
+    name: sItem
+    desc: | Tag of item to be checked for.
+
+description: |
+  Checks faction of oMember for the item defined by the tag sItem. Returns TRUE if anyone in oMember's faction possesses sItem. Returns FALSE if no one in oMember's faction posesses sItem.
+requirements: |
+  #include "NW_I0_TOOL"
+version: 1.22
+example: |
+  // Attached to OnClick event of a trigger. Sends clicker to
+  // destination defined by waypoint WP_Destination if any
+  // party member possesses the key with tag "TravelKey". 
+  // Otherwise, displays message indicating that the party
+  // does not have the key.
+  #include "nw_i0_tool"
+  void main()
+  {
+    object oClicker = GetClickingObject();
+    object oTarget = GetWaypointByTag("WP_Destination");
+    location lDest = GetLocation(oTarget);
+    if(CheckPartyForItem(oClicker, "TravelKey"))
+    {
+      AssignCommand(oClicker, ActionJumpToLocation(lDest));
+    }
+    else
+    {
+      SpeakString("Your party does not have the correct key.");
+    }
+  } 
+seealso:
+  functions:
+    - GetIsItemPossessedByParty
+  categories:
+    - Get Data
+    - Inventory
+    - Party
+author: Kristian Markon
+editor: Jeremy Spilinek
+

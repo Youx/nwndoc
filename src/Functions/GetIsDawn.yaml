@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetIsDawn
+shortdesc: Determines if it's currently dawn.
+return: int
+parameters:
+description: |
+  Returns TRUE if it is currently dawn, FALSE if it is any other time of the day.
+remarks: |
+  Because the dawn start hour can be configured in the advanced properties for a module, there is no fixed time for dawn.
+version: 1.22
+seealso:
+  functions:
+    - GetIsDay
+    - GetIsDusk
+    - GetIsNight
+    - GetTimeHour
+    - GetTimeMillisecond
+    - GetTimeMinute
+    - GetTimeSecond
+  categories:
+    - Time
+author: Charles Feduke
+editor: Kristian Markon
+

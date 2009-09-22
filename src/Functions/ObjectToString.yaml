@@ -1,0 +1,22 @@
+---
+type: Function
+name: ObjectToString
+shortdesc: Converts an object into a hexadecimal string.
+return: string
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object to convert into a string.
+
+description: |
+  Convert oObject into a hexadecimal string for use in debug messages.
+remarks: |
+  This is totally unique - no other object (at the exact time) will have that reference. 
+  It is insanely useful - more so then GetName() and GetTag() to debug exact object's scripts - ObjectToString(OBJECT_SELF) can return an object string for anything. Because it is unique, it can pinpoint exact problems in large scripting tasks.
+version: 1.22
+seealso:
+  categories:
+    - Debug
+author: Tom Cassiotis
+editor: Jasperre
+

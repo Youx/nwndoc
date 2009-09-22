@@ -1,0 +1,38 @@
+---
+type: Function
+name: GetLastSpell
+shortdesc: Determines the spell that was last cast.
+return: int
+parameters:
+description: |
+  This is for use in a OnSpellCastAt script, it gets the ID (SPELL_*) of the spell that was cast. 
+  It will not return the true spell value, but whatever value is put into the EventSpellCastAt() - therefore, sub-dial spells like Polymorph will mearly return SPELL_POLYMORPH not the sub spell number.
+remarks: |
+  You should not use this function in actual spell scripts. In spell scripts, use GetSpellId instead.
+version: 1.61
+example: |
+  // If the last spell was SPELL_VIRTUE say something
+  void main()
+  {
+      if(GetLastSpell() == SPELL_VIRTUE)
+      {
+          SpeakString("I feel so alive! I feel...virtuous!");
+      }
+  }
+seealso:
+  functions:
+    - GetLastGenericSpellCast
+    - GetLastSpellCaster
+    - GetLastSpellHarmful
+    - GetSpellId
+    - GetSpellSaveDC
+  categories:
+    - Get Data
+    - Spells
+  constants:
+    - SPELL_* Constants
+  events:
+    - OnSpellCastAt
+author: Jody Fletcher
+editor: Jasperre
+

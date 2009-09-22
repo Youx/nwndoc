@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetDeity
+shortdesc: Determine the deity of a creature.
+return: string
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to get the deity of.
+
+description: |
+  Returns the name of oCreature's deity and a blank string ("") if oCreature is invalid (or if the deity name is blank for oCreature).
+version: 1.22
+seealso:
+  functions:
+    - SetDeity
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+editor: Kristian Markon
+

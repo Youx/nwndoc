@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetAttemptedAttackTarget
+shortdesc: Determines the last creature that an attempted attack was made on.
+return: object
+parameters:
+description: |
+  Get the target that the caller attempted to attack - this should be used in conjunction with GetAttackTarget(). This value is set every time an attack is made, and is reset at the end of combat. 
+  Returns OBJECT_INVALID if the caller is not a valid creature.
+remarks: |
+  Set by attempting to attack somebody, just adding an attack action will set this. The default end of round script clears attack actions if the object loses their target.
+version: 1.26
+seealso:
+  functions:
+    - ActionAttack
+    - CheckFriendlyFireOnTarget
+    - GetAttackCompatibility
+    - GetAttackTarget
+    - GetIsFighting
+    - GetIsInCombat
+  categories:
+    - Combat Information
+    - Targeting
+  events:
+    - OnPhysicalAttacked
+author: Jody Fletcher
+editor: Charles Feduke
+additional_contributors:
+  - Jon McCarty
+  - Noel Borstad

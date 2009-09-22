@@ -1,0 +1,52 @@
+---
+type: Function
+name: BeginConversation
+shortdesc: Attempts to start a conversation immediately.
+return: int
+parameters:
+  - type: string
+    name: sResRef
+    default: ""
+    desc: | If this is not specified, the default dialog file will be used. (Default: "")
+
+  - type: object
+    name: oObjectToDialog
+    default: OBJECT_INVALID
+    desc: | If this is not specified the person that triggered the event-triggering object will be used. (Default: OBJECT_INVALID)
+
+description: |
+  This function is normally used at the (logical) end of an OnDialog script to start up the desired conversation. It can be used elsewhere, but ActionStartConversation may be more appropriate. 
+  If sResRef is unspecified, the engine refers to the properties of the object executing this command. If there is a conversation property set, that conversation will be used. 
+  By default, the function uses the triggering object of the containing event as the second parameter.
+remarks: |
+  Either the executing object or the oObjectToDialog must be a PC.
+version: 1.22
+example: |
+  // This script in an NPC's onConversation chooses a different 
+  // conversation file depending on the area the NPC's found in.
+  void main() {
+    // Get the area name
+    string sAreaName = GetTag(GetArea(OBJECT_SELF));
+    // Declare a variable for the conversation ResRef
+    string sConversation;
+    // Assign the right conversation by area
+    if ("isk_a_rangersrest" ==  sAreaName)
+      sConversation = "rangers_potboy";
+    else if ("isk_a_goldengoblin" ==  sAreaName)
+      sConversation = "ggoblin_thief";
+    else if ("isk_a_sewer1" ==  sAreaName)
+      sConversation = "assassin_servant";
+    // Start the appropriate conversation.
+    BeginConversation(sConversation);
+  }
+seealso:
+  functions:
+    - ActionStartConversation
+  categories:
+    - Action on Object
+    - Conversation
+  events:
+    - OnConversation
+author: Iskander Merriman
+editor: Jeremy Spilinek
+

@@ -1,0 +1,41 @@
+---
+type: Function
+name: ActionUseFeat
+shortdesc: Causes an NPC to use a feat on oTarget.
+return: void
+parameters:
+  - type: int
+    name: nFeat
+    desc: | FEAT_*
+
+  - type: object
+    name: oTarget
+    desc: | The object to be the target of the Feat.
+
+description: |
+  ActionUseFeat causes the actor to use the specified feat on the target object (if appropriate). If the actor doesn't have the Feat, this action does nothing. 
+  Only useable feats with a target can be used with this action. Feats such as Alertness, Martial Weapon Proficiency and so on cannot be used, of course.
+remarks: |
+  This action cannot be assigned to PCs. 
+  There is no way to make an NPC use a feat it doesn't have, there is no "Cheat" option, however, the new IncrementRemainingFeatUses() allows constant use of a feat - if they started out by knowing it. 
+  To remove feats, however, from being used, any useable ones can be decremented with DecrementRemainingFeatUses().
+version: 1.61
+example: |
+  // In 'Actions Taken' script of conversation node from
+  // an NPC with the 'Lay on Hands' feat:
+  ActionUseFeat( FEAT_LAY_ON_HANDS, GetPCSpeaker() );
+seealso:
+  functions:
+    - ActionUseSkill
+    - ActionUseTalentAtLocation
+    - ActionUseTalentOnObject
+    - GetHasFeatEffect
+  categories:
+    - Action on Object
+    - Combat
+    - Talents/Skills/Feats
+  constants:
+    - FEAT_* Constants
+author: Iskander Merriman
+editor: Jasperre
+

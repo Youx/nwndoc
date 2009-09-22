@@ -1,0 +1,51 @@
+---
+type: Function
+name: GetItemPropertyType
+shortdesc: Returns the type of itemproperty a property is.
+return: int
+parameters:
+  - type: itemproperty
+    name: ip
+    desc: | Itemproperty to get the type of.
+
+description: |
+  Will return the item property type.
+remarks: |
+  Returns ITEM_PROPERTY_*. 
+  Returns -1 on error, including if ip is not a valid itemproperty. 
+  Can be used to remove itemproperties of a certain type from an item.
+version: 1.61
+example: |
+  //Remove true seeing from the entering PC's headgear
+  void main()
+  {
+  //Entering object
+  object oPC=GetEnteringObject();
+  //Only PCs
+  if (!GetIsPC(oPC)) return;
+  //That PC's helmet
+  object oItem=GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  //Stop script if the PC had no helmet on
+  if (!GetIsObjectValid(oItem)) return;
+  //Get the first itemproperty on the helmet
+  itemproperty ipLoop=GetFirstItemProperty(oItem);
+  //Loop for as long as the ipLoop variable is valid
+  while (GetIsItemPropertyValid(ipLoop))
+     {
+     //If ipLoop is a true seeing property, remove it
+     if (GetItemPropertyType(ipLoop)==ITEM_PROPERTY_TRUE_SEEING)
+        RemoveItemProperty(oItem, ipLoop);
+     //Next itemproperty on the list...
+     ipLoop=GetNextItemProperty(oItem);
+     }
+  SendMessageToPC(oPC, IntToString(GetItemPropertyType(ipLoop)));
+  }
+seealso:
+  functions:
+    - GetFirstItemProperty
+    - GetNextItemProperty
+    - RemoveItemProperty
+  categories:
+    - Get Data
+author: Lilac Soul
+

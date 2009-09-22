@@ -1,0 +1,54 @@
+---
+type: Function
+name: CheckFriendlyFireOnTarget
+shortdesc: Gets how many friendly creatures are within a spherical range of a target object.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object target at the center of sphere to check for friends.
+
+  - type: float
+    name: fDistance
+    default: 5.0
+    desc: | The radius of sphere to check for friends. (Default: 5.0)
+
+description: |
+  Returns how many creatures in a sphere of radius fDistance, centered on oTarget, are friendly, and returns the count.
+remarks: |
+  Friendly creatures with less than half the hit dice of the caller are not counted. 
+  Used in the Core AI to determine whether or not to use protection talents, enhancement effects, and harmful AOE spells. Prevents henchmen from using indiscriminate harmful AOE spells at all while friends are in the target area.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.26
+example: |
+  //Have an NPC look around for a concentration of more than 1 enemy, 
+  //make sure no friendly creatures are within range, then fire off a 
+  //FireBall spell if they have one.
+  void main()
+  {
+  	oTarget = GetNearestCreature(CREATURE_TYPE_REPUTATION, REPUTATION_TYPE_ENEMY, OBJECT_SELF, 1, CREATURE_TYPE_PERCEPTION, PERCEPTION_SEEN);
+  	if(GetIsObjectValid(oTarget))
+  	{
+  		int nEnemy = CheckEnemyGroupingOnTarget(oTarget);
+  		int nFriendlies = CheckFriendlyFireOnTarget(oTarget);
+  		if( nFriendlies <= 0 &&  nEnemy >= 1)
+  		{
+  			ActionCastSpellAtObject(SPELL_FIREBALL,oTarget);
+  		}
+  	}
+  }
+seealso:
+  functions:
+    - AssociateCheck
+    - CheckEnemyGroupingOnTarget
+    - GetAttackTarget
+    - GetAttemptedAttackTarget
+    - GetIsFriend
+    - GetIsReactionTypeFriendly
+  categories:
+    - Combat
+    - Core AI
+author: Iskander Merriman
+editor: Charles Feduke
+

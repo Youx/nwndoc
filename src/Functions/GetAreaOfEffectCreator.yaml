@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetAreaOfEffectCreator
+shortdesc: Gets the creator of an Area of Effect object.
+return: object
+parameters:
+  - type: object
+    name: oAreaOfEffectObject
+    default: OBJECT_SELF
+    desc: | The Area of effect object you wish to examine. (Default: OBJECT_SELF)
+
+description: |
+  Returns the creator of oAreaOfEffectObject. 
+  Returns OBJECT_INVALID if oAreaOfEffectObject is not a valid Area of Effect object. 
+  It can return OBJECT_INVALID if the creator is invalid or destroyed. Usually the latter. If this happens for a spell script, almost all ResistSpell() function calls, and Will/Fort/ReflexSave functions will not work properley (as they require creatures to be input). For this reason, Bioware recently (1.59+) have added a destroy call to the start of area-of-effect scripts, to destroy them if the creator is invalid.
+remarks: |
+  Area of Effects are often scripted spells with numerous effects tied to them. This function is best called within the scripts that define an Area of Effect spell.
+version: 1.22
+seealso:
+  functions:
+    - GetEffectCreator
+  categories:
+    - Effects
+    - Get Data from Object
+author: John Shuell
+editor: Jasperre
+

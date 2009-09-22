@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetWillSavingThrow
+shortdesc: Determines the base will saving throw number of a creature, door or placeable.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature, door or placeable to get the saving throw.
+
+description: |
+  Returns oTarget's base will saving throw value (this will only work for creatures, doors, and placeables) and 0 if oTarget is invalid.
+version: 1.62
+seealso:
+  functions:
+    - SetWillSavingThrow
+    - WillSave
+  categories:
+    - Saving Throw
+author: Tom Cassiotis
+editor: Jasperre

@@ -1,0 +1,26 @@
+---
+type: Function
+name: EffectCutsceneDominated
+shortdesc: Creates an effect that is guranteed to dominate a creature.
+return: effect
+parameters:
+description: |
+  Creates an effect that is guranteed to dominate a creature, similiar to EffectDominated, but cannot be resisted. 
+  See EffectDominated for Code sample, more remarks and description.
+remarks: |
+  This is useful for bypassing a person's mind immunity which is common among many NwN items, although it is rarely needed now, because of newer cutseen functions. 
+  A nice crevat of this is that more then 1 dominated person can be added to a party, or faction, while EffectDominated only affects one person - and if a new one is targeted, the old one is released from its effects.
+version: 1.62
+example: |
+  // See EffectDominated for code sample for this.
+seealso:
+  functions:
+    - EffectCutsceneGhost
+    - EffectDominated
+  categories:
+    - Effects
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Cevrin
+  - Jasperre

@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetIsDay
+shortdesc: Determines if it is currently day.
+return: int
+parameters:
+description: |
+  Returns TRUE if it is currently day, FALSE if it is any other time of the day.
+remarks: |
+  Because the dawn/dusk start hour can be configured in the advanced properties for a module, there is no fixed time for day.
+version: 1.22
+seealso:
+  functions:
+    - DayToNight
+    - GetIsDawn
+    - GetIsDusk
+    - GetIsNight
+    - GetTimeHour
+    - GetTimeMillisecond
+    - GetTimeMinute
+    - GetTimeSecond
+    - NightToDay
+    - SetCalendar
+  categories:
+    - Time
+author: Charles Feduke
+editor: Tom Cassiotis
+

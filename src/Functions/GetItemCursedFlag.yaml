@@ -1,0 +1,47 @@
+---
+type: Function
+name: GetItemCursedFlag
+shortdesc: Checks if an item is cursed
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to determine if is cursed
+
+description: |
+  Returns TRUE if the item is cursed and cannot be dropped.
+remarks: |
+  See SetItemCursedFlag() for more information about what exactly this flag will do for an item.
+version: 1.62
+example: |
+  // We are going to destroy everything in the dying PC's 
+  // inventory, except, of course, the things that can't be dropped!
+  void main()
+  {
+       // Get the dead PC
+       object oPC = GetLastPlayerDied();
+       // Evil module! We destroy all items except:
+       // * Plot items
+       // * Undroppable (cursed flag) items
+       object oItem = GetFirstItemInInventory(oPC);
+       while(GetIsObjectValid(oItem))
+       {
+            // Destroy it if not undroppable
+            if(!GetPlotFlag(oItem) &&
+               !GetItemCursedFlag(oItem))
+            {
+                 DestroyObject(oItem);
+            }
+            oItem = GetNextItemInInventory(oPC);
+       }
+  }
+seealso:
+  functions:
+    - SetItemCursedFlag
+  categories:
+    - Get Data from Object
+    - Miscellaneous
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

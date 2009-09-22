@@ -1,0 +1,39 @@
+---
+type: Function
+name: SetIsTemporaryNeutral
+shortdesc: Causes an creature to consider another creature neutral indefintely or for a fixed time.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object whose reputation will be altered.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The creature whose opinion will change. (Default: OBJECT_SELF)
+
+  - type: int
+    name: bDecays
+    default: FALSE
+    desc: | If this is TRUE, the neutrality decays over fDurationInSeconds; otherwise it is indefinite. (Default: FALSE)
+
+  - type: float
+    name: fDurationInSeconds
+    default: 180.0f
+    desc: | This is only used if bDecays is TRUE, it is how long the neutrality lasts. (Default: 180.0f)
+
+description: |
+  Make oSource temporarily neutral to oTarget using personal reputation. This will fail if oTarget and oSource are in the same faction or party (Check with GetFactionEqual()) as they can never be considered tempoarily anything but what the faction in general tells them to think. 
+  Note: If bDecays is TRUE, the personal reputation amount decreases in sizeover fDurationInSeconds. Neutrality will only be in effect as long as (faction reputation + total personal reputation) > REPUTATION_TYPE_ENEMY and (faction reputation + total personal reputation) < REPUTATION_TYPE_FRIEND.
+version: 1.62
+seealso:
+  categories:
+    - Reputation/Faction
+  constants:
+    - REPUTATION_TYPE_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - chrono

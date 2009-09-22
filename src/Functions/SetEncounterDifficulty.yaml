@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetEncounterDifficulty
+shortdesc: Sets the difficulty level of an encounter.
+return: void
+parameters:
+  - type: int
+    name: nEncounterDifficulty
+    desc: | ENCOUNTER_DIFFICULTY_*
+
+  - type: object
+    name: oEncounter
+    default: OBJECT_SELF
+    desc: | The encounter to change the difficulty. (Default: OBJECT_SELF)
+
+description: |
+  Sets the difficulty level of oEncounter.
+remarks: |
+  The spawn-part of an encounter fires BEFORE the encounter's OnEnter does. Thus, if you call this in the OnEnter event, it will not have any effect on the group being spawned. You can draw a trigger around the encounter and call this function from OnEnter of that trigger instead as a workaround.
+version: 1.61
+seealso:
+  categories:
+    - Encounter
+  constants:
+    - ENCOUNTER_DIFFICULTY_* Constants
+author: Tom Cassiotis
+editor: Lilac Soul
+

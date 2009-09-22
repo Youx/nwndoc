@@ -1,0 +1,80 @@
+---
+type: Function
+name: DelayCommand
+shortdesc: Delays an assigned action for a period of time.
+return: void
+parameters:
+  - type: float
+    name: fSeconds
+    desc: | Number of seconds to delay the command by.
+
+  - type: action
+    name: aActionToDelay
+    desc: | Action in the Action Queue to delay.
+
+description: |
+  Delay aActionToDelay by fSeconds. If an error occurs the log file will contain "DelayCommand failed.". 
+  DelayCommand() is paused/inactive when EffectTimeStop is in effect.
+remarks: |
+  DelayCommand() is no longer capped by a time limit of 1 game day. 
+  Invalid objects can't execute stuff inside DelayCommands, meaning that DelayCommand should not be used in OnDeath events, or after a call to DestroyObject(OBJECT_SELF); 
+  Note that, though it takes an "action" type as a parameter, nwscript doesn't allow you to do stuff like: 
+  action aDo=SendMessageToPC(oPC, "Message"); 
+  You need to put the actual SendMessage... (or whatever) inside the DelayCommand call - you can't use the action keyword as a pointer to a function. In fact, the action keyword is unusable, except that BioWare can put it in function declarations, apparently. But we can't use it in function declarations ourselves. 
+  Also, please note that the delay starts when the function containing the call to DelayCommand finishes. 
+  So even no delay at all: 
+  DelayCommand(0.0f,ActionToDo()); 
+  will postphone the execution of 'ActionToDo()' until after everything else in the same function has finished. 
+  As of HotU, DelayCommand()'s order, if used with the same delay, has been swapped for performance reasons. A script with: 
+  DelayCommand(10.0, Foobar()); 
+  DelayCommand(10.0, Nothing()); 
+bugs: |
+bugs: |
+  DelayCommand can now be used in area transitions without losing the command. 
+  Also note that using DelayCommand on consecutive lines with the same amount of delay may produce unexpected results as of the HOTU release. Your code is less likely to break and will be more efficient if you place the sequence of actions in a seperate function and then delay the call to that function. See code example below.
+version: 1.62
+example: |
+  //The old way of doing it
+  void main()
+  {
+      //Make the NPC "NW_BOY" do something with the item "NW_PICKUP"
+      object oNPC = GetObjectByTag("NW_BOY");
+      object oPickObj = GetObjectByTag("NW_PICKUP");
+      //Tell anyone nearby that they are leaving
+      DelayCommand(3.0f,AssignCommand(oNPC, SpeakString("I'm going.", TALKVOLUME_TALK)));
+      //Walk over to oPickObj and pick it up
+      DelayCommand(3.0f,AssignCommand(oNPC, ActionPickUpItem(oPickObj)));
+      //Destroy NPC
+      DelayCommand(3.0f,AssignCommand(oNPC, ActionDoCommand(DestroyObject(oNPC))));
+  }
+  //The new way of doing it
+  void DoIt(object oNPC, object oPickObj)
+  {
+      //Tell anyone nearby that they are leaving
+      AssignCommand(oNPC, SpeakString("I'm going.", TALKVOLUME_TALK));
+      //Walk over to oPickObj and pick it up
+      AssignCommand(oNPC, ActionPickUpItem(oPickObj));
+      //Destroy NPC
+      AssignCommand(oNPC, ActionDoCommand(DestroyObject(oNPC)));
+  }
+  void main()
+  {
+      //Make the NPC "NW_BOY" do something with the item "NW_PICKUP"
+      DelayCommand(3.0f,DoIt(GetObjectByTag("NW_BOY"), GetObjectByTag("NW_PICKUP")));
+  }
+seealso:
+  functions:
+    - ActionWait
+    - ClearAllActions
+    - EffectTimeStop
+  categories:
+    - Action on Object
+    - Time
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Dieter
+  - Bob Stewart
+  - Lilac Soul
+  - Grimlar
+  - Jasperre

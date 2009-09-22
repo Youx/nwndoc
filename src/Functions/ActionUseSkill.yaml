@@ -1,0 +1,78 @@
+---
+type: Function
+name: ActionUseSkill
+shortdesc: Causes a creature to attempt to use a skill on another object.
+return: void
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+  - type: object
+    name: oTarget
+    desc: | Target to use the skill on
+
+  - type: int
+    name: nSubSkill
+    default: 0
+    desc: | SUBSKILL_* (Default: 0)
+
+  - type: object
+    name: oItemUsed
+    default: OBJECT_INVALID
+    desc: | Item to use in conjunction with the skill (Default: OBJECT_INVALID)
+
+description: |
+  Adding this action to the queue of a creature will make it attempt to use the specified skill. It will have no effect on the wrong sort of object - you cannot unlock a creature, or taunt a door. 
+  The nSubSkill parameter is used for recovering, disarming and flagging traps. 
+  oItemUsed must be a valid item appropriate to the skill. For example, a Healing Kit can be used with SKILL_HEAL. The creature must possess the item. 
+  Use ActionUseSkill with the same parameter values on oTarget again to cause it to stop using a skill which it is currently using.
+remarks: |
+  Some skills can be hostile acts, and invite attacks of opportunity, e.g. SKILL_TAUNT. 
+  Also note that most skills are not selectable, so really only SKILL_ANIMAL_EMPATHY, SKILL_DISABLE_TRAP, SKILL_HEAL, SKILL_OPEN_LOCK, SKILL_PICK_POCKET and SKILL_TAUNT. 
+  The skills SKILL_HIDE, and SKILL_SEARCH can be toggled with SetActionMode.
+bugs: |
+  SKILL_SET_TRAP does not work at all with this function, and therefore NPC's can never ever set traps. 
+  SKILL_PARRY also doesn't work, however, SetActionMode introduced means this would be redunant anyway.
+version: 1.61
+example: |
+  // The NPC in conversation with a PC Attempts to heal a PC with a healing kit
+  void main()
+  {
+      // Quick loop of inventory - get first BASE_ITEM_HEALERSKIT
+      object oInventory = GetFirstItemInInventory();
+      object oKit;
+      while(GetIsObjectValid(oInventory))
+      {
+          // Get if healers kit
+          if(GetBaseItemType(oInventory) == BASE_ITEM_HEALERSKIT)
+          {
+              oKit = oInventory;
+              break;
+          }
+          oInventory = GetNextItemInInventory();
+      }
+      // Check oKit
+      if(GetIsObjectValid(oKit))
+      {
+          // Use our heal skill.
+          ActionUseSkill(SKILL_HEAL, GetPCSpeaker(), 0, oKit);
+      }
+  }
+seealso:
+  functions:
+    - ActionUseFeat
+    - GetHasSkill
+    - GetSkillRank
+  categories:
+    - Action on Object
+    - Henchmen/Familiars/Summoned
+    - Talents/Skills/Feats
+  constants:
+    - SKILL_* Constants
+    - SUBSKILL_* Constants
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Pedro Vaz
+  - Jasperre

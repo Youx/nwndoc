@@ -1,0 +1,64 @@
+---
+type: Function
+name: GetNearestObject
+shortdesc: Gets the nearest object, which matches given criteria, to the selected target.
+return: object
+parameters:
+  - type: int
+    name: nObjectType
+    default: OBJECT_TYPE_ALL
+    desc: | OBJECT_TYPE_* (Default: OBJECT_TYPE_ALL)
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | (Default: OBJECT_SELF)
+
+  - type: int
+    name: nNth
+    default: 1
+    desc: | (Default: 1)
+
+description: |
+  Get the Nth object nearest to oTarget that is of the specified type. 
+  Return value on error: OBJECT_INVALID 
+  The function returns the Nth (default is 1, i.e. nearest) object that matches specified type. By default ‘type’ is set to OBJECT_TYPE_ALL, therefore the function will return the Nth nearest valid object unless you specify a type in the form OBJECT_TYPE_* (see end of description for a complete list of valid object types). Also by default the oTARGET is equal to OBJECT_SELF but may be set to another object. 
+  For example, the following script snippet would set object oNearestDoor to the third nearest door to the object oPC: 
+  object oNearestDoor = GetNearestObject(OBJECT_TYPE_DOOR, oPC, 3) 
+  List of available object types constants: 
+  OBJECT_TYPE_ALL (default) 
+  OBJECT_TYPE_AREA_OF_EFFECT 
+  OBJECT_TYPE_CREATURE 
+  OBJECT_TYPE_DOOR 
+  OBJECT_TYPE_ITEM 
+  OBJECT_TYPE_PLACEABLE 
+  OBJECT_TYPE_STORE 
+  OBJECT_TYPE_TRIGGER 
+  OBJECT_TYPE_WAYPOINT
+remarks: |
+  It can only return objects in oTarget's area, as GetNearestObjectByTag does, and is intended behaviour. 
+  Obviously, this also means Modules and Areas cannot return a valid value for this.
+version: 1.22
+example: |
+  // This script is for a bar maid tagged "BAR_MAID".
+  // The bar maid will find the third nearest door
+  // and attempt to walk to it.
+  void main
+  {
+       // Initialize objects.
+       object oBarMaid = GetObjectByTag("BAR_MAID");
+       object oDoor = GetNearestObject(OBJECT_TYPE_DOOR, oBarMaid, 3)
+       // Bar maid walks to the third nearest door.
+       ActionForceMoveToObject(oDoor)
+  }
+seealso:
+  functions:
+    - GetNearestObjectByTag
+    - GetNearestObjectToLocation
+  categories:
+    - Get Data from Object
+  constants:
+    - OBJECT_TYPE_* Constants
+author: Jason Simpson
+editor: Jasperre
+

@@ -1,0 +1,33 @@
+---
+type: Function
+name: GenerateNPCTreasure
+shortdesc: Use the random treasure functions to generate appropriate treasure for the creature to drop.
+return: void
+parameters:
+  - type: int
+    name: nTreasureValue
+    default: 1
+    desc: | Value of treasure (Default: 1)
+
+  - type: object
+    name: oTreasureGetter
+    default: OBJECT_SELF
+    desc: | Object getting the treasure (Default: OBJECT_SELF)
+
+  - type: object
+    name: oKiller
+    default: OBJECT_SELF
+    desc: | Object that slew the NPC (Default: OBJECT_SELF)
+
+description: |
+  This function creates treasure on the NPC the valid treasure values are 1 - 4 or LOW, MED, HIGH, BOSS.
+remarks: |
+  Preferrably called from OnSpawn scripts.. Found in: nw_o2_coninclude.nss
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.22
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+

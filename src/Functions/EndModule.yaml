@@ -1,0 +1,19 @@
+---
+type: Function
+name: EndModule
+shortdesc: Used for determining if the current module is an end module.
+return: int
+parameters:
+description: |
+  Returns TRUE if the current module is the last module in a series. An end module must have the tag "ENDMODULE", "ENDMODULE1", "ENDMODULE2", or "ENDMODULE3" for this function to return TRUE. Returns FALSE otherwise.
+remarks: |
+  Returns TRUE if the current module is one of the official campaign’s end modules, based on the tag of the current module. Hardly useful for anyone other than Bioware.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  categories:
+    - Get Data from Object
+author: Lilac Soul
+editor: Charles Feduke
+

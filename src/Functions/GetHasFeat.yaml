@@ -1,0 +1,44 @@
+---
+type: Function
+name: GetHasFeat
+shortdesc: Test whether a creature is able to perform a feat.
+return: int
+parameters:
+  - type: int
+    name: nFeat
+    desc: | FEAT_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | Creature to check for feat. (Default: OBJECT_SELF)
+
+description: |
+  Determine whether oCreature has nFeat, and nFeat is useable. Checks the highest level of a feat. Returns TRUE (1) if oCreature has nFeat and its usable, FALSE (0) otherwise.
+remarks: |
+  It may well return the amount of times it is useable, although it hasn't been checked. 
+  The feat doesn't have to be useable to return TRUE, as feats such as Alertness, Simple Weapon Proficiency and so forth can be returned TRUE by this. 
+  Any feat which stacks - such as bard songs, are got through the base (first) feat aquired for it - such as the first entry of FEAT_BARD_SONGS in feats.2da, or the first entry of FEAT_SNEAK_ATTACK in the same 2da.
+version: 1.61
+example: |
+  // If the PC speaker has the feat "Alertness" then the NPC whispers
+  // "I see you know whats going on around you..."
+  // Goes in a conversation somewhere.
+  void main()
+  {
+      if(GetHasFeat(FEAT_ALERTNESS, GetPCSpeaker()))
+      {
+          // Speak the whisper
+          SpeakString("I see you know whats going on around you...", TALKVOLUME_WHISPER);
+      }
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+    - Talents/Skills/Feats
+  constants:
+    - FEAT_* Constants
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Samvel Oganesyan

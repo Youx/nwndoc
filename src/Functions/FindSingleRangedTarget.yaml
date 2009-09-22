@@ -1,0 +1,23 @@
+---
+type: Function
+name: FindSingleRangedTarget
+shortdesc: Seeks out an enemy more than 3m away
+return: object
+parameters:
+description: |
+  Finds the nearest creature within a 30 meter radius sphere around the caller (OBJECT_SELF), though not any within 3 m or less.
+remarks: |
+  Used in the core AI to find a target for archers etc to shoot at.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.28
+seealso:
+  categories:
+    - Combat Information
+    - Core AI
+    - Math
+    - Targeting
+author: John Shuell
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

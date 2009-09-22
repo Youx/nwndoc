@@ -1,0 +1,36 @@
+---
+type: Function
+name: GetAILevel
+shortdesc: Retrieves the current AI (artificial intelligence) level that a creature is running at.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | Creature to check the AI level of. (Default: OBJECT_SELF)
+
+description: |
+  Returns the current AI_LEVEL_* value that a creature is running at. Different AI levels indicate how smart a creature acts and how much CPU time and priority it receives. Creatures that are standing by doing nothing generally have AI_LEVEL_LOW, but when a creature enters combat it will have AI_LEVEL_NORMAL by default.
+remarks: |
+  Too many creatures with AI_LEVEL_NORMAL will tax the processor and performance degradation will occur. 
+  AI_LEVEL_DEFAULT is recommended. Also note that the "smartness" is not actual "The AI will decide to do a worse action" but, "The AI doesn't have as much time from the CPU, and may have delayed actions".
+version: 1.30
+example: |
+  // If the AI level is not AI_LEVEL_DEFAULT, set it to it!
+  void main()
+  {
+      if(GetAILevel() != AI_LEVEL_DEFAULT)
+      {
+          SetAILevel(OBJECT_SELF, AI_LEVEL_DEFAULT);
+      }
+  }
+seealso:
+  functions:
+    - SetAILevel
+  categories:
+    - Core AI
+  constants:
+    - AI_LEVEL_* Constants
+author: Charles Feduke
+editor: Jasperre
+

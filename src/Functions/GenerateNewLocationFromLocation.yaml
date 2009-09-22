@@ -1,0 +1,47 @@
+---
+type: Function
+name: GenerateNewLocationFromLocation
+shortdesc: Creates a new location from a given location
+return: location
+parameters:
+  - type: location
+    name: lTarget
+    desc: | Location to start from
+
+  - type: float
+    name: fDistance
+    desc: | Create new location at this distance from lTarget
+
+  - type: float
+    name: fAngle
+    desc: | And at this angle
+
+  - type: float
+    name: fOrientation
+    desc: | Orientation of the new location
+
+description: |
+  This function returns a new location based on the following. 
+  A location: 
+  The name of this function is GenerateNewLocationFromLocation so this is the originating location that serves as teh point of reference for the new location. 
+  A distance and an angle: 
+  The new location is going to be (distance) away at (angle) angle with zero being north. 
+  A orientation 
+  Once created the location will be given the supplied facing. 
+  Calls 
+  object GetAreaFromLocation(location lTarget) 
+  vector GetPositionFromLocation(location lTarget) 
+  vector GetChangedPosition(vector vOriginal, float fDistance, float fAngle) 
+  location Location(object oArea, vector vNewPos, float fOrientation)
+remarks: |
+  BioWare lists this as a private function, but I can see a lot of purposes for this function. 
+  Function is found in x0_i0_position, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  categories:
+    - Area
+author: Lilac Soul
+editor: Michael Nork
+

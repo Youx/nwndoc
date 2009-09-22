@@ -1,0 +1,34 @@
+---
+type: Function
+name: TLResetAreaGroundTiles
+shortdesc: Removes tile magic visual effects from an area.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | Area to remove the tile magic from
+
+  - type: int
+    name: nColumns
+    desc: | Columns in the area
+
+  - type: int
+    name: nRows
+    desc: | Rows in the area
+
+description: |
+  Remove any ground area tiles created with TLChangeAreaGroundTiles in current area.
+remarks: |
+  nColumns and nRows are the size of the area. For instance, a 4 * 6 area has 4 columns and 6 rows. 
+  This removes visual effects by destroying all placeables tagged "x2_tmp_tile" in the area. This tag is automatically assigned to all the invisible objects created with TLChangeAreaGroundTiles.
+requirements: |
+  #include "x2_inc_toollib"
+version: 1.61
+seealso:
+  functions:
+    - TLChangeAreaGroundTiles
+  categories:
+    - Area
+    - Visual Effects
+author: Lilac Soul
+

@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetModuleItemAcquired
+shortdesc: Get the item acquired on an OnAcquiredItem event.
+return: object
+parameters:
+description: |
+  Returns the object that was just picked up or acquired in an OnAcquiredItem event. On error the function will return an OBJECT_INVALID; this should never happen but is possible if you trigger the event manually.
+version: 1.22
+example: |
+  // This will find the name of the item acquired in an OnAcquiredItem event.
+  void main()
+  {
+      object a = GetModuleItemAcquired();
+      if(a == OBJECT_INVALID)
+          SendMessageToPC(GetFirstPC(),"OOPS A CRASH ME THINKS");
+      else
+          SendMessageToPC(GetFirstPC(),GetTag(a));
+  }
+seealso:
+  functions:
+    - GetModuleItemAcquiredFrom
+    - GetModuleItemLost
+    - GetModuleItemLostBy
+  categories:
+    - Inventory
+    - Module
+  events:
+    - OnAcquireItem
+    - OnUnAcquireItem
+author: GoLeM
+editor: Kristian Markon
+

@@ -1,0 +1,44 @@
+---
+type: Function
+name: LocationToString
+shortdesc: Turn a location into a string.
+return: string
+parameters:
+  - type: location
+    name: loc
+    desc: | The location to be converted.
+
+description: |
+  Returns the string representation of the location(loc).
+remarks: |
+  Essentially a debug function that returns a string representation of the location parameter formatted as follows: 
+  (AreaTag) (xAxis yAxis zAxis) (facing) 
+  Where 
+  AreaTag is a string 
+  and 
+  xAxis, yAxis, zAxis, and facing are floats 
+  Calls 
+  string FloatToString(float f) 
+  string GetTag(object oArea) 
+  object GetAreaFromLocation(location loc) 
+  float GetFacingFromLocation(location loc) 
+  vector GetPositionFromLocation(location loc) 
+  string VectorToString(vector vec) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  functions:
+    - FloatToString
+    - GetAreaFromLocation
+    - GetFacingFromLocation
+    - GetPositionFromLocation
+    - GetTag
+    - SpeakLocation
+    - VectorToString
+  categories:
+    - Area
+    - Debug
+author: Grimlar
+editor: Michael Nork
+

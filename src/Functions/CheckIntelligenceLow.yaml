@@ -1,0 +1,43 @@
+---
+type: Function
+name: CheckIntelligenceLow
+shortdesc: Determines if the Intelligence score of the speaking player is below 9.
+return: int
+parameters:
+description: |
+  Returns TRUE if the player character in the conversation has an intelligence lower than 9.
+remarks: |
+  This function always uses GetPCSpeaker() to determine the intelligence score, so using it anywhere besides in a conversation will return FALSE. This was used by BioWare to handle different conversation choices and provide small insults for those characters who were of low intelligence. 
+  nw_i0_plot.nss: 57
+requirements: |
+  #include "nw_i0_plot"
+version: 1.28
+example: |
+  //Add as a starting conditional on a conversation thread for a Quest giving NPC who expects the player to return a stolen item.
+  //If they talk to him again, without having the diamond and a low intelligence score, he will call them idiots and tell
+  //them to get back out there and try again.
+  #include "NW_I0_Plot"
+  int StartingConditional()
+  {
+  	if(GetLocalInt(GetPCSpeaker(), "STEAL_DIAMOND_QUEST") == 1){
+  		int bQuestNotComplete = !GetIsObjectValid(GetItemPossessedBy(GetPCSpeaker(),"StolenDiamond")) &&
+  			     CheckIntelligenceLow();
+  	}else{
+  		int bQuestNotComplete = FALSE;
+  	}
+  	return bQuestNotComplete;
+  }
+seealso:
+  functions:
+    - CheckCharismaHigh
+    - CheckCharismaLow
+    - CheckCharismaMiddle
+    - CheckCharismaNormal
+    - CheckIntelligenceHigh
+    - CheckIntelligenceNormal
+    - CheckWisdomHigh
+  categories:
+    - Get Data from Creature
+author: John Shuell
+editor: Charles Feduke
+

@@ -1,0 +1,45 @@
+---
+type: Function
+name: GetFirstEffect
+shortdesc: Determines the first active effect on a creature.
+return: effect
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to examine for effects.
+
+description: |
+  Returns the first in-game effect (poisoned, cursed, etc.) on oCreature, and an invalid effect if oCreature does not have any active effects.
+version: 1.22
+example: |
+  // this code cycles through the effects active on the first PC and 
+  // stores whether s/he is blind or deaf
+  main()
+  {
+     effect eEffect = GetFirstEffect(GetFirstPC());
+     int blind = FALSE;
+     int deaf = FALSE;
+     int possibleDumb = FALSE;
+     while(GetIsEffectValid(eEffect))
+     {
+        nType = GetEffectType(eEffect);
+        if(nType == EFFECT_TYPE_BLINDNESS)
+           blind = TRUE;
+        else if(nType == EFFECT_TYPE_DEAF)
+           deaf = TRUE;
+        eEffect = GetNextEffect(GetFirstPC());
+     }
+     if (deaf == TRUE && blind == TRUE)
+        possibleDumb = TRUE;
+  }
+seealso:
+  functions:
+    - EffectSpellLevelAbsorption
+    - GetNextEffect
+    - RemoveEffect
+  categories:
+    - Effects
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Marcus Lunzenauer

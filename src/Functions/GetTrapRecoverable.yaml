@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetTrapRecoverable 
+shortdesc: Determines if a trap is recoverable.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | A placeable, door or trigger.
+
+description: |
+  Determines if a trap is recoverable.
+remarks: |
+  Returns TRUE if oTrapObject can be recovered.
+version: 1.67
+seealso:
+  functions:
+    - SetTrapRecoverable
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress

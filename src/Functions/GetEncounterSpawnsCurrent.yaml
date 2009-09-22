@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetEncounterSpawnsCurrent
+shortdesc: Get the number of times that the encounter has spawned so far.
+return: int
+parameters:
+  - type: object
+    name: oEncounter
+    default: OBJECT_SELF
+    desc: | The encounter object you wish to compare or examine. (Default: OBJECT_SELF)
+
+description: |
+  Returns the number of times that oEncounter has spawned so far since the module started.
+remarks: |
+  Another rarely used function.
+version: 1.22
+seealso:
+  functions:
+    - GetEncounterActive
+    - GetEncounterDifficulty
+    - GetEncounterSpawnsMax
+    - SetEncounterActive
+    - SetEncounterSpawnsCurrent
+  categories:
+    - Encounter
+author: John Shuell
+

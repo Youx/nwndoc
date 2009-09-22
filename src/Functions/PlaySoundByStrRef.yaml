@@ -1,0 +1,29 @@
+---
+type: Function
+name: PlaySoundByStrRef
+shortdesc: Plays a sound associated with a string reference (StrRef).
+return: void
+parameters:
+  - type: int
+    name: nStrRef
+    desc: | String reference number of the sound to play.
+
+  - type: int
+    name: nRunAsAction
+    default: TRUE
+    desc: | Determines if this is an action that can be stacked on the action queue. (Default: TRUE)
+
+description: |
+  Plays a sound associated with a StrRef. The sound comes out as a mono sound sourcing from the location of the object running the command. If nRunAsAction is FALSE, then the sound is played instantly.
+remarks: |
+  The StrRef values for sounds can be found in the file dialog.tlk in the NWN install directory. 
+  The StrRef is an index number into the user's dialog.tlk file, which is a language specific file. Since Hordes of the Underdark, it's become possible to easily make your own tlk file and include with your module. Note that you must add 16777216 to the index in your file, so if you want entry 1 in your custom tlk file, you'll need use 16777217 for the nStrRef in this function. 
+  More detailed information on talktables can be found here: 
+  http://ccg.dladventures.com/index.php/TalkTables
+version: 1.62
+seealso:
+  categories:
+    - Sound Effects
+author: Charles Feduke
+editor: Lilac Soul
+

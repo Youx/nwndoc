@@ -1,0 +1,47 @@
+---
+type: Function
+name: EffectInvisibility
+shortdesc: Create an Invisibility effect.
+return: effect
+parameters:
+  - type: int
+    name: nInvisibilityType
+    desc: | One of the INVISIBILITY_TYPE_* constants defining the type of invisibility to use.
+
+description: |
+  Returns a new effect object that when applied to a target causes them to become invisible in one of three possible levels defined in the INVISIBILITY_TYPE_* constants group. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nInvisibilityType is invalid. 
+  Normal invisiblity is broken once a hostile spell is cast, or the creature attacks. Darkness invisbility should only be applied when a creature is in a Darkness area-of-effect, and doesn't run out. Improved Invisibility (as par the 3E rules, but Bioware changed the spell to provide extra concealment), will not run out either, and acts as if always invisible. 
+  Invisiblity means anyone who cannot see through it (True seeing and See Invisibilty effects see though it) must hear you to attack you or know your location. Those who do attack an invisible person get a full 50% miss chance. If the invisible person attacks somebody, they get an automatic sneak-attack (if they have the feat) and +2 to thier roll, because the target doesn't know about them (unless they are being attacked by that somebody).
+remarks: |
+  I am sure if the different types of invisiblity you can put in, Improve Invisibility or Normal, does actually return the different effects EFFECT_TYPE_IMPROVEDINVISIBILITY and EFFECT_TYPE_INVISIBILITY, or just EFFECT_TYPE_INVISIBILITY. 
+  The mechanics are internal, however, and work pretty well (even hearing them if you get close enough or have enough listen skill). However, default monster AI isn't good enough to listen, and so invisiblity for the most part is as good as Etherealness if the people do not have EffectSeeInvisible() or EffectTrueSeeing() applied to them or thier hide. 
+  Any normal invisibility which is lost when attacking, and which is linked with EffectLinkEffects() to another effect, will remove all the effects linked to it. This is the same behaviour if RemoveEffect() was used to remove invisibility. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying invisiblity to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eInvisibility = EffectInvisibility(INVISIBILITY_TYPE_NORMAL);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_AC_BONUS);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eInvisibility, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - INVISIBILITY_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

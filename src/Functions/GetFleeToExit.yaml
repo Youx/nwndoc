@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetFleeToExit
+shortdesc: Returns TRUE if the executing object can use ActivateFleeToExit.
+return: int
+parameters:
+description: |
+  Returns TRUE if the executing object can use ActivateFleeToExit. 
+  This function merely checks that the correct spawn-in conditions have been set on an NPC for it to be able to ActivateFleeToExit. It does not check for the presence of an exit Waypoint, if one is necessary.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.62
+example: |
+  // If we can, leave.
+  if (GetFleeToExit()) ActivateFleeToExit();
+seealso:
+  functions:
+    - ActivateFleeToExit
+  categories:
+    - Core AI
+    - Get Data from Creature
+author: Iskander Merriman
+editor: Lilac Soul
+additional_contributors:
+  - Wayne Miller

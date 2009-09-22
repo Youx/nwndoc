@@ -1,0 +1,53 @@
+---
+type: Function
+name: PlayConversationAnimation
+shortdesc: Makes caller face a PC and play an animation.
+return: void
+parameters:
+  - type: int
+    name: nAnimationConstant
+    desc: | Animation to play (ANIMATION_*)
+
+  - type: object
+    name: oTarget
+    desc: | Object to face.
+
+description: |
+  First, the caller will face oTarget. If oTarget isn’t a valid object, the caller will face the nearest PC instead. Then, the caller will play the nAnimationConstant animation. If this is a looping animation, it is played for two seconds.
+remarks: |
+  Great for making tavern scripts and other scripts, where you want it to look like two NPCs are talking.
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.29
+example: |
+  //Paint a trigger around an NPC tagged "drunk_man"
+  #include "nw_i0_2q4luskan"
+  void main()
+  {
+  //Who is approaching the drunk?
+  object oTarget=GetEnteringObject();
+  //The drunk man in the middle of the trigger
+  object oDrunk=GetObjectByTag("drunk_man");
+  //Don't do this if the entering object is the drunk man
+  if (oTarget==oDrunk) return;
+  //Randomly pick one of three animations
+  int nAnimation;
+  switch (d3())
+  {
+  case 1: nAnimation=ANIMATION_LOOPING_TALK_LAUGHING; break;
+  case 2: nAnimation=ANIMATION_LOOPING_PAUSE_DRUNK; break;
+  case 3: nAnimation=ANIMATION_FIREFORGET_DRINK; break;
+  }
+  //Make oDrunk face oTarget and act like a drunkard.
+  AssignCommand(oDrunk, PlayConversationAnimation(nAnimation, oTarget));
+  }
+seealso:
+  categories:
+    - Action on Object
+    - Conversation
+    - Visual Effects
+  constants:
+    - ANIMATION_* Constants
+author: Lilac Soul
+editor: Charles Feduke
+

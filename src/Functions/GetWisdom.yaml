@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetWisdom
+shortdesc: Gets the targets Wisdom Ability Score.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object whose Wisdom you wish to inspect.
+
+description: |
+  Returns the Wisdom Ability value of oTarget.
+remarks: |
+  Function can be found in nw_i0_plot.nss on line 750. 
+  Very simple function, probably created so the scripters did not have to type out the full call to GetAbilityScore() each time they used it. This merely calls the GetAbilityScore(oTarget, ABILITY_WISDOM) function in that manner.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - GetAbilityScore
+    - GetCharisma
+    - GetIntelligence
+  categories:
+    - Get Data from Creature
+author: John Shuell
+

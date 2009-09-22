@@ -1,0 +1,36 @@
+---
+type: Function
+name: GetGold
+shortdesc: Gets the amount of gold that a creature possesses.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The creature to inspect for gold. (Default: OBJECT_SELF)
+
+description: |
+  Returns the amount of gold possessed by oTarget.
+remarks: |
+  This simply is an integer value - noting that gold weighs nothing. 
+  It should be possible to put oTarget as something other then a creature (say, a chest) but this hasn't been tested.
+version: 1.22
+example: |
+  // This can be used to only say a line in a conversation if the
+  // speaker has 100gp or more.
+  int StartingConditional()
+  {
+     int iResult;
+     iResult = (GetGold(GetPCSpeaker()) >= 100);
+     return iResult;
+  }
+seealso:
+  functions:
+    - GiveGoldToCreature
+    - HasGold
+  categories:
+    - Money
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

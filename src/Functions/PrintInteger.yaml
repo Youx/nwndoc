@@ -1,0 +1,23 @@
+---
+type: Function
+name: PrintInteger
+shortdesc: Records an integer to the log file.
+return: void
+parameters:
+  - type: int
+    name: nInteger
+    desc: | The number to output to the log file.
+
+description: |
+  Outputs nInteger to the log file.
+version: 1.22
+seealso:
+  functions:
+    - PrintFloat
+    - PrintString
+    - PrintVector
+  categories:
+    - Debug
+author: Tom Cassiotis
+editor: Charles Feduke
+

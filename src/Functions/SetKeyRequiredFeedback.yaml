@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetKeyRequiredFeedback 
+shortdesc: Set the feedback message that is displayed when trying to unlock the object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door or placeable.
+
+  - type: string
+    name: sFeedbackMessage
+    desc: | The string to be displayed in the player's text window. To use the game's default message, set sFeedbackMessage to "".
+
+description: |
+  Set the feedback message that is displayed when trying to unlock the object.
+version: 1.67
+seealso:
+  functions:
+    - GetKeyRequiredFeedback
+  categories:
+    - Action on Object
+    - Get Data from Object
+author: Mistress
+

@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetPlotToken
+shortdesc: Retrieves the plot token number.
+return: int
+parameters:
+description: |
+  Returns the plot token number that was set using SetPlotToken().
+remarks: |
+  'This function is of little use for general scripting 
+  needs.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.22
+seealso:
+  functions:
+    - SetPlotToken
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

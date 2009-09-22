@@ -1,0 +1,25 @@
+---
+type: Function
+name: SpeakQuickChat
+shortdesc: Sends a line of text overhead the henchman.
+return: void
+parameters:
+  - type: string
+    name: sVoice
+    desc: | Text to be said.
+
+description: |
+  This function is used for debugging only. Used with OpenNearestLock. Function would say "FAKEQUICKCHAT:Task, Can do" above the henchman's head.
+remarks: |
+  Script: nw_i0_assoc.nss: Line: 19
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.22
+seealso:
+  functions:
+    - OpenNearestLock
+  categories:
+    - Henchmen/Familiars/Summoned
+    - String
+author: Jody Fletcher
+

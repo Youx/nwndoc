@@ -1,0 +1,55 @@
+---
+type: Function
+name: GiveGoldToAllEqually
+shortdesc: Divides a given amount of gold equally among PCs in a PC's party
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: int
+    name: nGoldToDivide
+    desc: | amount of gold to share
+
+description: |
+  Given a PC and a gold value, divides it equally among the PCs of the Player Character's party. None is given to associates. 
+bugs: |
+remarks: |
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors! 
+bugs: |
+  This uses GetNumberPartyMembers(), which will add one (counting the original oPC twice). 
+  The work around is obvious: just get the correct # of party members, divide the gold by that amount and use GiveGoldToAll function.
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.62
+example: |
+  // By using the fix above, we divide 100 gold between the oPC's
+  // party as a reward for a job completed.
+  // Possibly would update the journal in the same script (with a note 
+  // about how much the reward was, and how poor the PC's are!)
+  // If the function was fixed, we'd normally just use GiveGoldToAllEqually()
+  #include "X0_I0_PARTYWIDE"
+  void main()
+  {
+       // Get PC to reward
+       object oPC = GetPCSpeaker();
+       // Reward the party
+       int nGold = 100;
+       // Get gold for each PC
+       // - Take one off GetNumberPartyMembers(), see known bugs
+       int nMembers = GetNumberPartyMembers(oPC) - 1;
+       // Give the correct gold to all of them
+       GiveGoldToAll(oPC, nGold/nMembers);
+  }
+seealso:
+  categories:
+    - Money
+    - Party
+author: Peter Busby
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Tom Raynor

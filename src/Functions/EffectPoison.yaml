@@ -1,0 +1,106 @@
+---
+type: Function
+name: EffectPoison
+shortdesc: Create a Poison effect.
+return: effect
+parameters:
+  - type: int
+    name: nPoisonType
+    desc: | The type of poison to use, as defined in the POISON_* constant group.
+
+description: |
+  Returns a new effect object that when applied to the target will cause them to be Poisoned with the nPoisonType type of posion as defined in the POISON_* constant group. 
+  No more then 1 poison can affect one target at once, and is a game engine limit, not a scripting one. Poisons from Spells and Creature Attacks (or any item with On Hit: Poison) are the same for this basis, and even if only secondary effects are applied, no new poison can be. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly or temporarily, only permanently.
+remarks: |
+  Never apply this temporarily, like disease, as the additional saves and additional damage may not work correctly. 
+  Notes: Most Poisons do not do hit point damage (and none do any direct damage). Poison effects do not currently stack, they overwrite each other. If the target makes his Saving Throw for the initial effect, he will by default save against the secondary effect. 
+  See the Poisons.2da for more information about what each poison type does, or the constants list for poisons in the lexicon. You cannot add new poisions, it seems, only edit the exsisting ones in the 2da file. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  /*
+       Place this in the OnUsed event of an object.
+       It will remove all bad effects and then cause
+       a new poison to attempt to infect the user of
+       the object each time it is used.
+       It loops through all poison defined in the game.
+  */
+  //Returns TRUE if any negative effects are found on the target and removes them.
+  int RemoveEffects(object oTarget);
+  void main()
+  {
+       int nCurrentEffect;
+       int nNextEffect;
+       effect ePoison;
+       object oPC;
+       string sPoison;
+       nCurrentEffect = GetLocalInt(OBJECT_SELF,"nCurrentEffect");
+       ePoison = EffectPoison(nCurrentEffect);
+       oPC = GetLastUsedBy();
+       if(RemoveEffects(oPC)){
+            SendMessageToPC(oPC,"Negative Effects removed.");
+            return;
+       }
+       SendMessageToPC(oPC,"Applying Poison number " + IntToString(nCurrentEffect));
+       ApplyEffectToObject(DURATION_TYPE_TEMPORARY,ePoison,oPC,30.0f);
+       if( nCurrentEffect == 43)
+       {
+            nNextEffect=0;
+       }else{
+            nNextEffect=nCurrentEffect+1;
+       }
+       SetLocalInt(OBJECT_SELF,"nCurrentEffect",nNextEffect);
+       SendMessageToPC(oPC,"Next Poison number " + IntToString(nNextEffect));
+       return;
+  }
+  //Returns TRUE if any negative effects are found on the target and removes them.
+  int RemoveEffects(object oTarget)
+  {
+      //Declare major variables
+      effect eVisual = EffectVisualEffect(VFX_IMP_RESTORATION);
+      int bValid = FALSE;
+      effect eBad = GetFirstEffect(oTarget);
+      //Search for negative effects
+      while(GetIsEffectValid(eBad))
+      {
+          if (GetEffectType(eBad) == EFFECT_TYPE_ABILITY_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_AC_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_ATTACK_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_DAMAGE_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_DAMAGE_IMMUNITY_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_SAVING_THROW_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_SPELL_RESISTANCE_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_SKILL_DECREASE ||
+              GetEffectType(eBad) == EFFECT_TYPE_BLINDNESS ||
+              GetEffectType(eBad) == EFFECT_TYPE_DEAF ||
+              GetEffectType(eBad) == EFFECT_TYPE_PARALYZE ||
+              GetEffectType(eBad) == EFFECT_TYPE_NEGATIVELEVEL ||
+              GetEffectType(eBad) == EFFECT_TYPE_FRIGHTENED ||
+              GetEffectType(eBad) == EFFECT_TYPE_DAZED ||
+              GetEffectType(eBad) == EFFECT_TYPE_CONFUSED ||
+              GetEffectType(eBad) == EFFECT_TYPE_POISON ||
+              GetEffectType(eBad) == EFFECT_TYPE_DISEASE
+                  )
+              {
+                  //Remove effect if it is negative.
+                  RemoveEffect(oTarget, eBad);
+                  bValid = TRUE;
+              }
+          eBad = GetNextEffect(oTarget);
+      }
+      if(bValid)
+           ApplyEffectToObject(DURATION_TYPE_INSTANT, eVisual, oTarget);
+      return bValid;
+  }
+seealso:
+  functions:
+    - EffectDisease
+  categories:
+    - Effects
+  constants:
+    - POISON_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,26 @@
+---
+type: Function
+name: EventActivateItem
+shortdesc: Returns an event of type Activate Item.
+return: event
+parameters:
+  - type: object
+    name: oItem
+    desc: | lTarget
+
+  - type: location
+    name: lTarget
+  - type: object
+    name: oTarget
+description: |
+  Returns an event of type Activate Item.
+remarks: |
+  Only the event is created, it still must be triggered using SignalEvent().
+version: 1.22
+seealso:
+  functions:
+    - SignalEvent
+  categories:
+    - Action on Object
+author: Brett Lathrope
+

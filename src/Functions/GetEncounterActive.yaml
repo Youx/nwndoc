@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetEncounterActive
+shortdesc: Gets a TRUE or FALSE value depending on whether the encounter has spawned and is active.
+return: int
+parameters:
+  - type: object
+    name: oEncounter
+    default: OBJECT_SELF
+    desc: | The encounter object you wish to compare or examine. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE or FALSE, whether oEncounter has spawned and is currently active. 
+remarks: |
+  You can set the active property of an encounter using the SetEncounterActive() function. Some comments in the Bioware include files allude to this not working with the current implementation of the encounter trigger.
+version: 1.22
+seealso:
+  functions:
+    - GetEncounterDifficulty
+    - GetEncounterSpawnsCurrent
+    - GetEncounterSpawnsMax
+    - SetEncounterActive
+  categories:
+    - Encounter
+author: John Shuell
+

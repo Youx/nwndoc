@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetEncounterSpawnsMax
+shortdesc: Sets the maximum number of times that an encounter can spawn.
+return: void
+parameters:
+  - type: int
+    name: nNewValue
+    desc: | The new maximum spawn value.
+
+  - type: object
+    name: oEncounter
+    default: OBJECT_SELF
+    desc: | The encounter to have its value changed. (Default: OBJECT_SELF)
+
+description: |
+  Sets the maximum number of times that oEncounter can spawn.
+remarks: |
+  The spawn-part of an encounter fires BEFORE the encounter's OnEnter does. Thus, if you call this in the OnEnter event, it will not have any effect on the group being spawned. You can draw a trigger around the encounter and call this function from OnEnter of that trigger instead as a workaround.
+version: 1.61
+seealso:
+  functions:
+    - GetEncounterSpawnsMax
+  categories:
+    - Encounter
+author: Tom Cassiotis
+editor: Lilac Soul
+

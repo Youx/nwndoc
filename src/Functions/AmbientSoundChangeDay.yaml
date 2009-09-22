@@ -1,0 +1,53 @@
+---
+type: Function
+name: AmbientSoundChangeDay
+shortdesc: Changes the ambient daytime soundtrack of an area.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area whose soundscape you want to change.
+
+  - type: int
+    name: nTrack
+    desc: | The reference of the ambient soundtrack to use.
+
+description: |
+  Change the ambient day track for oArea to nTrack, where nTrack is an integer reference to an ambient sound track.
+remarks: |
+  Ambient soundtracks are referenced in ambientmusic.2da, but those integers aren't exposed as constants. The files they refer to appear in the /music directory, as *.bmu files, which are just .mp3 files by another name. 
+  This will also turn the ambient sounds back on if they have been turned off.
+version: 1.61
+example: |
+  // A trigger's OnEvent script:
+  void main() 
+  {
+       object oArea = GetArea(OBJECT_SELF);
+       MusicBackgroundStop(oArea); // Shut the music up
+       AmbientSoundChangeDay(oArea, 46); // al_an_lzrdflk1
+       AmbientSoundChangeNight(oArea, 46); // al_an_lzrdflk1
+       AmbientSoundPlay(oArea); // In case it's off
+       AmbientSoundSetDayVolume(oArea, 100); // In case it's too quiet
+       AmbientSoundSetNightVolume(oArea, 100); // In case it's too quiet
+       // Start the music up again.
+       DelayCommand(30.0, MusicBackgroundPlay(oArea));
+  }
+  /* From the Prelude, AREA_M1Q0C_4:
+  AmbientSoundChangeDay(OBJECT_SELF,26);
+  AmbientSoundChangeNight(OBJECT_SELF,26);
+  MusicBackgroundStop(OBJECT_SELF); */
+seealso:
+  functions:
+    - AmbientSoundChangeNight
+    - AmbientSoundPlay
+    - AmbientSoundSetDayVolume
+    - AmbientSoundSetNightVolume
+    - AmbientSoundStop
+    - SoundObjectPlay
+  categories:
+    - Area
+    - Sound Effects
+author: Iskander Merriman
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

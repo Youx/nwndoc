@@ -1,0 +1,56 @@
+---
+type: Function
+name: GetFirstInPersistentObject
+shortdesc: Determines the first object of a specific type that is inside a persistent object.
+return: object
+parameters:
+  - type: object
+    name: oPersistentObject
+    default: OBJECT_SELF
+    desc: | The object that contains the object. (Default: OBJECT_SELF)
+
+  - type: int
+    name: nResidentObjectType
+    default: OBJECT_TYPE_CREATURE
+    desc: | OBJECT_TYPE_* (Default: OBJECT_TYPE_CREATURE)
+
+  - type: int
+    name: nPersistentZone
+    default: PERSISTENT_ZONE_ACTIVE
+    desc: | PERSISTENT_ZONE_ACTIVE. [This could also take the value PERSISTENT_ZONE_FOLLOW, but this is no longer used.] (Default: PERSISTENT_ZONE_ACTIVE)
+
+description: |
+  Returns the first object within oPersistentObject of the specified type in order and OBJECT_INVALID if no object is found. 
+  PERSISTANT_ZONE_FOLLOW probably will no longer work, due to Bioware's own comments, and is never used. It was probably once used for mobile AOE's that are on aura's. 
+  The order for things got during this is not based on range or anything, but normall works clockwise from west (0.0), but this rarely matters.
+remarks: |
+  Used to cycle through all of contained objects via GetNextInPersistentObject(). 
+  Bioware uses this function in scripts to implement area of effect spells. 
+  Also note that triggers are persistent objects, so you can cycle through objects in triggers using this command. See the code example below.
+version: 1.32
+example: |
+  void main()
+  {
+  //The trigger to look in
+  object oTrigger=GetObjectByTag("killer_trigger");
+  //First object in that trigger. We can use bitwise |
+  //Because of the values of the OBJECT_TYPE_* constants
+  object oInTrigger=GetFirstInPersistentObject(oTrigger, OBJECT_TYPE_CREATURE | OBJECT_TYPE_PLACEABLE |OBJECT_TYPE_ITEM);
+  while (GetIsObjectValid(oInTrigger))
+     {
+     DestroyObject(oInTrigger);
+     oInTrigger=GetNextInPersistentObject(oTrigger, OBJECT_TYPE_CREATURE | OBJECT_TYPE_PLACEABLE |OBJECT_TYPE_ITEM);
+     }
+  }
+seealso:
+  functions:
+    - GetNextInPersistentObject
+  categories:
+    - Miscellaneous
+  constants:
+    - OBJECT_TYPE_* Constants
+    - PERSISTENT_ZONE_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul

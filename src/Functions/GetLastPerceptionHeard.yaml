@@ -1,0 +1,15 @@
+---
+type: Function
+name: GetLastPerceptionHeard
+shortdesc: Determines if the last perceived object was heard.
+return: int
+parameters:
+description: |
+  Use this in an OnPerception script to determine whether the object that was perceived was heard. 
+  Returns TRUE if the last perceived object was heard, otherwise FALSE. 
+version: 1.22
+seealso:
+  categories:
+    - Perception
+author: Tom Cassiotis
+

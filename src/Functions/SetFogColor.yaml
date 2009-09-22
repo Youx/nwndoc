@@ -1,0 +1,52 @@
+---
+type: Function
+name: SetFogColor
+shortdesc: Sets the fog color in the area specified.
+return: void
+parameters:
+  - type: int
+    name: nFogType
+    desc: | FOG_TYPE_* specifies wether the Sun, Moon, or both fog types are set.
+
+  - type: int
+    name: nFogColor
+    desc: | FOG_COLOR_* specifies the color the fog is being set to.
+
+  - type: object
+    name: oArea
+    default: OBJECT_INVALID
+    desc: | The area to change the fog color of (Default: OBJECT_INVALID)
+
+description: |
+  This will set the fog color in an area, which should change it instantly to that specified. If no valid area (or object) is specified, it uses the area of caller. If an object other than an area is specified, will use the area that the object is currently in (Or if the module, will not do anything). 
+  The fog color can also be represented as a hex RGB number if specific color shades are desired. The format of a hex specified color would be 0xFFEEDD where FF would represent the amount of red in the color EE would represent the amount of green in the color DD would represent the amount of blue in the color.
+remarks: |
+  This is most useful for mood setting, or now, with the combination of SetWeather(), SetSkyBox() and other functions to affect an area, you can dramatically change what an area feels like after, or during an event. 
+  Note there is no way to get what color the fog currently is in the area. 
+  Fog also must, of course, be visible, to be really useful. The fog distance setting should be the default, or lower, for best results. 
+  Also note that any area lighting is not affected - if you suddenly make the fog red, but the lights are still all blue, it might look a little strange.
+version: 1.64
+example: |
+  // Change the color of the fog in this area to red. Use, perhaps, in
+  // an areas  On Enter event, or via. ExecuteScript().
+  void main()
+  {
+      // Get the area to change the fog color of.
+      object oArea = OBJECT_SELF;
+      // Change it (all cases - moonlight and sunlight, day and night)
+      // so that the fog color is now red.
+      SetFogColor(FOG_TYPE_ALL, FOG_COLOR_RED, oArea);
+  }
+seealso:
+  functions:
+    - SetTileMainLightColor
+    - SetTileSourceLightColor
+  categories:
+    - Area
+    - Lighting Effects
+  constants:
+    - FOG_COLOR_* Constants
+    - FOG_TYPE_* Constants
+author: Jasperre
+additional_contributors:
+  - Jasperre

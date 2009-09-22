@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetClassByPosition
+shortdesc: Gets the creatures class for the position identified. The position refers to 1st class, 2nd class or third class in a multi class creature.
+return: int
+parameters:
+  - type: int
+    name: nClassPosition
+    desc: | 1, 2 or 3.
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The object to check for the class. (Default: OBJECT_SELF)
+
+description: |
+  Returns the CLASS_TYPE_* of the creature for the position nClassPosition. 
+  A creature can have up to three classes. This function determines the creature's class (CLASS_TYPE_*) based on nClassPosition. 
+  Returns CLASS_TYPE_INVALID if the oCreature does not have a class in nClassPosition (i.e. a single-class creature will only have a value when nClassLocation = 1) or if oCreature is not a valid creature.
+bugs: |
+  In versions 1.59 - 1.61, this function didn't work with the prestige classes from Hordes of the Underdark. According to BioWare, this will most likely be fixed in patch 1.62.
+version: 1.61
+seealso:
+  functions:
+    - GetLevelByPosition
+  categories:
+    - Get Data from Creature
+  constants:
+    - CLASS_TYPE_* Constants
+author: John Shuell
+editor: Lilac Soul
+additional_contributors:
+  - John Harris
+  - Lilac Soul

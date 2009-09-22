@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetTilesetResRef 
+shortdesc: Returns the resref (TILESET_RESREF_*) constant of the tileset used to create the area.
+return: string
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area for which the tileset was used.
+
+description: |
+  Returns the resref (TILESET_RESREF_*) constant of the tileset used to create the area.
+  Returns an empty string "" on an error.
+version: 1.67
+seealso:
+  constants:
+    - TILESET_RESREF_*
+  categories:
+    - Area
+author: bernosky
+editor: Mistress

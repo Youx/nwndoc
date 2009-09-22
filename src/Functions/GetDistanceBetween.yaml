@@ -1,0 +1,52 @@
+---
+type: Function
+name: GetDistanceBetween
+shortdesc: The distance in meters between two objects
+return: float
+parameters:
+  - type: object
+    name: oObjectA
+    desc: | Any object represented in game.
+
+  - type: object
+    name: oObjectB
+    desc: | Any object represented in game.
+
+description: |
+  Returns the distance in meters between two objects. Will return a float value of 0.0 if either of the two objects is INVALID. 
+  If the objects are in different areas, or are of invalid object types for this call (EG: The module object) this function will return 0.0.
+remarks: |
+  This also takes into account the Z-axis, and thusly isn't a direct measurement in only X and Y. To get a direct measurement (discounting the Z-axis) you must use Vectors. 
+  Remember, the float value returned by this is in in-game meters. Each in-game tile is 10x10M.
+version: 1.62
+example: |
+  // Conversation Action event. Get the distance between
+  // me (OBJECT_SELF) and the PC in conversation. If they are 
+  // within 5M (including any elevation) we will shout at them.
+  // NB: conversations can take place with PC's up to around 10M away
+  void main()
+  {
+      // Get the PC
+      object oPC = GetPCSpeaker();
+      // Get the distance, and check it
+      if(GetDistanceBetween(oPC, OBJECT_SELF) <= 5.0)
+      {
+          // Shout at them for being quite far away
+          SpeakString("Hey, " + GetName(oPC) + " get nearer to me!");
+      }
+  }
+seealso:
+  functions:
+    - GetDistanceBetweenLocations
+    - GetDistanceToObject
+  categories:
+    - Combat Information
+    - Core AI
+    - Math
+    - Targeting
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Ryan Hunt
+  - Jasperre
+  - everlast

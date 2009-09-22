@@ -1,0 +1,37 @@
+---
+type: Function
+name: LineOfSightObject
+shortdesc: Is there a line of sight between two objects
+return: int
+parameters:
+  - type: object
+    name: oSource
+    desc: | Source object
+
+  - type: object
+    name: oTarget
+    desc: | Target object
+
+description: |
+  Returns whether or not there is a direct line of sight between the two objects. (Not blocked by any geometry). 
+  PLEASE NOTE: This is an expensive function and may degrade performance if used frequently.
+remarks: |
+  With this function came a fix to GetFirst/NextObjectInShape, and makes sure fireballs do not go through walls or doors. 
+  This is hardly ever needed practically - for spell scripts, it is not required unless an area-of-effect spell doesn't use GetFirst/NextObjectInShape, because the game already has internal restraints on Line-Of-Sight checks.
+version: 1.61
+example: |
+  //Can I see bob?
+  void main()
+  {
+  object oTarget=GetObjectByTag("bob");
+  int bCanISee=LineOfSightObject(OBJECT_SELF, oTarget);
+  }
+seealso:
+  functions:
+    - LineOfSightVector
+  categories:
+    - Get Data
+    - Targeting
+author: Lilac Soul
+editor: Jasperre
+

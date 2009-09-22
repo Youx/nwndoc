@@ -1,0 +1,115 @@
+---
+type: Function
+name: ActionStartConversation
+shortdesc: NPC action to start a conversation with a PC
+return: void
+parameters:
+  - type: object
+    name: oObjectToConverseWith
+    desc: | An object to converse with.
+
+  - type: string
+    name: sDialogResRef
+    default: ""
+    desc: | The resource reference (filename) of a conversation. (Default: "")
+
+  - type: int
+    name: bPrivateConversation
+    default: FALSE
+    desc: | Specify whether the conversation is audible to everyone or only to the PC. (Default: FALSE)
+
+  - type: int
+    name: bPlayHello
+    default: TRUE
+    desc: | Determines if initial greeting is played. (Default: TRUE)
+
+description: |
+  Using this function in a script adds ActionStartConversation to the executing object's Action Queue. 
+  When an object executes ActionStartConversation, it attempts to use the dialogue file specified as sDialogResRef to start conversing with the target, oObjectToConverseWith. If the target is not a PC, the target's onConversation event fires. 
+  sResRef is the filename resource reference of a conversation file. If no sResRef is specified, then default conversation of whichever object is not the PC is used (set in its properties in the Toolset). 
+  If bPrivateConversation is TRUE, then the conversation remains between the PC and the other object, nothing else can see the text appearing. Otherwise, if FALSE (by default) the conversation is broadcast as chat, and 'audible' to other players. 
+  bPlayHello, if FALSE, should stop the voicechat, VOICE_CHAT_HELLO, being played by the NPC (or whatever it may be that has a sound set) when a conversation is started. Obviously, this only applies to creatures with soundsets anyway.
+remarks: |
+  PCs can have dialogue with NPCs, placeables, triggers and doors. Items cannot converse (but invisible placeables with the same name as an item can). 
+  Any immobile object in a conversation must be within the PC's camera view (approximately 10 meters when the camera is auto-zoomed in). If you try to start a conversation between a door and a PC, and the door is more than 10 meters away, the conversation box will appear briefly and then close immediately, although the door's first line will appear in the PC's chat window. If the object executing the action is mobile, it will attempt to run to oObjectToConverseWith and begin conversation, but will give up if another action is added to its queue 
+  Unreliable results can occur from using AssignCommand() to add ActionStartConversation() to a PC's action queue, since players' normal movement commands are very likely to cancel the action. 
+  sResRef is the filename of the conversation file, which is the string that appears in the Module Contents' "Conversations" chooser. 
+  PCs do not have the OnConversation event, and do not have a default conversation file. 
+  It is not possible at present to control camera zoom, although angle and mode can be scripted. 
+  You can make a PC talk with "itself" by telling the PC to talk to itself, IE: AssignCommand(oPC, ActionStartConversation(oPC, "converse", TRUE)); . It is always a good idea for bPrivateConversation to be TRUE in these cases as usually it seems odd when a PC talks to themselves!
+bugs: |
+  Prior to patch 1.28, ActionStartConversation caused a crash when it was assigned to an area or module. 
+  The note about bPrivateConversation was misleading, and it IS now bPrivateConversation, and the comment been removed from the remarks.
+version: 1.62
+example: |
+  // ---    NPCs   ----
+  /* 
+   * In the OnPerception event of an NPC, this will cause the 
+   * NPC to start the "q_dragnbone" conversation 
+   * default conversation with the first PC it perceives. The 
+   * conversation will only be heard by the PC
+   */
+  ActionStartConversation( GetLastPerceived(), "q_dragnbone");
+  // --- Placeables ---
+  /* 
+   * In the OnUsed event of a non-static placeable, this will 
+   * start the placeable's default conversation (set on the 
+   * advanced tab of Placeable Properties) with a PC that 
+   * uses the placeable.
+   */
+  ActionStartConversation( GetLastUsedBy() );
+  /* 
+   * In the OnUsed event of a non-static placeable, this will 
+   * start the conversation in a file called "offer_healing"
+   * with the PC that used the placeable.  Other Players will
+   * be able to hear the conversation
+   */
+  ActionStartConversation( GetLastUsedBy(), "offer_healing", TRUE );
+  // --- Triggers ---
+  /* 
+   * In the OnEnter script of a trigger, this will cause an
+   * entering PC to try start the "odd_voice" conversation
+   * with the trigger. Only the PC entering will hear the
+   * conversation. Player movement may cancel this
+   * conversation before it begins, however.
+   */
+  ActionStartConversation( GetLastEntering(), "odd_voice" );
+  /*
+   * In the OnEnter script of a trigger, an NPC with the
+   * tag "rat_boy" will run towards the PC and attempt to 
+   * start his default conversation.  The conversation will
+   * be audible to others. Also, Rat Boy's onConversation
+   * event will fire, and if present, should conclude with
+   * BeginConversation. If a different conversation resref is
+   * set during the execution of the onConversation script,
+   * that conversation will be begun.
+   */
+  object oBoy = GetObjectByTag("rat_boy");
+  object oPC = GetEnteringObject();
+  AssignCommand(oBoy, ActionStartConversation(oPC, "", TRUE));
+seealso:
+  functions:
+    - ActionPauseConversation
+    - ActionResumeConversation
+    - ActionSpeakString
+    - BeginConversation
+    - FloatingTextStringOnCreature
+    - GetLastSpeaker
+    - GetPCSpeaker
+    - PersistentConversationAttempt
+  categories:
+    - Action on Object
+    - Conversation
+  constants:
+    - VOICE_CHAT_* Constants
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Michael Mason
+  - John Detwiler
+  - Jotham
+  - Jassper
+  - Agard
+  - Charles Feduke
+  - Johannes Zeppenfeld
+  - Jasperre,

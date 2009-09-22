@@ -1,0 +1,23 @@
+---
+type: Function
+name: ActionResumeConversation
+shortdesc: Resume a conversation after it has been paused.
+return: void
+parameters:
+description: |
+  Resume a conversation after it has previously been paused with ActionPauseConversation().
+remarks: |
+  If the PC cancelled the conversation (hit escape key, spell casting, etc) while it was being paused, calling this function will still resume it. If this behavior is not desirable, you can code your own by using the "End Conversation Script - Aborted" script. 
+  If the PC moves out of range of the object it was having a conversation with, it is not possible to resume it.
+version: 1.22
+seealso:
+  functions:
+    - ActionPauseConversation
+    - ActionStartConversation
+    - GetLastSpeaker
+  categories:
+    - Action on Object
+    - Conversation
+author: Troels Therkelsen
+editor: Dave Robinson
+

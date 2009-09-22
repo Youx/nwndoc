@@ -1,0 +1,32 @@
+---
+type: Function
+name: d6
+shortdesc: Rolls a 6-sided die.
+return: int
+parameters:
+  - type: int
+    name: nNumDice
+    default: 1
+    desc: | The number of dice to roll. (Default: 1)
+
+description: |
+  Returns the total from rolling nNumDice x d6 dice. 
+  If nNumDice is less than 1, then 1 is used.
+remarks: |
+  A d6 (six sided die) has a 16.6% probability of turning up any one number.
+version: 1.22
+seealso:
+  functions:
+    - d10
+    - d100
+    - d12
+    - d2
+    - d20
+    - d3
+    - d4
+    - d8
+    - Random
+  categories:
+    - Miscellaneous
+author: Charles Feduke
+

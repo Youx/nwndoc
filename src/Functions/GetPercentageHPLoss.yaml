@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetPercentageHPLoss
+shortdesc: Determines how wounded a creature is as a percentage of their maximum HP.
+return: int
+parameters:
+  - type: object
+    name: oWounded
+    desc: | The creature (or object) to get its relative wounded level.
+
+description: |
+  Returns an integer between 0 and 100 that represents the percentage of HP oWounded has left. 
+  For example, if a creature had 30 HP left from a maximum 40 HP, this function would return 75.
+remarks: |
+  Note that what this function does is somewhat different from its name. If you have an object with 100 HP, and it is now down to 1, the loss is 99%, so that's what you'd expect the function to return. It returns 1, though. 
+  Also note that, in Shadows of Undrentide, this function has been moved to the include file x0_i0_assoc.nss. Through a somewhat complicated route of include files using other include files, you can still call the function by using #include "nw_i0_generic" in SoU.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.30
+example: |
+  // NPC displays text when GetPercentageHPLoss() is less than 25%
+  #include "NW_I0_GENERIC"
+  void main()
+  {
+     if(GetPercentageHPLoss(OBJECT_SELF)<25)
+     {
+        ActionSpeakString("HELP! I am wounded!");
+     }
+  }
+seealso:
+  functions:
+    - GetCurrentHitPoints
+    - GetMaxHitPoints
+  categories:
+    - Get Data from Object
+author: Sarev0k
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

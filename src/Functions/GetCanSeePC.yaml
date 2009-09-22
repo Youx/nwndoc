@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetCanSeePC
+shortdesc: Determines if a creature can see a PC.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | Object to see if it can "see" a PC. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oObject can "see" a PC, FALSE otherwise.
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.29
+seealso:
+  functions:
+    - GetLastPerceptionSeen
+  categories:
+    - Perception
+  events:
+    - OnPerception
+author: Charles Feduke
+

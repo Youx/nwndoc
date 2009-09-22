@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetIsDusk
+shortdesc: Determines if it is currently dusk.
+return: int
+parameters:
+description: |
+  Returns TRUE if it is currently dusk, FALSE if it is any other time of the day.
+remarks: |
+  Because the dusk start hour can be configured in the advanced properties for a module, there is no fixed time for dusk.
+version: 1.22
+seealso:
+  functions:
+    - GetIsDawn
+    - GetIsDay
+    - GetIsNight
+    - GetTimeHour
+    - GetTimeMillisecond
+    - GetTimeMinute
+    - GetTimeSecond
+  categories:
+    - Time
+author: Charles Feduke
+editor: Tom Cassiotis
+

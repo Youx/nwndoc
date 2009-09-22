@@ -1,0 +1,41 @@
+---
+type: Function
+name: EffectCutsceneImmobilize
+shortdesc: Immobilize a creature
+return: effect
+parameters:
+description: |
+  Returns an effect that when applied will paralyze the target's legs, rendering them unable to walk but otherwise unpenalized. This effect cannot be resisted. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This actually seems more like a paralysis effect which cannot be resisted. In any case, this most cirtainly will *always* stop a creature in its tracks. 
+  This is not directly used in any Bioware script and the author is unsure as to if the description is fully correct. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying Cutseen Immobilize to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eImmobilize = EffectCutsceneImmobilize();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eImmobilize, oTarget);
+  }
+seealso:
+  functions:
+    - EffectCutsceneGhost
+  categories:
+    - Cut-Scene
+    - Effects
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

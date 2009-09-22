@@ -1,0 +1,36 @@
+---
+type: Function
+name: GetPCIPAddress
+shortdesc: Retrieves the IP address of a PC.
+return: string
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | The players who's IP address will be returned.
+
+description: |
+  Returns the IP address from which oPlayer has connected to the server.
+bugs: |
+  Not a bug, but a caveat 
+  OnClientLeave, the PC object (GetExitingObject) is still valid, but the player object (i.e. the human being logged into the server) is not. This means that there are a few things you can't do OnClientLeave. Namely, the GetPCPlayerName, GetPCIPAddress, and GetPCPublicCDKey will not work, since the player is no longer around to get that information from. This can be worked around by storing them as local strings on the PC, for instance OnClientEnter. See workaround below.
+version: 1.61
+example: |
+  //Workaround for the caveat above
+  void main()
+  {
+  object oPC=GetEnteringObject();
+  string sPlayerName=GetPCPlayerName(oPC);
+  string sIP=GetPCIPAddress(oPC);
+  string sKey=GetPCPublicCDKey(oPC);
+  SetLocalString(oPC, "player_name", sPlayerName);
+  SetLocalString(oPC, "player_ip", sIP);
+  SetLocalString(oPC, "player_cdkey", sKey);
+  }
+seealso:
+  categories:
+    - PC Only
+    - Server
+author: Sarev0k
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

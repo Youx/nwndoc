@@ -1,0 +1,37 @@
+---
+type: Function
+name: TalentHealingSelf
+shortdesc: Checks to see if NPC or creature is damaged, if so, tries to heal either with a spell or a potion.
+return: int
+parameters:
+description: |
+  Causes the creature to heal itself if its current HP total drops below 1/2 the maximum HP total of the creature. 
+  Determines whether or not creature has healing capability and if not, uses potions (if it has any).
+remarks: |
+  Is created to always return FALSE for creatures of the following racial types: 
+  RACIAL_TYPE_ABERRATION 
+  RACIAL_TYPE_BEAST 
+  RACIAL_TYPE_ELEMENTAL 
+  RACIAL_TYPE_VERMIN 
+  RACIAL_TYPE_MAGICAL_BEAST 
+  RACIAL_TYPE_UNDEAD 
+  RACIAL_TYPE_DRAGON 
+  RACIAL_TYPE_ANIMAL 
+  29 (the ooze racial type) 
+  This function is located in x0_i0_talent, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  functions:
+    - TalentAdvancedProtectSelf
+    - TalentBuffSelf
+    - TalentCureCondition
+    - TalentHeal
+    - TalentUseProtectionOnSelf
+  categories:
+    - Core AI Talent
+    - Talents/Skills/Feats
+author: Jody Fletcher
+editor: Lilac Soul
+

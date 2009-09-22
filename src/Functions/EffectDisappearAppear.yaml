@@ -1,0 +1,59 @@
+---
+type: Function
+name: EffectDisappearAppear
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+  - type: location
+    name: lLocation
+    desc: | Location where the affected object will reappear.
+
+  - type: int
+    name: nAnimation
+    default: 1
+    desc: | Which appear/disappear animation to use (Default: 1)
+
+description: |
+  Create a Disappear/Appear effect.The object will "fly away" for the duration of the effect and will reappear at lLocation. 
+  Bioware uses this to have things fly (with wings) or flee, and beholders come up out of the ground in Hordes of the Underdark, or more importantly, move away though the ground holes avalible. 
+  Using nAnimation set to 2 will make a few creatures use a second special disappear/appear animation they may have - most notably for beholders, "floating up out of the ground". 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly or permanently, only temporarily.
+remarks: |
+  Most useful for flying creatures to leap large gaps at once. Using anything but 1 in nAnimation will not work without the alternate appear/disappear animations present on the monster. 
+  Anything can, however, use this effect and although strange, humans can fly off like Superman if you wish! For humanoid NPC's with wings, it looks correct, however. 
+  Do not use it on PC's, however, because it is likely to not look good at all, or may be confusing if you do not tell them it'll happen or they don't activate it themselves. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare effects, and apply them using an ApplyEffectToObject() Command. See the Effect Tutorial for more details.
+bugs: |
+  To make this work, you must set the duraction (on ApplyEffectToObject) to 3.0 seconds or greater (obviously the duration type must be temporary). In a busier area the duration might have to be a larger number. 
+  Previous to 1.60, it would cause a crash if the direct line from the creatues start location and lLocation were over non-walkmesh area's, and if they were targeted during the effect. As of 1.60, this is resolved.
+version: 1.64
+example: |
+  // Sample code for applying disappear appear effect (for 10
+  // seconds, to go to thier own location (up then down), to ourselves.
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eFly = EffectDisappearAppear(GetLocation(oTarget));
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_PULSE_WIND);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eFly, oTarget, 10.0);
+  }
+seealso:
+  functions:
+    - EffectAppear
+  categories:
+    - Effects
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Ken Cotterill
+  - Allan Floyd
+  - Lilac Soul
+  - Jasperre

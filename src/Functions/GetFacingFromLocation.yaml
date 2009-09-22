@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetFacingFromLocation
+shortdesc: Get the facing value from a location variable.
+return: float
+parameters:
+  - type: location
+    name: lLocation
+    desc: | The location to extract the facing from.
+
+description: |
+  Returns the orientation value from a location variable. A location has three components: the object ID of the area, a vector representing the position within that area, and a floating point number representing the facing. This command retrieves just the facing value from a location variable.
+remarks: |
+  From version 1.62+, this now rounds the value to the nearest degree.
+bugs: |
+  Previously noted bugs have been fixed a while ago.
+version: 1.62
+seealso:
+  functions:
+    - GetFacing
+    - GetLocation
+    - LocationToString
+  categories:
+    - Get Data from Object
+    - Math
+    - Movement
+    - Targeting
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetLastPlayerDying
+shortdesc: Retrieves the last player that is currently dying.
+return: void
+parameters:
+description: |
+  Returns the last player who is currently between 0 and -10 hit points (otherwise known as dying).
+remarks: |
+  Only use this in OnPlayerDying event scripts. 
+  The Toolset automatically puts the script nw_o0_dying in the OnPlayerDying event, and all that script does is kill the PC using the EffectDeath command so the PC never notices that he or she was actually dying. 
+  You would use this event to make bleeding scripts, where the PC would take 1 damage every round while waiting for help, until finally dying. Note that, in single player games, bleeding scripts are just annoying because there is noone who will come to your help...
+version: 1.61
+seealso:
+  functions:
+    - GetLastPlayerDied
+  categories:
+    - PC Only
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Ricardo

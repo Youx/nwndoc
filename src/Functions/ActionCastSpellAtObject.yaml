@@ -1,0 +1,82 @@
+---
+type: Function
+name: ActionCastSpellAtObject
+shortdesc: Cast a spell at an object.
+return: void
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+  - type: object
+    name: oTarget
+    desc: | Target for the spell
+
+  - type: int
+    name: nMetaMagic
+    default: METAMAGIC_ANY
+    desc: | METAMAGIC_* (Default: METAMAGIC_ANY)
+
+  - type: int
+    name: bCheat
+    default: FALSE
+    desc: | If this is TRUE, then the executor of the action doesn't have to be able to cast the spell. (Default: FALSE)
+
+  - type: int
+    name: nDomainLevel
+    default: 0
+  - type: int
+    name: nProjectilePathType
+    default: PROJECTILE_PATH_TYPE_DEFAULT
+  - type: int
+    name: bInstantSpell
+    default: FALSE
+bugs: |
+  nProjectilePathType
+  PROJECTILE_PATH_TYPE_* (Default: PROJECTILE_PATH_TYPE_DEFAULT)
+  bInstantSpell
+  If this is TRUE, the spell is cast immediately. This allows the end-user to simulate a high-level magic-user having lots of advance warning of impending trouble (Default: FALSE)
+description: |
+  Casts nSpell at oTarget with regards to the values of the other parameters. At minimum nSpell and oTarget must be specified for this function to work. 
+remarks: |
+  Object oTarget should be a valid target such as a creature or PC. Experiment with different target types as some targets do not work with this function (verified that this function does not work with barrels).
+bugs: |
+  The variable nDomainLevel should define the caster level of the spell, but this variable is ignored. 
+  When a henchman casts any one of the following three spells listed below on itself, the henchman loses all spell casting ability. 
+  SPELL_EAGLE_SPLENDOR 
+  SPELL_FOXS_CUNNING 
+  SPELL_OWLS_WISDOM 
+  As with all ActionCastSpellXXX, Ranger and Paladin spells do not work properley. nMetaMagic is ignored in the spell script (GetMetaMagicFeat() returns -1 in the spell script). 
+  1.64 does fix the problem with sub-dial spells. These can now be cast correctly using these functions. It doesn't mention any fixes for the above issues however.
+version: 1.64
+example: |
+  // The script below is placed on the OnUse Event handler for a placeable, in our
+  // example a lever. When used it casts a Magic Missile spell at the target. In this case
+  // the target is a nearby commoner called "TARGET2". Try this script for kicks.
+  void main()
+  {
+      object oTarget = GetObjectByTag("TARGET2");
+      ActionCastSpellAtObject(SPELL_MAGIC_MISSILE,oTarget,1);
+  }
+seealso:
+  functions:
+    - ActionCastFakeSpellAtObject
+    - ActionCounterSpell
+    - GetAttemptedSpellTarget
+    - ResistSpell
+    - TalentCureCondition
+  categories:
+    - Action on Object
+    - Spell Casting Effects
+    - Spells
+  constants:
+    - METAMAGIC_* Constants
+    - PROJECTILE_PATH_TYPE_* Constants
+    - SPELL_* Constants
+author: Dan Spezzano
+editor: Jasperre
+additional_contributors:
+  - Daniel LeDuke
+  - Slow Slosh
+  - Chris Heywood
+  - Jasperre

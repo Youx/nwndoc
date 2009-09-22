@@ -1,0 +1,51 @@
+---
+type: Function
+name: EffectRegenerate
+shortdesc: Create a Regenerate effect.
+return: effect
+parameters:
+  - type: int
+    name: nAmount
+    desc: | amount of damage to be regenerated per time interval
+
+  - type: float
+    name: fIntervalSeconds
+    desc: | length of interval in seconds
+
+description: |
+  Returns a new effect object that when applied, will cause the target to heal at the rate of nAmount every fIntervalSeconds. 
+  Because effects are wiped by the internal engine when a PC or NPC goes below 1 hit point, this effect cannot be used to heal a dying PC. 
+  But, items with the property Regeneration will work when a PC is dying, strangely enough! And normally means they raise back from the dying status. At -11, they are dead normally. Regeneration items (which should be deadly rare) and dying scripts do not go together. 
+  The limit of nAmount and fIntervalSeconds are unknown. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This shouldn't stop Wounding or EffectHitPointsWhenDying effects, as it isn't an actual Healing effect, as such. 
+  It cannot be used to heal anything but creatures. 
+  The main benifit of it is cirtainly that the PC doesn't have to do so many castings or drinkings of healing spells in a longer battle or set of battles, and the spell might eventually heal as much or more then any equivilant one-shot healing spell might. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a regeneration rate of 1 Hit Point
+  // every 3 seconds to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eRegen = EffectRegenerate(1, 3.0);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HEAD_NATURE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eRegen, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,37 @@
+---
+type: Function
+name: VersusRacialTypeEffect
+shortdesc: Set eEffect to be versus nRacialType.
+return: effect
+parameters:
+  - type: effect
+    name: eEffect
+    desc: | nRacialType
+
+  - type: int
+    name: nRacialType
+description: |
+  Returns an effect modified in such a way as to be versus a specific race of creature only. Uses the RACIAL_TYPE_ constants to define the race to use.
+remarks: |
+  This is a pretty handy function when creating spell effects or special items to be used against (or by) a certain race of creature. Notice that it expects the RACIAL_TYPE_ constants as a parameter. If you wanted it to affect Elves only, you would set the parameter to RACIAL_TYPE_ELF. If you wanted it to affect all Giant type creatures, you set the parameter to RACIAL_TYPE_GIANT.
+version: 1.22
+example: |
+  // A sword that does extra damage effect against dragons only.
+  void main(){
+  	effect eBonusToApply = EffectDamageIncrease(20, DAMAGE_TYPE_MAGICAL);
+  	eBonusToApply = VersusRacialTypeEffect(eBonusToApply, RACIAL_TYPE_DRAGON);
+  	object oTargetOfSpell = GetSpellTargetObject();
+  	ApplyEffectToObject(DURATION_TYPE_INSTANT, eBonusToApply, oTargetOfSpell);
+  }
+seealso:
+  functions:
+    - VersusAlignmentEffect
+    - VersusTrapEffect
+  categories:
+    - Effects
+    - Spells
+    - Targeting
+  constants:
+    - RACIAL_TYPE_* Constants
+author: John Shuell
+

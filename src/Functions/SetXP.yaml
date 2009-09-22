@@ -1,0 +1,44 @@
+---
+type: Function
+name: SetXP
+shortdesc: Sets a creatures experience points to a particular value.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | nXpAmount
+
+  - type: int
+    name: nXpAmount
+description: |
+  Sets oCreature's experience to nXpAmount. 
+  nXPAmount, of course, cannot be lower then 0. It can be as high as you wish, but the maximum level for Original NwN is 190000 (level 20) and Hordes of the Underdark it is 780000 (level 40). To set, or even attain, experience levels higher then this just means "Maximum level" is displayed in the PCs character sheet, where it usually says "Next level: ".
+remarks: |
+  The GiveXPToCreature() function is a more natural way to modify XP, but SetXP() can be useful if you know exactly how much XP you want a creature to have. 
+  This function could be useful for situations where XP was modified by a percentage. 
+  Also, you MUST use SetXP if you want to lower a PC's XP. GiveXPToCreature doesn't work for lowering the XP, but SetXP() does, and can be used to make the PC's start at a particular (lower) level then usual, or to force level loss at a particular time. 
+  Only PCs use XP. To level up (but unable to level down) an NPC, use LevelUpHenchman.
+version: 1.62
+example: |
+  // make a PC at least 2nd level in an on enter script
+  void main()
+  {
+      int iXP;
+      object oCreature = GetEnteringObject();
+      iXP = GetXP(oCreature);
+      if (iXP < 1000)
+      {
+          SetXP(oCreature, 1000);
+      }
+  }
+seealso:
+  functions:
+    - GetXP
+    - GiveXPToCreature
+  categories:
+    - Experience
+author: Chaz Mead
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

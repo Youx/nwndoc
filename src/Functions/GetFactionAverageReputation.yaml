@@ -1,0 +1,56 @@
+---
+type: Function
+name: GetFactionAverageReputation
+shortdesc: Get an integer between 0 and 100 (inclusive) that represents how an objects faction members collectively feel about the target object.
+return: int
+parameters:
+  - type: object
+    name: oSourceFactionMember
+    desc: | The object whose collective faction value you wish to examine.
+
+  - type: object
+    name: oTarget
+    desc: | The target object that you want to find out how the faction feels about.
+
+description: |
+  Returns an integer between 0 and 100 (inclusive) that represents how oSourceFactionMember's faction feels about oTarget. 
+  Return value on error: -1 
+  It is unknown if NPC's in a PC's faction affects this function call and the returned result, such sa summoned monsters, henchmen and familiars, or if those creatures can be used as the oFactionMember at all.
+remarks: |
+  Each member of a faction holds a reputation value for a specific creature at any given time during a game. It will default to their original faction value against the target creatures faction, but as the creatures in the game interact, this value will climb and fall for each of them individually (Normally when the Global box is unchecked in the faction menu). This function helps to gather an overview of how the entire faction feels about the target by looping through them and averaging the targets reputation with each of their values. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetReputation(), only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction, only a PC's party faction, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+version: 1.62
+example: |
+  // During a conversation with the local Innkeeper the Player
+  // says something which angers the InnKeep but does not affect
+  // the rest of the villagers.
+  void main()
+  {
+      // Get the PC speaker
+      object oPlayer = GetPCSpeaker();
+      object oInnKeeper = OBJECT_SELF;
+      int nFactionRating;
+      // Lower the faction rating of the Player with the Innkeepers Faction.
+      AdjustReputation(oPlayer, oInnKeeper, -1);
+      // Get the new rating of the Innkeeprs faction to the PCs.
+      nFactionRating = GetFactionAverageReputation(oInnKeeper, oPlayer);
+      // Inform the Player as to what happened.
+      SendMessageToPC(oPlayer, "You have lost 1 point of faction with the Villagers.");
+      // Tell the PC their current faction rating.
+      SendMessageToPC(oPlayer, "You currently have a faction rating of " + IntToString(nFactionRating) + " with the all the Villagers");
+  }
+seealso:
+  functions:
+    - AdjustReputation
+    - ClearPersonalReputation
+    - GetReputation
+  categories:
+    - Get Data from Creature
+    - Math
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Kristain Markon

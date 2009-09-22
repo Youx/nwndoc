@@ -1,0 +1,54 @@
+---
+type: Function
+name: GetFactionEqual
+shortdesc: Are both objects in the same faction?
+return: int
+parameters:
+  - type: object
+    name: oFirstObject
+    desc: | First object to compare.
+
+  - type: object
+    name: oSecondObject
+    default: OBJECT_SELF
+    desc: | Second object to compare against. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if the Faction Ids of the two objects are the same. 
+  Remember, each new PC party has a seperate Id, as does each seperate faction for NPC's. 
+  It doesn't matter which way round oFirstObject and oSecondObject are used.
+remarks: |
+  A great way to tell if another approaching creature is in the same faction as the calling object. 
+  This is best used, in the upmost sense, to make sure NPC's do not attack thier actual allies that they should never go hostile to. It is a shame the default AI therefore doesn't use it. 
+  It can also be used by NPC's in a PC's party to, for example, check if they are being attacked by thier masters friends, or for example, should help one being over another because they are in thier party (faction).
+version: 1.62
+example: |
+  // Use in a henchmens conversation conditionals script. If the talking
+  // creature is in our faction, but *not* our master, we will not
+  // allow them to change anything but we will allow them to talk
+  // normally to us.
+  void main()
+  {
+      // Get the PC speaker
+      object oPC = GetPCSpeaker();
+      // Get our master
+      object oMaster = GetMaster(OBJECT_SELF);
+      // Check faction and master status
+      // * Will return TRUE if they are equal, but not our master
+      if(GetFactionEqual(oTarget, OBJECT_SELF) == TRUE && 
+         oMaster != oPC)
+      {
+          // Return TRUE
+          return TRUE;
+      }
+      // Nope, just some guy - who still might be our master, however.
+      return FALSE;
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

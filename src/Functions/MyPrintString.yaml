@@ -1,0 +1,27 @@
+---
+type: Function
+name: MyPrintString
+shortdesc: Used for debugging in-game (turned on and off via commenting).
+return: void
+parameters:
+  - type: string
+    name: sString
+    desc: | The string to output.
+
+description: |
+  This is a wrapper for PrintString where the PrintString call is commented out.
+remarks: |
+  Presumably this is used by Bioware for debugging, but uncommenting the PrintString call when they want debugging output (useful because compiler directives for symbols is not supported in NWNScript). 
+  The PrintString call is commented out by default. It must be uncommented for this function to do anything at all.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  functions:
+    - PrintString
+  categories:
+    - Debug
+author: Charles Feduke
+editor: Michael Nork
+additional_contributors:
+  - Drake Coker

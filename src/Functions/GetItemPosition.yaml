@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetItemPosition
+shortdesc: Returns the position of a variable in an array containing a list of possible base types that can be created.
+return: int
+parameters:
+  - type: object
+    name: oMagicalItem
+    desc: | The item that represents the base type to search for.
+
+description: |
+  Returns the position of the base type of oMagicalItem in the locally stored array called "NW_COMBO_BASETYPE". If the base type is Armor then it looks up the armor by AC value as well.
+remarks: |
+  Function found in nw_o0_itemmaker.nss on line 147. 
+  This function is used in the Item Creation scripts for the official campaign.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: John Shuell
+

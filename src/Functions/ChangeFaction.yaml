@@ -1,0 +1,36 @@
+---
+type: Function
+name: ChangeFaction
+shortdesc: Change a creature's faction to that of another.
+return: void
+parameters:
+  - type: object
+    name: oObjectToChangeFaction
+    desc: | The creature whose faction is to change.
+
+  - type: object
+    name: oMemberOfFactionToJoin
+    desc: | The creature whose faction will be joined.
+
+description: |
+  Make oObjectToChangeFaction join the faction of oMemberOfFactionToJoin.
+remarks: |
+  Although placeables can be given factions, they cannot be used as oMemberOfFactionToJoin. 
+  PCs cannot change factions.
+version: 1.61
+example: |
+  // Used in an 'Actions Taken' conversation node when a PC
+  // has persuaded an NPC to join an interesting convent...
+  void main() {
+    object oNun = GetNearestObjectByTag("sisterOfPerpetualIndulgence");
+    ChangeFaction(OBJECT_SELF, oNun);
+  }
+seealso:
+  functions:
+    - ChangeToStandardFaction
+  categories:
+    - Reputation/Faction
+author: Iskander Merriman
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

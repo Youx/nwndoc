@@ -1,0 +1,57 @@
+---
+type: Function
+name: ClearAllFactionMembers
+shortdesc: Makes an NPC or group of NPCs feel Neutral towards the PC.
+return: void
+parameters:
+  - type: object
+    name: oMember
+    desc: | oPlayer
+
+  - type: object
+    name: oPlayer
+description: |
+  Receives the oMember object, and adjusts all members of the oMembers faction group to friendly reputation towards the oPlayer. 
+  To use this, copy it to your script, or use the code example for the function without having to find the original script.
+remarks: |
+  Note that this function is most useful to clear personal reputations at other times then just death - for example, making an entire guard faction for a town friendly, if the PC mistakenly pickpocketed one of them (which causes personal reputation to change). 
+  If the global flag of a faction is off too, then using this will make sure all the NPC's in that faction react as the Adjusted Alignment makes them. 
+  nw_o0_death.nss: 15 
+  This function is currently commented out as of 1.29. 
+  See also David Gaider's Scripting Tutorial under 'Shouts, Factions and Attacking My Enemy'. <http://nwn.bioware.com/builders/sctutorial22.html>
+requirements: |
+  #include "nw_o0_death"
+version: 1.62
+example: |
+  // The original function in all its glory. It is here because it is
+  // uncommented in later versions of the game, but still useful.
+  void ClearAllFactionMembers(object oMember, object oPlayer)
+  {
+      AdjustReputation(oPlayer, oMember, 100);
+      // * Player bad
+      SetLocalInt(oPlayer, "NW_G_Playerhasbeenbad", 10);
+      // Clear all faction members' reputations
+      object oClear = GetFirstFactionMember(oMember, FALSE);
+      while (GetIsObjectValid(oClear) == TRUE)
+      {
+          ClearPersonalReputation(oPlayer, oClear);
+          oClear = GetNextFactionMember(oMember, FALSE);
+      }
+  }
+seealso:
+  functions:
+    - AdjustFactionReputation
+    - AdjustReputation
+    - GetReputation
+    - GetStandardFactionReputation
+    - SetStandardFactionReputation
+  categories:
+    - Prototyped but Unused
+    - Reputation/Faction
+  events:
+    - OnDeath
+    - OnPhysicalAttacked
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul

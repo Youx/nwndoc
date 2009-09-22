@@ -1,0 +1,27 @@
+---
+type: Function
+name: DoLevelUp
+shortdesc: Levels up an NPC to appropriate PC henchman level.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | PC to level up in accordance with.
+
+  - type: object
+    name: oHenchman
+    default: OBJECT_SELF
+    desc: | NPC to perform the levelling up of. (Default: OBJECT_SELF)
+
+description: |
+  Levels up oHenchman to 1 level less than oPC.
+remarks: |
+  All local variables kept on the henchman are not lost. These are copied to the PC before the henchman is destroyed and respawned as a new higher level henchman, then retrieved.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+

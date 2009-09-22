@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetLastPerceptionSeen
+shortdesc: Determines if the last perceived object was seen.
+return: int
+parameters:
+description: |
+  Use this in an OnPerception script to determine whether the object that was perceived was seen. 
+  Returns TRUE if the last perceived object was seen, otherwise FALSE. 
+version: 1.29
+example: |
+  // OnPerception script that attacks a perceived enemy 
+  void main()
+  {
+       object oNoticed = GetLastPerceived();
+       if(GetIsObjectValid(oNoticed))
+       {
+            if (GetLastPerceptionSeen() && GetIsEnemy(oNoticed))
+            {
+                 ClearAllActions();
+                 ActionAttack(oNoticed);
+            }
+       }
+  }
+seealso:
+  functions:
+    - GetCanSeePC
+  categories:
+    - Perception
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Alex Meduna

@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetDialogSoundLength
+shortdesc: Retrieves the length of a wave (audio) file in seconds.
+return: float
+parameters:
+  - type: int
+    name: nStrRef
+    desc: | Numeric reference to a string with spoken audio.
+
+description: |
+  Retrieves the length of an audio wave (*.wav) file in seconds. Only works for sounds used for dialog.
+remarks: |
+  nStrRef is an index into the dialog.tlk or custom-made .tlk file.
+version: 1.61
+seealso:
+  categories:
+    - Conversation
+    - Cut-Scene
+    - Sound Effects
+author: Charles Feduke
+editor: Lilac Soul
+

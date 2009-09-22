@@ -1,0 +1,31 @@
+---
+type: Function
+name: DeleteCampaignDBVariableOnAll
+shortdesc: Deletes a campaign DB variable from all PCs in a PC's party.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: string
+    name: strVarName
+    desc: | campaign DB variable name
+
+description: |
+  Given a PC and a variable name, deletes all campaign database variables of that name from the Player Characters in the PC's party. 
+remarks: |
+  Does not apply to associates. 
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors! 
+  [This should be the definitive answer to whether or not different names should be used for different variable types for local and campaign variables - you are safer using exclusive variable names.]
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Database
+    - Party
+author: Peter Busby
+

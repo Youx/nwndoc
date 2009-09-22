@@ -1,0 +1,26 @@
+---
+type: Function
+name: CanAfford
+shortdesc: Determines if the player has enough gold in their inventory to pay for creating an item at the forge.
+return: int
+parameters:
+  - type: object
+    name: oBuyer
+    desc: | The player wishing to create an item.
+
+description: |
+  Returns True if the player can afford the item.
+remarks: |
+  Function found in nw_o0_itemmaker.nss on line 274 
+  Used in the offical campaign to verify that an item can be payed for at the Forge. 
+  Calls the HasGold function to determine if oBuyer has enough gold to purchase the object in question. Checks the price of the object by calling GetValidItemCost(), which checks the local integer "M3Q1_VALIDITEMCOST" on OBJECT_SELF to determine the value of the object. This function would need to be called from a script that executes on an object.
+requirements: |
+  #include "NW_O0_ITEMMAKER"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: John Shuell
+editor: Charles Feduke
+additional_contributors:
+  - Ivan Hawkes

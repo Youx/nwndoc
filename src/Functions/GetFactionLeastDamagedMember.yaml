@@ -1,0 +1,57 @@
+---
+type: Function
+name: GetFactionLeastDamagedMember
+shortdesc: Get the member of oFactionMember's faction that has taken the fewest hit points of damage.
+return: object
+parameters:
+  - type: object
+    name: oFactionMember
+    default: OBJECT_SELF
+    desc: | The object whose faction to search in. (Default: OBJECT_SELF)
+
+  - type: int
+    name: bMustBeVisible
+    default: TRUE
+    desc: | The member chose must be visible to the calling object. (Default: TRUE)
+
+description: |
+  Returns the member of oFactionMember's faction (or Player's party) that has taken the fewest hit points of damage. If bMustBeVisible is set to TRUE (default) then the least damaged member must be visible to the object who is doing the search. 
+  Returns OBJECT_INVALID if oFactionMember's faction is invalid.
+remarks: |
+  Great function for determing who the bad guys will target in a fight. If you want a fight to last as long as possible, riddle your AI's with this so they are retargeting according to who can take the damage. Good way to draw a fight out and give the party a chance for survival, yet at the same time making sure everyone feels some pain. 
+  Note, however, that because usually PC parties are normally healed fully, that at the beginnings of fights using this function, it may be only one PC is kept on being targeted - easy for PC's to then counter this. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetMaxHitPoints() Minus GetCurrentHitPoints() (If not, please e-mail in), to find the highest, only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction unless bMustBeVisible is TRUE, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+version: 1.62
+example: |
+  // Get the most health PC and attack them. For all it matters, this
+  // could be the On Heartbeat script of a NPC.
+  void main()
+  {
+      // Get nearest PC
+      object oPC = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC);
+      // Get least damaged
+      object oLeastDamaged = GetFactionLeastDamagedMember(oFactionMember, TRUE);
+      // Attack them
+      if(GetIsObjectValid(oLeastDamaged))
+      {
+          ClearAllActions();
+          ActionAttack(oLeastDamaged);
+      }
+  }
+seealso:
+  functions:
+    - GetFactionBestAC
+    - GetFactionMostDamagedMember
+    - GetFactionWorstAC
+  categories:
+    - Combat Information
+    - Get Data from Creature
+    - Party
+    - Perception
+    - Reputation/Faction
+    - Targeting
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

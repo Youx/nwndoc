@@ -1,0 +1,63 @@
+---
+type: Function
+name: EffectSpellLevelAbsorption
+shortdesc: Returns a Spell Level Absorption effect
+return: effect
+parameters:
+description: |
+  Returns a Spell Level Absorption effect. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if: nMaxSpellLevelAbsorbed is not between -1 and 9 inclusive, or nSpellSchool is invalid. 
+  The limit of nTotalSpellLevelsAbsorbed is unknown. It is known that if it is 0, there is no limit. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  The "Stoneskin" of Spell Immunties. This is used in several ways: 
+  - Provide immunity to an entire spell school (IE: Shadow Shield) 
+  - Provide immunity to a cirtain amount of spells (IE: Spell Mantal) 
+  - Provide immunity to all spells of a cirtain level and below (IE: Globe of Invunrability). 
+  It is thus very useful, and dynamic for the most part. 
+  The highest level spell is 9, so putting 9 as the level absorbed will absorb anything. 
+  Anything without a ResistSpell() check in the spell script will ignore this, as it won't even check if it exsists. The hardcoded aspect of this effect is that only ResistSpell() will alter any remaining levels, or check immunity to a cirtain spell school or spell level. 
+  Also a note on how nTotalSpellLevelsAbsorbed is used. Firstly, it is hidden from the user, and never displayed. Secondly, it works as so: 
+  1. If we start with 10 levels of spells to ignore, and ignore any of level 9 or lower (any spell) then the user doesn't know we have 10. 
+  2. If we cast Fireball (a level 4 spell) on the person, then the number, internally, will decrease to 6 (10 - 4 = 6) and the spell will be resisted. 
+  3. If we cast Ray of Frost at the target (a Cantrip, level 0 spell) then it will be resisted, and no actual decrease to the amount of spells we can resist - it will decrease by 0 (6 - 0 = 6) 
+  4. If we then cast Wail of the Banshee (a level 9 spell!) then it will *still* resist the spell, but use up all of the remaining levels, making the effect go away. 
+  5. Any more hostile spells will now affect the person as normal. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying immunity to level 6 or lower
+  // necromacy spell, and can absorb up to 20 levels of them,
+  // to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eAbsorb = EffectSpellLevelAbsorption(6, 20, SPELL_SCHOOL_NECROMANCY);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SPELL_MANTLE_USE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eAbsorb, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - GetEffectType
+    - GetFirstEffect
+    - GetNextEffect
+    - RemoveEffect
+  categories:
+    - Effects
+    - Spell Casting Effects
+    - Spells
+  constants:
+    - EFFECT_TYPE_* Constants
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Jasperre

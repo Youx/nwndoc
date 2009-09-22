@@ -1,0 +1,35 @@
+---
+type: Function
+name: InsertString
+shortdesc: This function will insert a string into the destination string at the position indicated by nPosition.
+return: string
+parameters:
+  - type: string
+    name: sDestination
+    desc: | String to insert into.
+
+  - type: string
+    name: sString
+    desc: | String to insert.
+
+  - type: int
+    name: nPosition
+    desc: | Index position to insert at.
+
+description: |
+  This function inserts a string into another string.
+remarks: |
+  Prior to version 1.26 this function would instead overwrite vice insert.
+version: 1.26
+example: |
+  string s1 = “Bacon and spam”;
+  string s2 = “, ham ”;
+  string s3 = InsertString(s1, s2, 6);
+  //s3 = "Bacon, ham and spam"
+seealso:
+  categories:
+    - String
+author: Michael Nork
+editor: Charles Feduke
+additional_contributors:
+  - Iceberg

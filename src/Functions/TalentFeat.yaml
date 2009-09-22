@@ -1,0 +1,30 @@
+---
+type: Function
+name: TalentFeat
+shortdesc: Creates a talent that corresponds to an associated D&D feat.
+return: talent
+parameters:
+  - type: int
+    name: nFeat
+    desc: | FEAT_*
+
+description: |
+  Creates a talent out of a feat constant. This is used in conjunction with various talent abilities to determine the best action the AI should attempt. 
+  This should not be used - it doesn't currently work.
+remarks: |
+  It should do the same as ActionUseFeat(), but currently is broken and using it doesn't work in anyway whatsoever. Definatly use ActionUseFeat() until it is fixed or removed.
+bugs: |
+  Currently, anytime this is used, it is invalid and if passed into ActionUseTalent, it will result in the NPC not doing anything and standing there.
+version: 1.22
+seealso:
+  functions:
+    - TalentSkill
+    - TalentSpell
+  categories:
+    - Talents/Skills/Feats
+    - Type Casting/Conversion
+  constants:
+    - FEAT_* Constants
+author: Jody Fletcher
+editor: Jasperre
+

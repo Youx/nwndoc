@@ -1,0 +1,18 @@
+---
+type: Function
+name: CanSeePlayer
+shortdesc: Determins if a creature can see a PC.
+return: int
+parameters:
+description: |
+  Returns TRUE if OBJECT_SELF can see a PC (any PC), otherwise FALSE.
+remarks: |
+  This function is simply a call to GetNearestCreature() and used for convenience and clearer code.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Perception
+author: Tom Cassiotis
+

@@ -1,0 +1,59 @@
+---
+type: Function
+name: GetDistanceBetweenLocations
+shortdesc: The distance in meters between two locations in the game.
+return: float
+parameters:
+  - type: location
+    name: lLocationA
+    desc: | A location variable.
+
+  - type: location
+    name: lLocationB
+    desc: | A location variable.
+
+description: |
+  Returns the distance in meters between two locations, or -1.0000 if the locations are in two different areas, or are invalid locations in some way. 
+  This is useful for checking distances between any non-objects, random locations, or between a location (EG: a spell target location) and a object's location. 
+  If it is two objects, it is usually easier and faster to call GetDistanceBetween().
+remarks: |
+  This also takes into account the Z-axis, and thusly isn't a direct measurement in only X and Y. To get a direct measurement (discounting the Z-axis) you must use Vectors. 
+  Remember, the float value returned by this is in in-game meters. Each in-game tile is 10x10M.
+version: 1.62
+example: |
+  // Check the distance between me, and our pre-set location stored
+  // on us (perhaps by our spawn script, to the location we spawned in
+  // at). If over 20M away, we run back to it, even in combat.
+  void main()
+  {
+      // Get the stored location.
+      location lPost = GetLocalLocation(OBJECT_SELF, "MY_POST");
+      // Get our location
+      location lSelf = GetLocation(OBJECT_SELF);
+      // Check the distance
+      float fDistance = GetDistanceBetweenLocations(lPost, lSelf);
+      // If fDistance is -1.0 (different area), or we are 20M 
+      // away, we run back
+      if(fDistance == -1.0 || fDistance >= 20.0)
+      {
+          // Move to the post.
+          ClearAllActions();
+          ActionMoveToLocation(lPost);
+      }
+  }
+seealso:
+  functions:
+    - GetAngleBetweenLocations
+    - GetDistanceBetween
+    - GetDistanceToObject
+  categories:
+    - Core AI
+    - Math
+    - Movement
+    - Targeting
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Marcus Lunzenauer
+  - Charles Feduke
+  - Jasperre

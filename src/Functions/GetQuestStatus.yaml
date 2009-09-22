@@ -1,0 +1,40 @@
+---
+type: Function
+name: GetQuestStatus
+shortdesc: Returns a PC's quest status.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | A player object
+
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | The quest number (Default: 1)
+
+  - type: object
+    name: oNPC
+    default: OBJECT_SELF
+    desc: | The quest giver (Default: OBJECT_SELF)
+
+description: |
+  Call to determine the status of the quest 
+  returns one of: 
+  QUEST_NOT_TAKEN 
+  QUEST_IN_PROGRESS 
+  QUEST_COMPLETE 
+  QUEST_COMPLETE_OTHER
+remarks: |
+  The return values for this function are variable (not constant) integers declared in the include file. The value QUEST_COMPLETE_OTHER means that the quest has been completed, but by someone other than oPC. 
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+  constants:
+    - QUEST_* Constants
+author: Lilac Soul
+

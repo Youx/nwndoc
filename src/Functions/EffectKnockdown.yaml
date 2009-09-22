@@ -1,0 +1,44 @@
+---
+type: Function
+name: EffectKnockdown
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+description: |
+  Create a Knockdown effectThis effect knocks creatures off their feet, they will sit until the effect is removed. This should be applied as a temporary effect with a 3 second duration minimum (1 second to fall, 1 second sitting, 1 second to get up). 
+  Knockdown makes a creature prone - dodge AC, dexterity bonuses will not apply and any attacks can be automatic sneak attacks, as they will not be able to react to a sneak attack. 
+  Knockdown stops movement and plays a special animation - there is no need for a visual effect. Very few models/monsters do not have a "Knockdown" state. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly or permanently, only temporarily. This is mainly because knockdown does have a standing animation and is hard to remove otherwise.
+remarks: |
+  Knockdown is countered by, either high disiplin for the feats Knockdown and Improved Knockdown, or Immunity: Knockdown. 
+  Knockdown is very powerful - yes, mainly because it is a feat (which represents the P&P "trip" I think), but it does have the similar effect on casters as any thing that stops them moving or casting spells - almost death. 
+  Knockdown, when removed, shouldl normally stand up, not instantly go to standing. However, the effect type when GetEffectType() is used is 0 - which is the same for a few other effects.
+bugs: |
+  The bug that caused the game to crash if this effect was applied to a non-creature has been fixed in a patch some time ago. 
+  This returns 0 for GetEffectType(), it could be intended, but its hard to remove any knockdown without a unique constant!
+version: 1.62
+example: |
+  // Sample code for applying knockdown (10 seconds) to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eKnockdown = EffectKnockdown();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_PULSE_WIND);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eKnockdown, oTarget, 10.0);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

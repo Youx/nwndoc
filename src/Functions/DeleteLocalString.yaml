@@ -1,0 +1,36 @@
+---
+type: Function
+name: DeleteLocalString
+shortdesc: Deletes oObject's string variable sVarName.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object storing the variable.
+
+  - type: string
+    name: sVarName
+    desc: | Variable name to delete.
+
+description: |
+  Use this function to delete an object's entry for the string defined by sVarName. If sVarName doesn't exsist, nothing will happen.
+remarks: |
+  As with all deletions, once removed, GetLocalString returns "", a blank string. Cleaning up old variables can help CPU performance if many are stored on one object (especially if the module has many unused values on it) and good for deleting the new persistant variables which can be put on a PC's inventory item, which will hinder performance if there are many unused values.
+version: 1.22
+example: |
+  // We delete the string stored on the PC under "PASSWORD" when they go into
+  // this trigger.
+  void main()
+  {
+      // Declare the PC object
+      object oPC = GetEnteringObject();
+      // Delete the local string
+      DeleteLocalString(oPC, "PASSWORD");
+  }
+seealso:
+  categories:
+    - Local Variables
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

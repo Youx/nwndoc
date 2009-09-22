@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetTrapKeyTag 
+shortdesc: Set the tag of the key that will disarm the trap.
+return: void
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | A placeable, door or trigger.
+
+  - type: string
+    name: sKeyTag
+    desc: | The tag of the key that will disarm the trap.
+
+description: |
+  Set the tag of the key that will disarm the trap.
+version: 1.67
+seealso:
+  functions:
+    - GetTrapKeyTag
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress

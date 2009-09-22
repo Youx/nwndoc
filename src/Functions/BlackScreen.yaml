@@ -1,0 +1,39 @@
+---
+type: Function
+name: BlackScreen
+shortdesc: Makes the screen go black.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature controlled by a player that should see the black screen.
+
+description: |
+  Sets the screen to black. This can be used in preparation for a fade-in effect (FadeFromBlack function) and can be cleared by calling FadeFromBlack or calling StopFade.
+remarks: |
+  The screen goes black immediately. If you want the screen to go black gradually, use FadeToBlack instead. 
+  Unknown if familiars who are specified as oCreature will cause the possessing player's screen to go black when the familiar is possessed.
+version: 1.30
+example: |
+  //World goes black for creature opening a chest
+  //Brightens up after 10 seconds, though
+  //Goes OnOpen of that chest
+  void main()
+  {
+  object oPC=GetLastOpenedBy();
+  BlackScreen(oPC);
+  DelayCommand(10.0, FadeFromBlack(oPC));
+  //Alternately, this line would make the blackness go away
+  //as fast it was applied:
+  DelayCommand(10.0, StopFade(oPC));
+  }
+seealso:
+  functions:
+    - FadeFromBlack
+    - FadeToBlack
+    - StopFade
+  categories:
+    - Cut-Scene
+author: Charles Feduke
+editor: Lilac Soul
+

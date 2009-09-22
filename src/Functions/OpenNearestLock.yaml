@@ -1,0 +1,23 @@
+---
+type: Function
+name: OpenNearestLock
+shortdesc: Doesn’t work.
+return: void
+parameters:
+description: |
+  In theory, this function should make the caller (henchman) open the nearest locked, if able.
+remarks: |
+  Found in nw_i0_assoc.nss line 24 
+  Due to an error in the include file this is in, you can never use this include file, including this function. You could copy it into a different script, though.
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.28
+seealso:
+  functions:
+    - SpeakQuickChat
+  categories:
+    - Henchmen/Familiars/Summoned
+    - Prototyped but Unused
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

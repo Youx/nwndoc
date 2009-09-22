@@ -1,0 +1,55 @@
+---
+type: Function
+name: GetFactionGold
+shortdesc: Get the amount of gold held by all members of a certain faction.
+return: int
+parameters:
+  - type: object
+    name: oFactionMember
+    desc: | The object whose faction you wish to examine.
+
+description: |
+  Returns the amount of gold held by oFactionMember's faction. This function will loop through all members of a faction (normally a Players current party) and return the sum of all their gold they carry with them. 
+  Return a -1 if oFactionMember's faction is invalid (And of course 0 if there is an abcense of gold)
+remarks: |
+  Great for figuring out how rich a party is so you can properly drain them of their gold a certain percent amount. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetGold(), only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction, only a PC's party faction, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this. 
+  However, if you must, then NPC factions should still have valid amounts of gold to be returned by this call.
+version: 1.62
+example: |
+  // If the PC's party has over 1000 gold, call them 
+  // rich in the Conversation Action event.
+  void main()
+  {
+      // Get the PC (and obviously the faction member to use)
+      object oPC = GetPCSpeaker();
+      // Make sure they are a PC and not a possessed DM
+      if(GetIsPC(oPC) && !GetIsObjectValid(GetMaster(oPC)))
+      {
+          if(GetFactionGold(oPC) > 1000)
+          {
+              // Estatic response
+              SpeakString("You really are stinking rich!! I can see gold everywhere!");
+          }
+          else
+          {
+              // Boring response
+              SpeakString("Hey, you poor sods need to get more gold...I can't see nottin' of value");
+          }
+      }
+  }
+seealso:
+  functions:
+    - GetFactionAverageLevel
+    - GetFactionLeader
+    - GiveGoldToCreature
+  categories:
+    - Get Data from Creature
+    - Money
+    - Party
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,27 @@
+---
+type: Function
+name: GenerateHighTreasure
+shortdesc: This function creates High Level Treasure
+return: void
+parameters:
+  - type: object
+    name: oLastOpener
+    desc: | a PC object
+
+  - type: object
+    name: oCreateOn
+    default: OBJECT_INVALID
+    desc: | A Container to spawn treasure in (Default: OBJECT_INVALID)
+
+description: |
+  This function is part of the NWN Treasure Distribution System.
+remarks: |
+  Found in: nw_o2_coninclude.nss
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.22
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+

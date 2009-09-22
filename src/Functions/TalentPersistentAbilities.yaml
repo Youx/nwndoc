@@ -1,0 +1,17 @@
+---
+type: Function
+name: TalentPersistentAbilities
+shortdesc: Determines if current creature has capability to project an aura, and activates it if so.
+return: int
+parameters:
+description: |
+  Checks to see if OBJECT_SELF has a persistent aura that can be activated. As long as aura talent is not a spell effect (i.e. is inherent feat/talent) activates the aura.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.29
+seealso:
+  categories:
+    - Core AI Talent
+    - Talents/Skills/Feats
+author: Jody Fletcher
+

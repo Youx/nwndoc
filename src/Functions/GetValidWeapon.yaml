@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetValidWeapon
+shortdesc: Does not exist.
+return: string
+parameters:
+  - type: object
+    name: oLastOpener
+    desc: | Not defined.
+
+  - type: string
+    name: s
+    desc: | Not defined.
+
+description: |
+  Function appears commented out on line 169 of nw_o2_classweap.nss.
+remarks: |
+  This function was listed previously as originating from nw_o2_classweap.nss. It does not, as of at least patch 1.28 exist in that script, nor in any other of Bioware’s general scripts (it is commented out).
+version: 1.28
+seealso:
+  categories:
+    - Private
+author: Lilac Soul
+editor: Charles Feduke
+

@@ -1,0 +1,29 @@
+---
+type: Function
+name: SpeakOneLinerConversation
+shortdesc: Immediately speak a conversation one-liner.
+return: void
+parameters:
+  - type: string
+    name: sDialogResRef
+    default: ""
+    desc: | (Default: "")
+
+  - type: object
+    name: oTokenTarget
+    default: OBJECT_TYPE_INVALID
+    desc: | This must be specified if there are creature-specific tokens in the string. (Default: OBJECT_TYPE_INVALID)
+
+description: |
+  Causes the calling object to immediately speak the first non-branching conversation line in their dialogue. Since there is no second party to the conversation, oTokenTarget can be used to determine formatting of tokens contained in the one-liner.
+remarks: |
+  Note that if you have a script on a non-branching conversation line, GetPCSpeaker can not be used to get the PC.
+version: 1.61
+seealso:
+  categories:
+    - Conversation
+  constants:
+    - OBJECT_TYPE_* Constants
+author: Jeff Lindsey
+editor: Lilac Soul
+

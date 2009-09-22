@@ -1,0 +1,39 @@
+---
+type: Function
+name: DoSinglePlayerAutoSave
+shortdesc: Saves a single player game.
+return: void
+parameters:
+description: |
+  Saved file listed automatically as [AutoSave]. This used only when module is being played Single Player.
+remarks: |
+  Of course, any of the original campaign modules uses this on many of the new areas (so, it saves when you enter a major entrance area, but only once), and those can be played in multiplayer. 
+  Thusly, this will operate fine in multiplayer, but do nothing. No save files can be forced onto a clients computer, nor information sent to them. 
+  For multiplayer saves, a DM can save it independantly in the game menu, a server operator can usually save it this way, and of course autosave can be enabled for every few minutes or hours. 
+  However, as normally worlds change so often in any multiplayer environments, those saves are usually useless - they cannot be loaded with newer modules (save games make a carbon copy of a module which is loaded wether or not they have the original module), and so cannot be reused that often. 
+  Multiplayer saves are mainly useful in DMed games, with one pre-set module (or one that won't change) and so can be loaded up, and all player locations are saved (as are states of monsters and quests). 
+  For persistant worlds, a regular call of ExportAllCharacters() is most useful, saving the state of experience and gold, and so on, and is as good as a save (so if the server crashes, they usually do not lose hours of work, but mear minutes)
+version: 1.64
+example: |
+  // An area you want the singleplayer game to save in, this will
+  // save it once.
+  void main()
+  {
+      int nDone = GetLocalInt(OBJECT_SELF, "ON_ENTER_SAVE_ONCE");
+      // Check if we have done it already or not.
+      if(nDone == FALSE)
+      {
+          // So the save
+          DoSinglePlayerAutoSave();
+          // Do not do again
+          SetLocalInt(OBJECT_SELF, "ON_ENTER_SAVE_ONCE", TRUE);
+      }
+  }
+seealso:
+  categories:
+    - Module
+    - PC Only
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

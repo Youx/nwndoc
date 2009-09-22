@@ -1,0 +1,40 @@
+---
+type: Function
+name: EffectSilence
+shortdesc: Create a Silence effect
+return: void
+parameters:
+description: |
+  This constructor returns a new silence effect. 
+  Silence means spells with the speakingor Verbal component (V) cannot be cast. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  Of course, this effect will not stack - there are no possible things it does which will stack.
+remarks: |
+  Some spells, with only Stomatic (moving) components (S) can still be cast - such as lesser dispel. Such spells mearly cannot be cast. Dangerous for mages without the Silent Spell feat. Silenced Spells or Auto-silenced spells can still be cast normally. 
+  Items with spells can still be used, and it has no effect on actual speaking with SpeakString, or a PC typing (which is a shame). 
+  You can become immune to silence with direct immunity via Immunity: Silence.
+version: 1.62
+example: |
+  // Sample code for applying silence to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eSilence = EffectSilence();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SILENCE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSilence, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

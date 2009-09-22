@@ -1,0 +1,41 @@
+---
+type: Function
+name: GetCreatureSize
+shortdesc: Determines the size class of a creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature whose size we are to determine.
+
+description: |
+  Returns the size (CREATURE_SIZE_*) of oCreature. 
+  It returns CREATURE_SIZE_INVALID for an invlaid size - normally a non-creature. 
+  The sizes are defined by the 2da file, creaturesize.2da
+remarks: |
+  This is determined by the appearance of the creature. 
+  A PC who is polymorphed into a dragon will return the CREATURE_SIZE_HUGE, not thier normal CREATURE_SIZE_MEDIUM. 
+  There is no way to change this appart from changing the appearance.2da file. 
+  It also only really affects Knockdown and AC. - it is harder (more penalties) to attack a larger creature, and tiny creatures get a small bonus to AC (+2), small get some (+1), large get a small penalty (-1) and huge gets a small penatly (-2). The AC changes show up in a creatures properties in the toolset.
+version: 1.62
+example: |
+  // If we are HUGE, we say a huge speakstring!
+  void main()
+  {
+      // Check our size
+      if(GetCreatureSize(OBJECT_SELF) == CREATURE_SIZE_HUGE)
+      {
+          // Speak the taunt - Monty Python fans might remember 
+          // this from a certain Archiologist Height scetch
+          SpeakString("I'm so tall! Ahahhehehehe!");
+      }
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+  constants:
+    - CREATURE_SIZE_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

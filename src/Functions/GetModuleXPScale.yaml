@@ -1,0 +1,17 @@
+---
+type: Function
+name: GetModuleXPScale 
+shortdesc: Get the XP scale being used for the module.
+return: int
+parameters:
+description: |
+  Get the XP scale being used for the module.
+version: 1.67
+seealso:
+  functions:
+    - SetModuleXPScale
+  categories:
+    - Experience
+    - Module
+author: bernosky
+editor: Mistress

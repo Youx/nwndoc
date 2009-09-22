@@ -1,0 +1,23 @@
+---
+type: Function
+name: MusicBattlePlay
+shortdesc: Starts the currently selected battle track playing
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area affected.
+
+description: |
+  This function starts playing the currently selected battle track for the specified area.
+version: 1.22
+example: |
+  object oArea = GetArea(OBJECT_SELF);
+  MusicBattlePlay(oArea);
+seealso:
+  categories:
+    - Area
+    - Music Effects
+author: Michael Nork
+editor: Jeff Lindsey
+

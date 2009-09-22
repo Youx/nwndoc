@@ -1,0 +1,30 @@
+---
+type: Function
+name: SetFootstepType 
+shortdesc: Sets the footstep type of the creature specified.
+return: void
+parameters:
+  - type: int
+    name: nFootstepType
+    desc: | FOOTSTEP_TYPE_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to change the footstep sound for.
+
+description: |
+  Sets the footstep type of the creature specified.
+  Changing a creature's footstep type will change the sound that its feet make whenever the creature takes a step.
+  By default a creature's footsteps are detemined by the appearance type of the creature.
+  SetFootstepType() allows you to make a creature use a different footstep type than it would use by default for its given appearance.
+version: 1.66
+seealso:
+  functions:
+    - GetFootstepType
+  constants:
+    - FOOTSTEP_TYPE_*
+  categories:
+    - Sound Effects
+author: Mistress
+editor: KooKoo

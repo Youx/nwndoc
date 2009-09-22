@@ -1,0 +1,25 @@
+---
+type: Function
+name: ClearArena
+shortdesc: This function resets variabls and clears the arenas in the fighter
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | sArena
+
+  - type: string
+    name: sArena
+description: |
+  This function resets variabls and clears the arenas in the fighter 
+  'gauntlet' subplot in chapter one of the NWN Module.
+remarks: |
+  nw_o0_respawn.nss: 45
+requirements: |
+  #include "nw_o0_respawn"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

@@ -1,0 +1,76 @@
+---
+type: Function
+name: GetIsSkillSuccessful
+shortdesc: Determines if a skill roll is successful.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Creature who is using the skill.
+
+  - type: int
+    name: nSkill
+    desc: | Skill to use (SKILL_*).
+
+  - type: int
+    name: nDifficulty
+    desc: | Difficulty check to beat in order to be successful.
+
+description: |
+  Standard difficulty check (DC). Returns TRUE if 1d20 roll plus skill rank is greater to or equal to the difficulty rating specified, otherwise FALSE. 
+  Be warned: This is a public function - the PC will be able to see the skill check done, the roll and the result, so only use for things which the PC knows they are rolling, or which the PC should know about. 
+  Also note that it basically uses GetSkillRank(), which includes all bonuses and penalties from spells, items, feats and base skill levels - basically, it will use the amount on the character sheet, including any area modifiers or anything else. 
+  There is no automatic pass on a roll of 20, that is only for attack rolls (critical hits) and saving throws, and likewise, there is no automatic failure on a roll of 1.
+remarks: |
+  Unlike AutoDC, the hitdice of the caller isn’t taken into consideration for this function, and you have to specify the absolute difficulty yourself, ie the number that must be rolled against, using d20 + skill rank. The previously noted bug concerning the AutoDC function has been fixed, and I'd say it is now an open choice if you want to use one function or the other. 
+  For a private version of this function, see the code example. The public part can be cumbersome if you plan to do skill checks which are hidden from the PC (such as secret door search checks, or passive skill checks).
+version: 1.62
+example: |
+  // Test if the PC is able to use a potion creating
+  // item device. Put OnUsed.
+  void main()
+  {
+      object oPC=GetLastUsedBy();
+      if (GetIsSkillSuccessful(oPC, SKILL_USE_MAGIC_DEVICE, 30))
+      {
+          effect eVis = EffectVisualEffect(VFX_FNF_STRIKE_HOLY);
+          ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, OBJECT_SELF);
+          // Get resref of random potion
+          int nNum=Random(23)+1;
+          string sNum=IntToString(nNum);
+          if (GetStringLength(sNum)==1) sNum="00"+sNum;
+          else if (GetStringLength(sNum)==2) sNum="0"+sNum;
+          sNum="nw_it_mpotion"+sNum;
+          CreateItemOnObject(sNum, oPC, d10());
+      }
+      else
+      {
+          AssignCommand(oPC, ActionSpeakString("How the heck do you use this thing?!?"));
+      }
+  }
+  // Function to do a private version of this skill check, no result 
+  // is told to the PC
+  int GetIsSkillSuccessfulPrivate(object oTarget, int nSkill, int nDifficulty)
+  {
+      // Do the roll for the skill
+      if(GetSkillRank(nSkill, oTarget) + d20() >= nDifficulty)
+      {
+          // They passed the DC
+          return TRUE;
+      }
+      // Failed the check
+      return FALSE;
+  }
+seealso:
+  functions:
+    - AutoDC
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - SKILL_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre
+  - Nils Jeppe

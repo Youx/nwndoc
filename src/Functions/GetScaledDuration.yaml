@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetScaledDuration
+shortdesc: Determines a scaled down duration based on the game difficulty setting.
+return: int
+parameters:
+  - type: int
+    name: nActualDuration
+    desc: | The spell duration as it would be normally.
+
+  - type: object
+    name: oTarget
+    desc: | The target of the spell.
+
+description: |
+  Returns an integer that represents the scaled down duration calculated based on difficulty.
+remarks: |
+  This function scales down a duration only if the taget is a PC and the game difficulty (GAME_DIFFICULT_*) is normal or easier. Note this does not check whether the spell is beneficial or not and thereby will scale down beneficial spells which is probably not the intention of the caller. 
+  Can be found in nw_i0_spells.nss line 29. 
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  categories:
+    - Spells
+author: Tom Cassiotis
+

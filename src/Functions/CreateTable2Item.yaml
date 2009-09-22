@@ -1,0 +1,36 @@
+---
+type: Function
+name: CreateTable2Item
+shortdesc: Randomly creates an item on an object.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to receive the item (Most likely a placeable with an inventory.)
+
+  - type: object
+    name: oAdventurer
+    desc: | PC whose class is to be used for creating item.
+
+  - type: int
+    name: nSpecific
+    default: 0
+    desc: | If 0, a generic item is created. If 1, a specific item is created. (Default: 0)
+
+description: |
+  * if nSpecific is = 1 then spawn in 'named' items at the higher levels 
+  Based upon the class of the PC provided as oAdventurer, this function will randomly call one of a list of functions used for creating items on objects, such as CreateGenericHeavyArmor or CreateSpecificMartial.
+remarks: |
+  Found in: nw_o2_coninclude.nss: 4008 
+remarks: |
+  Then, depending on the class found, probabilities for each type of item is determined, and compared with a d100 roll to create the item. The actual item creation takes place by calling other functions in nw_i0_coninclude. 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetCustomRightDirection
+shortdesc: This returns a float that is a normalized remainder of fDirection - fAngle
+return: void
+parameters:
+  - type: float
+    name: fDirection
+    desc: | Current Facing
+
+  - type: float
+    name: fAngle
+    desc: | Angle to target
+
+description: |
+  This function calculates a normalized numeber that is the remainder of fDirection minus fAngle. The resulting number represents the current facing offset to the right by the passed in angle.
+remarks: |
+  Note: Three rights make a left.
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

@@ -1,0 +1,23 @@
+---
+type: Function
+name: PetrifyWood
+shortdesc: Turns a specified object to wood instead of stone.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object to be turned to wood.
+
+description: |
+  Turns a specified object (oTarget) to wood. Uses the barkskin texture instead of the stoneskin texture.
+requirements: |
+  #include "x0_i0_petrify"
+version: 1.61
+seealso:
+  functions:
+    - DepetrifyWood
+    - Petrify
+  categories:
+    - Effects
+author: Grimlar
+

@@ -1,0 +1,45 @@
+---
+type: Function
+name: DestroyObject
+shortdesc: Destroy an object.
+return: void
+parameters:
+  - type: object
+    name: oDestroy
+    desc: | The object to be destroyed
+
+  - type: float
+    name: fDelay
+    default: 0.0f
+    desc: | Delay (in seconds) before object is destroyed. (Default: 0.0f)
+
+description: |
+  Irrevocably destroys oObject. This will not work on modules or areas, but does work on anything else. 
+  fDelay is most possibly like a DelayCommand(), either method is fine. 
+  This will crash a module if a script tries to destroy something that is in an invalid area - most notably, a DelayCommand() on DestoyObject, when the object gets moved to Limbo by a DM. 
+  When an object is destroyed, all information related to it (creator of AOE's, creator of effects, etc) returns OBJECT_INVALID.
+remarks: |
+  Object destruction occurs after the script that calls it completes. 
+  If you set an object to be undestroyable (which according to the documentation only affects what happens upon death) the object will also be unaffected by DestroyObject. It is therefore important to only set SetIsDestroyable(False) at the moment of the object's death, or before it of course. 
+  The plot flag should not affect wether DestroyObject works in any way whatsoever. 
+  Using DestroyObject in a loop can be dangerous - make sure that it dosn't have DestroyObject as a standard function, but it has a delay. Same goes for creating objects in loops.
+version: 1.28
+example: |
+  // Destroy the object tagged "Food" in the PC's inventory
+  // It is very useful for removing, from the game, items which are
+  // used in plots - basically, so the PC cannot do the same quest again.
+  void main()
+  {
+      object oFood = GetItemPossessedBy(GetPCSpeaker(), "Food");
+       // Destroy it
+       DestroyObject(oFood);
+  }
+seealso:
+  functions:
+    - ActionUnequipItem
+  categories:
+    - Action on Object
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Tim Fletcher

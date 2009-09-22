@@ -1,0 +1,33 @@
+---
+type: Function
+name: CreateGenericClassItem
+shortdesc: Creates a treasure item for wizards, sorcerers, clerics, monks, rogues and bards
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to create item on.
+
+  - type: object
+    name: oAdventurer
+    desc: | A player object
+
+  - type: int
+    name: nSpecific
+    default: 0
+    desc: | 0 for generic, 1 for specific (Default: 0)
+
+description: |
+  this function just returns an item that is more appropriate for wizards, sorcerers, clerics, monks, rogues and bards. The function determines the class and level of the PC and then calls the appropriate CreateGeneric<CLASS>Weapon or the CreateSpecific<CLASS>Weapon.
+remarks: |
+  Found in nw_o2_coninclude.nss 
+  This can be used to create the item in any object with an inventory. 
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

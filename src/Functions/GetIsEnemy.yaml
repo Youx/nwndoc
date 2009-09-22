@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetIsEnemy
+shortdesc: Determines whether a creature considers another creature an enemy.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature whose enemy status is to be checked.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The creature whose opinion will be queried. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oSource considers oTarget as an enemy.
+remarks: |
+  This function considers faction feeling as well as personal reputation between the two creatures.
+version: 1.22
+seealso:
+  functions:
+    - GetIsNeutral
+    - GetIsReactionTypeHostile
+    - GetNearestSeenOrHeardEnemy
+  categories:
+    - Miscellaneous
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Kristian Markon
+

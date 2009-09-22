@@ -1,0 +1,43 @@
+---
+type: Function
+name: GetNearestTrapToObject
+shortdesc: Determines the closest trap from a creature or object.
+return: object
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | Object to start searching for traps from. (Default: OBJECT_SELF)
+
+  - type: int
+    name: nTrapDetected
+    default: TRUE
+    desc: | if this is TRUE, the trap returned has to have been detected by oTarget. (Default: TRUE)
+
+description: |
+  Get the trap nearest to oTarget. Note: "trap objects" are actually any trigger, placeable or door that is trapped in oTarget's area.
+remarks: |
+  This is most useful for getting the nearest trap for henchmen NPC's to disarm. Using GetLastTrapDetected() doesn't always give good results, because, of course, traps futher away get detected later then those nearer. 
+  It is also easier then looping nearby trapped triggers in the area - unless you need to find one that is possible to disarm!
+version: 1.22
+example: |
+  // For a henchman to disarm traps. We get the nearest trap, and use ActionUseSkill on it.
+  void main()
+  {
+      // Get nearest trap detected by us
+      object oTrap = GetNearestTrapToObject(OBJECT_SELF, TRUE);
+      // Use the skill SKILL_DISABLE_TRAP to disable it. No subskill needed.
+      ClearAllActions();
+      ActionUseSkill(SKILL_DISABLE_TRAP, oTrap);
+  }
+seealso:
+  functions:
+    - GetTrapBaseType
+    - GetTrapDetectable
+    - GetTrapFlagged
+    - GetTrapKeyTag
+  categories:
+    - Traps
+author: Jody Fletcher
+editor: Jasperre
+

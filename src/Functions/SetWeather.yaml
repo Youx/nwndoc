@@ -1,0 +1,45 @@
+---
+type: Function
+name: SetWeather
+shortdesc: Allows you to set the weather for an area or the entire module.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | If this is GetModule(), all outdoor areas will be modified by the weather constant. If it is an area, oTarget will play the weather only if it is an outdoor area.
+
+  - type: int
+    name: nWeather
+    desc: | WEATHER_*
+
+description: |
+  Set the weather for oTarget. 
+  - WEATHER_USE_AREA_SETTINGS will set the area back to whatever weather the area had set in the toolset. 
+  - WEATHER_CLEAR, WEATHER_RAIN, WEATHER_SNOW will make the weather go to the appropriate precipitation *without stopping*.
+remarks: |
+  As of patch 1.31, BioWare has provided us with a GetWeather function, making it a lot easier to manipulate weather. Module builders not using patch 1.31 (or newer) will have to keep track of weather in areas manually.
+bugs: |
+  When changing the weather from WEATHER_RAIN to WEATHER_SNOW, the lightning weather effect continues to occur. Go from WEATHER_RAIN to WEATHER_CLEAR to WEATHER_SNOW to avoid this unnatural phenomenon.
+version: 1.61
+example: |
+  // script to make it snow (module wide) 
+  void main()
+  {
+      object oModule = GetModule();
+      SetWeather(oModule, WEATHER_SNOW);
+  }
+seealso:
+  functions:
+    - GetWeather
+    - SetCalendar
+  categories:
+    - Area
+    - Visual Effects
+  constants:
+    - WEATHER_* Constants
+author: Chaz Mead
+editor: Jasperre
+additional_contributors:
+  - Sean Fuller
+  - Lilac Soul
+  - Jonathan Williams

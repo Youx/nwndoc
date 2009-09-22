@@ -1,0 +1,38 @@
+---
+type: Function
+name: DeleteLocalFloat
+shortdesc: Deletes oObject's float variable sVarName
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object storing the variable.
+
+  - type: string
+    name: sVarName
+    desc: | Variable name to delete.
+
+description: |
+  Use this function to delete an object's entry for the float defined by sVarName. If sVarName doesn't exsist, nothing will happen.
+remarks: |
+  As with all deletions, once removed, GetLocalFloat returns 0.0. Cleaning up old variables can help CPU performance if many are stored on one object (especially if the module has many unused values on it) and good for deleting the new persistant variables which can be put on a PC's inventory item, which will hinder performance if there are many unused values.
+version: 1.22
+example: |
+  // Placed in an area's OnEnter event, this script determines if the
+  // entering object is a player, and if so, deletes the float "fTimer"
+  // Remember, it will delete fTimer, even if fTimer's value doesn't exsist.
+  void main()
+  {
+      object oPC = GetEnteringObject();
+      if(GetIsPC(oPC))
+      {
+          DeleteLocalFloat(oPC, "fTimer);
+      }
+  }
+seealso:
+  categories:
+    - Local Variables
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

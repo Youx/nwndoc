@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetIsInSubArea
+shortdesc: Checks if a creature has triggered an OnEnter event
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to check
+
+  - type: object
+    name: oSubArea
+    default: OBJECT_SELF
+    desc: | Subarea to check (Default: OBJECT_SELF)
+
+description: |
+  Is this creature in the given subarea? (trigger, area of effect object, etc..) 
+  This function will tell you if the creature has triggered an onEnter event, not if it is physically within the space of the subarea.
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Creature
+    - Get Data from Object
+author: Lilac Soul
+

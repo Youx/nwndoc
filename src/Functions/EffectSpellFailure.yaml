@@ -1,0 +1,85 @@
+---
+type: Function
+name: EffectSpellFailure
+shortdesc: Creates an effect that inhibits spells.
+return: effect
+parameters:
+  - type: int
+    name: nPercent
+    default: 100
+    desc: | Percent chance of spell failing (1 to 100). (Default: 100)
+
+  - type: int
+    name: nSpellSchool
+    default: SPELL_SCHOOL_GENERAL
+    desc: | Spell school that is affected (SPELL_SCHOOL_*). (Default: SPELL_SCHOOL_GENERAL)
+
+description: |
+  Returns an effect that has a chance of causing a spell to fail. Spells that are cast and fail are lost. Specific schools of spells may be affected (SPELL_SCHOOL_*) or all schools may be affected (SPELL_SCHOOL_GENERAL). To gurantee that no spell can be successfully cast in an area with this effect, apply the effect with its default parameters. 
+  It is likely these do not stack, and only the highest approprate penalty applies. If this is incorrect, send a bug report in. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This effect has nothing to do with arcane spell failure you can put on items (or is naturally there via. armor). It is a seperate check, and affects the caster whenever they cast a spell in addition to normal armor checks, concentration checks and so forth. 
+  Putting it to 100 will stop any spell being cast. Even 1% can be deadly to a caster. 
+  This can be used to create a "magic dead-zone" as per the Time of Troubles (TSR modules FR1 through FR3).
+version: 1.62
+example: |
+  // Apply 100% spell failure to anyone who enters this area, after all magical effects are removed!
+  void main()
+  {
+      // Declare effects
+      effect eVis = EffectVisualEffect(VFX_IMP_BREACH);
+      effect eDur = EffectVisualEffect(VFX_DUR_GLOW_LIGHT_BLUE);
+      effect eAntiMag = EffectSpellFailure(100);
+      eAntiMag = SupernaturalEffect(eAntiMag);
+      eAntiMag = EffectLinkEffects(eDur, eAntiMag);
+      // Get who to effect
+      object oTarget = GetEnteringObject();
+      // Must NOT be a DM or plot-flagged creature
+      if(GetIsDM(oTarget) || GetPlotFlag(oTarget)) return;
+      // Remove effects which are magical
+      effect eCheck = GetFirstEffect(oTarget);
+      while(GetIsEffectValid(eCheck))
+      {
+          if (GetEffectSubType(eCheck) == SUBTYPE_MAGICAL)
+          {
+              if (GetEffectType(eCheck) != EFFECT_TYPE_DISAPPEARAPPEAR
+               && GetEffectType(eCheck) != EFFECT_TYPE_SPELL_FAILURE)
+              {
+                  RemoveEffect(oTarget, eCheck);
+              }
+          }
+          eCheck = GetNextEffect(oTarget);
+      }
+      // Apply effects
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eAntiMag, oTarget);
+  }
+  // Remove any spell failure when they exit the area
+  void main()
+  {
+      // Remove from exiter.
+      object oTarget = GetExitingObject();
+      // Remove effects which are spell failure
+      effect eCheck = GetFirstEffect(oTarget);
+      while(GetIsEffectValid(eCheck))
+      {
+          if(GetEffectSubType(eCheck) == SUBTYPE_SUPERNATURAL)
+          {
+              if(GetEffectType(eCheck) == EFFECT_TYPE_SPELL_FAILURE)
+              {
+                  RemoveEffect(oTarget, eCheck);
+              }
+          }
+          eCheck = GetNextEffect(oTarget);
+      }
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - SPELL_SCHOOL_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jasperre

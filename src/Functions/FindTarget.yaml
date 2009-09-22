@@ -1,0 +1,26 @@
+---
+type: Function
+name: FindTarget
+shortdesc: Finds the next target for a guard to attack.
+return: object
+parameters:
+  - type: float
+    name: fMaxDistance
+    desc: | Maximum range to check.
+
+description: |
+  This function will return the nearest viable target within the given range. If none are available, it will return OBJECT_INVALID.
+remarks: |
+  Found in nw_c3_waypoint3.nss on line 16. 
+  Note that nw_c3_waypoint3 is not an include file – you cannot include that file and then call FakeRestore from your script, because nw_c3_waypoint3 already has a void main() function. 
+  Also, it does not return the nearest viable target, just the first valid target found within a sphere with the radius of fMaxDistance around the caller. All creatures that are enemies and not dead are considered valid targets. 
+  The way Bioware uses this function is, that if no valid target is found after a previous target is killed, the guard (ie the caller of the script) will resume walking waypoints. 
+  I have been unable to find any instances of this on any creatures (it is probably only used in the official campaign). A logical place for the nw_c3_waypoint3 script to go might be the OnCombatRoundEnd event. 
+version: 1.28
+seealso:
+  categories:
+    - Private
+author: Lilac Soul
+editor: Charles Feduke
+additional_contributors:
+  - Lilac Soul

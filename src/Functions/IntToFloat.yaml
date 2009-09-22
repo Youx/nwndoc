@@ -1,0 +1,59 @@
+---
+type: Function
+name: IntToFloat
+shortdesc: This function converts an int to a float of the same value.
+return: float
+parameters:
+  - type: int
+    name: nInteger
+    desc: | The integer to convert into a float.
+
+description: |
+  This function coverts an integer to a float of the same value, so that converting 123 to a float would yield 123.00.
+remarks: |
+  Since the internal size of a float (3.4028183957828877e+38) is larger than an integer (2147483647) there will be no precision loss in this conversion.
+bugs: |
+  Testing revealed that the least significant digit was being approximated in numbers approaching the Integer maximum (2147483647) and Minimum (-2147483647). 
+  The results are as follows: 
+  2147483647 = 2147483648.00 
+  2147482647 = 2147482624.00 
+  2147473647 = 2147473664.00 
+  2147383647 = 2147383680.00 
+  2146483647 = 2146483584.00 
+  2137483647 = 2137483648.00 
+  2047483647 = 2047483648.00 
+  1147483647 = 1147483648.00 
+  147483647 = 147483648.00 
+  47483647 = 47483648.00 
+  Note that since this occurs only with very large numbers being converted (Ten Million and Beyond) this should not be an issue with most scripts.
+version: 1.30
+example: |
+  // Convert the age of the PC who uses this object into a float value.
+  // This is then the duration of a regeneration effect applied to the PC
+  // Go oldies!
+  void main()
+  {
+      // Declare who is clicking on us
+      object oClicker = GetClickingObject();
+      // Get thier age
+      int nAge = GetAge(oClicker);
+      // Convert to float, which can be used as some form of time
+      float fAge = IntToFloat(nAge);
+      // Heals 1HP each 1 second, for an amount of seconds equal to
+      // the persons age
+      effect eRegen = EffectRegenerate(5, 1.0);
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eRegen, oClicker, fAge);
+  }
+seealso:
+  functions:
+    - FloatToInt
+    - GetAngleBetweenLocations
+    - IntToHexString
+    - IntToString
+  categories:
+    - Math
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul

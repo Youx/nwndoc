@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetIsAreaInterior 
+shortdesc: Determines whether an area is interior or underground.
+return: int
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area you wish to examine.
+
+description: |
+  This will return TRUE if the area is flagged as either interior or underground.
+version: ???
+seealso:
+  functions:
+    - GetIsAreaAboveGround
+    - GetIsAreaNatural
+  categories:
+    - Area
+author: bernosky
+editor: Mistress

@@ -1,0 +1,40 @@
+---
+type: Function
+name: GetLocalFloat
+shortdesc: Get the value of a decimal number stored on an object.
+return: float
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object that stores the decimal number.
+
+  - type: string
+    name: sVarName
+    desc: | The variable name of the data.
+
+description: |
+  Returns data contained inside the variable sVarName stored on the object oObject. oObject can be any object in the game world. 
+  The string describing the variable can also be any string in theory but it is suggested that you avoid using the NW_* tags as they tend to be used within the game already. This function must be used in conjunction with its counterpart function SetLocalFloat, as this is the main way to adjust the values held in the variable sVarName. On error the function will return 0.0f.
+remarks: |
+  This is most useful for getting ranges (which are distances in in-game meters) or times (in seconds and milliseconds). If the value doesn't need a decimal point, it would be better to use Get/SetLocalInt instead.
+version: 1.22
+example: |
+  // Returns the float stored in "Data"
+  void main()
+  {
+      float a = GetLocalFloat(OBJECT_SELF,"Data");
+      SendMessageToPC(GetFirstPC(),FloatToString(a));
+  }  
+seealso:
+  functions:
+    - SetLocalFloat
+  categories:
+    - Get Data
+    - Get Data from Creature
+    - Get Data from Object
+    - Local Variables
+author: GoLeM
+editor: Jasperre
+additional_contributors:
+  - Kristain Markon
+  - Jasperre

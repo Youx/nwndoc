@@ -1,0 +1,70 @@
+---
+type: Function
+name: EffectACIncrease
+shortdesc: Gives an AC bonus to an object.
+return: effect
+parameters:
+  - type: int
+    name: nValue
+    desc: | size of AC increase
+
+  - type: int
+    name: nModifyType
+    default: AC_DODGE_BONUS
+    desc: | AC_*_BONUS (Default: AC_DODGE_BONUS)
+
+  - type: int
+    name: nDamageType
+    default: AC_VS_DAMAGE_TYPE_ALL
+    desc: | DAMAGE_TYPE_* (Default: AC_VS_DAMAGE_TYPE_ALL)
+
+description: |
+  Applies an additional AC bonus to object effect occurs on. The amount is specified, and the type of bonus (per AC_* constant list), and the specific damage AC is 'for'. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  Placeables and Doors have no AC, and the attack rolls are only for getting a 1 (Natural Miss, somehow) and a 20 (Natural hit) or a Critical Hit. 
+  Cirtain AC bonuses can help against cirtain attacks, and dodge bonuses always stack (see notes). Touch attacks are a good example of where, for example, Armor AC bonuses do not apply. It also helps because different items give different types of AC bonuses. 
+  The Limit of nValue should be +20 with 1.59 version, however, dodge bonuses seem to stack forever. The limit of nValue has not been tested.
+remarks: |
+  Default value for nDamageType should only ever be used in this function prototype. 
+  Note about AC bonuses - they do not stack, except for Dodge, which is therefore one of the most powerful (and the Dodge Bonus items can severly unbalance a module). 
+  For example, if you apply a bonus with AC_ARMOR_BONUS, of say, 3 (for a +3 bonus), it will either apply +3, or whatever is higher, not both. If they were wearing +5 armor, then it'd say "Armor bonuses of the same type do not apply" and only give a +5 bonus, NOT +8. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Apply a bonus of 5 Dodge AC to the target. This should just
+  // add 5 to their AC, because Dodge AC stacks.
+  // Note: If it was any other type (EG: AC_ARMOR_BONUS), 
+  // only the highest AC bonus of that type applies (see Remarks)
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDodgePenalty = EffectACIncrease(5, AC_DODGE_BONUS);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_IMPROVE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDodgePenalty, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - EffectACDecrease
+    - EffectAttackDecrease
+    - EffectAttackIncrease
+  categories:
+    - Effects
+    - Spell Casting Effects
+    - Spells
+    - Talents/Skills/Feats
+  constants:
+    - AC_* Constants
+    - DAMAGE_TYPE_* Constants
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

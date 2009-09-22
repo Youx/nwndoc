@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetCalendarDay
+shortdesc: Retrieves the current in-game calendar day.
+return: int
+parameters:
+description: |
+  Returns the current calendar day. Range from 1 to 28 inclusive.
+version: 1.22
+seealso:
+  functions:
+    - GetCalendarMonth
+    - GetCalendarYear
+    - SetCalendar
+  categories:
+    - Get Data
+    - Module
+    - Time
+  events:
+    - OnModuleLoad
+author: Jody Fletcher
+

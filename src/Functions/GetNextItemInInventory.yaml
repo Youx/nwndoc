@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetNextItemInInventory
+shortdesc: Determines the first item in an object's inventory.
+return: object
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The object that has the inventory. (Default: OBJECT_SELF)
+
+description: |
+  Returns the next item in oTarget's inventory or OBJECT_INVALID if the caller is not a creature, item, placeable or store, or if no more items are found.
+remarks: |
+  GetFirstItemInInventory() should be called on oTarget before this function is be called. 
+  When an item with an inventory (such as a bag of holding) is returned using the GetFirstItemInInventory and GetNextItemInInventory functions, the next call to GetNextItemInInventory will start to look inside the nested inventory (e.g. the bag of holding's inventory).
+version: 1.62
+example: |
+  // This function counts up the total number of items in the first PC's inventory.
+  //(The number of items in a stackable count toward the total)
+  void main()
+  {
+     int nItems = 0;
+     object oItem = GetFirstItemInInventory(GetFirstPC());
+     while (GetIsObjectValid(oItem) == TRUE)
+     {
+        nItems = nItems + GetNumStackedItems(oItem);
+        oItem = GetNextItemInInventory(GetFirstPC());
+     }
+  }
+seealso:
+  functions:
+    - GetFirstItemInInventory
+  categories:
+    - Inventory
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Ian Christie

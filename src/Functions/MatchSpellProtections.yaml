@@ -1,0 +1,26 @@
+---
+type: Function
+name: MatchSpellProtections
+shortdesc: Returns if the talent is a protective spell.
+return: int
+parameters:
+  - type: talent
+    name: tUse
+    desc: | Talent to check.
+
+description: |
+  Returns TRUE if the talent fed to the function is one of 11 protective spells. Otherwise, it returns FALSE.
+remarks: |
+  Found in nw_i0_generic.nss line 4956 
+  In the core AI function GetMatchCompatibility, if the class fed to that function is mage, it calls MatchSpellProtections to determine whether GetMatchCompatibility should return true or false.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.28
+seealso:
+  functions:
+    - GetMatchCompatibility
+  categories:
+    - Core AI Talent
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

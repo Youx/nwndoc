@@ -1,0 +1,40 @@
+---
+type: Function
+name: EffectDarkness
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+description: |
+  Create a Darkness effect. 
+  Darkness makes the person Blind (50% miss chance, cannot target people with spells directly), unless they have EffectUltravision applied, and so can see through magical darkness. 
+  This is NOT a way to create an on-screen visual of darknening a room, or the perception of a PC. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This should especially used with the Darkness AOE, really. Else, you will see people able to see through it when they mearly have EffectUltravision() applied to them. 
+  The penalties should be the same as EffectBlindness, so that Blindfight should work for a reroll, and it not stack with normal Blindness (only the highest would apply, and they are both 50% chance to miss). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying darkness to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDark = EffectDarkness();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDark, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

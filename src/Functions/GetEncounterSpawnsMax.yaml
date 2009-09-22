@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetEncounterSpawnsMax
+shortdesc: Get the maximum number of times that oEncounter will spawn.
+return: int
+parameters:
+  - type: object
+    name: oEncounter
+    desc: | The encounter object you wish to examine.
+
+description: |
+  Returns the maximum allowed times the Encounter was set to spawn when it was created in the toolset.
+version: 1.22
+seealso:
+  functions:
+    - GetEncounterActive
+    - GetEncounterDifficulty
+    - GetEncounterSpawnsCurrent
+    - SetEncounterSpawnsMax
+  categories:
+    - Encounter
+author: John Shuell
+

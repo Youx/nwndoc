@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetSpellBreachProtection
+shortdesc: Returns the next protection spell from a list of seventeen.
+return: int
+parameters:
+  - type: int
+    name: nLastChecked
+    desc: | Specified the last protection spell checked.
+
+description: |
+  Returns the next protection spell from a list of seventeen. Basically it mimics an array of 17 spell identifiers (SPELL_ID_*).
+remarks: |
+  nw_i0_spells.nss: 35 
+  Used in conjunction with RemoveProtections(), GetSpellBreachProtection() is used to script Lesser and Greater Spell Breach as well as Mordenkainen's Disjunction. 
+  GetSpellBreachProtection should not be of much use all by itself. This function merely
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  functions:
+    - RemoveProtections
+  categories:
+    - Spells
+  constants:
+    - SPELL_* Constants
+author: Tom Cassiotis
+

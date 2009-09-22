@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetIsDM
+shortdesc: Determines whether a creature is a DM avatar.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to determine if it is a DM avatar.
+
+description: |
+  Returns TRUE if oCreature is a DM (Dungeon Master) avatar. Returns FALSE for everything else, including creatures controlled by the DM. 
+  If you check the master of the target with this, it will actually be the same as GetIsDMPossessed(), and was a workaround until it appeared. 
+  To determine wether the creature is controlled by a DM, use GetIsDMPossessed().
+version: 1.28
+seealso:
+  functions:
+    - GetIsDMPossessed
+    - GetIsPC
+    - GetMaster
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jochem van 't Hull
+  - Jasperre

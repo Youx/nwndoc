@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetAlignmentGoodEvil
+shortdesc: Determines the disposition of a creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Target creature to retrieve the alignment of.
+
+description: |
+  Returns an ALIGNMENT_* constant to represent oCreature's good/evil alignment, or returns -1 if oCreature is not a valid target (OBJECT_INVALID).
+version: 1.28
+seealso:
+  functions:
+    - AdjustAlignment
+    - AdjustReputation
+    - GetAlignmentLawChaos
+    - GetLawChaosValue
+  categories:
+    - Alignment
+    - Get Data from Creature
+  constants:
+    - ALIGNMENT_* Constants
+author: Charles Feduke
+

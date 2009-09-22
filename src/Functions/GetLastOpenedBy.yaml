@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetLastOpenedBy
+shortdesc: Get the last creature that opened the caller.
+return: object
+parameters:
+description: |
+  Get the last creature that opened the calling object. 
+  Returns OBJECT_INVALID if the caller is not a valid door, placeable, or store.
+version: 1.61
+example: |
+  //Kill everyone who opens me if they don't have a certain
+  //local variable set. Goes OnOpen.
+  void main()
+  {
+  object oPC=GetLastOpenedBy();
+  if (GetLocalInt(oPC, "may_open")) return;
+  effect eDeath=EffectDeath();
+  DelayCommand(0.5, ApplyEffectToObject(DURATION_TYPE_INSTANT, eDeath, oPC));
+  }
+seealso:
+  functions:
+    - GetLastDisturbed
+    - GetLastOpener
+    - GetLastUsedBy
+  categories:
+    - Get Data from Object
+author: John Shuell
+editor: Lilac Soul
+

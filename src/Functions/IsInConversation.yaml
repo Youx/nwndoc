@@ -1,0 +1,30 @@
+---
+type: Function
+name: IsInConversation
+shortdesc: Determines whether an object is in conversation.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to check.
+
+description: |
+  This function returns TRUE or FALSE based on the conversation state of the target. Use this function to conditionally execute behavior based on the target's conversation status.
+version: 1.22
+example: |
+  if (IsInConversation(OBJECT_SELF))
+  {
+     // Do some stuff while talking
+  }
+  else
+  {
+     //Do some stuff while not talking
+  } 
+seealso:
+  functions:
+    - GetLastSpeaker
+  categories:
+    - Conversation
+author: Michael Nork
+editor: Jeff Lindsey
+

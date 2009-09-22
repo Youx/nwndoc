@@ -1,0 +1,36 @@
+---
+type: Function
+name: TalentDragonCombat
+shortdesc: Determines the talent a dragon chooses during combat.
+return: int
+parameters:
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | The creature to attack or use the talent on. (Default: OBJECT_INVALID)
+
+description: |
+  Handles the dragon's talent choice (random) to use in combat and makes sure they do not continously rain down Breath Weapons.
+remarks: |
+  The process for this function is as follows: 
+  Check to see if the target passed to the function is still valid 
+  If not, find a new target 
+  See if the Dragon can use his breath attack yet (can only be used every three rounds). 
+  If the dragon can, then use the breath weapon 
+  Turn his breath weapon off for two more rounds 
+  If he cant use his breath weapon then choose a random talent from the TALENT_CATEGORY_HARMFUL_MELEE talent group 
+  If the talent chosen is the Feat Disarm but the target has no weapons to disarm just attack the target normally. 
+  Otherwise use the talent chosen on the target. 
+  Set the Breath weapon one step closer to being used. 
+  This function is actually located in x0_i0_talent, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  categories:
+    - Combat Actions
+    - Core AI Talent
+    - Talents/Skills/Feats
+author: John Shuell
+editor: Lilac Soul
+

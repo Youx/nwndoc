@@ -1,0 +1,78 @@
+---
+type: Function
+name: GetFirstObjectInShape
+shortdesc: Determines the first object of a specific type (creature, door etc.) in shape.
+return: object
+parameters:
+  - type: int
+    name: nShape
+    desc: | SHAPE_*
+
+  - type: float
+    name: fSize
+    desc: | The size of the shape (look at description for more information) or RADIUS_SIZE_*.
+
+  - type: location
+    name: lTarget
+    desc: | The starting location of the shape.
+
+  - type: int
+    name: bLineOfSight
+    default: FALSE
+    desc: | This can be used to ensure that spell effects do not go through walls. (Default: FALSE)
+
+  - type: int
+    name: nObjectFilter
+    default: OBJECT_TYPE_CREATURE
+    desc: | Restrict results to this object type (OBJECT_TYPE_*). (Default: OBJECT_TYPE_CREATURE)
+
+  - type: vector
+    name: vOrigin
+    default: [0.0,0.0,0.0]
+    desc: | Normally the spell-caster's position. (Default: [0.0,0.0,0.0])
+
+description: |
+  Returns the first object that is within the specified nShape and fSize and OBJECT_INVALID if no objects are contained. 
+  The meaning of fSize depends on nShape: 
+  If nShape == SHAPE_SPHERE, fSize is the radius of the sphere. 
+  If nShape == SHAPE_SPELLCYLINDER, fSize is the radius of the cylinder. 
+  If nShape == SHAPE_CONE, fSize is the widest radius of the cone. 
+  If nShape == SHAPE_CUBE, fSize is half the length of one of the sides of the cube. 
+  For example, to return only creatures and doors, the value for this parameter would be OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR 
+bugs: |
+  This function does not appear to return OBJECT_TYPE_PLACEABLE objects, either by using that keyword or OBJECT_TYPE_ALL. 
+  Some users have reported that the SHAPE_CONE is not shaped as a cone, and the fact that the constant is only used in one function call throughout the entire official campaign, leads me to believe it may be a bit buggy. 
+  For the SHAPE_SPELLCONE constant, appears lTarget is used for cone angle, ltarget is fSize away in direction of lTarget. "vOrigin" is ignored - it is NOT origin of cone -- origin of cone is location of OBJECT_SELF. 
+  For the SHAPE_SPELLCYLINDER, "fSize" is actually LENGTH of cylinder 
+  "end" of cylinder is "fSize" along line from vOrigin to lTarget. 
+  cylinder width (diameter) is ALWAYS approx. 10 feet? 
+  -Reported by Korak on the Official Forums.
+version: 1.31
+example: |
+  // From the Bioware script that implements the burning hands spell
+  // [Snip][Snip]
+  oTarget = GetFirstObjectInShape(SHAPE_SPELLCONE, 10.0, GetSpellTargetLocation(), TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
+  //Cycle through the targets within the spell shape until an invalid object is captured.
+  while(GetIsObjectValid(oTarget))
+  {
+     if(!GetIsReactionTypeFriendly(oTarget))
+     {
+        // Handle saving throws, damage, effects etc.
+     }
+     //Select the next target within the spell shape.
+     oTarget = GetNextObjectInShape(SHAPE_SPELLCONE, 10.0, GetSpellTargetLocation(), TRUE, OBJECT_TYPE_CREATURE | OBJECT_TYPE_DOOR | OBJECT_TYPE_PLACEABLE);
+  }
+  // [Snip][Snip]
+seealso:
+  functions:
+    - GetNextObjectInShape
+  categories:
+    - Miscellaneous
+  constants:
+    - OBJECT_TYPE_* Constants
+    - RADIUS_SIZE_* Constants
+    - SHAPE_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Paul Catalano

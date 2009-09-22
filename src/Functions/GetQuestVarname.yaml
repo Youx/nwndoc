@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetQuestVarname
+shortdesc: Gets the NPC's local variable name for the given quest.
+return: string
+parameters:
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | Quest to get the variable name from (Default: 1)
+
+description: |
+  Get the NPC's local varname for the given quest.
+remarks: |
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+

@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetMetaMagicFeat
+shortdesc: Get the type of metamagic used on the last spell.
+return: int
+parameters:
+description: |
+  Returns an integer corresponding to the METAMAGIC_* constant describing which metamagic was used on the last spell cast. This value should remain the same until another spell has been cast. The function will return a value of –1 if the caster is not a valid object.
+remarks: |
+  This is called from an object who cast a spell. Epic-level Automatic feats do not show up with this (As this can only return 1 value). It should also be noted you shouldn't use it anywhere but a spell script, because of unreliability.
+version: 1.22
+example: |
+  // OnHeartbeat this will tell you if you have used metamagic.
+  void main()
+  {
+      if(GetMetaMagicFeat() == METAMAGIC_ANY)
+          SendMessageToPC(OBJECT_SELF,"YOU USED METAMAGIC ON LAST SPELL");
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+    - Spell Casting Effects
+    - Spells
+  constants:
+    - METAMAGIC_* Constants
+author: GoLeM
+editor: Jasperre
+

@@ -1,0 +1,22 @@
+---
+type: Function
+name: TalentBardSong
+shortdesc: If the AI has the Bard Song Feat use it.
+return: int
+parameters:
+description: |
+  Returns TRUE to the calling function if the creature has a Bard Song Feat and uses it.
+remarks: |
+  The SoU version of this function is in x0_i0_talent – including nw_i0_generic will still work, though. 
+  If the caller of the function already has the spell effect from the spell bard song (referenced by row number 411 in spells.2da, but without a corresponding constant value in nwscript.nss), the function will automatically return FALSE. 
+requirements: |
+  #include "nw_i0_generic"
+version: 1.30
+seealso:
+  categories:
+    - Core AI Talent
+    - Talents/Skills/Feats
+author: John Shuell
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

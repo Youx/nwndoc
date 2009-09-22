@@ -1,0 +1,18 @@
+---
+type: Function
+name: AnimActionChallengeIntruder
+shortdesc: Challenges a PC from an NPC if they have not yet been challenged.
+return: int
+parameters:
+description: |
+  If a PC is in the NPC's home and has not been challenged before, challenge them. 
+  This involves speaking a one-liner conversation from the conversation file "x0_npc_homeconv". 
+  Returns TRUE on success, FALSE on failure.
+requirements: |
+  #include "x0_i0_anims"
+version: 1.61
+seealso:
+  categories:
+    - Action on Object
+author: Charles Feduke
+

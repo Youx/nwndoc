@@ -1,0 +1,29 @@
+---
+type: Function
+name: GiveNumItems
+shortdesc: Gives the target the number of items specified.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | sItem
+
+  - type: string
+    name: sItem
+  - type: int
+    name: nNumItems
+description: |
+  Loops through the calling objects inventory and gives up to nNumItems of sItem to oTarget.
+remarks: |
+  Function can be found in nw_i0_plot.nss on line 813. 
+  Function was never used by BioWare in any of the official scripts or include files. Simple behavior though.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - TakeNumItems
+  categories:
+    - Inventory
+author: John Shuell
+

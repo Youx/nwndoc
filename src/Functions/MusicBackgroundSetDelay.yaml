@@ -1,0 +1,28 @@
+---
+type: Function
+name: MusicBackgroundSetDelay
+shortdesc: This function changes the delay (in milliseconds) of the background music.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area to affect.
+
+  - type: int
+    name: nDelay
+    desc: | Delay in milliseconds.
+
+description: |
+  Thorough testing revealed the functionality of this script to be a mystery. Current hypothesis is that it is a no-op function.
+bugs: |
+  Has no noticeable effect on the background music
+version: 1.22
+example: |
+  MusicBackgroundSetDelay(GetArea(OBJECT_SELF), 500);
+seealso:
+  categories:
+    - Area
+    - Music Effects
+author: Michael Nork
+editor: Jeff Lindsey
+

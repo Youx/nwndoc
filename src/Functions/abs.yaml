@@ -1,0 +1,29 @@
+---
+type: Function
+name: abs
+shortdesc: Get the absolute value of a number.
+return: int
+parameters:
+  - type: int
+    name: nValue
+    desc: | Integer to return the absolute value of.
+
+description: |
+  Returns the absolute (non-negative, numeric distance from the number 0) value of nValue.
+version: 1.22
+example: |
+  int nHigh = 12;
+  int nHighAbs = abs(nHigh);
+  //nHighAbs equals 12, the distance from 0
+  int nLow = -9;
+  int nLowAbs = abs(nLow);
+  //nLowAbs equals 9, the distance from 0
+seealso:
+  functions:
+    - fabs
+    - GetAngleBetweenLocations
+  categories:
+    - Math
+author: Charles Feduke
+editor: Jeff Lindsey
+

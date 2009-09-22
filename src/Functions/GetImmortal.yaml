@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetImmortal
+shortdesc: Retrieves the mortality of a creature.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | Target to determine the mortality of. (Default: OBJECT_SELF)
+
+description: |
+  Determines if a creature is immortal; that is will not die no matter what.
+remarks: |
+  Immortal creatures take damage, but can never be killed. Personally, I'd consider it bad form to use these too much, and never without giving the PC a clue that they might not be able to kill this particular monster. Nothing is more annoying than struggling to get a creature to near death, and then fighting it for ten more minutes before you get up, since the creature could actually never be killed.
+version: 1.61
+seealso:
+  functions:
+    - GetPlotFlag
+  categories:
+    - Cut-Scene
+    - Get Data from Creature
+author: Charles Feduke
+editor: Lilac Soul
+

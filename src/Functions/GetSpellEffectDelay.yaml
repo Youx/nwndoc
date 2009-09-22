@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetSpellEffectDelay
+shortdesc: Determines the time an effect should be delayed.
+return: float
+parameters:
+  - type: location
+    name: locSpellTargetLocation
+    desc: | The starting location of the spell effect (usually GetLocation(OBJECT_SELF))
+
+  - type: object
+    name: oTarget
+    desc: | The target of the spell effect.
+
+description: |
+  Returns the time in seconds that the effect should be delayed before application.
+remarks: |
+  nw_i0_spells.nss: 25 
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  categories:
+    - Spells
+author: Tom Cassiotis
+

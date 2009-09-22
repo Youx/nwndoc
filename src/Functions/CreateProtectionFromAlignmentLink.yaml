@@ -1,0 +1,28 @@
+---
+type: Function
+name: CreateProtectionFromAlignmentLink
+shortdesc: Creates a protection from alignment effect.
+return: effect
+parameters:
+  - type: int
+    name: nAlignment
+    desc: | Alignment to protect from (ALIGNMENT_*)
+
+  - type: int
+    name: nPower
+    default: 1
+    desc: | Multiplier (level) of the protection. (Default: 1)
+
+description: |
+  Creates a linked effect and plays visual animations for protection from a specific alignment. nPower multiplies the amount of protection at a rate of +3 deflection bonus to AC and +2 bonus to saving throws against the specified nAlignment (thus a nPower value of 3 would result in +9 deflection bonus to AC and +6 bonus to saving throws). Also renders the applicant of the effect immunity to all mind effecting spells cast of that alignment.
+requirements: |
+  #include "nw_i0_spells"
+version: 1.29
+seealso:
+  categories:
+    - Spell Casting Effects
+    - Spells
+  constants:
+    - ALIGNMENT_* Constants
+author: Charles Feduke
+

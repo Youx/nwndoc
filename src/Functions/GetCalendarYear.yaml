@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetCalendarYear
+shortdesc: Determine the current in-game calendar year.
+return: int
+parameters:
+description: |
+  Returns the current calendar year.
+remarks: |
+  Tested results give values allowable ranging from 0 to 30000.
+version: 1.61
+seealso:
+  functions:
+    - GetCalendarDay
+    - GetCalendarMonth
+    - SetCalendar
+  categories:
+    - Get Data
+    - Module
+    - Time
+  events:
+    - OnModuleLoad
+author: Jody Fletcher
+editor: Lilac Soul
+

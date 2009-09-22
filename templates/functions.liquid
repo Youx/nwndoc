@@ -1,0 +1,47 @@
+h1. {{function.type}} > {{ function.seealso.categories | join("/") }} > {{ function.name }}
+
+h4. {{ function.shortdesc }}
+
+{% highlight nw %}
+{{ function.return }} {{ function.name }}({% if function.parameters == nil %});{% else %}
+{% for p in function.parameters %} {{p.type}} {{p.name}}{% if p.default %} = {{p.default}}{% endif %}{% if forloop.last == false %},{% endif %}{% if p.desc %} /* {{p.desc}} */{% endif %}
+{% endfor %});{% endif %}
+{% endhighlight %}
+
+{% if function.description %}
+h4. Description
+
+{{ function.description }}
+{% endif %}
+
+{% if function.remarks %}
+h4. Remarks
+
+{{ function.remarks }}
+{% endif %}
+
+h4. Version
+
+{{ function.version}}
+
+{% if function.bugs %}
+h4. Known bugs
+
+{{ function.bugs }}
+{% endif %}
+
+{% if function.requirements %}
+h4. Requirements
+
+{% highlight nw %}
+{{ function.requirements }}
+{% endhighlight %}
+{% endif %}
+
+{% if function.example %}
+h4. Example
+
+{% highlight nw %}
+{{ function.example }}
+{% endhighlight %}
+{% endif %}

@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetItemPossessedBy
+shortdesc: Get an item with a specific tag in a given creature or placeable's inventory.
+return: object
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Target creature or placeable.
+
+  - type: string
+    name: sItemTag
+    desc: | Tag of item to be retrieved.
+
+description: |
+  Returns the item possessed by oCreature with the tag sItemTag. 
+  Returns OBJECT_INVALID if oCreature is invalid or does not possess the specified item.
+bugs: |
+  Tested in version 1.61, this function returned OBJECT_INVALID when used with stores, even if the store had an item with the provided tag.
+version: 1.61
+seealso:
+  functions:
+    - GetHas2Q4PlotItem
+    - GetIsItemPossessedByParty
+    - GetItemPossessedByParty
+    - HasItem
+  categories:
+    - Inventory
+author: Jason Harris
+editor: Lilac Soul
+additional_contributors:
+  - Blackrazor
+  - Lilac Soul

@@ -1,0 +1,23 @@
+---
+type: Function
+name: SetWayPointTo1
+shortdesc: Tells an NPC to return to their first waypoint.
+return: void
+parameters:
+description: |
+  Designed for use in heartbeat event. Determines where waypoint start is, then goes to it, and then searches for other waypoints to head towards. When at end of waypoints, starts back the other direction.
+remarks: |
+  Script: nw_c3_waypoint1.nss: Line:25
+requirements: |
+  #include "nw_c3_waypoint1"
+version: 1.29
+seealso:
+  functions:
+    - MakeWay
+    - NextTag
+  categories:
+    - Core AI
+  events:
+    - OnHeartbeat
+author: Jody Fletcher
+

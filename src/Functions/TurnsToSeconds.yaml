@@ -1,0 +1,37 @@
+---
+type: Function
+name: TurnsToSeconds
+shortdesc: Convert turns into seconds.
+return: float
+parameters:
+  - type: int
+    name: nTurns
+    desc: | The number of turns to convert into seconds.
+
+description: |
+  Returns the value of nTurns converted into seconds. A single turn is always 60 seconds. 
+  This value never changes due to the game clock - it is real time.
+remarks: |
+  Great way to apply a turn-based effect to an object when ApplyEffectToObject expects seconds instead of turns. Used mostly for spell effects in the game. 
+  Note that a turn, in the P&P D&D books, is what we call a round (6 second) in NwN. Do not get confused if it says "2 turns", which means 12 seconds, not 120.
+version: 1.62
+example: |
+  // Simple custom spell cast by an NPC.  The spell should last 1 turn per level of the caster.
+  void main(){
+      int nDurationOfSpell = GetCasterLevel(OBJECT_SELF);
+      effect eBonusToApply = EffectAttackIncrease(1);
+      object oTargetOfSpell = GetSpellTargetObject();
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eBonusToApply, oTargetOfSpell, TurnsToSeconds(nDurationOfSpell));
+  }
+seealso:
+  functions:
+    - GetTimeSecond
+    - RoundsToSeconds
+  categories:
+    - Time
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - John Shuell
+  - Kirk McDonald

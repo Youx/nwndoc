@@ -1,0 +1,52 @@
+---
+type: Function
+name: SetListenPattern
+shortdesc: Sets an object to listen to a particular pattern.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object that will listen for certain things.
+
+  - type: string
+    name: sPattern
+  - type: int
+    name: nNumber
+    default: 0
+remarks: |
+  nNumber
+  The index of this particular pattern. (Default: 0)
+description: |
+  Sets what oObject to listen for sPattern. 
+  Note: You must call SetListening to actually set the object to listen.
+remarks: |
+  You can call this function several times to listen to different things. 
+  Bioware uses this to help with the AI, sending commands through shouts and having its faction members respond appropriately. 
+  From Noel (Bioware): 
+  ** will match zero or more characters 
+  *w one or more whitespace 
+  *n one or more numeric 
+  *p one or more punctuation 
+  *a one or more alphabetic 
+  | is or 
+  ( and ) can be used for blocks 
+  - setting a creature to listen for "**" will match any string 
+  - telling him to listen for "**funk**" will match any string that contains the word "funk". 
+  - "**(bash|open|unlock)**(chest|door)**" will match strings like "open the door please" or "he just bashed that chest!" 
+version: 1.26
+seealso:
+  functions:
+    - GetIsListening
+    - GetListenPatternNumber
+    - GetMatchedSubstring
+    - GetMatchedSubstringsCount
+    - SetListening
+  categories:
+    - Core AI
+    - Henchmen/Familiars/Summoned
+  events:
+    - OnConversation
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Max Aller

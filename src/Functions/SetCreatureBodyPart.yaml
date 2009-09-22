@@ -1,0 +1,36 @@
+---
+type: Function
+name: SetCreatureBodyPart 
+shortdesc: Sets the body part model to be used on the creature specified.
+return: void
+parameters:
+  - type: int
+    name: nPart
+    desc: | CREATURE_PART_*
+
+  - type: int
+    name: nModelNumber
+    desc: | CREATURE_MODEL_TYPE_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to change the body part for. (Default: OBJECT_SELF)
+
+description: |
+  Sets the body part model to be used on the creature specified.
+  Only part based creature appearance types are supported. i.e. The model types for the playable races ('P') in the appearance.2da.
+  The model names for parts need to be in the following format: p<m/f><race letter><phenotype>_<body part><model number>.mdl
+  CREATURE_MODEL_TYPE_SKIN is not for use on shoulders, pelvis or head.
+  CREATURE_MODEL_TYPE_TATTOO is for body parts that support tattoos, i.e. not heads/feet/hands.
+  CREATURE_MODEL_TYPE_UNDEAD is the undead models that only exist for the right arm parts.
+version: 1.67
+seealso:
+  functions:
+    - GetCreatureBodyPart
+  constants:
+    - CREATURE_MODEL_TYPE*
+    - CREATURE_PART_*
+  categories:
+    - Action on Object
+author: Mistress

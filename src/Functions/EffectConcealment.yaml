@@ -1,0 +1,37 @@
+---
+type: Function
+name: EffectConcealment
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+  - type: int
+    name: nPercentage
+    desc: | 1-100 inclusive
+
+description: |
+  This function returns a new concealment effect. The nPercentage:int is simply the chance of discovery so a 0 concealment would be Shamu hiding in your tub and a 100 concealment would be a brine shrimp hiding in shamu's tub. 
+  Consealment doesn't stack, only the highest applies, therefore Ghostly Visage doesn't stack with a monk's Perfect Body. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Consealment should NOT be confused with EffectMissChance - this HELPS the creature targeted, and all attacks (physical ones, ranged or melee) which are targeted that the creature may miss if this is in effect. 
+  It is reported in the combat information as "Target Consealed: Miss". 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // We apply a 30% consealment to those who step into the trigger
+  // as the trigger is behind some cover or something...
+  void main()
+  {
+      // Declare object and effect
+      object oEnterer = GetEnteringObject();
+      effect eConseal = EffectConsealment(30);
+      // Apply the effect
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eConseal, oEnterer);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

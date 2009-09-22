@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetSpellSaveDC
+shortdesc: Determines the DC needed to save against the cast spell.
+return: int
+parameters:
+description: |
+  Returns a number that represents the DC needed to save against for a spell (10 + spell level + relevant ability bonus). 
+  The relevant ability bonus for any "innate" abilties, which mean anything under the creature abilties of the creature properties, use Charisma as the ability - as the D&D rules state (but should still be affected normally by approrpate feats and so on). 
+  This will not return a valid value to use for any "feat-spells" like Blackguard's Bulls Strength (if that required a saving throw), as the feat is not a spell, and it should return the default 10. 
+  This will return 10 by default (10 + 0 + 0), even if there was no spell cast. 
+  This can be called by a creature spell file or by an Area of Effect object spell file, to script saving throws for affected creatures to specific effects. If used elsewhere, it will not be a valid use of it, and will usually be totally wrong.
+remarks: |
+  This does take into account all and every bonus and pelanty to this value. Spell Focus, Greater Spell focus and Epic spell focus, as well as any other bonuses are all included at the time of calling, based on what the spell is.
+bugs: |
+  If called from an AOE, and a lower level spell is cast after it has been created, then GetSpellSaveDC actually changes to the new value.
+version: 1.62
+seealso:
+  functions:
+    - GetLastSpell
+    - GetReflexAdjustedDamage
+  categories:
+    - Saving Throw
+    - Spell Casting Effects
+    - Spells
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

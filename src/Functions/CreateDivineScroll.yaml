@@ -1,0 +1,34 @@
+---
+type: Function
+name: CreateDivineScroll
+shortdesc: Creates a divine scroll as part of the treasure
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to create item on.
+
+  - type: object
+    name: oAdventurer
+    desc: | A player object
+
+  - type: int
+    name: nModifier
+    default: 0
+    desc: | tweak to increase treasure value (Default: 0)
+
+description: |
+  This fuction creates a Divine Scroll in the container as part of the NWN treasure system
+remarks: |
+  Found in nw_o2_coninclude.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.62
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

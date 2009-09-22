@@ -1,0 +1,48 @@
+---
+type: Function
+name: EventSpellCastAt
+shortdesc: Creates an event which triggers a "spell cast at" reaction.
+return: event
+parameters:
+  - type: object
+    name: oCaster
+    desc: | Caster of the spell.
+
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+  - type: int
+    name: bHarmful
+    default: TRUE
+    desc: | Determines if the spell is harmful to its target. (Default: TRUE)
+
+description: |
+  Returns an event which triggers the "SpellCastAt" script. nSpell is a constant of SPELL_* which specifies the type of spell that is cast. 
+  In the On Spell Cast At script, yhe parameter bHarmful is returned by GetLastSpellHarmful(), oCaster is returned by GetLastSpellCaster(), and nSpell is returned by GetLastSpell().
+remarks: |
+  This event must then be signaled using SignalEvent. 
+  This doesn't actually cast the spell, it just makes the object that the event is signaled to behave as if it were. 
+  If a spell script doesn't fire any event, then the AI will not even notice a spell was cast (and would only react to damage out of all the effects that could be applied).
+version: 1.64
+example: |
+  // Makes us think that Magic Missile (a hostile spell) was cast
+  // on ourselves, by ourselves. Not a very good example, but it is
+  // one none the less.
+  void main()
+  {
+      // Note: Ususally, this is all used on one line, because it is easier.
+      SignalEvent(OBJECT_SELF, EventSpellCastAt(OBJECT_SELF, SPELL_MAGIC_MISSILE, TRUE));
+  }
+seealso:
+  categories:
+    - Spell Casting Effects
+    - Spells
+  constants:
+    - SPELL_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Lilac Soul
+  - Christopher

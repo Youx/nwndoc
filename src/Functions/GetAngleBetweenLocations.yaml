@@ -1,0 +1,51 @@
+---
+type: Function
+name: GetAngleBetweenLocations
+shortdesc: Returns a float representing the angle between Location One and Location Two
+return: float
+parameters:
+  - type: location
+    name: lOne
+    desc: | Location One
+
+  - type: location
+    name: lTwo
+    desc: | Location Two
+
+description: |
+  This is a convenience function that returns a float representing the angle between lOne and lTwo. This is done by extracting the positions from lOne and lTwo, then getting the distance between the two locations. Then the absolute change in the x axis is calculated and the result is applied to acos(deltaX / distance). The result is a number who’s value represents the absolute bearing (where North=0) between the two locations. 
+  Calls 
+  int abs(int iNum) 
+  float acos(float fNum) 
+  int FloatToInt(float fNum) 
+  float IntToFloat(int iNum) 
+  vector GetPositionFromLocation(location loc) 
+  float GetDistanceBetweenLocations(location lone, location lTwo) 
+remarks: |
+  This method may suffer from round-off error, in the line: 
+  IntToFloat(abs(FloatToInt(vPos1.x - vPos2.x))) 
+  When vPos2.x is subtracted from vPos1.x and there is no guarantee that (vPos1.x > vPos2.x) is true. This author has to wonder about the absence of a fAbs function that returns the absolute value of a float, baring that why not simply write the following check: 
+  float fChangeX = vPos1.x – vPos2.x; 
+  if (fChangeX < 0) 
+  fChangeX = -fChangeX; 
+  as was done in GetChangedPosition. But this is merely this writer’s opinion; the precision error however can be real. 
+  Also remember, this requires the include file x0_i0_position.
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  functions:
+    - abs
+    - acos
+    - FloatToInt
+    - GetDistanceBetweenLocations
+    - GetPositionFromLocation
+    - IntToFloat
+  categories:
+    - Area
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - James E. King

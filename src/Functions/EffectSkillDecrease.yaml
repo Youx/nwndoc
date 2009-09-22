@@ -1,0 +1,52 @@
+---
+type: Function
+name: EffectSkillDecrease
+shortdesc: Returns an effect to decrease a skill.
+return: effect
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+  - type: int
+    name: nValue
+    desc: | The number of points to decrease nSkill by.
+
+description: |
+  Returns an affect to decrease nSkill nValue points. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nSkill is invalid. 
+  The limit for nValue is unknown. Bioware uses up and over 20, however. It is unknown if these stack or counter Increases in skills. 
+  To have an effect affect all skills, use the value SKILL_ALL_SKILLS for nSkill, instead of a specific one. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Once applied, the skill will change in the characters sheet, and all things to do with that skill will be affected. 
+  nSkill is mearly a number reference to a skills.2da entry, although using appropriate SKILL_* constants is a better idea. 
+  Skill decreases can be counted by direct immunity to changes in skills - Immunity: Skill decrease. 
+  It is unknown if skill decreases stack. They should, however, simply overlap with bonuses to skills where appropriate. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Example - Apply an effect to oTarget which will reduce
+  // the hiding skill level by 2 for 60 seconds.
+  void main()
+  {
+      // Get who to affect
+      object oTarget = GetLastUsedBy();
+      // Declare skill decrease
+      effect eSkillDec = EffectSkillDecrease(SKILL_HIDE, 2);
+      // Apply it for 60 seconds.
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eSkillDec, oTarget, 60.0f);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - EffectSkillIncrease
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+    - SKILL_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,40 @@
+---
+type: Function
+name: VersusTrapEffect
+shortdesc: Modifies an effect so that it only works against traps.
+return: effect
+parameters:
+  - type: effect
+    name: eEffect
+    desc: | The effect you wish to modify.
+
+description: |
+  Set eEffect to be versus traps.
+remarks: |
+  Much like setting an effect to work only against a certain alignment (Protection From Evil, etc), this allows you to raise reflex saves, dexterity, search values for a character but only make it effective against traps. 
+  It can, of course, increase disarm trap skills versus traps - but they are only valid for traps anyway. Anything that a trap will not take into effect is a useless effect (such as a strength increase).
+version: 1.22
+example: |
+  // Add +10 search, versus traps only, to the entering object.
+  void main()
+  {
+      // Get object
+      object oEnterer = GetEnteringObject();
+      // Delcare effect
+      effect eSearch = EffectSkillIncrease(SKILL_SEARCH, 10);
+      // Make it versus a trap
+      eSearch = VersusTrapEffect(eSearch);
+      // Apply it permamently
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSearch, oEnterer);
+  }
+seealso:
+  functions:
+    - VersusAlignmentEffect
+    - VersusRacialTypeEffect
+  categories:
+    - Effects
+    - Talents/Skills/Feats
+    - Traps
+author: John Shuell
+editor: Jasperre
+

@@ -1,0 +1,41 @@
+---
+type: Function
+name: EffectBlindness
+shortdesc: Create a Blindness effect.
+return: effect
+parameters:
+description: |
+  Returns a new effect object that when applied to a player will dim his surroundings and remove all objects from his view. 
+  Blindness makes it so you can't see anything - 50% miss chance for all attacks, and it doesn't allow spells to be targeted directly at creatures (although area-of-effect spells, like Fireball, still can be). 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Blindness' effect's will not stack with each other, so you can never make them miss 100% of the time. It is also doubtful that the effect can be applied twice to one object anyway. 
+  Blind Fight lets the target re-roll any misses when blinded, and is the only way to activly counter this except for having immunity to blindness. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying blindness to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eBlind = EffectBlindness();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_BLIND_DEAF_M);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eBlind, oTarget);
+  }
+seealso:
+  functions:
+    - EffectLinkEffects
+  categories:
+    - Effects
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

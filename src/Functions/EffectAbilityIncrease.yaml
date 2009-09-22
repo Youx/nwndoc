@@ -1,0 +1,57 @@
+---
+type: Function
+name: EffectAbilityIncrease
+shortdesc: Create an effect that increases an objects specified ability score.
+return: effect
+parameters:
+  - type: int
+    name: nAbilityToIncrease
+    desc: | ABILITY_*
+
+  - type: int
+    name: nModifyBy
+    desc: | Amount to modify ability score.
+
+description: |
+  Target Creature's ability score is modified by specified amount, up to a maximum of 10. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Ability increases stack. Yes, they stack and Ability Decreases do not. 
+  Items and Spells (even sometimes from the same spell, or set of spells) both combine, and overlap, to a maximum bonus of +10 in a given statistic. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 1 strength bonus to the target
+  // And yes, its very similar to the EffectAbilityDecrease
+  // function useage.
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eBonus = EffectAbilityIncrease(ABILITY_STRENGTH, 1);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_IMPROVE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eBonus, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - EffectAbilityDecrease
+    - EffectAttackDecrease
+    - EffectAttackIncrease
+  categories:
+    - Effects
+  constants:
+    - ABILITY_* Constants
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jeremy Hinkle
+  - Charles Feduke
+  - Jasperre

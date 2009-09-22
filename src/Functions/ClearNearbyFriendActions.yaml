@@ -1,0 +1,36 @@
+---
+type: Function
+name: ClearNearbyFriendActions
+shortdesc: Clears the actions of a creature and all nearby friends
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | creature whose friends' actions are cleared (Default: OBJECT_SELF)
+
+  - type: int
+    name: bClearCombat
+    default: FALSE
+    desc: | stop combat as well (Default: FALSE)
+
+description: |
+  Clears the action queues of oTarget and the nearest 10 friendly creatures to the oTarget, useful for stopping a battle in progress. 
+  Note that unless TRUE is passed for nClearCombat, any current fighting involving the friends will continue. 
+  Nearby friend is defined as GetNearestCreature(CREATURE_TYPE_REPUTATION, REPUTATION_TYPE_FRIEND, oTarget).
+remarks: |
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors!
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Action on Object
+    - Combat Actions
+    - Party
+  constants:
+    - CREATURE_TYPE_* Constants
+author: Peter Busby
+

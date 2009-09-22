@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetVictim
+shortdesc: Specifies the assassin’s victim in original campaign.
+return: object
+parameters:
+  - type: action
+    name: a
+description: |
+  Returns the victim of the assassin, stored by the SetVictim command as a local object ("NW_J_ASSASSIN_VICTIM") on the assassin.
+remarks: |
+  Found in nw_j_assassin.nss on line 366 
+  Called by the function (also in nw_j_assassin) VictimDead, which returns TRUE if the object stored in "NW_J_ASSASSIN_VICTIM" isn’t valid, i.e. has been killed. 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.29
+seealso:
+  functions:
+    - SetVictim
+    - VictimDead
+    - VictimDeadButNoItems
+  categories:
+    - Module Specific
+author: Lilac Soul
+editor: Jody Fletcher
+additional_contributors:
+  - Lilac Soul

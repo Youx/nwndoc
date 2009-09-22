@@ -1,0 +1,29 @@
+---
+type: Function
+name: SendMessageToPCByStrRef
+shortdesc: Send a message to a player
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | Player to send message to
+
+  - type: int
+    name: nStrRef
+    desc: | StrRef of the message to send
+
+description: |
+  Send a server message (szMessage) to the oPlayer.
+remarks: |
+  The StrRef is an index number into the user's dialog.tlk file, which is a language specific file. Since Hordes of the Underdark, it's become possible to easily make your own tlk file and include with your module. Note that you must add 16777216 to the index in your file, so if you want entry 1 in your custom tlk file, you'll need use 16777217 for the nStrRef in this function. 
+  More detailed information on talktables can be found here: 
+  http://ccg.dladventures.com/index.php/TalkTables
+version: 1.61
+seealso:
+  functions:
+    - SendMessageToPC
+  categories:
+    - PC Only
+    - String
+author: Lilac Soul
+

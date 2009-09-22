@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetCommandable
+shortdesc: Determines if the object in question can have actions added to it's action Queue.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oTarget's action stack can be modified.
+remarks: |
+  GetCommadable is used to test if an object's action queue is commandable, or in others words, can they or others (via AssignCommand) add/modify their action que. They can become uncommandable via the SetCommandable(FALSE,oTarget) function. This is useful when you want a PC to not be able to choose their actions for a short amount of time, or if you want an NPC to do something important, but who has scripting that would normally have the action called to fail (like a move to in a battle).
+version: 1.26
+seealso:
+  functions:
+    - SetCommandable
+  categories:
+    - Get Data from Creature
+author: John Shuell
+editor: Charles Feduke
+additional_contributors:
+  - Jason Hyde

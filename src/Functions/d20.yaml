@@ -1,0 +1,32 @@
+---
+type: Function
+name: d20
+shortdesc: Rolls a 20-sided die.
+return: int
+parameters:
+  - type: int
+    name: nNumDice
+    default: 1
+    desc: | The number of dice to roll. (Default: 1)
+
+description: |
+  Returns the total from rolling nNumDice x d20 dice. 
+  If nNumDice is less than 1, then 1 is used.
+remarks: |
+  A d20 (twenty sided die) has a 5% probability of turning up any one number.
+version: 1.22
+seealso:
+  functions:
+    - d10
+    - d100
+    - d12
+    - d2
+    - d3
+    - d4
+    - d6
+    - d8
+    - Random
+  categories:
+    - Miscellaneous
+author: Charles Feduke
+

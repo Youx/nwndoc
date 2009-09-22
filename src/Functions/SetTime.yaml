@@ -1,0 +1,65 @@
+---
+type: Function
+name: SetTime
+shortdesc: Sets the game's current time.
+return: void
+parameters:
+  - type: int
+    name: nHour
+    desc: | The new hour value, from 0 to 23.
+
+  - type: int
+    name: nMinute
+    desc: | The new minute value from 0 to 1 (or 0 to a higher value if the module properties for time were changed).
+
+  - type: int
+    name: nSecond
+    desc: | The new second value, from 0 to 59.
+
+  - type: int
+    name: nMillisecond
+    desc: | The new millisecond value, from 0 to 999.
+
+description: |
+  Time can only be advanced forwards; attempting to set the time backwards will result in the day advancing and then the time being set to that specified, e.g. if the current hour is 15 and then the hour is set to 3, the day will be advanced by 1 and the hour will be set to 3. 
+  Set the game time to the time specified. Time can only be advanced forwards; attempting to set the time backwards will result in the day advancing and then the time being set to that specified, e.g. if the current hour is 15 and then the hour is set to 3, the day will be advanced by 1 and the hour will be set to 3. If values larger than the max hour, minute, second or millisecond are specified, they will be wrapped around and the overflow will be used to advance the next field, e.g. specifying 62 hours, 250 minutes, 10 seconds and 10 milliseconds will result in the calendar day being advanced by 2 and the time being set to 18 hours, 10 minutes, 10 milliseconds.
+remarks: |
+  This an effect on in-game DelayCommand()'s, and any effects applied with DURATION_TYPE_TEMPORARY, as in, they'll get removed sooner rather then later. 
+  Any DelayCommand()'s used will all fire at once if a large timespan is advanced. If a DelayCommand() function is recursive, as in, it will call another DelayCommand() function inside the function it calls, the actual effect is only that the time is advanced and function called once. If we call something every 6 seconds, using a DelayCommand(), and we advance the time 1 minute, it will not fire the function 10 times, only once! 
+  It is recommended to use this not at all in multiplayer, and restrictedly in singleplayer. 
+  If used to advance a single-players time when they rest (rather then the standard minute or so) it would be wise to only do it when rest has sucessfully ended (as thier "personal effects" like diseases and poison will advance 24 hours). 
+  Time Stop will pause the in game and artifical timers for the duration. I would not attempt to call SetTime under the condition of time stop, however, it will probably mearly not do anything until it is over.
+version: 1.62
+example: |
+  // Advance the time of the module by 2 hours and 30 minutes. 
+  // Maybe the party in the module had to rest for a while...
+  void main()
+  {
+      // Get current hour, minute, second and millisecond.
+      int nHour = GetTimeHour();
+      int nMinute = GetTimeMinute();
+      int nSecond = GetTimeSecond();
+      int nMillisecond = GetTimeMillisecond();
+      // Advance the hour and minute by 2 and 30 respectivly.
+      nHour += 2;
+      nMinute += 30;
+      // Set the new time
+      SetTime(nHour, nMinute, nSecond, nMillisecond);
+  }
+seealso:
+  functions:
+    - EffectTimeStop
+    - GetTimeHour
+    - GetTimeMillisecond
+    - GetTimeMinute
+    - GetTimeSecond
+    - HoursToSeconds
+    - SetCalendar
+  categories:
+    - Time
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jon Dewey
+  - Lilac Soul
+  - Jasperre

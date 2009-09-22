@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetFootstepType 
+shortdesc: Returns the FOOTSTEP_TYPE_* of the creature specified.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature that we are interested in.
+
+description: |
+  Returns the FOOTSTEP_TYPE_* of the creature specified.
+version: 1.66
+seealso:
+  functions:
+    - SetFootstepType
+  categories:
+    - FOOTSTEP_TYPE_*
+  categories:
+    - Sound Effects
+author: bernosky
+editor: Mistress

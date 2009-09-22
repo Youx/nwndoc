@@ -1,0 +1,28 @@
+---
+type: Function
+name: ActionPutDownItem
+shortdesc: Causes the subject to place an item on the ground at it's feet.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to be put down.
+
+description: |
+  Subject will crouch down and place oItem on the ground at its feet. 
+  If an error occurs the log file will contain "ActionPutDownItem failed."
+bugs: |
+  ActionPutDownItem captures the location to drop the item at as soon as the command is added to the action queue meaning if you tell a npc to move from point A to point B and then drop an item it will move to point B and then run (or sometimes "slide") back to point A and drop the item there. 
+  This is only a problem if you want the NPC to move before dropping something; workarounds include using DelayCommand() or create some clunky system where you put the ActionPutDownItem() part in a seperate script and execute it using ActionDoCommand(). 
+version: 1.28
+seealso:
+  functions:
+    - ActionGiveItem
+    - ActionPickUpItem
+  categories:
+    - Action on Object
+    - Inventory
+author: Ryan Hunt
+editor: Charles Feduke
+additional_contributors:
+  - Erik Mydland

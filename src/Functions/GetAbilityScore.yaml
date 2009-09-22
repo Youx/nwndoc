@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetAbilityScore
+shortdesc: Get the ability score of a specific type for a creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature whose ability score is sought.
+
+  - type: int
+    name: nAbilityType
+    desc: | ABILITY_*
+
+  - type: int
+    name: nBaseAbilityScore
+    default: FALSE
+    desc: | If set to TRUE will return the base ability score without bonuses (e.g. ability bonuses granted from equipped items). If nothing entered, defaults to FALSE.
+
+description: |
+  Returns the ability score of type nAbilityType for oCreature (otherwise 0).
+version: 1.67
+seealso:
+  functions:
+    - GetCharisma
+    - GetIntelligence
+    - GetWisdom
+  categories:
+    - Get Data from Creature
+  constants:
+    - ABILITY_* Constants
+author: Kristian Markon
+editor: Mistress
+

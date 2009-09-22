@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetAreaFromLocation
+shortdesc: Returns the area that a particular location is in.
+return: object
+parameters:
+  - type: location
+    name: lLocation
+    default: None
+    desc: | The location (Default: None)
+
+description: |
+  Get the area's object ID from lLocation. 
+  The function GetArea would generally be used more often, as it's parameter is an object, rather than a location, but GetAreaFromLocation is useful when a location is being manipulated. For example, when a new location is needed based on the facing, and/or the position of an existing location.
+remarks: |
+  If the location provided isn't valid, the function returns OBJECT_INVALID. 
+  It is a good way to get if a stored GetLocalLocation() is invalid or valid - it is basically the only way to do it! If the area is valid for the local location, a creature can be sucessfully moved there without problems (where they appear is another matter).
+version: 1.22
+example: |
+      // Get the location of the calling object
+      location lMyLocation = GetLocation (OBJECT_SELF);
+      // Get the area, position and facing
+      object   oArea       = GetAreaFromLocation (lMyLocation);
+      vector   vPosition   = GetPositionFromLocation (lMyLocation);
+      float    fFacing     = GetFacingFromLocation (lMyLocation);
+      // Build a new location, which faces in the opposite direction
+      location lNewLocation = Location (oArea, vPosition, fFacing + 180.0);
+seealso:
+  functions:
+    - GetArea
+    - GetLocation
+    - Location
+    - LocationToString
+  categories:
+    - Area
+    - Get Data
+author: Steve Moseley
+editor: Jasperre
+

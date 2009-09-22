@@ -1,0 +1,101 @@
+---
+type: Function
+name: AssignCommand
+shortdesc: Assigns an action command to a creature to act on.
+return: void
+parameters:
+description: |
+  Assigns aActionToAssign to oActionSubject's action queue. 
+  No return value, but if an error occurs, the log file will contain "AssignCommand failed." If the object doesn't exist, nothing happens. 
+  AssignCommand() is very useful for making a creature who isn't calling the script do something, to itself or others, or control it in a cutseen or from an event such as the OnEquip, OnPlayerDeath and so on. 
+  Note that aActionToAssign is more or less a callback function; aActionToAssign can be a void like ClearAllActions(), or a new Foobar() function. 
+  Do not bother to use AssignCommand(OBJECT_SELF, Foobar()), as AssignCommand() is worthless in that situation - the caller of the script automatically uses Foobar even without the AssignCommand, and it is only likely to generate more performance issuses. 
+  Note that AssignCommand'ed commands get executed AFTER the script finishes. For instance, this will cause the caller first to say Foo, then Bar: 
+  AssignCommand(OBJECT_SELF, SpeakString("Bar")); 
+  SpeakString("Foo");
+remarks: |
+  A common mistake on AssignCommand seems to be to use OBJECT_SELF. OBJECT_SELF is a constant so it is more of a NULL pointer than a "this" pointer. If you use it in the AssignCommand or similar functions the creature will attempt to perform the action against itself which most often seems to not be what the person using it intended. 
+  Also note that, OBJECT_SELF, if used in the aActionToAssign, will be oActionSubject. For instance: 
+  AssignCommand(oPC, SpeakString(GetName(OBJECT_SELF))); 
+  will cause oPC to speak his own name, not the name of the owner of the script. 
+  Note that, though it takes an "action" type as a parameter, nwscript doesn't allow you to do stuff like: 
+  action aDo=SendMessageToPC(oPC, "Message"); 
+  You need to put the actual SendMessage... (or whatever) inside the AssignCommand call - you can't use the action keyword as a pointer to a function. In fact, the action keyword is unusable, except that BioWare can put it in function declarations, apparently. But we can't use it in function declarations ourselves. 
+  AssignCommand() can be used by any object at any time to delay some code running, it will not assign commands as actions - so AssignCommand(oTarget, Foobar()); should just run the code instantly, not after any additional actions. This is only true for the void functions put into an AssignCommand - any actions put into one will be stilladded to the end of an action queue on the object. 
+  A use of AssignCommand() and ActionDoCommand() can make a void function be put into the action queue - see ActionDoCommand()'s entry.
+version: 1.62
+example: |
+  // A simpler example - examine the thing being used by the PC
+  void main()
+  {
+      // Define oPC AND OBJECT_SELF.
+      object oPC = GetLastUsedBy();
+      // * Note: Remember, defining OBJECT_SELF means that when
+      //    we pass oSelf into the AssignCommand()'s
+      //    ActionExamine, instead of OBJECT_SELF, it WILL examine
+      //    this sign, not the PC. see the note in Remarks.
+      object oSelf = OBJECT_SELF;
+      // Assign the action to read oSelf, not OBJECT_SELF, which
+      // would be the PC.
+      AssignCommand(oPC, ActionExamine(oSelf));
+  }
+  // A valid use of AssignCommand to assign a new 
+  // ActionJumpToObject() (to Another portal) for the PC who 
+  // last used the portal.
+  // In this case, it also shows a valid use of ClearAllActions() with other AssignCommands().
+  // Note: It could use JumpToObject to put the action on top of the
+  // action queue - but thats kinda cheating for such a nice example.
+  void main()
+  {
+      // Get PC
+      object oUser = GetLastUsedBy();
+      // Get where we want to go to (another portal placeable)
+      object oTarget = GetObjectByTag("PORTAL_TARGET");
+      // Make them stop what they might have queued (such as
+      // spellcasting, skill using, emotes...)
+      AssignCommand(oPC, ClearAllActions());
+      // Force them to move to the target instantly
+      // This action will NOT be cleared, because it is called after
+      // the ClearAllActions() which is assigned.
+      // * also note it does not use OBJECT_SELF, but oTarget, which
+      //    means that the PC won't try and jump to itself.
+      AssignCommand(oPC, ActionJumpToObject(oTarget));
+  }
+  // A good example of coding. You can make one call of
+  // AssignCommand() to make the target to many actions.
+  // Advantages: Much more efficent, faster, easier to code in 
+  //   the main script, can use includes efficiently. Much easier to 
+  //   have all the actions to assign in one place too, and makes
+  //   sure, 100%, the order they fire in.
+  // Function, can be in an include for example.
+  void IMoveToLocation(location lTarget)
+  {
+      // We move here
+      ClearAllActions();
+      JumpToLocation(lTarget);
+  }
+  // Main function
+  void main()
+  {
+      // Get location to move to, a waypoint
+      location lTarget = GetLocation(GetWaypointByTag("WAYPOINT"));
+      // Move the person
+      object oUser = GetLastUsedBy();
+      AssignCommand(oUser, IMoveToLocation(lTarget));
+  }
+seealso:
+  functions:
+    - ActionDoCommand
+    - ActionSit
+    - ActionWait
+    - ClearAllActions
+    - MoveToNewLocation
+    - SetCommandable
+  categories:
+    - Action on Object
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Edward Wilson
+  - Jasperre
+  - Lilac Soul

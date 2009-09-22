@@ -1,0 +1,40 @@
+---
+type: Function
+name: ResistSpell
+shortdesc: Performs a spell resistance check between the caster and the target.
+return: int
+parameters:
+  - type: object
+    name: oCaster
+    desc: | Caster of the spell.
+
+  - type: object
+    name: oTarget
+    desc: | Target of the spell.
+
+description: |
+  * Return value if oCaster or oTarget is an invalid object: FALSE 
+  * Return value if spell cast is not a player spell: - 1 
+  * Return value if spell resisted: 1 
+  * Return value if spell resisted via magic immunity: 2 
+  * Return value if spell resisted via spell absorption: 3 
+  Bioware uses MyResistSpell() for spells that use this, to apply appropriate effects for the return value. It is a good idea to use this wrapper function instead of this directly. The Bioware function only returns 1 or 0.
+remarks: |
+  This should only ever be used in a spell script! It may not work correctly elsewhere, as Mantals and Globes use the spells level, if it is a PC spell (defined in spells.2da), to stop this or decrease the amount of mantal power, and the caster level of oCaster of course! 
+  It checks spell resistance, Globes, and Spell Immunity. 
+  IE, the effects EffectSpellImmunity, EffectSpellResistanceIncrease, EffectSpellLevelAbsorption (Or approprate item properties). See seperate descriptions for exact effects. 
+  Never use it for non-player spells (defined in the spells.2da), it mearly always returns -1 (as it would for a non-spell-script!)
+bugs: |
+  1.64: Fixed problem with ResistSpell() scripting command not working correctly when used with Cleric Domain spells and sub-radial spells in combination with spell absorption effects.
+version: 1.64
+seealso:
+  functions:
+    - ActionCastFakeSpellAtObject
+    - ActionCastSpellAtObject
+    - MyResistSpell
+  categories:
+    - Spells
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

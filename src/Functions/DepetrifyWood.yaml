@@ -1,0 +1,23 @@
+---
+type: Function
+name: DepetrifyWood
+shortdesc: Depetrify something that has been turned to wood
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to depetrify.
+
+description: |
+  Depetrifies the specified object (oTarget).
+requirements: |
+  #include "x0_i0_petrify"
+version: 1.61
+seealso:
+  functions:
+    - Depetrify
+    - PetrifyWood
+  categories:
+    - Effects
+author: Grimlar
+

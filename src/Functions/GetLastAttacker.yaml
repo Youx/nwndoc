@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetLastAttacker
+shortdesc: Determine who last attacked a creature, door or placeable object.
+return: object
+parameters:
+  - type: object
+    name: oAttackee
+    default: OBJECT_SELF
+    desc: | Attacked object. (Default: OBJECT_SELF)
+
+description: |
+  Returns the last attacker of oAttackee. This should be used ONLY in the OnPhysicalAttacked events for creatures, placeables and doors. 
+  Return OBJECT_INVALID on error.
+remarks: |
+remarks: |
+version: 1.30
+seealso:
+  functions:
+    - GetLastHostileActor
+    - GetLastKiller
+    - GetLastWeaponUsed
+    - GetTotalDamageDealt
+  categories:
+    - Combat Information
+    - Get Data from Object
+  events:
+    - OnPhysicalAttacked
+author: Jason Harris
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

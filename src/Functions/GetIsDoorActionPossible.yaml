@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetIsDoorActionPossible
+shortdesc: Determines whether an action can be used on a door.
+return: int
+parameters:
+  - type: object
+    name: oTargetDoor
+    desc: | The door to be checked.
+
+  - type: int
+    name: nDoorAction
+    desc: | DOOR_ACTION_*
+
+description: |
+  Returns TRUE if nDoorAction can be performed on oTargetDoor, otherwise FALSE.
+remarks: |
+  This is used by Bioware AI scripts for henchmen to attempt different actions on a door if their masters (PCs) fail to open a door. For example, if the henchmen can cast the spell Knock, the script first checks if GetIsDoorActionPossible(oDoor, DOOR_ACTION_KNOCK) before casting Knock. 
+  DoDoorAction can be used to not disrupt an action queue, normally in a creatures OnBlocked event. Of course, this function will return FALSE if oTargetDoor is not a door.
+bugs: |
+  The DOOR_ACTION_KNOCK parameter is limited to knowing the spell, and will not check what the spell file NW_S0_Knock checks (IE the plot flag).
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Creature
+  constants:
+    - DOOR_ACTION_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

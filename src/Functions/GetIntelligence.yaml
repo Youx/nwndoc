@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetIntelligence
+shortdesc: Gets the targets Intelligence Ability Score.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object whose Intelligence you wish to inspect.
+
+description: |
+  Returns the Intelligence Ability value of oTarget.
+remarks: |
+  Function can be found in nw_i0_plot.nss on line 754. 
+  Very simple function, probably created so the scripters did not have to type out the full call to GetAbilityScore() each time they used it. This merely calls the GetAbilityScore(oTarget, ABILITY_INTELLIGENCE) function in that manner.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - GetAbilityScore
+    - GetCharisma
+    - GetWisdom
+  categories:
+    - Get Data from Creature
+author: John Shuell
+

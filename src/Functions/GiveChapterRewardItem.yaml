@@ -1,0 +1,27 @@
+---
+type: Function
+name: GiveChapterRewardItem
+shortdesc: Gives a reward item to the player.
+return: void
+parameters:
+  - type: int
+    name: nChapter
+    desc: | oPC
+
+  - type: object
+    name: oPC
+description: |
+  Based on the value of nChapter, one of the henchman reward items is given to oPC. It also gives an amount of XP based on the value of nChapter.
+remarks: |
+  Found in nw_i0_henchman.nss on line 496 
+  Probably not useful in everyday scripting. XP is only given if nChapter is 1, 2, or 3. My guess is that no item is given either for other values of nChapter.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

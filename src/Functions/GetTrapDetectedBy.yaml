@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetTrapDetectedBy
+shortdesc: Determines whether a creature has detected a specific trap.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+  - type: object
+    name: oCreature
+    desc: | The creature to do the check on.
+
+description: |
+  Returns TRUE if oCreature has detected the trap.
+version: 1.22
+seealso:
+  functions:
+    - SetTrapDetectedBy
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Mistress
+

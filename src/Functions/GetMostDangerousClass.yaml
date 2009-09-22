@@ -1,0 +1,59 @@
+---
+type: Function
+name: GetMostDangerousClass
+shortdesc: Use the four archetypes to determine the most dangerous group type facing the NPC.
+return: string
+parameters:
+  - type: struct
+    name: strEnemiesCount
+    desc: | A structure that contains a breakdown of the 4 basic class groups and each of their total levels.
+
+description: |
+  Returns a string representing one of the four basic class groups, whose sum of total levels are the greatest. Gives the fighter group a slight edge and considers them slightly more dangerous than the rest of the class groups.
+remarks: |
+  Returns 1 of four possible classes: 
+  FIGHTER 
+  MAGE 
+  CLERIC 
+  MONSTER 
+  This function will compare the total number of levels in the sEnemies Structure of each of the 4 basic class groups it can hold and return the one that has the most amount of levels, giving fighters a 3% increase in levels before making the determination. 
+  This function uses the sEnemies type struct which is defined in x0_i0_enemy as follows: 
+  // This structure is used to represent the number and type of 
+  // enemies that a creature is facing, divided into four main 
+  // categories: fighters, clerics, mages, monsters. 
+  struct sEnemies 
+  { 
+  int FIGHTERS; 
+  int FIGHTER_LEVELS; 
+  int CLERICS; 
+  int CLERIC_LEVELS; 
+  int MAGES; 
+  int MAGE_LEVELS; 
+  int MONSTERS; 
+  int MONTERS_LEVELS; 
+  int TOTAL; 
+  int TOTAL_LEVELS; 
+  }; 
+  The struct can be easily created with the DetermineEnemies function. See code sample below. 
+  This function can be found in x0_i0_enemy, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+example: |
+  #include "nw_i0_generic"
+  void main()
+  {
+  struct sEnemies strEnemiesCount=DetermineEnemies();
+  string sClass=GetMostDangerousClass(strEnemiesCount);
+  }
+seealso:
+  functions:
+    - GetMatchCompatibility
+    - TalentAdvancedProtectSelf
+  categories:
+    - Combat Information
+    - Core AI
+    - Targeting
+author: John Shuell
+editor: Lilac Soul
+

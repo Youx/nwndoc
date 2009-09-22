@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetCreatureStartingPackage
+shortdesc: Returns the default level up package
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to determine package of
+
+description: |
+  Returns the default package selected for this creature to level up with - returns PACKAGE_INVALID if error occurs.
+remarks: |
+  Returns a value of type PACKAGE_*. This function may be useful in conjunction with LevelUpHenchman. 
+  This is also the value set in the toolset creature properties - under the "Class" section. This should always be valid in any module with this function, and every class has a default one (For example Outsiders do have a default levelup package).
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+  constants:
+    - PACKAGE_* Constants
+author: Lilac Soul
+editor: Jasperre
+

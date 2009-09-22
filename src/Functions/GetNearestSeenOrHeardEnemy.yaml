@@ -1,0 +1,51 @@
+---
+type: Function
+name: GetNearestSeenOrHeardEnemy
+shortdesc: Determines closest visual creature and determines the closest heard creature.
+return: object
+parameters:
+description: |
+  Returns the nearest object that can be seen, then checks for the nearest heard target. 
+  Later AI for HotU and SoU has this remark: Now just a wrapper around GetNearestPerceivedEnemy.
+remarks: |
+  Note: Because of later adjustments to the AI, this NEVER returns anything that is mearly heard! 
+  This function should probably not be used as much to see if it matches the actual words of the function. 
+  The older version, which mearly does what it says on the tin, is below in the code example.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.62
+example: |
+  // Can put this in your script directly, or in a new include, if you
+  // want the original functionality of it.
+  // Returns the nearest object that can be seen, then checks for the nearest heard target.
+  object GetNearestSeenOrHeardEnemy();
+  // Returns the nearest object that can be seen, then checks for the nearest heard target.
+  object GetNearestSeenOrHeardEnemy()
+  {
+      object oTarget = GetNearestCreature(CREATURE_TYPE_REPUTATION, REPUTATION_TYPE_ENEMY, OBJECT_SELF, 1, CREATURE_TYPE_PERCEPTION, PERCEPTION_SEEN);
+      if(!GetIsObjectValid(oTarget))
+      {
+          oTarget = GetNearestCreature(CREATURE_TYPE_REPUTATION, REPUTATION_TYPE_ENEMY, OBJECT_SELF, 1, CREATURE_TYPE_PERCEPTION, PERCEPTION_HEARD_AND_NOT_SEEN);
+          if(!GetIsObjectValid(oTarget))
+          {
+             return OBJECT_INVALID;
+          }
+      }
+      return oTarget;
+  }
+seealso:
+  functions:
+    - GetEnemyHD
+    - GetIsEnemy
+    - GetNearestCreature
+    - SetListening
+  categories:
+    - Get Data
+    - Perception
+    - Targeting
+  events:
+    - OnPerception
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

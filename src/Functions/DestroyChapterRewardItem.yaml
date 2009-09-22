@@ -1,0 +1,28 @@
+---
+type: Function
+name: DestroyChapterRewardItem
+shortdesc: Destroys the chapter specific reward item given to oPC by the henchman.
+return: void
+parameters:
+  - type: int
+    name: nChapter
+    desc: | A chapter of the official campaign
+
+  - type: object
+    name: oPC
+    desc: | The player to destroy the item from.
+
+description: |
+  Destroys the chapter specific reward item given to oPC by the henchman.
+remarks: |
+  nw_i0_henchman.nss: 484 
+remarks: |
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetAppearanceType
+shortdesc: Retrieves the appearance of a specified creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to return the APPEARANCE_TYPE_* value of.
+
+description: |
+  Returns the APPEARANCE_TYPE_* value of a specified creature; returns APPEARANCE_TYPE_INVALID for non-creatures or invalid creatures.
+remarks: |
+  The APPEARANCE_TYPE_* values are references to rownumbers in the appearance.2da file - which means that you can use the value returned by this function to determine stuff about the creature such as height, moverate, sizecategory, etc. 
+  You can use SetAppearance to set a different appearence. This will always return the current appearance - including if the person is polymorphed!
+version: 1.30
+example: |
+  // If we are 0 to 5, it is one of the PC's races - we do a 
+  // special emote (woohoo cheer emote!)
+  void main()
+  {
+      // As values are 0+, we can check <= 5 for 0 to 5.
+      if(GetAppearanceType() <= 5)
+      {
+          PlayAnimation(ANIMATION_FIREFORGET_VICTORY1);
+      }
+  }
+seealso:
+  functions:
+    - SetPhenoType
+  categories:
+    - Get Data from Creature
+  constants:
+    - APPEARANCE_TYPE_* Constants
+author: Charles Feduke
+editor: Jasperre
+

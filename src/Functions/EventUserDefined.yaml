@@ -1,0 +1,34 @@
+---
+type: Function
+name: EventUserDefined
+shortdesc: Returns an event of the type nUserDefinedEventNumber.
+return: event
+parameters:
+  - type: int
+    name: nUserDefinedEventNumber
+description: |
+  EventUserDefined is used with the SignalEvent() function to cause the OnUserDefined event to trigger and run the script assigned. Within the OnUserDefined script, nUserDefinedEventNumber can be retrieved using the GetUserDefinedEventNumber() function. 
+  nUserDefinedEventNumber can be one of the standard event numbers (see the object's default OnSpawn script) or a custom number. 
+remarks: |
+  EventUserDefined only creates the event. SignalEvent() must still be called to cause the event to be triggered. 
+  The importance of UserEvents is in the ability to execute custom code to deal with unique situations without modifying the default scripts NWN assigns to the events. 
+version: 1.22
+example: |
+  // Example 1 - The following code creates a custom user event
+  // of 1234 as eSpecialEvent, then triggers the OnUserDefined
+  // event of oNPC and passes eSpecialEvent to it.
+    object oNPC;
+    event eSpecialEvent;
+    eSpecialEvent = EventUserDefined(1234);
+    SignalEvent(oNPC,eSpecialEvent);
+seealso:
+  functions:
+    - GetUserDefinedEventNumber
+    - SignalEvent
+  categories:
+    - Action on Object
+  events:
+    - OnUserDefined
+author: Brett Lathrope
+editor: Jeremy Spilinek
+

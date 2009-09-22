@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetSkyBox 
+shortdesc: Gets the SKYBOX_* constant being used in the calling area.
+return: int
+parameters:
+  - type: object
+    name: oArea
+    default: OBJECT_INVALID
+    desc: | The area for which the skybox will be returned.
+
+description: |
+  Gets the SKYBOX_* constant being used in the calling area.
+  If no valid area (or object) is specified, the area of the caller is used.
+  If an object other than an area is specified, it will use the area that the object is currently in.
+version: 1.65
+seealso:
+  functions:
+    - SetSkyBox
+  constants:
+    - SKYBOX_*
+  categories:
+    - Area
+author: bernosky
+editor: Mistress

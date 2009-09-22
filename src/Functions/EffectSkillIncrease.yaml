@@ -1,0 +1,51 @@
+---
+type: Function
+name: EffectSkillIncrease
+shortdesc: Returns an effect which will cause a skill increase.
+return: effect
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+  - type: int
+    name: nValue
+    desc: | The number of levels to increase the skill
+
+description: |
+  Returns an effect which will cause a skill increase of nValue levels if nSkill is valid. 
+  The limit for nValue is unknown. Bioware uses up and over 20, however. It is unknown if these stack or counter Increases in skills. 
+  To have an effect affect all skills, use the value SKILL_ALL_SKILLS for nSkill, instead of a specific one. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Once applied, the skill will change in the characters sheet, and all things to do with that skill will be affected. 
+  nSkill is mearly a number reference to a skills.2da entry, although using appropriate SKILL_* constants is a better idea. 
+  It is unknown if skill increases stack. They should, however, simply overlap with penalties to skills where appropriate. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Example - Apply an effect to oTarget which will increase
+  // the search skill level by 2 for 60 seconds.
+  void main()
+  {
+      // Get who to affect
+      object oTarget = GetLastUsedBy();
+      // Declare skill decrease
+      effect eSkillInc = EffectSkillIncrease(SKILL_SEARCH, 2);
+      // Apply it for 60 seconds.
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eSkillInc, oTarget, 60.0f);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - EffectSkillDecrease
+  categories:
+    - Effects
+    - Talents/Skills/Feats
+  constants:
+    - SKILL_* Constants
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Charles Feduke
+  - Jasperre

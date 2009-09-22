@@ -1,0 +1,52 @@
+---
+type: Function
+name: GetCharacterLevel
+shortdesc: Returns the total levels a creature has in all three classes.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+description: |
+  Adds up all of the levels from all three classes and returns a single value. 
+  Used before GetHitDice became available
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // Example 1 - Gets the total levels of the creature that attacked
+  // the calling object (must be a PC or Creature) and then gets
+  // the total levels of the object being attacked.  The two values
+  // are compared, and a string is spoken based on the result.
+  #include "NW_I0_GENERIC"
+  void main(){
+    // Make sure script isn't misplace...will only work on creatures.
+    if (GetObjectType(OBJECT_SELF) != OBJECT_TYPE_CREATURE) return;
+    // Get the creature that last attacked me.
+    object oCreature = GetLastAttacker(OBJECT_SELF);
+    // Get out if it is not a creature (PC or mob)
+    if (GetObjectType(oCreature) != OBJECT_TYPE_CREATURE) return;
+    // Get the challenge rating of the creature.
+    int nHisLevels = GetCharacterLevel(oCreature);
+    // Get my challenge rating.
+    int nMyLevels = GetCharacterLevel(OBJECT_SELF);
+    // Just for fun...
+    if (nMyLevels <= nHisLevels)
+    {
+      SpeakString("Ok, I'm scared!",TALKVOLUME_TALK);
+    }
+    else
+    {
+      SpeakString("I'm gonna whoop 'em good!",TALKVOLUME_TALK);
+    }
+  }
+seealso:
+  functions:
+    - GetCasterLevel
+    - GetLevelByClass
+    - GetLevelByPosition
+  categories:
+    - Combat Information
+    - Get Data from Creature
+author: Brett Lathrope
+editor: John Shuell
+

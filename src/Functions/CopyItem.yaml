@@ -1,0 +1,43 @@
+---
+type: Function
+name: CopyItem
+shortdesc: Duplicates an item.
+return: object
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to copy.
+
+  - type: object
+    name: oTargetInventory
+    default: OBJECT_INVALID
+    desc: | Create the item within this inventory (Default: OBJECT_INVALID)
+
+  - type: int
+    name: bCopyVars
+    desc: | If TRUE, local variables on item are copied
+
+description: |
+  Duplicates the item and returns a new object, an exact copy of oItem, 
+  Will normally return the new item, else on error, returns OBJECT_INVALID for non-items. 
+  Can only copy empty item containers (Such as magical bags). will return OBJECT_INVALID if oItem contains other items, and fail. 
+  If it is possible to merge this item with any others in the target location, then it will do so and return the merged object. 
+  Note that if oTargetInventory is OBJECT_INVALID, there may be 2 places an item is created. If it is on the ground, an exact copy will be placed at the same location on the ground. If it is in some kind of inventory (Store, Backpack, Box etc) it will create it inside the inventory. 
+  To force the item to copy to a location, you must use CopyObject() (noting that it doesn't have the bCopyVars parameter).
+remarks: |
+  This function doesn't seem to be able to do anything that CopyObject can't do, but it leaves out the mandatory input of a location. 
+  Can be used for custom treasure systems by finding an item in a treasureholder container, and then calling CopyItem to make a copy of the item in the container or creature calling the function. 
+  Note that CopyObject() doesn't have bCopyVars, which is important - any variables (Local's) on an object copied with CopyObject() will not be on the new copied object - a headache for copying creatures with AI variables. Hopefully, CopyObject() will get that parameter sooner or later.
+version: 1.62
+seealso:
+  functions:
+    - CopyItemAndModify
+    - CopyObject
+    - CreateItemOnObject
+  categories:
+    - Item Creation
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

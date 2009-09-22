@@ -1,0 +1,27 @@
+---
+type: Function
+name: VerifyCombatMeleeTalent
+shortdesc: Determines whether a combat talent could be used on an object.
+return: int
+parameters:
+  - type: talent
+    name: tUse
+    desc: | The talent to check if it could be used.
+
+  - type: object
+    name: oTarget
+    desc: | The target of the talent.
+
+description: |
+  Returns TRUE if tUse can be used on oTarget, otherwise FALSE.
+remarks: |
+  This is a utility function that makes sure that certain talents are not used on Elementals, Undead or Constructs. Specifically it examines the feat sap or stunning fist aren't used on creatures that are not succeptible to those attacks.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.29
+seealso:
+  categories:
+    - Core AI
+author: Tom Cassiotis
+editor: Jody Fletcher
+

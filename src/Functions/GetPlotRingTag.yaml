@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetPlotRingTag
+shortdesc: Retrieves the tag of the plot ring.
+return: string
+parameters:
+description: |
+  Returns the tag that represents the plot ring what was set using SetPlotRing()
+remarks: |
+  'This function is of little use for general scripting 
+  needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - SetPlotRing
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

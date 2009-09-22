@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetIsPC
+shortdesc: Check whether a creature is player controlled.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to check for PC status.
+
+description: |
+  Returns TRUE if oCreature is a player controlled character, otherwise FALSE. 
+  A player controlled character is treated as one of the following: a PC, DM avatars, familiars possessed by PCs, monsters possessed by DMs.
+remarks: |
+  GetAge can also be used to determine if a creature is a PC (as NPCs have no age). See the GetAge entry for more information.
+version: 1.29
+seealso:
+  functions:
+    - GetIsDM
+    - GetMaster
+  categories:
+    - Get Data from Creature
+    - PC Only
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Jochem van 't Hull
+  - George Mathis

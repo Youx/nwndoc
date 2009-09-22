@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetLastUsedBy
+shortdesc: Get the last object that used the placeable object that is calling this function.
+return: object
+parameters:
+description: |
+  Returns the last object that used the placeable or door object that is calling this function. 
+  Returns OBJECT_INVALID if it is called by something other than a placeable or a door.
+remarks: |
+  Pretty much the same function as GetLastOpenedBy but can be called from placeables that are not openable but are usable.
+version: 1.22
+seealso:
+  functions:
+    - GetLastOpenedBy
+    - GetLastWeaponUsed
+  categories:
+    - Get Data from Object
+  events:
+    - OnDisturbed
+    - OnUsed
+author: Jody Fletcher
+editor: John Shuell
+

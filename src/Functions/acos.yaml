@@ -1,0 +1,26 @@
+---
+type: Function
+name: acos
+shortdesc: Gets the arc cosine of a value.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Value to return the arc cosine of.
+
+description: |
+  Arc cosine is the inverse of the sin function. Thus, given an fValue that is some ratio of the adjacent side to the hypotenuse of a right triangle, the acos function returns the appropriate angle (in degrees) of that triangle. The acos function returns a value from 0.0 to 180.0. 
+version: 1.31
+seealso:
+  functions:
+    - asin
+    - atan
+    - cos
+    - GetAngleBetweenLocations
+    - sin
+    - tan
+  categories:
+    - Math
+author: Charles Feduke
+additional_contributors:
+  - Paul Catalano

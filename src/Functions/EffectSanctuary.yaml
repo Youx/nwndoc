@@ -1,0 +1,51 @@
+---
+type: Function
+name: EffectSanctuary
+shortdesc: Creates a sanctuary effect.
+return: effect
+parameters:
+  - type: int
+    name: nDifficultyClass
+    desc: | Must be a non-zero, positive number.
+
+description: |
+  Create a Sanctuary effect (see SPELL_SANCTUARY). 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nDifficultyClass is less than or equal to 0. 
+  The difficulty is the save DC in the sancuary spell, or, to put it another way, the DC of the will save needed to see through the person's sancuary. The save DC is done automatically for anyone who could see the person it is applied to if they didn't have the effect (IE: Line of sight to the person). 
+  The target this effect is applied to must be a creature for it to work. The target this effect is applied to must be a creature for it to work.
+remarks: |
+  Sanctuary is especially used in the Sanctuary spell - as a form of weaker invisiblity. However, sanctuary, if the save is failed against, can be more powerful - you never can percieve them (from listening nor being right next to them) as you fail to know they are there! 
+  It is, for that fact, not a real invisiblity effect - but is in NwN, for the visual purposes. 
+  It can get powerful if the save DC is high enough versus other creatures appropriate will saves - such as against fighters. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  Because EffectEthereal() has a bug and returns EFFECT_TYPE_SANCTUARY for it, any time EFFECT_TYPE_SANCTUARY is removed from a target, EffectEthereal() is too.
+version: 1.62
+example: |
+  // Sample code for applying sanctuary, save DC 20, to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eSanctuary = EffectSanctuary();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HEAD_HOLY);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSanctuary, oTarget);
+  }
+seealso:
+  functions:
+    - EffectEthereal
+  categories:
+    - Effects
+  constants:
+    - SPELL_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jasperre

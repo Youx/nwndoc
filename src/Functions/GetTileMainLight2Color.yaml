@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetTileMainLight2Color
+shortdesc: Determines the second main light color for a tile.
+return: int
+parameters:
+  - type: location
+    name: lTile
+    desc: | The location of the tile.
+
+description: |
+  Returns the color (TILE_MAIN_LIGHT_COLOR_*) for the main light 2 of the tile at lTile.
+remarks: |
+  This is another one of those counter intuitive functions. While you are affecting a specific tile that tile is being identified by a location. Also the location used to locate a tile is different than the location used to locate an object, a tile is located by the integer portion of a location in that tile / 10. Or for me I just remember that tiles are numbered in a zero based integer matrix, so the lower left tile in a 3X3 area would be located with a Location-object that has a member vector whose x and y = 0.
+version: 1.26
+seealso:
+  functions:
+    - GetTileMainLight1Color
+    - GetTileSourceLight1Color
+    - GetTileSourceLight2Color
+    - RecomputeStaticLighting
+  categories:
+    - Area
+    - Lighting Effects
+  constants:
+    - TILE_MAIN_LIGHT_COLOR_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Michael Nork

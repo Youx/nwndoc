@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetLastPCRested
+shortdesc: Returns the last PC that rested.
+return: object
+parameters:
+description: |
+  Get the last PC that has rested in the module. This function is useful only in a module's OnPlayerRest event script, and can be used when providing custom rest behavior.
+remarks: |
+  It should never be used elsewhere, other then a OnPlayerRest script. It can be an invalid object - if the PC has exited the game, and the rest has been cancled. 
+  NPC's do not trigger the event at all, but DM's can.
+version: 1.22
+seealso:
+  functions:
+    - GetLastRestEventType
+  categories:
+    - Core AI
+    - Miscellaneous
+    - PC Only
+  events:
+    - OnPlayerRest
+author: Iskander Merriman
+editor: Jasperre
+

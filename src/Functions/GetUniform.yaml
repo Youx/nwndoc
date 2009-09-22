@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetUniform
+shortdesc: Gets the tag of a guards uniform.
+return: string
+parameters:
+description: |
+  Returns the tag of a guards uniform so that scripts may check to see if a player is wearing a uniform.
+remarks: |
+  Function found in nw_j_guard.nss on line 114.
+requirements: |
+  #include "nw_j_guard"
+version: 1.22
+seealso:
+  functions:
+    - PlayerWearsUniform
+    - SetUniform
+  categories:
+    - Module Specific
+author: John Shuell
+

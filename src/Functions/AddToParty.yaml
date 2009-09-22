@@ -1,0 +1,28 @@
+---
+type: Function
+name: AddToParty
+shortdesc: Adds a PC to the party of another PC.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player to add to a party
+
+  - type: object
+    name: oPartyLeader
+    desc: | Player already in the party
+
+description: |
+  Add oPC to oPartyLeader's party. Both the oPC and oPartyLeader must be valid PCs for this function to work properly.
+remarks: |
+  To have an NPC serve a PC use AddHenchman function.
+version: 1.22
+seealso:
+  functions:
+    - AddHenchman
+    - RemoveFromParty
+  categories:
+    - Party
+author: Tom Cassiotis
+editor: Charles Feduke
+

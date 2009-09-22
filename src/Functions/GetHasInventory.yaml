@@ -1,0 +1,40 @@
+---
+type: Function
+name: GetHasInventory
+shortdesc: Determine whether an object has an inventory.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | Creature, store or placeable to investigate.
+
+description: |
+  Returns TRUE for creatures and stores, and checks to see if an item or placeable object is a container and FALSE for all other object types.
+remarks: |
+  Creatures always have inventories, and cannot be toggled on/off. Stores also always have an inventory. It never returns FALSE if it just is empty. 
+  For placeables, this is basically a check for the "Has inventory" toggle under the "General" tab of a placeables properties. Because of this, placeables with inventories must be useable because of how the checkboxs are done.
+version: 1.22
+example: |
+  // Check if the nearest placeable has an inventory, if so, speak its name
+  // Could be a creature heartbeat
+  void main()
+  {
+      // Get nearest placeable
+      object oPlaceable = GetNearestObject(OBJECT_TYPE_PLACEABLE);
+      // Has it got an inventory?
+      if(GetIsObjectValid(oPlaceable))
+      {
+          // If it has...
+          if(GetHasInventory(oPlaceable))
+          {
+              // Speak about it.
+              SpeakString("Hey, " + GetName(oPlaceable) + " might have something in it!");
+          }
+      }
+  }
+seealso:
+  categories:
+    - Inventory
+author: Tom Cassiotis
+editor: Jasperre
+

@@ -1,0 +1,40 @@
+---
+type: Function
+name: StoreCampaignObject
+shortdesc: Stores an item or creature in the campaign database.
+return: int
+parameters:
+  - type: string
+    name: sCampaignName
+    desc: | Campaign name (case-sensitive)
+
+  - type: string
+    name: sVarName
+    desc: | Unique variable name.
+
+  - type: object
+    name: oObject
+    desc: | Object value to store
+
+  - type: object
+    name: oPlayer
+    default: OBJECT_INVALID
+    desc: | Player to associate this object value with. (Default: OBJECT_INVALID)
+
+description: |
+  Stores an item or creature in the campaign database. Campaign names are case-sensitive. Returns 1 if successful, 0 if the function fails. Only items or creatures can be stored using this function. 
+  If it is a creature, all inventory items and local variables are also stored (and are retrieved when recalled) and so this function can be very CPU intensive if used often.
+remarks: |
+  It is unknown that if by specifying oPlayer that the sVarName must still be unique. 
+  As of HotU/1.62, local variables are stored in the database - including any on items possessed if the object stored is a creature.
+version: 1.62
+seealso:
+  functions:
+    - RetrieveCampaignObject
+  categories:
+    - Database
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Blackstring

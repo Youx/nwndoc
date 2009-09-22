@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetModuleItemLost
+shortdesc: Get the object that was dropped on an OnUnAcquiredItem event.
+return: object
+parameters:
+description: |
+  Returns the object that was lost in an OnUnAcquiredItem event. On error this function will return OBJECT_INVALID; this should generally not be possible as the event is triggered by an item, but if you trigger the event manually then be aware of this error.
+version: 1.22
+example: |
+  // Finds the object that was last lost on an OnUnAcquiredItem event.
+  void main()
+  {
+      object a = GetModuleItemLost();
+      if(a == OBJECT_INVALID)
+          SendMessageToPC(GetFirstPC(),"OOPS A CRASH ME THINKS");
+      else
+          SendMessageToPC(GetFirstPC(),GetTag(a));
+  }
+seealso:
+  functions:
+    - GetModuleItemAcquired
+    - GetModuleItemAcquiredFrom
+    - GetModuleItemLostBy
+  categories:
+    - Inventory
+    - Module
+  events:
+    - OnAcquireItem
+    - OnUnAcquireItem
+author: GoLeM
+editor: Kristian Markon
+

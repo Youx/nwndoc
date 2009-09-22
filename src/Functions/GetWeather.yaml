@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetWeather
+shortdesc: Gets the current weather conditions for a given area
+return: int
+parameters:
+  - type: object
+    name: oArea
+    desc: | Area to get the weather of
+
+description: |
+  Returns: WEATHER_CLEAR, WEATHER_RAIN, WEATHER_SNOW, WEATHER_INVALID 
+  Note: If called on an Interior area, this will always return WEATHER_CLEAR.
+version: 1.31
+seealso:
+  functions:
+    - SetWeather
+  categories:
+    - Area
+    - Get Data
+    - Get Data from Object
+  constants:
+    - WEATHER_* Constants
+author: Lilac Soul
+

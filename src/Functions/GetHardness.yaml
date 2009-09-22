@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetHardness 
+shortdesc: Gets the hardness of a door or placeable object.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | A door or placeable object.
+
+description: |
+  Gets the hardness of a door or placeable object.
+  Returns -1 on an error or if used on an object that is neither a door nor a placeable object.
+version: 1.67
+seealso:
+  functions:
+    - SetHardness
+  categories:
+    - Get Data from Object
+author: bernosky
+editor: Mistress

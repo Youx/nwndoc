@@ -1,0 +1,29 @@
+---
+type: Function
+name: GiveGoldToAll
+shortdesc: Gives an amount of gold to each PC in a PC's party
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: int
+    name: nGold
+    desc: | amount of gold for each PC
+
+description: |
+  Given a PC and a gold value, gives that amount to all PCs of a Player Character's party. None is given to associates. 
+remarks: |
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors!
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Money
+    - Party
+author: Peter Busby
+

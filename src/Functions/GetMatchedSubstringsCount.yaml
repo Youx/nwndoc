@@ -1,0 +1,51 @@
+---
+type: Function
+name: GetMatchedSubstringsCount
+shortdesc: Get the number of listen pattern substrings matched.
+return: int
+parameters:
+description: |
+  Returns the number of substrings that have been matched to a listen pattern set using a wildcard in the function SetListenPattern. The return value can be any valid integer; it will return a –1 if there is no matched substring. This function should only be run in a OnConversation script. 
+  As an example, consider the listen pattern specified by SetListenPattern(OBJECT_SELF, "FOO**", 500) (matching "FOO", "FOOTER", "FOOBAR", and "FOOT", as well as “FoOBaR” and “fooBAR”, as the patterns are case insensitive). 
+  In this example, if an NPC heard the string "foobar" GetMatchedSubstringsCount would determine the number of substrings, returning 2 (“foo” and “bar”). You could then use the returned value (2) with GetMatchedSubstring to return the matched substrings. 
+remarks: |
+  Special thanks to Temple for the HOW TO of this function. If you want your real name posted comment on this page. 
+version: 1.22
+example: |
+  // This program will cause an npc to listen out for woot and then respond.
+  // OnSpawn
+  void main()
+  {
+      SetListening(OBJECT_SELF,TRUE);
+      SetListenPattern(OBJECT_SELF,"Woot**",2001);
+  }
+  // OnConversation
+  void main()
+  {
+      int i = 0;
+      int nMatch = GetListenPatternNumber();
+      if(nMatch == 2001)
+          SpeakString("YEAH IT WORKS");
+      nMatch = GetMatchedSubstringsCount();
+      SpeakString(IntToString(nMatch));
+      while(i<nMatch)
+      {
+          SpeakString(IntToString(i) + ". " + GetMatchedSubstring(i));
+          i++;
+      }
+  }
+seealso:
+  functions:
+    - GetListenPatternNumber
+    - GetMatchedSubstring
+    - SetListening
+    - SetListeningPatterns
+    - SetListenPattern
+  categories:
+    - Conversation
+    - Henchmen/Familiars/Summoned
+  events:
+    - OnConversation
+author: GoLeM
+editor: Kristian Markon
+

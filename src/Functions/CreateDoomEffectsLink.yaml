@@ -1,0 +1,19 @@
+---
+type: Function
+name: CreateDoomEffectsLink
+shortdesc: Creates a linked effect that can be used for all doom effects.
+return: effect
+parameters:
+description: |
+  Returns a linked effect for all of the doom effects. 
+  The effects that are linked is a decrease of 2 for all saving throws, Attack and Damage rolls decreased by 2, all skills decreased by 2, as well as a visual effect.
+remarks: |
+  nw_i0_spells.nss: 19
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  categories:
+    - Spell Casting Effects
+author: Tom Cassiotis
+

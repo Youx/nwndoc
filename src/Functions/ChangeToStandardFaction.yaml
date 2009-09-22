@@ -1,0 +1,35 @@
+---
+type: Function
+name: ChangeToStandardFaction
+shortdesc: Changes a creature's faction to one of the four standard factions.
+return: void
+parameters:
+  - type: object
+    name: oCreatureToChange
+    desc: | A creature whose faction you will alter.
+
+  - type: int
+    name: nStandardFaction
+    desc: | STANDARD_FACTION_*
+
+description: |
+  Make oCreatureToChange join one of the standard factions ("Hostile", "Commoner", "Merchant", "Defender").
+remarks: |
+  There is currently no way to use this function to assign a creature to a non-standard faction. Use ChangeFaction instead.
+version: 1.22
+example: |
+  // In the 'Actions Taken' script of an NPC's final conversation node
+  void main() {
+    ChangeToStandardFaction(OBJECT_SELF, STANDARD_FACTION_HOSTILE);
+    DetermineCombatRound();
+  }
+seealso:
+  functions:
+    - ChangeFaction
+  categories:
+    - Reputation/Faction
+  constants:
+    - STANDARD_FACTION_* Constants
+author: Iskander Merriman
+editor: Charles Feduke
+

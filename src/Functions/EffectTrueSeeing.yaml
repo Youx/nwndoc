@@ -1,0 +1,45 @@
+---
+type: Function
+name: EffectTrueSeeing
+shortdesc: Returns an effect of True Seeing.
+return: effect
+parameters:
+description: |
+  Creates a True Seeing effect which can then be applied to a creature target. 
+  True seeing, as far as I (Jasperre) know, sees through (as if they never had it): 
+  - Invisibility (Improved and normal) 
+  - Hiding creatures 
+  - Sancuary (not Etherealness) 
+  If the target has Etherealness (Greater sanctuary spell) applied to them, this allows you to see the person (and damage them indirectly) but *not* target them - and no reason is given. This will break the AI at times, trying to cast single-target spells on an ethereal person will just get them standing there. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This is the same as if they had the item property "True Seeing" present on thier hide, or any item equipped. 
+  This is vastly more powerful, and also not to D&D rules. It can see naturally hidden people (probably to make up for the fact there are no penalties for hiding in the light or in full view in NwN), however it cannot see Ethereal people! (while the D&D spell can). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.64
+example: |
+  // Sample code for applying 1 strength damage to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eTrueseeing = EffectTrueSeeing();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_MAGICAL_VISION);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eTrueseeing, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+  categories:
+    - Effects
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Jasperre

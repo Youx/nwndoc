@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetSummonHelpIfAttacked
+shortdesc: Creates an encounter that is meant to help an attacked NPC.
+return: void
+parameters:
+description: |
+  This function works in tandem with an encounter to spawn in guards to fight for the attacked NPC.
+remarks: |
+  This function is called from BioWare's core AI scripts if the spawn in flag NW_FLAG_SET_WARNINGS is set to TRUE. 
+  Make sure the encounter tag is set to "ENC_" + NPC TAG.
+bugs: |
+  The comment for this function is: 
+  // Presently Does not work with the current implementation of encounter trigger 
+  The function sets an encounter to active. I suppose that, when the function was first created, it was meant to use SetEncounterActive to actually spawn the creatures within the encounter, which is indeed not the way SetEncounterActive works. 
+  The function is, however, called from within the default OnPhysicalAttacked script, and the encounters WILL be active after calling this function. 
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  categories:
+    - Core AI
+author: Tom Cassiotis
+editor: Lilac Soul
+

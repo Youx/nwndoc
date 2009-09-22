@@ -1,0 +1,34 @@
+---
+type: Function
+name: SetCampaignDBStringOnAll
+shortdesc: Sets a campaign string variable on all PCs in a PC's party
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: string
+    name: strVarName
+    desc: | campaign DB variable name
+
+  - type: string
+    name: strValue
+    desc: | string to be stored
+
+description: |
+  Given a PC, variable name and string value, sets the campaign database string variable on all Player Character members of the PC's party.
+remarks: |
+  Does not include associates. 
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors!
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Database
+    - Party
+author: Peter Busby
+

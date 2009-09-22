@@ -1,0 +1,52 @@
+---
+type: Function
+name: ActionSit
+shortdesc: Causes a creature to attempt to sit on something.
+return: void
+parameters:
+  - type: object
+    name: oChair
+    desc: | Object to sit on (typically a chair or couch).
+
+description: |
+  Calling object (PC, NPC) will attempt to sit in or on oChair. oChair represents the target of the script and is usually set to OBJECT_SELF as the script is put on the objects OnUse Event handler. You can only sit on placable objects. 
+  Once a creature is sitting on a placable object, you can retrieve it by GetSittingCreature(). To make a creature stand up from sitting on an object, use ClearAllActions(), although most actions may also cancle it.
+remarks: |
+  Not all creatures will sit, and not all the placeables will give good results. 
+  You can use the invisible object placeable to let creatures sit on tileset items. 
+  On most objects apart from invisible objects, chairs and couches, the creature always sits facing east (direction 90.0). This is due to the "use01" dummy located close to the model's center (the "use01" dummy is used to determine which direction the sitting creature will face). By modifying the invisible object model in a hak pak (i.e. moving the "use01" dummy forward 5 units), the sitting creature will now face the direction the arrow points. 
+  Such a hakpak is made available on the Vault by Tom Aman. You can find it here: 
+  http://nwvault.ign.com/Files/hakpacks/data/1070925245570.shtml 
+  Invisible objects makes good subsitutes, and seem to work without hakpack modifications. You can fit 3 humanoids on a bench, and there are many vault scripts which let you do this, or you can just use them directly, placed upon parts of terrain.
+bugs: |
+  If a placable is sat on, and the PC leaves the module (or sometimes just uses an item) then ActionSit() no longer works on it, even if you don't bother to check GetSittingCreature().
+version: 1.62
+example: |
+  // the following script will allow the PC to sit in a chair
+  void main()
+  {
+      object oPlayer = GetLastUsedBy();
+      object oChair = OBJECT_SELF;
+      if (GetIsPC(oPlayer))
+      {
+          if (GetIsObjectValid(oChair) && !GetIsObjectValid (GetSittingCreature(oChair)))
+          {
+              AssignCommand(oPlayer, ActionSit(oChair));
+          }
+      }
+  }
+seealso:
+  functions:
+    - AssignCommand
+    - ClearAllActions
+    - GetSittingCreature
+  categories:
+    - Action on Object
+author: Dan Spezzano
+editor: Jasperre
+additional_contributors:
+  - Dave Figueroa
+  - François Guimond
+  - Lilac soul
+  - Jasperre
+  - Rich Dersheimer

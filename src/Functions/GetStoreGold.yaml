@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetStoreGold
+shortdesc: Returns the amount of gold a store currently has.
+return: void
+parameters:
+  - type: object
+    name: oidStore
+    desc: | Store to get the gold from
+
+description: |
+  Returns the amount of gold a store currently has. -1 indicates it is not using gold. -2 indicates the store could not be located.
+remarks: |
+  Stores don't use gold by default. A store that uses gold will only buy items that it can afford. Stores that don't will buy items of any price, unless you specify a max price with the SetStoreMaxBuyPrice command.
+  Whenever a store makes a transaction with a player, the gold gained or spent is automatically reflected in the store's gold supply. 
+  Having a store identify an item will also add the gold you pay for the identification to the store's gold.
+version: 1.61
+seealso:
+  functions:
+    - SetStoreGold
+  categories:
+    - Store
+    - Money
+author: Lilac Soul
+editor: Mistress
+

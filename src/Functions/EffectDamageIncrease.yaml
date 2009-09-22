@@ -1,0 +1,57 @@
+---
+type: Function
+name: EffectDamageIncrease
+shortdesc: Create a Damage Increase effect.
+return: effect
+parameters:
+  - type: int
+    name: nBonus
+    desc: | The amount of extra damage to do as defined in the DAMAGE_BONUS_* constants group.
+
+  - type: int
+    name: nDamageType
+    default: DAMAGE_TYPE_MAGICAL
+    desc: | The type of damage that will be increased as defined by the DAMAGE_TYPE_* constants group. (Default: DAMAGE_TYPE_MAGICAL)
+
+description: |
+  Returns a new effect object that when applied to the target, will increase the amount of damage they do of the type specified in nDamageType by nBonus amount. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  This is essentially the opposite of EffectDamageIncrease, and it will stack/counter/overlap with it, and other effects of its type. 
+  The limit of nBonus is unknown.
+remarks: |
+  The damage type is very important, it will apply to any attack made and in addition to any bonus damage done by the items own properties. 
+  The damage type, if a physical one (slashing, bludgeoning, piercing), will be counted as DAMAGE_TYPE_NORMAL as if the weapon was not enchanted for its bonus to damage, and will not use the weapons enchantment bonus. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 5 fire damage bonus for melee
+  // attacks of a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDamageIncrease = EffectDamageIncrease(5, DAMAGE_TYPE_FIRE);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SUPER_HEROISM);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDamageIncrease, oTarget);
+  }
+seealso:
+  functions:
+    - EffectAttackDecrease
+    - EffectAttackIncrease
+    - EffectDamageDecrease
+  categories:
+    - Effects
+  constants:
+    - DAMAGE_BONUS_* Constants
+    - DAMAGE_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

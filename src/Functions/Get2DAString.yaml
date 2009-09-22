@@ -1,0 +1,50 @@
+---
+type: Function
+name: Get2DAString
+shortdesc: Retrieves a string value from a *.2da file on a server.
+return: string
+parameters:
+  - type: string
+    name: s2DA
+    desc: | Name of the *.2DA file on the server.
+
+  - type: string
+    name: sColumn
+    desc: | Name of the column within the *.2DA file.
+
+  - type: int
+    name: nRow
+    desc: | Row number within the *.2DA file.
+
+description: |
+  Returns the value of a string in the given location of a specified *.2da file. Returns an empty string if file, column, or row is not found. Returns "" (empty string) for "****" entries in the *.2da. 
+  Get2daString() now is cached the first time it is called, into the memory of the computer. Basically - you can now use this function in a loop with a lot less noticable loss of speed! 
+  Obviously now you cannot change 2da files dynamically out of game, and see changes in-game.
+remarks: |
+  You can now loop using this function. It will now work (or should work) as fast as the game would itself getting information from a 2da file. Likely, there now should be no noticable loss of speed compared to pre-1.64. If there is loss of speed - it'll be greatly improved upon pre-1.64. 
+  Do not prefix your own *.2da files with the prefix "des_". 
+  The maximum length for a *.2da file is 16 characters. If you specify a longer file name, the function will fail without warning.
+bugs: |
+  The maximum length of a field within a *.2da file is 267 characters. Anything longer than that will cause NWN to crash. 
+  Although not a bug, the changes to this in 1.64 means you cannot change a 2da file out-of-game, and it change the results in-game. This is intended 1.64 behaviour.
+version: 1.64
+example: |
+  // Return TRUE if weapon does bludgeoning damage
+  // Uses Get2DAString
+  int GetDoesBludgeoningDamage(object oWeapon)
+  {
+      int nBaseType = GetBaseType(oWeapon);
+      return (StringToInt(Get2DAString("baseitems","WeaponType",nBaseType) == 2);
+      // 2 = bludgeoning
+  }
+seealso:
+  categories:
+    - Database
+    - Get Data
+    - String
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Georg Zoeller
+  - Bob Flaherty
+  - Jasperre

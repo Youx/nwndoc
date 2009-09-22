@@ -1,0 +1,53 @@
+---
+type: Function
+name: CopyObject
+shortdesc: Duplicates the object specified.
+return: object
+parameters:
+  - type: object
+    name: oSource
+    desc: | Object to be copied.
+
+  - type: location
+    name: locLocation
+    desc: | Destination location for the copied object (required).
+
+  - type: object
+    name: oOwner
+    default: OBJECT_INVALID
+    desc: | Item owner (for use when copying items into inventory) (Default: OBJECT_INVALID)
+
+  - type: string
+    name: sNewTag
+    default: ""
+    desc: | New tag name. (Default: "")
+
+description: |
+  Duplicates the object specified. If oOwner does not equal OBJECT_INVALID and an item is being copied, the item will automatically be placed in oOwner's inventory. If the object to be copied is a creature, it will be placed at locLocation. If strNewTag is specified, then that tag will be assigned to the copied object. 
+  If an item is created and oOwner is specified, locLocation must be the location of the owner to appear within that owner's inventory (i.e. GetLocation(oOwner)).
+remarks: |
+  CopyObject does not work with placeables. There is currently no way to change the name of an object, even a copied one. 
+  When iterating through a container, keep in mind that DestroyObject() doesn't occur until the script exits.
+bugs: |
+  If you are iterating through a dead PCs inventory 
+  and use CopyObject with a container that has items within it, and 
+  copying to another placeable (a Corpse placeable for example)the items are duplicated. This occurs because the items belong both to the parent container and again to the child container. It may be possible to get around this unexpected behavior by marking each item already processed using SetLocalInt, then seeing if an int value set exists on the item; if so do not copy the item (of course items in a copied object's inventory will have to be iterated through manually). 
+  It appears that if you try to make a copy at a non-existent location (like getting the location of a waypoint whose tag you misspelled...), it will crash the game. 
+  There are problems with the new tag as well. Calling GetTag with the copied object as a parameter works, but calling GetObjectByTag won't return the copy, or at least it won't all the time. Calling GetTag(GetObjectByTag("")) will also return the tag of the most recently copied object.
+version: 1.61
+seealso:
+  functions:
+    - CopyItem
+    - CreateObject
+  categories:
+    - Inventory
+    - Item Creation
+    - Miscellaneous
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - S. Perreault
+  - Nanodeath
+  - Alex Meduna
+  - Angelo Cossa
+  - Harold Myles

@@ -1,0 +1,46 @@
+---
+type: Function
+name: GetIsTalentValid
+shortdesc: Check whether a talent is valid.
+return: int
+parameters:
+  - type: talent
+    name: tTalent
+    desc: | Talent to test for validity.
+
+description: |
+  Returns TRUE if tTalent is valid (akin to OBJECT_INVALID tests).
+remarks: |
+  A talent is a spell, skill or feat. This function has nothing to do with whether a creature possesses a talent; it merely tests whether the given talent exists in the game. 
+  However, it's difficult to imagine how an invalid talent could be encountered. Talent objects are constructed by one of three functions: TalentFeat(FEAT_*), TalentSkill(SKILL_*), and TalentSpell(SPELL_*). The script compiler can therefore flag almost all potential invalid talents as compiler errors. 
+  If there were functions like "GetFirstTalent()" and "GetNextTalent()", then GetIsTalentValid would be useful for placing in a while-loop conditional. 
+  The GetCreatureTalentRandom() function will return a random talent from a given talent group and will return an invalid talent if that creature does not posses the randomly generated talent.
+version: 1.22
+example: |
+  void main()
+  {
+       talent tFireBall = TalentSpell(SPELL_FIREBALL); // valid
+       talent tHeal = TalentSkill(SKILL_HEAL); // valid
+       talent tJuggle = TalentSkill(SKILL_JUGGLE); // invalid, but compiler will catch it
+       talent tMissle = TalentFeat(SPELL_MAGIC_MISSLE);  // invalid, but compiler will not catch it 
+       if (!GetIsTalentValid(tMissle))
+            SendMessageToAllDMs("tMissle is not a valid talent");
+       // now we check for a random beneficial talent on OBJECT_SELF
+       if (!GetIsTalentValid(
+            GetCreatureTalentRandom(TALENT_CATEGORY_BENEFICIAL_PROTECTION_SINGLE)
+            ))
+       {
+            SendMessageToAllDMs("Creature calling this script does not have a self protection talent.");
+       }
+  }
+seealso:
+  functions:
+    - GetCreatureHasTalent
+    - GetCreatureTalentBest
+    - GetCreatureTalentRandom
+  categories:
+    - Talents/Skills/Feats
+author: Jason Harris
+editor: Charles Feduke
+additional_contributors:
+  - James Allen

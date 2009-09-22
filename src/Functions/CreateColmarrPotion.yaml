@@ -1,0 +1,20 @@
+---
+type: Function
+name: CreateColmarrPotion
+shortdesc: Creates potions for Colmarr's Machine.
+return: void
+parameters:
+description: |
+  This is a plot specific function used to generate potions for Colmarr's Machine.
+remarks: |
+  Found in: nw_i0_2q4luskan.nss: 36 
+  Reads a local variable off the Collmarr engine in the official campaign, and uses this to determine which potion to create. Not useful in everyday scripting, though it may serve as a good way to learn how to create different items depending on eg the state of some levers.
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.28
+seealso:
+  categories:
+    - Item Creation
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

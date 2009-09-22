@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetArea
+shortdesc: Returns the area oTarget is currently in.
+return: object
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The area that the target is located.
+
+description: |
+  Returns the area that oTarget is currently in where oTarget can be a PC, creature, or placeable. 
+  Returns OBJECT_INVALID on any error.
+remarks: |
+  If the area for a known creature is invalid, it is probably in limbo! Doing anything to it when it is in limbo may well crash the game (especially DelayCommanded actions). 
+  If a PC's area is invalid, it can only be in an area tansition - almost like Limbo - and may also cause a crash if thier action queue is edited, or so on. 
+  If called on an area, it returns the area itself. So, if OBJECT_SELF is an area, (GetArea(OBJECT_SELF)==OBJECT_SELF)
+version: 1.62
+example: |
+  // Get the are of the script caller. If this is an area or module, 
+  // it will obviously be invalid!
+  void main()
+  {
+      // Define the oArea object variable.
+      object oArea;
+      // Get the area of the script caller.
+      oArea = GetArea(OBJECT_SELF);
+  }
+seealso:
+  functions:
+    - GetAreaFromLocation
+  categories:
+    - Area
+    - Get Data
+author: Brett Lathrope
+editor: Lilac Soul
+

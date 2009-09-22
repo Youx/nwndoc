@@ -1,0 +1,41 @@
+---
+type: Function
+name: GetGoldPieceValue
+shortdesc: Determines the value of an item in gold pieces.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to be appraised.
+
+description: |
+  Returns the gold piece value of oItem, and 0 if oItem is not a valid item. 
+  It can return 0 if the actual value is 0 because of the plot flag applied to items, or if it is lacking an amount of its stack needed (normally very low stacks of arrows, bullets and bolts).
+remarks: |
+  If oItem is unidentified at the time you call this function, the base item cost will be returned. If you always want the identified price, use the function in the code sample. (Note, that function should not be edited to get the UNidentified cost of the item, since unidentifying an item will most likely cause equipped items to get unequipped).
+version: 1.61
+example: |
+  // From the remarks above. This will get the identified value of
+  // oItem passed into this function.
+  int GetIdentifiedGoldPieceValue(object oItem)
+  {
+      // Initial flag
+      int bIdentified=GetIdentified(oItem);
+      // If not already, set to identfied
+      if (!bIdentified) SetIdentified(oItem, TRUE);
+      // Get the GP value
+      int nGP=GetGoldPieceValue(oItem);
+      // Re-set the identification flag to its original
+      SetIdentified(oItem, bIdentified);
+      // Return the correct value
+      return nGP;
+  }
+seealso:
+  functions:
+    - GiveGoldToCreature
+  categories:
+    - Money
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul

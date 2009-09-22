@@ -1,0 +1,32 @@
+---
+type: Function
+name: NightToDay
+shortdesc: Changes the current Day/Night cycle for this player to daylight
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | Player to see the light of day
+
+  - type: float
+    name: fTransitionTime
+    default: 0.0f
+    desc: | Time it takes for the daylight to fade in (Default: 0.0f)
+
+description: |
+  Changes the current Day/Night cycle for this player to daylight.
+remarks: |
+  If called while it is day, the player might see the screen go dark for a short while and then fade back in. This doesn't look so good, so it may be a good idea to use this together with the GetIsDay / GetIsNight functions. 
+  This doesn't cause the game time to change at all.
+version: 1.61
+seealso:
+  functions:
+    - DayToNight
+    - GetIsDay
+    - GetIsNight
+  categories:
+    - Action on Object
+    - Lighting Effects
+    - PC Only
+author: Lilac Soul
+

@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetBeenHired
+shortdesc: Checks if a henchman has been hired.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The henchman to check (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if the henchman has been hired before (determined by checking for a local variable, set with the SetBeenHired command). Returns FALSE in all other instances, including if oTarget isn't valid. 
+  From the source code documentation: 
+  Henchmen can only be hired once, ever. 
+  This checks or sets the local on the henchmen 
+  that keeps track whether they've ever been hired.
+remarks: |
+  Found in nw_i0_henchman: line 109
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  functions:
+    - SetBeenHired
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+

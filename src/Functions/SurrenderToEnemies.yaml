@@ -1,0 +1,31 @@
+---
+type: Function
+name: SurrenderToEnemies
+shortdesc: Causes all creatures in a 10 meter (1 tile) radius to stop actions, improves the creature's reputation with nearby enemies for 3 minutes. Only works for NPCs.
+return: void
+parameters:
+description: |
+  Use this on an NPC to cause all creatures within a 10-metre radius to stop what they are doing and sets the NPC's enemies within this range to be neutral towards the NPC for roughly 3 minutes. If this command is run on a PCor an object that is not a creature, nothing will happen.
+remarks: |
+  Very useful function. Can for instance be used to make an enemy surrender just before dying, to try and cut a deal with his attackers...
+bugs: |
+  Previous bug about wounding fixed in 1.62, the function does remove wounding effects from creatures so you can talk to them.
+version: 1.61
+example: |
+  //Cause an NPC to attack a player and then surrender so the player does not auto attack back at them.
+  void main()
+  {
+       object oPC = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC);
+       DelayCommand(2.0, SurrenderToEnemies()); 
+       ActionAttack(oPC, TRUE);
+  }
+seealso:
+  functions:
+    - AdjustReputation
+    - SurrenderAllToEnemies
+  categories:
+    - Combat Actions
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+

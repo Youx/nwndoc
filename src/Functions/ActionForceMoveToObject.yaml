@@ -1,0 +1,47 @@
+---
+type: Function
+name: ActionForceMoveToObject
+shortdesc: Attempts to move an NPC to a certain distance of a target object even if a clear path doesn't exist.
+return: void
+parameters:
+  - type: object
+    name: oMoveTo
+    desc: | Target object to move to.
+
+  - type: int
+    name: bRun
+    default: FALSE
+    desc: | Run boolean. TRUE: subject will run to oMoveTo. (Default: FALSE)
+
+  - type: float
+    name: fRange
+    default: 1.0f
+    desc: | The range from oMoveTo to stop at. (Default: 1.0f)
+
+  - type: float
+    name: fTimeout
+    default: 30.0f
+    desc: | Amount of time to search for path before jumping to the object (as in ActionJumpToObject). (Default: 30.0f)
+
+description: |
+  The action subject will attempt to move to within fRange meters of oMoveTo. The creature will try for fTimeout seconds to reach the waypoint and will teleport to the location no matter if it found a path in the meantime or not. 
+  No return value, but if an error occurs the log file will contain "MoveToPoint failed."
+remarks: |
+  Move to object functions (ActionForceMoveToObject, ActionMoveToObject) actually do path finding, unlike their move to location (ActionForceMoveToLocation, ActionMoveToLocation) counterparts.
+version: 1.61
+seealso:
+  functions:
+    - ActionMoveAwayFromObject
+    - ActionMoveToLocation
+    - ActionMoveToObject
+  categories:
+    - Action on Object
+    - Core AI
+    - Movement
+author: Ryan Hunt
+editor: Lilac Soul
+additional_contributors:
+  - Jeff Harper
+  - Harold Myles
+  - Iyanga
+  - Lilac Soul

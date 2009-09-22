@@ -1,0 +1,47 @@
+---
+type: Function
+name: GetTileMainLight1Color
+shortdesc: Determines the color of the first main light of a tile.
+return: int
+parameters:
+  - type: location
+    name: lTile
+    desc: | The location of the tile.
+
+description: |
+  Returns the color (TILE_MAIN_LIGHT_COLOR_*) for the main light 1 of the tile at lTile.
+remarks: |
+  This is another one of those counter intuitive functions. While you are affecting a specific tile that tile is being identified by a location. Also the location used to locate a tile is different than the location used to locate an object, a tile is located by the integer portion of a location in that tile / 10. Or for me I just remember that tiles are numbered in a zero based integer matrix, so the lower left tile in a 3X3 area would be located with a Location-object that has a member vector whose x and y = 0.
+version: 1.26
+example: |
+  //First we need to know what area the tiles are in
+  string sArea = "My Area Name";
+  //Next we need to create a new vector to identify a particular tile
+  vector vTile = Vector(0.0, 0.0, 0.0);
+  //Next we build a location for the specific tile, in this case the 
+  //tile located at 0,0 in the area.
+  location lTile = Location(GetObjectByTag(sAreaTag, 0), vTile, 0.0);
+  //With the location lTile we can now get the light color for that tile.
+  int iLight = GetTileMainLight1Color (lTile);
+  // ---
+  //First we need to know what area the tiles are in
+  string sArea = "My Area Name";
+  //Next we need to create a new vector to identify a particular tile vector vTile = Vector(1.0, 2.0, 0.0);
+  //Next we build a location for the specific tile, in this case the //tile located at the second column and third row (counting //from the lower left corner). location lTile = Location(GetObjectByTag(sAreaTag, 0), vTile, 0.0);
+  //With the location lTile we can now get the light color for that tile. int iLight = GetTileMainLight1Color (lTile);
+seealso:
+  functions:
+    - GetTileMainLight2Color
+    - GetTileSourceLight1Color
+    - GetTileSourceLight2Color
+    - RecomputeStaticLighting
+  categories:
+    - Area
+    - Get Data from Object
+    - Lighting Effects
+  constants:
+    - TILE_MAIN_LIGHT_COLOR_* Constants
+author: Michael Nork
+editor: Charles Feduke
+additional_contributors:
+  - Roy Fisher

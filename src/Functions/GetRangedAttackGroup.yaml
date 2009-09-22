@@ -1,0 +1,20 @@
+---
+type: Function
+name: GetRangedAttackGroup
+shortdesc: This function is prototyped but not used.
+return: object
+parameters:
+  - type: int
+    name: bAllowFriendlyFire
+    default: FALSE
+    desc: | (Default: FALSE)
+
+description: |
+  This function is not used in any of the Bioware scripts and is not documented.
+version: 1.22
+seealso:
+  categories:
+    - Prototyped but Unused
+author: Tom Cassiotis
+editor: Charles Feduke
+

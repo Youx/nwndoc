@@ -1,0 +1,50 @@
+---
+type: Function
+name: GetNextItemProperty
+shortdesc: Determines the next itemproperty on an item
+return: itemproperty
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to get the itemproperty from
+
+description: |
+  Will keep retrieving the next and the next item property on an Item, 
+  will return an invalid item property when the list is empty.
+remarks: |
+  Used together with GetFirstItemProperty and GetIsItemPropertyValid, this can be used to loop through an item's properties. 
+  Thus, it does with itemproperties what GetNextEffect does with effects and GetNextItemInInventory does with items.
+version: 1.61
+example: |
+  //Remove true seeing from the entering PC's headgear
+  void main()
+  {
+  //Entering object
+  object oPC=GetEnteringObject();
+  //Only PCs
+  if (!GetIsPC(oPC)) return;
+  //That PC's helmet
+  object oItem=GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  //Stop script if the PC had no helmet on
+  if (!GetIsObjectValid(oItem)) return;
+  //Get the first itemproperty on the helmet
+  itemproperty ipLoop=GetFirstItemProperty(oItem);
+  //Loop for as long as the ipLoop variable is valid
+  while (GetIsItemPropertyValid(ipLoop))
+     {
+     //If ipLoop is a true seeing property, remove it
+     if (GetItemPropertyType(ipLoop)==ITEM_PROPERTY_TRUE_SEEING)
+        RemoveItemProperty(oItem, ipLoop);
+     //Next itemproperty on the list...
+     ipLoop=GetNextItemProperty(oItem);
+     }
+  }
+seealso:
+  functions:
+    - GetFirstItemProperty
+    - GetItemPropertyType
+    - RemoveItemProperty
+  categories:
+    - Get Data from Object
+author: Lilac Soul
+

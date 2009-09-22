@@ -1,0 +1,28 @@
+---
+type: Function
+name: GivePlayerPersonalItem
+shortdesc: Gives the personal item of an assassination victim to the player.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The player to receive the item.
+
+description: |
+  Gives the personal item of the assassination victim to the player. The tag of the personal item is retrieved from a local string that has been stored previously.
+remarks: |
+  Found in nw_j_assassin.nss on line 224 
+  This is part of the Bioware assassination quest system. For it to work for you, you would have to adopt it, probably to the very last detail. This might not be the best way for you to make assassination quests, so if you don’t do it exactly the ‘Bioware-way’, you’re probably better off not using this (and similar) functions.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.28
+seealso:
+  functions:
+    - GetPersonalItem
+    - SetPersonalItem
+  categories:
+    - Item Creation
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

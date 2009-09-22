@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetMachineState
+shortdesc: Get the state of one lever
+return: int
+parameters:
+  - type: int
+    name: nCondition
+    desc: | Must be TRUE to have a chance of returning TRUE.
+
+description: |
+  Returns TRUE if the Local Int called "NW_2Q4_COLMARR_MACHINE_STATE_LEVER" exists on an object with the tag "2Q4_ColmarrEng" and nCondition variable passed in is TRUE.
+remarks: |
+  Found in nw_i0_2q4luskan.nss on line 40
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.22
+seealso:
+  functions:
+    - SetMachineState
+  categories:
+    - Module Specific
+author: John Shuell
+

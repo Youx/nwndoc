@@ -1,0 +1,29 @@
+---
+type: Function
+name: DoDoorAction
+shortdesc: Does specific action to target door.
+return: void
+parameters:
+  - type: object
+    name: oTargetDoor
+    desc: | Door action is to occur to.
+
+  - type: int
+    name: nDoorAction
+    desc: | DOOR_ACTION_*
+
+description: |
+  Perform nDoorAction on oTargetDoor.
+remarks: |
+  This is specifically for adding the action on top of an action queue. This means the OnBlocked event can fire and open a door without disrupting any ActionMoveToLocation commands. 
+  Not all GetIsDoorActionPossible() checks are comprehensive, therefore DoDoorAction may fail even if the check is passed.
+version: 1.22
+seealso:
+  categories:
+    - Action on Object
+  constants:
+    - DOOR_ACTION_* Constants
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

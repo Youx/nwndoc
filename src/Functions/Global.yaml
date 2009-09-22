@@ -1,0 +1,35 @@
+---
+type: Function
+name: Global
+shortdesc: Returns an object stored locally on the calling object that holds quest related state information.
+return: object
+parameters:
+description: |
+  Returns an object stored locally on the calling object under the name NW_J_xxxx_MYGLOBALS. xxxx is determined by which script you are including before calling this function. See remarks for list of scripts it is defined in. This object is used to house all quest related information and state. It is used by SetPlotTag(sTag), GetPlotTag(), SetxxxxItem(sTag) and GetxxxxItem(). Just replace xxxx with COMPLEX, STORY, or ARTIFACT.
+remarks: |
+  Function can be found in the following files: 
+  nw_j_artifact.nss: 29 
+  nw_j_story.nss: 29 
+  nw_j_complex.nss: 29 
+  It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. This particular function only utilizes 2 out of the 7 other functions available. All of these functions are relatively straight forward and easy to understand at a glance. There are two other sets very much similiar to this one where the only difference is in the function naming scheme.
+requirements: |
+  #include "nw_j_artifact"
+version: 1.22
+seealso:
+  functions:
+    - GetArtifactItem
+    - GetComplexItem
+    - GetFetchItem
+    - GetPlotTag
+    - GetStoryItem
+    - SetArtifactItem
+    - SetComplexItem
+    - SetGlobal
+    - SetPlotTag
+    - SetStoryItem
+    - TakeStoryItem
+  categories:
+    - Get Data
+    - Local Variables
+author: John Shuell
+

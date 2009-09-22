@@ -1,0 +1,40 @@
+---
+type: Function
+name: StopFade
+shortdesc: Removes any current fading effects or black screen.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to remove the black screen or fading effects from.
+
+description: |
+  Removes any current fading effects or black screen from the monitor of the player controlling oCreature.
+remarks: |
+  If the player's screen is currently fading, the fade will stop and the screen will be normal (not black). If the player's screen is currently black, it will be set to normal. Both these effects will happen instantaneously. If you want to remove a blackness effect gradually, call FadeFromBlack.
+version: 1.30
+example: |
+  //World goes black for creature opening a chest
+  //Brightens up after 10 seconds, though
+  //Goes OnOpen of that chest
+  void main()
+  {
+  object oPC=GetLastOpenedBy();
+  BlackScreen(oPC);
+  DelayCommand(10.0, FadeFromBlack(oPC));
+  //Alternately, this line would make the blackness go away
+  //as fast it was applied:
+  DelayCommand(10.0, StopFade(oPC));
+  }
+seealso:
+  functions:
+    - BlackScreen
+    - FadeFromBlack
+    - FadeToBlack
+  categories:
+    - Cut-Scene
+  events:
+    - OnCutsceneAbort
+author: Charles Feduke
+editor: Lilac Soul
+

@@ -1,0 +1,34 @@
+---
+type: Function
+name: ActionMoveAwayFromLocation
+shortdesc: Causes the caller to try to move away from a location
+return: void
+parameters:
+  - type: location
+    name: locMoveAwayFrom
+    desc: | Location to move away from.
+
+  - type: int
+    name: bRun
+    default: FALSE
+    desc: | TRUE to run away (Default: FALSE)
+
+  - type: float
+    name: fMoveAwayRange
+    default: 40.0f
+    desc: | Desired distance. (Default: 40.0f)
+
+description: |
+  Causes the action subject to move away from locMoveAwayFrom.
+version: 1.61
+seealso:
+  functions:
+    - ActionForceMoveToLocation
+    - ActionMoveAwayFromObject
+    - ActionMoveToLocation
+  categories:
+    - Core AI
+    - Movement
+author: Ryan Hunt
+editor: Lilac Soul
+

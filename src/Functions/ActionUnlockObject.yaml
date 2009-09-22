@@ -1,0 +1,29 @@
+---
+type: Function
+name: ActionUnlockObject
+shortdesc: Causes a creature to unlock a door or other locked object.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Door or placeable object that will be the target of the unlock attempt.
+
+description: |
+  The action subject will unlock oTarget which can be a door or a placeable object. ActionUnlockObject represents an object's use of the 'Open Locks' skill, and is therefore not applicable to placeables, triggers or doors themselves.
+remarks: |
+  Used in the script of a creature (or assigned to a creature) it will move that creature to the door and use its Open Locks skill to attempt to unlock the door (or placeable).
+bugs: |
+  Doors cannot lock or unlock themselves using this command, but trying to make them do so will not crash the game, as it used to. You can use ActionDoCommand(SetLocked(OBJECT_SELF, FALSE)); in a door's script as a substitute for ActionUnlockObject().
+version: 1.30
+seealso:
+  functions:
+    - ActionCloseDoor
+    - ActionLockObject
+    - ActionOpenDoor
+    - SetLocked
+  categories:
+    - Action on Object
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

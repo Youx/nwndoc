@@ -1,0 +1,26 @@
+---
+type: Function
+name: PlayVoiceChat
+shortdesc: Plays a voice chat.
+return: void
+parameters:
+  - type: int
+    name: nVoiceChatID
+    desc: | VOICE_CHAT_*
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The creature to voice the specified saying. (Default: OBJECT_SELF)
+
+description: |
+  Makes oTarget play a voice chat.
+version: 1.61
+seealso:
+  categories:
+    - Effects
+  constants:
+    - VOICE_CHAT_* Constants
+author: Tom Cassiotis
+editor: Lilac Soul
+

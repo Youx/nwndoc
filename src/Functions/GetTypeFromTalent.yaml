@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetTypeFromTalent
+shortdesc: Determines the primary category of the talent requested.
+return: int
+parameters:
+  - type: talent
+    name: tTalent
+description: |
+  Returns the type (TALENT_TYPE_*) of tTalent. This is the primary (i.e. spell, feat and skill) category of the talent.
+remarks: |
+  Use GetIdFromTalent function to return specific spell, feat or skill of tTalent.
+version: 1.22
+seealso:
+  functions:
+    - GetIdFromTalent
+    - TalentAdvancedProtectSelf
+    - TalentBuffSelf
+  categories:
+    - Spells
+    - Talents/Skills/Feats
+  constants:
+    - TALENT_TYPE_* Constants
+author: Jody Fletcher
+

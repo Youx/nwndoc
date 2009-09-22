@@ -1,0 +1,48 @@
+---
+type: Function
+name: EffectDispelMagicBest
+shortdesc: Create a Dispel Magic Best effect.
+return: effect
+parameters:
+  - type: int
+    name: nCasterLevel
+    desc: | The highest level of spell to Dispel.
+
+description: |
+  Returns a new effect object that when applied to a target will dispel the highest level spell effect on them up to nCasterLevel. 
+  Dispel magic Best checks are meant to be 20 + nCasterLevel, versus each spell's effects (good or bad) on the target, until one is passed and a spell removed. The DC is 11 + the spell’s caster level. Therefore, lesser dispel with a maximum caster bonus of +5, could never dispel anything cast by a level 14 mage. 
+  This version of dispel magic is used for Area-of-effect hits. 
+  The target this effect is applied to must be a creature for it to work. This effect can only be applied instantly.
+remarks: |
+  Supernatural and Extraodinary subtype effects can never be dispelled. 
+  It should know, by the use of Linking effects, what are seperate effects from different castings of the spells - such as someone having sets of Bless cast on them. 
+  Also, it is likely not important who the creator of the effect is, except for the messages displayed - there is no way to set an effect so it cannot be dispelled by race, alignment or level. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare effects, and apply them using an ApplyEffectToObject() Command. See the Effect Tutorial for more details.
+bugs: |
+  The previous bug with nCasterLevel is now working according to how it is documentated, in the 1.64 patch. It will report the correct spells being removed, and nCasterLevel is used, not any other number.
+version: 1.64
+example: |
+  // Sample code for applying Dispel Magic Best (level 10) to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDispelBest = EffectDispelMagicBest(10);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_DISPEL);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eDispelBest, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+    - Spells
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

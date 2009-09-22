@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetTimeSecond
+shortdesc: Gets the current second.
+return: int
+parameters:
+description: |
+  Returns the current second as an integer value between 0 and 59.
+version: 1.61
+seealso:
+  functions:
+    - GetIsDawn
+    - GetIsDay
+    - GetIsDusk
+    - GetIsNight
+    - GetTimeHour
+    - GetTimeMillisecond
+    - GetTimeMinute
+    - HoursToSeconds
+    - RoundsToSeconds
+    - SetTime
+    - TurnsToSeconds
+  categories:
+    - Time
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Dana C.

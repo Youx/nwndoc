@@ -1,0 +1,24 @@
+---
+type: Function
+name: SetReflexSavingThrow 
+shortdesc: Set the reflex saving throw value for a door or placeable object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door or placeable object.
+
+  - type: int
+    name: nReflexSave
+    desc: | Must be between 0 and 250.
+
+description: |
+  Set the reflex saving throw value for a door or placeable object.
+version: 1.67
+seealso:
+  functions:
+    - GetReflexSavingThrow
+    - ReflexSave
+  categories:
+    - Saving Throw
+author: Mistress

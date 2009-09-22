@@ -1,0 +1,54 @@
+---
+type: Function
+name: GetDamageDealtByType
+shortdesc: Determines the amount of damage of a specific type dealt to an object.
+return: int
+parameters:
+  - type: int
+    name: nDamageType
+    desc: | DAMAGE_TYPE_*
+
+description: |
+  Returns the amount of damage of type nDamageType that has been dealt to the caller. When called from the OnDamaged event, this function returns only the damage which was caused during that event. 
+  nDamageType can be assigned to OR-ed values from the constant group DAMAGE_TYPE_*. 
+  For example, GetDamageDealtByType(DAMAGE_TYPE_PIERCING | DAMAGE_TYPE_SLASHING) would return the damage dealt by piercing and slashing attacks. 
+  The base weapon damage is the base damage delivered by the weapon before any additional types of damage (e.g. fire) have been added. Use DAMAGE_TYPE_BASE_WEAPON, in the 1.64 patch, to get this. Previously, you couldn't get this amount of damage.
+remarks: |
+  This only works with EffectDamage, as detailed below. 
+  It must be noted that this function returns -1 if no damage of that type occured. 
+  Because of this, do not use this line, it will never work; 
+  if(!GetDamageDealtByType(DAMAGE_TYPE_PIERCING)) 
+  And this line will always be true, as it mearly does the opposite of the above: 
+  if(GetDamageDealtByType(DAMAGE_TYPE_PIERCING)) 
+  This would be the correct way: 
+  if(GetDamageDealtByType(DAMAGE_TYPE_PIERCING) != -1) 
+  Or even better, look at the example for a valid way of using this function to see if we were damaged of a cirtain type of damage.
+bugs: |
+  EffectDamage() now isn't the only thing that affects this function. It can return DAMAGE_TYPE_BASE_WEAPON for any phisical weapon damage done *before* additional enery (fire etc.) damage done by that same weapon. 
+  The issue with DAMAGE_TYPE_SONIC is fixed in 1.64.
+version: 1.64
+example: |
+  // If we had any fire damage applied to us, we will say some catchline.
+  void main()
+  {
+      if(GetDamageDealtByType(DAMAGE_TYPE_FIRE) >= 1)
+      {
+           // Obviously a high-strung-evangilist voiceset helps.
+           SpeakString("Hey, baby, I'm on FIIIREEEEE!");
+      }
+  }
+seealso:
+  categories:
+    - Action on Object
+  constants:
+    - DAMAGE_TYPE_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Peter Westergaard
+  - Jassper
+  - Undivine
+  - NetRacer56
+  - Ryan Workman
+  - Dan Wyman
+  - Jasperre

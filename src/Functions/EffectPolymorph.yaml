@@ -1,0 +1,68 @@
+---
+type: Function
+name: EffectPolymorph
+shortdesc: Create a Polymorph effect that changes the target into a different type of creature.
+return: effect
+parameters:
+  - type: int
+    name: nPolymorphSelection
+    desc: | POLYMORPH_TYPE_*
+
+  - type: int
+    name: nLocked
+    default: FALSE
+    desc: | If TRUE, player can't cancel polymorph (Default: FALSE)
+
+description: |
+  Returns a new effect object that when applied to a target will transform them into one of the types defined in the POLYMORPH_TYPE_* constant group, from the "polymorph.2da" file, where new ones can be added via. a hakpack. 
+  A new polymorph will cancle out an exsisting one, and if nLocked is TRUE, there is no "Cancle Polymorph" in the radical menu, so it cannot be removed automatically by a PC, only by the duration running out, or (if applied via. a spell) it being dispelled. 
+  The target this effect is applied to must be a creature for it to work. The target this effect is applied to must be a creature for it to work.
+remarks: |
+  There may be polymorph types that can be used but which don't have a constant associated with it. All the different POLYMORPH_TYPE constants are just integers referencing a row number in your polymorph.2da file. Look in this file to see if there are further polymorphs available for you. 
+  Polymorph changes these aspects of a Creature: 
+  - Removes all equipped items tempoarily 
+  - Thier appearance changes (as with it, creature speed, creature size and associated bonuses/penalties). 
+  - Thier racial type (GetRacialType() return value also changes) 
+  - Thier portrait 
+  - Thier soundset 
+  - Thier equipped primary hand weapon (if valid weapon) 
+  - Thier creature weapons (if valid, else they are considered unarmed) 
+  - Thier hide item (which provides most permament special bonsues) 
+  - They may gain addional Natural AC (Which should stack with amulets of natural AC) 
+  - They Gain a bonus to thier hit points (acts like tempoary hit points and cannot be healed.) 
+  - Thier Strength, Dexterity, Constitution (if valid values, else will use the original creatures original statistics. It may even lower statistics if thier natural statisitic is higher then what the new one is.) 
+  - They may gain up to 3 spells/natural abilties to cast infinatly (unless restricted in the script that runs) 
+  And: 
+  - They cannot cast spells or use items apart from potions 
+  All the ones without a comment after should always be present when a polymorph is done. Some are not present (IE: **** in the 2da file) and thus it is just ignored (so no weapon, means no weapon is equipped, and no bonus to dexterity means they use thier natural dexterity). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a werewolf polymorph to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect ePoly = EffectPolymorph(POLYMORPH_TYPE_WEREWOLF);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_POLYMORPH);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, ePoly, oTarget);
+  }
+seealso:
+  functions:
+    - SetCreatureAppearanceType
+  categories:
+    - Effects
+    - Spells
+  constants:
+    - POLYMORPH_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

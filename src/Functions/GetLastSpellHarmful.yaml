@@ -1,0 +1,36 @@
+---
+type: Function
+name: GetLastSpellHarmful
+shortdesc: Determines whether the last spell cast was harmful.
+return: int
+parameters:
+description: |
+  Use this in a SpellCast script to determine whether the spell was considered harmful. 
+  Returns TRUE if the last spell cast was harmful. 
+  Only can be used accuratly in the OnSpellCastAt script of a creature, placeable or door.
+remarks: |
+  Speculation: Returns TRUE if HostileSetting is set to 1 for this particular spell in spells.2da. 
+  That speculation is wrong, it mearly returns the TRUE/FALSE boolean value passed into the EventSpellCastAt(), using SignalEvent(). 
+  If it is FALSE, it doesn't mean it was a good spell, it could be any non-hostile (IE: don't initiate combat) spell.
+version: 1.22
+example: |
+  if(GetLastSpellHarmful())
+  {
+      SpeakString("Ouch!");
+  }
+  else
+  {
+      SpeakString("Thank you!");
+  }
+seealso:
+  functions:
+    - GetLastSpell
+    - GetLastSpellCaster
+  categories:
+    - Get Data from Object
+    - Spells
+  events:
+    - OnSpellCastAt
+author: Jochem van 't Hull
+editor: Jasperre
+

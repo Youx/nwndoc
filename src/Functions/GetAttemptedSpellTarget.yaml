@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetAttemptedSpellTarget
+shortdesc: Determines the creature a spell was attempted to be cast at.
+return: object
+parameters:
+description: |
+  Return the target at which the caller attempted to cast a spell. This value is set every time a spell is cast and is reset at the end of combat. Returns OBJECT_INVALID if the caller is not a valid creature.
+version: 1.22
+seealso:
+  functions:
+    - ActionCastSpellAtObject
+  categories:
+    - Combat Information
+    - Get Data from Creature
+    - Spells
+    - Targeting
+author: Jody Fletcher
+

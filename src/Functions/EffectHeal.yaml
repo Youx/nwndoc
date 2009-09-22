@@ -1,0 +1,65 @@
+---
+type: Function
+name: EffectHeal
+shortdesc: Creates a healing effect.
+return: effect
+parameters:
+  - type: int
+    name: nDamageToHeal
+    desc: | Hit points to heal.
+
+description: |
+  Returns a heal effect that will heal an object nDamageToHeal hit points. This should be applied as an instantaneous effect. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nDamageToHeal < 0. 
+  EffectHeal doesn't damage undead. Special undead race checks are used for healing spells to damage them, while Harm and similar spells actually heal undead. EffectHeal doesn't take into account anything special. 
+  The target this effect is applied to must be a creature for it to work (see remarks). This effect can only be applied instantly. 
+  The limit of nDamageToHeal is unknown.
+remarks: |
+  EffectHeal is a way to remove EffectHitPointChangeWhenDying() on a dying PC, and also stops the Wounding caused by the special creature/item On Hit properties. 
+  EffectHeal has no effect when applied to placeables and doors. To the authors' knowledge, there is no way to restore a door's or a placeable's hitpoints. If applied to them, it will mearly fail and do nothing. 
+  The feedback on this will be, if the target can be healed at all, something like "Whoever was healed for X damage". X may well be 0 if it is applied when the target has full hit points, and Whoever is always whoever is being healed. 
+  EffectHeal won't, in any case, restore lost temporary hit points (thus is the point of them) nor restore a person when they are dead (-11HP or lower). It will also not remove temporary hit points in an attempt to get to the creatures maximum hit points. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare effects, and apply them using an ApplyEffectToObject() Command. See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // oUser = object that last used the calling object
+  // used it in the below example to fire an OnUsed event on a
+  // placeable, useable object (a shaft of light)
+  void main()
+  {
+       object oUser = GetLastUsedBy();
+       effect eHeal = EffectHeal(10);
+       if (GetIsObjectValid(oUser))
+       {
+            // heal the user
+            ApplyEffectToObject(DURATION_TYPE_INSTANT, eHeal, oUser);
+       }
+  }
+  // Sample code for applying 10 damage healing effect to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eHeal = EffectHeal(10);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HEALING_G);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eHeal, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jorian Night
+  - Jasperre
+  - D.W. Fite
+  - Lilac Soul

@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetIsCreatureDisarmable
+shortdesc: Check if oCreature can be disarmed
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to check
+
+description: |
+  Is this creature able to be disarmed? (checks disarm flag on creature, and if the creature actually has a weapon equipped in their right hand that is droppable).
+remarks: |
+  Will return FALSE on error, such as a non-creature, no item, and the disarm flag on. 
+  However, it will not check if the items can be dropped - if they are cursed or if the creature has them set as undroppable, then they seem to disappear if disarmed. 
+  This is the only way to check the disarmable flag for a creature, although they need a valid weapon in a slot for it to check it accurately.
+version: 1.61
+seealso:
+  categories:
+    - Combat Information
+    - Get Data from Creature
+author: Lilac Soul
+editor: Jasperre
+

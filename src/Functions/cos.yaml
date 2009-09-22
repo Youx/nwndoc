@@ -1,0 +1,29 @@
+---
+type: Function
+name: cos
+shortdesc: Gets the cosine of a value.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Float value, in degrees not radians, to return the cosine of.
+
+description: |
+  The cosine of an angle is defined as the ratio of the adjacent side to the hyptenuse of a right triangle. The cos function takes an angle (in degrees) as an argument and returns the ratio of the adjacent side to the hypotenuse. The return value (the range of cosine) goes from -1.0 to 1.0.
+remarks: |
+  A cosine is the sine of the complement of an arc or angle.
+version: 1.31
+seealso:
+  functions:
+    - acos
+    - asin
+    - atan
+    - GetChangeInX
+    - sin
+    - tan
+  categories:
+    - Math
+author: Charles Feduke
+additional_contributors:
+  - Jeff Copus
+  - Paul Catalano

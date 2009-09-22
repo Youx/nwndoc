@@ -1,0 +1,44 @@
+---
+type: Function
+name: EffectStunned
+shortdesc: Returns a Stunned effect.
+return: effect
+parameters:
+description: |
+  Create a Stun effect. 
+  This is a mind-effecting effect, and so immunity to mind effects prevents this from working. Stunning basically makes the mind of the target stop working, stunning what they are doing - they lose 2 dexterity, have -2 AC, and they can take no action whatsoever and are prone to attacks. 
+  However, Andrei's testing says that they lose all thier dexterity bonus to thier AC (not displayed) but no -2 to AC. 
+  The target this effect is applied to must be a creature for it to work. The target this effect is applied to must be a creature for it to work.
+remarks: |
+  Stunning keeps a creature in one place. They cannot move - even functions like JumpToLocation() will fail, as if they were petrified or paralyzed. 
+  Stunning can be countered with Immunity: Stun, and Immunity: Mind Spells. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a stunning effect to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eStun = EffectStunned();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_STUN);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eStun, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+    - ApplyEffectToObject
+  categories:
+    - Effects
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Andrei Hajdukewycz

@@ -1,0 +1,23 @@
+---
+type: Function
+name: StringToFloat
+shortdesc: Converts a string into a floating point number.
+return: float
+parameters:
+  - type: string
+    name: sNumber
+    desc: | The string to convert into a float.
+
+description: |
+  Returns the value of sNumber converted from a string into a float. 
+  Returns 0.0 on error.
+version: 1.61
+seealso:
+  functions:
+    - FloatToString
+    - StringToInt
+  categories:
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Lilac Soul
+

@@ -1,0 +1,28 @@
+---
+type: Function
+name: YardsToMeters
+shortdesc: Gets the number of meters in a number of yards.
+return: float
+parameters:
+  - type: float
+    name: fYards
+    desc: | Yards to get the number of meters in.
+
+description: |
+  Returns the number of meters in fYards.
+version: 1.22
+example: |
+  // the code below returns 3.200399876
+  function fExample()
+  {
+       float fMeters = YardsToMeters(3.5);
+       return fMeters;
+  }
+seealso:
+  functions:
+    - FeetToMeters
+  categories:
+    - Type Casting/Conversion
+author: Brett Lathrope
+editor: Charles Feduke
+

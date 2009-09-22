@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetBaseAttackBonus
+shortdesc: Retrieves the base attack bonus (BaB) for a specified creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature the retrieve the base attack bonus of.
+
+description: |
+  Retrieves the base attack bonus for a specified creature. Multiclass creatures' base attack bonuses are added together to retrieve the final result. Returns 0 if oCreature is not a valid creature. 
+  A creature has: 
+  1 BaB for each fighting level 
+  0.75 BaB for each normal (cleric) level 
+  0.5 BaB for each bad (mage) level 
+  See the manual(s) for exact numbers. It is normally obvious which one of the 3 values each class has.
+remarks: |
+  This function could conceivably be used to scale the difficulty of foes the PC encounters, or as a way to balance the game by giving PCs without a high attack bonus items which grant this. 
+  It could also be used by the AI to check if it can hit the enemy easily, or at all, or to boost thier attack with spells.
+version: 1.30
+seealso:
+  functions:
+    - GetAC
+  categories:
+    - Get Data from Creature
+author: Charles Feduke
+editor: Jasperre
+

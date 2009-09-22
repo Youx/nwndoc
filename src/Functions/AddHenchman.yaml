@@ -1,0 +1,34 @@
+---
+type: Function
+name: AddHenchman
+shortdesc: Adds a henchman NPC to a PC.
+return: void
+parameters:
+  - type: object
+    name: oMaster
+    desc: | The master PC to attach the henchman to.
+
+  - type: object
+    name: oHenchman
+    default: OBJECT_SELF
+    desc: | The henchman to attach to oMaster. (Default: OBJECT_SELF)
+
+description: |
+  Attaches oHenchman as a henchman to oMaster. 
+  With the new command for HotU, SetMaxHenchmen(), this command can add more then 1 henchmen if the value of GetMaxHenchmen() is, of course, over 1.
+remarks: |
+  This will add a henchman to the PC, but it won't make that NPC act as a henchman. For this to happen, it will need to have henchman scripts attached to its script properties. To attach BioWare's default henchman scripts, go to the scripts tab, press the "load script set" button, and select the henchman-related filename (the name of this may vary according to the expansions you have installed, for me it is called set_xp1_henchmen.ini and I have both expansions installed).
+bugs: |
+  Prior to patch 1.28, AddHenchman could be used to add other PCs or even the DM as a player's henchman.
+version: 1.62
+seealso:
+  functions:
+    - AddToParty
+    - SetMaxHenchmen
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetChangeInY
+shortdesc: Convenience function that calculates the change in the Y axis to the target
+return: float
+parameters:
+  - type: float
+    name: fDistance
+    desc: | Distance to target
+
+  - type: float
+    name: fAngle
+    desc: | Direction to target
+
+description: |
+  This is a convenience function that returns the product of fDistance*sin(fAngle) as a float. This number would than be used to calculate the amount to needed to change the Y-axis of the current location in order to reach the target location. This function would normally be used with GetChangeInX. 
+  Calls 
+  float Sin(float fAngle) 
+version: 1.62
+seealso:
+  functions:
+    - GetChangedPosition
+    - GetChangeInX
+    - sin
+  categories:
+    - Math
+    - Miscellaneous
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Sky

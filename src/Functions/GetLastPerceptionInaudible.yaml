@@ -1,0 +1,17 @@
+---
+type: Function
+name: GetLastPerceptionInaudible
+shortdesc: Gets the last perceived object which can no longer be heard.
+return: int
+parameters:
+description: |
+  Use this in an OnPerception script to determine whether the object that was perceived has become inaudible.
+remarks: |
+  May make a great guard script function that lets guards react to listen checks then scratch their heads in confusion when they no longer can hear the PC due to them Successfully Moving Silently.
+version: 1.22
+seealso:
+  categories:
+    - Core AI
+    - Perception
+author: John Shuell
+

@@ -1,0 +1,51 @@
+---
+type: Function
+name: GetIsReactionTypeNeutral
+shortdesc: Determine whether oSource has a neutral reaction towards oTarget
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The target creature to test.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The source creature to test the feelings of. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oSource has a neutral reaction towards oTarget, depending on the reputation, PVP setting and (if both oSource and oTarget are PCs), oSource's Like/Dislike setting for oTarget.
+remarks: |
+  If you just want to know how two objects feel about each other in terms of faction and personal reputation, use GetIsNeutral() instead. 
+  Make sure you read up the Hostile and Friendly versions of this function. 
+  Athough it wouldn't be usually required in spell scripts, this could be used still. If you wanted to affect *only ever* hostiles and neutrals, and never allies, you would check for either this, or GetIsReactionTypeHostile(), to be TRUE. See the example for this.
+version: 1.62
+example: |
+  // This is a simple example. If you want something (perhaps 
+  // a spell) to only *ever* target hostile creatures *and* neutral
+  // creatures, and thusly never ever affect allies, then you make
+  // sure either of them are TRUE (they cannot both be true at once!)
+  void main()
+  {
+      // Get spell target
+      object oTarget = GetSpellTargetObject();
+      // Can only be an enemy, or a neutral. Allies will *never* be
+      // one of these.
+      if(GetIsReactionTypeHostile(oTarget) == TRUE || 
+         GetIsReactionTypeNeutral(oTarget) == TRUE)
+      {
+          // Do 5 damage to them, if we don't break PvP and so on
+          effect eDam = EffectDamage(5);
+          ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget);
+      }
+  }
+seealso:
+  functions:
+    - GetIsNeutral
+  categories:
+    - Reputation/Faction
+author: Jason Harris
+editor: Jasperre
+additional_contributors:
+  - Kristian Markon
+  - Jasperre

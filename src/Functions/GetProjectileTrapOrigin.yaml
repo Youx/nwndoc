@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetProjectileTrapOrigin
+shortdesc: Gets the origin for a projectile trap.
+return: object
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target to get the nearest object with a matching tag of oTrigger to.
+
+  - type: object
+    name: oTrigger
+    default: OBJECT_SELF
+    desc: | Object to examine the tag of for use in finding the closest object to oTarget. (Default: OBJECT_SELF)
+
+description: |
+  Returns the nearest object to the target that has a tag matching the tag of the trigger.
+requirements: |
+  #include "x0_i0_projtrap"
+version: 1.61
+seealso:
+  categories:
+    - Traps
+author: Charles Feduke
+

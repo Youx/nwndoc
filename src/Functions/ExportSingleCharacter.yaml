@@ -1,0 +1,23 @@
+---
+type: Function
+name: ExportSingleCharacter
+shortdesc: Force the character of the player specified to be exported to its respective directory, i.e. LocalVault/ServerVault/ etc.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | PC character to export
+
+description: |
+  Exports oPlayer to either LocalVault or ServerVault depending on server settings. In single player, LocalVault will always be used.
+remarks: |
+  Since ExportAllCharacters only works in multiplayer, this is the command to use in single player.
+version: 1.31
+seealso:
+  functions:
+    - ExportAllCharacters
+  categories:
+    - Miscellaneous
+    - Server
+author: Lilac Soul
+

@@ -1,0 +1,22 @@
+---
+type: Function
+name: PrintObject
+shortdesc: Prints an object's ID number to the log file.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | Object who's ID number is written in the log file.
+
+description: |
+  Prints oObject's ID number to the log file.
+remarks: |
+  What this prints in the log file is the same that the ObjectToString function returns.
+version: 1.61
+seealso:
+  categories:
+    - Debug
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Jeff Chase

@@ -1,0 +1,24 @@
+---
+type: Function
+name: SetFortitudeSavingThrow 
+shortdesc: Set the fortitude saving throw value for a door or placeable object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door or placeable object.
+
+  - type: int
+    name: nFortitudeSave
+    desc: | Must be between 0 and 250.
+
+description: |
+  Set the fortitude saving throw value for a door or placeable object.
+version: 1.67
+seealso:
+  functions:
+    - GetFortitudeSavingThrow
+    - FortitudeSave
+  categories:
+    - Saving Throw
+author: Mistress

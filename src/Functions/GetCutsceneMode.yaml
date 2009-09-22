@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetCutsceneMode 
+shortdesc: Gets the current cutscene state of the player.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature you wish to examine. (Default: OBJECT_SELF)
+
+description: |
+  Gets the current cutscene state of the player.
+  Returns TRUE if the player is in cutscene mode.
+  Returns FALSE if the player is not in cutscene mode or is used on a non creature object.
+version: 1.64
+seealso:
+  functions:
+    - SetCutsceneMode
+  categories:
+    - Cut-Scene
+author: bernosky
+editor: Mistress

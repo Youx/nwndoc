@@ -1,0 +1,27 @@
+---
+type: Function
+name: ActionPickUpItem
+shortdesc: Causes subject to run to an item and place it in inventory.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to be picked up.
+
+description: |
+  When the action is executed, the subject will run to the location of oItem, crouch down, and place oItem in it's inventory. 
+  If an error occurs the log file will contain "ActionPickUpItem failed."
+remarks: |
+  SPECULATION: if the path is blocked to oItem then the function will fail. Try using ActionForceMoveToObject before calling ActionPickUpItem.
+version: 1.61
+seealso:
+  functions:
+    - ActionPutDownItem
+  categories:
+    - Action on Object
+    - Inventory
+    - Movement
+author: Ryan Hunt
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

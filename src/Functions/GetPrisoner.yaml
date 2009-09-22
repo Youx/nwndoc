@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetPrisoner
+shortdesc: Retrieves the prisoner object.
+return: object
+parameters:
+description: |
+  Returns an object that represents the prisoner is a rescue quest.
+remarks: |
+  This function is of little use for general scripting 
+  needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - SetPrisoner
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

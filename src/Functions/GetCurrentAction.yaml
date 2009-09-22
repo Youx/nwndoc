@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetCurrentAction
+shortdesc: Returns the currently executing Action.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | The object to return the Action of. (Default: OBJECT_SELF)
+
+description: |
+  Get the current action (ACTION_*) that oObject is executing from its Action Queue. oObject can be anything with an action queue. Modules and Areas cannot have actions assigned to them.
+remarks: |
+  As of 1.60, Defensive stance and Random Walk can be returned by new constants. Some actions still return ACTION_INVALID, however. 
+  Use GetActionMode() to check if a creature is using parry, power attack and so on.
+version: 1.22
+example: |
+  // On Phsical Attacked event, if we are currently moving, stop.
+  // Could use to stop a moving archery target in an archery range.
+  void main()
+  {
+      if(GetUserDefinedEventNumber() == 1005)
+      {
+          // Check action - ACTION_MOVETOPOINT
+          if(GetCurrentAction() == ACTION_MOVETOPOINT)
+          {
+              // Stop moving
+              ClearAllActions();
+              // Could do other stuff
+          }
+      }
+  }
+seealso:
+  categories:
+    - Action on Object
+    - Get Data
+  constants:
+    - ACTION_* Constants
+author: Ryan Hunt
+editor: Jasperre
+

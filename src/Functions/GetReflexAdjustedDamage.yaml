@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetReflexAdjustedDamage
+shortdesc: Determines the damage to be applied after saving throws are applied.
+return: int
+parameters:
+  - type: int
+    name: nDamage
+    desc: | The full damage that would be applied if no adjustments were made.
+
+  - type: object
+    name: oTarget
+    desc: | The target of the damage.
+
+  - type: int
+    name: nDC
+    desc: | The DC needed to avoid (or reduce) the damage. The function GetSpellSaveDC could be used for this value.
+
+  - type: int
+    name: nSaveType
+    default: SAVING_THROW_TYPE_NONE
+    desc: | SAVING_THROW_TYPE_* (Default: SAVING_THROW_TYPE_NONE)
+
+  - type: object
+    name: oSaveVersus
+    default: OBJECT_SELF
+    desc: | The source of the potential damage (Default: OBJECT_SELF)
+
+description: |
+  Returns how much of nDamage that oTarget should receive after nDamage has been adjusted for reflex and evasion saving throws.
+remarks: |
+  This function can be used in scripts that simulate new effect like custom traps or special abilites by taking the reflex and evasion saves into consideration as is prescribed by D&D rules.
+version: 1.22
+seealso:
+  functions:
+    - GetSpellSaveDC
+  categories:
+    - Saving Throw
+  constants:
+    - SAVING_THROW_TYPE_* Constants
+author: Tom Cassiotis
+

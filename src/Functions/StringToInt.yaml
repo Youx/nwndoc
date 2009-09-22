@@ -1,0 +1,42 @@
+---
+type: Function
+name: StringToInt
+shortdesc: Converts a string to an integer.
+return: int
+parameters:
+  - type: string
+    name: sNumber
+    desc: | The string to convert into an integer.
+
+description: |
+  Returns the value of sNumber converted to an integer. 
+  Returns 0 on error.
+remarks: |
+  One place this would be useful is to do something based on what is heard when an NPC is listening. 
+  It is impossible, without doing some extra checks, to determine if a return value of 0 comes from an error or from the string "0". An example of how to check it is listed below.
+version: 1.61
+example: |
+  //Function to check if a string is just an integer number
+  int GetStringIsIntegerNumber(string sString)
+  {
+  int nString=StringToInt(sString);
+  //any value other than 0 means the string is just an integer number
+  if (nString!=0) return TRUE;
+  //Check if the string representation of nString is the same as sString.
+  //If it is, this will have happened:
+  //"0" converted to 0, converted back to "0"
+  //An example of 0 produced by an error:
+  //"bob" converted to 0, converted to "0". "bob" != "0"
+  string sCompare=IntToString(nString);
+  return sCompare==sString;
+  }
+seealso:
+  functions:
+    - FloatToString
+    - IntToString
+    - StringToFloat
+  categories:
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Lilac Soul
+

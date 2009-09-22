@@ -1,0 +1,37 @@
+---
+type: Function
+name: PrintString
+shortdesc: Records a message to the log file.
+return: void
+parameters:
+  - type: string
+    name: sString
+    desc: | The message to log.
+
+description: |
+  Writes a string message (sString) to the log file.
+version: 1.22
+example: |
+  // sample debug call, covers many testing bases:
+  void debug(string sMessage) 
+  {
+       SendMessageToPC(GetFirstPC(), sMessage);
+       SendMessageToAllDMs(sMessage);
+       PrintString(sMessage);
+  }
+seealso:
+  functions:
+    - MyPrintString
+    - PrintFloat
+    - PrintInteger
+    - PrintVector
+    - SendMessageToAllDMs
+    - SendMessageToPC
+    - WriteTimestampedLogEntry
+  categories:
+    - Debug
+    - Miscellaneous
+    - String
+author: Iskander Merriman
+editor: Jeff Lindsey
+

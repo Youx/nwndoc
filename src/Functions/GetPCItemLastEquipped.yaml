@@ -1,0 +1,20 @@
+---
+type: Function
+name: GetPCItemLastEquipped
+shortdesc: Returns the last equipped item
+return: object
+parameters:
+description: |
+  Use this to get the item last equipped by a player character in OnPlayerEquipItem..
+version: 1.61
+seealso:
+  functions:
+    - GetPCItemLastEquippedBy
+    - GetPCItemLastUnequipped
+    - GetPCItemLastUnequippedBy
+  categories:
+    - Inventory
+  events:
+    - OnPlayerEquipItem
+author: Lilac Soul
+

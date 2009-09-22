@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetCalendarMonth
+shortdesc: Determines the current in-game calendar month.
+return: int
+parameters:
+description: |
+  Get the current calendar month. Range from 1 to 12 inclusive.
+version: 1.22
+seealso:
+  functions:
+    - GetCalendarDay
+    - GetCalendarYear
+    - SetCalendar
+  categories:
+    - Get Data
+    - Module
+    - Time
+  events:
+    - OnModuleLoad
+author: Jody Fletcher
+

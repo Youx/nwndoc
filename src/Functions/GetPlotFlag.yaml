@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetPlotFlag
+shortdesc: Determines whether an object is flagged as plot item.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The object to determine whether it is a plot. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oTarget is a plot object, otherwise FALSE.
+remarks: |
+  A plot flag affects an item, placeable, or creature considerably. It is meant to protect the item, placeable, or creature from death or destruction. It also has an affect on the AI of a creature. A creature that is plot will not turn hostile against others, for instance. It will still attack those that it was hostile against at the time of becoming plot, though. Also, attacking a plot creature can actually cause it to strike back at you, and then your only solution is to run away and wait for the plot creature to exit combat mode. A plot object does not take any damage and plot items cannot be sold.
+version: 1.61
+seealso:
+  functions:
+    - GetImmortal
+    - SetPlotFlag
+  categories:
+    - Get Data from Object
+author: Tom Cassiotis
+editor: Lilac Soul
+

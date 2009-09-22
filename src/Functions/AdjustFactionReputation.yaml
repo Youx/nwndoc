@@ -1,0 +1,30 @@
+---
+type: Function
+name: AdjustFactionReputation
+shortdesc: Adjusts all factions members reputation in relation to another faction.
+return: void
+parameters:
+  - type: object
+    name: oTargetCreature
+    desc: | The creature whose faction memebers will be viewed differently by an entire faction.
+
+  - type: object
+    name: oMemberOfSourceFaction
+    desc: | The member of the faction that will have it's opinion changed.
+
+  - type: int
+    name: nAdjustment
+    desc: | The amount (positive or negative) that the factions opinion will change.
+
+description: |
+  Adjusts all faction member's reputation visa via another faction. Pass in a member from each faction. 
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - ClearAllFactionMembers
+  categories:
+    - Reputation/Faction
+author: Tom Cassiotis
+

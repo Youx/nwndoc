@@ -1,0 +1,18 @@
+---
+type: Function
+name: GetSpellTargetObject
+shortdesc: Retrieves the target of the caller's last spell.
+return: object
+parameters:
+description: |
+  Returns the target (as an object) of OBJECT_SELF's last spell cast. Returns OBJECT_INVALID when there is no former target, OBJECT_SELF is incapable of casting spells, or an error occured.
+remarks: |
+  This should only be used inside spell scripts. If you want to learn how to use the new spellhooking system, check the advanced scripting tutorials in the Lexicon's Lyceum.
+version: 1.61
+seealso:
+  categories:
+    - Spells
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Glenn Berden

@@ -1,0 +1,32 @@
+---
+type: Function
+name: d2
+shortdesc: Rolls a 2-sided die (or flips a coin).
+return: int
+parameters:
+  - type: int
+    name: nNumDice
+    default: 1
+    desc: | The number of dice to roll. (Default: 1)
+
+description: |
+  Returns the total from rolling nNumDice x d2 dice. 
+  If nNumDice is less than 1, then 1 is used.
+remarks: |
+  A d2 (two sided die) has a 50% probability of turning up any one number.
+version: 1.22
+seealso:
+  functions:
+    - d10
+    - d100
+    - d12
+    - d20
+    - d3
+    - d4
+    - d6
+    - d8
+    - Random
+  categories:
+    - Miscellaneous
+author: Charles Feduke
+

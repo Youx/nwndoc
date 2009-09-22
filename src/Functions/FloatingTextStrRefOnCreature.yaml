@@ -1,0 +1,39 @@
+---
+type: Function
+name: FloatingTextStrRefOnCreature
+shortdesc: Briefly displays a string ref as ambient text above targets head.
+return: void
+parameters:
+  - type: int
+    name: nStrRefToDisplay
+    desc: | String ref (therefore text is translated)
+
+  - type: object
+    name: oCreatureToFloatAbove
+    desc: | Target Creature, PC or NPC
+
+  - type: int
+    name: bBroadcastToFaction
+    default: TRUE
+    desc: | If this is TRUE then only creatures in the same faction as oCreatureToFloatAbove will see the floaty text, and only if they are within range (30 meters). (Default: TRUE)
+
+description: |
+remarks: |
+  If bBroadcastToFaction is TRUE, the targeted creature and its faction within 30 meters will see the text. If bBroadcastToFaction is FALSE, then only the targeted creature will see it.
+remarks: |
+  This function seems to be most useful for notifying PCs (and possibly their party) of in game effects (detections, environmental perceptions, etc), and not as a way to facilitate PC-to-creature communication. For instance, if a PC passes a Listen check they could be notified via Ambient Text (“You hear footsteps coming down the hall”). Other uses could include Onomatopoeia originating from the PC (“Snap!”, “Cough!”, “Hick!”) and brief game feedback (time from a sundial, item status, etc). 
+  Currently, there doesn’t seem to be a way to update the Talk Table to add custom Str Refs, and there are no official lists of default Str Ref codes.
+bugs: |
+  Not so much a bug, but a limitation: 
+  This function will not work on Placeable objects of any kind, and text targeted to NPCs will not ever be visible to PCs.
+version: 1.22
+seealso:
+  functions:
+    - ActionSpeakStringByStrRef
+    - FloatingTextStringOnCreature
+  categories:
+    - Conversation
+    - PC Only
+author: Ryan Hunt
+editor: Jeremy Spilinek
+

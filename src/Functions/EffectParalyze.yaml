@@ -1,0 +1,43 @@
+---
+type: Function
+name: EffectParalyze
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+description: |
+  Create a Paralyze effect. 
+  Paralysis is not a mind effect - it stops all movement (and also in-game pauses the creature in thier current action), and so they are prone, have no dexterity or strength (act as if had the lowest, 3) and all sneak attacks work against them. 
+  It might also let you do Coup de Grace, the author is unsure. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  You can be immune to paralysis if you have direct immunity to it, or the "Freedom" effect on a hide or item. 
+  Note that the paralysis VFX, VFX_DUR_FREEZE_ANIMATION, is the effect you need to apply to actually see the creature stop moving and become rigid - us it in a link with the paralysis to work correctly. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying paralysis (but no visual) to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eParalyze = EffectParalyze();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HEAD_EVIL);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eParalyze, oTarget);
+  }
+seealso:
+  functions:
+    - EffectCutsceneParalyze
+    - EffectPetrify
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

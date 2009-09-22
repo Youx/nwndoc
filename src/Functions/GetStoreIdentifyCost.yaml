@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetStoreIdentifyCost
+shortdesc: Determines how much a store charges to identify items.
+return: int
+parameters:
+  - type: object
+    name: oidStore
+    desc: | Store to determine identify cost of
+
+description: |
+  Gets the amount a store charges for identifying an item. Default is 100. -1 means the store will not identify items. -2 indicates the store could not be located.
+version: 1.61
+seealso:
+  functions:
+    - SetStoreIdentifyCost
+  categories:
+    - Store
+    - Money
+author: Lilac Soul
+editor: Mistress
+

@@ -1,0 +1,27 @@
+---
+type: Function
+name: MatchCombatProtections
+shortdesc: Returns if the talent is a protective combat spell.
+return: int
+parameters:
+  - type: talent
+    name: tUse
+    desc: | Talent to check.
+
+description: |
+  Returns TRUE if the talent fed to the function is one of 7 protective combat spells. Otherwise, it returns FALSE.
+remarks: |
+  Found in nw_i0_generic.nss line 4939 
+  In the core AI function GetMatchCompatibility, if the class fed to that function is fighter, it calls MatchCombatProtections to determine whether GetMatchCompatibility should return true or false.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.28
+seealso:
+  functions:
+    - GetMatchCompatibility
+  categories:
+    - Core AI Talent
+author: Michael Nork
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

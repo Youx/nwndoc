@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetItemPossessedByParty
+shortdesc: Check to see if the specified item belongs to anyone in the party.
+return: object
+parameters:
+  - type: object
+    name: oPC
+    desc: | The character whose party is to be checked.
+
+  - type: string
+    name: sItemTag
+    desc: | The item to be looked for.
+
+description: |
+  Returns the item object if it is found, otherwise returns OBJECT_INVALID. 
+  Checks each PC in oPC's party to see if they have an item with a tag of sItemTag. 
+  Only checks PC's, not associates.
+remarks: |
+  This is essentially a wrapper for the GetItemPossessedBy function. 
+  The specified PC (oPC) is checked first, then the rest of the party. If there are multiple copies of the item in the party, only the first will be returned. 
+  Also note that x0_i0_partywide is already included in x0_i0_common. So you will only need to include one, not both.
+requirements: |
+  #include "x0_i0_partywide"
+version: 1.61
+seealso:
+  functions:
+    - GetIsItemPossessedByParty
+    - GetItemPossessedBy
+    - RemoveItemFromParty
+  categories:
+    - Inventory
+    - Party
+author: Grimlar
+

@@ -1,0 +1,27 @@
+---
+type: Function
+name: TouchAttackMelee
+shortdesc: Performs a touch melee attack out of turn.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The target of the touch melee attack.
+
+  - type: int
+    name: bDisplayFeedback
+    default: TRUE
+    desc: | Display graphical feedback on the attack. (Default: TRUE)
+
+description: |
+  The caller will perform a melee touch attack on oTarget. This is not an action, and it assumes the caller is already within range of oTarget. 
+  Returns 0 on a miss, 1 on a hit, and 2 on a critical hit.
+remarks: |
+  No combat animations are performed, and no damage is dealt. It simply does a roll to see if the target is hit, and if bDisplayFeedback is TRUE, displays feedback in the combat feedback window.
+version: 1.61
+seealso:
+  categories:
+    - Combat Actions
+author: Charles Feduke
+editor: Lilac Soul
+

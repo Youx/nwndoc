@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetItemHasItemProperty
+shortdesc: Check whether an item has a given property.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to be checked.
+
+  - type: int
+    name: nProperty
+    desc: | ITEM_PROPERTY_*
+
+description: |
+  Returns TRUE if oItem has nProperty. 
+  Returns FALSE if oItem is not a valid item, or if oItem does not have nProperty.
+version: 1.22
+seealso:
+  functions:
+    - GetBaseItemType
+    - GetIsMagical
+    - IPGetHasItemPropertyByConst
+    - IPGetItemHasProperty
+  categories:
+    - Get Data from Object
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Jason Harris
+editor: Kristian Markon
+

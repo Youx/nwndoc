@@ -1,0 +1,22 @@
+---
+type: Function
+name: EscapeViaTeleport
+shortdesc: Makes a creature teleport away while looking like they are casting a spell.
+return: void
+parameters:
+  - type: object
+    name: oFleeing
+    desc: | The creature to flee.
+
+description: |
+  Makes oFleeing teleport away while looking like they are casting a spell.
+remarks: |
+  Does a couple visual effects that make it look like oFleeing cast a spell to make him disappear.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Combat Actions
+author: Tom Cassiotis
+

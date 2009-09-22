@@ -1,0 +1,49 @@
+---
+type: Function
+name: SetPCLike
+shortdesc: Causes a creature to "like" a PC.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | Player to like.
+
+  - type: object
+    name: oTarget
+    desc: | Target to alter the feelings of.
+
+description: |
+  Sets oPlayer and oTarget to like each other. 
+  "Like" is a neutral, non-hostile stance towards the oTarget and vice-versa.
+remarks: |
+  This obviously will not work if the PC's are in the same party, as they already like each other.
+version: 1.29
+example: |
+  // The PC who entered the trigger is set to like all the PC's in the module
+  void main()
+  {
+      // Get entering PC
+      object oEnterer = GetEnteringObject();
+      // make sure they are not a DM
+      if(GetIsPC(oEnterer) && !GetIsDM(oEnterer))
+      {
+          // Loop all PC's in the module and set this PC to like them
+          object oPC = GetFirstPC();
+          while(GetIsObjectValid(oPC))
+          {
+              // Set to like
+              SetPCLike(oEnterer, oPC);
+              // Get next PC
+              oPC = GetNextPC();
+          }
+      }
+  }
+seealso:
+  functions:
+    - SetPCDislike
+  categories:
+    - Reputation/Faction
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Harald Schuster

@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetReactionAdjustment
+shortdesc: Gets the adjusted Reaction for the purposes of store pricing.
+return: float
+parameters:
+  - type: object
+    name: oTarget
+description: |
+  Returns the adjusted Reaction for the purposes of store pricing. A default faction adjustment is set at 2.0 (which is probably 200% markup rate), but if the target is a friendly to the caller, this is set to 1.0. 
+  It then compares the Law/Chaos levels between the caller and the target and gets the numeric difference between them. It does the same for the Good/Evil scale as well and adds both differences together. 
+  The script then applies the following formulae to figure out the final reaction adjustment: 
+  10 + The differences between alignments - the target's Charisma modifier times 10 and times it all by the Faction Adjustment. 
+remarks: |
+  Function can be found in nw_i0_plot.nss on line 875
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Alignment
+    - Money
+    - Reputation/Faction
+author: John Shuell
+

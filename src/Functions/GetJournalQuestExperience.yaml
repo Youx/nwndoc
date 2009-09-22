@@ -1,0 +1,43 @@
+---
+type: Function
+name: GetJournalQuestExperience
+shortdesc: Returns the amount of experience set for a journal category.
+return: int
+parameters:
+  - type: string
+    name: szPlotID
+    desc: | Journal category tag.
+
+description: |
+  Use this command to award experience for a journalled quest. It returns the amount of experience entered in to the category's 'xp' field in the journal editor. 
+  You can set an xp value for a journalled quest in the journal editor, but AddJournalQuestEntry() does not set award this xp on completion. Use GetJournalQuestExperience() instead. 
+  This will, of course, return a default of 0 if no journal quest is found, or there is a value of 0 for that quest.
+remarks: |
+  If you want to assign party experience, you might want to use RewardPartyXP() from Bioware's nw_i0_tool include. 
+  Before scripting experience yourself, you might want to make sure that you can't use the conversation editor's script wizards to do the dirty work for you.
+version: 1.62
+example: |
+  // Award a single PC, oPC, the full experience value of 
+  // a quest with Journal Category Tag "isk_jrnl_bbbbk"
+  GiveXPToCreature(oPC, GetJournalQuestExperience("isk_jrnl_bbbbk"));
+  // A quest requires the PC to gather objects, and stores a
+  // count of the objects obtained.  This calculates how much
+  // to award the PC, proportional to the maximum 
+  // (NUM_HORSESHOES)
+  int iFound = GetLocalInt(oPC, "iFound");
+  int iXP = iFound  * GetJournalQuestExperience("shoe_hunt") / NUM_HORSESHOES;
+seealso:
+  functions:
+    - AddJournalQuestEntry
+    - GiveXPToCreature
+  categories:
+    - Conversation
+    - Experience
+    - Journal
+    - PC Only
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Jeff Smith
+  - Charles Feduke
+  - Jasperre

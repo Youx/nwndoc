@@ -1,0 +1,22 @@
+---
+type: Function
+name: DebugSTR
+shortdesc: Debug Method created by Bioware
+return: void
+parameters:
+  - type: string
+    name: s
+    desc: | A String to speak
+
+description: |
+  This method encapsulates the SpeakString function presumably for debugging.
+remarks: |
+  Found in nw_i0_assoc.nss
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.22
+seealso:
+  categories:
+    - Debug
+author: Michael Nork
+

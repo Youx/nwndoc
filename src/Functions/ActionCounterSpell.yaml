@@ -1,0 +1,33 @@
+---
+type: Function
+name: ActionCounterSpell
+shortdesc: Causes the caller to enter the counterspell modal combat mode.
+return: void
+parameters:
+  - type: object
+    name: oCounterSpellTarget
+    desc: | Object to enter counterspell combat mode against.
+
+description: |
+  Causes the calling creature to enter the counterspell modal combat mode, waiting for oCounterSpellTarget to cast a spell.
+remarks: |
+  If the calling creature has any action assigned to it after calling this function, the counterspell mode will be cancelled. 
+  Certain criteria must be fulfilled before the calling creature can enter counterspell mode and attempt to counterspell oCounterSpellTarget: 
+  It must have levels in a class capable of spellcasting before it is able to use the counterspell mode. 
+  It must have high enough level in Spellcraft (SKILL_SPELLCRAFT) to recognize the spell oCounterSpellTarget is trying to cast. 
+  It must have an applicable spell which will be consumed in the counterspell attempt. (Read page 109 of the NWN manual). 
+  A counterspell is not guaranteed to succeed, even if all of the above conditions are met. 
+  Also note that counterspell mode counts as a ready action, which means that it will only take effect just before the start of an opponent's round. Starting counterspell mode while an opponent is casting a spell will not trigger a counterspell attempt. 
+  [UNKNOWN: How do you make the creature stick to counterspell mode? Calling DetermineCombatRound() does not work. If you do it with a player controlled creature, the counterspell mode will stay on indefinitely] The counterspell mode will last 1 round (6 seconds).
+version: 1.22
+seealso:
+  functions:
+    - ActionCastSpellAtLocation
+    - ActionCastSpellAtObject
+  categories:
+    - Action on Object
+    - Combat
+    - Combat Actions
+author: Troels Therkelsen
+editor: Jeff Lindsey
+

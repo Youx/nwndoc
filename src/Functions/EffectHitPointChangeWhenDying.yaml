@@ -1,0 +1,49 @@
+---
+type: Function
+name: EffectHitPointChangeWhenDying
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+  - type: float
+    name: fHitPointChangePerRound
+    desc: | Positive or negative, but not zero.
+
+description: |
+  Create a Hit Point Change When Dying effect. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if fHitPointChangePerRound is 0. 
+  Fractions can be set; using -0.2 for fHitPointChangePerRound will mean that 1 HP is lost every 5 rounds. 
+  A dying creature can still be conventionally damage - this is more useful if you wish to have a very simple OnDying event, which could apply this to do damage until they are dead (or recieve healing), using EffectHitPointChangeWhenDying(-1.0).
+remarks: |
+  Healing a character (or anything that makes HP go above 0) when a character is dying will cause the effect to automatically disappear. 
+  Also note that a more conventional way to do bleeding would be to apply a cause of EffectDamage(), with a DelayCommand() wrappered around a function to apply a new one every 6 seconds.
+bugs: |
+  Trying to locate and destroy this effect is difficult because the effect type is 0 (along with knockdown and a few others). Healing will remove this effect.
+version: 1.62
+example: |
+  // Sample code for applying a loss of 1 HP every 0.5 rounds, so
+  // every other round, to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eHPLoss = EffectHitPointChangeWhenDying(-0.5);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_VFX_IMP_HARM);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eHPLoss, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Enigmatic
+  - Jasperre

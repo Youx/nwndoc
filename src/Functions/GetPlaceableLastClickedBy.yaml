@@ -1,0 +1,18 @@
+---
+type: Function
+name: GetPlaceableLastClickedBy 
+shortdesc: Determines the last object that default clicked (left clicked) on the placeable object that is calling this function.
+return: object
+parameters:
+description: |
+  Determines the last object that default clicked (left clicked) on the placeable object that is calling this function.
+  Should only be called from a placeable's OnClick event.
+  Returns OBJECT_INVALID if it is called by something other than a placeable.
+version: 1.67
+seealso:
+  events:
+    - OnClick
+  categories:
+    - Get Data from Object
+author: bernosky
+editor: Mistress

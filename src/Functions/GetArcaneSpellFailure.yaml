@@ -1,0 +1,40 @@
+---
+type: Function
+name: GetArcaneSpellFailure
+shortdesc: Gets a creature's arcane spell failure factor
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to get arcane spell failure of
+
+description: |
+  Returns the current arcane spell failure factor of a creature. It has nothing to do with EffectSpellFailure(), however. 
+  This is mearly the amount of ARMOR penalty, which can range from 0, in increments of 5, up to 95 (there seems no way to get 100, luckily for casters!). It is useful to stop henchmen casting arcane spells if they have too much armor on - and is in the default Bioware AI.
+remarks: |
+  Armor and shields increase the arcane spell failure factor of a creature (PC or NPC). 95 is Tower Shield and Full Plate Armor, while 0 is clothing, or even nothing. 
+  Function returns 0 on error, for instance if oCreature is not a valid creature. 
+  There is no way to artifically increase this value - it is very much internal with armor, shields and 2da values.
+version: 1.61
+example: |
+  // If the PC speaker has 80% or more caster failure, and 
+  // has 5 levels of mage, we speak a special string
+  void main()
+  {
+      // Get PC
+      object oPC = GetPCSpeaker();
+      if(GetArcaneSpellFailure(oPC) >= 80 &&
+         GetLevelByClass(CLASS_TYPE_WIZARD, oPC) >= 5)
+      {
+          // Speakstring
+          SpeakString("You sure you should be wearing armor, mage?");
+      }
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+    - Spell Casting Effects
+    - Spells
+author: Lilac Soul
+editor: Jasperre
+

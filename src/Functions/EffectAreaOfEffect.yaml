@@ -1,0 +1,61 @@
+---
+type: Function
+name: EffectAreaOfEffect
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+  - type: int
+    name: nAreaEffectId
+    desc: | The ID of the Area of Effect
+
+  - type: string
+    name: sOnEnterScript
+    default: ""
+    desc: | The script to use when a creature enters the radius of the Area of Effect. (Default: "")
+
+  - type: string
+    name: sHeartbeatScript
+    default: ""
+    desc: | The script to run on each of the Area of Effect's Heartbeats. (Default: "")
+
+  - type: string
+    name: sOnExitScript
+    default: ""
+    desc: | The script to run when a creature leaves the radius of an Area of Effect. (Default: "")
+
+description: |
+  Create an Area Of Effect effect in the area of the creature it is applied to. If the scripts are not specified, default ones will be used. 
+  The target you can apply this to can be any valid (non static) object that ApplyEffectToObject works on, or a location. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This can be applied to a location, where the effect will be static, or it can be applied to a creature, where it will basically follow the creature around. 
+  There are a few graphical problems with using MOB_ declared AOE's as location AOE's, and PER_ declared AOE's used as mobile (moving with the PC) AOE's. 
+  The creator of the effect (GetAreaOfEffectCreator()) is the caller of the script that the effect is applied from - as this is not an effect if applied to a location, it will not have an GetEffectCreator(). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". In some cases, these can be applied to an object or a location, if at a location, they are no longer effects at all, and may be completely new objects.
+bugs: |
+  Using invalid scripts for sOnEnterScript, sHeartbeatScript, sOnExitScript will crash the game. If you want to the Area of Effect do nothing use "****" or point to an empty script. 
+  There are sometimes glitches with the usual spell functions when used inside the AOE's script - such as GetSpellId(), GetSpellSaveDC(), GetCasterLevel(), and so on, because of the fact the values can change after the AOE has been in place, and the other fact that sub-dial spells will not work correctly with GetSpellSaveDC() in the first place. 
+  In some cases, mobile AOE's (Applied to a creature, such as Invisibility Purge or Silence) seem to deactivate if the creature moves too quickly, as it triggers its own On Exit event somehow!
+version: 1.62
+example: |
+  int AOE_BOG_STINK = 1500;
+  void main()
+  {
+      //Declare the Area Of Effect, assign it an ID, and tell it what scripts to run when someone interacts with it.
+      effect eAOE = EffectAreaOfEffect(AOE_BOG_STINK, "bog_on_enter", "bog_on_hb", "bog_on_exit");
+      location lTarget = GetLocation(GetEnteringObject());
+      int nDuration = 2;
+      //Create an instance of the AOE Object using the Apply Effect function
+      ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY, eAOE, lTarget, RoundsToSeconds(nDuration));
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+  categories:
+    - Effects
+    - Spells
+    - Traps
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Peter Poe
+  - Jasperre

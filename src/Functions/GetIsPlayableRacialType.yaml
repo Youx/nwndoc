@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetIsPlayableRacialType
+shortdesc: Determine whether the target creature is one of the playable races.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to test.
+
+description: |
+  Returns TRUE if the creature given as an argument is a member of one of the playable races (dwarf, elf, gnome, half-elf, halfling, half-orc, or human). Otherwise, returns FALSE.
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Creature
+author: Jason Harris
+editor: Charles Feduke
+

@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetStealthMode
+shortdesc: Determines if a given creature is using a stealth mode.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to determine if it is using stealth.
+
+description: |
+  Returns STEALTH_MODE_ACTIVATED if oCreature is using stealth, STEALTH_MODE_DISABLED if not.
+version: 1.23
+example: |
+  // Placed on the OnEnter script for a trigger
+  object oPC = GetEnteringObject();
+  if ( GetIsPC(oPC) ) {
+      // Something normally happens here, but give a character
+      // using stealth a chance to avoid it
+      if ( GetStealthMode( oPC ) == STEALTH_MODE_ACTIVATED ) {
+          int nDC = 15;    // difficulty of thing to avoid
+          int nQuiet = GetSkillRank( SKILL_MOVE_SILENTLY, oPC );
+          if ( (nQuiet >= 0) && (d20() + nQuiet >= nDC) ) {
+              // Player was quiet
+              return;
+           }
+      }
+      // Did not sneak by - something unpleasant happens here
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+  constants:
+    - STEALTH_MODE_* Constants
+author: Drake Coker
+editor: Charles Feduke
+

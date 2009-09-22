@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetLastKiller
+shortdesc: Get the object that killed the caller.
+return: object
+parameters:
+description: |
+  Returns an object representing the object that killed the calling object.
+remarks: |
+  Only works when called from an NPC or creature. Does not work during the OnPlayerDeath event of a module (returns OBJECT_INVALID in this case).
+version: 1.61
+seealso:
+  functions:
+    - GetLastAttacker
+    - GetLastDamager
+    - GetLastHostileActor
+    - GetLastOpener
+  categories:
+    - Combat Information
+    - Get Data from Creature
+author: John Shuell
+editor: Charles Feduke
+additional_contributors:
+  - Eric Collazo

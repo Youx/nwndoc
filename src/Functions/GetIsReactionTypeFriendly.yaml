@@ -1,0 +1,69 @@
+---
+type: Function
+name: GetIsReactionTypeFriendly
+shortdesc: Determine whether a creature has a friendly reaction towards another given creature.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The target creature to test.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The source creature to test the feelings of. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oSource has a friendly reaction towards oTarget, depending on the reputation, PVP setting and (if both oSource and oTarget are PCs), oSource's Like/Dislike setting for oTarget.
+remarks: |
+  If you just want to know how two objects feel about each other in terms of faction and personal reputation, use GetIsFriend() instead. 
+  This is used mainly for an automatic check of difficulty settings, different factions, an area (or module in general) PvP settings, and like/dislike settings for individuals. 
+  An easy to understand example is outlined in the code example. 
+  You use either GetIsReactionTypeFriendly() or GetIsReactionTypeHostile() in *all* spells which will cause a harmful effect - even if they do not allow saves, spell resistance, or are special monster abilities. 
+  Why? Well, you must make sure that a PC isn't going to start killing other players while, for example, in a no-PvP starting area. Without these checks (basically for "are we meant to damage them"), they could damage the enemy, and the enemy do nothing in return (and it breaks the area rules).
+version: 1.62
+example: |
+  // This is basically a single check for a target.
+  // GetIsReactionTypeFriendly() is used for all spells which normally
+  // affect anyone inside the blast, or any single-target hostile spell, 
+  // where you can choose the target yourself.
+  // Basically, if a fireball were to be fired in a room, several things
+  // would stop it - from this one function check (and this is why it 
+  // is so important).
+  // 1. If the caster is allied with the target, and the difficulty is 
+  //     not Hardcore or Difficult, then the spell will not damage
+  //     friendly people, by this function returning TRUE
+  // 2. Depending on the PvP settings, Party PvP means you will
+  //     not damage any party members (allies), and this returns TRUE
+  // 3. If you aim to try and attack sombody in a no PvP area, this
+  //     will always return TRUE.
+  // 4. Likewise (but difficulty overrules) if you are in a Full PvP area,
+  //     this will return FALSE, allowing everything to be damaged.
+  // Without these basic checks, as well as, of course, Like/Dislike
+  // flags, personal reputations and so on, the spell could really break
+  // the game.
+  void main()
+  {
+      // Get spell target
+      object oTarget = GetSpellTargetObject();
+      // They cannot be allied (or can be, in cirtain environments),
+      // nor break the internal PvP rules, so we can do the
+      // damage to them
+      if(!GetIsReactionTypeFriendly(oTarget))
+      {
+          // Do 5 damage to them, if we don't break PvP and so on
+          effect eDam = EffectDamage(5);
+          ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget);
+      }
+  }
+seealso:
+  functions:
+    - CheckFriendlyFireOnTarget
+    - GetIsFriend
+  categories:
+    - Reputation/Faction
+author: Jason Harris
+editor: Jasperre
+additional_contributors:
+  - Kristian Markon
+  - Jasperre

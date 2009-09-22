@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetValidItemCost
+shortdesc: Used to determine the cost of making an item at the forge.
+return: int
+parameters:
+description: |
+  Returns an integer from the Local variable "M3Q1_VALIDITEMCOST" on the calling object.
+remarks: |
+  Function found in nw_o0_itemmaker.nss on line 258. 
+  Checks a local integer "M3Q1_VALIDITEMCOST" on the OBJECT_SELF object to determine the cost of an object. This would need to be called from a script that executes on an object. 
+requirements: |
+  #include "NW_O0_ITEMMAKER"
+version: 1.22
+seealso:
+  functions:
+    - SetValidItem
+    - SetValidItemCost
+    - SetValidItemCostToken
+  categories:
+    - Module Specific
+author: John Shuell
+editor: Charles Feduke
+additional_contributors:
+  - Ivan Hawkes

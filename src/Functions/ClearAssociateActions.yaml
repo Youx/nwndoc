@@ -1,0 +1,35 @@
+---
+type: Function
+name: ClearAssociateActions
+shortdesc: Clear the actions of one of each type of the PC's associates
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: int
+    name: bClearCombat
+    default: FALSE
+    desc: | Stop combat along with all other actions (Default: FALSE)
+
+description: |
+  Clear all the actions of the action queue of one of each type of the PC's associates. Use this to cancel any previous instructions to single associates, before assigning new orders. 
+  Associate types include the henchman, dominated, familiar, summoned and animal companion creatures. 
+  Note that unless nClearCombatState is set to TRUE, any current fighting involving the associates will continue.
+remarks: |
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors! 
+bugs: |
+  This function does not loop through multiple associates of any particular type. For example, if SetMaxHenchmen has been used to increase the number of henchpeople, ClearAssociateActions performs a search (GetAssociate) for only one henchperson.
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Action on Object
+    - Combat Actions
+    - Henchmen/Familiars/Summoned
+author: Peter Busby
+

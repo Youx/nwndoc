@@ -1,0 +1,34 @@
+---
+type: Function
+name: ApplyPrismaticEffect
+shortdesc: Applies a prismatic effect on a creature.
+return: int
+parameters:
+  - type: int
+    name: nEffect
+    desc: | Descibes which effect to apply (See description for details)
+
+  - type: object
+    name: oTarget
+    desc: | The object/creature being affected.
+
+description: |
+  Applies an effect (nEffect) of a prismatic cone to oTarget with the appropriate saving throws are checked. Includes visual effects. 
+  nEffect: 
+  1 - Fire 
+  2 - Acid 
+  3 - Electricity 
+  4 - Poison 
+  5 - Paralyze 
+  6 - Confusion 
+  7 - Death 
+remarks: |
+  Used as a support function to implement the Prismatic Spray spell.
+requirements: |
+  #include "nw_s0_prisspray"
+version: 1.22
+seealso:
+  categories:
+    - Sound Effects
+author: Tom Cassiotis
+

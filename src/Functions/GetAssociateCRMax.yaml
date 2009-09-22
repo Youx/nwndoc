@@ -1,0 +1,17 @@
+---
+type: Function
+name: GetAssociateCRMax
+shortdesc: <Placeholder description>
+return: int
+parameters:
+description: |
+  Determines what combat rating spell an associate uses in a given situation based on various properties of a nearest creature's strongest related faction member. Returns a number between 5 and 20.
+version: 1.22
+seealso:
+  functions:
+    - GetAssociate
+    - GetAssociateState
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+

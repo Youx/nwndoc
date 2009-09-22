@@ -1,0 +1,35 @@
+---
+type: Function
+name: EventConversation
+shortdesc: Returns an event of type Conversation.
+return: event
+parameters:
+description: |
+  Returns a conversation event which can be used as the argument in the SignalEvent() function to trigger the object's OnConverstation event.
+remarks: |
+  EventConverstaion() only creates the event. SignalEvent() must be used to cause the event to trigger.
+version: 1.22
+example: |
+  // Example 1 - The following code creates an event and then uses the SignalEvent() function to cause the OnConversation event to trigger.
+  void main()
+  {
+    event evConversation;
+    object oNPC = GetLastPerceived();
+    if (oNPC != OBJECT_INVALID)
+    {
+      evConversation = EventConversation();
+      SignalEvent(oNPC, evConversation);
+    }
+  }
+  // Example 2 - How to use EventConversation within the 
+  // SignalEvent function without casting an event variable.  
+  // This is how EventConversation() is most it typically used.
+    SignalEvent(oNPC, EventConversation());
+seealso:
+  functions:
+    - GetLastSpeaker
+    - SignalEvent
+  categories:
+    - Action on Object
+author: Brett Lathrope
+

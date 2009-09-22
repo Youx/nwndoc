@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetTrapDisarmable 
+shortdesc: Sets whether or not the trapped object can be disarmed.
+return: void
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | A placeable, door or trigger.
+
+  - type: int
+    name: nDisarmable
+    default: TRUE
+    desc: | TRUE or FALSE. Defaults to TRUE if no value set.
+
+description: |
+  Sets whether or not the trap on an object can be disarmed.
+version: 1.67
+seealso:
+  functions:
+    - GetTrapDisarmable
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress
+editor: KooKoo

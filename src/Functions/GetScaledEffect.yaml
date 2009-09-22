@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetScaledEffect
+shortdesc: Creates a new effect based on the game difficulty.
+return: effect
+parameters:
+  - type: effect
+    name: eStandard
+    desc: | The effect
+
+  - type: object
+    name: oTarget
+description: |
+  Returns an effect intended to replace eStandard if oTarget is a PC or a henchmen to a PC based on the game difficulty (GAME_DIFFICULTY_*).
+remarks: |
+  Specifically: 
+  1) If the effect was fright and the game difficulty was very easy it would be converted to a -2 penalty on attacks. 
+  2) If the effect was fright and the game difficulty was easy it would be converted to a -4 penalty on attacks. 
+  3) If the game difficulty was very easy, the paralyze, stun, and confusion effects get converted to a daze effect. 
+  4) No matter what game difficulty is set, charm and domination effects are converted to a daze effect.
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  categories:
+    - Spells
+  constants:
+    - GAME_DIFFICULTY_* Constants
+author: Tom Cassiotis
+

@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetPlotGiver
+shortdesc: Retrieves the assasin's target (victim).
+return: object
+parameters:
+description: |
+  Returns the object that represents the target of the assassin that was set by calling SetPlotGiver().
+remarks: |
+  This function is of little use for general scripting needs.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.22
+seealso:
+  functions:
+    - PlotGiverDead
+    - SetPlotGiver
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

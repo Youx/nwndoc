@@ -1,0 +1,40 @@
+---
+type: Function
+name: TalentMeleeAttack
+shortdesc: Determines course of action while in melee combat for all NPCs.
+return: int
+parameters:
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | (Default: OBJECT_INVALID)
+
+description: |
+  The main attack routine for creatures. Checks to ensure target and calling creature are in same area, then runs through a 3 phase check. All phases check to ensure target creature is valid, is not dead, is in the same area as OBJECT_SELF. 
+  Three phases are: 1) Determines to attack last creature attacked, 
+  2) Determines to attack a new target that is attacking OBJECT_SELF. 3) Determines to attack a new hostile seen or heard. 
+  If none of these phases come up with a target, no attack is made. If a target is received, it analyzes targets AC and current level of OBJECT_SELF. 
+remarks: |
+  If the hostile creatures AC minus the resulting value above is below 10 (nDiff) the function checks to see if OBJECT_SELF has capability of disarming foe (or another feat), if so, it does this form of attack. IF nDiff is higher than 10, a normal melee attack is attempted. 
+remarks: |
+  In the scripting, the 75% multiplier is near a commented line giving 100% of the NPCs HD in addition to Strength modifier. 
+  This function is located in x0_i0_talent, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  functions:
+    - TalentMeleeAttacked
+    - TalentRangedAttackers
+    - TalentRangedEnemies
+    - TalentSneakAttack
+    - TalentSpellAttack
+  categories:
+    - Combat Actions
+    - Core AI
+  events:
+    - OnCombatRoundEnd
+    - OnPhysicalAttacked
+author: Jody Fletcher
+editor: Lilac Soul
+

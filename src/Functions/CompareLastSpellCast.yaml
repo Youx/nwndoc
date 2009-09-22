@@ -1,0 +1,30 @@
+---
+type: Function
+name: CompareLastSpellCast
+shortdesc: Determines if a spell is the same as the one previously cast by the creature.
+return: int
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+description: |
+  Returns TRUE if nSpell is the last spell used, otherwise FALSE. 
+  Used in conjuction with SetLastGenericSpellCast().
+remarks: |
+  Compares a spell with the last spell cast. Used internally by the AI so it doesn’t keep casting the same spell.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.28
+seealso:
+  functions:
+    - GetLastGenericSpellCast
+    - SetLastGenericSpellCast
+  categories:
+    - Core AI
+  constants:
+    - SPELL_* Constants
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

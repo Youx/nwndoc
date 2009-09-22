@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetTrapDetectable
+shortdesc: Determines if the specific trap has been set as detectable or not by the toolset.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Returns TRUE if trap is detectable. This is set only during module creation in the toolset. All traps set during game are detectable.
+version: 1.22
+seealso:
+  functions:
+    - SetTrapDetectable
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Mistress
+

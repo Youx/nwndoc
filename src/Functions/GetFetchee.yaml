@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetFetchee
+shortdesc: Get a local object from the caller. Official campaign use only.
+return: object
+parameters:
+description: |
+  Returns an object stored locally on the caller under the variable name "NW_J_FETCH_OWNER".
+remarks: |
+  Used in conjunction with the other scripts in this include for the official campaign.
+requirements: |
+  #include "nw_j_guard"
+version: 1.22
+seealso:
+  functions:
+    - CreateFetchItemOn
+    - GetFetchItem
+    - GiveFetchItemToPC
+    - PlayerHasFetchItem
+    - SetFetchee
+    - SetFetchItem
+    - TakeFetchItem
+  categories:
+    - Module Specific
+author: John Shuell
+

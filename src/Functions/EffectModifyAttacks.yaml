@@ -1,0 +1,55 @@
+---
+type: Function
+name: EffectModifyAttacks
+shortdesc: Create a Modify Attacks effect that adds attacks to the target.
+return: effect
+parameters:
+  - type: int
+    name: nAttacks
+    desc: | maximum is 5, even with the effect stacked
+
+description: |
+  Returns a new effect object that when applied to a target will add attacks. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nAttacks > 5. 
+  As the limit to nAttacks is 5, it is wise to think that multiple effects will limit bonus attacks to 5, even if 2 EffectModifyAttacks(3); are applied to the same creature. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  If you want to actually set the amount of (NPC only!) attacks on a creature, use SetBaseAttackBonus(). It isn't an effect, it is almost permament. 
+  The use of RestoreBaseAttackBonus() will not remove this effect or alter it. 
+  There is no way of getting how many bonus or restricted attacks a creature has.
+remarks: |
+  An extra attack doesn't change spellcasting times (as the haste effect does) but just adds 1 or more full-base-attack-bonus attack, which is visible on the character sheet. 
+  For example, if we use the value 3, we get 4 total full base attacks (as we would normally have one) and then our other attacks. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 2 extra attacks to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eAttacks = EffectModifyAttacks(2);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_IMPROVE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eAttacks, oTarget);
+  }
+seealso:
+  functions:
+    - EffectAttackDecrease
+    - EffectAttackIncrease
+    - RestoreBaseAttackBonus
+    - SetBaseAttackBonus
+  categories:
+    - Combat Actions
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

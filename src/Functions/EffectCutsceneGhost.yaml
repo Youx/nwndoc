@@ -1,0 +1,45 @@
+---
+type: Function
+name: EffectCutsceneGhost
+shortdesc: Creates a cutscene ghost effect
+return: effect
+parameters:
+description: |
+  Creates a cutscene ghost effect, this will allow creatures to pathfind through other creatures without bumping into them for the duration of the effect. 
+  This is not used in any spells, it could potentially be dangerous if you specifically have a creature blocking a passage you do not want accessed, so be careful with it. 
+  It will not allow, and nothing will, access through placeables or doors, or line of sight (LOS) through them. This is on purpose with this effect. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This is good for NPCs like Ghosts (duh), and Gletanous Cubes which can pass through creatures (and cubes can paralyze those who stay into them). There is no way to pass through placeables, still, however. 
+  This is a really good function to use for cutseens, and using it with the VFX_DUR_CUTSEEN_INVSIBILITY and SetCutseenMode() means a PC object who the owner cannot see, and can move seemlessly around a room following any scripted action. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a ghost effect to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eGhost = EffectCutsceneGhost();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_AC_BONUS);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGhost, oTarget);
+  }
+seealso:
+  functions:
+    - EffectCutsceneDominated
+    - EffectCutsceneImmobilize
+    - EffectCutsceneParalyze
+  categories:
+    - Cut-Scene
+    - Effects
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

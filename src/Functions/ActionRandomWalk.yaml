@@ -1,0 +1,25 @@
+---
+type: Function
+name: ActionRandomWalk
+shortdesc: Causes the subject to walk to a random location close to itself.
+return: void
+parameters:
+description: |
+  The action subject will generate a random location near its current location and pathfind to it. This behavior will continue every so often until cancelled with a ClearAllActions() command. 
+  No return value, but if an error occurs the log file will contain "ActionRandomWalk failed."
+remarks: |
+  ActionRandomWalk never ends meaning that it is necessary to call the ClearAllActions function in order to stop it. The subject will not stray far from the location where it was when this function is called.
+version: 1.61
+seealso:
+  functions:
+    - WalkWayPoints
+  categories:
+    - Action on Object
+    - Core AI
+    - Movement
+author: Ryan Hunt
+editor: Charles Feduke
+additional_contributors:
+  - Adrian McKenzie
+  - Jaxon
+  - LoCash

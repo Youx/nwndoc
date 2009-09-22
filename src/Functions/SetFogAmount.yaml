@@ -1,0 +1,37 @@
+---
+type: Function
+name: SetFogAmount 
+shortdesc: Sets the fog amount in the area.
+return: void
+parameters:
+  - type: int
+    name: nFogType
+    desc: | FOG_TYPE_* specifies whether the Sun, Moon, or both fog types are set.
+
+  - type: int
+    name: nFogAmount
+    desc: | Specifies the density that the fog is being set to.
+
+  - type: object
+    name: oArea
+    default: OBJECT_INVALID
+    desc: | The area to set the fog amount in. (Default: OBJECT_INVALID - caller's area)
+
+description: |
+  Sets the fog amount in the area.
+  If no valid area (or object) is specified, it uses the area of caller. 
+  If an object other than an area is specified, will use the area that the object is currently in.
+  <
+version: 1.65
+seealso:
+  functions:
+    - GetFogAmount
+    - GetFogColor
+    - SetFogColor
+  constants:
+    - FOG_TYPE_*
+    - FOG_COLOR_*
+  categories:
+    - Area
+author: Mistress
+editor: KooKoo

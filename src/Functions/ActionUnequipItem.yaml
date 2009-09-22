@@ -1,0 +1,38 @@
+---
+type: Function
+name: ActionUnequipItem
+shortdesc: Makes the executing creature unequip an object and place it in their inventory.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to unequip.
+
+description: |
+  Causes the executing object (PC or NPC) to unequip oItem and place it in their inventory.
+remarks: |
+  Will do nothing if oItem == OBJECT_INVALID. 
+  oItem is not destroyed, but placed in the calling object's (PC or NPC) inventory.
+version: 1.27
+example: |
+  // Make a PC remove their clothing in an OnEnter script
+  # include "nw_i0_generic"
+  void main() 
+  {
+       object oPC = GetEnteringObject();
+       if (GetIsPC(oPC)) 
+       {
+            AssignCommand(oPC, ActionUnequipItem(GetItemInSlot(INVENTORY_SLOT_CHEST , oPC)));
+       }
+  }
+seealso:
+  functions:
+    - ActionEquipItem
+    - ActionTakeItem
+    - GetItemInSlot
+  categories:
+    - Action on Object
+    - Inventory
+author: Iskander Merriman
+editor: Charles Feduke
+

@@ -1,0 +1,36 @@
+---
+type: Function
+name: GetLocalArrayString
+shortdesc: Simulates retrieving a String from an array on an object.
+return: string
+parameters:
+  - type: object
+    name: oidObject
+    desc: | The object the array of strings is stored on.
+
+  - type: string
+    name: sVarName
+    desc: | The name of the array.
+
+  - type: int
+    name: nVarNum
+    desc: | The position in the array the value should be retrieved from.
+
+description: |
+  Returns the value found in position nVarNum in array sVarName stored on object oidObject.
+remarks: |
+  Function found in nw_o0_itemmaker.nss on line 563. 
+  Although this is hardly an array, it can be accessed like one, and can even be looped through. It works by creating a new local string object on whatever object you passed in through the parameters. This LocalString is called sVarName + nVarNum, so in otherwords if I called the following: 
+  GetLocalArrayString(OBJECT_SELF, "MyArray", 1); 
+  meaning I want the value in position one of MyArray on OBJECT_SELF. It would call GetLocalString(OBJECT_SELF, "MyArray1") to retrieve the value. So if you create one array on an object and have 300 values stored in it, you've actually created 300 variables with values on the object. This just hides the mess for you.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.22
+seealso:
+  functions:
+    - GetLocalString
+    - SetLocalArrayString
+  categories:
+    - Local Variables
+author: John Shuell
+

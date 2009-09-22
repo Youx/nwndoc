@@ -1,0 +1,37 @@
+---
+type: Function
+name: ShadowBolt
+shortdesc: Used with Greater Shadow Conjuration spell to cast a damaging bolt towards an NPC.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target to cast ShadowBolt on.
+
+  - type: int
+    name: nMetaMagic
+    desc: | Specific feat to enhance power of bolt.
+
+description: |
+  This is an invalid function, and is for an incomplete, and totally unused spell file. Please do not take this Bioware function and use it. 
+  Receives the target and any meta-feat information. Determines amount of damage (3d6), if any meta-feat enhancements exists, it enables them. (i.e. Maximize & Enpower). Checks for Reflex save (for half damage). 
+  Builds the visual FX and damage FX and applies them to the oTarget.
+remarks: |
+  Script: nw_s0_grshconj.nss: Line: 17
+bugs: |
+  It will not compile, it is never fired from the game or used in any way.
+requirements: |
+  #include "nw_s0_grshconj"
+version: 1.29
+seealso:
+  categories:
+    - Spell Casting Effects
+    - Spells
+    - Talents/Skills/Feats
+    - Visual Effects
+  events:
+    - OnSpellCastAt
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

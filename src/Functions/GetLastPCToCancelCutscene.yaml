@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetLastPCToCancelCutscene
+shortdesc: Retrieves the last player to leave a cut-scene.
+return: object
+parameters:
+description: |
+  Returns the last player to cancel a cut-scene.
+remarks: |
+  This function should only be used in the OnCutsceneAbort event, which will fire when a player who is in a cutscene (set by SetCutsceneMode) hits the escape button. The player who hit that button is then returned by this function. 
+  Note that the abort of the cutscene must be scripted manually into the OnCutsceneAbort event - simply pressing escape won't even take the PC out of SetCutsceneMode if you don't put that in the script.
+version: 1.30
+seealso:
+  functions:
+    - SetCutsceneMode
+  categories:
+    - Cut-Scene
+    - PC Only
+author: Charles Feduke
+editor: Lilac Soul
+

@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetIsOpen
+shortdesc: Check whether a placeable or door is currently open.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The placeable or door to be checked.
+
+description: |
+  Returns TRUE if oObject (which is a placeable or a door) is currently open.
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Object
+author: Tom Cassiotis
+editor: Kristian Markon
+

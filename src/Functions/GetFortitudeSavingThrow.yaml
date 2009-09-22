@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetFortitudeSavingThrow
+shortdesc: Determines the base fortitue saving throw number of a creature, door or placeable.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Creature, door, or placeable.
+
+description: |
+  Returns oTarget's base fortitude saving throw value, and 0 if oTarget is invalid.
+remarks: |
+  This will only work for creatures, doors, and placeables.
+version: 1.22
+seealso:
+  functions:
+    - SetFortitudeSavingThrow
+    - FortitudeSave
+  categories:
+    - Saving Throw
+author: Tom Cassiotis
+editor: Kristian Markon

@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetStrRefSoundDuration
+shortdesc: Determine the duration of a sound attached to a string reference.
+return: float
+parameters:
+  - type: int
+    name: nStrRef
+    desc: | Target string reference.
+
+description: |
+  Returns the duration of the sound attached to the string reference nStrRef, measured in seconds. Returns 0.0 if no duration is stored or if no sound is attached to the string reference.
+remarks: |
+  nStrRef is an index into the dialog.tlk file or the custom tlk file associated with the module. 
+  This would be most useful for pausing a conversation which uses sStrRef's talktable entry and sound, until the sound is finished.
+version: 1.22
+seealso:
+  categories:
+    - Sound Effects
+author: Daniel Beckman
+editor: Jasperre
+

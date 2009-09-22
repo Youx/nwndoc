@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetRingGivenTo
+shortdesc: Retrieves the PC that the ring was given to.
+return: object
+parameters:
+description: |
+  Returns the PC that the ring was given to that was passed in to SetRingGivenTo.
+remarks: |
+  This function is of little use for general scripting needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - GiveRingToPlayer
+    - PlayerHasRing
+    - SetRingGivenTo
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

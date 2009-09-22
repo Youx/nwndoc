@@ -1,0 +1,28 @@
+---
+type: Function
+name: CreateThrowingAxe
+shortdesc: Spawns in a Throwing Axe as part of the random treasure distribution.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Container to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | a Player object
+
+description: |
+  Creates a Throwing Axe, based on the level of the PC opening the container, as part of the NWN Treasure Distribution System. 
+remarks: |
+  Found in nw_o2_feat.nss 
+  This can be used to create the item in any object with an inventory. 
+requirements: |
+  #include "nw_o2_feat"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

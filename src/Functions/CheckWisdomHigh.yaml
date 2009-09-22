@@ -1,0 +1,39 @@
+---
+type: Function
+name: CheckWisdomHigh
+shortdesc: Determines if the Wisdom score of the speaking player is above the low range.
+return: int
+parameters:
+description: |
+  Returns TRUE if the player character in the conversation has a Wisdom score greater than 13.
+remarks: |
+  Function found in nw_i0_plot.nss on line 743. 
+  This function always uses GetPCSpeaker() to determine the wisdom score, so using it anywhere besides in a conversation will return FALSE. This was used by BioWare to provide different conversation choices for the players depending on how high their wisdom was. This allowed scripters to give special insight into motices of NPCs during conversations.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.28
+example: |
+  //If the player has completed the STEAL_DIAMOND quest and they are of normal Intelligence levels and High Wisdom levels
+  //Then let them realize the NPC is going to kill them to keep them quiet.  This will give the player a
+  //chance to react before the encounter begins.
+  #include "NW_I0_PLOT"
+  int StartingConditional()
+  {
+      int iResult;
+      iResult = GetLocalInt(GetModule(), "STEAL_DIAMOND") >= 10 && CheckIntelligenceNormal() && CheckWisdomHigh();
+      return iResult;
+  }
+seealso:
+  functions:
+    - CheckCharismaHigh
+    - CheckCharismaLow
+    - CheckCharismaMiddle
+    - CheckCharismaNormal
+    - CheckIntelligenceHigh
+    - CheckIntelligenceLow
+    - CheckIntelligenceNormal
+  categories:
+    - Get Data from Creature
+author: John Shuell
+editor: Charles Feduke
+

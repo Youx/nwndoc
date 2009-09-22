@@ -1,0 +1,19 @@
+---
+type: Function
+name: ActionInteractObject
+shortdesc: Causes a creature or PC to use an object.
+return: void
+parameters:
+  - type: object
+    name: oPlaceable
+    desc: | Placeable object to interact with.
+
+description: |
+  Causes the creature who has a script attached to it that calls this function to interact with a placeable object, if that object can be interacted with.
+version: 1.61
+seealso:
+  categories:
+    - Action on Object
+author: Charles Feduke
+additional_contributors:
+  - Glenn J. Berden

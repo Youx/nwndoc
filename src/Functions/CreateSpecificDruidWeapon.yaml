@@ -1,0 +1,33 @@
+---
+type: Function
+name: CreateSpecificDruidWeapon
+shortdesc: Spawns in a Specific Druid Weapon as part of the random treasure distribution.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Container to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | a Player object
+
+  - type: int
+    name: nModifier
+    default: 0
+    desc: | PC Level Modifier (Default: 0)
+
+description: |
+  Creates a Specific Druid Weapon , based on the level of the PC opening the container, as part of the NWN Treasure Distribution System. 
+remarks: |
+  Found in: nw_o2_coninclude.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

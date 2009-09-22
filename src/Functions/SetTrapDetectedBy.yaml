@@ -1,0 +1,58 @@
+---
+type: Function
+name: SetTrapDetectedBy
+shortdesc: Makes a trap detected by a creature.
+return: int
+parameters:
+  - type: object
+    name: oTrap
+    desc: | A placeable, door or trigger
+
+  - type: object
+    name: oDetector
+    desc: | A creature
+
+  - type: int
+    name: bDetected
+    default: TRUE
+    desc: | Sets whether oTrap has been detected or not.
+
+description: |
+  Set oDetector to have detected oTrap.
+remarks: |
+  This function can be used to make sure a character is aware of a trap.
+  This also works on traps that are flagged as not detectable. It can thus be used to force the PC to do a quest before the location of certain traps are revealed to him or her. 
+  The return value of this function seems a little useless or bugged. One would suspect that it returns whether there was a trap on oTrap and thus could be flagged as detected. However, when a non-trap object is passed to oTrap, it still returns TRUE. Passing OBJECT_INVALID to either of the parameters will make it return FALSE, though. and there may be other instances that cause it to return FALSE as well. However, I would recommend against relying on it. 
+  Furthermore, the fact that the function returns an integer means that it can't be delayed. If you want to delay it, you'll have to create a wrapper function as shown below, and call that instead.
+version: 1.67
+example: |
+  // script to be used in objects onUsed event
+  // makes user detect the trap on object with tag "Chest1"
+  void main()
+  {
+      object oTrap = GetObjectByTag("Chest1");
+      object oDetector = GetLastUsedBy();
+      SetTrapDetectedBy(oTrap, oDetector);
+  }
+  //Function to allow delaying of this command:
+  void VoidReturningSetTrapDetectedBy(object oTrap, object oDetector)
+  {
+  SetTrapDetectedBy(oTrap, oDetector);
+  }
+seealso:
+  functions:
+    - GetLastTrapDetected
+    - GetTrapBaseType
+    - GetTrapCreator
+    - GetTrapDetectable
+    - GetTrapDetectDC
+    - GetTrapDetectedBy
+    - GetTrapDisarmable
+    - GetTrapDisarmDC
+    - GetTrapFlagged
+    - GetTrapKeyTag
+    - GetTrapOneShot
+  categories:
+    - Traps
+author: Chaz Mead
+editor: Lilac Soul

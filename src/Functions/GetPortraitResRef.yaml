@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetPortraitResRef 
+shortdesc: Gets the portrait ResRef of the object.
+return: string
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object for which you are getting the portrait ResRef.
+
+description: |
+  Gets the portrait ResRef of oTarget.
+  The portrait ResRef will not include a trailing size letter.
+remarks: |
+bugs: |
+version: 1.67
+seealso:
+  functions:
+    - SetPortraitResRef
+    - GetPortraitId
+    - SetPortraitId
+  categories:
+    - Get Data from Object
+author: Mistress

@@ -1,0 +1,46 @@
+---
+type: Function
+name: EffectTemporaryHitpoints
+shortdesc: Create a Temporary Hitpoints effect that raises the Hitpoints of the target.
+return: effect
+parameters:
+  - type: int
+    name: nHitPoints
+    desc: | A positive integer
+
+description: |
+  Returns a new effect object that when applied to a target will temporarily increase their total Hit Points allowable. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nHitPoints < 0. 
+  The limit of nHitPoints is unknown. 
+  This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Tempoary hit points are un-healable "extra" hit points that will be removed first, before actual damage is done to the target. If the target is already damaged, then the tempoary hit points seem to partially heal them - of course, they will get removed as the effect normally would. 
+  They definatly do stack, and was one of the first spell-fixes to spells like Vampiric touch. Should the effect be dispelled/removed, and it take you under your current hit points, then you should die. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 5 temporary hit points to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eHP = EffectTemporaryHitpoints(5);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HOLY_AID);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eHP, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

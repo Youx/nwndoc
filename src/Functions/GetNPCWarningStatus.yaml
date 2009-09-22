@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetNPCWarningStatus
+shortdesc: Determines a NPC's state of mind toward another object.
+return: int
+parameters:
+description: |
+  Returns an integer set by SetNPCWarningStatus() to provide a NPC's state of mind toward a creature that had or had not attacked it.
+remarks: |
+  SetNPCWarningStatus() should be called before calling this function.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // This function demonstrates how to set and retrieve an NPC's warning status randomly
+  #include "NW_I0_GENERIC"
+  void main()
+  {
+       SetNPCWarningStatus(Random(2));
+       if(GetNPCWarningStatus()==FALSE)
+       {
+            ActionSpeakString("Hello Friend");
+       }
+  }
+seealso:
+  functions:
+    - SetNPCWarningStatus
+  categories:
+    - Core AI
+author: Sarev0k
+editor: Tom Cassiotis
+

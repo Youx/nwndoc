@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetLastPerceived
+shortdesc: Determines the last perceived creature in an OnPerception event.
+return: object
+parameters:
+description: |
+  Use this in an OnPerception script to get the object that was perceived. 
+  Returns the object that was perceived and OBJECT_INVALID if the caller is not a valid creature.
+version: 1.22
+example: |
+  // OnPerception script that attacks a perceived enemy 
+  main()
+  {
+     object oNoticed = GetLastPerceived();
+     if(GetIsObjectValid(oNoticed))
+     {
+        if (GetLastPerceptionSeen() && GetIsEnemy(oNoticed))
+        {
+           ClearAllActions();
+           ActionAttack(oNoticed);
+        }
+     }
+  }
+seealso:
+  categories:
+    - Perception
+author: Tom Cassiotis
+editor: Kristian Markon
+

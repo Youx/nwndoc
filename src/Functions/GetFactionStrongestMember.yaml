@@ -1,0 +1,53 @@
+---
+type: Function
+name: GetFactionStrongestMember
+shortdesc: Get the member of an object's faction who is the strongest.
+return: object
+parameters:
+  - type: object
+    name: oFactionMember
+    default: OBJECT_SELF
+    desc: | An object who is a member of the faction you wish to search through. (Default: OBJECT_SELF)
+
+  - type: int
+    name: bMustBeVisible
+    default: TRUE
+    desc: | The member chose must be visible to the calling object. (Default: TRUE)
+
+description: |
+  Returns the strongest member of oFactionMember's faction. If bMustBeVisible is set to TRUE (default) only members who can be seen currently by the calling object will be considered. 
+  Return OBJECT_INVALID if oFactionMember's faction is invalid.
+remarks: |
+  This is a useful function because it will get the highest hit dice opponent - useful for AI scripting. Of course, it is probably not based on any kind of range or anything else if there are 2 people with the highest hit dice, and it'll just return the first who joined the party. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetHitDice(), to find the highest, only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction unless bMustBeVisible is TRUE, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+version: 1.62
+example: |
+  // Get the strongest PC and attack them. For all it matters, this
+  // could be the On Heartbeat script of a NPC.
+  void main()
+  {
+      // Get nearest PC
+      object oPC = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC);
+      // Get strongest
+      object oStrongest = GetFactionStrongestMember(oFactionMember, TRUE);
+      // Attack them
+      if(GetIsObjectValid(oStrongest))
+      {
+          ClearAllActions();
+          ActionAttack(oStrongest);
+      }
+  }
+seealso:
+  functions:
+    - GetFactionWeakestMember
+  categories:
+    - Get Data from Creature
+    - Party
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Dan
+  - Charles Feduke
+  - Jasperre

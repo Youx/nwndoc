@@ -1,0 +1,37 @@
+---
+type: Function
+name: aSetPLocalInt
+shortdesc: Sets a local integer on each of the party members.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Member of the PC party.
+
+  - type: string
+    name: sLocalName
+    desc: | Name of the variable to be stored.
+
+  - type: int
+    name: nValue
+    desc: | Value of the integer variable to be stored.
+
+description: |
+  This function sets a local variable iValue on each of the players that are in the PC's party as sLocalName. This function essentially performs a SetLocalInt(object, int, string) on each member of the party.
+remarks: |
+  Found in nw_j_assassin.nss, and used to make plots more multi-player friendly.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.28
+seealso:
+  functions:
+    - aGetPLocalInt
+    - GetPLocalInt
+    - SetPLocalInt
+  categories:
+    - Local Variables
+    - Module
+    - Party
+author: Michael Nork
+editor: Charles Feduke
+

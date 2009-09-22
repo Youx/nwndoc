@@ -1,0 +1,53 @@
+---
+type: Function
+name: RemoveEffect
+shortdesc: Removes an effect from a creature or object.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The object to remove an effect from.
+
+  - type: effect
+    name: eEffect
+    desc: | The effect to remove.
+
+description: |
+  Removes eEffect from oCreature.
+remarks: |
+  A common mistake with this function is to use the following approach to remove, say, a sleep effect: 
+  effect eSleep=EffectSleep(); 
+  RemoveEffect(oPC, eSleep); 
+  This doesn't work, because calling EffectSleep creates a new effect. It is thus not the sleep effect that is currently on oPC, but a different sleep effect. 
+  Instead, you must loop through effects on the creature, and remove the effect(s) of the correct type, and possibly the correct creator and subtype. View the codesample below for information on how to do this. Alternately, you can use RemoveSpecificEffect which requires you to include nw_i0_spells - it does the same as the code sample below, but is a nice wrapper function to avoid having to type up all that stuff repeatedly.
+version: 1.61
+example: |
+  void main()
+  {
+  object oPC=GetEnteringObject();
+  if (!GetIsPC(oPC)) return;
+  //Remove blindness from the PC
+  effect eLoop=GetFirstEffect(oPC);
+  while (GetIsEffectValid(eLoop))
+     {
+     if (GetEffectType(eLoop)==EFFECT_TYPE_BLINDNESS)
+           RemoveEffect(oPC, eLoop);
+     eLoop=GetNextEffect(oPC);
+     }
+  }
+seealso:
+  functions:
+    - GetEffectDurationType
+    - GetEffectSpellId
+    - GetEffectSubType
+    - GetEffectType
+    - GetFirstEffect
+    - GetIsEffectValid
+    - GetNextEffect
+    - RemoveEffectOfType
+    - RemoveSpecificEffect
+  categories:
+    - Effects
+author: Tom Cassiotis
+editor: Lilac Soul
+

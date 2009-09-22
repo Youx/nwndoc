@@ -1,0 +1,29 @@
+---
+type: Function
+name: HasSpell
+shortdesc: Checks if caller has spell
+return: int
+parameters:
+  - type: int
+    name: nSpell
+    desc: | The spell to check for
+
+description: |
+  Checks if the caller has the spell nSpell. (SPELL_*)
+remarks: |
+  Found in nw_c8_lv123.nss on line 32 
+  Rather than checking if the caller has the spell in the spell book (like GetHasSpell does), it checks for a local integer on the caller, then returns TRUE if it is 0, presumably meaning that the spell hasn’t been cast yet. This seems strange, but from looking at nw_c8_lv123 (I was unable to find any instances of it being used), it is probably used for bards. Prior to version 1.25, GetHasSpell didn’t work correctly for bards, and this function may have been intended as a workaround. 
+  I suggest you don’t use this function, and just use GetHasSpell instead. If you do use it, note that this isn’t in an include file, so you can’t just include it the normal way. 
+version: 1.28
+seealso:
+  functions:
+    - GetHasSpell
+  categories:
+    - Get Data from Creature
+    - Module Specific
+    - Spells
+  constants:
+    - SPELL_* Constants
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

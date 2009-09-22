@@ -1,0 +1,69 @@
+---
+type: Function
+name: EffectSwarm
+shortdesc: Returns a Swarm effect.
+return: effect
+parameters:
+  - type: int
+    name: nLooping
+    desc: | If this is TRUE, for the duration of the effect when one creature created by this effect dies, the next one in the list will be created. If the last creature in the list dies, we loop back to the beginning and sCreatureTemplate1 will be created, and so on...
+
+  - type: string
+    name: sCreatureTemplate1
+    desc: | Blueprint of first creature to spawn
+
+  - type: string
+    name: sCreatureTemplate2
+    default: ""
+    desc: | Optional blueprint for second creature to spawn (Default: "")
+
+  - type: string
+    name: sCreatureTemplate3
+    default: ""
+    desc: | Optional blueprint for third creature to spawn (Default: "")
+
+  - type: string
+    name: sCreatureTemplate4
+    default: ""
+    desc: | Optional blueprint for fourth creature to spawn (Default: "")
+
+description: |
+  Returns a Swarm effect of, up to, four definable creatures. 
+  This is exactly the same as EffectSummonCreature() except, after one dies, another takes its place. See EffectSummonCreature() for some more information on the subject of summoned monsters. 
+  This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This effect does not work with ApplyEffectToLocation(). 
+  When applied to a PC, the spawned creature will become part of the target PC's group, replacing any summon creature the PC might already control. 
+  Bioware’s description of what nLooping does is a little vague. The effect will actually proceed to the next creature when the one before dies even when nLooping is FALSE. Once the last creature in the list dies, though, if nLooping is FALSE, the effect ends even if its duration hasn’t expired yet. If nLooping is TRUE, however, the effect loops back and starts over with the first creature. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  Previously noted bug was fixed in a patch some time ago.
+version: 1.62
+example: |
+  // Example 1 - The following script is an OnUsed event script.
+  // When triggered, it checks to make sure it was triggered by a
+  // PC, and if not exits the script.  If it was a PC that triggered the
+  // script, the Swarm effect is created and applied to the PC for
+  // duration of 3 minutes.
+  void main()
+  {
+      effect eSwarm;
+      object oPC = GetLastUsedBy();
+      if (!GetIsPC(oPC)) return;
+      eSwarm = EffectSwarm(TRUE, "nw_skeleton", "nw_skelchief", "nw_skeleton", "nw_skeleton");
+    ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eSwarm, oPC, 180.0f);
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+    - ApplyEffectToObject
+    - SummonAnimalCompanion
+    - SummonFamiliar
+  categories:
+    - Effects
+    - Henchmen/Familiars/Summoned
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

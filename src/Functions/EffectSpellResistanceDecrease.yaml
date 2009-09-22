@@ -1,0 +1,45 @@
+---
+type: Function
+name: EffectSpellResistanceDecrease
+shortdesc: Returns a Spell Resistance Decrease effect.
+return: effect
+parameters:
+  - type: int
+    name: nValue
+    desc: | amount of spell resistance decrease
+
+description: |
+  Returns an effect which decreases spell resistance by nValue. If nValue is less than 1, nothing happens. 
+  The limit of nValue is unknown. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Decreases to a targets spell resistance probably do stack, as they basically decrease the highest value which would be used to counter spells, and themselves do not define the targets new Spell Resistance. 
+  However, any information about it would be useful. Note that the highest spell resistance is the one which is used, and having a decrease will decrease all amounts of Spell Resistance on a target - having a belt of Spell resistance (SR) 20 and a Monks SR of 30 on one person, a SR decrease of 15 will not mean we make the Monks SR 15, and use the other value 20, but we decrease both, so one is 15 and the othe is 5, so we carry on using the highest, the monks SR. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a 10 decrease in spell resistance
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eSR = EffectSpellResistanceDecrease(10);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SPELL_MANTLE_USE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSR, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+  categories:
+    - Effects
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Jasperre

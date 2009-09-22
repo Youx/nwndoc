@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetIdentified
+shortdesc: Determines whether an object has been identified.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to be checked.
+
+description: |
+  Returns TRUE if oItem has been identified, FALSE otherwise.
+version: 1.22
+seealso:
+  functions:
+    - SetIdentified
+  categories:
+    - Action on Object
+author: Tom Cassiotis
+editor: Kristian Markon
+

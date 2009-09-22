@@ -1,0 +1,31 @@
+---
+type: Function
+name: AutoAlignG
+shortdesc: Adjusts the alignment of the object towards good, relative to the degree indicated.
+return: void
+parameters:
+  - type: int
+    name: nDC
+    desc: | Value to indicate the relative difficulty of the task. (DC_EASY, DC_MEDIUM, DC_HARD)
+
+  - type: object
+    name: oTarget
+    desc: | The creature whose alignment will be changed.
+
+description: |
+  Adjusts the alignment of the object towards good, relative to the degree indicated.
+remarks: |
+  This is a wrapper for AdjustAlignment(). 
+  DC_EASY is 3 point shift 
+  DC_MEDIUM is a 7 point shift 
+  DC_HARD is a 10 point shift
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Alignment
+  constants:
+    - DC_* Constants
+author: Tom Cassiotis
+

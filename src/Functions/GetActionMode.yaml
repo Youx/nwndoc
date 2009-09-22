@@ -1,0 +1,44 @@
+---
+type: Function
+name: GetActionMode
+shortdesc: Check if a creature is using a given action mode
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to examine
+
+  - type: int
+    name: nMode
+    desc: | ACTION_MODE_*
+
+description: |
+  Gets the status of ACTION_MODE_* modes on a creature.
+remarks: |
+  Use the corrisponding SetActionMode() if the mode needs to be turned on/off. 
+  These 3 functions: 
+  - GetDetectMode() 
+  - GetDefensiveCastingMode() 
+  - GetStealthMode() 
+  Still work fine.
+version: 1.61
+example: |
+  //Make PC exit stealth mode if currently stealthy
+  void main()
+  {
+  object oPC=GetEnteringObject();
+  if (GetActionMode(oPC, ACTION_MODE_STEALTH)==TRUE)
+     SetActionMode(oPC, ACTION_MODE_STEALTH, FALSE);
+  }
+seealso:
+  functions:
+    - SetActionMode
+  categories:
+    - Get Data from Creature
+    - Miscellaneous
+  constants:
+    - ACTION_MODE_* Constants
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,33 @@
+---
+type: Function
+name: SetSummonEffect
+shortdesc: Specifies the visual special effect and specific creature to be summoned based on the spell cast.
+return: effect
+parameters:
+  - type: int
+    name: nSpellID
+description: |
+  Summon Creature Series 
+  NW_S0_Summon 
+  Based on the Summon Monster spell level cast, this function determines the specific special effect to be used and what creature is summoned. 
+remarks: |
+  Script: nw_s0_summon.nss: Line: 16 
+  This isn't an include file, so you can't include it the normal way. 
+  This script does a special delineation between clerics with animal domain powers and clerics and other spellcasters without. (i.e. with domain powers, creatures are one level higher per spell level.) 
+  It returns a summon creature effect. Based on nSpellID and whether the caller has the feat FEAT_ANIMAL_DOMAIN_POWER, it determines the resref of the creature to summon and the effect to display, and returns these as EffectSummonCreature(sSummon, nFNF_Effect), where sSummon is the creature’s resref, and nFNF_Effect is the effect to display. 
+  Looking in the spells.2da file, you’ll see that this script is called by all nine of the summon creature spells. The main function determines the ID of the spell being cast and feeds that to this function, thus making this one script able to distinguish between the 9 summon spells for purposes of determining which creature to spawn. Thus, if you want to edit the summon spells, this is the script you’ll want to edit, not the individual scripts called nw_s0_summonX, where X is the identifier of the summon creature spell. As far as I’ve been able to tell, the nw_s0_summon1-9 scripts aren’t actually used.
+requirements: |
+  #include "nw_s0_summon"
+version: 1.29
+seealso:
+  functions:
+    - EffectSummonCreature
+  categories:
+    - Core AI
+    - Henchmen/Familiars/Summoned
+    - Private
+    - Visual Effects
+author: Jody Fletcher
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

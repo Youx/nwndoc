@@ -1,0 +1,27 @@
+---
+type: Function
+name: GenerateBossTreasure
+shortdesc: Generates boss-level treasure.
+return: void
+parameters:
+  - type: object
+    name: oLastOpener
+    desc: | PC who opened a container.
+
+  - type: object
+    name: oCreateOn
+    default: OBJECT_INVALID
+    desc: | A container to create the treasure in. (Default: OBJECT_INVALID)
+
+description: |
+  This function is part of the NWN Treasure Distribution System and used for generated boss-level treasure for a PC. Treasure generated in this manner is usually custom tailored to the PC (in this case oLastOpener); i.e. a 3rd level Fighter with the Weapon Focus in the Longsword might find a Longsword +1.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.28
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Charles Feduke
+additional_contributors:
+  - LeegleechN

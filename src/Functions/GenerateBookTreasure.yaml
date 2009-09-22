@@ -1,0 +1,27 @@
+---
+type: Function
+name: GenerateBookTreasure
+shortdesc: This Function is part of the random treasure distribution.
+return: void
+parameters:
+  - type: object
+    name: oLastOpener
+    desc: | a PC Object
+
+  - type: object
+    name: oCreateOn
+    default: OBJECT_INVALID
+    desc: | Container for Treasure (Default: OBJECT_INVALID)
+
+description: |
+  This function creates treasure as part of the NWN Treasure Distribution System
+remarks: |
+  Found in : nw_o2_coninclude.nss
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.22
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+

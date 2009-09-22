@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetMyMaster
+shortdesc: Gets the nearest Player Character to the calling object.
+return: object
+parameters:
+description: |
+  Returns the nearest PC to the object that uses this function.
+remarks: |
+  Function found in nw_i0_plot.nss on line 157. 
+  Not exactly what it sounds like, this function merely returns the nearest PC. It has nothing to do with henchmen, summoned creatures or familiars. In fact it is not even used by BioWare in the official campaign. Use with caution as it will mislead the reader of the code.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Miscellaneous
+author: John Shuell
+

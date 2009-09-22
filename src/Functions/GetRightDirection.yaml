@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetRightDirection
+shortdesc: Returns a normalized float that is -90 from the facing passed in
+return: float
+parameters:
+  - type: float
+    name: fDirection
+    desc: | Current Facing
+
+description: |
+  This is a convenience function that returns a float representing a normalized angle that is -90 degrees from fDirection. (IE, what you would use to make an object turn to the right.)
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

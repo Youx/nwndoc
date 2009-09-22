@@ -1,0 +1,20 @@
+---
+type: Function
+name: DebugPrintTalentID
+shortdesc: Sends a message to the server log file of the talent ID specified.
+return: void
+parameters:
+  - type: talent
+    name: tTalent
+description: |
+  Used mostly to assist in debugging of talent usage in a module. Find log in /logs directory of Neverwinter Nights folder.
+version: 1.22
+seealso:
+  functions:
+    - WriteTimestampedLogEntry
+  categories:
+    - Debug
+    - Talents/Skills/Feats
+author: Jody Fletcher
+editor: Charles Feduke
+

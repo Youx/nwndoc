@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetPLocalInt
+shortdesc: Determines the value of a locally stored variable from any PC in a party.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | PC whose party will be searched for the local variable.
+
+  - type: string
+    name: sLocalName
+    desc: | Local variable name to get the value.
+
+description: |
+  Scans through all players in the party, to treat them all as a single entity for the purposes of most plots. This makes BioWare plots more multi-player friendly.
+remarks: |
+  Although not absolutely necessary, SetPLocalInt should be used. SetPLocalInt sets a local variable to all party members. With these two functions a multiplayer game can handle some players leaving and new players entering mid game. 
+  GetPLocalInt is short for GetPartyLocalInt. 
+  Same as aGetPLocalInt(object, string).
+requirements: |
+  #include "nw_i0_plot"
+version: 1.28
+seealso:
+  functions:
+    - aGetPLocalInt
+    - aSetPLocalInt
+    - SetPLocalInt
+  categories:
+    - Local Variables
+    - Module
+    - Party
+author: Tom Cassiotis
+editor: Charles Feduke
+

@@ -1,0 +1,47 @@
+---
+type: Function
+name: GetBaseItemType
+shortdesc: Determines the basic template for the item specified.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to be analyzed.
+
+description: |
+  Get the base item type (BASE_ITEM_*) of oItem. 
+  Returns BASE_ITEM_INVALID if oItem is an invalid item.
+remarks: |
+  the BASE_ITEM_* constants are from the baseitems.2da file, and are mearly the line number. 
+  Note that a few are invalid - see the 2da, but noting that BASE_ITEM_SCROLL doesn't exsist, instead, it is BASE_ITEM_SPELLSCROLL.
+version: 1.22
+example: |
+  // If the item of tag "ITEM" in our possession is a shortsword, say so!
+  void main()
+  {
+      // Get item
+      object oItem = GetItemPossessedBy(OBJECT_SELF, "ITEM");
+      if(GetBaseItemType(oItem) == BASE_ITEM_SHORTSWORD)
+      {
+          SpeakString("I've got a great shortsword!!");
+      }
+  }
+seealso:
+  functions:
+    - CreateItemOnObject
+    - GetItemActivated
+    - GetItemACValue
+    - GetItemHasItemProperty
+    - GetItemInSlot
+    - GetLastWeaponUsed
+  categories:
+    - Get Data from Object
+  constants:
+    - BASE_ITEM_* Constants
+  events:
+    - OnAcquireItem
+    - OnActivateItem
+    - OnUnAcquireItem
+author: Jody Fletcher
+editor: Jasperre
+

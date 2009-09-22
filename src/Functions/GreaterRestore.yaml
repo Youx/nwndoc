@@ -1,0 +1,23 @@
+---
+type: Function
+name: GreaterRestore
+shortdesc: Invalid function; does nothing (use RemoveEffects(object) from nw_i0_plot instead).
+return: void
+parameters:
+  - type: object
+    name: oHench
+    desc: | Creature to restore.
+
+description: |
+  Executes script, but performs no effect.
+remarks: |
+  Found in nw_ch_ac7.nss on line 39. This function has been marked as no longer in use. RemoveEffects(object) from nw_i0_plot is used in its place in official BioWare modules.
+version: 1.28
+seealso:
+  functions:
+    - RemoveEffects
+  categories:
+    - Private
+author: Lilac Soul
+editor: Charles Feduke
+

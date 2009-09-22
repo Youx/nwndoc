@@ -1,0 +1,38 @@
+---
+type: Function
+name: GetBehaviorState
+shortdesc: Test whether a creature is in a particular behavior state.
+return: int
+parameters:
+  - type: int
+    name: nCondition
+    desc: | Bitmask of possible behavior state.
+
+description: |
+  Creatures can be created with governing behavior states, as defined by the NW_FLAG_BEHAVIOR_* constants in nw_i0_generic: 
+  //Behavior Constants 
+  int NW_FLAG_BEHAVIOR_SPECIAL = 0x00000001; 
+  int NW_FLAG_BEHAVIOR_CARNIVORE = 0x00000002; //Will always attack regardless of faction 
+  int NW_FLAG_BEHAVIOR_OMNIVORE = 0x00000004; //Will only attack if approached 
+  int NW_FLAG_BEHAVIOR_HERBIVORE = 0x00000008; //Will never attack. Will alway flee. 
+  GetBehaviorState compares nCondition to the creature's behavior state mask, and returns true if they match.
+remarks: |
+  This function is described as internal to nw_i0_generic.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.22
+example: |
+  if(GetBehaviorState(NW_FLAG_BEHAVIOR_HERBIVORE)) {
+       // Do some special grass-nibbling code.
+  }
+seealso:
+  functions:
+    - DetermineSpecialBehavior
+    - SetBehaviorState
+  categories:
+    - Core AI
+  constants:
+    - NW_FLAG_BEHAVIOR_* Constants
+author: Iskander Merriman
+editor: John Shuell
+

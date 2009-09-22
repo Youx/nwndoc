@@ -1,0 +1,45 @@
+---
+type: Function
+name: TLChangeAreaGroundTiles
+shortdesc: Changes the tiles of an entire area.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | Area to change the tiles of
+
+  - type: int
+    name: nGroundTileConst
+    desc: | X2_TL_GROUNDTILE_*
+
+  - type: int
+    name: nColumns
+    desc: | Columns in the area
+
+  - type: int
+    name: nRows
+    desc: | Rows in the area
+
+  - type: float
+    name: fZOffset
+    default: -0.4f
+    desc: | Z-axis coordinate for the tile magic. (Default: -0.4f)
+
+description: |
+  change the type of the ground or (by default) sub ground tiles (i.e. water) to the specified type.
+remarks: |
+  This function will flood the entire area with the tile in question. nColumns and nRows indicate the size of the area. For instance, a 4 * 6 area will have 4 columns and 6 rows. 
+  You may not want to flood your entire area, but this function will give you a pretty good idea how to use the tile magic (tm). Basically, you just create an invisible object in the center of a tile, and apply a permanent visual effect to that invisible object.
+requirements: |
+  #include "x2_inc_toollib"
+version: 1.61
+seealso:
+  functions:
+    - TLResetAreaGroundTiles
+  categories:
+    - Area
+    - Visual Effects
+  constants:
+    - X2_TL_GROUNDTILE_* Constants
+author: Lilac Soul
+

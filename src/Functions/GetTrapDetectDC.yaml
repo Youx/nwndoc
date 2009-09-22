@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetTrapDetectDC
+shortdesc: Determines the DC required to detect the specific trap.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | A placeable, door or trigger
+
+description: |
+  Get the DC value for detecting the trap oTrapObject.
+version: 1.22
+seealso:
+  functions:
+    - SetTrapDetectDC
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Mistress
+

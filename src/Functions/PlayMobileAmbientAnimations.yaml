@@ -1,0 +1,26 @@
+---
+type: Function
+name: PlayMobileAmbientAnimations
+shortdesc: Makes a creature act out some animations to look more lifelike.
+return: void
+parameters:
+description: |
+  Assigns animation effects to the creature that called this function. 
+  It will have creatures move to other creature and mock conversations, have them wander and so on. This can be used to produce more realistic creature as they are playing the part of a statue.
+remarks: |
+  This function is part of the core AI system, and will be automatically be called if the creatures OnSpawn script sets the spawn condition for ambient animations. Meaning: 
+  SetSpawnInCondition(NW_FLAG_AMBIENT_ANIMATIONS); 
+  To assign a creature ambient animations that prevent it from moving use: 
+  SetSpawnInCondition (NW_FLAG_IMMOBILE_AMBIENT_ANIMATIONS); 
+  This function is now just a wrapper for PlayMobileAmbientAnimations_NonAvian (for non-birds), and PlayMobileAmbientAnimations_Avian (for birds).
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  functions:
+    - GetSpawnInCondition
+  categories:
+    - Core AI
+author: Tom Cassiotis
+editor: Lilac Soul
+

@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetLastAttackType
+shortdesc: Determine the attack type of a creature's last attack.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | Creature which is attacking. (Default: OBJECT_SELF)
+
+description: |
+  Returns the attack type (SPECIAL_ATTACK_*) of oCreature's last attack. Returns SPECIAL_ATTACK_INVALID if creature is not in combat, or if no special attack was used.
+remarks: |
+  This only works when oCreature is in combat.
+version: 1.22
+seealso:
+  categories:
+    - Combat Information
+  constants:
+    - SPECIAL_ATTACK_* Constants
+author: Jason Harris
+editor: Kristian Markon
+

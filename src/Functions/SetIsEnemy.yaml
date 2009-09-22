@@ -1,0 +1,19 @@
+---
+type: Function
+name: SetIsEnemy
+shortdesc: Causes a creature to be flagged as an enemy using reputation.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+description: |
+  Sets the reputation of oTarget to be set to -100 with regards to the caller of this function, then proceed make the caller to attack oTarget.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Jody Fletcher
+

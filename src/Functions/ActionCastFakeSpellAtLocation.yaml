@@ -1,0 +1,63 @@
+---
+type: Function
+name: ActionCastFakeSpellAtLocation
+shortdesc: Display casting animation and spell visuals without subsequent spell effects.
+return: void
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_* constant
+
+  - type: location
+    name: lTarget
+    desc: | spell effect postion
+
+  - type: int
+    name: nProjectilePathType
+    default: PROJECTILE_PATH_TYPE_DEFAULT
+    desc: | PROJECTILE_PATH_TYPE_* constant (Default: PROJECTILE_PATH_TYPE_DEFAULT)
+
+description: |
+  The Action recipient will have the appearance of casting nSpell, but there will no corresponding game effects as a result. The spell effect will be centered on or aimed at lTarget.
+remarks: |
+  It will have the same projectile visual effects (Such as Phantasmal Killer's illisionary beast that leaps from the caster to the target), and casting visuals, as the spells.2da entry, but not fire the spell script, and the caster doesn't need to know the spell. 
+  Also note that ActionCastFakeSpell still incurs Attacks-of-oppotunity in combat, for some reason.
+bugs: |
+  For some reason stacking this Action doesn't seem to produce a predictable string of castings. The creature will cast the first FakeSpell and when reaching the next FakeSpell in its Action Queue will halt all following queued Actions.
+version: 1.22
+example: |
+  //Function made by Lilac Soul to illustrate the use of
+  //ActionCastFakeSpellAtLocation - in this function, I use it
+  //to have the NPC speaker "cast a spell" which just misses
+  //the PC and fizzles - I guess the NPC is inept at magic!
+  void main()
+  {
+  object oTarget=GetPCSpeaker();
+  //The PC’s current location
+  location lLoc=GetLocation(oTarget);
+  //Generate a location near to the PC
+  vector vPos=GetPositionFromLocation(lLoc);
+  vPos.x+=IntToFloat(d6());
+  vPos.y+=IntToFloat(d6());
+  lLoc=Location(GetArea(oTarget), vPos, GetFacing(oTarget));
+  //Cast the spell at this new location
+  ActionCastFakeSpellAtLocation(SPELL_GATE, lLoc);
+  //Apply the fizzle effect at this new location
+  DelayCommand(2.0, ApplyEffectAtLocation(DURATION_TYPE_INSTANT, EffectVisualEffect(VFX_FNF_DISPEL_GREATER), lLoc));
+  }
+seealso:
+  functions:
+    - ActionCastFakeSpellAtObject
+    - ActionCastSpellAtLocation
+  categories:
+    - Spell Casting Effects
+    - Visual Effects
+  constants:
+    - PROJECTILE_PATH_TYPE_* Constants
+    - SPELL_* Constants
+author: Ryan Hunt
+editor: Jasperre
+additional_contributors:
+  - NTIN
+  - Lilac Soul
+  - Jasperre

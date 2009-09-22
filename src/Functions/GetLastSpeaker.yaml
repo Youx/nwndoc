@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetLastSpeaker
+shortdesc: Determines the last creature that was communicated with.
+return: object
+parameters:
+description: |
+  Use this in a conversation script to get the person with whom the PC is conversing. Returns OBJECT_INVALID if the caller is not a valid creature.
+remarks: |
+  If called within a conversation (e.g., as part of the "StartingConditional" script for a PC line of text AFTER the NPC has spoken previously), the function will not return the last NPC speaker, but will return OBJECT_INVALID. 
+  The value is apparently set after the whole conversation with an NPC is completed, not after each line of conversation. This means you can't use this function during a conversation to grab the tag of the NPC that is speaking.
+version: 1.31
+seealso:
+  functions:
+    - ActionPauseConversation
+    - ActionResumeConversation
+    - ActionStartConversation
+    - EventConversation
+    - GetPCSpeaker
+    - IsInConversation
+  categories:
+    - Conversation
+  events:
+    - OnConversation
+author: Jody Fletcher
+editor: Charles Feduke
+additional_contributors:
+  - Thomas Clark

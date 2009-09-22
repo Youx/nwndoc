@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetWeaponFocus
+shortdesc: Commented out script function; replaced by function "Prefers".
+return: void
+parameters:
+  - type: object
+    name: oLastOpener
+    desc: | Last PC to open a container.
+
+description: |
+  Apparently this function was going to be used to return the weapon focus of the Last PC opening the container. The function that apparently does this now is called Prefers and takes the Weapon type and the oPC as parameters.
+requirements: |
+  #include "nw_o2_classweap"
+version: 1.28
+seealso:
+  functions:
+    - Prefers
+  categories:
+    - Prototyped but Unused
+author: Michael Nork
+editor: Charles Feduke
+additional_contributors:
+  - LeegleechN

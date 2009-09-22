@@ -1,0 +1,62 @@
+---
+type: Function
+name: GetTrapBaseType
+shortdesc: Determines the type (i.e. frost, spike, etc.) of a trap.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Get the trap base type (TRAP_BASE_TYPE_*) of oTrapObject. 
+  See traps.2da for the actual reference numbers for the constants.
+remarks: |
+  This cannot be used to check a trap item (which a PC uses to place a trap down) and its type. It can only be done by checking the item property or checking the name.
+version: 1.22
+example: |
+  // Check what sort of trap the nearest trap is to us (an NPC) and if it
+  // is a fire one, speak some catchy line! Could be a heartbeat add-on.
+  void main()
+  {
+      // Get nearest trap detected by us
+      object oTrap = GetNearestTrapToObject(OBJECT_SELF, TRUE);
+      // Check type of trap
+      int nTrapType = GetTrapBaseType(oTrap);
+      // Need a fire one for catchy line.
+      if(nTrapType == TRAP_BASE_TYPE_AVERAGE_FIRE ||
+         nTrapType == TRAP_BASE_TYPE_DEADLY_FIRE ||
+         nTrapType == TRAP_BASE_TYPE_EPIC_FIRE ||
+         nTrapType == TRAP_BASE_TYPE_MINOR_FIRE ||
+         nTrapType == TRAP_BASE_TYPE_STRONG_FIRE)
+      {
+          // Catchy line from notorious amount of traps NPC's always walk into
+          SpeakString("Hey, I'm going to be on fire soon, baby!");
+      }
+  }
+seealso:
+  functions:
+    - GetIsTrapped
+    - GetLastTrapDetected
+    - GetNearestTrapToObject
+    - GetTrapCreator
+    - GetTrapDetectable
+    - GetTrapDetectDC
+    - GetTrapDetectedBy
+    - GetTrapDisarmable
+    - GetTrapDisarmDC
+    - GetTrapFlagged
+    - GetTrapKeyTag
+    - GetTrapOneShot
+    - SetTrapDetectedBy
+    - SetTrapDisabled
+  categories:
+    - Traps
+  constants:
+    - TRAP_BASE_TYPE_* Constants
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Jasperre
+

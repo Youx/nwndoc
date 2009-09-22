@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetLastSpellCaster
+shortdesc: Determines who last cast a spell.
+return: object
+parameters:
+description: |
+  This is for use in a OnSpellCastAt script, it gets who cast the spell. The spell could have been cast by a creature, placeable or door. Returns OBJECT_INVALID if the caller is not a creature, placeable or door.
+remarks: |
+  You should not use this function in actual spell scripts. In spell scripts, the object casting the spell will be OBJECT_SELF.
+version: 1.61
+seealso:
+  functions:
+    - GetCasterLevel
+    - GetLastHostileActor
+    - GetLastSpell
+    - GetLastSpellHarmful
+  categories:
+    - Get Data
+    - Spells
+  events:
+    - OnSpellCastAt
+author: Jody Fletcher
+editor: Lilac Soul
+

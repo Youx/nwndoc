@@ -1,0 +1,49 @@
+---
+type: Function
+name: CheckEnemyGroupingOnTarget
+shortdesc: Gets the number of enemies in a sphere shape around a target.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | An object target, the center of sphere to check for enemies.
+
+  - type: float
+    name: fDistance
+    default: 5.0
+    desc: | The radius of sphere to check for enemies. (Default: 5.0)
+
+description: |
+  Returns how many targets of the enemy faction are in a sphere centered on oTarget and within fDistance of them. This is the converse of CheckFriendlyFireOnTarget.
+remarks: |
+  Function found in nw_i0_generic.nss on line 3463. 
+  A very useful function for NPC AI. This one loops through all targets around 1 creature and determines how many of them are considered an Enemy by the calling object.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.22
+example: |
+  //Have an NPC look around for a concentration of more than 1 enemy, 
+  //make sure no friendly creatures are within range, then fire off a 
+  //FireBall spell if they have one.
+  void main()
+  {
+  	oTarget = GetNearestCreature(CREATURE_TYPE_REPUTATION, REPUTATION_TYPE_ENEMY, OBJECT_SELF, 1, CREATURE_TYPE_PERCEPTION, PERCEPTION_SEEN);
+  	if(GetIsObjectValid(oTarget))
+  	{
+  		int nEnemy = CheckEnemyGroupingOnTarget(oTarget);
+  		int nFriendlies = CheckFriendlyFireOnTarget(oTarget);
+  		if( nFriendlies < 0 &&  nEnemy > 1)
+  		{
+  			ActionCastSpellAtObject(SPELL_FIREBALL,oTarget);
+  		}
+  	}
+  }
+seealso:
+  functions:
+    - CheckFriendlyFireOnTarget
+  categories:
+    - Combat
+    - Core AI
+author: Iskander Merriman
+editor: John Shuell
+

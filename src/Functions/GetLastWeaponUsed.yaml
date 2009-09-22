@@ -1,0 +1,38 @@
+---
+type: Function
+name: GetLastWeaponUsed
+shortdesc: Get the last weapon that oCreature used in an attack.
+return: object
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature you wish to examine.
+
+description: |
+  Returns the last weapon object that oCreature used in an attack. 
+  Returns OBJECT_INVALID if oCreature did not attack, or has no weapon equipped.
+remarks: |
+  Can be used to determine scripted bonuses/immunities against weapon types or to perform actions against the weapons used against a creature or object (such as destroying them). 
+  GetLastWeaponUsed() returns an object, but now you need to get more information from that object. For example, you can get its tag using the GetTag() function to see if it has the tag you're looking for (good if there's a particular weapon that you're checking for), or you could get its base item type (which is good if you're looking for something like "any handax").
+version: 1.22
+example: |
+  object oWeapon = GetLastWeaponUsed(oPC)
+  int iWeapType = GetBaseItemType(oWeapon);
+  if (iWeapType == BASE_ITEM_HANDAXE)
+seealso:
+  functions:
+    - GetBaseItemType
+    - GetLastAttacker
+    - GetLastHostileActor
+    - GetLastUsedBy
+    - GetTag
+  categories:
+    - Combat Information
+    - Get Data from Creature
+  events:
+    - OnDamaged
+    - OnUsed
+author: John Shuell
+editor: Maximus
+additional_contributors:
+  - Rhone11

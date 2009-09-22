@@ -1,0 +1,42 @@
+---
+type: Function
+name: EffectAppear
+shortdesc: Create a special effect to make the object "fly in".
+return: effect
+parameters:
+description: |
+  Effect making Object appear to come from above camera view, and land. 
+  This is applied on a spawned creature with a parameter in CreateObject(), such as spiders appearing from the cealing or dragons leaping from the sky. 
+  The target this effect is applied to must be a creature for it to work. This effect can only be applied instantly.
+remarks: |
+  When used on a creature which is already present, it will make them instantly jump down - large Dragons are about the only creature this looks good for. Otherwise, use OnSpawn for spiders and other things so they appear to climb down straight at a PC! 
+  Oh, and for Humanoids, it is likely they will fly like "Superman", and while suitable for creatures with wings, it is less suitable for the average human. Ok, the example uses it like that though... 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.22
+example: |
+  // Will just jump down the entering object, perhaps when they 
+  // fall down a pit and this trigger can be at the bottom.
+  void main()
+  {
+      // Get the object to apply the effect to
+      object oPC = GetEnteringObject();
+      // Declare the effect
+      effect eAppear = EffectAppear();
+      // Apply the effect instantly to the entering object
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eAppear, oPC);
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+    - ApplyEffectToObject
+    - EffectAttackDecrease
+    - EffectDisappear
+    - EffectDisappearAppear
+  categories:
+    - Effects
+  events:
+    - OnSpawn
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

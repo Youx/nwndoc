@@ -1,0 +1,69 @@
+---
+type: Function
+name: GetModuleItemAcquiredBy
+shortdesc: Retrieves an object that acquired a module item.
+return: object
+parameters:
+description: |
+  Returns the object (creature, item, or placeable) that acquired a module item. This only works in scripts assigned to the OnAcquireItem event.
+remarks: |
+  If you call GetItemPossessor(GetModuleItemAcquired()), it will always return the same object. 
+  On the first entry of a PC into the module, this function will return the PC acquiring each item. 
+  On subsequent entries into the module (without it having been reset) GetModuleItemAcquiredBy() will return an invalid object for the PC when processing the events for each of the PC items. Use GetItemPossessor(GetModuleItemAquired()) instead, which is always valid for the OnItemAquired event. 
+  The above distinction is useful for differentiating between processing for items on first login or subsequent logins. e.g. (in a persistent world), removing temporary item properties on the first login after a reset. The same effect can be achieved using GetItemPossessor and testing for a local variable set on the PC object during the OnClientEnter event.
+version: 1.64
+example: |
+  // In this code, we will say wether the item aquired was on a logon
+  // attempt, a normal addition, or a relog.
+  // The OnItemAquire event would use this.
+  void main()
+  {
+      // Get item aquired
+      object oItem = GetModuleItemAcquired();
+      // Who by?
+      object oPC = GetModuleItemAcquiredBy();
+      object oPC2 = GetItemPossessor(oItem);
+      // Who was it taken from?
+      object oLostBy = GetModuleItemAcquiredFrom();
+      // If oLostBy is invalid, we must have logged in - we are not
+      // taking this from anyone
+      if(!GetIsObjectValid(oLostBy) || oLostBy == oPC2)
+      {
+          // Is it a relog in or not?
+          // It will be if oPC is invalid
+          if(!GetIsObjectValid(oPC))
+          {
+              // It is a relog, we can use oPC2 as the person who
+              // reloged in with this item to send the message to.
+              SendMessageToPC(oPC2, "You have relogged in carrying the item: " + GetName(oItem));
+          }
+          else
+          {
+              // Not a relog, a normal login, we can use oPC to send
+              // a message to.
+              // * Note: oPC2 is always valid to use
+              SendMessageToPC(oPC, "You just logged in, carrying the item: " + GetName(oItem));
+          }
+      }
+      else
+      {
+          // This fires when it is a normal case of the event
+          // and so oPC can be used to send the message.
+          // * Note: oPC2 is always valid to use
+          SendMessageToPC(oPC, "You have aquired the item: " + GetName(oItem));
+      }
+  }
+seealso:
+  functions:
+    - GetModuleItemAcquiredFrom
+    - GetModuleItemAcquiredStackSize
+  categories:
+    - Inventory
+    - Module
+  events:
+    - OnAcquireItem
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Chris

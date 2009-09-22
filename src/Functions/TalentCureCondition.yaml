@@ -1,0 +1,50 @@
+---
+type: Function
+name: TalentCureCondition
+shortdesc: Cure Disease, Poison, curse and Blindness and Deafness of nearest friendly target.
+return: int
+parameters:
+description: |
+  Loops through all nearby (RADIUS_SIZE_HUGE) friendly creatures and determines which spells to cast to remove any ailments.
+remarks: |
+  Step by Step breakdown of the process is as follows: 
+  Look for the nearest freindly target 
+  Sum up all their ailments 
+  If the target is 
+  Level Drained or 
+  Diseased and Poisoned or 
+  just diseased or 
+  cursed and poisoned or 
+  cursed and diseased or 
+  Blind and Deaf and Poisoned or 
+  cursed and Blind and Deaf or 
+  blind and deaf and diseased and 
+  the creature has the Greater Restoration spell or the Restoration spell 
+  Cast the better of the two Restoration spells that the creature has 
+  else if the target is just diseased and/or poisoned and the creature has Nuetralize Poison spell 
+  Cast Nuetralize Poison 
+  else if the target is just diseased and the creature has Remove Disease spell 
+  Cast Remove Disease 
+  else if the target is only cursed and the creature has Remove Curse 
+  Cast Remove Curse 
+  else if the target is just blind and dead and the creature has the Remove Blindness and Deafness spell 
+  Cast the Remove Blindness and Deafness spell 
+  Find the next nearest friendly target and start the process over. 
+  --- 
+  This function is actually located in x0_i0_talent, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic "
+version: 1.61
+seealso:
+  functions:
+    - TalentHeal
+    - TalentHealingSelf
+  categories:
+    - Core AI Talent
+    - Spells
+    - Talents/Skills/Feats
+  constants:
+    - RADIUS_SIZE_* Constants
+author: John Shuell
+editor: Lilac Soul
+

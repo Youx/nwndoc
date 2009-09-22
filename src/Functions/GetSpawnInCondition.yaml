@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetSpawnInCondition
+shortdesc: Determines whether a creature has a certain condition set by BioWare's core AI system.
+return: int
+parameters:
+  - type: int
+    name: nCondition
+    desc: | NW_FLAG_*
+
+description: |
+  Returns TRUE if nCondition is set on the creature that called this function (OBJECT_SELF) and otherwise returns FALSE.
+remarks: |
+  The spawn conditions are behaviours that can be set in the OnSpawn script of a creature that drive BioWare's core AI scripts to make the creature do certain things. It is advisable to uncomment the SetSpawnInConditon() lines in the default OnSpawn script and save it under a different name. 
+  For an explaination of what NW_FLAG_* do, see the description for the individual constants.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  functions:
+    - PlayMobileAmbientAnimations
+    - SetSpawnInCondition
+  categories:
+    - Core AI
+    - Get Data from Creature
+  constants:
+    - NW_FLAG_* Constants
+  events:
+    - OnSpawn
+author: Charles Feduke
+editor: Tom Cassiotis
+

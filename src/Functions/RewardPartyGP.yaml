@@ -1,0 +1,47 @@
+---
+type: Function
+name: RewardPartyGP
+shortdesc: Give gold to PC or PC's entire party
+return: void
+parameters:
+  - type: int
+    name: nGP
+    desc: | Amount of gold to give
+
+  - type: object
+    name: oTarget
+    desc: | Target (player) to receive the loot
+
+  - type: int
+    name: bAllParty
+    default: TRUE
+    desc: | If TRUE, all of oTarget's partymembers will receive nGP gold as well (Default: TRUE)
+
+description: |
+  * Gives the GP to (if bAllParty = TRUE) all party members. 
+  * Each players gets the nGP value amount. 
+remarks: |
+  Found in: nw_i0_tool.nss: 170 
+  Useful for rewarding an entire party for their efforts, rather than just, say, the PC talking to the quest giver. It is simply a wrapper for GiveGoldToCreature. If bAllParty is TRUE, all member’s in oTarget’s party get nGP gold pieces. Otherwise, only oTarget receives the gold.
+requirements: |
+  #include "nw_i0_tool"
+version: 1.28
+example: |
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  RewardPartyGP(1000, oPC);
+  //give 1000 gold to everybody in oPC’s party
+  //Or
+  RewardPartyGP(1000, oPC, FALSE);
+  //only give 1000 gold to oPC – exactly the same as GiveGoldToCreature(oPC, 1000);
+  }
+seealso:
+  functions:
+    - GiveGoldToCreature
+  categories:
+    - Action on Object
+    - Money
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

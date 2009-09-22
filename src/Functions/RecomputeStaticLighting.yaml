@@ -1,0 +1,53 @@
+---
+type: Function
+name: RecomputeStaticLighting
+shortdesc: Recomputes the lighting in an area based on current static lighting conditions.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area that needs its static lighting conditions recomputed.
+
+description: |
+  All clients in oArea will recompute the static lighting. 
+  This can be used to update the lighting after changing any tile lights or if placeables with lights have been added/deleted.
+remarks: |
+  // From David Gaider's Scripting FAQ 
+  For placeable objects that are sources of illumination (such as the lamp post), it is not enough to just use its ANIMATION_PLACEABLE_DEACTIVATE or ANIMATION_PLACEABLE_ACTIVATE. That just affects the glowing part of the animation, itself. You must also use the SetPlaceableIllumination command set to TRUE and tell the area it's in to RecomputeStaticLighting.
+bugs: |
+  The game engine is bugged when it comes to lighting. Even if you turn off a light and call RecomputeStaticLighting, there'll still be a glow around the spot. BioWare has known about this bug for quite some time now, and the fact that it hasn't been fixed yet probably suggests that it can't or won't be.
+version: 1.61
+example: |
+  // From David Gaider's Scripting FAQ
+  // will turn the lightable object on and off when selected
+  // placed in its OnUsed event
+  void main()
+  {
+     if (GetLocalInt (OBJECT_SELF,"NW_L_AMION") == 0)
+     {
+        SetLocalInt (OBJECT_SELF,"NW_L_AMION",1);
+        PlayAnimation (ANIMATION_PLACEABLE_ACTIVATE);
+        SetPlaceableIllumination (OBJECT_SELF, TRUE);
+        RecomputeStaticLighting(GetArea(OBJECT_SELF));
+     }
+     else
+     {
+        SetLocalInt (OBJECT_SELF,"NW_L_AMION",0);
+        PlayAnimation (ANIMATION_PLACEABLE_DEACTIVATE);
+        SetPlaceableIllumination (OBJECT_SELF, FALSE);
+        RecomputeStaticLighting(GetArea(OBJECT_SELF));
+     }
+  }
+seealso:
+  functions:
+    - GetPlaceableIllumination
+    - GetTileMainLight1Color
+    - GetTileMainLight2Color
+    - GetTileSourceLight1Color
+    - GetTileSourceLight2Color
+    - SetPlaceableIllumination
+  categories:
+    - Effects
+author: Tom Cassiotis
+editor: Lilac Soul
+

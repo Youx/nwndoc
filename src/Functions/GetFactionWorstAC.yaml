@@ -1,0 +1,54 @@
+---
+type: Function
+name: GetFactionWorstAC
+shortdesc: Get the object faction member with the lowest armor class.
+return: object
+parameters:
+  - type: object
+    name: oFactionMember
+    default: OBJECT_SELF
+    desc: | The object whose faction you wish to search through (Default: OBJECT_SELF)
+
+  - type: int
+    name: bMustBeVisible
+    default: TRUE
+    desc: | Does the returned object have to be visible to the caller? (Default: TRUE)
+
+description: |
+  Returns an object representing the faction (or party) member with the lowest armor class. Will only return the member with the lowest AC that is visible to the object calling the function if bMustBeVisible is set to TRUE (default). 
+  Return OBJECT_INVALID if oFactionMember's faction is invalid.
+remarks: |
+  Again, a great function to use in your NPC Combat scripts. This one can sic your creatures on the easiest to hit target, or even use with a henchman spellcaster to determine which member of his master's party needs more protection. 
+  It can also be used to attack the lowest AC, but noting that range is not taken into account and thusly possibly only ranged attackers could use it wisely. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetAC(), to find the lowest, only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction unless bMustBeVisible is TRUE, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+bugs: |
+  This used to cause a crash pre-1.64, and now it should not.
+version: 1.64
+example: |
+  // Get the lowest AC from a (seen) PC faction member, and remark
+  // how bad in combat they must do.
+  void main()
+  {
+      // Get faction to check
+      object oPC = GetPCSpeaker();
+      // Get the lowest (Seen) AC member
+      object oHighest = GetFactionWorstAC(oPC, TRUE);
+      // Speak to them
+      SpeakString("Ho ho! " + GetName(oHighest) + " looks like a right pin cushion!");
+  }
+seealso:
+  functions:
+    - GetFactionBestAC
+    - GetFactionLeastDamagedMember
+    - GetFactionMostDamagedMember
+  categories:
+    - Combat Information
+    - Get Data from Creature
+    - Party
+    - Reputation/Faction
+    - Targeting
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

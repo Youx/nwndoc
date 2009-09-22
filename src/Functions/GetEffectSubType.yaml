@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetEffectSubType
+shortdesc: Get the subtype (SUBTYPE_*) of the effect.
+return: int
+parameters:
+  - type: effect
+    name: eEffect
+    desc: | The effect you wish to compare or examine.
+
+description: |
+  Returns one of three subtype constants (SUBTYPE_*). An effect applied to an object will default to being of the Magical variety, but by using the other apply effect commands you can place supernatural or extrordinary effects on an object. 
+  Return a 0 on error.
+remarks: |
+  You must first create and place the effect you wish to examine into a variable before calling this function. The longest effect type currently is the extraordinary effect, which will resist dispel magic effects and resting.
+version: 1.22
+seealso:
+  functions:
+    - GetEffectCreator
+    - GetEffectDurationType
+    - GetEffectSpellId
+    - GetEffectType
+    - RemoveEffect
+  categories:
+    - Effects
+  constants:
+    - SUBTYPE_* Constants
+author: John Shuell
+

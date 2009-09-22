@@ -1,0 +1,45 @@
+---
+type: Function
+name: GetChallengeRating
+shortdesc: Returns the challenge rating of the target creature.
+return: float
+parameters:
+  - type: object
+    name: oCreature
+description: |
+  Returns the challenge rating of the target creature to determine how tough it is. 
+  Returns 0.0 if oCreature is invalid.
+remarks: |
+  Challenge ratings are stand alone. In other words, the value is not in comparison to anything, but rather a straight up value.
+version: 1.22
+example: |
+  // Example 1 - Get the challenge rating of the creature that last
+  // attacked me (whatever creature this script is called by) and 
+  // check it against my challenge rating to see if I should be 
+  // worried or not.
+  void main(){
+    // Make sure script isn't misplace...will only work on creatures.
+    if (GetObjectType(OBJECT_SELF) != OBJECT_TYPE_CREATURE) return;
+    // Get the creature that last attacked me.
+    object oCreature = GetLastAttacker(OBJECT_SELF);
+    // Get out if it is not a creature (PC or mob)
+    if (GetObjectType(oCreature) != OBJECT_TYPE_CREATURE) return;
+    // Get the challenge rating of the creature.
+    float fChallenge = GetChallengeRating(oCreature);
+    // Get my challenge rating.
+    float fMe = GetChallengeRating(OBJECT_SELF);
+    // Just for fun...
+    if (fMe <= fChallenge)
+    {
+      SpeakString("Ok, I'm scared!",TALKVOLUME_TALK);
+    }
+    else
+    {
+      SpeakString("I'm gonna whoop 'em good!",TALKVOLUME_TALK);
+    }
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+author: Brett Lathrope
+

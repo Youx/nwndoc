@@ -1,0 +1,33 @@
+---
+type: Function
+name: MusicBackgroundChangeDay
+shortdesc: Changes the background daytime music for the area specified.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | Area to change the music of.
+
+  - type: int
+    name: nTrack
+    desc: | Track number to change to.
+
+description: |
+  This function changes the daytime background music for the area.
+remarks: |
+  This will also turn on the music if it is currently off. 
+  There are no constants for nTrack; instead please refer to Resources > Sounds & Music > Music for track numbers.
+version: 1.29
+example: |
+  // this would change the daytime music for the area the 
+  // object is in to 'Theme Morag'
+  Object oArea = GetArea(OBJECT_SELF)
+  MusicBackgroundChangeDay(oArea, 55);
+seealso:
+  categories:
+    - Area
+    - Music Effects
+author: Michael Nork
+editor: Charles Feduke
+additional_contributors:
+  - Tyson McCann

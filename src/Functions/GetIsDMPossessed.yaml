@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetIsDMPossessed
+shortdesc: Returns whether the creature is possessed by a DM
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to check whether is possessed
+
+description: |
+  Returns TRUE if the creature oCreature is currently possessed by a DM character. 
+  Returns FALSE otherwise. 
+  Note: GetIsDMPossessed() will return FALSE if oCreature is the DM character. 
+  To determine if oCreature is a DM character use GetIsDM()
+remarks: |
+  This function appears to do the same as this: 
+  GetIsDM(GetMaster(oCreature)); 
+  If you know of any differences between the two, the Lexicon's authors would love to hear from you :)
+version: 1.31
+seealso:
+  functions:
+    - GetIsDM
+    - GetMaster
+  categories:
+    - Get Data
+    - Get Data from Creature
+author: Lilac Soul
+

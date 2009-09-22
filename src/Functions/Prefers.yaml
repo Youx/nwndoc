@@ -1,0 +1,31 @@
+---
+type: Function
+name: Prefers
+shortdesc: Determines whether the adventurer prefers using a weapon type.
+return: int
+parameters:
+  - type: int
+    name: nFeatWeaponType
+    desc: | Use the feat constants to differentiate between weapon types.
+
+  - type: object
+    name: oAdventurer
+    desc: | The PC to check their preference.
+
+description: |
+  Returns TRUE if oAdventurer prefers using the weapon type (nFeatWeaponType), otherwise FALSE. 
+  The criteria used is if oAdventurer has Weapon Focus.
+remarks: |
+  This function is used in the NWN Treasure Generation System for creating treasure tailored to the player's PC.
+requirements: |
+  #include "nw_o2_feat"
+version: 1.28
+seealso:
+  functions:
+    - GetWeaponFocus
+  categories:
+    - Core AI
+    - Item Creation
+author: Tom Cassiotis
+editor: Charles Feduke
+

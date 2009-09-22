@@ -1,0 +1,46 @@
+---
+type: Function
+name: GetLocalInt
+shortdesc: Get the value of a whole number stored on an object.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object that stores the whole number.
+
+  - type: string
+    name: sVarName
+    desc: | The variable name of the data.
+
+description: |
+  Returns data contained inside the variable sVarName stored on the object oObject. oObject can be any object in the game world. 
+  The string describing the variable can also be any string in theory but it is suggested that you avoid using the NW_* tags as they tend to be used within the game already. This function must be used in conjunction with its counterpart function SetLocalInt, as this is the main way to adjust the values held in the variable sVarName. On error the function will return 0.
+remarks: |
+  This is most useful for setting counters, amounts of something or any value with no decimal point. If you want to be efficient, Set/GetLocalInt is probably the smallest of all locals. 
+  The definition of TRUE and FALSE sometimes is not known. For reference: 
+  TRUE = 1 
+  FALSE = 0 
+  Using ! before a local integer value in an if statement (EG: if(!iInt) ) will check if it is == FALSE. 
+  Using nothing before a local integer value in an if statement (EG: if(iInt) ), will check if it is != FALSE, but doesn't mean it has to be positive.
+version: 1.62
+example: |
+  // Will return the int stored in "Data"
+  void main()
+  {
+      int a = GetLocalInt(OBJECT_SELF,"Data");
+      SendMessageToPC(GetFirstPC(), IntToString(a));
+  }
+seealso:
+  functions:
+    - GetLocalArrayInt
+    - SetLocalInt
+  categories:
+    - Get Data
+    - Get Data from Creature
+    - Get Data from Object
+    - Local Variables
+author: GoLeM
+editor: Jasperre
+additional_contributors:
+  - Drake Coker
+  - Jasperre

@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetCreatureTalentBest
+shortdesc: Determines the best talent of a creature from a group of talents.
+return: talent
+parameters:
+  - type: int
+    name: nCategory
+    desc: | TALENT_CATEGORY_*
+
+  - type: int
+    name: nCRMax
+    desc: | The maximum Challenge Rating of the talent.
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature that has the talent. (Default: OBJECT_SELF)
+
+description: |
+  Returns the best talent (i.e. closest to nCRMax without going over) of oCreature, within nCategory.
+version: 1.22
+seealso:
+  functions:
+    - GetCreatureHasTalent
+    - GetCreatureTalentRandom
+    - GetIsTalentValid
+  categories:
+    - Core AI
+    - Core AI Talent
+    - Get Data from Creature
+  constants:
+    - TALENT_CATEGORY_* Constants
+author: Tom Cassiotis
+

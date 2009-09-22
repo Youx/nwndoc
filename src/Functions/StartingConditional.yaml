@@ -1,0 +1,18 @@
+---
+type: Function
+name: StartingConditional
+shortdesc: This is the template function for the conversation editor
+return: int
+parameters:
+description: |
+  This function is used by the conversation editor to create the StartingConditional():int scripts used by the "Text Appears When" Tab.
+remarks: |
+  This script is usefull only as a template, as written it will not compile. nw_d2_racesnh.nss
+requirements: |
+  #include "nw_d2_racesnh"
+version: 1.22
+seealso:
+  categories:
+    - Conversation
+author: Michael Nork
+

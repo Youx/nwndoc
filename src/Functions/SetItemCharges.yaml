@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetItemCharges
+shortdesc: Sets the number of charges left on a given item.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to set the number of charges on.
+
+  - type: int
+    name: nCharges
+    desc: | Number of charges to set (0 to destroy).
+
+description: |
+  Sets the number of charges left on a given item. If nCharges is less than 0, the number of charges will be set to 0 (and the item is destroyed). If a value greater than the maximum number of charges that an item of its type can hold is passed, then the number of charges will be set to the item's maximum. If the number of charges ever reaches 0, the item is automatically destroyed.
+remarks: |
+  This function also works on items that don’t normally have charges. You can give such an item 10 charges, and that will show up in its info screen when examining it. Setting item charges to 0 also destroys items that don’t normally have charges. 
+  If oItem isn’t a valid item, nothing happens. 
+version: 1.30
+seealso:
+  categories:
+    - Action on Object
+    - Inventory
+author: Charles Feduke
+editor: Lilac Soul
+

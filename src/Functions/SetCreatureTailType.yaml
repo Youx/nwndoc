@@ -1,0 +1,30 @@
+---
+type: Function
+name: SetCreatureTailType 
+shortdesc: Sets the tail type of the creature specified.
+return: void
+parameters:
+  - type: int
+    name: nTailType
+    desc: | CREATURE_TAIL_TYPE_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to change the tail type for.
+
+description: |
+  Sets the tail type of the creature specified.
+  Note: Only two creature model types will support tails. The model type for the part based (playable) races 'P' and model type 'T' in appearance.2da
+version: 1.67
+seealso:
+  functions:
+    - GetCreatureTailType
+    - GetCreatureWingType
+    - SetCreatureWingType
+  constants:
+    - CREATURE_TAIL_TYPE_*
+  categories:
+    - Action on Object
+author: Mistress
+editor: KooKoo

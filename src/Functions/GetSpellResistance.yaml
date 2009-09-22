@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetSpellResistance
+shortdesc: Returns the spell resistance of the specified creature
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature whose spell resistance to determine
+
+description: |
+  Returns the spell resistance of the specified creature. 
+  - Returns 0 if the creature has no spell resistance or an invalid creature is passed in.
+remarks: |
+  It is unknown how effects which only affect certain alignments - such as Protection against Evil. 
+  The lowest known spell resistance to be applied to a creature would be 11, highest around 33. 
+  There is no way to use this value using the internal engine (No way to use ResistSpell, or even an altered value), however, custom checks could use this. 
+  Also note that Spell Resistance does not stack. This simply returns what the game engine will use in ResistSpell - the highest value of spell resistance.
+bugs: |
+  Previous bugs before 1.61 regarding Monks SR stacking with item SR and Spell SR has been fixed.
+version: 1.62
+seealso:
+  categories:
+    - Get Data from Creature
+    - Spells
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

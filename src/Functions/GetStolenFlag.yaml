@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetStolenFlag
+shortdesc: Determine if an item has been stolen.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to test to see if it is stolen.
+
+description: |
+  Returns TRUE if the item was stolen.
+remarks: |
+  An item is flagged as stolen when a PC steals it, or when you call SetStolenFlag on it to TRUE. 
+  Merchants can be set to not buy stolen items.
+version: 1.61
+seealso:
+  functions:
+    - SetStolenFlag
+  categories:
+    - Inventory
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Mark Harshfield

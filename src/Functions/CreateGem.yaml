@@ -1,0 +1,37 @@
+---
+type: Function
+name: CreateGem
+shortdesc: Creates a Gem as part of the NWN treasure distribution system
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | a Player object
+
+  - type: int
+    name: nTreasureType
+    desc: | Type of Gem to Create
+
+  - type: int
+    name: nModifier
+    default: 0
+    desc: | Modifier to increase gem value (Default: 0)
+
+description: |
+  Greates a Gem of at least 1gp value. More based on the level of the PC and the Modifier
+remarks: |
+  Found in: nw_o2_coninclude.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

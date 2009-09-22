@@ -1,0 +1,65 @@
+---
+type: Function
+name: EffectACDecrease
+shortdesc: Creates an AC decrease effect.
+return: effect
+parameters:
+  - type: int
+    name: nValue
+    desc: | nModifyType
+
+  - type: object
+    name: nModifyType
+    default: AC_DODGE_BONUS
+  - type: int
+    name: nDamageType
+    default: AC_VS_DAMAGE_TYPE_ALL
+description: |
+  Effect sets to remove the specified amount of bonus from an object. The type of AC removed is of nModifyType. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  Placeables and Doors have no AC, and the attack rolls are only for getting a 1 (Natural Miss, somehow) and a 20 (Natural hit) or a Critical Hit. 
+  Cirtain AC bonuses can help against cirtain attacks, and dodge bonuses always stack. Touch attacks are a good example of where, for example, Armor AC bonuses do not apply. It also helps because different items give different types of AC bonuses. 
+  The limit of nValue is unknown.
+remarks: |
+  Default value for nDamageType should only ever be used in this function prototype. 
+  AC decreases do stack, and the type to decrease will, as it were, decrease the armor of that type until it is 0. All this means is that if you specifiy 10 penalty to Natural AC, yet they have only a amulet of +2 Natural AC, it still does a 10 AC penalty, and the +2 Natural AC doesn't apply to, say, touch attacks. 
+  If the above comment is wrong, it will be best to use Dodge Bonus to accuratly decrease by nValue, as Dodge is always a present value (in the form of Dexterity bonuses). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Apply a penalty of 5 Dodge AC to the target. This should just
+  // lower thier AC by 5.
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDodgePenalty = EffectACDecrease(5, AC_DODGE_BONUS);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDodgePenalty, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+    - ApplyEffectToObject
+    - EffectACIncrease
+    - EffectAttackDecrease
+    - EffectAttackIncrease
+  categories:
+    - Effects
+    - Spell Casting Effects
+    - Spells
+    - Talents/Skills/Feats
+  constants:
+    - AC_* Constants
+    - DAMAGE_TYPE_* Constants
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Jasperre

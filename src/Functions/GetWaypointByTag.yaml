@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetWaypointByTag
+shortdesc: Get the first waypoint with a specified tag.
+return: object
+parameters:
+  - type: string
+    name: sWaypointTag
+    desc: | Tag of waypoint.
+
+description: |
+  Returns, as an object, the first waypoint with the tag sWaypointTag. 
+  Returns OBJECT_INVALID if the waypoint cannot be found.
+version: 1.22
+example: |
+  // Attached to OnClick event of a trigger. Sends clicker to
+  // destination defined by waypoint WP_Destination.
+  void main()
+  {
+    object oClicker = GetClickingObject();
+    object oTarget = GetWaypointByTag("WP_Destination");
+    location lDest = GetLocation(oTarget);
+    AssignCommand(oClicker, ActionJumpToLocation(lDest));
+  } 
+seealso:
+  categories:
+    - Get Data
+author: Kristian Markon
+editor: Jeremy Spilinek
+

@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetTrapOneShot
+shortdesc: Determines if the trap was designated as only going off once.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Returns TRUE if trap has been set as a 'one-shot'. Meaning it will not reset itself after firing.
+  All traps set by PCs, NPCs during game are automatically set as 'one-shot'.
+version: 1.22
+seealso:
+  functions:
+    - SetTrapOneShot
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Mistress
+

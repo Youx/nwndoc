@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetSpellTargetLocation
+shortdesc: Determines the location of a spell's target location.
+return: location
+parameters:
+description: |
+  Returns the location of the caller's last spell target.
+remarks: |
+  Strickly used in scripts that resolve a spells or spell abilities effects, this function should not be used unless you are modifying how existing spells or spell abilities (scripted by BioWare and the scripts are found in scripts.bif) are implemented. 
+  On a side note to change the scripting of a spell one could modify the BioWare scripts for a spell or spell ability (eg. NW_S0_FLMSTRIKE for Flame Strike) and save that script within the module (or Hakpak). 
+  This should only be used inside spell scripts. If you want to learn how to use the new spellhooking system, check the advanced scripting tutorials in the Lexicon's Lyceum.
+version: 1.61
+seealso:
+  categories:
+    - Spells
+author: Tom Cassiotis
+editor: Lilac Soul
+

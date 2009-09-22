@@ -1,0 +1,28 @@
+---
+type: Function
+name: CreateDart
+shortdesc: Spawns in a magical weapon suited for that class as part of the random treasure distribution.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | A player object.
+
+description: |
+  Creates a Dart as part of the treasure distribution system.
+remarks: |
+  Found in nw_o2_feat.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_feat"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

@@ -1,0 +1,33 @@
+---
+type: Function
+name: PrintFloat
+shortdesc: Records a floating point number to the log file.
+return: void
+parameters:
+  - type: float
+    name: fFloat
+    desc: | The floating point number to output.
+
+  - type: int
+    name: nWidth
+    default: 18
+    desc: | The total number of characters to use. (Default: 18)
+
+  - type: int
+    name: nDecimals
+    default: 9
+    desc: | The number of characters to use for the decimal part of the number. (Default: 9)
+
+description: |
+  Outputs a formatted floating point number (fFloat) to the log file.
+version: 1.22
+seealso:
+  functions:
+    - PrintInteger
+    - PrintString
+    - PrintVector
+  categories:
+    - Debug
+author: Tom Cassiotis
+editor: Charles Feduke
+

@@ -1,0 +1,27 @@
+---
+type: Function
+name: EscapeArea
+shortdesc: Makes a creature escape to a waypoint.
+return: void
+parameters:
+  - type: int
+    name: bRun
+    default: TRUE
+    desc: | Whether or not to make the creature run. (Default: TRUE)
+
+  - type: string
+    name: sTag
+    default: "NW_EXIT"
+    desc: | The tag of the object (generally a waypoint) to run to. (Default: "NW_EXIT")
+
+description: |
+  Makes a creature run or walk (bRun) to the nearest waypoint with the tag sTag. 
+  Also prevents the creature from being interupted.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Movement
+author: Tom Cassiotis
+

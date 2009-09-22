@@ -1,0 +1,32 @@
+---
+type: Function
+name: d8
+shortdesc: Rolls an 8-sided die.
+return: int
+parameters:
+  - type: int
+    name: nNumDice
+    default: 1
+    desc: | The number of dice to roll. (Default: 1)
+
+description: |
+  Returns the total from rolling nNumDice x d8 dice. 
+  If nNumDice is less than 1, then 1 is used.
+remarks: |
+  A d8 (eight sided die) has a 12.5% probability of turning up any one number.
+version: 1.22
+seealso:
+  functions:
+    - d10
+    - d100
+    - d12
+    - d2
+    - d20
+    - d3
+    - d4
+    - d6
+    - Random
+  categories:
+    - Miscellaneous
+author: Charles Feduke
+

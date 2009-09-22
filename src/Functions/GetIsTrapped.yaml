@@ -1,0 +1,53 @@
+---
+type: Function
+name: GetIsTrapped
+shortdesc: Check whether an object is trapped.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | Placeable, door, or trigger to be checked.
+
+description: |
+  Returns TRUE if oObject is trapped and the trap is active (i.e., it has not been triggered already or disabled). 
+  You can't check if oObject is an actual trap item, as noted below.
+remarks: |
+  Note: Only placeables, doors and triggers can be trapped. 
+  Function will return FALSE if oObject is not a placeable, door or trigger. 
+  This doesn't get if anyone has detected the trap at all, but GetTrapDetectable(), and GetTrapDetectedBy() will work for this.
+version: 1.22
+example: |
+  // If oTarget is trapped and not detected by the first PC, we detect it for them.
+  // oTarget is an object with the tag "TRAPPED_OBJECT", a placeable, door or trap trigger
+  // - Could be a lever which detects a trap for the PC
+  void main()
+  {
+      // Get the target
+      object oTarget = GetObjectByTag("TRAPPED_OBJECT");
+      // Get the PC to check for
+      object oPC = GetLastUsedBy();
+      // If the object is still trapped, and not detected for the first PC, we
+      // detect it.
+      if(GetIsTrapped(oTarget) && !GetTrapDetectedBy(oTarget, oPC))
+      {
+          // Set so the PC knows where it is
+          SetTrapDetectedBy(oTarget, oPC);
+      }
+  }
+seealso:
+  functions:
+    - GetTrapBaseType
+    - GetTrapCreator
+    - GetTrapDetectable
+    - GetTrapDetectDC
+    - GetTrapDetectedBy
+    - GetTrapDisarmable
+    - GetTrapDisarmDC
+    - GetTrapFlagged
+    - GetTrapKeyTag
+    - GetTrapOneShot
+  categories:
+    - Get Data from Object
+author: Jason Harris
+editor: Jasperre
+

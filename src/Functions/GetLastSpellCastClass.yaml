@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetLastSpellCastClass
+shortdesc: Returns the class that the spellcaster cast the spell as
+return: int
+parameters:
+description: |
+  Returns the class that the spellcaster cast the spell as. 
+  - Returns CLASS_TYPE_INVALID if the caster has no valid class (placeables, etc...) 
+  It will return CLASS_TYPE_INVALID for: 
+  - Creature spells and special abilties 
+  - Any ActionCastSpellXXX() with the bCheat parameter TRUE, even if they have the spell already. 
+  - Any "spell" script fired by a feat (Epic spells, barbarian rage ETC).
+remarks: |
+  Very useful new function as there didn't use to be any reliable way of telling which class an object used to cast a spell. 
+  It is only to be used in a spell script for spells which are castable by PC's, or at least, that is the only useful place. Also, by definition, the class level will be adequate to cast this spell.
+version: 1.62
+example: |
+  // If the last class to cast this spell is a cleric, speak the clerics Diety.
+  // As OBJECT_SELF is the caster, the caster will speak it.
+  void main()
+  {
+      // Get caster class
+      if(GetLastSpellCastClass() == CLASS_TYPE_CLERIC)
+      {
+          // Speak the string
+          SpeakString("I do this for " + GetDeity(OBJECT_SELF) + "!");
+      }
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+    - Spells
+  constants:
+    - CLASS_TYPE_* Constants
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - arQon 

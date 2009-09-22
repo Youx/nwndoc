@@ -1,0 +1,38 @@
+---
+type: Function
+name: EffectUltravision
+shortdesc: Returns an effect of Ultravision
+return: effect
+parameters:
+description: |
+  Returns an effect of Ultravision which must then be applied to a creature using ApplyEffectToObject(). 
+  Ultravision lets the target object see when EffectDarkness() is applied to them (For instance: In a Darkness spell's AOE), and so they are not blinded and have no penalities. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  It has no effect on how an object sees other then the change to EffectDarkness(). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying ultravision to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eUltra = EffectUltravision();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_MAGICAL_VISION);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eUltra, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetItemPropertyDurationType
+shortdesc: Gets the duration type of an itemproperty.
+return: int
+parameters:
+  - type: itemproperty
+    name: ip
+    desc: | Itemproperty to get the duration type of
+
+description: |
+  Will return the duration type of the item property.
+remarks: |
+  Returns DURATION_TYPE_PERMANENT for permanent itemproperties, and DURATION_TYPE_TEMPORARY for temporary itemproperties. 
+  Returns -1 on error, i.e. if ip is not a valid itemproperty.
+version: 1.61
+example: |
+  //Source code for the IPRemoveAllItemProperties function in
+  //the x2_inc_itemprop include file
+  // ----------------------------------------------------------------------------
+  // Removes ALL item properties from oItem matching nItemPropertyDuration
+  // ----------------------------------------------------------------------------
+  void IPRemoveAllItemProperties(object oItem, int nItemPropertyDuration = DURATION_TYPE_TEMPORARY)
+  {
+      itemproperty ip = GetFirstItemProperty(oItem);
+      while (GetIsItemPropertyValid(ip))
+      {
+          if (GetItemPropertyDurationType(ip) == nItemPropertyDuration)
+          {
+              RemoveItemProperty(oItem, ip);
+          }
+          ip = GetNextItemProperty(oItem);
+      }
+  }
+seealso:
+  categories:
+    - Get Data
+author: Lilac Soul
+

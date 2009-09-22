@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetUseableFlag
+shortdesc: Determines if a placeable object is useable.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | Object to be tested to see if it is usable. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if the placeable object oObject is usable, FALSE otherwise.
+version: 1.29
+seealso:
+  functions:
+    - SetUseableFlag
+  categories:
+    - Get Data from Object
+author: Charles Feduke
+editor: Mistress
+additional_contributors:
+  - Donny Wilbanks

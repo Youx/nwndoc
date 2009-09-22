@@ -1,0 +1,49 @@
+---
+type: Function
+name: EffectMissChance
+shortdesc: Creates a miss chance effect.
+return: effect
+parameters:
+  - type: int
+    name: nPercentage
+    desc: | 1-100 inclusive
+
+  - type: int
+    name: nMissChanceType
+    default: MISS_CHANCE_TYPE_NORMAL
+    desc: | MISS_CHANCE_TYPE_* (Default: MISS_CHANCE_TYPE_NORMAL)
+
+description: |
+  Returns a new effect used to hinder the person it is applied to. 
+  A miss chance percent of 20 means that there is a 20% chance, each attack (even if it misses naturally) that the attack will outright miss. 
+  Returns an effect of type EFFECT_TYPE_INVALIDEFFECT if nPercentage < 1 or nPercentage > 100. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  A drunk creature, or one hindered by a particular spell might have this applied to them - there is no default Bioware spell which uses this. 
+  Do NOT confuse this with EffectConsealment which PROTECTS the creature it is applied to. This hinders attacks - not helps them. 
+  It also doesn't stack - as EffectConsealment, only the highest "To miss" chance applies. Note that Blindness has a 50% miss chance-type effect, as they are blind. 50% is meant to be the highest chance of missing a target (someone in full cover). 
+  It is reported in the combat information as "Attacker Miss Chance XXX%." in normal colours, when they do miss due to this effect. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // On a lever, we apply a 50% miss chance (50% of the time,
+  // the targets attacks just miss) on the user of it.
+  void main()
+  {
+      // Declare object and effect
+      object oUser = GetLastUsedBy();
+      effect eMiss = EffectMissChance(50, MISS_CHANCE_TYPE_NORMAL);
+      // Apply it to them forever (or until they rest)
+      ApplyEffectToObject(DURATION_TYPE_PERMAMENT, eMiss, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+    - MISS_CHANCE_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

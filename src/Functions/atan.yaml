@@ -1,0 +1,25 @@
+---
+type: Function
+name: atan
+shortdesc: Gets the arc tangent of a value.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Value to return the arc tangent of.
+
+description: |
+  Arc tangent is the inverse of the tangent function. Thus, given an fValue that is some ratio of the opposite side to the adjacent side of a right triangle, the atan function returns the appropriate angle (in degrees) of that triangle. The atan function returns a value from -90.0 to 90.0.
+version: 1.31
+seealso:
+  functions:
+    - acos
+    - asin
+    - cos
+    - sin
+    - tan
+  categories:
+    - Math
+author: Charles Feduke
+additional_contributors:
+  - Paul Catalano

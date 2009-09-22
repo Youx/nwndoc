@@ -1,0 +1,71 @@
+---
+type: Function
+name: SetIsTemporaryEnemy
+shortdesc: Causes an creature to consider another creature an enemy indefintely or for a fixed time.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object whose reputation will be altered.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The creature whose opinion will change (Default: OBJECT_SELF)
+
+  - type: int
+    name: bDecays
+    default: FALSE
+    desc: | If this is TRUE, the enmity decays over fDurationInSeconds; otherwise it is indefinite. (Default: FALSE)
+
+  - type: float
+    name: fDurationInSeconds
+    default: 180.0f
+    desc: | This is only used if bDecays is TRUE, it is how long the enmity lasts. (Default: 180.0f)
+
+description: |
+  Make oSource into a temporary enemy of oTarget using personal reputation. This will fail if oTarget and oSource are in the same faction or party (Check with GetFactionEqual()) as they can never be considered tempoarily anything but what the faction in general tells them to think. 
+  Note: If bDecays is TRUE, the personal reputation amount decreases in size over fDurationInSeconds. Enmity will only be in effect as long as (faction reputation + total personal reputation) <= REPUTATION_TYPE_ENEMY.
+remarks: |
+  To make a faction consider a creature an enemy you should use AdjustReputation instead of this function. 
+  From David Gaider's (Bioware) Scripting FAQ: 
+  COMMON PROBLEMS: Make sure that a creature you want to go into combat does not have levels in Commoner. Commoners are set up by the generic AI to run away from hostiles and only form into a mob when there is both a level 10+ Commoner nearby. 
+  Also make sure that if you are using the 'Special Behaviors' in the OnSpawn script (one of the special behavior command lines is uncommented) that you are not using the 'Herbivore' behavior. Herbivores also never engage in combat and will always run away. 
+  From a different David Gaider (Bioware) post: 
+  Creatures who have their plot flag on will not turn hostile, period. That's part of the plot flag's design... to prevent indestructible NPC's from accidentally being set off by something and coming after the PC. 
+  If you want to make an indestructible NPC that attacks the PC's, you must specifically remove the plot flag before turning it hostile and then re-set it.
+version: 1.62
+example: |
+  //::///////////////////////////////////////////////
+  //:: Attack on End of Conversation
+  //:: NW_D1_AttOnEnd02
+  //:: Copyright (c) 2001 Bioware Corp.
+  //:://////////////////////////////////////////////
+  /*
+      This script makes an NPC attack the person
+      they are currently talking with.  This will
+      only make the single character hostile not
+      their entire faction.
+  */
+  //:://////////////////////////////////////////////
+  //:: Created By: Preston Watamaniuk
+  //:: Created On: Nov 7, 2001
+  //:://////////////////////////////////////////////
+  #include "NW_I0_GENERIC"
+  void main()
+  {
+      SetIsTemporaryEnemy(GetPCSpeaker());
+      DetermineCombatRound();
+  }
+seealso:
+  functions:
+    - AdjustReputation
+  categories:
+    - Reputation/Faction
+  constants:
+    - REPUTATION_TYPE_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - chrono

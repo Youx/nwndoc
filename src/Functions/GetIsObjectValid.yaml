@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetIsObjectValid
+shortdesc: Determines whether an object is valid.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object to check the validity of.
+
+description: |
+  Returns TRUE if oObject is a valid object, otherwise FALSE. 
+remarks: |
+  This function is a widely used utility function to check the return values for functions that return objects. While looping through objects NWN functions usually return invalid objects to signify that there are no more objects left. This function can be used to test that condition. 
+  Most of the time, this will be the same as comparing oObject to OBJECT_INVALID. There may be times where it isn't though, so it is generally recommended that you use this function.
+version: 1.61
+example: |
+  void main()
+  {
+  //Loop through all PC's in a module:
+  object oPC=GetFirstPC();
+  while (GetIsObjectValid(oPC))
+     {
+     SendMessageToPC(oPC, "You're a player, aren't you? ;-)");
+     oPC=GetNextPC();
+     }
+  }
+seealso:
+  categories:
+    - Get Data from Object
+author: Tom Cassiotis
+editor: Lilac Soul
+

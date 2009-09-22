@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetComplexItem
+shortdesc: Gets the Tag of a plot item for an quest in the Official Campaign
+return: string
+parameters:
+description: |
+  Returns the Tag of the Artifact item from the plot global object under the variable "NW_J_COMPLEX_ITEM".
+remarks: |
+  Function found in nw_j_complex.nss on line 114 
+  It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. All of these functions are relatively straight forward and easy to understand at a glance. 
+  There is also another script of the exact same functions but works with "ArtifactItems" instead of Complex. The scripts are identical but seperated to make coding between them easier to understand and add functionality to later. See the "See Also" section for the other functions.
+requirements: |
+  #include "nw_j_complex"
+version: 1.22
+seealso:
+  functions:
+    - GetArtifactItem
+    - GetFetchItem
+    - GetStoryItem
+    - Global
+    - PlayerHasComplexItem
+    - SetComplexItem
+    - TakeComplexItem
+  categories:
+    - Module Specific
+author: John Shuell
+

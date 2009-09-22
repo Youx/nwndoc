@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetObjectHeard
+shortdesc: Determines if an object can hear another object.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object that may be heard.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The object that is doing the listening (Default: OBJECT_SELF)
+
+description: |
+  Determines whether oSource hears oTarget.
+remarks: |
+  Only creatures are valid for oTarget and oSource. If any other type is put into either, it will always return FALSE.
+version: 1.64
+seealso:
+  categories:
+    - Perception
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

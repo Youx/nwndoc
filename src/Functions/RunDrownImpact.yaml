@@ -1,0 +1,68 @@
+---
+type: Function
+name: RunDrownImpact
+shortdesc: Allows a water elemental to fill its victim’s lungs with water, drowning the victim.
+return: void
+parameters:
+  - type: int
+    name: nSecondsRemaining
+    desc: | Seconds to go yet
+
+  - type: object
+    name: oTarget
+    desc: | Creature to drown
+
+description: |
+  This function recursively calls itself once it is started. For each 4 levels of the caller, the function deals 1-4 damage to oTarget, each round, unless a fortitude saving throw is successful.
+remarks: |
+  The RunDrownImpact only exists in non-SoU versions of NWN. In SoU, the RunDrownImpact function has been replaced a function called Drown which simply applies EffectDeath to the drownee if he or she fails a fortitude saving throw. 
+  Found in nw_s1_pulsdrwn.nss line 17 
+  This isn’t an include file, so you can’t include the function the usual way. Also, this function probably shouldn’t be called on its own – try using the entire nw_s1_pulsdrwn script instead.
+bugs: |
+  From my testing, and from looking at the function, it seems quite poorly made. When it is first called from the void main, nSecondsRemaining is a number multiplied by six. Then, the function does a check as such: 
+  If the modulo of nSecondsRemaining/6 is 0, apply damage. 
+  Otherwise, nSecondsRemaining is set to 0. 
+  Then, 1 is subtracted from nSecondsRemaining. If nSecondsRemaining is higher than one, function calls itself with a one second delaycommand. Otherwise, nothing more happens 
+  The problem with this is: The first time around, the module will always be 0, as the number fed to the function is a number multiplied by 6. Then, one is subtracted, which means that the next time around, the modulo will NEVER be 0! Thus, this function only deals damage once. 
+  Preferably, nSecondsRemaining should not be set to 0 if the modulo in question isn’t zero. You can fix this easily with my example below, but you do so on your own risk, and may berak your possibility to patch in the future. 
+version: 1.28
+example: |
+  void RunDrownImpact(int nSecondsRemaining, object oTarget)
+  {
+      int nCount = GetHitDice(OBJECT_SELF) + 10;
+      int nDice = nCount/4;
+      if (GetIsDead(oTarget) == FALSE)
+      {
+         if (nSecondsRemaining % 6 == 0)
+         {
+              if(!MySavingThrow(SAVING_THROW_FORT, oTarget, nCount))
+              {
+                  //Roll damage
+                  int nDamage = d4(nDice);
+                  //check for metamagic
+                  effect eDam = EffectDamage(nDamage);
+                  effect eVis = EffectVisualEffect(VFX_IMP_POISON_S);
+                  ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget);
+                  ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+              }
+  //Commented out the following for this to work better
+      /*        else
+              {
+                  nSecondsRemaining = 0;
+              }  */
+         }
+         --nSecondsRemaining;
+         if (nSecondsRemaining > 0)
+         {
+            DelayCommand(1.0f,RunDrownImpact(nSecondsRemaining,oTarget));
+         }
+     }
+  }
+seealso:
+  categories:
+    - Effects
+    - Private
+    - Spell Casting Effects
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetHitDice
+shortdesc: Determines the HD of a creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to obtain the HD of.
+
+description: |
+  Returns an integer representing the number of hit dice for oCreature and 0 if oCreature is not a valid creature.
+remarks: |
+  This is the most efficient way to get a PC's total character level, and a lot more convenient than summing each class level.
+version: 1.22
+seealso:
+  functions:
+    - GetLevelByClass
+    - GetLevelByPosition
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+editor: Iskander Merriman
+

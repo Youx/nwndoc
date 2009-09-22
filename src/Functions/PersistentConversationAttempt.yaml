@@ -1,0 +1,51 @@
+---
+type: Function
+name: PersistentConversationAttempt
+shortdesc: This function attempts to ensure that an NPC starts a conversation with a specified PC.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The PC to start talking to.
+
+  - type: string
+    name: sConvo
+    default: ""
+    desc: | The resource reference (filename) of a conversation. (Default: "")
+
+  - type: action
+    name: bPrivate
+    default: FALSE
+    desc: | Specify whether the conversation is audible to everyone or only to the PC. (Default: FALSE)
+
+description: |
+  This function attempts to start a conversation between the NPC this function is being called by and the specified PC (oPC) using the conversation file (sConvo) supplied. 
+  If sConvo is left blank then the NPC's normal conversation file will be used instead. 
+  if bPrivate is set to TRUE, then the conversation text will only be seen by the relevant player.
+remarks: |
+  Each of the four attempts is seperated by a 3 second gap.
+bugs: |
+  This function does not work as expected. 
+  It will always make four attempts to start the conversation, even if the first one succeeds, each successive attempt ending / cancelling the previous one.
+requirements: |
+  #include "x0_i0_common"
+version: 1.61
+example: |
+  //This code taken from a script in the OnUsed event of a lever
+  void main()
+  {
+      //Get the PC who used the lever
+      object oPC = GetLastUsedBy();
+      //Get the NPC who will start the conversation
+      object oNPC = GetObjectByTag("NW_BOY");
+      //Start the conversation between the NPC and the PC
+      AssignCommand(oNPC,PersistentConversationAttempt(oPC));
+  }
+seealso:
+  functions:
+    - ActionStartConversation
+  categories:
+    - Conversation
+author: Grimlar
+additional_contributors:
+  - Stefan Vitz

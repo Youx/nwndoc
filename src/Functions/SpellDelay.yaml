@@ -1,0 +1,27 @@
+---
+type: Function
+name: SpellDelay
+shortdesc: Incorporates a delay on applying special FX and damage FX until cone 'reaches' the target.
+return: float
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target of spell.
+
+  - type: int
+    name: nShape
+    desc: | No Longer Used
+
+description: |
+  Accumulates basic spell information such as caster level, distance to target, meta-magic feats and SR, then takes distance between target and caster divides by 20 to give delay on effects. Cycles through all other targets in Cone shape.
+remarks: |
+  Script: nw_s0_conecold.nss: Line: 19
+requirements: |
+  #include "nw_s0_conecold"
+version: 1.29
+seealso:
+  categories:
+    - Spell Casting Effects
+    - Spells
+author: Jody Fletcher
+

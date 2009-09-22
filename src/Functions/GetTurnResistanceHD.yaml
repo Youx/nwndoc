@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetTurnResistanceHD
+shortdesc: Determines the number of HitDice of Turn Resistance the undead creature has.
+return: int
+parameters:
+  - type: object
+    name: oUndead
+    default: OBJECT_SELF
+    desc: | undead creature to run check on. (Default: OBJECT_SELF)
+
+description: |
+  Get the number of Hitdice worth of Turn Resistance that oUndead may have. This will only work on undead creatures.
+version: 1.22
+seealso:
+  functions:
+    - EffectTurnResistanceDecrease
+    - EffectTurnResistanceIncrease
+    - GetEnemyHD
+  categories:
+    - Get Data from Creature
+author: Jody Fletcher
+

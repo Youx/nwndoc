@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetLockKeyRequired
+shortdesc: Check whether an object requires a specific key to be unlocked.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object to check.
+
+description: |
+  Returns a true/false value describing whether or not oObject requires a specific key to be unlocked. Returns TRUE if oObject requires a specific key to be unlocked. Returns FALSE if oObject doesn't require a specific key to be unlocked. There is no error value. 
+  Even though someone says there is no error value, it must return FALSE if oObject is something that cannot be locked (such as a Creature object).
+remarks: |
+  GetLockKeyTag() can be used to get the tag of the key needed to unlock a door. 
+  A PC Opening a door with the right key does not need to be scripted, it is run by the game engine. This would be useful mainly for henchmen NPC's to see if they can unlock a locked door - if it needs a key, they normally cannot.
+version: 1.22
+example: |
+  // This will determine if a specific key is required to unlock a door
+  void main()
+  {
+      object a;
+      a = GetObjectByTag("door");
+      if(GetLockKeyRequired(a))    //Requires a key?
+          SendMessageToPC(GetFirstPC(),"Requires a key");
+  }
+seealso:
+  functions:
+    - SetLockKeyRequired
+    - GetLocked
+    - SetLocked
+    - GetLockedObject
+    - GetLockKeyTag
+    - SetLockKeyTag
+    - GetLockLockable
+    - SetLockLockable
+  categories:
+    - Action on Object
+    - Get Data
+    - Get Data from Object
+author: GoLeM
+editor: Jasperre

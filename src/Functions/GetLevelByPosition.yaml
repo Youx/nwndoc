@@ -1,0 +1,38 @@
+---
+type: Function
+name: GetLevelByPosition
+shortdesc: Get the class level of an object from the class table.
+return: int
+parameters:
+  - type: int
+    name: nClassPosition
+    desc: | The row in the class table to get a value from. Range is 1 to 3.
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The object to get a value from. (Default: OBJECT_SELF)
+
+description: |
+  Returns an integer that describes the class level of oCreature in position nClassPosition of the class table (i.e., returns the level of oCreature's [nClassPosition]th class). If oCreature doesn't have a class table (e.g., a placeable object or trigger), or if the object doesn't have a class in the targeted position (e.g. the second position for a single-classed character) then the function will return 0 as there is no class value to return.
+version: 1.22
+example: |
+  // Return the level of the player's first class
+  void main()
+  {
+      int i;
+      i = GetLevelByPosition(1,GetFirstPC());
+      SendMessageToPC(GetFirstPC(),"Your first class is level == " + IntToString(i));
+  }
+seealso:
+  functions:
+    - GetCharacterLevel
+    - GetClassByPosition
+    - GetHitDice
+    - GetLevelByClass
+  categories:
+    - Get Data from Creature
+    - Party
+author: GoLeM
+editor: Kristian Markon
+

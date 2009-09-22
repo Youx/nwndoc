@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetTrapKeyTag
+shortdesc: Determines the identifier of the key required to disarm the specific trap.
+return: string
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Returns the tag of the key that will disarm oTrapObject.
+version: 1.22
+seealso:
+  functions:
+    - SetTrapKeyTag
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher

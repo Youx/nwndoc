@@ -1,0 +1,47 @@
+---
+type: Function
+name: GetNearestObjectByTag
+shortdesc: Returns the nearest object to a target by searching for the object’s tag value.
+return: object
+parameters:
+  - type: string
+    name: sTag
+    desc: | oTarget
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+  - type: int
+    name: nNth
+    default: 1
+description: |
+  Returns the Nth object nearest to oTarget that has sTag as its tag value. 
+  Return value on error: OBJECT_INVALID 
+  The function selects the Nth (default is 1, i.e. nearest) nearest object to the given object that matches the supplied tag string. By default the oTARGET is equal to OBJECT_SELF but may be set to another object. 
+  The only parameter required for this function is tag value of type string. For example GetNearestObjectByTag(sFoo) would return the nearest object to the object caller (OBJECT_SELF) that has sFoo as its tag string. 
+  You could also retrieve the 3rd nearest object oStatue1 that has the string tag value of sFoo: GetNearestObjectByTag(sFoo, oStatue1, 3) 
+  Reminder: The required parameter sTag must be a string value. You can do this one of two ways: 1) set the value outside the function call (i.e. string sFoo = “myObjectsTagName”) or 2) use double quotes in the function to input the tag name directly into the function parameters (i.e. GetNearestObjectByTag(“myObjectTagName”) )
+remarks: |
+  GetNearestObjectByTag() only retrieves the nearest object in the area that oTarget occupies. It is intended behaviour - and very useful for waypoint walking/checking, and so on. 
+  A loop can be set up, which increments nNth, so to loop objects of sTag in the area. 
+  If this is called when oTarget is something such as an area, module or invalid object, it basically will fail and return OBJECT_INVALID (same as if it found no object of that tag). 
+  As with GetObjectByTag, an empty string, "", can be used for sTag - creatures with no tag (Most notably PC's!) will be picked up with this function.
+version: 1.22
+example: |
+  // Retrieves the nearest object in the area with the same tag 
+  // as the object calling the function. Of course, if this is an area, 
+  // or module, it will return an invalid object. It will also never return itself.
+  void main()
+  {
+       string sTag=GetTag(OBJECT_SELF);
+       object oNearestObject=GetNearestObjectByTag(sTag);
+  }
+seealso:
+  functions:
+    - GetNearestObject
+    - GetObjectByTag
+  categories:
+    - Get Data from Object
+author: Jason Simpson
+editor: Jasperre
+

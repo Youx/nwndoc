@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetOppositeLocation
+shortdesc: Returns a location that is directly behind the target
+return: location
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target object
+
+description: |
+  This function returns a location that is directly behind the target and facing the same direction as the target (Think following) 
+  Calls 
+  float GetFacing(object oTarget) 
+  float GetOppositeDirection(float fDir) 
+  location GenerateNewLocation(object oTarget, float DISTANCE_MEDIUM, float fDir, float fAngleOpposite) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Area
+    - Combat
+    - Movement
+  constants:
+    - DISTANCE_* Constants
+author: Michael Nork
+

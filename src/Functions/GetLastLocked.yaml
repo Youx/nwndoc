@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetLastLocked
+shortdesc: Get the last object that locked the caller.
+return: object
+parameters:
+description: |
+  Returns the last object that locked the calling object. 
+  Returns OBJECT_INVALID if the calling object is not a valid door or placeable.
+remarks: |
+  Also returns OBJECT_INVALID if the object was created locked in the Toolset and hasn't been locked since. 
+  Calling SetLocked on an object will cause the object that script is run on to be the last locker. Unless it is called inside an AssignCommand, in which case it will return the object the SetLocked was assigned to. 
+  Calling SetLocked on a locked door will still change the value of GetLastLocked accordingly.
+version: 1.61
+seealso:
+  functions:
+    - GetLastUnlocked
+  categories:
+    - Get Data from Object
+author: John Shuell
+editor: Lilac Soul
+

@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetClickingObject
+shortdesc: Used in the OnClick event to return the clicking object.
+return: object
+parameters:
+description: |
+  Use this in a trigger's OnClick event script to get the object that last clicked on it. This is identical to GetEnteringObject.
+remarks: |
+  The reason for it being identical to GetEnteringObject() is that triggers, or course, can be said to be clicked on, or entered, when a transition is used. 
+  This function is of course not meant to be used outside cirtain events, as it can return long dead or invalid creatures.
+version: 1.62
+example: |
+  // cause a PC that attempts to open a locked door to utter
+  // some nonsense about requiring a key in a door's OnFailToOpen
+  // event
+  void main()
+  {
+      object oPC = GetClickingObject();
+      if (GetIsObjectValid(oPC))
+          AssignCommand(oPC, SpeakString("I need to find the key..."));
+      else
+          SpeakString("NO VALID TEMP PC");
+  }
+seealso:
+  functions:
+    - GetEnteringObject
+  categories:
+    - Get Data
+  events:
+    - OnClick
+author: Ryan Hunt
+editor: Jasperre
+additional_contributors:
+  - Fred Brent
+  - Charles Feduke
+  - Jasperre

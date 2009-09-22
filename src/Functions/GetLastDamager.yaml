@@ -1,0 +1,20 @@
+---
+type: Function
+name: GetLastDamager
+shortdesc: Get the object which last damaged a creature or placeable object.
+return: object
+parameters:
+description: |
+  Returns the object that last damaged the caller. 
+  Returns OBJECT_INVALID if the caller is not a valid object, or if the caller is undamaged.
+remarks: |
+  Unlike most other GetLast* functions, GetLastDamaged is NOT restricted to the OnDamaged event script; it can apparently be called from any script which is "owned" by the creature that was damaged.
+version: 1.22
+seealso:
+  functions:
+    - GetLastHostileActor
+    - GetLastKiller
+  categories:
+    - Combat Information
+author: Jason Harris
+

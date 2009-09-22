@@ -1,0 +1,24 @@
+---
+type: Function
+name: CreatePersonalItemOn
+shortdesc: Creates an personal item on the provided NPC.
+return: void
+parameters:
+  - type: object
+    name: oAssassin
+    desc: | The assassin that will get the personal item.
+
+description: |
+  Creates the personal item whose ID is set by SetPersonalItem().
+requirements: |
+  #include "nw_j_assassin"
+version: 1.22
+seealso:
+  functions:
+    - GetPersonalItem
+    - PlayerHasPersonalItem
+    - SetPersonalItem
+  categories:
+    - Get Data from Object
+author: Tom Cassiotis
+

@@ -1,0 +1,23 @@
+---
+type: Function
+name: StartProtectionLoop
+shortdesc: Finds a protection talent to use.
+return: talent
+parameters:
+description: |
+  A utility function that looks for a beneficial protection talent for the creature whose script calls the function.
+remarks: |
+  This function calls GetCreatureTalentRandom first with TALENT_CATEGORY_BENEFICIAL_PROTECTION_SELF, then TALENT_CATEGORY_BENEFICIAL_PROTECTION_SINGLE and finally TALENT_CATEGORY_BENEFICIAL_PROTECTION_AREAEFFECT.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.29
+seealso:
+  functions:
+    - TalentAdvancedProtectSelf
+    - TalentUseProtectionOnSelf
+    - TalentUseProtectionOthers
+  categories:
+    - Core AI Talent
+author: Tom Cassiotis
+editor: Jody Fletcher
+

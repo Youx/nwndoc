@@ -1,0 +1,25 @@
+---
+type: Function
+name: Depetrify
+shortdesc: Depetrifies a specified creature.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature to be depetrified.
+
+description: |
+  Removes the petrification effect from oTarget.
+remarks: |
+  This function is a wrapper for the RemoveEffectOfType function.
+requirements: |
+  #include "x0_i0_petrify"
+version: 1.61
+seealso:
+  functions:
+    - DepetrifyWood
+    - Petrify
+  categories:
+    - Effects
+author: Grimlar
+

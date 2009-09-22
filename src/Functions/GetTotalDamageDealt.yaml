@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetTotalDamageDealt
+shortdesc: Get the total amount of damage that was last dealt to the caller.
+return: int
+parameters:
+description: |
+  Returns the total value of the damage done to the caller, and should only be used in the On Damaged handler event, elsewhere it is unpredicable. 
+  It also only returns the damage done that triggered the script, not the total damage done to it throughout a battle.
+remarks: |
+  The name is also somewhat misleading in that it sounds as if your looking for the amount of damage the object has caused. That is not the case, this returns the damage done to the object and only the most recent damage dealt.
+version: 1.61
+seealso:
+  functions:
+    - GetLastAttacker
+    - GetLastHostileActor
+    - GetMaxHitPoints
+  categories:
+    - Combat Information
+    - Get Data from Creature
+  events:
+    - OnDamaged
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Chuck Sanderson
+  - Jasperre
+  - Dan Wyman

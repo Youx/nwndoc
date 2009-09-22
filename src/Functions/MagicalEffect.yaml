@@ -1,0 +1,43 @@
+---
+type: Function
+name: MagicalEffect
+shortdesc: This function sets the effects sub type to magical.
+return: effect
+parameters:
+  - type: effect
+    name: eEffect
+description: |
+  Effects are one of three SUBTYPE_* (EXTRAODINARY, MAGICAL, SUPERNATURAL). This function sets the specified effects subtype to SUBTYPE_MAGICAL. Acts as a mutator for an effects subtype. 
+  Effects, by default, start as magical and there is normally no need to use this function. 
+  Maigcal effects can be dispelled (if applied from a spell script) and removed when resting. 
+  If you put a link of effects as eEffect, then the entire link and all the effects within it are made magical. 
+  You cannot change exsisting effect's subtypes with this function, only ones you have created via. the "effect" declaration.
+remarks: |
+  SUBTYPTE_MAGICAL is the default subtype for all effects. See 3rd Edition DMG page 71 or MM page 7 for a description of ability classifications.
+version: 1.62
+example: |
+  void main()
+  {
+      //Create a new polymorph effect.
+      effect ePolymorph = EffectPolymorph(POLYMORPH_TYPE_PENGUIN);
+      //Pick your target
+      object oPC = GetFirstPC();
+      //Make it a magical effect…
+      ePolymorph = MagicalEffect(ePolymorph);
+      //Apply the affect…
+      ApplyEffectToObject (DURATION_TYPE_TEMPORARY, ePolymorph, oPC, 300.0);
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+    - ApplyEffectToObject
+    - ExtraordinaryEffect
+    - SupernaturalEffect
+  categories:
+    - Effects
+  constants:
+    - SUBTYPE_* Constants
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

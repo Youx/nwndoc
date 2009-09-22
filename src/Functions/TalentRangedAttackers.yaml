@@ -1,0 +1,32 @@
+---
+type: Function
+name: TalentRangedAttackers
+shortdesc: Determines course of action for spell-casting NPC while being attacked by ranged foes.
+return: int
+parameters:
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | (Default: OBJECT_INVALID)
+
+description: |
+  Targets ranged attacker as long as not currently in melee. If current ranged attacker is alone, checks OBJECT_SELF for appropriate AREA EFFECT (discriminant) attack and if OBJECT_SELF and target are more than 5 meters apart. 
+  If more than one attacker, checks for a AREA EFFECT (indiscriminant) talent, if both AREA EFFECT checks are invalid, does a RANGED attack talent check.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.29
+seealso:
+  functions:
+    - TalentMeleeAttack
+    - TalentMeleeAttacked
+    - TalentRangedEnemies
+    - TalentSpellAttack
+  categories:
+    - Combat
+    - Core AI Talent
+    - Talents/Skills/Feats
+  events:
+    - OnCombatRoundEnd
+    - OnPhysicalAttacked
+author: Jody Fletcher
+

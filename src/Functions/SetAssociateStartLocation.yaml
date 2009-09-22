@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetAssociateStartLocation
+shortdesc: Sets an NPC associate's start location to it's current location.
+return: void
+parameters:
+description: |
+  Sets the start location for the associate NPC (OBJECT_SELF) to its present location.
+remarks: |
+  This function must be used within the events of the associated NPC who's start location you want to set. Allows easy return of the henchmen to a common location in case players want to regain the services of the henchmen.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.61
+seealso:
+  functions:
+    - GetAssociateStartLocation
+    - GetAssociateState
+    - SetAssociateState
+  categories:
+    - Core AI
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

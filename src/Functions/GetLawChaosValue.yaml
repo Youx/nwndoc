@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetLawChaosValue
+shortdesc: Used to find an object's law/chaos value.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Object to determine law / chaos value for.
+
+description: |
+  Returns an integer between 0 and 100 (inclusive) to represent oCreature's Law/Chaos alignment (100=law, 0=chaos) 
+  Return value if oCreature is not a valid creature: -1 
+bugs: |
+  Previously noted bugs have been fixed in a patch some time ago.
+version: 1.30
+example: |
+  // Sends a message to the first player indicating their law value 
+  void main()
+  {
+      int iChaosLaw = GetLawChaosValue(GetFirstPC());
+      SendMessageToPC(GetFirstPC(),"Your Law/Chaos Value == " + IntToString(iChaosLaw));
+  }
+seealso:
+  functions:
+    - GetAlignmentGoodEvil
+    - GetAlignmentLawChaos
+    - GetFactionAverageGoodEvilAlignment
+    - GetFactionAverageLawChaosAlignment
+    - GetGoodEvilValue
+  categories:
+    - Alignment
+    - Get Data from Creature
+author: GoLeM
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

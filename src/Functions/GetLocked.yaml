@@ -1,0 +1,36 @@
+---
+type: Function
+name: GetLocked
+shortdesc: Check whether a given object is locked.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object to check.
+
+description: |
+  Returns a true/false value indicating whether or not oTarget is locked. Returns TRUE if oTarget is locked. Returns FALSE if oTarget is not locked. There is no error value.
+version: 1.22
+example: |
+  // This will check whether the object "chest" is locked or unlocked
+  void main()
+  {
+      object a;
+      a = GetObjectByTag("chest");
+      if(GetLocked(a))    //Is the chest locked?
+          SendMessageToPC(GetFirstPC(),"This is Locked");
+      if(!GetLocked(a))   //Is the chest Unlocked?
+          SendMessageToPC(GetFirstPC(),"This is Unlocked");
+  }
+seealso:
+  functions:
+    - GetLastUnlocked
+    - GetLockedObject
+    - GetLockKeyRequired
+    - GetLockLockable
+  categories:
+    - Get Data
+    - Get Data from Object
+author: GoLeM
+editor: Kristian Markon
+

@@ -1,0 +1,18 @@
+---
+type: Function
+name: GetChapter
+shortdesc: Gets the chapter number the player is currently in.
+return: int
+parameters:
+description: |
+  Returns the integer value for the chapter currently running. The chapter name is returned from the GetName(GetModule()) function call and then through a series of if statements the number of the module is found.
+remarks: |
+  This function can be found in nw_i0_henchman.nss on line 538.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: John Shuell
+

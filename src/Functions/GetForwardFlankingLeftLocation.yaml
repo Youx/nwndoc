@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetForwardFlankingLeftLocation
+shortdesc: Returns location to the forward left flank of the target
+return: location
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target to flank
+
+description: |
+  Returns location to the forward left flank of the target and facing the same way as the target. 
+  Calls 
+  float fDir = GetFacing(oTarget); 
+  float fAngle = GetHalfLeftDirection(fDir); 
+  return GenerateNewLocation(oTarget, DISTANCE_MEDIUM, fAngle, fDir); 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Area
+    - Combat
+    - Movement
+  constants:
+    - DISTANCE_* Constants
+author: Michael Nork
+

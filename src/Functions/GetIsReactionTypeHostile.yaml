@@ -1,0 +1,70 @@
+---
+type: Function
+name: GetIsReactionTypeHostile
+shortdesc: Determine whether a creature has a hostile reaction towards another given creature.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The target creature to test.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | The source creature to test the feelings of. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oSource has a hostile reaction towards oTarget, depending on the reputation, PVP setting and (if both oSource and oTarget are PCs), oSource's Like/Dislike setting for oTarget. 
+  Neutrals are not considered hostile, use GetIsReactionTypeNeutral() for that.
+remarks: |
+  If you just want to know how two objects feel about each other in terms of faction and personal reputation, use GetIsEnemy() instead. 
+  This is used mainly for an automatic check of difficulty settings, different factions, an area (or module in general) PvP settings, and like/dislike settings for individuals. 
+  An easy to understand example is outlined in the code example. 
+  You use either GetIsReactionTypeFriendly() or GetIsReactionTypeHostile() in *all* spells which will cause a harmful effect - even if they do not allow saves, spell resistance, or are special monster abilities. 
+  Why? Well, you must make sure that a PC isn't going to start killing other players while, for example, in a no-PvP starting area. Without these checks (basically for "are we meant to damage them"), they could damage the enemy, and the enemy do nothing in return (and it breaks the area rules).
+version: 1.62
+example: |
+  // This is basically a single check for a target.
+  // GetIsReactionTypeHostile() is used for all spells which affect
+  // only enemies inside a blast, such as Slow. These spells are 
+  // never going to affect allies, but likewise might fail if the fact is
+  // PvP settings are against the caster.
+  // Basically, if a slow spell were to be fired against some creatures,
+  // several things would stop it - from this one function check (and
+  // this is why it is so important).
+  // 1. If the caster is allied with the target, there will be no effect. 
+  //     Note, that unless GetIsReactionTypeNeutral() is also used,
+  //     no neutral players will be affected either. This is the bare
+  //     basic of the function - it will only return TRUE if the target is
+  //     an enemy, unless stated below.
+  // 2. Depending on the PvP settings, no PvP means no enemies,
+  //     especially other PC's, can be affected in any way - no fighting!
+  //     thusly this returns FALSE.
+  // 3. There are other cases - party PvP and like/dislike flags state
+  //     if they are even an enemy at all.
+  // Without these basic checks, as well as, of course, Like/Dislike
+  // flags, personal reputations and so on, the spell could really break
+  // the game.
+  void main()
+  {
+      // Get spell target
+      object oTarget = GetSpellTargetObject();
+      // They must be an enemy *and* they must not break PvP rules
+      // * NOTE: There is no !, this is a pure "must be true" check!
+      if(GetIsReactionTypeHostile(oTarget))
+      {
+          // Do 5 damage to them, if we don't break PvP and so on
+          effect eDam = EffectDamage(5);
+          ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget);
+      }
+  }
+seealso:
+  functions:
+    - GetIsEnemy
+  categories:
+    - Reputation/Faction
+author: Jason Harris
+editor: Jasperre
+additional_contributors:
+  - Kristian Markon
+  - Jasperre

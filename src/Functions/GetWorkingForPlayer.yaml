@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetWorkingForPlayer
+shortdesc: Returns if the henchman is working for the player.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | The PC to check if the henchman is working for.
+
+description: |
+  Returns TRUE if the local integer "NW_L_HIRED" + the tag of the henchman (OBJECT_SELF) is set to 10 on oPC. Otherwise it returns FALSE.
+remarks: |
+  Found in nw_i0_henchman.nss on line 120 
+  The local integer in question, as far as I could tell, will also return 10 if the henchman has been working for oPC, but isn’t anymore. 
+  Also note that this function uses OBJECT_SELF to identify the henchman, so it must go in a script / function owned by the henchman. 
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  functions:
+    - SetWorkingForPlayer
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

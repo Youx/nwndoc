@@ -1,0 +1,39 @@
+---
+type: Function
+name: VerifyDisarm
+shortdesc: Determines whether a creature could possibly be disarmed.
+return: int
+parameters:
+  - type: talent
+    name: tUse
+    desc: | Should be the feat "Disarm" (FEAT_DISARM).
+
+  - type: object
+    name: oTarget
+    desc: | The creature that would be the target of a disarm attempt.
+
+description: |
+  Checks that the melee talent being used is Disarm and if so then if the target has a weapon. 
+  This should return TRUE if: 
+  - we are not trying to use disarm 
+  - we are using disarm appropriately 
+  This should return FALSE if: 
+  - we are trying to use disarm on an inappropriate target 
+  - we are using disarm too frequently 
+remarks: |
+  This has nothing to do with disarming traps. 
+  In Shadows of Undrentide, this function has been moved to X0_I0_MATCH. You can still use it by just including nw_i0_generic, though.
+bugs: |
+  This isn’t really a bug, but if a talent other than the disarm talent is fed to the function, it will return TRUE.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.30
+seealso:
+  categories:
+    - Core AI
+  constants:
+    - FEAT_* Constants
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

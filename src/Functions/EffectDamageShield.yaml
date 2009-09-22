@@ -1,0 +1,62 @@
+---
+type: Function
+name: EffectDamageShield
+shortdesc: Creates a damage shield around the target that will damage sucessfull attackers.
+return: effect
+parameters:
+  - type: int
+    name: nDamageAmount
+    desc: | The amount of damage to apply to the targets attacker after a successful hit by the opponent.
+
+  - type: int
+    name: nRandomAmount
+    desc: | The amount to add to the base damage caused by the shield as defined in the DAMAGE_BONUS_* constants group.
+
+  - type: int
+    name: nDamageType
+    desc: | The type of damage that will be done to the attacker, as defined in the DAMAGE_TYPE_* constants group.
+
+description: |
+  Returns a Damage Shield effect which, when applied to a target, does (nDamageAmount + nRandomAmount) damage to any melee attacker on a successful attack of damage type nDamageType. 
+  It is important to use DAMAGE_BONUS_* constants in the second paramter, not actual integer values, which may cause unpredicable results. 
+  Damage shields DO stack, and it doesn't matter how or what damage they do. 
+  The limit of nDamageAmount is unknown. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This is used for any special things to damage melee attackers (only melee - not ranged). The shield doesn't show up unless an visual effect is also applied. Also note the Known Bug. 
+  However, it is also done all internally - this is both good and bad. First, 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  It seems that the damage is only dealed back if the melee attacker does damage to the person with this effect - that is wrong, and any attacker who mearly hits the person should be affected with return damage.
+version: 1.62
+example: |
+  // Sample code for applying a damage shield of 5 + 1d6 fire
+  // damage reflected back to attackers, to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eShield = EffectDamageShield(5, DAMAGE_BONUS_1d6, DAMAGE_TYPE_FIRE);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SUPER_HEROISM);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eShield, oTarget);
+  }
+seealso:
+  functions:
+    - EffectDamageResistance
+  categories:
+    - Combat
+    - Effects
+  constants:
+    - DAMAGE_BONUS_* Constants
+    - DAMAGE_TYPE_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

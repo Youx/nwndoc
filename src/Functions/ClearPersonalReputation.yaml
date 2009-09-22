@@ -1,0 +1,29 @@
+---
+type: Function
+name: ClearPersonalReputation
+shortdesc: Changes the friendly or hostile feelings an NPC or creature may have towards a PC, NPC or other creature.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | PC, NPC or creature the oSource object will now view differently.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | NPC or creature having changing it's view of oTarget. (Default: OBJECT_SELF)
+
+description: |
+  Clear all personal feelings that oSource has about oTarget. This is not a global effect for all members of a faction, it just affects the specific oSource.
+version: 1.22
+seealso:
+  functions:
+    - AdjustReputation
+    - GetFactionAverageReputation
+    - GetReputation
+    - GetStandardFactionReputation
+    - SetStandardFactionReputation
+  categories:
+    - Reputation/Faction
+author: Jody Fletcher
+

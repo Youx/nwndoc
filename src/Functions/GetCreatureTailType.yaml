@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetCreatureTailType 
+shortdesc: Returns the CREATURE_TAIL_TYPE_* of the creature specified.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature you wish to examine. (Default: OBJECT_SELF)
+
+description: |
+  Returns the CREATURE_TAIL_TYPE_* of the creature specified.
+  Returns CREATURE_TAIL_TYPE_NONE if used on a non-creature object, if the creature has no Tail, or if the creature can not have its tail type changed in the toolset.
+version: 1.67
+seealso:
+  functions:
+    - SetCreatureTailType
+    - GetCreatureWingType
+    - SetCreatureWingType
+  constants:
+    - CREATURE_TAIL_TYPE_*
+  categories:
+    - Get Data from Creature
+author: bernosky
+editor: Mistress

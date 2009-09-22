@@ -1,0 +1,35 @@
+---
+type: Function
+name: DeleteLocalLocation
+shortdesc: Deletes oObject's location variable sVarName.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object storing the variable.
+
+  - type: string
+    name: sVarName
+    desc: | Variable name to delete.
+
+description: |
+  This function deletes an object's entry for the location defined by sVarName. Nothing will happen if sVarName doesn't exsist. 
+  Note: A location is made up of a vector position (X, Y, Z) area (object) and facing (0-360 degrees). All can be got by GetXXXFromLocation().
+remarks: |
+  As with all deletions, once removed, GetLocalLocation returns, for this, OBJECT_INVALID when GetAreaFromLocation() is called on the return value. Cleaning up old variables can help CPU performance if many are stored on one object (especially if the module has many unused values on it) and good for deleting the new persistant variables which can be put on a PC's inventory item, which will hinder performance if there are many unused values.
+version: 1.22
+example: |
+  // We delete the variable "RESPAWN_LOCATION" if the PC has entered this trigger
+  void main()
+  {
+      // Declare the entering object
+      object oPC = GetEnteringObject();
+      // Delete the local location
+      DeleteLocalLocation(oPC, "RESPAWN_LOCATION");
+  }
+seealso:
+  categories:
+    - Local Variables
+author: Michael Nork
+editor: Jasperre
+

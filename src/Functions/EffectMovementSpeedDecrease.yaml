@@ -1,0 +1,50 @@
+---
+type: Function
+name: EffectMovementSpeedDecrease
+shortdesc: Create a Movement Speed Decrease effect to slow target.
+return: effect
+parameters:
+  - type: int
+    name: nPercentChange
+description: |
+  Returns a new effect object that when applied to a target will slow their movement by nPercentChange percent. 
+  As defined by Bioware, nPercentChange: 
+  0 = no change in speed 
+  50 = 50% slower 
+  99 = almost immobile 
+  Also note that EffectCutsceneImmobilize() is a better way of stopping the creature moving at all. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This effect is stopped with immunity to movement speed decreases. 
+  This will stack and hinder people more with Slow and other movement speed decreases - the movement speed increases and haste will mearly cancle each other out (thus you walk/run at normal speed with both haste and slow on you) 
+  A quick note is that all PC movement rates are 2.00, as defined in CreatureSpeed.2da. That is thier walkrate, thier runrate is 4.00. This is likely tha amount of distance, in meters, they can cover in 1 six-second round. 
+  There is no way to directly change a PC's movement speed (say, to 5.00 meters a round). You can make them up to almost immobile, to 99% faster.
+version: 1.62
+example: |
+  // Sample code for applying a 50% movement speed decrease
+  // penalty to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eSlowDown = EffectMovementSpeedDecrease(50);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SLOW);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSlowDown, oTarget);
+  }
+seealso:
+  functions:
+    - EffectMovementSpeedIncrease
+  categories:
+    - Effects
+    - Movement
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

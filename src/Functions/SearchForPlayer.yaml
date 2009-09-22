@@ -1,0 +1,19 @@
+---
+type: Function
+name: SearchForPlayer
+shortdesc: Makes a guard search for and attack the nearest PC.
+return: void
+parameters:
+description: |
+  The nearest seen PC is obtained with a GetNearestCreature command. If no PC is found, the guard will scratch his head, and there’s a 30% chance he will speak a oneliner conversation. If a PC is found, the guard will attack that PC.
+remarks: |
+  Found in nw_c2_recruit1.nss line 16 
+  Note that nw_c2_recruit1 isn’t an include file. It has a void main() function, which means that you cannot include that file the normal way. The best way to use the SearchForPlayer function is probably to copy it into your script.
+version: 1.28
+seealso:
+  categories:
+    - Combat
+    - Combat Information
+    - Private
+author: Lilac Soul
+

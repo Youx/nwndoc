@@ -1,0 +1,45 @@
+---
+type: Function
+name: ActionOpenDoor
+shortdesc: An action that will cause a creature to open a door.
+return: void
+parameters:
+  - type: object
+    name: oDoor
+    desc: | The door that will be opened.
+
+description: |
+  Cause the action subject to open oDoor. 
+  If the subject of an ActionOpenDoor is the door, through AssignCommand or in a door's script, then the door will open itself. 
+  However, if ActionOpenDoor is used in the script of a creature, that action will cause the creature to move to the door and open it as long as it is not locked.
+remarks: |
+  DoDoorAction(oDoor, DOOR_ACTION_OPEN) can be used as an alternative to add the action on top of any actions currently running, and is recommended for a creatures OnBlocked event.
+bugs: |
+  The toolset bug that made it impossible to create doors initially open does no longer exist, and thus there’s no need for the ActionOpenDoor workaround noted here previously.
+version: 1.30
+example: |
+  // This script is for the OnEnter event for an area.
+  // The script will command a door tagged "OPEN_DOOR"
+  // to open itself.
+  void main
+  {
+       // Initialize objects.
+       object oDoor = GetObjectByTag("OPEN_DOOR");
+       // Tell door to open itself.
+       AssignCommand(oDoor, ActionOpenDoor(oDoor));
+  }
+seealso:
+  functions:
+    - ActionCloseDoor
+    - ActionDoCommand
+    - ActionLockObject
+    - ActionUnlockObject
+    - SetLocked
+  categories:
+    - Action on Object
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Drake Coker
+  - Lilac Soul
+  - Jasperre

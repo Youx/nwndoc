@@ -1,0 +1,33 @@
+---
+type: Function
+name: AdjustReputationWithFaction
+shortdesc: Adjusts reputation of each member in PC's party with NPC's faction
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: object
+    name: oNPC
+    desc: | Non-Player Character
+
+  - type: int
+    name: nAdjustment
+    desc: | reputation adjustment
+
+description: |
+  Adjusts the reputation of each member of the PC's party, including associates, with all members of the NPC's faction by the specified amount, between 100 and -100. 
+remarks: |
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors! 
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Party
+    - Reputation/Faction
+author: Peter Busby
+

@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetLockLockable
+shortdesc: Check whether or not an object is lockable.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The target object.
+
+description: |
+  Returns a true/false value indicating whether or not oObject is lockable. Returns TRUE if oObject can be locked. Returns FALSE if oObject is not lockable. This function has no error value.
+version: 1.22
+example: |
+  // This will determine if an object is lockable
+  void main()
+  {
+      object a;
+      a = GetObjectByTag("door");
+      if(GetLockLockable(a))    //Requires a key?
+          SendMessageToPC(GetFirstPC(),"It is lockable");
+  }
+seealso:
+  functions:
+    - SetLockLockable
+    - GetLocked
+    - GetLockedObject
+    - GetLockKeyRequired
+    - GetLockKeyTag
+  categories:
+    - Get Data
+    - Get Data from Object
+author: GoLeM
+editor: Kristian Markon

@@ -1,0 +1,54 @@
+---
+type: Function
+name: ActionTakeItem
+shortdesc: Takes an item from an object
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to take.
+
+  - type: object
+    name: oTakeFrom
+    desc: | The object from which to take the item.
+
+description: |
+  Take oItem from oTakeFrom. If oItem is not a valid item, or oTakeFrom is not a valid object, nothing will happen. This will remove an item worn by or carried by a PC.
+remarks: |
+  This action can only be performed by objects that are capable of having an inventory. The taking object need not actually have an inventory, but must be capable of having one. If the object doing the taking does have an inventory, then oItem is moved to their inventory automatically. 
+  If the taking object doesn't have an inventory, items taken with this action are not destroyed, but linger in an unknown state. They remain valid objects, and can be restored with ActionGiveItem.
+bugs: |
+  While testing this action in an Area's OnEnter, the area crashed at load-time if the Action was added to the Area's action queue. - note by Lilac Soul: Actually, areas and modules can’t have action queues and that is probably what is causing the crash. 
+  When using ActionTakeItem on a container within a container the game will crash. Suggested workaround is to place the container on the floor (preferably in the top right corner where it cannot be seen) and then perform ActionTakeItem on it.
+version: 1.22
+example: |
+  // In a trigger's OnEnter, this causes a placeable with
+  // tag "plc_mystery" to strip a PC, compliment their physique,
+  // and restore their clothing.
+  #include "nw_i0_generic"
+  void main() {
+    object oPC = GetEnteringObject();
+    if (! GetIsPC( oPC )) return;
+    object oClothes = GetItemInSlot(INVENTORY_SLOT_CHEST , oPC);
+    object oMystery = GetObjectByTag("plc_mystery"); // Tag of an invisible object prepared earlier
+    // Using AssignCommand so sequence is preserved
+    AssignCommand(oMystery, ActionTakeItem(oClothes, oPC));
+    if (GetHasInventory(oMystery)) SendMessageToPC(oPC, "Yup, oMystery has an inventory");
+    else SendMessageToPC(oPC, "Nope, no inventory here");
+    AssignCommand(oMystery, ActionDoCommand(SendMessageToPC(oPC, "HasItem on oMystery says: " + IntToString(HasItem(oMystery, GetTag(oClothes))) )));
+    AssignCommand(oMystery, DelayCommand(1.0, ActionSpeakString("Hey, great abs! You been working out?")));
+    AssignCommand(oMystery, DelayCommand(3.0, ActionGiveItem(oClothes, oPC)));
+    AssignCommand(oMystery, DelayCommand(3.1, AssignCommand(oPC, ActionEquipItem(oClothes, INVENTORY_SLOT_CHEST))));
+  }
+seealso:
+  functions:
+    - ActionGiveItem
+    - ActionUnequipItem
+    - TakeNumItems
+  categories:
+    - Action on Object
+    - Inventory
+author: Iskander Merriman
+editor: Lilac Soul
+additional_contributors:
+  - Enigmatic

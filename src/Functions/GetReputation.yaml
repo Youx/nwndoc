@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetReputation
+shortdesc: Determines how one creature feels toward another creature.
+return: int
+parameters:
+  - type: object
+    name: oSource
+    desc: | The creature (or object) is the subject of oTarget's feelings.
+
+  - type: object
+    name: oTarget
+    desc: | The creature (or object) whose feelings we wish to know.
+
+description: |
+  Returns an integer between 0 and 100 (inclusive) that represents how oSource feels about oTarget. 
+  Returns -1 if either oSource or oTarget is an invalid object.
+remarks: |
+  Interpretation of the values returned by this function: 
+  0-10 means oSource is hostile to oTarget: oSource will attack oTarget on sight. 
+  11-89 means oSource is neutral to oTarget: oSource won't attack oTarget, but won't defend it either. 
+  90-100 means oSource is friendly to oTarget: oSource will anyone attacking oTarget.
+bugs: |
+  This must have had a bug in pre-1.64 patches. 1.64 reports that it had some crashes to do with invalid objects being oSource or oTarget, which have now been fixed.
+version: 1.64
+seealso:
+  functions:
+    - ClearAllFactionMembers
+    - ClearPersonalReputation
+    - GetFactionAverageReputation
+  categories:
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Lilac Soul
+  - Jasperre

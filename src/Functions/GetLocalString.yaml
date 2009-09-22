@@ -1,0 +1,44 @@
+---
+type: Function
+name: GetLocalString
+shortdesc: Get the value of a string of characters stored on an object.
+return: string
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object that stores the string of characters.
+
+  - type: string
+    name: sVarName
+    desc: | The variable name of the data.
+
+description: |
+  Returns data contained inside the variable sVarName stored on the object oObject. oObject can be any object in the game world. 
+  The string describing the variable can also be any string in theory but it is suggested that you avoid using the NW_* tags as they tend to be used within the game already. This function must be used in conjunction with its counterpart function SetLocalString, as this is the main way to adjust the values held in the variable sVarName. On error the function will return "", a blank string.
+remarks: |
+  To test the validness of the returned value, use this check (or similar): 
+  if(GetLocalString(OBJECT_SELF, "STRING") != "") 
+  { 
+  // Is valid 
+  } 
+  This is most useful for setting what might be spoken (say, a password) a response to something or any use of an arbitary string (such as if set on a creature, what they might randomly say when walking around).
+version: 1.22
+example: |
+  // Will return the string stored in "Data"
+  void main()
+  {
+      string a = GetLocalString(OBJECT_SELF,"Data");
+      SendMessageToPC(GetFirstPC(),a);
+  }
+seealso:
+  functions:
+    - GetLocalArrayString
+    - SetLocalString
+  categories:
+    - Get Data
+    - Get Data from Creature
+    - Get Data from Object
+    - Local Variables
+author: GoLeM
+editor: Jasperre
+

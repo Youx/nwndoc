@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetLastDisarmed
+shortdesc: Determine who last disarmed a trapped trigger, door or placeable object.
+return: object
+parameters:
+description: |
+  Returns the creature which last disarmed a trigger, door or placeable object. Returns OBJECT_INVALID if the caller is not a valid placeable, trigger or door, or if the caller was not trapped. 
+remarks: |
+  Unlike some other "GetLast" functions, GetLastDisarmed may be called from any script owned by the trapped object.
+version: 1.61
+seealso:
+  categories:
+    - Action on Object
+    - Traps
+author: Jason Harris
+editor: Charles Feduke
+additional_contributors:
+  - Nils Jeppe

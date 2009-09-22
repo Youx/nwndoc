@@ -1,0 +1,25 @@
+---
+type: Function
+name: StripEffects
+shortdesc: FUNCTION NO LONGER EXISTS!
+return: void
+parameters:
+  - type: int
+    name: nNumber
+    desc: | Number of effects to strip.
+
+  - type: object
+    name: oTarget
+    desc: | Target of spell.
+
+description: |
+  FUNCTION NO LONGER EXISTS!
+version: 1.61
+seealso:
+  categories:
+    - Prototyped but Unused
+  events:
+    - OnSpellCastAt
+author: Jody Fletcher
+editor: Lilac Soul
+

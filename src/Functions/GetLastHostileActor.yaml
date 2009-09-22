@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetLastHostileActor
+shortdesc: Gets the last living, non plot creature that performed a hostile act against the object.
+return: object
+parameters:
+  - type: object
+    name: oVictim
+    default: OBJECT_SELF
+    desc: | The object whose current enemy you wish to return. (Default: OBJECT_SELF)
+
+description: |
+  Get the last object that was sent as a GetLastAttacker(), GetLastDamager(),GetLastSpellCaster() (for a hostile spell), or GetLastDisturbed() (when a creature is pickpocketed).Note: Return values may only ever be: 
+  * A Creature 
+  * Plot Characters will never have this value set 
+  * Area of Effect Objects will return the AOE creator if they are registered as this value, otherwise they will return OBJECT_INVALID 
+  * Traps will not return the creature that set the trap. 
+  * This value will never be overwritten by another non-creature object. 
+  * This value will never be a dead/destroyed creature
+remarks: |
+  Very useful function. Sometimes you just want to know who is performing an act AGAINST the object without knowing what that act may be. It rolls up all the various Get Aggressor functions into one tight function call. Used mostly for combat targeting determination since it does not return non creatures (in other words it wont return an object representing a chest that sets off a trap, nor will it return the trap). Also, if a creature is marked as Plot, it will not return them, and since this function is exclusively used in the originally shipped AI, that makes Plot NPCs untargetable by other NPCs. 
+  This is also extremely useful as the only way to get who killed the PC in the OnPCDeath event, under module properties (For, example, warning DM's that a PvP attack has just happened).
+version: 1.22
+seealso:
+  functions:
+    - GetLastAttacker
+    - GetLastDamager
+    - GetLastDisturbed
+    - GetLastKiller
+    - GetLastSpellCaster
+    - GetLastWeaponUsed
+    - GetTotalDamageDealt
+    - RespondToShout
+  categories:
+    - Combat
+    - Core AI
+    - Get Data from Object
+    - Henchmen/Familiars/Summoned
+    - Targeting
+author: John Shuell
+editor: Jasperre
+

@@ -1,0 +1,15 @@
+---
+type: Function
+name: GetLastPerceptionVanished
+shortdesc: Determines the last perceived creature has vanished.
+return: int
+parameters:
+description: |
+  Use this in an OnPerception script to determine whether the object that was perceived has vanished (is no longer in the game). 
+  Returns TRUE if the object last perceived has vanished, otherwise FALSE.
+version: 1.22
+seealso:
+  categories:
+    - Perception
+author: Tom Cassiotis
+

@@ -1,0 +1,34 @@
+---
+type: Function
+name: aGetPLocalInt
+shortdesc: Scans through the PC's party and returns the largest value stored on a character.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | A member of the PC party.
+
+  - type: string
+    name: sLocalName
+    desc: | Variable name stored on the PC.
+
+description: |
+  The purpose of this function is to encapsulate the GetLocalInt function so that it treats the entire party as a single entity. The value returned is the largest value stored on ANY of the PC's party that is availible via the GetLocalInt(object, string) method.
+remarks: |
+  This function is useful for getting plot flags that may be stored on any PC in a party of PCs. Found in nw_j_assassin.nss, and used to make plots more multi-player friendly. Same as aGetPLocalInt(object, string).
+requirements: |
+  #include "nw_j_assassin"
+version: 1.28
+seealso:
+  functions:
+    - aSetPLocalInt
+    - GetLocalInt
+    - GetPLocalInt
+    - SetPLocalInt
+  categories:
+    - Local Variables
+    - Module
+    - Party
+author: Michael Nork
+editor: Charles Feduke
+

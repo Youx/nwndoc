@@ -1,0 +1,23 @@
+---
+type: Function
+name: Give2Q4PlotItem
+shortdesc: Gives a Luskan plot item to the PC speaker.
+return: void
+parameters:
+  - type: int
+    name: nPlotItemConstant
+description: |
+  Based on the value of nPlotItemConstant, it gives one of three Luskan plot items to the PC speaker: Kurth base key, Baram base key, or Erb’s ring.item to hand to the character
+remarks: |
+  Found in nw_i0_2q4luskan.nss on line 22 
+  Hardly useful anywhere but in the official campaign. If you do decide to use it, for whatever reason, note that it defines the PC to get the item as GetPCSpeaker, and thus can only be called from conversation.
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.28
+seealso:
+  categories:
+    - Item Creation
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

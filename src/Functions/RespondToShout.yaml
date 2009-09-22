@@ -1,0 +1,35 @@
+---
+type: Function
+name: RespondToShout
+shortdesc: Sets NPC to respond to numerous alerts sent by PC or other NPCs.
+return: void
+parameters:
+  - type: object
+    name: oShouter
+    desc: | Object which something has occurred to.
+
+  - type: int
+    name: nShoutIndex
+    desc: | Consistent reaction requested.
+
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | Placeable who disturbed oShouter. (Default: OBJECT_INVALID)
+
+description: |
+  Allows the listener to react in a manner consistent with the given shout but only to one combat shout per round. The intruder object is for cases where a placeable needs to pass a LastOpenedBy object or a AttackMyAttacker needs to make his attacker the enemy of everyone.
+version: 1.22
+seealso:
+  functions:
+    - GetLastHostileActor
+  categories:
+    - Core AI
+  events:
+    - OnDisturbed
+    - OnPhysicalAttacked
+    - OnSpellCastAt
+    - OnUnlock
+author: Jody Fletcher
+editor: Tom Cassiotis
+

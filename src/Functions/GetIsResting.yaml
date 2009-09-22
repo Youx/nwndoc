@@ -1,0 +1,45 @@
+---
+type: Function
+name: GetIsResting
+shortdesc: Check whether a creature is resting.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | Creature to be checked. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oCreature is currently resting. Otherwise, returns FALSE.
+remarks: |
+  Note that applying effects such as EffectSleep() or animations such as ANIMATION_LOOPING_SIT_CROSS do not count. Only if a PC has selected his or her "rest" function, or if an NPC has been given the ActionRest() script command will this function return TRUE.
+bugs: |
+  Prior to 1.28, this function always returned FALSE if called outside of the event OnPlayerRest.
+version: 1.28
+example: |
+  // Creature On Percieve script - if we see a PC who is sleeping, we
+  // will go "bonk some 'eads!"
+  void main()
+  {
+      // Get creature percieved
+      object oSeen = GetLastPerceived();
+      // Get is can see it, or rather, we can now see it. Must also be a PC.
+      if(GetLastPerceptionSeen() && GetIsPC(oSeen))
+      {
+          // Lets go bonk thier head if they are resting
+          if(GetIsResting(oSeen))
+          {
+              SpeakString("'ere, you need bonking on der 'ead!");
+              ClearAllActions();
+              ActionAttack(oSeen);
+          }
+      }
+  }
+seealso:
+  functions:
+    - GetLastRestEventType
+  categories:
+    - Get Data from Creature
+author: Jason Harris
+editor: Jasperre
+

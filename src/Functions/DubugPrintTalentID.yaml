@@ -1,0 +1,22 @@
+---
+type: Function
+name: DubugPrintTalentID
+shortdesc: Doesn’t do anything
+return: void
+parameters:
+  - type: talent
+    name: tTalent
+description: |
+  Doesn’t do anything.
+remarks: |
+  nw_i0_generic.nss: 144 
+  This function’s contents have been commented out, which leads me to believe that this function was used in debugging (indeed, it is called several times from within the nw_i0_generic script). Before it was commented out, all it did was write an entry into the log including the id of tTalent.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.28
+seealso:
+  categories:
+    - Debug
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

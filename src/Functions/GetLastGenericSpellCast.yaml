@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetLastGenericSpellCast
+shortdesc: Retrieves the last spell that was cast by the calling creature.
+return: int
+parameters:
+description: |
+  Returns a SPELL_* constant for the last spell used which was stored by calling SetLastGenericSpellCast(). 
+  Used in conjuction with setLastGenericSpellCast() and CompareLastSpellCast().
+remarks: |
+  Uses the local variable name "NW_GENERIC_LAST_SPELL". 
+  Used by BioWare core AI system so it doesn't keep casting the same spell. 
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  functions:
+    - CompareLastSpellCast
+    - GetLastSpell
+    - SetLastGenericSpellCast
+  categories:
+    - Core AI
+  constants:
+    - SPELL_* Constants
+author: Tom Cassiotis
+editor: John Shuell
+

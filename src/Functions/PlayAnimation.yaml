@@ -1,0 +1,36 @@
+---
+type: Function
+name: PlayAnimation
+shortdesc: Play an animation.
+return: void
+parameters:
+  - type: int
+    name: nAnimation
+    desc: | ANIMATION_*
+
+  - type: float
+    name: fSpeed
+    default: 1.0
+    desc: | The speed of the animation. (Default: 1.0)
+
+  - type: float
+    name: fSeconds
+    default: 0.0
+    desc: | Duration of the animation in seconds (this is not used for fire and forget animations). (Default: 0.0)
+
+description: |
+  Play nAnimation immediately on the object that called this function. Most animations apply to creatures, but not all creatures can be made to perform each animation. ANIMATION_PLACEABLES_* work on placeables. 
+  The fSpeed parameter can be used to speed up or slow down the animation. 1.0 is normal speed. 
+  The fSeconds parameter is only used with looping animations (ANIMATION_LOOPING_*) and determines how long the creature will perform that animation. A common parameter for looping animations is 6.0, as it means that the creature spends a full round doing that animation. 
+  ANIMATION_FIREFORGET_* animations do not need fSeconds to be provided.
+version: 1.22
+seealso:
+  functions:
+    - ActionPlayAnimation
+  categories:
+    - Effects
+  constants:
+    - ANIMATION_* Constants
+author: Tom Cassiotis
+editor: Jochem van 't Hull
+

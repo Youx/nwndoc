@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetCenterPointOfArea
+shortdesc: Approximates the central location of an area.
+return: location
+parameters:
+  - type: object
+    name: oArea
+    desc: | Area to get center point of
+
+description: |
+  Get the (roughly) center point of an area. 
+  This works by going through all the objects in an area and getting their positions, so it is resource-intensive.
+remarks: |
+  Not a function anybody would want to use, except perhaps for some debugging / testing. If you really need the central location of an area, I suggest you just create it yourself based on the size of the area. Assuming you store the size of all areas in two local floats on each area, called x and y, you can use the function I've written below instead.
+version: 1.61
+example: |
+  //Resource light version of this function. Requires the size
+  //of the area to be stored as local floats on the area called x and y
+  location GetCentralLocation(object oArea)
+  {
+  float fX=GetLocalFloat(oArea, "x");
+  float fY=GetLocalFloat(oArea, "y");
+  vector vCenter=Vector(fX/2.0, fY/2.0, 0.0);
+  return Location(oArea, vCenter, 0.0);
+  }
+seealso:
+  categories:
+    - Area
+    - Debug
+author: Lilac Soul
+

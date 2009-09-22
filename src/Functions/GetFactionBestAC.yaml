@@ -1,0 +1,56 @@
+---
+type: Function
+name: GetFactionBestAC
+shortdesc: Get the member of a faction (party) who has the highest Armor Class.
+return: object
+parameters:
+  - type: object
+    name: oFactionMember
+    default: OBJECT_SELF
+    desc: | The object whose faction you wish to examine. (Default: OBJECT_SELF)
+
+  - type: int
+    name: bMustBeVisible
+    default: TRUE
+    desc: | Does the returned object have to be visible to the caller? (Default: TRUE)
+
+description: |
+  Returns the object faction (party) member with the highest armor class. If bMustBeVisible is set to TRUE then the returned object must be visible to the object calling the function. 
+  Returns OBJECT_INVALID if oFactionMember's faction is invalid.
+remarks: |
+  Another nice Combat Oriented AI function. A possible use is to decide which member of a faction should be dispelled, or have magic cast upon them (compared to a lower AC member which would be easier to hit with a weapon), to lower the AC and damage them. 
+  It can also be used to attack the highest AC, but noting that range is not taken into account and thusly possibly only ranged attackers could use it wisely. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetAC(), to find the highest, only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction unless bMustBeVisible is TRUE, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+bugs: |
+  This used to cause a crash in pre-1.64 versions, and now should not.
+version: 1.64
+example: |
+  // Get the highest AC from a (seen) PC faction member, 
+  // and say "thats some good armor mate, but mine is better", as
+  // a blacksmith/other fighter/idiot who wants the PC to kill them.
+  void main()
+  {
+      // Get faction to check
+      object oPC = GetPCSpeaker();
+      // Get the highest (Seen) AC member
+      object oHighest = GetFactionBestAC(oPC, TRUE);
+      // Speak to them
+      SpeakString("Hey there, " + GetName(oHighest) + ", thats some mighty fine armor, but mine is better!");
+  }
+seealso:
+  functions:
+    - GetFactionLeastDamagedMember
+    - GetFactionMostDamagedMember
+    - GetFactionWorstAC
+  categories:
+    - Combat Information
+    - Get Data from Creature
+    - Party
+    - Reputation/Faction
+    - Targeting
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jeremy Spilinek
+  - Jasperre

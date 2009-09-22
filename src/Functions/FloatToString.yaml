@@ -1,0 +1,36 @@
+---
+type: Function
+name: FloatToString
+shortdesc: Converts a float into a string.
+return: string
+parameters:
+  - type: float
+    name: fFloat
+    desc: | The float to convert into a string.
+
+  - type: int
+    name: nWidth
+    default: 18
+    desc: | The number of numeric positions to the left of the decimal. If zero, the whole part left of the decimal is displayed without trailing spaces. (Default: 18)
+
+  - type: int
+    name: nDecimals
+    default: 9
+    desc: | The number of numeric positions to the right of the decimal (precision). (Default: 9)
+
+description: |
+  Returns the value of fFloat converted to a string within the confines defined by nWidth and nDecimals. 
+  Returns an empty string ("") on error.
+version: 1.22
+seealso:
+  functions:
+    - FloatToInt
+    - LocationToString
+    - StringToFloat
+    - StringToInt
+    - VectorToString
+  categories:
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Jochem van 't Hull
+

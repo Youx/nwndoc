@@ -1,0 +1,36 @@
+---
+type: Function
+name: MyResistSpell
+shortdesc: Determines and plays animation for resisting a spell when applicable.
+return: int
+parameters:
+  - type: object
+    name: oCaster
+    desc: | Caster of a spell.
+
+  - type: object
+    name: oTarget
+    desc: | Target of a spell.
+
+  - type: float
+    name: fDelay
+    default: 0.0f
+    desc: | Delay until visual effect is played (if greater than 0.5, becomes lessened by 0.1). (Default: 0.0f)
+
+description: |
+  Creates appropriate visual effects for spell resistance due to SR, globes, or mantles and returns same value as ResistSpell.
+remarks: |
+  See ResistSpell for more information.
+requirements: |
+  #include "nw_i0_spells"
+version: 1.29
+seealso:
+  functions:
+    - ResistSpell
+  categories:
+    - Spell Casting Effects
+    - Spells
+    - Visual Effects
+author: Charles Feduke
+editor: Jasperre
+

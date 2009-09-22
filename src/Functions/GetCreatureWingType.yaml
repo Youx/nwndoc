@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetCreatureWingType 
+shortdesc: Returns the CREATURE_WING_TYPE_* of the creature specified.
+return: int 
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature you wish to examine. (Default: OBJECT_SELF)
+
+description: |
+  Returns the CREATURE_WING_TYPE_* of the creature specified.
+  Returns CREATURE_WING_TYPE_NONE if used on a non-creature object, if the creature has no wings, or if the creature can not have its wing type changed in the toolset.
+version: 1.67
+seealso:
+  functions:
+    - SetCreatureWingType
+    - GetCreatureTailType
+    - SetCreatureTailType
+  constants:
+    - CREATURE_WING_TYPE_*
+  categories:
+    - Get Data from Creature
+author: bernosky
+editor: Mistress

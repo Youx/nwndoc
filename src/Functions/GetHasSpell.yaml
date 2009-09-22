@@ -1,0 +1,47 @@
+---
+type: Function
+name: GetHasSpell
+shortdesc: Determines whether a creature has a spell available.
+return: int
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to test for a spell. (Default: OBJECT_SELF)
+
+description: |
+  Returns an integer indicating how many instances of a particular nSpell are left on oCreature, or FALSE (0) if no more instances of that spell remain.
+remarks: |
+  Prior to patch 1.25 this function would not work properly for sorcerers or bards. 
+  With patch 1.61, metamagic feats applied to spells and domain feats are now considered for this function (previously this was not the case). The following factors determine the value of the return of GetHasSpell: 
+  No metamagic feat applied: 1 
+  Cleric domain spell, no metamagic feat applied: 2 
+  Silent metamagic feat applied: 3 
+  Still metamagic feat applied: 3 
+  Extended metamagic feat applied: 3 
+  Quickened metamagic feat applied: 1 
+  Maximized metamagic feat applied: 1 
+  Empowered metamagic feat applied: 1
+bugs: |
+  Patch 1.28 claims to have fixed problems regarding spontaneous casts, but reports indicate that this is not the case. If you can verify that it has been fixed, please use the link at the bottom of this topic to contact the maintainers of the Lexicon. 
+  The number returned by this function is after each spell use, but it is not always decremented by one. Sometimes it is decremented by 5, 3, or 2.
+version: 1.61
+seealso:
+  functions:
+    - HasSpell
+  categories:
+    - Get Data from Creature
+    - Spells
+  constants:
+    - SPELL_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Keith Voss
+  - Musashi
+  - Bard Jackson
+  - Justin Koch

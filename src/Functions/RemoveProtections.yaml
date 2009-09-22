@@ -1,0 +1,35 @@
+---
+type: Function
+name: RemoveProtections
+shortdesc: Removes all spell protections of a specific type.
+return: int
+parameters:
+  - type: int
+    name: nSpellID
+    desc: | SPELL_ID_*
+
+  - type: object
+    name: oTarget
+    desc: | The object which will have the protections removed.
+
+  - type: int
+    name: nCount
+    desc: | Not used
+
+description: |
+  Removes all spell protections of a specific type. 
+  Returns 1 if one or more protections have been removed, otherwise 0.
+remarks: |
+  nw_i0_spells.nss: 33
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  functions:
+    - GetSpellBreachProtection
+  categories:
+    - Spells
+  constants:
+    - SPELL_* Constants
+author: Tom Cassiotis
+

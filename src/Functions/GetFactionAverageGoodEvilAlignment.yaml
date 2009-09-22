@@ -1,0 +1,60 @@
+---
+type: Function
+name: GetFactionAverageGoodEvilAlignment
+shortdesc: Get the average number (between 0 and 100 inclusive) of the all objects within the object's faction that represents the Good/Evil alignment
+return: int
+parameters:
+  - type: object
+    name: oFactionMember
+    desc: | The creature or object whose faction average you wish to examine.
+
+description: |
+  Returns an integer between 0 and 100 (inclusive) that represents the average good/evil alignment of oFactionMember's faction. 
+  Return value on error: -1 
+  It is unknown if NPC's in a PC's faction affects this function call and the returned result, such sa summoned monsters, henchmen and familiars, or if those creatures can be used as the oFactionMember at all.
+remarks: |
+  This will search the module for all members of the object's faction and average out their Good/Evil alignment on a scale of 0 (Good) to 100 (Evil). 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetGoodEvilValue(), only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction, only a PC's party faction, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+version: 1.62
+example: |
+  // Check the faction alignment of the PC's party, using a trigger.
+  // It will make some NPC's go hostile if they are considered to be
+  // evil on average.
+  // Of course, it is kinda OOC knowledge. This function is more likely 
+  // to be used in other ways.
+  void main()
+  {
+      // Get the entering object
+      object oPC = GetEnteringObject();
+      string sLocal = "DO_ONCE" + ObjectToString(OBJECT_SELF);
+      // Only do this once, only affects PC's
+      if(GetLocalInt(oPC, sLocal) || !GetIsPC(oPC)) return;
+      // Set to not do it again
+      SetLocgalInt(oPC, sLocal, TRUE);
+      // Check alignment - must be very evil!
+      if(GetFactionAverageGoodEvilAlignment(oPC) <= 10)
+      {
+          // Get the town guard onto them
+          object oGuard = GetNearestObjectByTag("TOWN_GUARD");
+          // Attack!
+          AdjustReputation(oPC, oGuard, -100);
+          // Do an attack
+          AssignCommand(oGuard, ActionAttack(oPC));
+      }
+  }
+seealso:
+  functions:
+    - GetFactionAverageLawChaosAlignment
+    - GetFactionAverageLevel
+    - GetGoodEvilValue
+    - GetLawChaosValue
+  categories:
+    - Alignment
+    - Get Data from Creature
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Jeremy Spilinek

@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetIsListening
+shortdesc: Check whether an object is listening for something.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object to check for listening patterns.
+
+description: |
+  Returns TRUE if oObject is listening for something, otherwise FALSE.
+version: 1.22
+seealso:
+  functions:
+    - SetListening
+    - SetListenPattern
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+editor: Kristian Markon
+

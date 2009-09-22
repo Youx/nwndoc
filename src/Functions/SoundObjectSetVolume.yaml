@@ -1,0 +1,53 @@
+---
+type: Function
+name: SoundObjectSetVolume
+shortdesc: This function will set the volume of a placed sound object, great for creating mood effects.
+return: void
+parameters:
+  - type: object
+    name: oSound
+    desc: | The sound that you wish to set the volume for.
+
+  - type: int
+    name: nVolume
+    desc: | An integer (int) value between 0 and 127.
+
+description: |
+  This function will set the volume of any sound object you have placed in your module. The value of nVolume can be anywhere between 0 and 127 (0 value turns a sound object off).
+remarks: |
+  Another function that is useful for creating mood effects. One possible use is to have a sound set very low (in the 20-30 range), then when the player(s) approach an object, turn the volume up to max.
+version: 1.22
+example: |
+  // Assumes - CryptMoans Sound is placed nearby and has the 
+  //                 volume slider set very low (or off)
+  //               - Corpse is placed from placeables menu (Tagged as 
+  //                 Corpse1, change if needed
+  //               - This script placed in the OnDisturbed section of the 
+  //                 corpse scripts
+  //
+  //Function description
+  //  Just an example that natters at the player for looting a corpse 
+  //  found in the dungeon.  Good for mood setting, guilt trips
+  //  etc...  Ensure the sound you want is placed nearby and set at 
+  //  very low volume.  This could lead to a whole line of things to
+  //do with corpses in your dungeon.
+  void main()
+  {
+  //get the SoundObject tag
+  object mySound = GetObjectByTag("CryptMoans");
+       //Natter at the player for looting the poor corpse
+       ActionSpeakString("Why do you disturb my rest...",TALKVOLUME_TALK);
+       //Turn moaning to Maximum, make the player jump :)
+       SoundObjectSetVolume(mySound, 127);
+  }
+seealso:
+  functions:
+    - SoundObjectPlay
+    - SoundObjectSetPosition
+    - SoundObjectStop
+  categories:
+    - Action on Object
+    - Sound Effects
+author: Bill Castello
+editor: Jeremy Spilinek
+

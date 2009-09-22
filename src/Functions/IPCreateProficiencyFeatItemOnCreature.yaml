@@ -1,0 +1,25 @@
+---
+type: Function
+name: IPCreateProficiencyFeatItemOnCreature
+shortdesc: Gives a creature all available proficiency feats.
+return: object
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to grant all the proficiency feats
+
+description: |
+  Creates a special ring on oCreature that gives all weapon and armor proficiencies to the wearer Item is set non dropable.
+remarks: |
+  Returns the created ring. Thus, you can check if it is OBJECT_INVALID to see if the function was successful. 
+  Though you can do so, you probably shouldn't use this function on PCs.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+    - Item Properties
+    - Talents/Skills/Feats
+author: Lilac Soul
+

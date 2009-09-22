@@ -1,0 +1,22 @@
+---
+type: Function
+name: AnimActionFindFriend
+shortdesc: Causes an NPC to find a friend and engage in conversation with them.
+return: int
+parameters:
+  - type: float
+    name: fMaxDistance
+    desc: | DISTANCE_*
+
+description: |
+  Causes an NPC to find a friend within fMaxDistance and engage in conversation with them. Will not attempt to talk to another friend who is currently engaged in talking with another NPC. The greeting used during the conversation can be a simple "Hello", a bow, or an animated greeting; this greeting is random but is weighted by hit dice.
+requirements: |
+  #include "x0_i0_anims"
+version: 1.61
+seealso:
+  categories:
+    - Animation
+  constants:
+    - DISTANCE_* Constants
+author: Charles Feduke
+

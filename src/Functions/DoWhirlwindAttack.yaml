@@ -1,0 +1,31 @@
+---
+type: Function
+name: DoWhirlwindAttack
+shortdesc: Perform a whirlwind attack.
+return: void
+parameters:
+  - type: int
+    name: bDisplayFeedback
+    default: TRUE
+    desc: | TRUE OR FALSE - display feedback or not (Default: TRUE)
+
+  - type: int
+    name: bImproved
+    default: FALSE
+    desc: | TRUE OR FALSE - use improved whirlwind instead (Default: FALSE)
+
+description: |
+  Does a single attack on every hostile creature within 10ft. of the attacker and determines damage accordingly. If the attacker has a ranged weapon equipped, this will have no effect. 
+  ** NOTE ** This is meant to be called inside the spell script for whirlwind attack, it is not meant to be used to queue up a new whirlwind attack. To do that you need to call ActionUseFeat(FEAT_WHIRLWIND_ATTACK, oEnemy).
+remarks: |
+  As mentioned in the description, you probably won't need to use this function ever.
+version: 1.61
+seealso:
+  categories:
+    - Combat Actions
+    - Spells
+    - Talents/Skills/Feats
+  constants:
+    - FEAT_* Constants
+author: Lilac Soul
+

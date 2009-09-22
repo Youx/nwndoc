@@ -1,0 +1,28 @@
+---
+type: Function
+name: CreateSpecificMiscItem
+shortdesc: Spawns in a Specific Item as part of the random treasure distribution.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Container to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | a Player object
+
+description: |
+  Creates a Specific Item, based on the level of the PC opening the container, as part of the NWN Treasure Distribution System. Specific items are named items. 
+remarks: |
+  Found in: nw_o2_coninclude.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

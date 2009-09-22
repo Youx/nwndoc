@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetLockUnlockDC
+shortdesc: Find a lock's unlock DC.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The locked object.
+
+description: |
+  Returns an integer that indicates the unlock DC for the lock. If the object doesn't have an unlock DC then the function returns 0.
+version: 1.22
+example: |
+  // This will return "door"'s Unlock DC
+  void main()
+  {
+      object a;
+      a = GetObjectByTag("door");
+      SendMessageToPC(GetFirstPC(),IntToString(GetLockUnlockDC(a)));
+  }
+seealso:
+  functions:
+    - SetLockUnlockDC
+    - GetLockLockDC
+    - SetLockLockDC
+  categories:
+    - Get Data
+    - Get Data from Object
+author: GoLeM
+editor: Kristian Markon

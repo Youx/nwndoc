@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetLastUnlocked
+shortdesc: Determines who unlocked the object or placeable.
+return: object
+parameters:
+description: |
+  Returns the last object that unlocked the caller. Returns OBJECT_INVALID if the caller is not a valid door or placeable.
+version: 1.22
+seealso:
+  functions:
+    - GetLastLocked
+    - GetLocked
+    - SetLocked
+  categories:
+    - Get Data from Object
+  events:
+    - OnLock
+    - OnUnlock
+author: John Shuell
+editor: Jody Fletcher
+

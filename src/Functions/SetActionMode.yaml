@@ -1,0 +1,39 @@
+---
+type: Function
+name: SetActionMode
+shortdesc: Sets the status of an action mode on a creature
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to set the action mode on
+
+  - type: int
+    name: nMode
+    desc: | ACTION_MODE_*
+
+  - type: int
+    name: nStatus
+    desc: | TRUE or FALSE
+
+description: |
+  Sets the status of modes ACTION_MODE_* on a creature.
+version: 1.61
+example: |
+  //Make PC exit stealth mode if currently stealthy
+  void main()
+  {
+  object oPC=GetEnteringObject();
+  if (GetActionMode(oPC, ACTION_MODE_STEALTH)==TRUE)
+     SetActionMode(oPC, ACTION_MODE_STEALTH, FALSE);
+  }
+seealso:
+  functions:
+    - GetActionMode
+  categories:
+    - Action on Object
+    - Miscellaneous
+  constants:
+    - ACTION_MODE_* Constants
+author: Lilac Soul
+

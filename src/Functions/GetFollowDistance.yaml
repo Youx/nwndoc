@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetFollowDistance
+shortdesc: Determines the distance in meters that the associate should follow its 'master' at.
+return: float
+parameters:
+description: |
+  Returns the NPC associate's following distance in meters dependent upon NW_ASC_DISTANCE_* setting determined in SetAssociateState. Returns 2.0, 4.0, or 6.0.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  functions:
+    - GetAssociateState
+  categories:
+    - Core AI
+  constants:
+    - NW_ASC_DISTANCE_* Constants
+author: Charles Feduke
+editor: John Shuell
+

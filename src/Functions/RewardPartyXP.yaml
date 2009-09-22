@@ -1,0 +1,55 @@
+---
+type: Function
+name: RewardPartyXP
+shortdesc: Gives experience to a PC and (optionally) all party members.
+return: void
+parameters:
+  - type: int
+    name: nXP
+    desc: | Amount of XP to award.
+
+  - type: object
+    name: oTarget
+    desc: | Object to award XP.
+
+  - type: int
+    name: bAllParty
+    default: TRUE
+    desc: | If TRUE, award XP to all party members. (Default: TRUE)
+
+description: |
+  If bAllParty is FALSE, this is equivalent to GiveXPToCreature(XP, oTarget); 
+  If bAllParty is TRUE, this function cycles through oTarget's faction (party) and awards XP to each party member.
+remarks: |
+  XP is awarded equally to each party member, not divided between them. 
+  You cannot use a negative number for nXP. Instead, use SetXP for all party members.
+requirements: |
+  #include "nw_i0_tool"
+version: 1.61
+example: |
+  #include "nw_i0_generic"
+  #include "nw_i0_tool"
+  // Area OnEnter script
+  // (perhaps if entry is only gained by some difficult 
+  // encounter or serious cunning).
+  //
+  // Rewards the PC and every party member with the XP
+  // set in the Journal editor.
+  void main() 
+  {
+       object oPC = GetEnteringObject();
+       if (! GetIsPC(oPC)) return;
+       RewardPartyXP(GetJournalQuestExperience("hard_to_reach"), oPC, TRUE);
+  }
+seealso:
+  functions:
+    - AddJournalQuestEntry
+    - GiveXPToCreature
+  categories:
+    - Experience
+    - Party
+    - PC Only
+author: Iskander Merriman
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

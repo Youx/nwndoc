@@ -1,0 +1,29 @@
+---
+type: Function
+name: VectorToString
+shortdesc: Turn a vector into a string.
+return: string
+parameters:
+  - type: vector
+    name: vec
+    desc: | The vector to be converted.
+
+description: |
+  Essentially a debug function that returns a string representation of the vector parameter formatted as follows: 
+  (xAxis yAxis zAxis) 
+  Where: 
+  xAxis, yAxis, and zAxis, are floats 
+  Calls 
+  string FloatToString(float f) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  functions:
+    - FloatToString
+    - LocationToString
+  categories:
+    - Type Casting/Conversion
+author: Grimlar
+editor: Michael Nork
+

@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetMyArea
+shortdesc: Retrieves the tag for the area of an object.
+return: string
+parameters:
+  - type: object
+    name: oThing
+    default: OBJECT_SELF
+    desc: | Object to get the area tag of. (Default: OBJECT_SELF)
+
+description: |
+  Returns the string tag for the area in which oThing is contained.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  categories:
+    - Area
+author: Charles Feduke
+

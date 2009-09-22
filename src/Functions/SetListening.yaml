@@ -1,0 +1,48 @@
+---
+type: Function
+name: SetListening
+shortdesc: Sets whether an object should listen.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object to set the listening status.
+
+  - type: int
+    name: bValue
+    desc: | TRUE if the object should listen, otherwise FALSE.
+
+description: |
+  Sets whether oObject should listen for listening patterns set on it. 
+  Note: It has no effect on if they will hear something with GetObjectHeard(). 
+  Deafness has no effect on this (as such, deafness has no effect at all on any PC listening, so why should it affect NPC's!).
+remarks: |
+  GetIsListening will return TRUE or FALSE for this setting. 
+  There is no way to reset listening patterns on a creature, or delete them, apart from changing and overriding ones already present of course. 
+  SetListening(OBJECT_SELF, FALSE) will not reset anything, but mearly make no patterns heard, and GetIsListening(TRUE) will return FALSE. 
+  SetListening(OBJECT_SELF, TRUE) will allow patterns to be heard - and it doesn't matter where it is called from (before or after patterns to listen to are set).
+version: 1.62
+example: |
+  // Set a thief to listen, and listen for the phrase "Foggy" for a password. 
+  // It will be number 40 in the conversation script, got by GetListenPatternNumber().
+  void main()
+  {
+      SetListening(OBJECT_SELF, TRUE);
+      SetListenPattern(OBJECT_SELF, "Foggy", 40);
+  }
+seealso:
+  functions:
+    - GetIsListening
+    - GetListenPatternNumber
+    - GetMatchedSubstring
+    - GetMatchedSubstringsCount
+    - GetNearestSeenOrHeardEnemy
+    - SetListenPattern
+  categories:
+    - Core AI
+    - Henchmen/Familiars/Summoned
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Trevor Berghage

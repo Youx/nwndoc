@@ -1,0 +1,41 @@
+---
+type: Function
+name: GetLocalLocation
+shortdesc: Get the data describing a location stored on an object.
+return: location
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object that stores the location.
+
+  - type: string
+    name: sVarName
+    desc: | The variable name of the data.
+
+description: |
+  Returns data contained in the variable sVarName stored on the object oObject. oObject can be any object in the game world. 
+  The string describing the variable can also be any string in theory but it is suggested that you avoid using the NW_* tags as they tend to be used within the game world already. This function must be used in conjunction with its counterpart function SetLocalLocation, as this is the main way to adjust the values held in the variable sVarName. There is no error value for this function.
+remarks: |
+  Because the function has no error value, it is possible that it will crash the game under some conditions. 
+  Use GetIsObjectValid(GetAreaFromLocation()) to make sure the area, at least, is valid if you are going be unsure the value is a valid one. If the area is invalid, and you try and move a creature to it, or get something in that area, it will probably crash the game. 
+  See the function Location for more information about locations and how they are stored. 
+  This is most useful for getting a location, say, where a person has died. You cannot use SetLocalLocation on a persistant PC's item because of the problems with the way locations are stored.
+version: 1.22
+example: |
+  // This will send the PC to the location stored in "Data"
+  void main()
+  {
+      location a = GetLocalLocation(OBJECT_SELF,"Data");
+      AssignCommand(GetFirstPC(),ActionMoveToLocation(a,TRUE));
+  }
+seealso:
+  functions:
+    - SetLocalLocation
+  categories:
+    - Get Data
+    - Get Data from Creature
+    - Get Data from Object
+    - Local Variables
+author: GoLeM
+editor: Jasperre
+

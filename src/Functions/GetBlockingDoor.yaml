@@ -1,0 +1,54 @@
+---
+type: Function
+name: GetBlockingDoor
+shortdesc: Determines the door that is blocking a creature.
+return: object
+parameters:
+description: |
+  Returns the last blocking door encountered by the caller of this function and OBJECT_INVALID if the caller is not a valid creature.
+remarks: |
+  As of 1.60, the blocked event will fire for creatures being blocked by another creature. 
+  GetBlockingDoor will therefore either return a Creature or a Door in the OnBlocked event. 
+  GetIsDoorActionPossible will return FALSE with creatures, so the default OnBlocked event will in no way be affected.
+version: 1.22
+example: |
+  //::///////////////////////////////////////////////
+  //:: Default On Heartbeat
+  //:: NW_C2_DEFAULTE
+  //:: Copyright (c) 2001 Bioware Corp.
+  //:://////////////////////////////////////////////
+  /*
+     This will cause blocked creatures to open
+     or smash down doors depending on int and
+     str.
+  */
+  //:://////////////////////////////////////////////
+  //:: Created By: Preston Watamaniuk
+  //:: Created On: Nov 23, 2001
+  //:://////////////////////////////////////////////
+  void main()
+  {
+     object oDoor = GetBlockingDoor();
+     if(GetAbilityScore(OBJECT_SELF, ABILITY_INTELLIGENCE) >= 5)
+     {
+        if(GetIsDoorActionPossible(oDoor, DOOR_ACTION_OPEN) && GetAbilityScore(OBJECT_SELF, ABILITY_INTELLIGENCE) >= 7 )
+        {
+           DoDoorAction(oDoor, DOOR_ACTION_OPEN);
+        }
+        else if(GetIsDoorActionPossible(oDoor, DOOR_ACTION_BASH))
+        {
+           DoDoorAction(oDoor, DOOR_ACTION_BASH);
+        }
+     }
+  }
+seealso:
+  functions:
+    - ActionCloseDoor
+  categories:
+    - Movement
+  events:
+    - OnOpen
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

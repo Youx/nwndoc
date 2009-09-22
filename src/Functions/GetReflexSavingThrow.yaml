@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetReflexSavingThrow
+shortdesc: Determines the base reflex saving throw number of a creature, door or placeable.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Creature, door or placeable to get the saving throw from.
+
+description: |
+  Returns oTarget's base reflex saving throw value (this will only work for creatures, doors, and placeables) and 0 if oTarget is invalid.
+version: 1.22
+seealso:
+  functions:
+    - SetReflexSavingThrow
+    - ReflexSave
+  categories:
+    - Saving Throw
+author: Tom Cassiotis
+editor: Mistress
+

@@ -1,0 +1,27 @@
+---
+type: Function
+name: EffectCutsceneParalyze
+shortdesc: Creates an effect that will paralyze a creature for use in a cut-scene.
+return: effect
+parameters:
+description: |
+  Returns an effect that is guranteed to paralyze a creature; this effect is identical to EffectParalyze except that it cannot be resisted. 
+  See notes for EffectParalyze for more remarks, code and descirption. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Even though the effect can't be resisted, creatures that are immune to paralysis will still be unaffected. Immunity to paralysis is a feature of many creature hides / skins (equipped in their inventory under creature items), so if you need to paralyze a creature with such a hide, you'll have to edit the properties of the hide to allow this. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // See EffectParalyze notes for code.
+seealso:
+  functions:
+    - EffectCutsceneGhost
+    - EffectParalyze
+  categories:
+    - Cut-Scene
+    - Effects
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Jasperre

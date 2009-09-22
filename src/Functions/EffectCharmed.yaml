@@ -1,0 +1,42 @@
+---
+type: Function
+name: EffectCharmed
+shortdesc: Create a Charm effect
+return: effect
+parameters:
+description: |
+  Returns a new effect object that raises the calling objects Personal Reputation with the target by 50 points (not the Faction Rating) when applied. 
+  It is unknown of the specific effect, but it seems that the actual personal reputation (not faction reputation) is made to be 100 instantly with the creator of the effect. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  It is currently unknown by the author if this adds a new heartbeat (in the statescripts.2da file) which overrides the AI, or not. It seems like it shouldn't, and cirtainly the caster of the spell (or creator of this effect) cannot issue direct commands using the default effects (However, the AI, by default, might heal or help the now friendly creator of the effect) 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a charm effect to a target.
+  // For this, you cannot use OBJECT_SELF of course!
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = GetPCSpeaker();
+      // Create the effect to apply
+      effect eCharm = EffectCharmed();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_CHARM);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eCharm, oTarget);
+  }
+seealso:
+  functions:
+    - EffectLinkEffects
+  categories:
+    - Effects
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Charles Feduke
+  - Jasperre

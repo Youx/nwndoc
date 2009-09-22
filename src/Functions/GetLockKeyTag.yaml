@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetLockKeyTag
+shortdesc: Gets the tag of the key that will open the lock on an object
+return: string
+parameters:
+  - type: object
+    name: oObject
+    desc: | The target locked object.
+
+description: |
+  Gets the tag of the key that will open the lock on oObject. 
+  If the string is empty "", but GetLockKeyRequired() is TRUE, then there is no key that can open the door (although DM unlock can unlock anything) as keys need to have tags.
+remarks: |
+  This function was previously noted as broken inasmuch as it returned an int rather than a string. This is certainly fixed now, and returns a string that is the tag of the key required to open oObject. 
+  It would be most useful if you needed to find out if oObject can be unlocked by a person, as GetItemPossessedBy() will work well dynamically with GetLockKeyTag(). Mainly, henchmen might want to use this to know if they can unlock a door in the On Blocked event.
+version: 1.30
+seealso:
+  functions:
+    - SetLockKeyTag
+    - GetLockKeyRequired
+    - SetLockKeyRequired
+    - GetLockLockable
+    - SetLockLockable
+  categories:
+    - Get Data
+    - Get Data from Object
+author: GoLeM
+editor: Jasperre

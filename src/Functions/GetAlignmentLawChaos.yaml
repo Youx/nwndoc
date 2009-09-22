@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetAlignmentLawChaos
+shortdesc: Determines the ethos of a given creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Target creature to retrieve the ethos alignment of.
+
+description: |
+  Returns an ALIGNMENT_* constant to represent oCreature's law/chaos alignment, or returns -1 if oCreature is not a valid target (OBJECT_INVALID).
+version: 1.28
+seealso:
+  functions:
+    - AdjustAlignment
+    - AdjustReputation
+    - GetAlignmentGoodEvil
+    - GetLawChaosValue
+    - GetReputation
+  categories:
+    - Alignment
+    - Get Data from Creature
+  constants:
+    - ALIGNMENT_* Constants
+author: Charles Feduke
+

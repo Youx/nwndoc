@@ -1,0 +1,26 @@
+---
+type: Function
+name: ActionUseTalentAtLocation
+shortdesc: Use tChosenTalent at lTargetLocation.
+return: void
+parameters:
+  - type: talent
+    name: tChosenTalent
+    desc: | Talent to use.
+
+  - type: location
+    name: locTargetLocation
+    desc: | Location to use it at.
+
+description: |
+  Use tChosenTalent at lTargetLocation.
+version: 1.61
+seealso:
+  functions:
+    - ActionUseFeat
+    - ActionUseTalentOnObject
+  categories:
+    - Talents/Skills/Feats
+author: Ryan Hunt
+editor: Lilac Soul
+

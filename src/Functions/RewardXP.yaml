@@ -1,0 +1,44 @@
+---
+type: Function
+name: RewardXP
+shortdesc: Gives the designated XP to the PC and possible their party using the design rules for XP distribution.
+return: void
+parameters:
+  - type: string
+    name: sJournalTag
+    desc: | The tag of the journal that has been compeleted and stores the XP potential.
+
+  - type: int
+    name: nPercentage
+    desc: | The percentage of the XP to award. (100 for 100%)
+
+  - type: object
+    name: oTarget
+    desc: | The PC (and their party possible) to award the XP to.
+
+  - type: int
+    name: nQuestAlignment
+    default: ALIGNMENT_NEUTRAL
+    desc: | ALIGNMENT_* (Default: ALIGNMENT_NEUTRAL)
+
+  - type: int
+    name: bAllParty
+    default: TRUE
+    desc: | If all party members should receive experience. (Default: TRUE)
+
+description: |
+  Gives the XP indicated in the journal with the tag sJournalTag to oTarget and if bAllParty is TRUE will give the XP to oTarget's party taking into consideration the alignment of the characters and the alignment of the quest indicated by nQuestAlignment.
+remarks: |
+  The PC receives 100% of the experience if they or the quest is of neutral alignment (the default alignment for a quest is neutral); otherwise the PC receives 125% of the experience if they are of the correct alignment (matching the quest's alignment) and 75% if they are of the wrong alignment. 
+requirements: |
+  #include "nw_i0_plot"
+version: 1.61
+seealso:
+  categories:
+    - Experience
+  constants:
+    - ALIGNMENT_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Jonathan Williams

@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetCutsceneCameraMoveRate
+shortdesc: Returns the current movement rate factor of the cutscene 'camera man'
+return: float
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The cutscene "cameraman"
+
+description: |
+  Returns the current movement rate factor of the cutscene 'camera man'. 
+  NOTE: This will be a value between 0.1, 2.0 (10%-200%)
+version: 1.61
+seealso:
+  functions:
+    - SetCutsceneCameraMoveRate
+  categories:
+    - Cut-Scene
+    - Get Data from Creature
+    - Movement
+author: Lilac Soul
+

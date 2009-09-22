@@ -1,0 +1,37 @@
+---
+type: Function
+name: GetTrapFlagged
+shortdesc: Determine if a specific trap has been set as visible to all creatures.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Returns TRUE if trap has been flagged as visible to all creatures in game.
+version: 1.22
+seealso:
+  functions:
+    - GetIsTrapped
+    - GetLastTrapDetected
+    - GetNearestTrapToObject
+    - GetTrapBaseType
+    - GetTrapCreator
+    - GetTrapDetectable
+    - GetTrapDetectDC
+    - GetTrapDetectedBy
+    - GetTrapDisarmable
+    - GetTrapDisarmDC
+    - GetTrapKeyTag
+    - GetTrapOneShot
+    - SetTrapDetectedBy
+    - SetTrapDisabled
+  categories:
+    - Perception
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+

@@ -1,0 +1,46 @@
+---
+type: Function
+name: ExploreAreaForPlayer
+shortdesc: Reveals the entire map of an area to a player.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The map of an area to reveal.
+
+  - type: object
+    name: oPlayer
+    desc: | The player to reveal the area map to.
+
+  - type: int
+    name: bExplored
+    default: TRUE
+    desc: | TRUE (explored) or FALSE (hidden). Whether the map should be completely explored or hidden. If not set, defaults to TRUE.
+
+description: |
+  Reveals (or hides) the entire map of oArea to oPlayer.
+remarks: |
+  oPlayer doesn't have to be in oArea to reveal it. Also note that it happens instantly, and so it suddently happening in a fog-bound cave when they step on a trigger without warning is probably a bit confusing. 
+  The most useful aspect of this is exploring a well known area, such as a city, or exploring an area in the OnEnter of an area, if they have the map for the area (as done in the Original Bioware Campaign). 
+  Note there is no way to uncover specific parts of the map (apart from jumping the players to that location to reveal it naturally).
+version: 1.67
+example: |
+  // if this code were placed in the OnEnter event
+  // of an area, the entire map would be revealed to the player
+  // even if they have never been there before.
+  void main()
+  {
+     object oPlayer = GetEnteringObject();
+     if (GetIsObjectValid(oPlayer) && GetIsPC(oPlayer))
+     {
+        // As this is firing in the Area's own events, we explore this
+        // area's area. GetArea() might not always work, but this is fine anyway
+        object oArea = OBJECT_SELF; 
+        ExploreAreaForPlayer(oArea, oPlayer);
+     }
+  }
+seealso:
+  categories:
+    - Area
+author: Brett Lathrope
+editor: Jasperre

@@ -1,0 +1,51 @@
+---
+type: Function
+name: AddItemProperty
+shortdesc: Add an itemproperty to an item
+return: void
+parameters:
+  - type: int
+    name: nDurationType
+    desc: | DURATION_TYPE_*
+
+  - type: itemproperty
+    name: ipProperty
+    desc: | Itemproperty to add.
+
+  - type: object
+    name: oItem
+    desc: | Item to add the property to.
+
+  - type: float
+    name: fDuration
+    default: 0.0f
+    desc: | Duration (if added temporarily). (Default: 0.0f)
+
+description: |
+  Adds an item property to the specified item. 
+  Only temporary and permanent duration types are allowed.
+remarks: |
+  The itemproperty must first be created using one of the many ItemProperty functions. In this respect, it works much like effects, which must first be created, then applied. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you.
+version: 1.61
+example: |
+  //Have the NPC upgrade the PC speaker's helmet to a
+  //HELMET OF UNDEAD TURNING
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oHelmet=GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oHelmet)) return;
+  itemproperty ipAddFeat=ItemPropertyBonusFeat(FEAT_TURN_UNDEAD);
+  AddItemProperty(DURATION_TYPE_PERMANENT, ipAddFeat, oHelmet);
+  }
+seealso:
+  functions:
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - DURATION_TYPE_* Constants
+author: Lilac Soul
+editor: Charles Feduke
+

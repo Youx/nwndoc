@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetFarRightDirection
+shortdesc: Returns a normalized number that is -135 from the current facing
+return: float
+parameters:
+  - type: event
+    name: fDirection
+    desc: | Current Facing
+
+description: |
+  This is a convenience function that returns a float representing a normalized angle that is -135 degrees from fDirection (if facing North, a South-east direction).
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

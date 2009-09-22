@@ -1,0 +1,39 @@
+---
+type: Function
+name: TalentMeleeAttacked
+shortdesc: Determines best course of action for NPC spell-caster when in melee combat.
+return: int
+parameters:
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | (Default: OBJECT_INVALID)
+
+description: |
+  Function runs through list of TOUCH, RANGED and AREA EFFECT talents that OBJECT_SELF may have, tried to determine the best one, failing that, determines a random talent attack of the above type. 
+  IF OBJECT_SELF currently in combat with more than 1 foe, checks AREA EFFECT, TOUCH and RANGED talents (in that order.) with same checks for validity.
+remarks: |
+  This function has been moved to x0_i0_talent, but it is still sufficient to include nw_i0_generic. 
+  ISSUE 1: The check in this function to use a random ability after failing to use best will fail in the following case. 
+  The creature is unable to affect the target with the spell and has only 1 spell of that type. 
+  This can be eliminated with a check in the else to the effect of : else if(!CompareLastSpellCast(GetIdFromTalent(tUse))) 
+  This check was not put in in version 1.0 due to time constraints. 
+  ISSUE 2: Given the Spell Attack is the drop out check the else statements in this talent should be cut.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  functions:
+    - TalentMeleeAttack
+    - TalentRangedAttackers
+    - TalentRangedEnemies
+    - TalentSpellAttack
+  categories:
+    - Combat Actions
+    - Core AI
+  events:
+    - OnCombatRoundEnd
+    - OnPhysicalAttacked
+author: Jody Fletcher
+editor: Lilac Soul
+

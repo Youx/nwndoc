@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetCanLevelUp
+shortdesc: Determines if an NPC henchman should level up.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | Character to check against.
+
+  - type: action
+    name: oHenchman
+    default: OBJECT_SELF
+    desc: | NPC to level. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if an NPC should level up according to the level of oPC. If oPC's level is greater than or equal to oHenchman's level plus 2, then returns TRUE, otherwise returns FALSE. Note that oPC does not have to be associated as the henchman's master.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+

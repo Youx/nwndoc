@@ -1,0 +1,78 @@
+---
+type: Function
+name: GetNearestCreatureToLocation
+shortdesc: Gets the nearest creature, which matches supplied criteria, to a given location.
+return: object
+parameters:
+  - type: int
+    name: nFirstCriteriaType
+    desc: | CREATURE_TYPE_* (see description below for details)
+
+  - type: int
+    name: nFirstCriteriaValue
+    desc: | CLASS_TYPE_*, SPELL_*, PERCEPTION_*, PLAYER_CHAR_IS_PC, PLAYER_CHAR_NOT_PC , RACIAL_TYPE_* , REPUTATION_TYPE_*, TRUE OR FALSE (value is dependent on nFirstCriteriaType, see function description below for details)
+
+  - type: location
+    name: lLocation
+    desc: | We're trying to find the creature of the specified type that is nearest to lLocation
+
+  - type: int
+    name: nNth
+    default: 1
+    desc: | We don't have to find the first nearest: we can find the Nth nearest.... (Default: 1)
+
+  - type: int
+    name: nSecondCriteriaType
+    default: -1
+    desc: | This is used in the same way as nFirstCriteriaType to further specify the type of creature that we are looking for. (Default: -1)
+
+  - type: int
+    name: nSecondCriteriaValue
+    default: -1
+    desc: | This is used in the same way as nFirstCriteriaValue to further specify the type of creature that we are looking for. (Default: -1)
+
+  - type: int
+    name: nThirdCriteriaType
+    default: -1
+    desc: | This is used in the same way as nFirstCriteriaType to further specify the type of creature that we are looking for. (Default: -1)
+
+  - type: int
+    name: nThirdCriteriaValue
+    default: -1
+    desc: | This is used in the same way as nFirstCriteriaValue to further specify the type of creature that we are looking for. (Default: -1)
+
+description: |
+  Get the creature nearest to lLocation, subject to all the criteria specified. 
+  Return value on error: OBJECT_INVALID 
+  The function selects the Nth (default is 1, or the nearest) nearest creature to the given location that matches the supplied criteria. By default the oTARGET is equal to OBJECT_SELF but may be set to another object. The first set of criteria (nFirstCriteriaType & nFirstCriteriaValue) is required as is a parameter of type location. The second and third sets of criteria are optional and are used to narrow down the object search. 
+  Criteria parameters are paired by type and values, and only accept constant group values. For example, if int nFirstCriteriaType is equal to CREATURE_TYPE_CLASS then nFirstCriteriaValue should be of the form CLASS_TYPE_*. So in this example, the parameters (CREATURE_TYPE_CLASS, CLASS_TYPE_CLERIC, lLoc1) would return an object that is the nearest cleric to location lLoc1. 
+  The following parameters would be more specific then the above example by not only finding the nearest cleric to lLoc1 but the nearest cleric that is a dwarven PC to lLoc1: (CREATURE_TYPE_CLASS, CLASS_TYPE_CLERIC, lLoc1, CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC, CREATURE_TYPE_RACIAL_TYPE, RACIAL_TYPE_DWARF). 
+  The following list shows the criteria types that may be used and the values associated with those types (type value). 
+  CREATURE_TYPE_CLASS CLASS_TYPE_* 
+  CREATURE_TYPE_DOES_NOT_HAVE_SPELL_EFFECT SPELL_* 
+  CREATURE_TYPE_HAS_SPELL_EFFECT SPELL_* 
+  CREATURE_TYPE_IS_ALIVE TRUE OR FALSE 
+  CREATURE_TYPE_PERCEPTION PERCEPTION_* 
+  CREATURE_TYPE_PLAYER_CHAR PLAYER_CHAR_IS_PC OR PLAYER_CHAR_NOT_PC 
+  CREATURE_TYPE_RACIAL_TYPE RACIAL_TYPE_* 
+  CREATURE_TYPE_REPUTATION REPUTATION_TYPE_* 
+  To see the entire list of criteria value constants available, enter one the above value fragments (i.e. SPELL_) into the Aurora editor filter and select the Constants button.
+remarks: |
+  Note that the reputation type is applied as if GetIsFriend(oTarget, OBJECT_SELF) and similar functions were used.
+bugs: |
+  1.64 means this should now more consistently return the nearest object.
+version: 1.64
+seealso:
+  functions:
+    - GetNearestCreature
+  categories:
+    - Get Data
+  constants:
+    - CLASS_TYPE_* Constants
+    - CREATURE_TYPE_* Constants
+    - PLAYER_CHAR_* Constants
+    - SPELL_* Constants
+author: Jason Simpson
+editor: Jasperre
+additional_contributors:
+  - Jasperre

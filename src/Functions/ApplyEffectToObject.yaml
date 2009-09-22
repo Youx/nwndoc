@@ -1,0 +1,112 @@
+---
+type: Function
+name: ApplyEffectToObject
+shortdesc: Applies an effect (visual or actual) to an object.
+return: void
+parameters:
+  - type: int
+    name: nDurationType
+    desc: | DURATION_TYPE_*
+
+  - type: effect
+    name: eEffect
+    desc: | The effect to apply.
+
+  - type: object
+    name: oTarget
+    desc: | The target of the effect.
+
+  - type: float
+    name: fDuration
+    default: 0.0f
+    desc: | The duration of temporary effects. (Default: 0.0f)
+
+description: |
+  Applies an effect to an object. Effects range from the purely visual (EffectVisualEffect) through beneficial (EffectHeal), wide-ranging (EffectAreaOfEffect) to fatal (EffectDeath), with many variations in between. 
+  Effects need to be constructed before they can be applied, and the valid nDurationType values depend on the Effect constructed. Refer to the individual Effect functions for details on the effect you want to apply. 
+  Effects can also be flagged as 'Extraordinary', 'Magical' or 'Supernatural', so an effect applied as 'Extraordinary' should not be dispelled by magical means (IE: EffectDispelMagicXXX()).
+remarks: |
+  The object that this command is applied to has to be useable, or at least, not static (for a placeable). This includes, obviously, no triggers, areas, modules, waypoints or items (on the ground or otherwise). 
+  Using ApplyEffectAtLocation and GetLocation avoids having to have a useable object as the target for a visual effect. 
+  The object the script is running on will be the effect creator (See GetEffectCreator), so any damage/death done by an object, that object's name will appear as the killer/damager, a module and area appears as "Someone", which also happens if you cannot personally see the damager of you, or the damager of an ally. 
+  Please note that the Extraordinary (cannot be dispelled) and Supernatural (isn't removed by resting) sub-types of effects do not matter and will not affect anything applied with DURATION_TYPE_INSTANT.
+bugs: |
+  If you apply any tempoary/permament effect (For example, EffectSpellResistanceDecrease) as DURATION_TYPE_INSTANT, it can never be removed in any way what so ever.
+version: 1.62
+example: |
+  // In the Actions Taken of a conversation node... this PC
+  // has made a near-fatal faux pas - almost like harm's damage.
+  void main()
+  {
+      // Get the person to do damage to, and the damage to do.
+      object oPC = GetPCSpeaker();
+      // In a word, fatal is cirtainly having only 1 HP left!
+      int nHealth = GetCurrentHitPoints(oPC) - 1;
+      // Declare the damage - visuals, however, are not automatic.
+      effect eOuch = EffectDamage(nHealth, DAMAGE_TYPE_DIVINE);
+      // Apply the damage instantly
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eOuch, oPC);
+  }
+  // Example of appling a linked duration effect to the PC speaker,
+  // perhaps, in this case of a Freedom-type link, and visual, 
+  // the conversationist NPC has cast a protective spell on the PC.
+  void main()
+  {
+      // Get the person to do the "spell" to to do.
+      object oPC = GetPCSpeaker();
+      // Declare the immunity to entangle, movement speed
+      // decreases, and the duration effect
+      effect eSlowImmune = EffectImmunity(IMMUNITY_MOVEMENT_SPEED_DECREASE);
+      effect eEntangleImmune = EffectImmunity(IMMUNITY_ENTANGLE);
+      effect eDuration = EffectVisualEffect(VFX_DUR_FREEDOM);
+      // we specially link the effects before appling them. If this was 
+      // a hostile spell, such as a Slowing effect, and they were
+      // immune to slow, which was linked with an approprate visual,
+      // it would not apply the visual if the slow didn't work.
+      // The second reason is dispelling, they should all be removed 
+      // together if dispelled.
+      effect eLink = EffectLinkEffects(eSlowImmune, eEntangleImmune);
+      eLink = EffectLinkEffects(eLink, eDuration);
+      // Note: We can apply it as a supernatural or extraodinary
+      // effect here, after its been linked, if we wished.
+      //eLink = EffectExtraodinaryEffect(eLink);
+      //eLink = EffectSupernaturalEffect(eLink);
+      // Apply the duration effect for fDuration.
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eLink, oPC, fDuration);
+      // Optional: Maybe it was permament? no duration needed!
+      //ApplyEffectToObject(DURATION_TYPE_PERMANENT, eLink, oPC);
+  }
+seealso:
+  functions:
+    - ApplyEffectAtLocation
+    - EffectAbilityDecrease
+    - EffectAbilityIncrease
+    - EffectACDecrease
+    - EffectACIncrease
+    - EffectAppear
+    - EffectSpellResistanceIncrease
+    - EffectStunned
+    - EffectSummonCreature
+    - EffectSwarm
+    - EffectTrueSeeing
+    - ExtraordinaryEffect
+    - MagicalEffect
+    - Petrify
+    - SupernaturalEffect
+    - VersusAlignmentEffect
+  categories:
+    - Effects
+    - Spell Casting Effects
+    - Visual Effects
+  constants:
+    - DURATION_TYPE_* Constants
+  events:
+    - OnAcquireItem
+    - OnActivateItem
+    - OnSpellCastAt
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Adrian Bates
+  - Matt Andrew
+  - Jasperre

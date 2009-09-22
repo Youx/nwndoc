@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetTrapDisarmable
+shortdesc: Determines if the specific trap is capable of being disarmed.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Returns TRUE if trap is disarmable. This is only done in the toolset, all traps placed by PC's in-game (and DM's) are automatically disarmable.
+remarks: |
+  Undisarmable traps can still be disarmed with SetTrapDisabled(), therefore, it is a good way to have special traps which only a lever can disable.
+version: 1.22
+seealso:
+  functions:
+    - SetTrapDisarmable
+    - SetTrapDisabled
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Jasperre

@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetSubRace
+shortdesc: Determines the sub race of a creature.
+return: string
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Target creature.
+
+description: |
+  Returns the name of oCreature's sub race. Returns an empty string if oCreature is invalid or the creature has no sub race.
+version: 1.22
+example: |
+  void main()
+  {
+      // speak this creature's subrace
+      string sSubRace = GetSubRace(OBJECT_SELF);
+      SpeakString(sSubRace);
+  }
+seealso:
+  functions:
+    - SetSubRace
+  categories:
+    - Get Data from Creature
+author: Daniel Beckman
+editor: Charles Feduke
+

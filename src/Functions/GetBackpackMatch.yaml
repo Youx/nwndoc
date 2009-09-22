@@ -1,0 +1,60 @@
+---
+type: Function
+name: GetBackpackMatch
+shortdesc: Determines if the PC carries the proper items to create a new item.
+return: int
+parameters:
+  - type: int
+    name: nPos
+    desc: | Position within the "NW_COMBO_REAGENT_1" string array.
+
+  - type: object
+    name: oPC
+    desc: | PC's inventory to examine.
+
+description: |
+  Returns TRUE if oPC has the necessary reagent in their inventory and the proper base type item to combine it with to create the item made by recipe nPos. If the base type is armor it checks the AC to see if the armor's AC matches the required AC and base type. Returns FALSE is oPC does not possess the required item for the recipe.
+remarks: |
+  Checks OBJECT_SELF's (usually a container like a forge) local array string identified as "NW_COMBO_REAGENT_1" at nPos for a tag. This tag is then checked against oPC's inventory for an item identified by the tag. If the item is found, then a base item is sought - the base item is located in a local integer array "NW_COMBO_BASETYPE" indexed by nPos (and if the base item is armor, then a base item with a specific armor class is sought within the local integer array "NW_COMBO_AC" indexed by nPos). 
+  Items that require more than a reagent and a base item will have multiple entries in the "NW_COMBO_REAGENT_1" string array, the "NW_COMBO_BASETYPE" integer array, and the "NW_COMBO_AC" integer array (when applicable). nPos will be a different value in the "NW_COMBO_REAGENT_1" array for each reagent required, but the "NW_COMBO_BASETYPE" and "NW_COMBO_AC" will usually be the same values (unless an item requires several different base types).
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.28
+example: |
+  //::///////////////////////////////////////////////
+  //:: Can any Axe or Armor comb be made?
+  //:: Copyright (c) 2001 Bioware Corp.
+  //:://////////////////////////////////////////////
+  /*
+     Searchs backpack of PC speaker and sees if they
+     can build any of the Axe or Armor combos
+  */
+  //:://////////////////////////////////////////////
+  //:: Created By: Drew
+  //:: Created On: November 26, 2001
+  //:://////////////////////////////////////////////
+  #include "NW_O0_ITEMMAKER"
+  int StartingConditional()
+  {
+      int iResult;
+  iResult = GetBackpackMatch(1, GetPCSpeaker()) ||
+  GetBackpackMatch(2, GetPCSpeaker()) ||
+  GetBackpackMatch(3, GetPCSpeaker()) ||
+  GetBackpackMatch(4, GetPCSpeaker()) ||
+  GetBackpackMatch(7, GetPCSpeaker()) ||
+  GetBackpackMatch(8, GetPCSpeaker()) ||
+  GetBackpackMatch(11, GetPCSpeaker());
+      return iResult;
+  }
+seealso:
+  functions:
+    - GetForgeMatch
+    - HasAnyItemOfBaseType
+  categories:
+    - Inventory
+    - Item Creation
+    - Module Specific
+author: John Shuell
+editor: Charles Feduke
+additional_contributors:
+  - Jason Dube

@@ -1,0 +1,40 @@
+---
+type: Function
+name: SetEncounterActive
+shortdesc: Sets an encounter to active or inactive.
+return: void
+parameters:
+  - type: int
+    name: bNewValue
+    desc: | TRUE if the encounter is active, otherwise FALSE.
+
+  - type: object
+    name: oEncounter
+    default: OBJECT_SELF
+    desc: | The encounter to set active or inactive. (Default: OBJECT_SELF)
+
+description: |
+  Set oEncounter's active state to nNewValue. 
+  When an encounter is exhausted it will set itself to be "not active". 
+  If your encounter is set for "Continuous" respawns, it will reset itself to "active" each time the Respawn Time lapses. 
+  If you want to use the SetEncounterActive function to control exactly when the encounter is active then you need to use the "Single Shot" setting on the encounter. 
+remarks: |
+  From Victor Morales: 
+  I have tried the SetEncounterActive function to spawn creatures at different times of the day. For example, I only wanted the undead in a cemetery to spawn if it was nighttime. 
+  If the encounter active flag is set to FALSE to begin with (in the encounter GUI window when the encounter is created) then the SetEncounterActive function will spawn them properly the first time. It seems that the creatures are set to spawn before the OnEnter event is checked for validity. In addition, once the active flag is set it won't revert until the next time the encounter is triggered. 
+  So I would have undead that would spawn at night properly, but once they spawned - if the time changed to day they would spawn at least one more time during daylight hours. Then the trigger would work properly again. 
+  I tried to make it reset the active flag to active OnEnter, then the creatures would spawn, and to reset it to inactive OnExit. However, that didn't work either and the behavior stayed the same. 
+  You can draw a trigger around the encounter and call this function from OnEnter of that trigger instead as a workaround.
+version: 1.61
+seealso:
+  functions:
+    - GetEncounterActive
+    - GetEncounterSpawnsCurrent
+  categories:
+    - Encounter
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Victor Morales
+  - Paul Haynes
+  - Lilac Soul

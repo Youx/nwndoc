@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetItemCharges
+shortdesc: Retrieves the number of charges remaining on a given item.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Object to query the number of charges remaining of.
+
+description: |
+  Returns the number of charges remaning on a given item. Returns 0 if the item is not an item, an invalid object, or has no charges.
+version: 1.30
+seealso:
+  categories:
+    - Get Data from Object
+author: Charles Feduke
+editor: Lilac Soul
+

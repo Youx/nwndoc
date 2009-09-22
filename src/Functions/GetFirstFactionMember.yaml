@@ -1,0 +1,57 @@
+---
+type: Function
+name: GetFirstFactionMember
+shortdesc: Obtains the first member of the faction that a creature is a member of.
+return: object
+parameters:
+  - type: object
+    name: oMemberOfFaction
+    desc: | Creature to determine which faction we want.
+
+  - type: int
+    name: bPCOnly
+    default: TRUE
+    desc: | If TRUE then the returned faction member will be a PC, otherwise both NPCs and PCs are included in the search. (Default: TRUE)
+
+description: |
+  Returns the first member of oMemberOfFaction's faction and OBJECT_INVALID if oMemberOfFaction or oMemberOfFaction's faction is invalid. If bPCOnly is set to FALSE it only includes NPCs, NOT both. To get all members of a PC's faction (Henchmen and so forth, as well as PC's themselves) 2 loops of the faction must be done.
+remarks: |
+  This function begins to cycle through all oMemberOfFaction's faction by calling GetNextFactionMember(). 
+  If bPCOnly is TRUE the returned faction member will be a PC. If bPCOnly is FALSE, it will only do non-PC faction members. 
+  Never use this on an NPC faction! There would be dozens more objects in even the smallest custom faction compared to a PC party. If used, use with caution!
+version: 1.29
+example: |
+  // This code shows how you can cycle through all the party 
+  // members of the first PC in the module.
+  // This will ONLY get PC members - any associates (Henchmen,
+  // familiars, summoned creatures and so on) will not be got by
+  // this loop. If the bPCOnly was FALSE in this script, it would ONLY
+  // get henchmen, familiars and so on for the faction.
+  void main()
+  {
+      // We alway use the SAME object for the GetFirst/Next faction 
+      // member calls - always define it first. Here it is the first PC.
+      object oPC = GetFirstPC();
+      // Get the first PC party member
+      object oPartyMember = GetFirstFactionMember(oPC, TRUE);
+      // We stop when there are no more valid PC's in the party.
+      while(GetIsObjectValid(oPartyMember) == TRUE)
+      {
+          // Do something to party member
+          // Get the next PC member of oPC's faction.
+          // If we put anything but oPC into this, it may be a totally
+          // unreliable loop!
+          oPartyMember = GetNextFactionMember(oPC, TRUE);
+      }
+  }
+seealso:
+  functions:
+    - GetNextFactionMember
+  categories:
+    - Reputation/Faction
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Iceberg
+  - Mike Daneman
+  - Matt Andrew

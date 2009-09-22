@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetTimeMillisecond
+shortdesc: Gets the current millisecond.
+return: int
+parameters:
+description: |
+  Returns the current millisecond as an integer between 0 and 999.
+version: 1.26
+seealso:
+  functions:
+    - GetIsDawn
+    - GetIsDay
+    - GetIsDusk
+    - GetIsNight
+    - GetTimeHour
+    - GetTimeMinute
+    - GetTimeSecond
+    - SetTime
+  categories:
+    - Time
+author: Charles Feduke
+additional_contributors:
+  - Artur Biesiadowski
+  - Dana C.

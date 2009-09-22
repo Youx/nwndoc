@@ -1,0 +1,46 @@
+---
+type: Function
+name: VersusAlignmentEffect
+shortdesc: Set eEffect to be versus a specific alignment.
+return: effect
+parameters:
+  - type: effect
+    name: eEffect
+    desc: | nLawChaos
+
+  - type: int
+    name: nLawChaos
+    default: ALIGNMENT_ALL
+  - type: int
+    name: nGoodEvil
+    default: ALIGNMENT_ALL
+description: |
+  Returns an effect modified in such a way as to be versus a specific alignment only. Uses the ALIGNMENT_ constants to define which scales to use.
+remarks: |
+  This is a pretty handy function when creating spell effects or special items to be used against (or by) a certain alignment or group of alignments. Notice that it expects two ALIGNMENT_ constants as parameters. If you wanted it to affect Chaotic Evil alignments only, you would set the first alignment parameter to ALIGNMENT_CHAOTIC and the second parameter to ALIGNMENT_EVIL. If you wanted it to affect all GOOD aligned creatures, you set the first parameter to ALIGNMENT_ALL (since it does not matter if they are chaotic or lawful for this effect) and the second parameter to ALIGNMENT_GOOD.
+version: 1.22
+example: |
+  // Give the target of the spell an armor class increase of 1 by
+  // boosting his Dodge ability against all types of attacks only if 
+  // the target is Chaotic Evil in alignment
+  void main(){
+      effect eBonusToApply = EffectACIncrease(1, AC_DODGE_BONUS, AC_VS_DAMAGE_TYPE_ALL);
+      eBonusToApply = VersusAlignmentEffect(eBonusToApply, ALIGNMENT_CHAOTIC, ALIGNMENT_EVIL);
+      object oTargetOfSpell = GetSpellTargetObject();
+      ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eBonusToApply, oTargetOfSpell, 60.0);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - VersusRacialTypeEffect
+    - VersusTrapEffect
+  categories:
+    - Alignment
+    - Effects
+    - Spell Casting Effects
+    - Spells
+  constants:
+    - ALIGNMENT_* Constants
+author: John Shuell
+editor: Jeremy Spilinek
+

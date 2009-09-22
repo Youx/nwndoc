@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetEncounterDifficulty
+shortdesc: Get the difficulty level of the encounter.
+return: int
+parameters:
+  - type: object
+    name: oEncounter
+    default: OBJECT_SELF
+    desc: | An object representing a placed encounter. (Default: OBJECT_SELF)
+
+description: |
+  Returns the difficulty level constant (ENCOUNTER_DIFFICULTY_*) of the encounter object.
+remarks: |
+  The level of difficulty can be VERY_EASY, EASY, NORMAL, HARD or VERY_HARD.
+version: 1.22
+seealso:
+  functions:
+    - GetEncounterActive
+    - GetEncounterSpawnsCurrent
+    - GetEncounterSpawnsMax
+  categories:
+    - Encounter
+  constants:
+    - ENCOUNTER_DIFFICULTY_* Constants
+author: John Shuell
+

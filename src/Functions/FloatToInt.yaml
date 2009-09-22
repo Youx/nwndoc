@@ -1,0 +1,60 @@
+---
+type: Function
+name: FloatToInt
+shortdesc: Converts a number with a decimal into a number without one.
+return: int
+parameters:
+  - type: float
+    name: fFloat
+    desc: | The float to convert to an integer.
+
+description: |
+  Convert fFloat into the nearest integer. Since an integer does not support precision (that is, decimal places), the precision is lost (truncated). No rounding of the number occurs.
+remarks: |
+  Marked incorrectly by BioWare documentation as rounding not truncating the decimal value. In other words, both of the floats 2.001 and 2.999 will be converted to the integer 2.
+version: 1.61
+example: |
+  // example courtesy of Ken Vargo
+  // normalizing angles
+  // variation of an example introduced by Vane
+  // when it was realized that FloatToInt acts like
+  // TRUNC() in MS Excel rather than INT().
+  int iAddAngles(int iAngleOne, int iAngleTwo);
+  void main()
+  {
+      int iA1 = GetLocalInt (OBJECT_SELF, "a1");
+      int iA2 = GetLocalInt (OBJECT_SELF, "a2");
+      int iSum = iAddAngles(iA1, iA2);
+      int iNegSum = iAddAngles(0 - iA1, 0 - iA2); 
+      // this tests the negatives added together 
+      //(-10 + -10 = -20 = 340 degrees)
+      SendMessageToPC(GetFirstPC(), IntToString(iSum));
+      SendMessageToPC(GetFirstPC(), IntToString(iNegSum));
+      SetLocalInt(OBJECT_SELF, "a1",  iA1 + 10);
+      SetLocalInt(OBJECT_SELF, "a2", iA2 + 10);
+  }
+  // this function return the normalized sum of two angles
+  // (will always be a positive angle value b/w 0 and 359).
+  int iAddAngles(int iAngleOne, int iAngleTwo)
+  {
+      int iAngleSum = (iAngleOne + iAngleTwo);
+      int iNormalAngleSum = iAngleSum - (360 * FloatToInt(iAngleSum/360.0));
+      if (iNormalAngleSum >= 0)
+      {
+          return iNormalAngleSum;
+      }
+      else
+      {
+          return  360 + iNormalAngleSum;
+      }
+  }
+seealso:
+  functions:
+    - FloatToString
+    - GetAngleBetweenLocations
+    - IntToFloat
+  categories:
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Lilac Soul
+

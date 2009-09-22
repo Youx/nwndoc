@@ -1,0 +1,31 @@
+---
+type: Function
+name: TalentSpell
+shortdesc: Creates a spell talent
+return: talent
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+description: |
+  Create a Spell Talent. 
+  This should not be used - it doesn't currently work.
+remarks: |
+  It should do the same as ActionCastSpell, but currently is broken and using it doesn't work in anyway whatsoever. Definatly use ActionCastSpell until it is fixed or removed. 
+bugs: |
+  Currently, anytime this is used, it is invalid and if passed into ActionUseTalent, it will result in the NPC not doing anything and standing there.
+version: 1.30
+example: |
+  // Code sample invalid as TalentSpell/Feat/Skill doesn't work.
+seealso:
+  functions:
+    - TalentFeat
+    - TalentSkill
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - SPELL_* Constants
+author: Lilac Soul
+editor: Jasperre
+

@@ -1,0 +1,52 @@
+---
+type: Function
+name: GetFactionWeakestMember
+shortdesc: Get the weakest member in a faction (party).
+return: object
+parameters:
+  - type: object
+    name: oFactionMember
+    default: OBJECT_SELF
+    desc: | The object whose faction you wish to examine. (Default: OBJECT_SELF)
+
+  - type: int
+    name: bMustBeVisible
+    default: TRUE
+    desc: | Should the returned object be visible to the calling object? (Default: TRUE)
+
+description: |
+  Returns the weakest member of oFactionMember's faction. If bMustBeVisible is set to TRUE (default) only consider members who can be seen by the caller of the function. 
+  Returns OBJECT_INVALID if oFactionMember's faction is invalid.
+remarks: |
+  This should return the lowest hit dice monster in the faction. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetHitDice(), to find the lowest, only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction unless bMustBeVisible is TRUE, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+version: 1.62
+example: |
+  // Get the weakest PC and attack them. For all it matters, this
+  // could be the On Heartbeat script of a NPC.
+  void main()
+  {
+      // Get nearest PC
+      object oPC = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC);
+      // Get weakest
+      object oWeakest = GetFactionWeakestMember(oFactionMember, TRUE);
+      // Attack them
+      if(GetIsObjectValid(oWeakest))
+      {
+          ClearAllActions();
+          ActionAttack(oWeakest);
+      }
+  }
+seealso:
+  functions:
+    - GetFactionStrongestMember
+  categories:
+    - Combat Information
+    - Get Data from Creature
+    - Party
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

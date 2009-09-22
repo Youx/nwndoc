@@ -1,0 +1,66 @@
+---
+type: Function
+name: CreateItemOnObject
+shortdesc: Create a specific item in an objects inventory.
+return: object
+parameters:
+  - type: string
+    name: sItemTemplate
+    desc: | The blueprint ResRef string of the item to be created or tag.
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The inventory where you want the item created. (Default: OBJECT_SELF)
+
+  - type: int
+    name: nStackSize
+    default: 1
+    desc: | The number of items to be created. (Default: 1)
+
+  - type: string
+    name: sNewTag
+    default: ""
+description: |
+  This function creates an item with the template sItemTemplate in oTarget's inventory. If you are creating a custom item, sItemTemplate is the ResRef; if you are creating a standard item, sItemTemplate is the item's tag. 
+  Returns the object that has been created. On error, this returns OBJECT_INVALID. CreateItemOnObject will work on item containers. 
+  Additional notes added for clarification in 1.64 include: If the item created was merged into an existing stack of similar items, the function will return the merged stack object. If the merged stack overflowed, the function will return the overflowed stack that was created.
+remarks: |
+  The parameter nStackSize only applies to stackable items (eg. potions). If sItemTemplate refers to a non-stackable item (eg. armor) only 1 item will be created. 
+  CreateItemOnObject has interesting behaviour when called to create a stackable item. 
+  If the oTarget of the command has a stack already existing, the items created will be added to the existing stack, in which case two things can happen: 
+  1. A new stack has to be created to hold some overflow. CreateItemOnObject returns a valid object, the overflowed stack of items (so, not the completly filled up stack) 
+  2. The old stack object does not overflow past 99. No new stack object is created. CreateItemOnObject returns a value thats not equal to OBJECT_INVALID, but, if tested with GetIsObjectValid() will return FALSE.
+bugs: |
+  This bug will most likely be fixed in version 1.62, and thus only apply to 1.61 and possibly earlier versions as well: 
+  Returns OBJECT_INVALID when the created object is added to an existing stack.
+version: 1.67
+example: |
+  // The script below will create 5 ale potions in the inventory of 
+  // the object to last use a placeable object. 
+  object oTarget = GetLastUsedBy(); 
+  string sItemTemplate1 = "nw_it_mpotion021";  // The standard ale potion 
+  int nStackSize = 5; // Create 5 items; 
+  CreateItemOnObject(sItemTemplate1, oTarget, nStackSize); 
+  // Now if we only change the item to create 
+  string sItemTemplate2 = "nw_ashsw001"; // Standard small shield 
+  // and run the command again 
+  CreateItemOnObject(sItemTemplate2, oTarget, nStackSize); 
+  // even tho nStackSize = 5 only 1 small shield will be created in 
+  // oTargets inventory.
+seealso:
+  functions:
+    - ActionGiveItem
+    - CopyItem
+    - CreateDagger
+    - CreateGenericDruidWeapon
+    - CreateGenericExotic
+    - CreateGenericMonkWeapon
+    - CreateGenericWizardWeapon
+    - dbCreateItemOnObject
+    - GetBaseItemType
+  categories:
+    - Inventory
+    - Item Creation
+author: Dave Withnall
+editor: Jasperre

@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetKeyRequiredFeedback 
+shortdesc: Get the feedback message that will be displayed when trying to unlock an object.
+return: string
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door or placeable.
+
+description: |
+  Get the feedback message that will be displayed when trying to unlock an object.
+  Returns an empty string "" on an error or if the game's default feedback message is being used.
+version: 1.67
+seealso:
+  functions:
+    - SetKeyRequiredFeedback
+  categories:
+    - Get Data from Object
+author: bernosky
+editor: Mistress

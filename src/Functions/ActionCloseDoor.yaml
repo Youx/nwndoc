@@ -1,0 +1,47 @@
+---
+type: Function
+name: ActionCloseDoor
+shortdesc: An action that causes an object to close a door.
+return: void
+parameters:
+  - type: object
+    name: oDoor
+    desc: | The door that will be closed.
+
+description: |
+  Causes the calling object to close oDoor. If the target is a mobile creature, it will animate running to oDoor, and reach out and close it. 
+  This same function can be attached to a door object to have it close itself. (oDoor=OBJECT_SELF)
+version: 1.61
+example: |
+  From David Gaider's scripting FAQ and tutorial:
+  // set in a door's OnHeartbeat script, this will cause
+  // it to close and lock itself at dusk
+  // and unlock itself at dawn
+  void main()
+  {
+     if (GetIsDusk() && GetIsOpen (OBJECT_SELF))
+     {
+        ActionCloseDoor (OBJECT_SELF);
+        // SetLocked is set in an ActionDoCommand because we
+        // want it to be in the door's queue... we want the
+        // ActionCloseDoor to be completed before locking the
+        // door.
+        ActionDoCommand (SetLocked (OBJECT_SELF, TRUE));
+     }
+     else if (GetIsDawn() && GetLocked (OBJECT_SELF))
+     {
+        SetLocked (OBJECT_SELF, FALSE);
+     }
+  }
+seealso:
+  functions:
+    - ActionOpenDoor
+    - GetBlockingDoor
+  categories:
+    - Action on Object
+    - Core AI
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Dave Dursley
+  - Lilac Soul

@@ -1,0 +1,29 @@
+---
+type: Function
+name: IncrementRemainingFeatUses
+shortdesc: Give a creature one extra use of a given feat
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to increment the feat uses of
+
+  - type: int
+    name: nFeat
+    desc: | FEAT_*
+
+description: |
+  Increment the remaining uses per day for this creature by one. 
+  Total number of feats per day can not exceed the maximum.
+remarks: |
+  You can not use this command to give a creature feat uses in a feat it doesn't have. 
+  It does work on PC's, and is most useful for replenishing feats which have associated script as they are used up (such as a Pale Masters death touch), where the feat was just used from.
+version: 1.61
+seealso:
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - FEAT_* Constants
+author: Lilac Soul
+editor: Jasperre
+

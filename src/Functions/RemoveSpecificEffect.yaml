@@ -1,0 +1,41 @@
+---
+type: Function
+name: RemoveSpecificEffect
+shortdesc: Removes effects from a creature.
+return: void
+parameters:
+  - type: int
+    name: nEffectTypeID
+    desc: | EFFECT_TYPE_*
+
+  - type: object
+    name: oTarget
+    desc: | Target to remove the effects from
+
+description: |
+  Loops through all of oTarget’s effects, and removes those with the effect type specified in nEffectTypeID.
+remarks: |
+  Found in nw_i0_spells.nss line 23 
+  In the documentation to the function, it is hinted that it is to be used for creatures exiting an AOE (area of effect) to remove effects from that AOE. It is apparently not used for this. The only place I could find that it is called from is from the script nw_s0_remeffect, where it is used to remove a series of bad effects. 
+  Actually, this is a very nice little wrapper function that saves us a bit of work when wanting to remove effects from objects. 
+requirements: |
+  #include "nw_i0_spells"
+version: 1.28
+example: |
+  #include "nw_i0_spells"
+  void main()
+  {
+  //Unpolymorph a polymorphed PC through conversation
+  object oPC=GetPCSpeaker();
+  RemoveSpecificEffect(EFFECT_TYPE_POLYMORPH, oPC);
+  }
+seealso:
+  functions:
+    - RemoveEffect
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

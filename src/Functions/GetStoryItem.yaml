@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetStoryItem
+shortdesc: Gets a string representing a plot item from the official campaign
+return: string
+parameters:
+description: |
+  Returns a string stored on a local object variable named "NW_J_STORY_MYGLOBALS" in a variable called "NW_J_STORY_ITEM"
+remarks: |
+  Found in nw_j_story.nss on line 114. 
+  Of no use outside the official campaign.
+requirements: |
+  #include "nw_j_story"
+version: 1.22
+seealso:
+  functions:
+    - GetArtifactItem
+    - GetComplexItem
+    - Global
+    - SetStoryItem
+    - TakeComplexItem
+    - TakeStoryItem
+  categories:
+    - Module Specific
+author: John Shuell
+

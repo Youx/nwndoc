@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetNumberOfMeleeAttackers
+shortdesc: Determines the number of enemies within a 5 meter radius of the target object.
+return: int
+parameters:
+description: |
+  Returns the number of enemies located within a 5 meter radius, attacking the target object.
+remarks: |
+  GetNumberOfMeleeAttackers() retrieves the number of melee attackers where the source object is the object executing the script.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // Demonstrates how to yield speach based on the number of melee attackers
+  #include "NW_I0_GENERIC"
+  void main()
+  {
+     if(GetNumberOfMeleeAttackers()>8)
+     {
+        ActionSpeakString("Zounds! Get these hellspawn off me!");
+     }
+  }
+seealso:
+  functions:
+    - GetNumberOfRangedAttackers
+  categories:
+    - Get Data
+author: Sarev0k
+editor: Tom Cassiotis
+

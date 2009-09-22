@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetHasSkill
+shortdesc: Determines whether a creature has a skill.
+return: int
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to check for a skill. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oCreature has nSkill, and nSkill is useable, otherwise FALSE.
+remarks: |
+  According to the Third Edition rules, some skills (such as Persuade) are usuable by anyone even if their skill rank is negative. These skills will always return a TRUE value.
+version: 1.22
+seealso:
+  functions:
+    - ActionUseSkill
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - SKILL_* Constants
+author: Tom Cassiotis
+editor: Ryan Hunt
+additional_contributors:
+  - Drake Coker

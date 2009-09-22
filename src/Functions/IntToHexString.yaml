@@ -1,0 +1,29 @@
+---
+type: Function
+name: IntToHexString
+shortdesc: This function converts an int to a string representation of the same hexadecimal value.
+return: string
+parameters:
+  - type: int
+    name: nInteger
+    desc: | The integer to convert to hexadecimal (base 16).
+
+description: |
+  This function coverts an integer to a hexadecimal string representation of the same value, so that converting 123 to a hexString would yield “0x0000007b”.
+remarks: |
+  If the first numeric system you learned was hexadecimal then these values would be useful for you. For the rest of us normal types stick to the basic string representation.
+version: 1.30
+example: |
+  int foo = 300;
+  string bar =  IntToHexString(foo); 
+seealso:
+  functions:
+    - IntToFloat
+    - IntToString
+  categories:
+    - Math
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

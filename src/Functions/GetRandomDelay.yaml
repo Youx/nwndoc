@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetRandomDelay
+shortdesc: Generates a random number between two values used for time delays.
+return: float
+parameters:
+  - type: float
+    name: fMinimumTime
+    default: 0.4
+    desc: | Minimum delay time. (Default: 0.4)
+
+  - type: float
+    name: fMaximumTime
+    default: 1.1
+    desc: | Maximum delay time. (Default: 1.1)
+
+description: |
+  Generates a random number between fMinimumTime and fMaximumTime (default 0.4 and 1.1, respectively), unless fMinimumTime is greater than fMaximumTime, in which case 0.0 is always returned.
+requirements: |
+  #include "nw_i0_spells"
+version: 1.29
+seealso:
+  functions:
+    - Random
+  categories:
+    - Math
+    - Time
+author: Charles Feduke
+

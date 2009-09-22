@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetAssassinHead
+shortdesc: Gets the tag of the Assassins head object used in a plot in the official release game.
+return: string
+parameters:
+description: |
+  Returns the Assassin's Head object tag from the Plot Global used in this story.
+remarks: |
+  Function found in nw_j_assassin.nss on line 315. 
+  Only useful for the official game, but shows some handy plot state storage techniques.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.22
+seealso:
+  functions:
+    - SetAssassinHead
+  categories:
+    - Miscellaneous
+author: John Shuell
+

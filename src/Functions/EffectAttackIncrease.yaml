@@ -1,0 +1,61 @@
+---
+type: Function
+name: EffectAttackIncrease
+shortdesc: Create an Attack Increase effect
+return: effect
+parameters:
+  - type: int
+    name: nBonus
+    desc: | The amount of the bonus to apply.
+
+  - type: int
+    name: nModifierType
+    default: ATTACK_BONUS_MISC
+    desc: | One of the three ATTACK_BONUS_* Constants defining which handed weapon receives the bonus. (Default: ATTACK_BONUS_MISC)
+
+description: |
+  Returns a new effect object that when applied to a creature, will increase their attack bonus in their main hand, off hand or both hands by a certain amount. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  The limit of nValue is unknown.
+remarks: |
+  Attack bonuses stack - however, an old bug where it used to go through damage reduction (such as being blessed allowed you to ignore 10/+1 DR) is now gone, and it purely just adds a "To hit" modifier. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  An old bug of this effect penetrating Damage Reduction as an enchantment bonus on an item would no longer is the case.
+version: 1.62
+example: |
+  // Sample code for applying a 5 attack bonus to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eACIncrease = EffectAttackIncrease(5);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_AC_BONUS);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eACIncrease, oTarget);
+  }
+seealso:
+  functions:
+    - EffectAbilityDecrease
+    - EffectAbilityIncrease
+    - EffectACDecrease
+    - EffectACIncrease
+    - EffectAttackDecrease
+    - EffectDamageDecrease
+    - EffectDamageIncrease
+    - EffectLinkEffects
+    - EffectModifyAttacks
+  categories:
+    - Effects
+  constants:
+    - ATTACK_BONUS_* Constants
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

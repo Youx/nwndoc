@@ -1,0 +1,27 @@
+---
+type: Function
+name: PrintVector
+shortdesc: Records a vector to the log file.
+return: void
+parameters:
+  - type: vector
+    name: vVector
+    desc: | The vector to output.
+
+  - type: int
+    name: bPrepend
+    desc: | If this is TRUE, the message will be prefixed with "PRINTVECTOR:"
+
+description: |
+  Output vVector to the logfile, if bPrepend is TRUE the string "PRINTVECTOR:" will be placed before the vector.
+version: 1.22
+seealso:
+  functions:
+    - PrintFloat
+    - PrintInteger
+    - PrintString
+  categories:
+    - Debug
+author: Tom Cassiotis
+editor: Charles Feduke
+

@@ -1,0 +1,40 @@
+---
+type: Function
+name: EffectDazed
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+description: |
+  Create a Daze effect. 
+  Dazed creatures have no inherant penalities but unable to attack, cast spells or use items, and only able to walk away from attackers. It is a mind effect, and thus is countered by mind spell immunities. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Daze is your lower level stun, for the most part. It affects the mind as stun is meant to (or not, as the case may be), and allows the target to still move around at walking speed (thus control thier actions and where they go). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  As of 1.29 and before, Daze meant you couldn't move (same as Stun) but at 1.30, they fixed it so that is was to D&D rules, and you can walk around.
+version: 1.62
+example: |
+  // Sample code for applying 1 strength damage to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDrain = EffectAbilityDecrease(ABILITY_STRENGTH, 1);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_DAZED_S);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDaze, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

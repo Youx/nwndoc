@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetBehindLocation
+shortdesc: Returns location directly behind the target and facing same direction as the target
+return: location
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target to get behind
+
+description: |
+  Returns location directly behind the target and facing same direction as the target (useful for backstabbing attacks). 
+  Calls 
+  float GetFacing(object oTarget) 
+  float GetOppositeDirection(float fDir) 
+  location GenerateNewLocation(object oTarget, float DISTANCE_MEDIUM, float fAngleToRightFlank, float fDir) 
+remarks: |
+  This function is functionally the same as 
+  location GetOppositeLocation(object oTarget) 
+  The only difference being that GetOppositeLocation calls GenerateNewLocation(oTarget, DISTANCE_MEDIUM, fDir, fAngleOpposite) 
+  And GetBehindLocation calls 
+  GenerateNewLocation(oTarget, DISTANCE_MEDIUM, fAngleOpposite, fDir); 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Area
+    - Combat
+    - Movement
+  constants:
+    - DISTANCE_* Constants
+author: Michael Nork
+

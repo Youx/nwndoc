@@ -1,0 +1,45 @@
+---
+type: Function
+name: GetTag
+shortdesc: Determine the tag associated with an object.
+return: string
+parameters:
+  - type: object
+    name: oObject
+    desc: | Target object.
+
+description: |
+  Returns the tag of oObject. Returns an empty string if oObject is not a valid object. 
+  PC's do return a valid value - an empty string! This is because they have no string defined as thier tag (Even GetObjectByTag("") may return a PC object).
+remarks: |
+  This is probably one of the most-used and dynamic functions - by changing a creature/waypoint/objects tag, you can use it for many things, from executing scripts (On Item Activate, execute the item's tag, as a script), to checking if there is "HEY" in the tag, and if so, doing something special. The string manipulators are useful for this. 
+  The main thing this is used for is to check if an object is exactly something, or if a script is executed, checking what the object running it is. 
+  CopyObject() can change an object's tag - or the new one has the new tag.
+version: 1.22
+example: |
+  // 1. Get our tag, then the first object by our tag - this should be
+  // ourselves if there is no one else with our tag in exsistance.
+  void main()
+  {
+      string sTag = GetTag(OBJECT_SELF);
+      object oSelf = GetObjectByTag(sTag);
+  }
+  // 2. In the OnItemActivate script, we run a script of 
+  // "ACT_" + Tag Of Item.
+  void main()
+  {
+      string sTag = GetTag(GetItemActivated());
+      // Execute it on the module instantly - the old GetItem calls will
+      // still be valid for this item
+      ExecuteScript("ACT_" + sTag, OBJECT_SELF);
+  }
+seealso:
+  functions:
+    - GetLastWeaponUsed
+    - GetObjectByTag
+    - LocationToString
+  categories:
+    - Get Data from Object
+author: Daniel Beckman
+editor: Jasperre
+

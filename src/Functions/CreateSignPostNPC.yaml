@@ -1,0 +1,42 @@
+---
+type: Function
+name: CreateSignPostNPC
+shortdesc: Spawns a creature using the action queue.
+return: void
+parameters:
+  - type: string
+    name: sTag
+    desc: | The blueprint resref of the creature to spawn.
+
+  - type: location
+    name: lLocal
+    desc: | The location to spawn the creature at.
+
+description: |
+  The main purpose of this function is to use the action queue to spawn creatures. 
+  It is basically a simplified form of CreateObject that allows only creatures to be created. The main benefit of this function over CreateObject is that is has a void return type which allows it to be placed into the action queue using the ActionDoCommand function.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // If the script below is placed into a creatures OnDamaged event
+  // it will cause the creature to run away from its attacker
+  // and summon its vicious evil chicken hordes to defend it.
+  #include "NW_I0_GENERIC"
+  void main()
+  {
+      string sCreature = "nw_chicken";
+      object oAttacker = GetLastDamager();
+      location locAttacker = GetLocation(oAttacker);
+      ActionMoveAwayFromObject(oAttacker, TRUE, 20.0f);
+      ActionDoCommand(CreateSignPostNPC(sCreature, locAttacker));
+      ActionDoCommand(CreateSignPostNPC(sCreature, locAttacker));
+      ActionDoCommand(CreateSignPostNPC(sCreature, locAttacker));
+      ActionDoCommand(CreateSignPostNPC(sCreature, locAttacker));
+  }
+seealso:
+  categories:
+    - Module Specific
+author: Dave Withnall
+editor: Tom Cassiotis
+

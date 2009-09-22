@@ -1,0 +1,50 @@
+---
+type: Function
+name: GetMaster
+shortdesc: Determine who controls a creature.
+return: object
+parameters:
+  - type: object
+    name: oAssociate
+    default: OBJECT_SELF
+    desc: | Creature to get the master of. (Default: OBJECT_SELF)
+
+description: |
+  Returns the master PC of the specified creature (familiar) or the DM for DM controlled creatures.
+remarks: |
+  Returns OBJECT_INVALID if oAssociate doesn't have a master. 
+  This can be used in a loop to find the PC who ultimately controls the associate (for instance, if there are multiple henchmen, or if the henchman has summoned a creature). In the code example below, for instance, the PC is granted XP OnDeath of a creature, even if the NPC was killed by an associate of the PC, or an associate of that associate, etc. etc.
+version: 1.32
+example: |
+  void main()
+  {
+  //The actual killer
+  object oKiller=GetLastKiller();
+  //Loop through until we find one that doesn't have a master
+  while (GetIsObjectValid(GetMaster(oKiller)))
+     {
+     oKiller=GetMaster(oKiller);
+     }
+  //we're now at the top of the hierarchy. Let's check if it
+  //is a PC
+  if (!GetIsPC(oKiller)) return;
+  //Give XP
+  GiveXPToCreature(oKiller, 500);
+  }
+seealso:
+  functions:
+    - GetAssociate
+    - GetAssociateState
+    - GetIsDM
+    - GetIsDMPossessed
+    - GetIsPC
+    - SetAssociateState
+    - SetFormerMaster
+  categories:
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Jochem van 't Hull
+  - Lilac Soul

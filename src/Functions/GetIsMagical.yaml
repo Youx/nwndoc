@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetIsMagical
+shortdesc: Checks for predefined groups of magical effects on an item to determine if it is magical.
+return: int
+parameters:
+  - type: object
+    name: oItem
+description: |
+  Returns True if item has one of the following 'magical' properties: 
+  Enhancement Bonus 
+  Enhancement Bonus vs Alignment Group 
+  Enhancement Bonus vs Racial Group 
+  Enhancement Bonus vs Alignment Group 
+  Attack Bonus 
+  Attack Bonus vs Alignment Group 
+  Attack Bonus vs Racial Group 
+  Attack Bonus vs Specific Alignment 
+  Ac Bonus 
+  This is a simple wrapper function that uses a large IF statement to call the GetItemHasItemProperty() function.
+remarks: |
+  Function is define in nw_o0_itemmaker.nss on line 186. 
+  This is a very limited check, it does not look for Unique Powers or anything not listed above.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.22
+seealso:
+  functions:
+    - GetItemHasItemProperty
+    - IsValidBaseItem
+  categories:
+    - Module Specific
+author: John Shuell
+

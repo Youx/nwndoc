@@ -1,0 +1,32 @@
+---
+type: Function
+name: TalentSkill
+shortdesc: Creates a skill talent
+return: talent
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+description: |
+  Create a Skill Talent. 
+  This should not be used - it doesn't currently work.
+remarks: |
+  The SKILL_* constants reflect rownumbers in skills.2da 
+  It should do the same as ActionUseSkill(), but currently is broken and using it doesn't work in anyway whatsoever. Definatly use ActionUseSkill() until it is fixed or removed.
+bugs: |
+  Currently, anytime this is used, it is invalid and if passed into ActionUseTalent, it will result in the NPC not doing anything and standing there.
+version: 1.30
+example: |
+  // Code sample is invalid as it won't work. TalentSpell/Feat/Skill doesn't work.
+seealso:
+  functions:
+    - TalentFeat
+    - TalentSpell
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - SKILL_* Constants
+author: Lilac Soul
+editor: Jasperre
+

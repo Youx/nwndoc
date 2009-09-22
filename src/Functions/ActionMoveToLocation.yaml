@@ -1,0 +1,48 @@
+---
+type: Function
+name: ActionMoveToLocation
+shortdesc: Moves an NPC to a location before executing further actions in the action queue.
+return: void
+parameters:
+  - type: location
+    name: locDestination
+    desc: | The object will move to this location. If the location is invalid or a path cannot be found to it, the command does nothing.
+
+  - type: int
+    name: bRun
+    default: FALSE
+    desc: | If this is TRUE, the action subject will run rather than walk (Default: FALSE)
+
+description: |
+  The action subject will move to locDestination. The function call waits for the subject to reach locDestination before executing further actions in the action queue. 
+  If an error occurs the log file will contain "MoveToPoint failed."
+remarks: |
+  This function is designed for creatures (NPCs and PCs). You cannot move placeable objects in NWN. To cause a PC or NPC who is not the calling object to execute this command, use AssignCommand(). 
+  Move to location functions (ActionForceMoveToLocation, ActionMoveToLocation) seem to try to move to their destination in a straight line, unlike move to object functions (ActionForceMoveToObject, ActionMoveToObject) which actually do path finding. Furthermore, the move to location functions get interrupted very easily. If anything bumps or obstructs the moving object then the command is finished.
+bugs: |
+  This function ignores the commandable state of the creature given the action. Thus, the ActionMoveToLocation action is added to the end of non-commandable creatures' action queues.
+version: 1.61
+example: |
+  // make the calling subject walk to a waypoint
+  void main()
+  {
+       object oWP = GetObjectByTag("my_waypoint");
+       location lDestination = GetLocation(oWP);
+       ActionMoveToLocation(lDestination,FALSE);
+  }
+seealso:
+  functions:
+    - ActionForceMoveToLocation
+    - ActionJumpToLocation
+    - ActionMoveAwayFromLocation
+    - ActionMoveToObject
+    - MoveToNewLocation
+  categories:
+    - Action on Object
+    - Core AI
+    - Movement
+author: Brett Lathrope
+editor: Lilac Soul
+additional_contributors:
+  - Harold Myles
+  - Lilac Soul

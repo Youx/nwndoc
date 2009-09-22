@@ -1,0 +1,52 @@
+---
+type: Function
+name: EffectMovementSpeedIncrease
+shortdesc: Create a Movement Speed Increase effect to speed target movement rate.
+return: effect
+parameters:
+  - type: int
+    name: nPercentChange
+    desc: | Percentage change in movement speed
+
+description: |
+  Returns a new effect object that when applied to a target will speed their rate of movement by nPercentChange percent. 
+  nPercentChange can be from 0 to 99: 
+  0 = no change in speed 
+  50 = 50% faster 
+  99 = almost twice as fast 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This effect is stopped with immunity to movement speed decreases. 
+  This will stack and hinder people more with Haste and other movement speed increases - the movement speed decreases and slow will mearly cancle each other out (thus you walk/run at normal speed with both haste and slow on you) 
+  A quick note is that all PC movement rates are 2.00, as defined in CreatureSpeed.2da. That is thier walkrate, thier runrate is 4.00. This is likely tha amount of distance, in meters, they can cover in 1 six-second round. 
+  There is no way to directly change a PC's movement speed (say, to 5.00 meters a round). You can make them up to almost immobile, to 99% faster. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a 50% movement speed increase
+  // bonus to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eGoFast = EffectMovementSpeedIncrease(50);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HASTE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eGoFast, oTarget);
+  }
+seealso:
+  functions:
+    - EffectMovementSpeedDecrease
+  categories:
+    - Effects
+    - Movement
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

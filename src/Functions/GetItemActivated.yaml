@@ -1,0 +1,40 @@
+---
+type: Function
+name: GetItemActivated
+shortdesc: Retrieve the item which was activated to trigger the module's OnActivateItem event.
+return: object
+parameters:
+description: |
+  Returns object that was activated. Use this in a module's OnActivateItem event script to get the item that was activated.
+remarks: |
+  This function should only be used in the OnActivateItem module event (see Edit menu -> Module Properties -> Events tab). 
+  Note that "item" refers to inventory objects. You can't use OnActivateItem to refer to a placeable object, such as a trap or switch. In those cases, use the placeable object's OnUsed event, or the trap's OnEnter event. 
+  Since you cannot place scripts on items, using the module's OnActivateItem event is the only way to script custom items. The most common usage is to call GetItemActivated(), and then use a series of if statements to script the behavior for various custom items in the module (see example below). 
+version: 1.22
+example: |
+  //Place in module's OnActivateItem event script
+  void main()
+  {
+      object oItem = GetItemActivated();
+      string sTag = GetTag( oItem );
+      if ( sTag == "WAND_RANDOM_SPELL" ) 
+      {
+          //code for behavior of the Random Spell wand
+      }
+      else if ( sTag == "ROD_HEALGOOD" )
+      {
+          //code for behavior of Wand that only heals good creatures
+      }
+      //etc...
+  }
+seealso:
+  functions:
+    - GetBaseItemType
+    - GetItemActivatedTargetLocation
+  categories:
+    - Action on Object
+  events:
+    - OnActivateItem
+author: Jason Harris
+editor: Kristian Markon
+

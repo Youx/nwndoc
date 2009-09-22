@@ -1,0 +1,30 @@
+---
+type: Function
+name: SurrenderAllToEnemies
+shortdesc: Causes all NPC's in the same faction as the given character to surrender.
+return: void
+parameters:
+  - type: object
+    name: oSurrendering
+    default: OBJECT_SELF
+    desc: | The NPC whose faction will surrender. (Default: OBJECT_SELF)
+
+description: |
+  Cause all members of the faction of the given surrendering character (oSurrendering) to issue a SurrenderToEnemies call. 
+  That means all NPC's in a 10 metre radius stop what they are doing, and enemies become neutral for 3 minutes. 
+  Only works if the faction member is in the same area as oSurrendering and is not a PC
+remarks: |
+  Does not work on PCs, but DOES work on their associates. 
+  Also note that x0_i0_partywide is already included in x0_i0_common. So you will only need to include one, not both.
+requirements: |
+  #include "x0_i0_partywide"
+version: 1.61
+seealso:
+  functions:
+    - AdjustReputation
+    - SurrenderToEnemies
+  categories:
+    - Combat Actions
+    - Reputation/Faction
+author: Grimlar
+

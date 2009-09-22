@@ -1,0 +1,18 @@
+---
+type: Function
+name: CanAffordIt
+shortdesc: This function checks to see if the player can afford to use the portal
+return: int
+parameters:
+description: |
+  This function is used by the official campaign to determine if the PC can afford to use the portal. The function also removes the requisite amount of gold from the PC. Found in: nw_all_feedback5.nss
+remarks: |
+  Used by offical sp campaign.
+requirements: |
+  #include "nw_all_feedback5"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: Michael Nork
+

@@ -1,0 +1,53 @@
+---
+type: Function
+name: CopyLocals
+shortdesc: Copies locals from earlier level henchmen to newer henchman
+return: void
+parameters:
+  - type: object
+    name: oSource
+    desc: | Previous henchman
+
+  - type: object
+    name: oTarget
+    desc: | New henchman
+
+description: |
+  * Copies locals from the 'earlier' 
+  * level henchmen to the newer henchman. 
+remarks: |
+  Found in: nw_i0_henchman.nss: 378 
+  Sets some variables on oTarget that were found on oSource. These variables are, perhaps apart from SetBeenHired, only useful in the official campaign, and there is probably little need to use this function for most of us.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.22
+example: |
+  //version 1.28 source for this function
+  void CopyLocals(object oSource, object oTarget)
+  {
+  //    AssignCommand(PC(), SpeakString("in here"));
+  //    AssignCommand(oTarget, SpeakString("I exist"));
+      if (GetIsObjectValid(oTarget) == FALSE)
+      {
+          AssignCommand(PC(), SpeakString("Target invalid"));
+      }
+      else
+      if (GetIsObjectValid(oSource) == FALSE)
+      {
+          AssignCommand(PC(), SpeakString("Source invalid"));
+      }
+    SetBeenHired(GetBeenHired(oSource), oTarget);
+    SetStoryVar(1, GetStoryVar(1, oSource), oTarget);
+    SetStoryVar(2, GetStoryVar(2, oSource), oTarget);
+    SetStoryVar(3, GetStoryVar(3, oSource), oTarget);
+    SetLocalInt(oTarget, "NW_ASSOCIATE_MASTER", GetLocalInt(oSource, "NW_ASSOCIATE_MASTER"));
+  //  AssignCommand(PC(),SpeakString(IntToString(GetLocalInt(oSource, "NW_ASSOCIATE_MASTER"))));
+  //  AssignCommand(PC(),SpeakString(IntToString(GetLocalInt(oTarget, "NW_ASSOCIATE_MASTER"))));
+  }
+seealso:
+  functions:
+    - SetBeenHired
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+

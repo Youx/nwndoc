@@ -1,0 +1,19 @@
+---
+type: Function
+name: GetLeftDirection
+shortdesc: This function returns a float representing a direction +90 degrees
+return: float
+parameters:
+  - type: float
+    name: fDirection
+description: |
+  This is a convenience function that returns a float representing a normalized angle that is +90 degrees from fDirection. (IE, what you would use to make an object turn to the left.)
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

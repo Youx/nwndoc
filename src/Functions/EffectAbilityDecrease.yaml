@@ -1,0 +1,59 @@
+---
+type: Function
+name: EffectAbilityDecrease
+shortdesc: Creates an ability decreasing effect on specified ability score.
+return: effect
+parameters:
+  - type: int
+    name: nAbility
+    desc: | ABILITY_*
+
+  - type: int
+    name: nModifyBy
+    desc: | This is the amount by which to decrement the ability score.
+
+description: |
+  Removes specified amount nModifyBy from nAbility score on an object. nModifyBy must be a positive number less than 10; if a negative number is passed, nothing occurs. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Ability Decreases do NOT stack! 
+  Stupidly, unlike EffectAbilityIncrease, only the highest penalty applies. 
+  They do stack with penalties from EffectCurse() (which do not stack in themselves) and EffectNegativeLevel(). 
+  It is unknown if multiple penalties to statistics on items stack or not, and likely not. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 1 strength damage to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDrain = EffectAbilityDecrease(ABILITY_STRENGTH, 1);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDrain, oTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - EffectAbilityIncrease
+    - EffectAttackDecrease
+    - EffectAttackIncrease
+  categories:
+    - Effects
+  constants:
+    - ABILITY_* Constants
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Matthew Miller
+  - Jeremy Hinkle
+  - LeegleechN
+  - Charles Feduke
+  - Jasperre

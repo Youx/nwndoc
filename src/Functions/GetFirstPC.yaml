@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetFirstPC
+shortdesc: Obtains the first PC
+return: object
+parameters:
+description: |
+  Returns the first PC in the PC list in order to cycle through all PCs with GetNextPC().
+remarks: |
+  Useful for debugging purposes. If only one person is testing the module you can use SendMessageToPC(GetFirstPC(), "Something Happened") and the first (and only) PC will see that message.
+version: 1.22
+example: |
+  // This function cycles through all PCs and counts how many there are
+  void main()
+  {
+     int nPCs = 0;
+     object oPC = GetFirstPC();
+     while (GetIsObjectValid(oPC) == TRUE)
+     {
+        nPCs = nPCs+1; // nPCs++;
+        oPC = GetNextPC();
+     }
+  }
+seealso:
+  functions:
+    - GetNextPC
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+editor: Charles Feduke
+

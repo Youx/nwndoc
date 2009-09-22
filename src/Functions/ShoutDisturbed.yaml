@@ -1,0 +1,25 @@
+---
+type: Function
+name: ShoutDisturbed
+shortdesc: Turns NPCs of the container's faction hostile towards the PC that destroyed or opened the container.
+return: void
+parameters:
+description: |
+  Does two separate checks to see whether the container has been destroyed, or just opened. The only difference is the PC identifier method (LastAttacker / LastOpener). 
+  The function then sends out a spherical 'shout' to all creatures within that are of the containers faction. It makes all faction members within to temporary enemy status towards the PC.
+remarks: |
+  Script: nw_o2_coninclude.nss: Line: 4484
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.29
+seealso:
+  categories:
+    - Action on Object
+    - Reputation/Faction
+    - Targeting
+  events:
+    - OnDeath
+    - OnDisturbed
+    - OnOpen
+author: Jody Fletcher
+

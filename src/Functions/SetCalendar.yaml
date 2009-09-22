@@ -1,0 +1,43 @@
+---
+type: Function
+name: SetCalendar
+shortdesc: Set calendar date for the module.
+return: void
+parameters:
+  - type: int
+    name: nYear
+    desc: | Specific year to set calendar to from 1340 to 32001.
+
+  - type: int
+    name: nMonth
+    desc: | Specific month to set calendar from 1 to 12.
+
+  - type: int
+    name: nDay
+    desc: | Specific day to set calendar to from 1 to 28.
+
+description: |
+  Sets the current year, month and day for the module.
+remarks: |
+  If values larger than the month or day are specified, they will be wrapped around and the overflow will be used to advance the next field. e.g. Specifying a year of 1350, month of 33 and day of 10 will result in the calender being set to a year of 1352, a month of 9 and a day of 10.
+bugs: |
+  There is still a bug with advancing the time when setting the month to higher than 13, though it doesn’t always set the month to 12. 
+  The previously noted bug about not being able to set the year to before 1340 has been fixed a while ago. 
+version: 1.30
+seealso:
+  functions:
+    - GetAge
+    - GetCalendarDay
+    - GetCalendarMonth
+    - GetCalendarYear
+    - SetTime
+    - SetWeather
+  categories:
+    - Time
+  events:
+    - OnModuleLoad
+author: Jody Fletcher
+editor: Lilac Soul
+additional_contributors:
+  - Jon Dewey
+  - Lilac Soul

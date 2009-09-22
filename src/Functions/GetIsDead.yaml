@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetIsDead
+shortdesc: Determines if a creature is dead or dying.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to be investigated.
+
+description: |
+  Returns TRUE if oCreature is a dead NPC, dead PC or a dying PC, otherwise FALSE.
+remarks: |
+  A creature is considered dead if they have 0 or less hit points. PC's actually die at -10 hit points, but are considered dead when this is used.
+version: 1.22
+seealso:
+  categories:
+    - Miscellaneous
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

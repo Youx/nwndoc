@@ -1,0 +1,51 @@
+---
+type: Function
+name: CreateTrapAtLocation 
+shortdesc: Creates a square Trap object.
+return: object
+parameters:
+  - type: int
+    name: nTrapType
+    desc: | The base type of trap. TRAP_BASE_TYPE_*
+
+  - type: location
+    name: lLocation
+    desc: | The location and orientation that the trap will be created at.
+
+  - type: float
+    name: fSize
+    default: 2.0f
+    desc: | The size of the trap. Minimum size allowed is 1.0f. If no value set, defaults to 2.0f.
+
+  - type: string
+    name: sTag
+    default: ""
+    desc: | The tag of the trap being created. If no value set, defaults to an empty string.
+
+  - type: int
+    name: nFaction
+    default: STANDARD_FACTION_HOSTILE
+    desc: | The faction of the trap. STANDARD_FACTION_*
+
+  - type: string
+    name: sOnDisarmScript
+    default: ""
+    desc: | The OnDisarm script that will fire when the trap is disarmed. If no value set, defaults to an empty string and no script will fire.
+
+  - type: string
+    name: sOnTrapTriggeredScript
+    default: ""
+    desc: | The OnTrapTriggered script that will fire when the trap is triggered. If no value set, defaults to an empty string and the default OnTrapTriggered script for the trap type specified will fire instead (as specified in the traps.2da).
+
+description: |
+  Creates a square Trap object.
+version: 1.67
+seealso:
+  functions:
+    - CreateTrapOnObject
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress

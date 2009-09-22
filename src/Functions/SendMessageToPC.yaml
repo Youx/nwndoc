@@ -1,0 +1,43 @@
+---
+type: Function
+name: SendMessageToPC
+shortdesc: Sends a message to the PC.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | specific PC to send message to.
+
+  - type: string
+    name: sMessage
+    desc: | Message to be sent to the PC.
+
+description: |
+  Send a 'Combat Message' string (sMessage) to the oPlayer. Messages appear as yellow text in any chat windows that display combat messages.
+remarks: |
+  Useful tool for debugging scripts; you can use it to display the value of variables, position within a script, etc. 
+  If you attempt to send too many SendMessageToPC() commands at the same time the messages will begin to be dropped, causing some of the messages to not appear at all. 
+  It is possible to have the messages appear in all sorts of colors. It is very easy, but it requires a little more than just scripting. You can download a small demo-module with documentation on how to do this at this url: 
+  http://nwvault.ign.com/Files/scripts/data/1041698002718.shtml
+version: 1.29
+example: |
+  // sample debug call, covers many testing bases:
+  void debug( string sMessage ) {
+    SendMessageToPC( GetFirstPC(), sMessage );
+    SendMessageToAllDMs( sMessage );
+    PrintString( sMessage );
+  }
+seealso:
+  functions:
+    - PrintString
+    - SendMessageToAllDMs
+    - SendMessageToPCByStrRef
+  categories:
+    - Debug
+    - PC Only
+    - String
+author: Iskander Merriman
+editor: Lilac Soul
+additional_contributors:
+  - John Platte
+  - Lilac Soul

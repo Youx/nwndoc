@@ -1,0 +1,38 @@
+---
+type: Function
+name: FindSubString
+shortdesc: Returns the position of sSubstring in sString.
+return: int
+parameters:
+  - type: string
+    name: sString
+    desc: | sSubString
+
+  - type: string
+    name: sSubString
+description: |
+  Returns an integer value representing the position of sSubstring in sString. The search is case sensitive. 
+  Returns a base zero index of where sSubstring starts in sString if found. 
+  Returns -1 if sSubstring is not found to exist in sString. 
+version: 1.22
+example: |
+  //Example 1 - The following would return a value of 0.
+    int nPostion = FindSubString("testing","test");
+  //Example 2 - The following would return a value of 1.
+    int nPostion = FindSubString("testing","est");
+  //Example 3 - The following would return a value of -1.
+    int nPostion = FindSubString("testing","mike");
+  //Example 4 - The following would return a value of -1.
+    int nPostion = FindSubString("testing","Test");
+seealso:
+  functions:
+    - GetStringLeft
+    - GetStringLength
+    - GetStringLowerCase
+    - GetStringRight
+    - GetStringUpperCase
+    - TestStringAgainstPattern
+  categories:
+    - String
+author: Brett Lathrope
+

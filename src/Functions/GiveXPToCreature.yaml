@@ -1,0 +1,50 @@
+---
+type: Function
+name: GiveXPToCreature
+shortdesc: Gives an amount of experience to the specified creature.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Specific creature to give experience to.
+
+  - type: int
+    name: nXpAmount
+    desc: | Amount of experience to give.
+
+description: |
+  Gives nXpAmount to oCreature, adjusted by any multiclass penalty. 
+  nXpAmount cannot be negative, however, SetXP() can make a PC lose experience to, for example, make a PC de-level to level 1.
+remarks: |
+  This will always take into account anything that the default XP from killing creatures (settable in the module properties) would - thusly, multiclassing. 
+  It reports a message to the PC getting the experience too, with the amount nXpAmount being given. 
+  This function will not do anything to NPCs (even henchmen) or Dungeon Masters (they do not "level" at all). This begs the question why it is even oCreature at all, when oPC would be more appropriate and less confusing. 
+  Also note that there are several functions which automatically give approprate party experience and so on, check the lexicon under "Experience".
+bugs: |
+  Bugs with Prestiege classes and multiclass experience points are/were fixed in 1.64. The problem with "You have gained 0 experience" appearing for any type of experience giving now has the message remove in the 1.64 patch.
+version: 1.64
+example: |
+  // Give the PC (and only the one PC) 50 experience in a 
+  // conversation action event.
+  void main()
+  {
+      // Get the PC
+      object oPC = GetPCSpeaker()
+      // Give the experience
+      GiveXPToCreature(oPC, 50);
+  }
+seealso:
+  functions:
+    - AddJournalQuestEntry
+    - GetJournalQuestExperience
+    - RewardPartyXP
+    - SetXP
+  categories:
+    - Action on Object
+    - Experience
+author: Jody Fletcher
+editor: Jasperre
+additional_contributors:
+  - Alec Usticke
+  - Charles Feduke
+  - Jasperre

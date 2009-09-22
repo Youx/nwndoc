@@ -1,0 +1,22 @@
+---
+type: Function
+name: ActionPauseConversation
+shortdesc: Pause the current conversation.
+return: void
+parameters:
+description: |
+  Pause the current conversation at the node in the conversation file which called this function from its Action Taken script.
+remarks: |
+  You must call this function with the caller having an empty action queue, otherwise it will have no effect. Use ClearAllActions() for this, if calling ActionPauseConversation() has no effect. 
+  If you pause the conversation at a PC response node, the PC's choice will be highlighted until you call ActionResumeConversation(), the PC cancels the conversation, or the PC runs out of range.
+version: 1.22
+seealso:
+  functions:
+    - ActionResumeConversation
+    - ActionStartConversation
+    - GetLastSpeaker
+  categories:
+    - Action on Object
+    - Conversation
+author: Troels Therkelsen
+

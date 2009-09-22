@@ -1,0 +1,35 @@
+---
+type: Function
+name: SoundObjectPlay
+shortdesc: Play a sound object.
+return: void
+parameters:
+  - type: object
+    name: oSound
+    desc: | Sound object to be played.
+
+description: |
+  Play sound object created and placed in module using the Sound Wizard.
+remarks: |
+  PlaySound() and SoundObjectPlay() perform different functions. SoundObjectPlay() plays a sound object, which may comprise many sound resources. PlaySound(), in contrast, plays a single sound resource. Sound objects have additional properties as well, such as location and looping characteristics. SoundObjectPlay() may thus be an appropriate choice for controlling area noises, such those associated with OnEnter events. 
+  Note that the sound list of the object is set by default to play at random. So if you have a list of several sounds you want all to play, then go to the Advanced tab of the sound object's properties and change the Play Order to Sequential. If you want it to play at the exact same time, you will need to create multiple sound objects. 
+version: 1.22
+example: |
+  // Placed on the OnEnter event of a generic trigger;
+  // plays a sound object comprising many tavern sounds created with the sound wizard
+  void main()
+  {
+      object oSound = GetObjectByTag("TavernGroup");
+      SoundObjectPlay(oSound);
+  }
+seealso:
+  functions:
+    - AmbientSoundChangeDay
+    - PlaySound
+    - SoundObjectSetVolume
+    - SoundObjectStop
+  categories:
+    - Sound Effects
+author: Kristian Markon
+editor: Maximus
+

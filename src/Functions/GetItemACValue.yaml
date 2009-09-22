@@ -1,0 +1,84 @@
+---
+type: Function
+name: GetItemACValue
+shortdesc: Get the armor class (AC) of an item.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item whose AC is to be determined.
+
+description: |
+  Returns the armor class (AC) of oItem. Returns 0 if oItem is not a valid item, or if oItem has no armor value. 
+  Could possibly return 0 or a negative value if there are enough negative penalties on a piece of armor, it is clothing (armor with AC of 0), or somesuch circumstance.
+remarks: |
+  This will return the full AC value of an item - taking into account all modifiers on the item in regards to +/- AC. 
+  It will not take into account ability changes, nor if there is an exsisting amount of that bonus type (for example, wearing +1 armor, thus using a +1 Armor AC modifier, will not stack with Epic Mage Armor, which gives +5 in Armor AC bonuses). 
+  For a function that will return the base armor value of an item, check the code sample. There are various ways to do this, and it can be easily done using 2da files, item property checking and so forth, but to be honest, the code provided is quite simple enough, and easier to understand!
+version: 1.62
+example: |
+  // Example of a time to use this function, when a blacksmith needs
+  // to check if a piece of armor the character is wearing can be
+  // actually forged.
+  // It can only be forged if it is has an total AC of 4 to 7. This is
+  // when it will return TRUE.
+  void main()
+  {
+      // Get the item
+      object oItem = GetItemInSlot(INVENTORY_SLOT_CHEST, GetPCSpeaker());
+      // Get the AC value of it
+      int nAC = GetItemACValue(oItem);
+      // Check the value
+      if(nAC >= 3 && nAC <= 7)
+      {
+          // Passes
+          return TRUE;
+      }
+      return FALSE;
+  }
+  // Sample code 2. This is a very simple function that will accuratly
+  // use the unidentified (base price of that item type) to get the
+  // base AC value.
+  // So, 0 is clothing, up to 8, which is full plate.
+  // Returns the base armor type as a number, of oItem
+  // -1 if invalid, or not armor, or just plain not found.
+  // 0 to 8 as the value of AC got from the armor - 0 for none, 8 for Full plate.
+  int GetArmorType(object oItem)
+  {
+      // Make sure the item is valid and is an armor.
+      if (!GetIsObjectValid(oItem))
+          return -1;
+      if (GetBaseItemType(oItem) != BASE_ITEM_ARMOR)
+          return -1;
+      // Get the identified flag for safe keeping.
+      int bIdentified = GetIdentified(oItem);
+      SetIdentified(oItem,FALSE);
+      int nType = -1;
+      switch (GetGoldPieceValue(oItem))
+      {
+          case    1: nType = 0; break; // None
+          case    5: nType = 1; break; // Padded
+          case   10: nType = 2; break; // Leather
+          case   15: nType = 3; break; // Studded Leather / Hide
+          case  100: nType = 4; break; // Chain Shirt / Scale Mail
+          case  150: nType = 5; break; // Chainmail / Breastplate
+          case  200: nType = 6; break; // Splint Mail / Banded Mail
+          case  600: nType = 7; break; // Half-Plate
+          case 1500: nType = 8; break; // Full Plate
+      }
+      // Restore the identified flag, and return armor type.
+      SetIdentified(oItem,bIdentified);
+      return nType;
+  }
+seealso:
+  functions:
+    - ActionEquipMostEffectiveArmor
+    - GetAC
+    - GetBaseItemType
+  categories:
+    - Get Data from Object
+author: Jason Harris
+editor: Jasperre
+additional_contributors:
+  - Kristian Markon
+  - Jasperre

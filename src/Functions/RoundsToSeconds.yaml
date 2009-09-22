@@ -1,0 +1,40 @@
+---
+type: Function
+name: RoundsToSeconds
+shortdesc: Converts a number of rounds into seconds.
+return: float
+parameters:
+  - type: int
+    name: nRounds
+    desc: | The number of rounds to convert into seconds.
+
+description: |
+  Returns the value of nRounds converted into seconds. A single round is 6.0 seconds.
+remarks: |
+  In P&P D&D, a round doesn't actually exsist. They declare them as turns, and so don't get confused by there being rounds in NwN.
+version: 1.22
+example: |
+  // We wait 2 rounds until we apply damage from some poison. 
+  // Uses the first PC in the module
+  void main()
+  {
+      // Get who to damage
+      object oTarget = GetFirstPC();
+      // Declare magical damage
+      effect eDam = EffectDamage(5);
+      // Get delay - should be 12.0 seconds.
+      float fDelay = RoundsToSeconds(2);
+      // Delay the damage
+      // * Note: Putting EffectDamage directly into the function here would result in an invalid DelayCommand().
+      DelayCommand(fDelay, ApplyEffectToObject(DURATION_TYPE_INSTANT, eDam, oTarget));
+  }
+seealso:
+  functions:
+    - GetTimeSecond
+    - TurnsToSeconds
+  categories:
+    - Time
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Jasperre
+

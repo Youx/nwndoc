@@ -1,0 +1,30 @@
+---
+type: Function
+name: GenerateTreasure
+shortdesc: This is the Main function in the NWN Treasure Distribution System
+return: void
+parameters:
+  - type: int
+    name: nTreasureType
+    desc: | The Treasure type to generate
+
+  - type: object
+    name: oLastOpener
+    desc: | The last person opening the container
+
+  - type: object
+    name: oCreateOn
+    desc: | The Container to create the treasure in
+
+description: |
+  This function creates the treasure all of the players so greedily grab up in NWN. This function in turn calls any one of several Create<Item> functions that will create class/race/proficiency specific/general magical/normal weapons/armor/items.
+remarks: |
+  Found in nw_o2_coninclude.nss. The Create<Weapons> scripts are all in nw_o2_feat
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.22
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+

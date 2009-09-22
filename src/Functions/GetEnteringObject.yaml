@@ -1,0 +1,40 @@
+---
+type: Function
+name: GetEnteringObject
+shortdesc: Gets the object that last opened or entered the calling object.
+return: object
+parameters:
+description: |
+  Returns the object that last opened or entered the calling object. 
+  The value returned by this function depends on the object type of the caller: (1) If the caller is a door or placeable it returns the object that last triggered it. (2) If the caller is a trigger, area of effect, module, area or encounter it returns the object that last entered it. 
+  Return value on error: OBJECT_INVALID.
+version: 1.22
+example: |
+  // Greet any Players that come into a trigger set around a drunk in a tavern.
+  void main()
+  {
+      if(GetIsPC(GetEnteringObject()))
+      {
+          AssignCommand(GetNearestObjectByTag("TavernPatron"),SpeakOneLinerConversation("DrunkGreeting"));
+          AssignCommand(GetNearestObjectByTag("TavernPatron"),ActionPlayAnimation(ANIMATION_LOOPING_PAUSE_DRUNK));
+      }
+  }
+seealso:
+  functions:
+    - GetClickingObject
+    - GetExitingObject
+  categories:
+    - Action on Object
+    - Area
+    - Encounter
+    - Module
+    - Spells
+    - Traps
+  events:
+    - OnClientEnter
+    - OnEnter
+    - OnOpen
+    - OnUsed
+author: John Shuell
+editor: Kristian Markon
+

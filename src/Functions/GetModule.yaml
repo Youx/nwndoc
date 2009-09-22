@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetModule
+shortdesc: Gets the object describing the module.
+return: object
+parameters:
+description: |
+  Returns the module object. On error will return OBJECT_INVALID. Used with GetLocal* and SetLocal* functions for creating global (module-level) variables.
+remarks: |
+  If there is a return of OBJECT_INVALID then that would mean that the game has crashed wouldn't it? I haven't been able to test this.
+version: 1.22
+example: |
+  // sends the tag of the module to the first PC
+  void main()
+  {
+      SendMessageToPC(GetFirstPC(),GetTag(GetModule()));
+  }
+seealso:
+  functions:
+    - GetModuleName
+  categories:
+    - Module
+author: GoLeM
+editor: Charles Feduke
+

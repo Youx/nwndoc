@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetLockedObject
+shortdesc: Finds the closest locked object up to a maximum of 10 objects away.
+return: object
+parameters:
+  - type: object
+    name: oMaster
+    desc: | The object to search out from.
+
+description: |
+  Returns the closest object that is locked within a 10 object radius. If there are no locked objects within the 10 object radius then it will return OBJECT_INVALID.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.22
+example: |
+  // Will find if any objects are locked within 10 objects
+  #include "nw_i0_generic"
+  void main()
+  {
+      object a = GetLockedObject(OBJECT_SELF);
+      if(a != OBJECT_INVALID)
+          SendMessageToPC(GetFirstPC(),"YEAH I FOUND ONE");
+  }
+seealso:
+  functions:
+    - GetLocked
+    - GetLockKeyRequired
+    - GetLockLockable
+  categories:
+    - Get Data
+    - Henchmen/Familiars/Summoned
+author: GoLeM
+editor: John Shuell
+

@@ -1,0 +1,34 @@
+---
+type: Function
+name: CreatePotion
+shortdesc: Creates a random potion in a container as part of the treasure system.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Container to create the item in.
+
+  - type: object
+    name: oAdventurer
+    desc: | Player to derive level from.
+
+  - type: int
+    name: nModifier
+    default: 0
+    desc: | Modifier to increase teasure level. (Default: 0)
+
+description: |
+  This function creates a random potion in the container based on the level of oAdventurer + nModifier. This function is part of the NWN Treasure Distribution System.
+remarks: |
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+additional_contributors:
+  - LeegleechN
+  - Lilac Soul

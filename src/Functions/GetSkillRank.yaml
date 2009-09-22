@@ -1,0 +1,63 @@
+---
+type: Function
+name: GetSkillRank
+shortdesc: Determines a creature's rank in particular skill.
+return: int
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The creature to check what rank they have in nSkill. (Default: OBJECT_SELF)
+
+  - type: int
+    name: nBaseSkillRank
+    default: FALSE
+    desc: | If set to TRUE returns the number of base skill ranks oTarget has. (Default: FALSE)
+
+description: |
+  Returns the number of ranks that oTarget has in nSkill. If you want the number of base ranks put in on level up, set nBaseSkillRank to be TRUE. Otherwise the total returned will include bonuses from things like ability scores, feats, etc. 
+  If nSkill is untrained this function returns 0, and -1 if oTarget doesn't have nSkill. See known bugs for why it might never return -1.
+remarks: |
+  Use GetHasSkill to see if they have the skill and can use it, for example, to check if they have a useable Animal Empathy in a conversation. This mearly returns the value of ranks they have - therefore, it normally does return at least 0, you can't make yourself have negative ranks! 
+  The fact that it returns the ranks may mean it never returns -1, as noted below, even though the description says it. 
+  The ranks of a skill (with nBaseSkillRank = FALSE) is what is on the character sheet - thusly, it includes all bonuses (items, spells, area-affecting, etc) and penalties, into one number. Obviously, this might be why it returns 0 for untrained skills, or even negative numbers if, I guess.
+bugs: |
+  Its been remarked that it appears to be returning 0, not -1, if a PC does not have any ranks in a skill and it it one that requires training. 
+  This is reported to not include synergy bonuses from skills that work together - for example, Set Trap and Disarm Trap.
+version: 1.67
+example: |
+  // This script would be placed in a conversation
+  // where the player challenges the Master Bard to
+  // a performance duel.
+  void main()
+  {
+      // Initialize Objects
+      object oPlayer = GetPCSpeaker();
+      // Determine skill checks
+      int iPPerCheck = d20(1) + GetSkillRank(SKILL_PERFORM, oPlayer);
+      int iMPerCheck = d20(1) + GetSkillRank(SKILL_PERFORM, OBJECT_SELF);
+      // Compare the two skill checks
+      if (iPPerCheck > iMPerCheck)
+      {
+           // Player wins perform duel
+           // Place reward code here
+      }
+      else
+      {
+           //Player looses perform duel
+           //Place failure code here
+      }
+  }
+seealso:
+  functions:
+    - ActionUseSkill
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - SKILL_* Constants
+author: Tom Cassiotis
+editor: Jasperre

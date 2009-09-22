@@ -1,0 +1,31 @@
+---
+type: Function
+name: DetermineAssociateCombatRound
+shortdesc: This function cannot be used
+return: void
+parameters:
+description: |
+  This function is found in nw_i0_assoc.nss and is the reason why that include file doesn’t work! The source code for the function looks as such: 
+  void DetermineAssociateCombatRound() 
+  { 
+  int nClass = GetClassByPosition(1); 
+  DetermineCombatRound(nClass); 
+  DebugSTR("I should be fighting"); 
+  } 
+  DetermineCombatRound requires an object before any integer fed to it, and indeed, trying to compile any script that includes nw_i0_assoc will produce a compile error. 
+remarks: |
+  Found in: nw_i0_assoc.nss: 23
+bugs: |
+  Doesn't work.
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.28
+seealso:
+  functions:
+    - DetermineCombatRound
+  categories:
+    - Core AI
+    - Prototyped but Unused
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

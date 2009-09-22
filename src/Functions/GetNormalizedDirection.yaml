@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetNormalizedDirection
+shortdesc: This function returns a float that is constrained from 0 - 360
+return: float
+parameters:
+  - type: float
+    name: fDirection
+    desc: | Direction to be normalized
+
+description: |
+  This is a convenience function that returns a normalized float that has been constrained to the range 0.0 - 360.0 so that it can be used as a direction.
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

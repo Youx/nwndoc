@@ -1,0 +1,18 @@
+---
+type: Function
+name: TalentSummonAllies
+shortdesc: Returns TRUE on successful use of such a talent, FALSE otherwise.
+return: int
+parameters:
+description: |
+  Returns TRUE on successful use of such a talent, FALSE otherwise.
+remarks: |
+  Part of Bioware’s default AI. In non-SoU, this function is in nw_i0_generic. In SoU, it is in x0_i0_talent. Even for SoU users, including nw_i0_generic will work though.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.30
+seealso:
+  categories:
+    - Talents/Skills/Feats
+author: Lilac Soul
+

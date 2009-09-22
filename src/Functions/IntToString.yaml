@@ -1,0 +1,33 @@
+---
+type: Function
+name: IntToString
+shortdesc: This function converts an int to a string representation of the same value.
+return: string
+parameters:
+  - type: int
+    name: nInteger
+    desc: | The integer to convert into a string.
+
+description: |
+  This function converts an integer to a string representation of the same value, so that converting 123 to a string would yield “123”.
+remarks: |
+  This function finds its best use in debugging, you can have objects speak these values or even write them to a log. 
+  Also very useful in letting the player know about all sorts of things, eg dynamic prices of services based on player level, or telling the player that he needs to lose 20 pounds (if there was a way to get his weight...)
+version: 1.28
+example: |
+  void main()
+  {
+  int foo = 300;
+  string bar =  IntToString(foo);
+  }
+seealso:
+  functions:
+    - IntToFloat
+    - IntToHexString
+    - StringToInt
+  categories:
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

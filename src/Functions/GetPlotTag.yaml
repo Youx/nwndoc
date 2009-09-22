@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetPlotTag
+shortdesc: Retrieves the plot tag for a specific quest.
+return: string
+parameters:
+description: |
+  Returns the plot (or journal) tag for the quest.
+remarks: |
+  GetPlotTag is once in every BioWare script file that controls a specific quest. This way the code that runs one quest looks very similar to another script. 
+  This function is of little use for general scripting 
+  needs.
+requirements: |
+  #include "nw_j_artifact"
+version: 1.22
+seealso:
+  functions:
+    - Global
+    - TakeArtifactItem
+    - TakeComplexItem
+    - TakeStoryItem
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

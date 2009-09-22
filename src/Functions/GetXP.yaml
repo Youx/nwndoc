@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetXP
+shortdesc: Get a given creature's experience.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Target creature.
+
+description: |
+  Returns oCreature's experience points (XP). 
+  Only player characters (PC's) can have experience. Anything else returns 0, and of course a newly created PC will also return 0. Dungeon masters may return different values if leveled up outside the DM client by moving them into the local vault, then back into the dm valut.
+remarks: |
+  One use for this function is if you want to take XP away from a PC. GiveXPToCreature doesn't work with negative amounts of XP, so you'll first have to calculate the XP the PC should have, then set it with SetXP. See code sample below for a wrapper function that can be used to both give and take XP from a PC.
+version: 1.61
+example: |
+  // Quick note: This function, unlike GiveXPToCreature(), could take
+  // nXP as a negative number, and thusly delevel them experience.
+  void GiveXP(object oPC, int nXP)
+  {
+      // Calculate new XP value
+      nXP=GetXP(oPC)+nXP;
+      SetXP(oPC, nXP);
+  }
+seealso:
+  functions:
+    - SetXP
+  categories:
+    - Experience
+    - Get Data from Creature
+author: Kristian Markon
+editor: Jasperre
+

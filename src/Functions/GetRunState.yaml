@@ -1,0 +1,16 @@
+---
+type: Function
+name: GetRunState
+shortdesc: Prototyped but not defined
+return: int
+parameters:
+description: |
+  Prototyped but not defined
+requirements: |
+  #include "nw_ch_fighter1"
+version: 1.22
+seealso:
+  categories:
+    - Prototyped but Unused
+author: Tom Cassiotis
+

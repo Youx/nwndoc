@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetHardness 
+shortdesc: Sets the hardness of a door or placeable.
+return: void
+parameters:
+  - type: int
+    name: nHardness
+    desc: | Must be between 0 and 250.
+
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | A door or placeable object. (Default = OBJECT_SELF)
+
+description: |
+  Sets the hardness of a door or placeable.
+  Does nothing if used on an object that is neither a door nor a placeable.
+version: 1.67
+seealso:
+  functions:
+    - GetHardness
+  categories:
+    - Action on Object
+author: Mistress

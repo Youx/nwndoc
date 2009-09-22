@@ -1,0 +1,37 @@
+---
+type: Function
+name: CreateGenericMonkWeapon
+shortdesc: Creates an appropriate monk weapon that fits the level of the PC, and places it in/on an object.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to receive the generic monk weapon. (Most likely a placeable with an inventory.)
+
+  - type: object
+    name: oAdventurer
+    desc: | PC who's total HD will be used to generate appropriate level of weapon.
+
+  - type: int
+    name: nModifier
+    default: 0
+    desc: | Additional HD levels you want to 'give' to the PC in determining level of weapon being spawned. (Default: 0)
+
+description: |
+  Creates one of a specific list of generic weapons that a monk would find helpful. This generic weapon is based off a random number and the total levels of the oAdventurer.
+remarks: |
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "NW_O2_CONINCLUDE"
+version: 1.61
+seealso:
+  functions:
+    - CreateGenericDruidWeapon
+    - CreateGenericExotic
+    - CreateGenericWizardWeapon
+    - CreateItemOnObject
+  categories:
+    - Item Creation
+author: Jody Fletcher
+editor: Lilac Soul
+

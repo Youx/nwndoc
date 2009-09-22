@@ -1,0 +1,41 @@
+---
+type: Function
+name: GetSubString
+shortdesc: Get a substring from within a string.
+return: string
+parameters:
+  - type: string
+    name: sString
+    desc: | Target string.
+
+  - type: int
+    name: nOffset
+    desc: | Character offset.
+
+  - type: int
+    name: nCount
+    desc: | Number of characters in substring.
+
+description: |
+  Returns a substring of sString containing nCount characters starting from offset nOffset. Returns an empty string on error.
+remarks: |
+  The parameter nOffset begins with 0 for the first character in a string, 1 for the second character, 2 for the third character and so on.
+version: 1.22
+example: |
+  void main()
+  {
+      string sString = "Hello World!";
+      // say "Hello"
+      SpeakString(GetSubString(sString, 0, 5));
+      // say "World!"
+      SpeakString(GetSubString(sString, 6, 6));
+  }
+seealso:
+  functions:
+    - GetStringLeft
+    - GetStringRight
+  categories:
+    - String
+author: Kristian Markon
+editor: Daniel Beckman
+

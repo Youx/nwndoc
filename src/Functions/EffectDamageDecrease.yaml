@@ -1,0 +1,56 @@
+---
+type: Function
+name: EffectDamageDecrease
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+  - type: int
+    name: nPenalty
+    desc: | The penalty to apply (Positive integer)
+
+  - type: int
+    name: nDamageType
+    default: DAMAGE_TYPE_*
+    desc: | The damage type of the damage decrease (Default: DAMAGE_TYPE_*)
+
+description: |
+  This constructor makes a new effect that reduces the amount of damage you do of type (Specefied by the penalty and damage type parameters), in melee. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently. 
+  The limit of nPenalty is unknown.
+remarks: |
+  Damage of X type only matters if the target already does damage of that type, where it will then decrease the damage done of that type (An Firey sword, +4 fire damage, will only do +2 fire damage if the DAMAGE_TYPE_ constant is FIRE and is applied using a nPenalty of 2), although, as it says below, the penalty will be applied even if they do no damage of that type. 
+  Strangely enough, when you apply a damage penalty of a certain type and the creature doesn't do any damage of that type already (EG: Acid penalty, but none of thier weapons do acid damage) it has: "0 Acid Damage" in the combat information box. The effect is still applied to damage rolls, but the information is incorrect in-game in this circumstance. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 5 decrease in fire damage done by 
+  // a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDamDecrease = EffectDamageDecrease(5, DAMAGE_TYPE_FIRE);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eDamDecrease, oTarget);
+  }
+seealso:
+  functions:
+    - EffectAttackDecrease
+    - EffectAttackIncrease
+    - EffectDamageIncrease
+    - EffectDamageResistance
+  categories:
+    - Effects
+  constants:
+    - DAMAGE_TYPE_* Constants
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetIsPossessedFamiliar
+shortdesc: Retrieves the controller status of a familiar.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Familiar to determine if it is possessed.
+
+description: |
+  Returns TRUE if the specified familiar is currently possessed by its master; returns FALSE if it not currently possessed by its master or if the familiar specified is not a valid creature.
+remarks: |
+  Most likely used as a condition before calling UnpossessFamiliar.
+version: 1.30
+seealso:
+  functions:
+    - UnpossessFamiliar
+  categories:
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Lilac Soul
+

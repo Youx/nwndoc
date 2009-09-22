@@ -1,0 +1,40 @@
+---
+type: Function
+name: EffectEntangle
+shortdesc: Create an Entangle effect
+return: effect
+parameters:
+description: |
+  When applied, this effect will restrict the creature's movement and apply a (-2) to all attacks and a -4 to AC. 
+  In P&P D&D, it is meant to add an additional concentration check for casting spells (DC: 15) but this is not in NwN. In NwN, entangle stops movement totally. 
+  Web is a form of Entangle, and uses the same effect (but, of course, you can't burn your way out...or laugh at someone doing it to the web anyway) 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Entangle is really useful for spells, such as...entangle! For traps and so on, it may be the same. It can only be stopped with direct immunity to Entangle. 
+  The effects will not stack, but 2 entangles can be both applied at once. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying entangle to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eEntangle = EffectEntangle();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SLOW);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eEntangle, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

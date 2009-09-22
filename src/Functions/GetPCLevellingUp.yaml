@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetPCLevellingUp
+shortdesc: Retrieves reference to the last PC that levelled up.
+return: object
+parameters:
+description: |
+  Returns the last PC that levelled up.
+version: 1.61
+example: |
+  // Demonstrates how to apply a spell affect to the PC who has just levelled up.
+  void main()
+  {
+       //Polymorphs PC into a penguin for two minutes.
+       object oPC=GetPCLevellingUp();
+       effect ePolymorph=EffectPolymorph(POLYMORPH_TYPE_PENGUIN, TRUE);
+       ApplyEffectToObject(DURATION_TYPE_TEMPORARY, ePolymorph, oPC, 120.0);
+  }
+seealso:
+  categories:
+    - PC Only
+author: Sarev0k
+editor: Lilac Soul
+

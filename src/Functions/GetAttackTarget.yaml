@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetAttackTarget
+shortdesc: Determines the current foe under attack by the specified creature.
+return: object
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | Creature currently involved in combat. (Default: OBJECT_SELF)
+
+description: |
+  Returns the last target that you have attempted to resolve an attack against during this round. It gets cleared when the attack action is removed or you lose your target (if they die or go invisible) or the round ends. 
+  .
+version: 1.26
+seealso:
+  functions:
+    - ActionAttack
+    - CheckFriendlyFireOnTarget
+    - GetAttackCompatibility
+    - GetAttemptedAttackTarget
+    - GetIsFighting
+    - GetIsInCombat
+  categories:
+    - Combat Information
+    - Targeting
+  events:
+    - OnCombatRoundEnd
+    - OnPhysicalAttacked
+author: Jody Fletcher
+editor: Charles Feduke
+additional_contributors:
+  - Jon McCarty
+  - Noel Borstad

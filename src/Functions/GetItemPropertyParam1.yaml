@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetItemPropertyParam1
+shortdesc: Returns the Param1 number of the item property.
+return: int
+parameters:
+  - type: itemproperty
+    name: ipProp
+    desc: | Itemproperty to get the parameter from.
+
+description: |
+  Returns the Param1 number of the item property. See the 2DA files for value definitions.
+remarks: |
+  The 2da file you find info for the return values of this function is the iprp_paramtable.2da file. 
+  In that file, you can then use the "TableResRef" field to know which .2da file the GetItemPropertyParam1Value for this particular itemproperty refers to. 
+  A return value of -1 occurs if the itemproperty has no param1 number, or if ipProp isn't a valid itemproperty. 
+  I recommend using this program to view your .2da files, the NWN Explorer, which can be downloaded here: 
+  http://nwvault.ign.com/Files/other/data/1055545441750.shtml 
+  If you have HotU installed, you should always open the HotU data. If you don't have HotU, but you do have SoU, you should always open the SoU data. Otherwise, you must use the NWN data. First, check if the patch has the iprp_paramtable.2da file in it (open your data's patch section, open the file called patch.bif or something similar (e.g. xp2patch.bif), game data, and that is where you should find it. If it isn't there, it means it hasn't been updated in a patch, and you should look in the data section mentioned before. 
+  Following the above procedure will ensure that you ALWAYS view the more recent version of the .2da file, provided that your patch of NWN is up-to-date. 
+  Please note that older versions of the NWN Explorer might not look in the patch files, so it is recommended that you download the latest version. 
+version: 1.62
+seealso:
+  functions:
+    - GetItemPropertyParam1Value
+  categories:
+    - Get Data
+author: Lilac Soul
+

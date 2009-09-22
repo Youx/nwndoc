@@ -1,0 +1,33 @@
+---
+type: Function
+name: GiveQuestItem
+shortdesc: Create the quest item on the player.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player object to give the item to
+
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | The quest number (Default: 1)
+
+  - type: object
+    name: oNPC
+    default: OBJECT_SELF
+    desc: | The quest giver (Default: OBJECT_SELF)
+
+description: |
+  Give a PC the quest item
+remarks: |
+  Calls GetQuestItemTag and uses that to determine which item to create. Since it uses CreateObject to create the item, this means that the tag and the ResRef of the quest items have to be the same. If the string returned by GetQuestItemTag is longer than 16 characters (the maximum length for a ResRef), it sends a debug message to the PC, which you definitely only want to happen when debugging and playtesting your module. It only creates the item if oPC or oPC's party doesn't already have it. 
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+

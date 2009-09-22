@@ -1,0 +1,37 @@
+---
+type: Function
+name: DoGiveXP
+shortdesc: Gives the designated XP to the PC using the design rules for XP distribution.
+return: void
+parameters:
+  - type: string
+    name: sJournalTag
+    desc: | The tag of the journal that will be used to obtain the experience amount.
+
+  - type: int
+    name: nPercentage
+    desc: | The percentage of the experience that should be given. (100 for 100%)
+
+  - type: object
+    name: oTarget
+    desc: | The target to receive the experience.
+
+  - type: int
+    name: nQuestAlignment
+    default: ALIGNMENT_NEUTRAL
+    desc: | ALIGNMENT_* (Default: ALIGNMENT_NEUTRAL)
+
+description: |
+  Gives the designated XP to the PC using the design rules for XP distribution.
+remarks: |
+  Uses the alignment of the quest in relation to the alignment of oTarget to scale up or down the experience.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Experience
+  constants:
+    - ALIGNMENT_* Constants
+author: Tom Cassiotis
+

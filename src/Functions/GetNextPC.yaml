@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetNextPC
+shortdesc: Obtains the next PC in the player list.
+return: object
+parameters:
+description: |
+  Returns the next PC in the player list where the last GetFirstPC() or GetNextPC() left off and OBJECT_INVALID if there are no more PCs.
+remarks: |
+  You must call GetFirstPC before using this function.
+version: 1.22
+example: |
+  // This function cycles through all PCs and counts how many there are
+  main()
+  {
+     int nPCs = 0;
+     object oPC = GetFirstPC();
+     while (GetIsObjectValid(oPC) == TRUE)
+     {
+        nPCs = nPCs+1; // nPCs++;
+        oPC = GetNextPC();
+     }
+  }
+seealso:
+  functions:
+    - GetFirstPC
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+

@@ -1,0 +1,30 @@
+---
+type: Function
+name: GiveXPToAll
+shortdesc: Gives experience points to each PC in a PC's party
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: int
+    name: nXP
+    desc: | experience points to give
+
+description: |
+  Given a PC and an XP value, gives that amount to all PCs of the Player Character's party. None is given to associates. 
+remarks: |
+  Tip: use with GetJournalQuestExperience (<journal tag>) to get the amount of XP assigned to that quest in the journal. 
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors! 
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Experience
+    - Party
+author: Peter Busby
+

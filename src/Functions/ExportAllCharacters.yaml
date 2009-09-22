@@ -1,0 +1,30 @@
+---
+type: Function
+name: ExportAllCharacters
+shortdesc: Save all characters in the game.
+return: void
+parameters:
+description: |
+  Forces all the characters of the players who are currently in the game to be exported (saved) to their respective directories (i.e. LocalVault/ServerVault/ etc.)
+remarks: |
+  Only valid for the multiplayer environments. This can be used to share characters amongst multiple servers, each server housing a different module that makes up a persistant world. Simply share the "servervault" directory on the main NWN server (as "servervault"), and then on all other servers you'd like to share characters between, edit the nwn.ini file on the line that reads: 
+  SERVERVAULT=.\servervault 
+  to 
+  SERVERVAULT=\\(ip addr of main svr here\servervault
+bugs: |
+  Exporting a localvault character causes Neverwinter Nights to export a new numbered character file. Exporting a servervault character causes the character file to be overwritten. 
+  1.61 Bug: Exporting polymorphed characters causes the character to de-polymorph and re-polymorph. For the Hordes of the Underdark Shifter Prestige Class, this causes all the equipment bonuses to be lost. (Early versions of Neverwinter Nights would incorrectly write out the data for the polymorphed creature causing character corruption.)
+version: 1.61
+example: |
+  // Example 1
+    ExportAllCharacters();
+seealso:
+  functions:
+    - ExportSingleCharacter
+  categories:
+    - Server
+author: Brett Lathrope
+editor: Charles Feduke
+additional_contributors:
+  - Dan Scott
+  - Chris Becke

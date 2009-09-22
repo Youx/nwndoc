@@ -1,0 +1,62 @@
+---
+type: Function
+name: ActionCastSpellAtLocation
+shortdesc: Cast a spell at a specific location.
+return: void
+parameters:
+  - type: int
+    name: nSpell
+    desc: | SPELL_*
+
+  - type: location
+    name: lTargetLocation
+    desc: | nMetaMagic
+
+  - type: int
+    name: nMetaMagic
+    default: METAMAGIC_ANY
+  - type: int
+    name: bCheat
+    default: FALSE
+  - type: int
+    name: nProjectilePathType
+    default: PROJECTILE_PATH_TYPE_DEFAULT
+  - type: int
+    name: bInstantSpell
+    default: FALSE
+description: |
+  Use this function to cast a spell at a specific location. You must at least give this function a Spell (nSpell) and a Location (lTargetLocation) for it to work properly. 
+  The location can be a Waypoint or anything else you can set in the GetLocation function. 
+  Set bCheat to true if you wish the executor of the script to be able to cast the spell whether or not they have the ability to cast.
+remarks: |
+  Use this function when you wish to cast a spell at a particular location. The object calling this function will become the origin of the casting. For example a fireball trap that triggers over a chest. Note that spells cast with this function will actually apply their damage and/or effects; for visuals only, see ActionCastFakeSpellAtLocation.
+bugs: |
+  For some reason, any memorised spells which are prepared metamagically (A Empowered Fireball for example) cause this to not work correctly. Cheat-cast, or non-metamagically prepared spells work correctly, however, as do if they are passed into ActionCastSpellAtObject. 
+  As with all ActionCastSpellXXX, Ranger and Paladin spells do not work properley. nMetaMagic is ignored in the spell script (GetMetaMagicFeat() returns -1 in the spell script). 
+  1.64 does fix the problem with sub-dial spells. These can now be cast correctly using these functions. It doesn't mention any fixes for the above issues however.
+version: 1.64
+example: |
+  // The script below is placed on the OnUse Event handler for a placeable, in our
+  // example a lever. When used it casts a Fireball spell at the target. In this case
+  // the target is a Waypoint with the tag "TARGET_WP1".
+  void main()
+  {
+      location lTarget = GetLocation(GetWaypointByTag("TARGET_WP1"));
+      ActionCastSpellAtLocation(SPELL_FIREBALL,lTarget,METAMAGIC_NONE,1,PROJECTILE_PATH_TYPE_HIGH_BALLISTIC,1);
+  }
+seealso:
+  functions:
+    - ActionCastFakeSpellAtLocation
+    - ActionCounterSpell
+  categories:
+    - Action on Object
+    - Spell Casting Effects
+    - Spells
+  constants:
+    - METAMAGIC_* Constants
+    - PROJECTILE_PATH_TYPE_* Constants
+    - SPELL_* Constants
+author: Dan Spezzano
+editor: Jasperre
+additional_contributors:
+  - Jasperre

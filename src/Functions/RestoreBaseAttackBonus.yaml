@@ -1,0 +1,22 @@
+---
+type: Function
+name: RestoreBaseAttackBonus
+shortdesc: Restores the number of base attacks back to it's original state
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | Creature to restore the base attack bonus on (Default: OBJECT_SELF)
+
+description: |
+  Restores the number of base attacks back to it's original state.
+version: 1.61
+seealso:
+  functions:
+    - EffectModifyAttacks
+    - SetBaseAttackBonus
+  categories:
+    - Combat
+author: Lilac Soul
+

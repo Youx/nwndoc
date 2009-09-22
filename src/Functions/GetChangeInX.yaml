@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetChangeInX
+shortdesc: Convinence function to calculate the change in the X axis
+return: float
+parameters:
+  - type: float
+    name: fDistance
+    desc: | Distance to target location
+
+  - type: float
+    name: fAngle
+    desc: | Direction to target Location
+
+description: |
+  This is a convenience function that returns the product of fDistance*Cos(fAngle) as a float. This number would than be used to calculate the amount to needed to change the X-axis of the current location in order to reach the target location. This function would normally be used with float GetChangeInY(float fDistance, float fAngle) 
+  Calls 
+  Float Cos(float fAngle) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  functions:
+    - cos
+    - GetChangedPosition
+    - GetChangeInY
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+    - Targeting
+author: Michael Nork
+

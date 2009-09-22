@@ -1,0 +1,58 @@
+---
+type: Function
+name: DeleteLocalInt
+shortdesc: Deletes oObject's integer variable sVarName.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object storing the variable.
+
+  - type: string
+    name: sVarName
+    desc: | Variable name to delete.
+
+description: |
+  Use this function to delete an object's entry for the integer defined by sVarName.
+remarks: |
+  As with all deletions, once removed, GetLocalInt returns 0. Cleaning up old variables can help CPU performance if many are stored on one object (especially if the module has many unused values on it) and good for deleting the new persistant variables which can be put on a PC's inventory item, which will hinder performance if there are many unused values. 
+  The definition of TRUE and FALSE sometimes is not known. For reference: 
+  TRUE = 1 
+  FALSE = 0 
+  Using ! before a local integer value in an if statement (EG: if(!iInt) ) will check if it is == FALSE. 
+  Using nothing before a local integer value in an if statement (EG: if(iInt) ), will check if it is != FALSE, but doesn't mean it has to be positive.
+version: 1.62
+example: |
+  // If the variable "nTimes" is 4 or more, we delete it, else increase it by 1.
+  // Could go in an area enter script, or a trigger script for some purpose
+  void main()
+  {
+      // Declare the entering object
+      object oPC = GetEnteringObject();
+      int nTimes;
+      // Make sure they are a PC
+      if(GetIsPC(oPC))
+      {
+          // Get nTimes
+          nTimes = GetLocalInt(oPC, "nTimes");
+          // Is it 4 or more?
+          if(nTimes >= 4)
+          {
+              // Delete it (resets to 0)
+              DeleteLocalInt(oPC, "nTimes");
+          }
+          else
+          {
+              // Add one to it and store
+              nTimes++;
+              SetLocalInt(oPC, "nTimes", nTimes);
+          }
+      }
+  }
+seealso:
+  categories:
+    - Local Variables
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

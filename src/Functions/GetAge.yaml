@@ -1,0 +1,42 @@
+---
+type: Function
+name: GetAge
+shortdesc: Determines the age of a creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to get the age from.
+
+description: |
+  Returns oCreature's age and 0 if oCreature is invalid.
+remarks: |
+  This can be used as a clever way to determine if a creature is a PC since NPCs do not have ages. See the addition code sample below for more information. 
+  Of course, GetIsPC is more useful! A PC can set thier age to 0 if they wished! 
+  Obviously, oCreature is invalid if it is anything other then a creature.
+version: 1.29
+example: |
+  // biased example for trusting a certain age group :)
+  int TrustCreature(object oCreature)
+  {
+     if (GetAge(oCreature) >= 30)
+        return FALSE; // Over 30? Can't be trusted.
+     return TRUE;
+  }
+  // clever way to determine if a creature is a PC
+  int NewIsPC(object oCreature)
+  {
+       if (GetAge(oCreature) != 0)
+            return TRUE;
+       else
+            return FALSE;
+  }
+seealso:
+  functions:
+    - SetCalendar
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - George Mathis

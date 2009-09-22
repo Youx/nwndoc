@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetPlotJournal
+shortdesc: Retrieves the string that is the name of a journal entry.
+return: string
+parameters:
+description: |
+  Returns the string that was stored using the function SetPlotJournal() that represents the identifier to a journal entry.
+remarks: |
+  This function is of little use for general scripting needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - SetPlotGiver
+    - SetPlotJournal
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

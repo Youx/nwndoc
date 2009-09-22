@@ -1,0 +1,61 @@
+---
+type: Function
+name: CopyItemAndModify
+shortdesc: Copies an item, making a single modification to it
+return: object
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to copy and modify
+
+  - type: int
+    name: nType
+    desc: | Type of modification to make
+
+  - type: int
+    name: nIndex
+    desc: | Index of the modification to make
+
+  - type: int
+    name: nNewValue
+    desc: | New value of the modified index
+
+  - type: int
+    name: bCopyVars
+    default: FALSE
+    desc: | If TRUE, all local variables are copied to the new weapon (Default: FALSE)
+
+description: |
+  Creates a new copy of an item, while making a single change to the appearance of the item. 
+  Helmet models and simple items ignore iIndex. 
+  Legal combinations: 
+  iType: ITEM_APPR_TYPE_SIMPLE_MODEL 
+  iIndex: [Ignored] 
+  iNewValue: Model # 
+  iType: ITEM_APPR_TYPE_WEAPON_COLOR 
+  iIndex: ITEM_APPR_WEAPON_COLOR_* 
+  iNewValue: 1-4 
+  iType: ITEM_APPR_TYPE_WEAPON_MODEL 
+  iIndex: ITEM_APPR_WEAPON_MODEL_* 
+  iNewValue: Model # 
+  iType: ITEM_APPR_TYPE_ARMOR_MODEL 
+  iIndex: ITEM_APPR_ARMOR_MODEL_* 
+  iNewValue: Model # 
+  iType: ITEM_APPR_TYPE_ARMOR_COLOR 
+  iIndex: ITEM_APPR_ARMOR_COLOR_* 
+  iNewValue: 0-63
+remarks: |
+  Returns the copied object. 
+  Note that the original item isn't destroyed by this function. You'll have to destroy it manually to really make it seem like the item is being modified.
+version: 1.61
+seealso:
+  functions:
+    - CopyItem
+    - GetItemAppearance
+    - IPDyeArmor
+  categories:
+    - Item Creation
+  constants:
+    - ITEM_APPR_* Constants
+author: Lilac Soul
+

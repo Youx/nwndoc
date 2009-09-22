@@ -1,0 +1,38 @@
+---
+type: Function
+name: SetTrapDisabled
+shortdesc: Disables the trap on the specified object.
+return: void
+parameters:
+  - type: object
+    name: oTrap
+    desc: | a placeable, door or trigger.
+
+description: |
+  Disable oTrap.
+remarks: |
+  Can be used to create a mechanism to disarm a trap such as pulling a lever.
+version: 1.22
+example: |
+  // diables a trap that is on an object with Tag "Chest1"
+  void main()
+  {
+      object oTrap = GetObjectByTag("Chest1");
+      SetTrapDisabled(oTrap);
+  }
+seealso:
+  functions:
+    - GetLastTrapDetected
+    - GetTrapBaseType
+    - GetTrapCreator
+    - GetTrapDetectable
+    - GetTrapDetectDC
+    - GetTrapDisarmable
+    - GetTrapFlagged
+    - GetTrapKeyTag
+    - GetTrapOneShot
+  categories:
+    - Traps
+author: Chaz Mead
+editor: Jochem van 't Hull
+

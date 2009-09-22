@@ -1,0 +1,23 @@
+---
+type: Function
+name: ExitAOESpellArea
+shortdesc: Makes the calling creature flee from the AOE (area of effect) specified by oAOEObject
+return: void
+parameters:
+  - type: object
+    name: oAOEObject
+description: |
+  PRIVATE FUNCTIONS 
+  This is experimental and has not been looked at closely.
+remarks: |
+  nw_i0_generic.nss: 3360 
+  This function is apparently never used in the official campaign. First, it clears the callers action queue. Then, it makes the caller run to a distance of 5 m from oAOEObject. Then, it calls DetermineCombatRound to have the caller continue fighting.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.28
+seealso:
+  categories:
+    - Prototyped but Unused
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

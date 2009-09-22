@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetFarLeftDirection
+shortdesc: This function returns a normalized number that is +135 from the current facing
+return: float
+parameters:
+  - type: float
+    name: fDirection
+    desc: | Current Facing
+
+description: |
+  This is a convenience function that returns a float representing a normalized angle that is +135 degrees from fDirection (if facing north a direction that is south-west). 
+  Calls 
+  float GetNormalizedDirection(float fDirection) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

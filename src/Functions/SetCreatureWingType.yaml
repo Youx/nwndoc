@@ -1,0 +1,30 @@
+---
+type: Function
+name: SetCreatureWingType 
+shortdesc: Sets the wing type of the creature specified.
+return: void
+parameters:
+  - type: int
+    name: nWingType
+    desc: | CREATURE_WING_TYPE_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to change the wing type for. (Default: OBJECT_SELF)
+
+description: |
+  Sets the wing type of the creature specified.
+  Note: Only two creature model types will support wings. The model type for the part based (playable races) 'P' and model type 'W' in appearance.2da
+version: 1.67
+seealso:
+  functions:
+    - GetCreatureWingType
+    - GetCreatureTailType
+    - SetCreatureTailType
+  constants:
+    - CREATURE_WING_TYPE_*
+  categories:
+    - Action on Object
+author: Mistress
+editor: KooKoo

@@ -1,0 +1,39 @@
+---
+type: Function
+name: GetIsFighting
+shortdesc: Determines whether a creature is "fighting".
+return: int
+parameters:
+  - type: object
+    name: oFighting
+    desc: | Not used
+
+description: |
+  Returns TRUE if the NPC whose script this function is called from has attempted to cast a spell or attack any targets, otherwise FALSE.
+remarks: |
+  Uses GetAttemptedAttackTarget() and GetAttemptedSpellTarget() to determine if the creature is fighting.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // This is the source code for the function
+  int GetIsFighting(object oFighting)
+  {
+     object oAttack = GetAttemptedAttackTarget();
+     object oSpellTarget = GetAttemptedSpellTarget();
+     if(GetIsObjectValid(oAttack) || GetIsObjectValid(oSpellTarget))
+     {
+        return TRUE;
+     }
+     return FALSE;
+  }
+seealso:
+  functions:
+    - GetAttackTarget
+    - GetAttemptedAttackTarget
+  categories:
+    - Combat
+    - Core AI
+author: Tom Cassiotis
+editor: John Shuell
+

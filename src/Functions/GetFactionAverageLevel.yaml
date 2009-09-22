@@ -1,0 +1,51 @@
+---
+type: Function
+name: GetFactionAverageLevel
+shortdesc: Get the average level of the members of the faction.
+return: int
+parameters:
+  - type: object
+    name: oFactionMember
+    desc: | The object whose faction you wish to examine.
+
+description: |
+  Returns an integer corresponding to the average level of all the creatures in the object's faction. 
+  Return value on error: -1 
+  It is unknown if NPC's in a PC's faction affects this function call and the returned result, such sa summoned monsters, henchmen and familiars, or if those creatures can be used as the oFactionMember at all.
+remarks: |
+  "level" will be basically thier hit dice. To get a more accurate reading of where they are between levels, for example, it could be that they are very nearly the next level, use GetFactionAverageXP(). 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetHitDice(), only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction, only a PC's party faction, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+version: 1.62
+example: |
+  // Give experience based on the average level of the PC's party.
+  // Give 250 per the average level, so if a party had a average level
+  // of 10, it'd be 2500 XP each.
+  #include "nw_i0_tool"
+  void main()
+  {
+      // Get the PC's party speaker
+      object oPC = GetPCSpeaker();
+      // Get the average level of thier party
+      int nLvl = GetFactionAverageLevel(oPC);
+      // Get the XP to award
+      int nXP = nLvl * 250;    
+      // Give the XP to the PC's
+      // * This function is in nw_i0_tool
+      RewardPartyXP(nXP, oPC);
+  }
+seealso:
+  functions:
+    - GetFactionAverageGoodEvilAlignment
+    - GetFactionAverageLawChaosAlignment
+    - GetFactionAverageReputation
+    - GetFactionAverageXP
+    - GetFactionGold
+    - GetFactionMostFrequentClass
+  categories:
+    - Get Data from Creature
+    - Reputation/Faction
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

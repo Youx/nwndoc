@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetHasFeatEffect
+shortdesc: Determines whether a creature has the effects of a feat.
+return: int
+parameters:
+  - type: int
+    name: nFeat
+    desc: | FEAT_*
+
+  - type: object
+    name: oObject
+    default: OBJECT_SELF
+    desc: | The object to investigate. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oObject has effects on it originating from nFeat, otherwise FALSE. 
+  Of course, oObject should almost always be a creature to get an accurate result.
+remarks: |
+  This should return TRUE even if the feat applies spell-like effects (such as Barbarian Rage, which has a "spell" attached to it, to apply effects), although it cirtainly accuratly reports when such feats as Knockdown are applied to a target.
+version: 1.22
+seealso:
+  functions:
+    - ActionUseFeat
+  categories:
+    - Talents/Skills/Feats
+  constants:
+    - FEAT_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+

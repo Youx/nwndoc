@@ -1,0 +1,36 @@
+---
+type: Function
+name: ActionMoveAwayFromObject
+shortdesc: Cause the action subject to move to a certain distance away from a target.
+return: void
+parameters:
+  - type: object
+    name: oFleeFrom
+    desc: | The object the action subject will move away from.
+
+  - type: int
+    name: bRun
+    default: FALSE
+    desc: | TRUE: the action subject will run rather than walk. (Default: FALSE)
+
+  - type: float
+    name: fMoveAwayRange
+    default: 40.0f
+    desc: | The distance to put between the action subject and oFleeFrom. (Default: 40.0f)
+
+description: |
+  Cause the action subject to move to a certain distance away from oFleeFrom. 
+  If oFleeFrom is not in the same area as the action subject, nothing will happen.
+version: 1.61
+seealso:
+  functions:
+    - ActionForceMoveToObject
+    - ActionMoveAwayFromLocation
+    - ActionMoveToObject
+    - TalentFlee
+  categories:
+    - Core AI
+    - Movement
+author: Ryan Hunt
+editor: Lilac Soul
+

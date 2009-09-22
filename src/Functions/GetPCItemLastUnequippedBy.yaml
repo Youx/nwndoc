@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetPCItemLastUnequippedBy
+shortdesc: Get the PC who last unequipped an item
+return: object
+parameters:
+description: |
+  Use this to get the player character who last unequipped an item in OnPlayerUnEquipItem..
+remarks: |
+  Can be used to make cursed items truly cursed, in the sense that they can't even be unequipped.
+version: 1.61
+example: |
+  //PC can't take off this amulet. Ever *evil grin*
+  void main()
+  {
+  object oPC=GetPCItemLastUnequippedBy();
+  object oItem=GetPCItemLastUnequipped();
+  if (GetTag(oItem)=="cursed_amulet")
+     {
+     AssignCommand(oPC, ActionEquipItem(oItem, INVENTORY_SLOT_NECK));
+     }
+  }
+seealso:
+  functions:
+    - GetPCItemLastEquipped
+    - GetPCItemLastEquippedBy
+    - GetPCItemLastUnequipped
+  categories:
+    - Inventory
+  events:
+    - OnPlayerUnEquipItem
+author: Lilac Soul
+

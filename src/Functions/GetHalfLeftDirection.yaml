@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetHalfLeftDirection
+shortdesc: This function returns a number that is +45 degrees from the current facing
+return: float
+parameters:
+  - type: float
+    name: fDirection
+    desc: | Current Facing
+
+description: |
+  This is a convenience function that returns a float representing a normalized angle that is +45 degrees from fDirection. (if facing north, a direstion that is north-west). 
+  Calls 
+  float GetNormalizedDirection(float fDirection) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

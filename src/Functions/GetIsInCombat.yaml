@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetIsInCombat
+shortdesc: Determines whether a creature is in combat.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to investigate. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE while the creature is in Combat State, that is for a certain amount of time (8 seconds?) after any offensive action by or towards a member of your faction. Combat State also determines combat music, and the ability to rest so you should be able to do your own experiments to determine how long it lasts for, and which actions trigger it.
+version: 1.26
+seealso:
+  functions:
+    - GetAttackTarget
+    - GetAttemptedAttackTarget
+  categories:
+    - Combat Information
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Jon McCarty
+  - Noel Borstad

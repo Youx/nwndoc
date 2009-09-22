@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetFogAmount 
+shortdesc: Used to determine amount of fog in an area.
+return: int
+parameters:
+  - type: int
+    name: nFogType
+    desc: | specifies whether the Sun, or Moon fog type is returned. Valid values for nFogType are FOG_TYPE_SUN or FOG_TYPE_MOON.
+
+  - type: object
+    name: oArea
+    default: OBJECT_INVALID
+    desc: | The area to get the fog amount of. (Default: OBJECT_INVALID)
+
+description: |
+  Used to determine amount of fog in an area.
+  If no valid area (or object) is specified the area of the caller is used.
+  If an object other than an area is specified, will use the area that the object is currently in.
+version: 1.65
+seealso:
+  functions:
+    - SetFogAmount
+    - GetFogColor
+    - SetFogColor
+  constants:
+    - FOG_TYPE_*
+    - FOG_COLOR_*
+  categories:
+    - Area
+author: bernosky
+editor: Mistress

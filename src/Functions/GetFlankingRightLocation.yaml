@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetFlankingRightLocation
+shortdesc: Returns a location that is the right flank (to the right and slightly behind) the Target
+return: location
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to flank
+
+description: |
+  Returns alocation right flanking the target (to the right and slightly behind) facing same direction as the target. 
+  Calls 
+  float GetFacing(object oTarget) 
+  float GetFarRightDirection(float fDir) 
+  location GenerateNewLocation(object oTarget, float DISTANCE_MEDIUM, float fAngleToRightFlank, float fDir) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Area
+    - Combat Actions
+    - Combat Information
+    - Movement
+  constants:
+    - DISTANCE_* Constants
+author: Michael Nork
+

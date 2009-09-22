@@ -1,0 +1,25 @@
+---
+type: Function
+name: asin
+shortdesc: Gets the arc sine of a value.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Value to get the arc sine of.
+
+description: |
+  Arc sine is the inverse of the sin function. Thus, given an fValue that is some ratio of the opposite side to the hypotenuse of a right triangle, the asin function returns the appropriate angle (in degrees) of that triangle. The asin function returns a value from -90 to 90 or returns zero if fValue is greater than 1 or fValue less than -1.
+version: 1.31
+seealso:
+  functions:
+    - acos
+    - atan
+    - cos
+    - sin
+    - tan
+  categories:
+    - Math
+author: Charles Feduke
+additional_contributors:
+  - Paul Catalano

@@ -1,0 +1,46 @@
+---
+type: Function
+name: TalentAdvancedProtectSelf
+shortdesc: AI quickly scans nearby enemies and determines the most beneficial protective talents to use on itself against the type of enemies it faces.
+return: int
+parameters:
+description: |
+  Returns a Boolean (i.e. TRUE or FALSE) to the calling function to let it know if it was successful in finding and applying a protective talent to best protect the caller from the types of nearby enemies. 
+  This will use the class specific defensive spells first and leave the rest for the normal defensive AI
+remarks: |
+  Breakdown of the steps the function uses to determine which talent (spell, feat, item) to use: 
+  Create a list of all nearby enemies, seperating them into their respective base classes (Fighter, Mage, Monster, Clerics) and totalling up the levels in each category. 
+  Determine the most immediate threat by category by comparing total levels in each (Consider the fighters a .3 advantage in threat levels) 
+  Get a random talent from TALENT_CATEGORY_BENEFICIAL_PROTECTION_SELF 
+  Check to see if the talent is useful against the base class we consider the most threatening 
+  If not get a random talent from TALENT_CATEGORY_BENEFICIAL_PROTECTION_SINGLE 
+  Check to see if the talent is useful against the base class we consider the most threatening 
+  If not get a random talent from TALENT_CATEGORY_BENEFICIAL_PROTECTION_AREAEFFECT 
+  Check to see if the talent is useful against the base class we consider the most threatening 
+  If not go back to the beginning and get another talent from TALENT_CATEGORY_BENEFICIAL_PROTECTION_SELF 
+  Loop through this procedure 10 times looking for a protective talent for itself 
+  If we find one and it is a spell, check to see if we already have the effect applied to us before casting. 
+  If not cast the spell on itself 
+  If we find one and it is a feat, check to see if we have that feat 
+  If so, use the feat 
+  If its neither a spell nor a feat just use it 
+  Unsure of which talents fall under the TALENT_CATEGORY group constants shown above. 
+  --- 
+  This function is actually located in x0_i0_talent, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  functions:
+    - StartProtectionLoop
+    - TalentHealingSelf
+    - TalentUseEnhancementOnSelf
+    - TalentUseProtectionOnSelf
+    - TalentUseProtectionOthers
+  categories:
+    - Combat Actions
+    - Core AI Talent
+    - Talents/Skills/Feats
+author: John Shuell
+editor: Lilac Soul
+

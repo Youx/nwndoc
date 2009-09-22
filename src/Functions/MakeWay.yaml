@@ -1,0 +1,26 @@
+---
+type: Function
+name: MakeWay
+shortdesc: Builds the tag for the waypoint to walk to.
+return: string
+parameters:
+  - type: int
+    name: nNumber
+    desc: | Number in line of waypoints to walk to.
+
+description: |
+  Simply returns a string: “way”+IntToString(nNumber)+GetTag(OBJECT_SELF). 
+  (eg. “way1cr_karl” for a creature tagged cr_karl, when nNumber is 1). 
+remarks: |
+  Found in nw_c3_waypoint1.nss line 27 
+  Note that nw_c3_waypoint1 is not an include file and cannot be used as such. This function is used in that script to find the tag of the next waypoint to walk to. You’ll probably be much better off using the WalkWayPoints command in nw_i0_generic.
+version: 1.28
+seealso:
+  functions:
+    - SetWayPointTo1
+  categories:
+    - Module Specific
+    - Private
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

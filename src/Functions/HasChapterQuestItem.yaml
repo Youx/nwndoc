@@ -1,0 +1,28 @@
+---
+type: Function
+name: HasChapterQuestItem
+shortdesc: Checks if player has the chapter quest item.
+return: int
+parameters:
+  - type: int
+    name: nChapter
+    desc: | A chapter of the official campaign
+
+  - type: object
+    name: oPC
+    desc: | The player to check for the item on
+
+description: |
+  Returns TRUE if oPC has the henchman quest item for chapter number nChapter of the official campaign. If not, or on error, it returns FALSE.
+remarks: |
+  Found in nw_i0_henchman.nss on line 465 
+  Hardly useful for anyone except Bioware.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  categories:
+    - Private
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

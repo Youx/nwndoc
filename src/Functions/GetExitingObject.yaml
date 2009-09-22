@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetExitingObject
+shortdesc: Get the object that last left the calling object.
+return: object
+parameters:
+description: |
+  Returns the object that last left the caller. This function works on triggers, areas of effect, modules, areas and encounters. 
+  Return a value of OBJECT_INVALID on an error.
+remarks: |
+  For AOE's, when they are destroyed (End of Duration or DestroyObject()), the Exit event fires for all of the creatures within it, so it can remove effects done OnEnter - and, for the event, the OBJECT_SELF is still valid.
+version: 1.22
+seealso:
+  functions:
+    - GetEnteringObject
+  categories:
+    - Action on Object
+    - Area
+    - Encounter
+    - Module
+    - Spells
+    - Traps
+author: John Shuell
+editor: Jasperre
+

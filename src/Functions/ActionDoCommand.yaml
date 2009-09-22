@@ -1,0 +1,61 @@
+---
+type: Function
+name: ActionDoCommand
+shortdesc: Inserts a command into the Action Queue.
+return: void
+parameters:
+  - type: action
+    name: aCommand
+    desc: | Void returning function to execute (ignore "action" data type).
+
+description: |
+  Inserts the function call aCommand into the Action Queue. Generally, any function not beginning with ‘Action’ will not be inserted into the queue. Functions called without the use of ActionDoCommand will preempt other previously called functions in the Action Queue and execute immediately.
+remarks: |
+  The target of this function is the object making the call. If it's neccessary to command other objects or NPCs then use AssignCommand(). ActionDoCommand() can be nested inside of an AssignCommand() call to add a Command to the targeted objects queue as an Action. 
+  Also note that ActionDoCommand can only accept void returning functions (and, of course, Bioware defined "action" returning functions, however, that'd be a silly use of this function) - if you want to use a function that returns a value, you will have to wrap that function in a void returning function call. 
+  Note that, though it takes an "action" type as a parameter, nwscript doesn't allow you to do stuff like: 
+  action aDo=SendMessageToPC(oPC, "Message"); 
+  You need to put the actual SendMessage... (or whatever) inside the ActionDoCommand call - you can't use the action keyword as a pointer to a function. In fact, the action keyword is unusable, except that BioWare can put it in function declarations, apparently. But we can't use it in function declarations ourselves. 
+  The use of void would work exactly the same as action commands in the sense of ActionDoCommand, however, but code executes instead of a phisical action. However, in some cases, such as doing ActionDoCommand(SpeakString("Hello")) would be the same as ActionSpeakString("Hello"); 
+  It should also be noted that ActionDoCommand() will not function on an object which does not have an Action Queue.
+bugs: |
+  When used in a script during the OnSpawn event, its possible for a creature to assume strange behavior.
+version: 1.61
+example: |
+  // script without ActionDoCommand()
+  // in this example the NPC will first speak
+  // the string "here's my seat", and then
+  // walk to the chair, and sit.
+  {
+       object oNPC = GetObjectByTag("some_npc");
+       object oChair = GetObjectByTag("chair");
+       ActionMoveToObject(oChair);
+       SpeakString("Here's my seat!");
+       ActionSit(oChair);
+  }
+  // script with ActionDoCommand()
+  // in this example the NPC will execute the 
+  // functions in the order given (as they are in
+  // the NPCs Action Queue): first walk to the chair,
+  // then speak the string, and sit down.
+  {
+       object oNPC = GetObjectByTag("some_npc");
+       object oChair = GetObjectByTag("chair");
+       ActionMoveToObject(oChair);
+       ActionDoCommand(SpeakString("Here's my seat!"));
+       ActionSit(oChair);
+  }
+seealso:
+  functions:
+    - AssignCommand
+    - ClearAllActions
+    - MoveToNewLocation
+  categories:
+    - Action on Object
+author: Ryan Hunt
+editor: Jasperre
+additional_contributors:
+  - Jens Eggert
+  - Graziano Lenzi
+  - Lilac Soul
+  - Jasperre

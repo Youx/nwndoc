@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetCustomLeftDirection
+shortdesc: This function returns a normalized number that is the sum of the current facing and the angle to target
+return: float
+parameters:
+  - type: float
+    name: fDirection
+    desc: | Current Facing
+
+  - type: float
+    name: fAngle
+    desc: | Angle to Taget
+
+description: |
+  This is a convenience function that returns a float representing a normalized angle that is +135 degrees from fDirection. 
+  Calls 
+  float GetNormalizedDirection(float fDirection) 
+remarks: |
+  Note: Three lefts make a right
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

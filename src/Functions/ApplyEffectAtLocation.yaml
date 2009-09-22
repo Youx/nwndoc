@@ -1,0 +1,85 @@
+---
+type: Function
+name: ApplyEffectAtLocation
+shortdesc: Applies an effect at a location.
+return: void
+parameters:
+  - type: int
+    name: nDurationType
+    desc: | DURATION_TYPE_*
+
+  - type: effect
+    name: eEffect
+    desc: | The effect you want to apply.
+
+  - type: location
+    name: lLocation
+    desc: | The location where you want to apply the effect.
+
+  - type: float
+    name: fDuration
+    default: 0.0f
+    desc: | The duration (in seconds) of the effect. (Default: 0.0f)
+
+description: |
+  ApplyEffectAtLocation applies an effect at a location, and is most often used to apply EffectVisualEffect and EffectAreaOfEffect. 
+  The nDurationType depends on the Effect you construct; refer to individual effects' reference for details of which duration types can and cannot be used with an effect. 
+  If the nDurationType is DURATION_TYPE_INSTANT or DURATION_TYPE_PERMANENT, then the last parameter, fDuration, is ignored.
+remarks: |
+  Since most effects affect objects, many will have no effect when applied at a Location. Use this function to apply Visual and Area of Effect effects, for example, you can use this to apply the visual effect of a spell, where none has been cast. 
+  Because you can only apply cirtain effects with this function, it is likely you should never need EffectLinkEffects(), because you have no target to resist or remove the effects from later. 
+  For this, the only Effect functions you will ever be able to use are likely to be EffectVisualEffect() and EffectAreaOfEffect(), EffectSummonCreature() and EffectSwarm(). No other effects should work with this function, as they require a target.
+bugs: |
+  The timing element of this function is inoperative with the darkness constant. You can set it for 1 second or set it for 20 seconds, and the effect still plays for the same period of time. However, if you use ApplyEffectToObject the timing element will work. 
+  When used with VFX_DUR_GHOST_SMOKE_2 VFX_DUR_* constant, the effect created is permanent no matter what the nDurationType and fDuration parameters are set to.
+version: 1.62
+example: |
+  // In a triggers' OnEnter script, this creates a nasty area of web 
+  // for 10 seconds  at the PC's location.
+  void main()
+  {
+      // Get the PC's location
+      // - we use location - if we applied it directly to the PC, the
+      //   web will actually move around with it!
+      location lPC = GetLocation(GetEnteringPC());
+      // Declare the effect
+      effect eEffect = EffectVisualEffect(VFX_DUR_WEB_MASS);
+      // Apply it for 10 seconds, ooh, sticky - or was it an illusion?
+      ApplyEffectAtLocation(DURATION_TYPE_TEMPORARY, eEffect, lPC, 10.0);
+  }
+  // We apply an instant Meteor Swarm (see visual effect constants
+  // section for picture) at the location of a waypoint, tagged as
+  // "WP_STORM". This could be in a lever script or something.
+  void main()
+  {
+      // Get the waypoint and its location - we can NOT use the
+      // waypoint directly, it will likely not work, and is pointless.
+      location lTarget = GetLocation(GetWaypointByTag("WP_STORM"));
+      // Declare the instant visual effect
+      effect eVis = EffectVisualEffect(VFX_FNF_METEOR_SWARM);
+      // Apply it (instantly) at the location of the waypoint.
+      ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eVis, lTarget);
+  }
+seealso:
+  functions:
+    - ApplyEffectToObject
+    - EffectAreaOfEffect
+    - EffectSummonCreature
+    - EffectSwarm
+    - EffectVisualEffect
+    - ExtraordinaryEffect
+    - MagicalEffect
+  categories:
+    - Effects
+    - Lighting Effects
+    - Visual Effects
+  constants:
+    - DURATION_TYPE_* Constants
+author: Iskander Merriman
+editor: Jasperre
+additional_contributors:
+  - Karen Modell
+  - Lilac Soul
+  - Steven Ouellette
+  - Charles Feduke
+  - Jasperre

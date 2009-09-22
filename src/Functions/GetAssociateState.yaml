@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetAssociateState
+shortdesc: <Placeholder description>
+return: int
+parameters:
+  - type: int
+    name: nCondition
+    desc: | NW_ASC_*
+
+description: |
+  Returns TRUE or FALSE (on/off) depending on if a particular NW_ASC_*, NW_ASC_DISTANCE_*, NW_ASC_HEAL_AT_* or NW_ASC_AGGRESSIVE_* constant setting is set on an NPC associate.
+version: 1.22
+seealso:
+  functions:
+    - GetAssociate
+    - GetAssociateCRMax
+    - GetAssociateHealMaster
+    - GetFollowDistance
+    - GetHenchman
+    - GetMaster
+    - SetAssociateStartLocation
+    - SetAssociateState
+  categories:
+    - Henchmen/Familiars/Summoned
+  constants:
+    - NW_ASC_* Constants
+author: Charles Feduke
+editor: Tom Cassiotis
+

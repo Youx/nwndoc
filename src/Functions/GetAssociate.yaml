@@ -1,0 +1,48 @@
+---
+type: Function
+name: GetAssociate
+shortdesc: Returns an object's associate.
+return: object
+parameters:
+  - type: int
+    name: nAssociateType
+    desc: | ASSOCIATE_TYPE_*
+
+  - type: object
+    name: oMaster
+    default: OBJECT_SELF
+    desc: | PC to get the associate of. (Default: OBJECT_SELF)
+
+  - type: int
+    name: nTh
+    default: 1
+    desc: | Which associate to return. (Default: 1)
+
+description: |
+  Returns the NPC associated object of oMaster of the specified oAssociateType. 
+  Returns OBJECT_INVALID if no such associate exists for oMaster.
+remarks: |
+  The nTh parameter is useful because, since version 1.59, you can allow for more than one henchman using the SetMaxHenchmen command. The nTh parameter is thus equivalent to the nInt parameter in GetHenchman. Currently, the only associate type it is possible to have more than one of at a time is henchmen.
+version: 1.61
+seealso:
+  functions:
+    - AssociateCheck
+    - GetAnimalCompanionCreatureType
+    - GetAssociateCRMax
+    - GetAssociateHealMaster
+    - GetAssociateStartLocation
+    - GetAssociateState
+    - GetFamiliarCreatureType
+    - GetHenchman
+    - GetLastAssociateCommand
+    - GetMaster
+    - RemoveSummonedAssociate
+    - SetAssociateState
+  categories:
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+  constants:
+    - ASSOCIATE_TYPE_* Constants
+author: Charles Feduke
+editor: Lilac Soul
+

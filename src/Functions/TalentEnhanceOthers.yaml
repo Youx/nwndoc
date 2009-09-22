@@ -1,0 +1,20 @@
+---
+type: Function
+name: TalentEnhanceOthers
+shortdesc: Used by NPC or creatures to determine the best feat, spell or skill to use to assist others in same faction.
+return: int
+parameters:
+description: |
+  Returns talent to be used for current round to enhance (buff) the NPCs master (if a henchman) or others in its faction (group). Examines capability to cast area of effect spells, and if group is already under the effect of the same AOE effect. If spells are not used, examines feats.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.22
+seealso:
+  functions:
+    - TalentBuffSelf
+    - TalentUseProtectionOthers
+  categories:
+    - Core AI Talent
+author: Jody Fletcher
+editor: John Shuell
+

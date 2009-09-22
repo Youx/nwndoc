@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetFacing
+shortdesc: Used to determine which direction something is facing.
+return: float
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object to return the facing value of.
+
+description: |
+  Returns a float between 0.0 and 360.0 that determines which direction oTarget is facing. 
+  Returns -1.0 on error.
+remarks: |
+  From version 1.62+, this now rounds the value to the nearest degree.
+version: 1.30
+seealso:
+  functions:
+    - GetFacingFromLocation
+    - MoveToNewLocation
+  categories:
+    - Get Data from Creature
+    - Movement
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Morz
+  - Keith Voss
+  - Lilac Soul

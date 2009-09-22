@@ -1,0 +1,22 @@
+---
+type: Function
+name: DoPlaceableObjectAction
+shortdesc: Starts a placeable object special action.
+return: void
+parameters:
+  - type: object
+    name: oPlaceable
+    desc: | nPlaceableAction
+
+  - type: int
+    name: nPlaceableAction
+description: |
+  The caller performs nPlaceableAction on oPlaceable.
+version: 1.22
+seealso:
+  categories:
+    - Action on Object
+  constants:
+    - PLACEABLE_ACTION_* Constants
+author: Jody Fletcher
+

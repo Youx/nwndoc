@@ -1,0 +1,32 @@
+---
+type: Function
+name: GetEffectType
+shortdesc: Get the type constant of the effect.
+return: int
+parameters:
+  - type: effect
+    name: eEffect
+    desc: | The effect to compare or examine.
+
+description: |
+  Returns the effect type (EFFECT_TYPE_*) of the effect being examined. 
+  Return EFFECT_INVALIDEFFECT if effect is invalid.
+remarks: |
+  You must first create and place the effect you wish to examine into a variable before calling this function. Useful when you need to check if a player is under the effects of a certain type before doing something else to them with your scripts. A good example would be checking for protection from evil effects before allowing an evil creature to close to them. 
+  EDIT FROM PREVIOUS REMARKS: It was previously mentioned that visual effects have no effecttype. This is incorrect, this function will return EFFECT_TYPE_VISUALEFFECT for visual effects.
+version: 1.61
+seealso:
+  functions:
+    - EffectSpellLevelAbsorption
+    - GetEffectCreator
+    - GetEffectDurationType
+    - GetEffectSpellId
+    - GetEffectSubType
+    - RemoveEffect
+  categories:
+    - Effects
+  constants:
+    - EFFECT_TYPE_* Constants
+author: John Shuell
+editor: Lilac Soul
+

@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetIsAreaNatural
+shortdesc: Returns whether an area is natural or not
+return: int
+parameters:
+  - type: object
+    name: oArea
+    desc: | Area to test whether is natural
+
+description: |
+  Returns AREA_NATURAL if the area oArea is natural, AREA_ARTIFICIAL otherwise. 
+  Returns AREA_INVALID, on an error.
+remarks: |
+  The natural / artificial status of the area is set in the area's properties under the advanced tab. 
+  AREA_NATURAL is declared as 1 in nwscript.nss, and AREA_ARTIFICIAL as 0. So you could also say that the function returns TRUE if the area is natural, and FALSE otherwise.
+version: 1.32
+seealso:
+  functions:
+    - GetIsAreaAboveGround
+    - GetIsAreaInterior
+  categories:
+    - Area
+    - Get Data
+    - Get Data from Object
+  constants:
+    - AREA_TRANSITION_* Constants
+author: Lilac Soul
+editor: Mistress
+

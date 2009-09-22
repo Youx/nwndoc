@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetLocalPlotIntFromCharacter
+shortdesc: Retrieves the generic plot flag off of a creature.
+return: int
+parameters:
+  - type: object
+    name: oNPC
+    desc: | Creature to retrieve the plot tag from.
+
+description: |
+  Returns an integer that represents a Plot Flag from oNPC that is stored on them in a variable called "PLOT2Q4" + GetTag(oNPC)
+remarks: |
+  Function found in nw_i0_2q4luskan.nss on line 30.
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.28
+seealso:
+  functions:
+    - SetLocalPlotIntOnCharacter
+  categories:
+    - Module Specific
+author: John Shuell
+editor: Charles Feduke
+

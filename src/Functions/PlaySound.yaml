@@ -1,0 +1,32 @@
+---
+type: Function
+name: PlaySound
+shortdesc: Plays a sound on the client machine.
+return: void
+parameters:
+  - type: string
+    name: sSoundName
+    desc: | The name of the sound to play.
+
+description: |
+  Play the wave resource named sSoundName.
+remarks: |
+  PlaySound returns immediately, it does not wait for the sound to finish playing. If you want to play a sound using a trigger, then look at the SoundObjectPlay function, as PlaySound requires an object to work.
+bugs: |
+  This might not be an actual bug, but though PlaySound isn't an action (you don't get the little yellow square on the screen), if you assign a PlaySound to someone, it will wait for their current action queue to finish before playing.
+version: 1.61
+example: |
+  // Placed in the OnUsed event of the an object, for example a gong. The following script will cause a gong ring to sound.
+  main()
+  {
+      PlaySound("as_cv_gongring2");
+  }
+seealso:
+  functions:
+    - SoundObjectPlay
+  categories:
+    - Sound Effects
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

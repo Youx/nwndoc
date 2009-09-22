@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetObjectNeedsHealing
+shortdesc: Determines whether a creature is damaged to a point of its original HP.
+return: int
+parameters:
+  - type: object
+    name: oMostDamagedMember
+    desc: | The creature to check for damage.
+
+  - type: int
+    name: nPercent
+    desc: | The percent at which the creature needs healing (1-100).
+
+description: |
+  Returns TRUE if oMostDamagedMemeber has less than nPercent of its original HP.
+remarks: |
+  This function actually is found in multiple script files nw_cd_lv123, nw_cd_lv203, nw_cd_lv23, nw_cd_lv73.
+requirements: |
+  #include "nw_cd_lv123"
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Creature
+author: Tom Cassiotis
+

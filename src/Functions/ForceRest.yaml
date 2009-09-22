@@ -1,0 +1,41 @@
+---
+type: Function
+name: ForceRest
+shortdesc: Fully restores a creature
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to rest
+
+description: |
+  Gives this creature the benefits of a rest (restored hitpoints, spells, feats, etc..) 
+  It can be called if oCreature is in combat (Unlike ActionRest which will automatically fail) and so unless it is a wanted behaviour, mind to make sure oCreature is not in combat first.
+remarks: |
+  The effects of this function occur instantly. The creature doesn't actually go into resting mode. Use ActionRest if that is what you want. 
+  Useful for repelinishing a PC's abilties and things for custom resting systems, dreams, or cutscenes (in which they rest). For NPC's, it is a good way to make sure they will replenish all thier feats and spells after a battle. 
+  Only objects (creatures) who can rest can gain the benifits of this. Calling this on a placable or door (another object with hitpoints), will, sadly, fail.
+version: 1.64
+example: |
+  void main()
+  {
+      // Get Entering Object
+      object oEnterer = GetEnteringObject();
+      // Make sure it is a PC
+      if(GetIsPC(oEnterer))
+      {
+          // Rest them
+          ForceRest(oEnterer);
+          // Floaty text - a wizard did it.
+          FloatingTextStringOnCreature("A wizard decided to replenish your health and spells", oEnterer, FALSE);
+      }
+  }
+seealso:
+  functions:
+    - ActionRest
+  categories:
+    - Action on Object
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,60 @@
+---
+type: Function
+name: GetFactionMostDamagedMember
+shortdesc: Get the member of oFactionMember's faction that has taken the most hit points of damage.
+return: object
+parameters:
+  - type: object
+    name: oFactionMember
+    default: OBJECT_SELF
+    desc: | An object who is a member of the faction you wish to search through. (Default: OBJECT_SELF)
+
+  - type: int
+    name: bMustBeVisible
+    default: TRUE
+    desc: | Only search through those members who are visible to the calling object? (Default: TRUE)
+
+description: |
+  Returns the member of oFactionMember's faction that has taken the most hit points of damage. If bMustBeVisible is set to TRUE (default) then only consider those members who are visible to the object who is running the script (calling object). 
+  Returns OBJECT_INVALID if oFactionMember's faction is invalid.
+remarks: |
+  Another great AI routine. This one is good for enemies when you want them to do their best to take down the party, or for friends (henchmen, familiars, etc) that should take action on members who are the most hurt. Such as healing them in combat or after combat. 
+  This will work exactly the same was as using GetFirst/NextFactionMemeber() and using GetMaxHitPoints() Minus GetCurrentHitPoints() (If not, please e-mail in), to find the lowest, only is much easier to code and probably better on performance. 
+  Try to never use this on an NPC faction unless bMustBeVisible is TRUE, because NPC factions usually have dozens of NPC's, and thus may cause a lot of high CPU usage with faction calls such as this.
+version: 1.62
+example: |
+  // Get the least health PC and attack them. For all it matters, this
+  // could be the On Heartbeat script of a NPC.
+  void main()
+  {
+      // Get nearest PC
+      object oPC = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC);
+      // Get least damaged
+      object oMostDamaged = GetFactionMostDamagedMember(oFactionMember, TRUE);
+      // Attack them
+      if(GetIsObjectValid(oMostDamaged))
+      {
+          ClearAllActions();
+          ActionAttack(oMostDamaged);
+      }
+  }
+seealso:
+  functions:
+    - GetFactionBestAC
+    - GetFactionLeastDamagedMember
+    - GetFactionStrongestMember
+    - GetFactionWeakestMember
+    - GetFactionWorstAC
+  categories:
+    - Combat Information
+    - Core AI
+    - Get Data from Creature
+    - Henchmen/Familiars/Summoned
+    - Party
+    - Perception
+    - Reputation/Faction
+    - Targeting
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

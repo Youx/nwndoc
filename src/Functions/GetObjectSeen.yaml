@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetObjectSeen
+shortdesc: Determines whether an object sees another object.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to determine if it is seen.
+
+  - type: object
+    name: oSource
+    default: OBJECT_SELF
+    desc: | Object that is doing the looking. (Default: OBJECT_SELF)
+
+description: |
+  Determines whether oSource sees oTarget. Returns TRUE if oSource sees oTarget, FALSE otherwise. If oTarget is a placeable object, this function always returns FALSE.
+remarks: |
+  Only creatures are valid for oTarget and oSource. Any other type of object will return FALSE.
+version: 1.64
+seealso:
+  categories:
+    - Perception
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - David Etheredge
+  - Charles Feduke
+  - Jasperre

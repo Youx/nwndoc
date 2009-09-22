@@ -1,0 +1,49 @@
+---
+type: Function
+name: EffectTurnResistanceIncrease
+shortdesc: Create a Turn Resistance Decrease effect that can make creatures more resistant to turning.
+return: effect
+parameters:
+  - type: int
+    name: nHitDice
+    desc: | a positive number representing the number of hit dice for the increase
+
+description: |
+  Returns a new effect object that when applied to a target will increase their resistance to turning as if they were nHitDice in higher levels. 
+  The limit of nHitDice is unknown. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  This changes the value returned by GetTurnResistanceHD(), which is added to the creature's hide bonus to turn resistance, and is called in the turn undead script. This increases the value. 
+  It is similar to the bonuses you can put onto a creatures hide, however, it is obviously going to stack with them. It should be possible to increase turn resistance of those even without any. 
+  The basis of knowing what this means is: If I am a 5HD undead monster, with a +2 to my turn resistance, I act as if I was a 7HD undead monster, thus harder to turn. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a 5 bonus to turn resistance to
+  // a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eTurnInc = EffectTurnResistanceIncrease(5);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_IMPROVE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eTurnInc, oTarget);
+  }
+seealso:
+  functions:
+    - EffectTurnResistanceDecrease
+    - GetTurnResistanceHD
+  categories:
+    - Effects
+    - Spells
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

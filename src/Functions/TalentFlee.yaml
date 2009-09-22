@@ -1,0 +1,30 @@
+---
+type: Function
+name: TalentFlee
+shortdesc: Make the calling object flee from another object.
+return: int
+parameters:
+  - type: object
+    name: oIntruder
+    default: OBJECT_INVALID
+    desc: | Creature type object to flee from (Default: OBJECT_INVALID)
+
+description: |
+  Make the calling object flee from oIntruder, using the function ActionMoveAwayFromObject(). If oIntruder is dead or otherwise no longer available, the calling object will try to flee from the nearest enemy instead. 
+  This function returns TRUE if fleeing was triggered, FALSE if it wasn't.
+remarks: |
+  If oIntruder is a valid object, but outside the fleeing range (10.0f) of the calling object, calling TalentFlee() has no effect. This is as you would expect, however, TRUE is returned, which perhaps is not what you'd expect.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  functions:
+    - ActionMoveAwayFromObject
+  categories:
+    - Action on Object
+    - Combat Actions
+    - Core AI Talent
+    - Talents/Skills/Feats
+author: Troels Therkelsen
+editor: Michael Nork
+

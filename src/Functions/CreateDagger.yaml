@@ -1,0 +1,30 @@
+---
+type: Function
+name: CreateDagger
+shortdesc: Used to create a magical dagger in a container as part of the treasure distribution model
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Object to create the item in
+
+  - type: object
+    name: oAdventurer
+    desc: | a Player object
+
+description: |
+  Spawns in a magical weapon suited for that class as part of the random treasure distribution. 
+remarks: |
+  Found in nw_o2_feat.nss 
+  This can be used to create the item in any object with an inventory.
+requirements: |
+  #include "nw_o2_feat"
+version: 1.61
+seealso:
+  functions:
+    - CreateItemOnObject
+  categories:
+    - Item Creation
+author: Michael Nork
+editor: Lilac Soul
+

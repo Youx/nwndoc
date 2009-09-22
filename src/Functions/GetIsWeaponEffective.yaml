@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetIsWeaponEffective
+shortdesc: Check whether script owner's equipped weapon is able to damage a given object.
+return: int
+parameters:
+  - type: object
+    name: oVersus
+    default: OBJECT_INVALID
+    desc: | Object to test weapon against. (Default: OBJECT_INVALID)
+
+  - type: int
+    name: bOffHand
+    default: FALSE
+    desc: | Check weapon equipped in off-hand? (Default: FALSE)
+
+description: |
+  Returns TRUE if it's possible for the script's owner to damage the given object with its equipped weapon. If bOffHand=TRUE, then the off-hand weapon is tested.
+remarks: |
+  This function must be called from a script which is "owned" by the creature whose weapon is to be tested. 
+  The oVersus argument need not be a creature. For example, using a chest as the argument would normally return TRUE, but if the chest's plot flag is checked, then this function will return FALSE. 
+  Also, an actual weapon need not be present. If no weapon is equipped, the creature's bare-handed attack is tested.
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Object
+author: Jason Harris
+editor: Kristian Markon
+

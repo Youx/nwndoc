@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetNumItems
+shortdesc: Gets the number of the item that the target carries.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The creature to check the inventory.
+
+  - type: string
+    name: sItem
+    desc: | The tag of the item to search for.
+
+description: |
+  Returns the number of items of sItem that oTarget has in inventory, to include all stacked items.
+remarks: |
+  Function can be found in nw_i0_plot.nss line 780. 
+  This will count each individual item in a stack, as well as items that are not in a stack. 
+  Does not count items equipped by oTarget.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.61
+seealso:
+  functions:
+    - GetNumStackedItems
+  categories:
+    - Get Data from Creature
+    - Inventory
+author: John Shuell
+editor: Lilac Soul
+additional_contributors:
+  - Funny
+  - Lilac Soul

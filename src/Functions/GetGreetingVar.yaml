@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetGreetingVar
+shortdesc: This variable keeps track of whether or not the player has talked to this henchman.
+return: int
+parameters:
+  - type: int
+    name: nChapter
+    desc: | The chapter the player is in.
+
+  - type: object
+    name: oPC
+    desc: | The player to test for.
+
+description: |
+  Returns TRUE if the integer found on the player with the variable name of "NW_L_HEN"+ henchmans tag + nChapter is equal to 10.
+remarks: |
+  Function found in nw_i0_henchman.nss on line 180 
+  This function can let a henchman know if he has talked to the player for this particular chapter yet.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.22
+seealso:
+  functions:
+    - SetGreetingVar
+  categories:
+    - Module Specific
+author: John Shuell
+

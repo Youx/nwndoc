@@ -1,0 +1,63 @@
+---
+type: Function
+name: GetMatchCompatibility
+shortdesc: Check if creature is able use a talent from a selected class in the requested method.
+return: int
+parameters:
+  - type: talent
+    name: tUse
+    desc: | The talent to check.
+
+  - type: string
+    name: sClass
+    desc: | The class to check.
+
+  - type: int
+    name: nType
+    desc: | The method to use. (variable) NW_TALENT_*
+
+description: |
+  Returns a boolean true/false if the talent tUse is effective in protecting the NPC versus the sClass passed in. It is used to make random behavior.
+remarks: |
+  The function normally called prior to GetMatchCompatibility() is GetCreatureTalentRandom() which can only return a talen an NPC has, then GetMatchCompatibility checks to see if that talent is useful against the specified class.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.26
+example: |
+  // NPC AI code (NOT TESTED IN ALL CASES)
+  // SOME CODE TAKEN FROM nw_i0_generic I TAKE NO CREDIT FOR IT.
+  #include "nw_i0_generic"
+  void main()
+  {
+      talent tUse;
+      struct sEnemies sCount = DetermineEnemies();
+      int bValid = FALSE;
+      int nCnt;
+      string sClass = GetMostDangerousClass(sCount);
+      while(GetIsTalentValid(tUse) && nCnt < 10)
+      {
+          tUse = GetCreatureTalentRandom(TALENT_CATEGORY_BENEFICIAL_PROTECTION_SELF);
+          if(GetIsTalentValid(tUse) && GetMatchCompatibility(tUse, sClass, NW_TALENT_PROTECT))
+          {
+              bValid = TRUE;
+              nCnt = 11;
+          }
+          nCnt++;
+      }
+      if(bValid == TRUE)
+          SendMessageToPC(GetFirstPC(),"NPC CAN USE TALENT");
+  }
+seealso:
+  functions:
+    - GetMostDangerousClass
+    - MatchCombatProtections
+    - MatchElementalProtections
+    - MatchSpellProtections
+    - TalentAdvancedProtectSelf
+  categories:
+    - Core AI Talent
+    - Talents/Skills/Feats
+author: GoLeM
+editor: Charles Feduke
+additional_contributors:
+  - Genji

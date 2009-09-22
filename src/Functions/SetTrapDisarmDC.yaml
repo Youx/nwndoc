@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetTrapDisarmDC 
+shortdesc: Set the DC for disarming the trap.
+return: void
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | A placeable, door or trigger.
+
+  - type: int
+    name: nDisarmDC
+    desc: | Must be between 0 and 250.
+
+description: |
+  Set the DC for disarming the trap.
+version: 1.67
+seealso:
+  functions:
+    - GetTrapDisarmDC
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Mistress

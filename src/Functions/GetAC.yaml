@@ -1,0 +1,50 @@
+---
+type: Function
+name: GetAC
+shortdesc: Retrieves the AC (armor class) of a creature.
+return: int
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object to get the AC of.
+
+  - type: int
+    name: nForFutureUse
+    default: 0
+    desc: | Parameter reserved for future use and currently does nothing. (Default: 0)
+
+description: |
+  Returns the AC (armor class) of oObject if it is a creature. 
+  Returns 0 if oObject is an item, door, or placeable. 
+  Returns -1 if oObject is not a creature, item, door, or placeable. 
+  nForFutureUse is not in use, and should not be changed.
+remarks: |
+  This shouldn't get any AC-versus bonuses - EG: Protection Against Evil grants +2 deflection AC against evil-only people, or AC verus a specific damage type. 
+  It will, in reality, return the exact AC value on the character sheet - this does not include versus-bonuses, and is the "AC versus all" of the character. 
+  Doors, Placeables can be attacked, and do actually have an AC of 0, because only a critical miss (Getting a 1 on a d20) will miss it.
+version: 1.28
+example: |
+  // this script can simulate an attack triggered when a door or 
+  // placeable is opened.  
+  // this script rolls a d20 and checks the results against the 
+  // person's AC; if the die roll is at least the AC of the target it 
+  // does d10 damage (kind of a very unfair trap that can't be
+  // searched for or disabled).
+  main()
+  {
+     object oPC = GetLastOpenedBy();
+     int nDieRoll = d20();
+     if (nDieRoll >= GetAC(oPC)) {
+        effect eDamage = EffectDamage(d10(), DAMAGE_TYPE_PIERCING);
+        ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oPC);
+     }
+  }
+seealso:
+  functions:
+    - GetBaseAttackBonus
+    - GetItemACValue
+  categories:
+    - Combat Information
+author: Tom Cassiotis
+editor: Jasperre
+

@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetIsImmune
+shortdesc: Determines whether a creature has a specific immunity.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to check immunity for.
+
+  - type: int
+    name: nImmunityType
+    desc: | IMMUNITY_TYPE_*
+
+  - type: object
+    name: oVersus
+    default: OBJECT_INVALID
+    desc: | If this is specified, then we also check for the race and alignment of oVersus. (Default: OBJECT_INVALID)
+
+description: |
+  Returns TRUE if oCreature has immunity of type nImmunity versus oVersus, otherwise FALSE. 
+  oVersus should only change what is returned if an effect is applied with EffectVersusAlignment(), such as Protection from Evil, or EffectVersusRacialType().
+remarks: |
+  From version 1.62+, this correctly checks feats (such as a Paladins fear immunity) as well as item/spell immunities.
+version: 1.22
+seealso:
+  functions:
+    - EffectSpellImmunity
+  categories:
+    - Miscellaneous
+  constants:
+    - IMMUNITY_TYPE_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+

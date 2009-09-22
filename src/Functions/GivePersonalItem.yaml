@@ -1,0 +1,31 @@
+---
+type: Function
+name: GivePersonalItem
+shortdesc: Makes the henchman give his or her personal item to the player.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The PC to receive the item.
+
+  - type: object
+    name: oHench
+    default: OBJECT_SELF
+    desc: | The henchman whose personal item will be given. (Default: OBJECT_SELF)
+
+description: |
+  If oPC doesn’t have the personal item of the henchman, it is created on him / her.
+remarks: |
+  Found in nw_i0_henchman.nss on line 272 
+  The tag of the personal item must be the tag of the henchman + “PERS”. The resref must be a lowercase version of this.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  functions:
+    - StripAllPersonalItemsFromEveryone
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

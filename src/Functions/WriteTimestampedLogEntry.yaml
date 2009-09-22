@@ -1,0 +1,25 @@
+---
+type: Function
+name: WriteTimestampedLogEntry
+shortdesc: Records a string in the log file along with a date-time stamp.
+return: void
+parameters:
+  - type: string
+    name: sLogEntry
+description: |
+  Write sLogEntry as a timestamped entry into the log file
+remarks: |
+  The logfile the string is printed in is called nwclientlog.txt and is located in the "logs" folder under your nwn install directory.
+version: 1.22
+example: |
+  // This call would produce "[Fri Jul 12 12:08:03] Test" in the log file
+  WriteTimestampedLogEntry("Test");
+seealso:
+  functions:
+    - DebugPrintTalentID
+    - PrintString
+  categories:
+    - Debug
+author: Tom Cassiotis
+editor: Lilac Soul
+

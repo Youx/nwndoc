@@ -1,0 +1,40 @@
+---
+type: Function
+name: SpeakStringByStrRef
+shortdesc: Causes an object to instantly speak a translated string.
+return: void
+parameters:
+  - type: int
+    name: nStrRef
+    desc: | Numeric reference of the string reference to speak.
+
+  - type: int
+    name: nTalkVolume
+    default: TALKVOLUME_TALK
+    desc: | Volume at which to speak the specified string (TALKVOLUME_*). (Default: TALKVOLUME_TALK)
+
+description: |
+  Causes an object to instantly speak a translated string. This is not an action, happens immediately, and not blocked when the object is uncommandable. 
+  Note that this is faster for any module, as the talk table is already loaded into the client/players memory, and so will execute much faster then declaring a string and speaking it. 
+  However, it is obviously limited and is not dynamic, and 2 strings from the talk table can only be added to be spoken at once via. GetStringByStrRef() and added in a string variable.
+remarks: |
+  The StrRef is an index number into the user's dialog.tlk file, which is a language specific file. Since Hordes of the Underdark, it's become possible to easily make your own tlk file and include with your module. Note that you must add 16777216 to the index in your file, so if you want entry 1 in your custom tlk file, you'll need use 16777217 for the nStrRef in this function. 
+  More detailed information on talktables can be found here: 
+  http://ccg.dladventures.com/index.php/TalkTables
+version: 1.61
+example: |
+  // Speak "Bard" each heartbeat. Its a mad olde worlde!
+  // Bard is string 2 in the talk table (See /utils for talk tabel viewer)
+  void main()
+  {
+      // Speak it
+      SpeakStringByStrRef(2);
+  }
+seealso:
+  categories:
+    - Conversation
+  constants:
+    - TALKVOLUME_* Constants
+author: Charles Feduke
+editor: Jasperre
+

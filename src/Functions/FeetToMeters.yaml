@@ -1,0 +1,25 @@
+---
+type: Function
+name: FeetToMeters
+shortdesc: Returns how many meters are in fFeet.
+return: float
+parameters:
+  - type: float
+    name: fFeet
+description: |
+  This function takes the distance of feet represented by fFeet and returns the equal distance in meters.
+remarks: |
+  1 foot = 0.3048 meters.
+version: 1.61
+example: |
+  // Example 1 - Will set fMeters to 1.066799998
+    float fMeters
+    fMeters = FeetToMeters(3.5f);
+seealso:
+  functions:
+    - YardsToMeters
+  categories:
+    - Math
+author: Brett Lathrope
+editor: Lilac Soul
+

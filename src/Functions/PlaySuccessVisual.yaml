@@ -1,0 +1,26 @@
+---
+type: Function
+name: PlaySuccessVisual
+shortdesc: Applies the visual effect for improved ability score to a target.
+return: void
+parameters:
+  - type: object
+    name: oVisual
+    desc: | object to apply the visual effect to
+
+description: |
+  Simply applies the improved ability score vfx (VFX_IMP_IMPROVE_ABILITY_SCORE) to oVisual.
+remarks: |
+  Found in nw_o0_itemmaker.nss line 100 
+  Used when an item is successfully forged.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.28
+seealso:
+  categories:
+    - Visual Effects
+  constants:
+    - VFX_IMP_* Constants
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

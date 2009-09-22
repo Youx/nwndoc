@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetWeaponRanged
+shortdesc: Checks whether a given item is a ranged weapon.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to be checked.
+
+description: |
+  Returns TRUE if oItem is a ranged weapon.
+version: 1.22
+seealso:
+  functions:
+    - IPGetIsMeleeWeapon
+    - IPGetIsRangedWeapon
+  categories:
+    - Get Data from Object
+author: Kristian Markon
+

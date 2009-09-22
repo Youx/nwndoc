@@ -1,0 +1,36 @@
+---
+type: Function
+name: ActionSpeakString
+shortdesc: Causes an object to speak.
+return: void
+parameters:
+  - type: string
+    name: sStringToSpeak
+    desc: | String to be spoken
+
+  - type: int
+    name: nTalkVolume
+    default: TALKVOLUME_TALK
+    desc: | TALKVOLUME_* (Default: TALKVOLUME_TALK)
+
+description: |
+  Adds to the caller's action queue an action that will cause the caller to speak sStringToSpeak. 
+  nTalkVolume determines how loud the string will be spoken when the action is processed.
+remarks: |
+  This differs from SpeakString which causes the caller to speak immediately. Note that the caller must have an action queue for this to do anything (for example, triggers do not process actions). 
+  See SpeakString for more information about talk volumes.
+version: 1.22
+seealso:
+  functions:
+    - ActionSpeakStringByStrRef
+    - ActionStartConversation
+    - SpeakString
+  categories:
+    - Action on Object
+    - Conversation
+  constants:
+    - TALKVOLUME_* Constants
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Drake Coker

@@ -1,0 +1,18 @@
+---
+type: Function
+name: DimensionHop
+shortdesc: Teleports instantly a character from one point to another creature.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+description: |
+  Teleports the caller of DimensionHop to oTarget with a flashy graphic.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Combat Actions
+author: Tom Cassiotis
+

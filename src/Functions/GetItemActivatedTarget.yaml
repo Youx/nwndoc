@@ -1,0 +1,38 @@
+---
+type: Function
+name: GetItemActivatedTarget
+shortdesc: Determine the activated item's target.
+return: object
+parameters:
+description: |
+  Returns activated item's target as an object. Use this in a module's OnActivateItem event to get the activated item's target.
+remarks: |
+  This function should only be used in a module's OnActivateItem event script, because that's the only place it makes sense to refer to an activated item. 
+  Note that "item" refers to inventory objects. You can't use OnActivateItem to refer to a placeable object, such as a trap or switch. In those cases, use the placeable object's OnUsed event, or the trap's OnEnter event.
+version: 1.22
+example: |
+  //A rod of Healing that only heals good creatures.  Place this
+  //in the module's OnActivateItem event
+  void main()
+  {
+      oItem = GetItemActivated();
+      if ( GetTag( oItem ) == "ROD_HEALGOOD" )
+      {
+          oTarget = GetItemActivatedTarget();
+          if ( GetAlignmentGoodEvil( oTarget ) == ALIGNMENT_GOOD )
+          {
+              effect eHeal = EffectHeal( 10 );
+              ApplyEffectToObect( DURATION_TYPE_INSTANT, eHeal, oTarget );
+          }
+      }
+  }
+seealso:
+  functions:
+    - GetItemActivatedTargetLocation
+  categories:
+    - Action on Object
+  events:
+    - OnActivateItem
+author: Jason Harris
+editor: Kristian Markon
+

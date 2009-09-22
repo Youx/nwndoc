@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetFormerMaster
+shortdesc: Determines the player that was the master of a NPC.
+return: object
+parameters:
+  - type: object
+    name: oHench
+    default: OBJECT_SELF
+    desc: | The henchman to get the former master of. (Default: OBJECT_SELF)
+
+description: |
+  Returns the former PC master of oHench and OBJECT_INVALID if oHench didn't have a master.
+remarks: |
+  You could use this function to spice up conversations of a former henchmen (that was dropped) and their former 'master'.
+requirements: |
+  #include "nw_i0_henchmen"
+version: 1.22
+seealso:
+  functions:
+    - SetFormerMaster
+    - SetWorkingForPlayer
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: John Shuell

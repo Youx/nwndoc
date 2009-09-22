@@ -1,0 +1,36 @@
+---
+type: Function
+name: GetLastTrapDetected
+shortdesc: Determines the trap last detected by the PC.
+return: object
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | Creature that has last detected a trap. (Default: OBJECT_SELF)
+
+description: |
+  Returns the last trap detected by oTarget. Return value on error: OBJECT_INVALID
+version: 1.22
+seealso:
+  functions:
+    - GetTrapBaseType
+    - GetTrapCreator
+    - GetTrapDetectable
+    - GetTrapDetectDC
+    - GetTrapDetectedBy
+    - GetTrapDisarmable
+    - GetTrapDisarmDC
+    - GetTrapFlagged
+    - GetTrapKeyTag
+    - GetTrapOneShot
+    - SetTrapDetectedBy
+    - SetTrapDisabled
+  categories:
+    - Get Data
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+

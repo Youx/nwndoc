@@ -1,0 +1,104 @@
+---
+type: Function
+name: SetCutsceneMode
+shortdesc: Sets the cut-scene mode.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature who is controlled by a player involved in a cut-scene.
+
+  - type: int
+    name: nInCutscene
+    default: TRUE
+    desc: | Toggles the mode. TRUE to enable cut-scene mode, FALSE to disable it. (Default: TRUE)
+
+  - type: int
+    name: nLeftClickingEnabled
+    default: FALSE
+    desc: | Toggles the mode. TRUE to allow the user to interact with the game world using the left mouse button only, FALSE to stop the user from interacting with the game world. (Default: FALSE)
+
+description: |
+  When enabled, cut-scene mode disables the player's ability to use GUI and camera controls. When disabled, control is restored.
+remarks: |
+  SetCutsceneMode can be used to creative movie-like cutscenes. If used properly with FadeToBlack, FadeFromBlack, and EffectVisualEffect(VFX_DUR_CUTSCENE_INVISIBILITY). 
+  It appears that when SetCutsceneMode is set to TRUE, the PC’s camera facing is automatically stored, and when you call SetCutsceneMode to FALSE, the camera facing is automatically restored. This means you can do all sorts of stuff with the camera mode and facing in a cutscene without having to worry about it afterwards. If you move the PC around in the cutscene, though, the restored camera facing may no longer be a good angle etc. In that case, you can always call SetCameraFacing when the PC exits the cutscene. 
+  SetCutsceneMode now adjusts the target's plot flag. If nInCutscene is TRUE, the plot flag of the target will be TRUE; otherwise it will be FALSE. When you set the nInCutscene to TRUE, this function checks the status of the target's plot flag. If the target's plot flag is not on, an internal variable is stored so when SetCutsceneMode is called again on the target with nInCutscene set to FALSE, the plot flag will be set back to FALSE. Likewise if the plot flag is already TRUE when this function is called, then when the function is called again with nInCutscene set to FALSE the plot flag remains unaffected.
+bugs: |
+  If you make several calls of SetCutsceneMode to TRUE on a PC without first setting it to FALSE in between, the PC will become permanently invulnerable as the plot flag will remain set to TRUE.
+version: 1.67
+example: |
+  //Example of a simple cutscene by Lilac Soul
+  //If you have a script in OnCutsceneAbort, you can simply
+  //ClearAllActions on the PC to make the scene stop,
+  //then remove the invisibility visual effect and
+  //SetCutsceneMode to false, and destroy the copy.
+  void RunCutsceneActions();
+  void CreateCopy(object oPC = OBJECT_SELF);
+  void main()
+  {
+  object oPC=GetEnteringObject();
+  if (!GetIsPC(oPC)) return;
+  AssignCommand(oPC, RunCutsceneActions());
+  }
+  //Wrapped in its own function so that oPC can be
+  //OBJECT_SELF so there's no need for AssignCommand
+  //Making heavy use of ActionDoCommand to be able to control
+  //that one thing must finish before another starts
+  void RunCutsceneActions()
+  {
+  //Fade out the PC
+  ActionDoCommand(FadeToBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  ActionWait(2.0);
+  ActionDoCommand(SetCutsceneMode(OBJECT_SELF, TRUE));
+  //Create a copy so we can move the invisible PC around
+  //and still have him think he's standing where he was
+  ActionDoCommand(CreateCopy());
+  //Make PC invisible
+  effect eInv=EffectVisualEffect(VFX_DUR_CUTSCENE_INVISIBILITY);
+  ActionDoCommand(ApplyEffectToObject(DURATION_TYPE_PERMANENT, eInv, OBJECT_SELF));
+  //Fade PC back in
+  ActionDoCommand(FadeFromBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  //Here then, move the invisible PC around and do whatever
+  //It will look like the camera is just moving, and the
+  //player will have the impression of standing still because
+  //we created a copy of him
+  //If having others do stuff, like oNPC, you can do this trick
+  //To have the NPC action added to the PC's action queue
+  //REMEMBER: NO MORE THAN 75 ACTIONS IN AN ACTION QUEUE!
+  //ActionDoCommand(AssignCommand(oNPC, ActionSpeakString("Hello")));
+  //Eventually, we call
+  ActionDoCommand(FadeToBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  ActionWait(2.0);
+  ActionDoCommand(SetCutsceneMode(OBJECT_SELF, FALSE));
+  //Destroy the copy
+  ActionDoCommand(DestroyObject(GetLocalObject(GetModule(), "pccopy")));
+  ActionDoCommand(RemoveEffect(OBJECT_SELF, eInv));
+  ActionDoCommand(FadeFromBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  }
+  //Function for creating a copy of the PC
+  void CreateCopy(object oPC = OBJECT_SELF)
+  {
+  object oCopy=CopyObject(oPC, GetLocation(oPC));
+  //Make sure the copy likes the PC
+  SetIsTemporaryFriend(oPC, oCopy);
+  //Store so we can destroy later!
+  SetLocalObject(GetModule(), "pccopy", oCopy);
+  }
+seealso:
+  functions:
+    - GetCutsceneMode
+    - FadeFromBlack
+    - FadeToBlack
+    - GetLastPCToCancelCutscene
+    - RestoreCameraFacing
+    - SetCameraFacing
+    - SetCameraMode
+    - StoreCameraFacing
+  categories:
+    - Cut-Scene
+    - PC Only
+  events:
+    - OnCutsceneAbort
+author: Charles Feduke
+editor: Lilac Soul

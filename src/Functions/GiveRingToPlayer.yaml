@@ -1,0 +1,26 @@
+---
+type: Function
+name: GiveRingToPlayer
+shortdesc: Creates a plot ring and places it in a players inventory.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The PC that will receive the ring.
+
+description: |
+  Creates a ring and places it in oPC inventory to progress a plot. 
+  This function also calls SetRingGivenTo() to store the PC for later use and stores the PCs name in a custom token to drive a conversation.
+remarks: |
+  This function is of little use for general scripting needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - GetRingGivenTo
+    - SetRingGivenTo
+  categories:
+    - Miscellaneous
+author: Tom Cassiotis
+

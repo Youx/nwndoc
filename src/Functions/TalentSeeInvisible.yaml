@@ -1,0 +1,23 @@
+---
+type: Function
+name: TalentSeeInvisible
+shortdesc: Determines if the NPC has the ability to see invisible creatures through feat or spell.
+return: int
+parameters:
+description: |
+  Checks for inherent feat of seeing invisble object, or if the various detection spells (sphere, or sight) allow the creature the ability to see invisiblity.
+remarks: |
+  Found in x0_i0_talent, but including nw_i0_generic will suffice. According to the description, this talent isn't used.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+seealso:
+  categories:
+    - Core AI
+    - Prototyped but Unused
+    - Spell Casting Effects
+    - Spells
+    - Talents/Skills/Feats
+author: Jody Fletcher
+editor: Lilac Soul
+

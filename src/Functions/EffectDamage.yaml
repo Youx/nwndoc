@@ -1,0 +1,58 @@
+---
+type: Function
+name: EffectDamage
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+  - type: int
+    name: nDamageAmount
+    desc: | amount of damage to be dealt. This should be applied as an instantaneous effect.
+
+  - type: int
+    name: nDamageType
+    default: DAMAGE_TYPE_MAGICAL
+    desc: | DAMAGE_TYPE_* (Default: DAMAGE_TYPE_MAGICAL)
+
+  - type: int
+    name: nDamagePower
+    default: DAMAGE_POWER_NORMAL
+    desc: | (Default: DAMAGE_POWER_NORMAL)
+
+description: |
+  This function creates a new Damage Effect that causes The amount of Damage Specified in the first parameter, the type of damage defined in the second and the damage power (for breaching a creatures natural damage reduction with phisical damage) with the third Parameter. 
+  Whoever calls the ApplyEffectToObject with EffectDamage is considered the damager, and the message to players usually names it. Useful to know if you want the PC to be the damager, but another script is performing the task (for example, a unique power). 
+  The target this effect is applied to must be an object with valid hit points for it to work. This effect can only be applied instantly.
+remarks: |
+  Damage is the basis for a lot of killing scripts - from Fireball to Acid Fog, and even powers like Lay on Hands (when used on undead). This is instantly applied damage, and may kill a target (if they drop to 0 HP for monsters, or -11 HP for PC's). 
+  With the patch/HotU release, 1.59, you can add all damage types (even magical, stupidly) to items as properties. Big note: This is for NPC's only, and PC's should never be able to resist divine or magical damage! 
+  The message in the combat box is reported as "So and So damages Whoever for 5 XXX damage", where XXX is the damage type - which is highlighted in different colours to easily show what is what. So and So is the creator of the effect (from the script it is called on) and the Whoever is the target (even you). 
+  Also note that for non-physical damage (anything that isn't Bludgeoning, Slashing or Piercing), the last parameter, the damage power, will never be in effect. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare effects, and apply them using an ApplyEffectToObject() Command. See the Effect Tutorial for more details.
+bugs: |
+  DAMAGE_POWER_ENERGY, with the release of hordes, no longer seems a valid value (6), because DAMAGE_POWER_PLUS_SIX is the same (6). It is unknown if the value 21 would work. Of course, it should be that you cannot ever get more then 10/+20, so DAMAGE_POWER_PLUS_TWENTY should be adequate - however, this is still an error.
+version: 1.62
+example: |
+  // Sample code for applying 10 fire damage to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eDrain = EffectDamage(10, DAMAGE_TYPE_FIRE);
+      // Create the visual portion of the effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_FLAME_M);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eDamage, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+  constants:
+    - DAMAGE_POWER_* Constants
+    - DAMAGE_TYPE_* Constants
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

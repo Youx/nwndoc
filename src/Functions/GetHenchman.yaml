@@ -1,0 +1,52 @@
+---
+type: Function
+name: GetHenchman
+shortdesc: Determines the henchman of a PC.
+return: object
+parameters:
+  - type: object
+    name: oMaster
+    default: OBJECT_SELF
+    desc: | Target PC whose henchman is sought. (Default: OBJECT_SELF)
+
+  - type: int
+    name: nInt
+    default: 1
+    desc: | Which henchman to return (Default: 1)
+
+description: |
+  Returns the henchman belonging to oMaster, and OBJECT_INVALID if oMaster does not have a henchman. 
+remarks: |
+  Since Hordes of the Underdark, PCs can have more than one henchman. Use the nInt parameter to determine which henchman to get.
+version: 1.61
+example: |
+  //Returns the number of henchmen oPC has employed
+  //Returns -1 if oPC isn't a valid PC
+  int GetNumHenchmen(object oPC)
+  {
+  if (!GetIsPC(oPC)) return -1;
+  int nLoop, nCount;
+  for (nLoop=1; nLoop<=GetMaxHenchmen(); nLoop++)
+     {
+     if (GetIsObjectValid(GetHenchman(oPC, nLoop)))
+        nCount++;
+     }
+  return nCount;
+  }
+seealso:
+  functions:
+    - GetAssociate
+    - GetAssociateState
+    - GetFamiliarName
+    - GetMaxHenchmen
+    - RemoveHenchman
+    - ResetHenchmenState
+    - SetAssociateState
+    - SetFormerMaster
+    - SetMaxHenchmen
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,55 @@
+---
+type: Function
+name: ActionAttack
+shortdesc: Initiates an attack between two creatures or a creature and an object.
+return: void
+parameters:
+  - type: object
+    name: oAttackee
+    desc: | The creature or object to be attacked
+
+  - type: int
+    name: bPassive
+    default: FALSE
+    desc: | Determines if the attack is in passive mode. (Default: FALSE)
+
+description: |
+  Causes the calling creature to start attacking oAttackee using whichever weapon is current equipped. The attack will trigger oAttackee’s OnPhysicalAttacked event, so if there’s a script attached to it that causes oAttackee’s reputation to change toward the attacker it will fight back, however ActionAttack by itself does not alter reputation. 
+  If bPassive is set to TRUE, the attacker will not move to attack oAttackee. If the attacker only has a melee weapon and oAttackee is far away, he will just stand there.
+remarks: |
+  To trigger a simple multi-round combat use DetermineCombatRound(), note however that if the attacker and the attackee’s faction is the same, they will not fight even if a DetermineCombatRound command is issued. 
+  To avoid a full combat sequence and just make a single attack when faction is involved (like a barmaid slapping someone, or a bouncer pushing some rowdy patron) then right before the ActionAttack call use 
+  DelayCommand(2.0, SurrenderToEnemies()); 
+  -OR- 
+  simply issue a ClearAllActions(TRUE) to stop the attack. 
+  ActionAttack applies to weapons (melee, missile, and natural monster weapons) only. It does not apply to any feats (except for passive ones), spells, or any other active talent.
+version: 1.29
+example: |
+  // set in a chest’s OnOpen script. A nearby guard tagged
+  // "CHEST_GUARD" will attack the person who opened
+  //  the chest.
+  void main()
+  {
+      // initialize Objects.
+      object oGuard = GetObjectByTag("CHEST_GUARD");
+      object oPlayer = GetLastOpenedBy();
+      // guard attacks player that opened the chest.
+      AssignCommand(oGuard, ActionDoCommand(SpeakString("Taste my blade you bloody thief!")));
+      AssignCommand (oGuard, ActionAttack(oPlayer));
+  }
+seealso:
+  functions:
+    - DetermineCombatRound
+    - GetAttackTarget
+    - GetAttemptedAttackTarget
+    - TalentDragonCombat
+  categories:
+    - Action on Object
+    - Combat Actions
+author: Ryan Hunt
+editor: Grimlar
+additional_contributors:
+  - Le Proctophantasmiste
+  - James Allen
+  - Jassper
+  - Lilac Soul

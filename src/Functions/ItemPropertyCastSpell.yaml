@@ -1,0 +1,51 @@
+---
+type: Function
+name: ItemPropertyCastSpell
+shortdesc: Sets a "cast spell" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nSpell
+    desc: | IP_CONST_CASTSPELL_*
+
+  - type: int
+    name: nNumUses
+    desc: | IP_CONST_CASTSPELL_NUMUSES_*
+
+description: |
+  Sets item property Cast spell. You must specify the spell constant (IP_CONST_CASTSPELL_*) and the number of uses constant (IP_CONST_CASTSPELL_NUMUSES_*), which range from 1 to 5 per day or charge, single use and unlimited. 
+  The spells that can be applied to an item will depend on the item type. For instance, there are spells that can be applied to a wand that cannot be applied to a potion. If you try to put a cast spell effect on an item that is not allowed to have that effect, it will not work. For a list of spells to add to the various types of items, use the filter "CONST_CASTSPELL" in the Script Editor of the Toolset. 
+  NOTE: The number after the name of the spell in the constant is the level at which the spell will be cast. Sometimes there are multiple copies of the same spell but they each are cast at a different level. The higher the level, the more cost will be added to the item. Examples: IP_CONST_CASTSPELL_CONFUSION_5, 
+  IP_CONST_CASTSPELL_CONFUSION_10. 
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_CASTSPELL_* constant can be retrieved off this type of item property using GetItemPropertySubType. The IP_CONST_CASTSPELL_NUMUSES_* constant can be retrieved using GetItemPropertCostTableValue. 
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's helmet able to cast virtue 5 times per day
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  int nSpell = IP_CONST_CASTSPELL_VIRTUE_1;
+  int nNumUses = IP_CONST_CASTSPELL_NUMUSES_5_USES_PER_DAY;
+  if (!GetIsObjectValid(oItem)) return; // stop if no helmet
+  itemproperty ipAdd = ItemPropertyCastSpell(nSpell, nNumUses);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+    - Spells
+  constants:
+    - IP_CONST_CASTSPELL_* Constants
+    - IP_CONST_CASTSPELL_NUMUSES_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

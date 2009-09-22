@@ -1,0 +1,36 @@
+---
+type: Function
+name: DeleteLocalObject
+shortdesc: Deletes oObject's object variable sVarName
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object storing the variable.
+
+  - type: string
+    name: sVarName
+    desc: | Variable name to delete.
+
+description: |
+  Use this function to delete an object's entry for the object defined by sVarName. If sVarName doesn't exsist, nothing happens.
+remarks: |
+  As with all deletions, once removed, GetLocalObject returns OBJECT_INVALID. Cleaning up old variables can help CPU performance if many are stored on one object (especially if the module has many unused values on it) and good for deleting the new persistant variables which can be put on a PC's inventory item, which will hinder performance if there are many unused values. 
+  Local objects also do not store the object as such that it finds it each time, but rather its "code" in the object list, which is probably a smaller value then any string you will store upon objects.
+version: 1.22
+example: |
+  // We delete the object stored on the PC under "WEAPON" when they pull a lever.
+  void main()
+  {
+      // Declare the PC object
+      object oPC = GetClickingObject();
+      // Delete the local object
+      DeleteLocalObject(oPC, "WEAPON");
+  }
+seealso:
+  categories:
+    - Local Variables
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

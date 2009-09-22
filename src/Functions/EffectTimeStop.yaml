@@ -1,0 +1,48 @@
+---
+type: Function
+name: EffectTimeStop
+shortdesc: Returns a new effect object.
+return: effect
+parameters:
+description: |
+  Create a Time Stop effect. 
+  Time stop applies a special module-wide pause which only the object it is applied to (and DM's) can move and cast spells/attack in, without penalties or hinderance. Of course, it can't move past anyone blocking them, and effects are delayed until it is over (so if you cast True Strike in time stop, and attack, it will only work once the time stop is over). 
+  Unlike D&D, this does let you physically damage objects - as in physically attacking them. 
+  When they do attack/cast spells, they are "paused" until the effect runs out. DelayCommands() pause while in timestop, as does the game clock. 
+  The time stop effect also makes everyones screens go Grey, and the special Time Stop portrait where thier normal one would be, as if they had paused. 
+  Really, time stop is the speeding up greatly of the caster, but appropriately it seems as if everyone else is frozen in time! For multiplayer, this is a pain, when a server has to wait for 1 person using timestop. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Use Time Stop sparingly - it is a very powerful tool, and without a way to make monsters immune to it (as in the Lichs in Baldurs Gate can be immune to it, the monsters in Neverwinter Nights cannot) PC's can get a lot of free attacks or spells at higher levels. 
+  In multiplayer servers with high levels and unrestricted castings of this, prepared to get annoyed when time stop is cast a lot, and lots of 9 second waits (the duration of the Bioware Time Stop spell). 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+bugs: |
+  An odd timing issue, that if you start or are currently casting a spell when this effect naturally ends, then the game seems to force you to carry on with the animations for a longer while then normal.
+version: 1.62
+example: |
+  // Apply time stop to the entering object in a trigger,
+  // if they are Human, for 6 seconds.
+  void main()
+  {
+      // Get the entering object
+      object oEnterer = GetEnteringObject();
+      // Check race
+      if(GetRacialType(oEnterer) == RACIAL_TYPE_HUMAN)
+      {
+          // Declare timestop
+          effect eTime = EffectTimeStop();
+          // Apply it for 6 seconds
+          ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eTime, oEnterer, 6.0);
+      }
+  }
+seealso:
+  functions:
+    - DelayCommand
+    - SetTime
+  categories:
+    - Effects
+    - Time
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Jasperre

@@ -1,0 +1,95 @@
+---
+type: Function
+name: FadeFromBlack
+shortdesc: Fades the screen from black into normal view.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to fade the screen of from black to normal.
+
+  - type: float
+    name: fSpeed
+    default: FADE_SPEED_MEDIUM
+    desc: | Determines how fast the fade occurs (FADE_SPEED_*). (Default: FADE_SPEED_MEDIUM)
+
+description: |
+  Fades the screen for a given creature or player from black to regular screen.
+remarks: |
+  Great for use in cutscenes or when giving the impression of time passing by. Should only be called after the screen has faded to black.
+version: 1.30
+example: |
+  //Example of a simple cutscene by Lilac Soul
+  //If you have a script in OnCutsceneAbort, you can simply
+  //ClearAllActions on the PC to make the scene stop,
+  //then remove the invisibility visual effect and
+  //SetCutsceneMode to false, and destroy the copy.
+  void RunCutsceneActions();
+  void CreateCopy(object oPC = OBJECT_SELF);
+  void main()
+  {
+  object oPC=GetEnteringObject();
+  if (!GetIsPC(oPC)) return;
+  AssignCommand(oPC, RunCutsceneActions());
+  }
+  //Wrapped in its own function so that oPC can be
+  //OBJECT_SELF so there's no need for AssignCommand
+  //Making heavy use of ActionDoCommand to be able to control
+  //that one thing must finish before another starts
+  void RunCutsceneActions()
+  {
+  //Fade out the PC
+  ActionDoCommand(FadeToBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  ActionWait(2.0);
+  ActionDoCommand(SetCutsceneMode(OBJECT_SELF, TRUE));
+  //Create a copy so we can move the invisible PC around
+  //and still have him think he's standing where he was
+  ActionDoCommand(CreateCopy());
+  //Make PC invisible
+  effect eInv=EffectVisualEffect(VFX_DUR_CUTSCENE_INVISIBILITY);
+  ActionDoCommand(ApplyEffectToObject(DURATION_TYPE_PERMANENT, eInv, OBJECT_SELF));
+  //Fade PC back in
+  ActionDoCommand(FadeFromBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  //Here then, move the invisible PC around and do whatever
+  //It will look like the camera is just moving, and the
+  //player will have the impression of standing still because
+  //we created a copy of him
+  //If having others do stuff, like oNPC, you can do this trick
+  //To have the NPC action added to the PC's action queue
+  //REMEMBER: NO MORE THAN 75 ACTIONS IN AN ACTION QUEUE!
+  //ActionDoCommand(AssignCommand(oNPC, ActionSpeakString("Hello")));
+  //Eventually, we call
+  ActionDoCommand(FadeToBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  ActionWait(2.0);
+  ActionDoCommand(SetCutsceneMode(OBJECT_SELF, FALSE));
+  //Destroy the copy
+  ActionDoCommand(DestroyObject(GetLocalObject(GetModule(), "pccopy")));
+  ActionDoCommand(RemoveEffect(OBJECT_SELF, eInv));
+  ActionDoCommand(FadeFromBlack(OBJECT_SELF, FADE_SPEED_FAST));
+  }
+  //Function for creating a copy of the PC
+  void CreateCopy(object oPC = OBJECT_SELF)
+  {
+  object oCopy=CopyObject(oPC, GetLocation(oPC));
+  //Make sure the copy likes the PC
+  SetIsTemporaryFriend(oPC, oCopy);
+  //Store so we can destroy later!
+  SetLocalObject(GetModule(), "pccopy", oCopy);
+  }
+seealso:
+  functions:
+    - BlackScreen
+    - FadeToBlack
+    - SetCutsceneMode
+    - StopFade
+  categories:
+    - Cut-Scene
+    - PC Only
+  constants:
+    - FADE_SPEED_* Constants
+  events:
+    - OnCutsceneAbort
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,35 @@
+---
+type: Function
+name: AmbientSoundChangeNight
+shortdesc: Modify an Area's nighttime soundtrack.
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area whose soundscape you want to change.
+
+  - type: int
+    name: nTrack
+    desc: | The reference of the ambient soundtrack to use.
+
+description: |
+  Change the ambient night track for oArea to nTrack.
+remarks: |
+  See AmbientSoundChangeDay for more detail.
+bugs: |
+  No BioWare constants for available ambient sounds.
+version: 1.22
+example: |
+  // See AmbientSoundChangeDay
+seealso:
+  functions:
+    - AmbientSoundChangeDay
+    - AmbientSoundPlay
+    - AmbientSoundSetDayVolume
+    - AmbientSoundSetNightVolume
+    - AmbientSoundStop
+  categories:
+    - Area
+    - Sound Effects
+author: Iskander Merriman
+

@@ -1,0 +1,23 @@
+---
+type: Function
+name: GetValidItem
+shortdesc: Gets a name of an item that can made at the Forge in the official campaign.
+return: string
+parameters:
+description: |
+  Returns a string from the LocalString "M3Q1_VALIDITEM" on the calling object.
+remarks: |
+  Function found in nw_o0_itemmaker.nss on line 254. 
+  Used in the offical campaign to verify that an item is allowed to be made at the Forge.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.22
+seealso:
+  functions:
+    - SetValidItem
+    - SetValidItemCost
+    - SetValidItemCostToken
+  categories:
+    - Module Specific
+author: John Shuell
+

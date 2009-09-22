@@ -1,0 +1,24 @@
+---
+type: Function
+name: GetIsPostOrWalking
+shortdesc: Determine whether a creature has associated waypoints.
+return: int
+parameters:
+  - type: object
+    name: oWalker
+    default: OBJECT_SELF
+    desc: | Creature to test for waypoints. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if the object has any post- or walk-waypoints associated with it. An associated post will have a tag composed of "POST_" followed by the creature's tag. Similarly, associated waypoints have tags composed as "WP_" + creature tag + "_NN", where 'NN' represents a sequential number indicating the position of the waypoint along the creature's path.
+remarks: |
+  The function name is a bit misleading. The creature need not be actually at its post, or actually walking its waypoints. As long as at least one waypoint with the correct tag exists, this function will return TRUE.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Creature
+author: Jason Harris
+editor: John Shuell
+

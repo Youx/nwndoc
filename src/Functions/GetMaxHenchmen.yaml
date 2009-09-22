@@ -1,0 +1,33 @@
+---
+type: Function
+name: GetMaxHenchmen
+shortdesc: Gets the maximum number of henchmen
+return: int
+parameters:
+description: |
+  Gets the maximum number of henchmen
+remarks: |
+  Since Hordes of the Underdark, it has been possible for a PC to have more than one henchman. By default, the max number of henchmen will still be 1 - which is what this function will return if the function SetMaxHenchmen hasn't been called first.
+version: 1.61
+example: |
+  //Returns the number of henchmen oPC has employed
+  //Returns -1 if oPC isn't a valid PC
+  int GetNumHenchmen(object oPC)
+  {
+  if (!GetIsPC(oPC)) return -1;
+  int nLoop, nCount;
+  for (nLoop=1; nLoop<=GetMaxHenchmen(); nLoop++)
+     {
+     if (GetIsObjectValid(GetHenchman(oPC, nLoop)))
+        nCount++;
+     }
+  return nCount;
+  }
+seealso:
+  functions:
+    - GetHenchman
+    - SetMaxHenchmen
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+

@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetAssociateStartLocation
+shortdesc: Gets the start location of an NPC associate.
+return: location
+parameters:
+description: |
+  Returns the start location of an NPC associate.
+remarks: |
+  Do not see this function used anywhere in the includes or in the official campaign scripts. All this does is return a location variable that is retrieved from the calling objects local variable called "NW_ASSOCIATE_START".
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // Used in an ActionsTaken script for a henchmen when the Player Character tells
+  // them they are dismissed.
+  void main(){
+  	ClearAllActions();
+  	ActionMoveToLocation(GetAssociateStartLocation());
+  }
+seealso:
+  functions:
+    - GetAssociate
+    - SetAssociateStartLocation
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: John Shuell
+

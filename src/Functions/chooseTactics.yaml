@@ -1,0 +1,23 @@
+---
+type: Function
+name: chooseTactics
+shortdesc: Determines class-specific tactics.
+return: int
+parameters:
+  - type: object
+    name: oIntruder
+    desc: | Creature to determine tactics against.
+
+description: |
+  Formerly part of DetermineCombatRound, this functionality has been broken out of DetermineCombatRound for readability purposes.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.30
+seealso:
+  functions:
+    - DetermineCombatRound
+  categories:
+    - Combat
+    - Core AI
+author: Charles Feduke
+

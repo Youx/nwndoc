@@ -1,0 +1,19 @@
+---
+type: Function
+name: DoOnce
+shortdesc: Determines whether a something has been done before.
+return: int
+parameters:
+description: |
+  Returns TRUE if a local variable (NW_L_DOONCE999) is not set and sets that variable, and returns FALSE if that variable is set.
+remarks: |
+  This function will return TRUE once only for that object that called (it sets the local variable on OBJECT_SELF). 
+  This function will fail easily if used in a general. Recommendation: DO NOT USE.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

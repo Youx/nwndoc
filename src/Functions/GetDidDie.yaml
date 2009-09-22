@@ -1,0 +1,20 @@
+---
+type: Function
+name: GetDidDie
+shortdesc: TRUE if the player has died.
+return: int
+parameters:
+description: |
+  Returns TRUE if the player has died and sets a variable so the next call to this function will return FALSE.
+remarks: |
+  Function found in nw_i0_henchman.nss on line 79. 
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.22
+seealso:
+  functions:
+    - SetDidDie
+  categories:
+    - Henchmen/Familiars/Summoned
+author: John Shuell
+

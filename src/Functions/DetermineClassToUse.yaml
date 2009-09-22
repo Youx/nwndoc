@@ -1,0 +1,24 @@
+---
+type: Function
+name: DetermineClassToUse
+shortdesc: Looks at the character classes of a NPC and determines which one to use in combat.
+return: int
+parameters:
+description: |
+  Returns class of NPC to be used in function (DetermineCombatRound). Scans all three class slots available, then returns one of them randomly.
+remarks: |
+  Randomly selects which class to send. 
+  Because this function takes no paramaters, it can only be run from a script owned by the creature whose classes we want to choose from.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.22
+seealso:
+  functions:
+    - DetermineCombatRound
+  categories:
+    - Combat
+    - Get Data from Creature
+author: Jody Fletcher
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

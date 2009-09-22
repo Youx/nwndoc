@@ -1,0 +1,42 @@
+---
+type: Function
+name: TrimLevel
+shortdesc: Returns the valid upper limit for any arcane spell scroll.
+return: int
+parameters:
+  - type: int
+    name: nScroll
+    desc: | nLevel
+
+  - type: int
+    name: nLevel
+description: |
+  Returns the valid upper limit for any arcane spell scroll.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.22
+example: |
+  // 1.24 source for this funciton
+  int TrimLevel(int nScroll, int nLevel)
+  {   int nMax = 5;
+  	switch (nLevel)
+  	{
+  	    case 0: nMax = 4; break;
+  	    case 1: nMax = 13; break;
+  	    case 2: nMax = 21; break;
+  	    case 3: nMax = 15; break;
+  	    case 4: nMax = 17; break;
+  	    case 5: nMax = 13; break;
+  	    case 6: nMax = 14; break;
+  	    case 7: nMax = 8; break;
+  	    case 8: nMax = 9; break;
+  	    case 9: nMax = 12; break;
+  	}
+  	if (nScroll > nMax) nScroll = nMax;
+  		return nScroll;
+  }
+seealso:
+  categories:
+    - Spells
+author: Tom Cassiotis
+

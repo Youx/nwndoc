@@ -1,0 +1,42 @@
+---
+type: Function
+name: SpawnScriptDebugger
+shortdesc: Fires the script debugger for debugging a running script.
+return: void
+parameters:
+description: |
+  Causes the script debugger to be executed when this function is called. If the script file isn't compiled with debugging symbols, this function does nothing. 
+  In order for this function to do anything, you need to compile the script with debug information. To do this, go to the tools menu in the toolset, choose options, then choose Script editor, then check the box with the label Generate Debug Information When Compiling Scripts. Scripts you want to use with the SpawnScriptDebugger must be compiled AFTER that option has been checked – so either recompile those scripts manually or by doing a build of the module.
+remarks: |
+  The debugger allows you to do a lot of things, like keep track of what happens with variables step by step in the script, and see the object id of each object used in the script. 
+  Apart from the stuff detailed in the description, there’s still stuff you need to do in order for this command to have an effect when you try it out in game: 
+  Go to the utils folder in you NWN install directory and run the program called DebugServer. You won’t see anything happening except that it is added to the taskbar at the bottom of the screen. 
+  Make sure you’re running Neverwinter Nights in windowed mode. To do so, you need these two lines in the file nwn.ini in the install directory: 
+  FullScreen=0 
+  AllowWindowedMode=1 
+  Also, you must make sure the resolution for your desktop is higher than the resolution for NWN. For instance, run your desktop at 1024*768 and NWN at 800*600. 
+  I have created a sample script below to let you see what happens along the way. Basically, you are allowed to see the object id of each object, keep track of the values assigned to variables, and so on. This provides you with a valuable way of finding out what is going on in your scripts step by step. 
+  When you are no longer using the SpawnScriptDebugger function, BE SURE TO ERASE IT FROM YOUR SCRIPT OR COMMENT IT OUT. If you run a script with that function in it and the DebugServer isn’t running, the SpawnScriptDebugger won’t have any effect other than slowing the game down significantly for a few seconds. 
+  Also, if you are running the DebugServer and have the SpawnScriptDebugger command in a script which isn’t compiled for debugging, the debug session will start and end immediately. You’ll notice a flash of the debug message screen, and that’s it. 
+  To top it all of, you don’t just get to see the info on the debugger screen. In the utils folder, you’ll find a textfile called LOG with a bunch of info in it. 
+version: 1.30
+example: |
+  //Follow the instructions above to make this work
+  //MUST be compiled with the debug information as detailed above
+  void main()
+  {
+  //Start the debugger
+  SpawnScriptDebugger();
+  //You'll get some info on the PC in the debugger
+  object oPC=GetFirstPC();
+  SendMessageToPC(oPC, "Hello");
+  //You'll see the value of sName in the debugger
+  string sName=GetName(OBJECT_SELF);
+  SendMessageToPC(oPC, sName);
+  }
+seealso:
+  categories:
+    - Debug
+author: Charles Feduke
+editor: Lilac Soul
+

@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetTrapDisarmDC
+shortdesc: Determines the DC for the trap to be disarmed.
+return: int
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Get the DC for disarming oTrapObject. 
+  If the object isn't trapped, this should return 0.
+remarks: |
+  This is most useful for getting if an NPC henchmen can disarm the trap at all, and really is not cheating if they attempt it once, as it does show the DC of the trap to the person disarming it (once they have passed/failed on the attempt).
+version: 1.22
+seealso:
+  functions:
+    - SetTrapDisarmDC
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Jasperre

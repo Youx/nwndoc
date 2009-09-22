@@ -1,0 +1,20 @@
+---
+type: Function
+name: GetIsEncounterCreature
+shortdesc: Determines whether a creature was spawned from an encounter.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to check. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oCreature was spawned from an encounter, otherwise FALSE.
+version: 1.22
+seealso:
+  categories:
+    - Encounter
+author: Tom Cassiotis
+editor: Kristian Markon
+

@@ -1,0 +1,53 @@
+---
+type: Function
+name: GetFirstObjectInArea
+shortdesc: Determines the first object in an area.
+return: object
+parameters:
+  - type: object
+    name: oArea
+    default: OBJECT_INVALID
+    desc: | The area that contains the objects. (Default: OBJECT_INVALID)
+
+description: |
+  Returns the first object in oArea and OBJECT_INVALID if no objects exists or on any error. 
+  If no valid area is specified, it will use the caller's area.
+remarks: |
+  Useful for making sure all things of a cirtain tag, or type, in an area are destroyed and may be easier then using GetObjectByTag(). 
+  Do not do it too often in larger, or more populated areas. 
+  There is no way to loop areas in a module, which is a shame (unless a system is devised). Therefore, it is hard to loop all objects in a module (although this is almost never ever ever required).
+bugs: |
+  Creatures possessed by a DM are skipped. 
+  The remark before about encounters not being picked up by this seem to have changed in the Hordes patches. They are now picked up.
+version: 1.62
+example: |
+  // Any objects in the area tagged "DESTROY" are destroyed.
+  // Uses OBJECT_SELF as the area, but this can be subsituted for
+  // many things.
+  void main()
+  {
+      // Loop all objects in us, an area
+      object oArea = OBJECT_SELF;
+      object oObject = GetFirstObjectInArea(oArea);
+      while(GetIsObjectValid(oObject))
+      {
+           // Destroy any objects tagged "DESTROY"
+           if(GetTag(oObject) == "DESTROY")
+           {
+               DestroyObject(oObject);
+           }
+           oObject = GetNextObjectInArea(oArea);
+      }
+  }
+seealso:
+  functions:
+    - GetNextObjectInArea
+  categories:
+    - Area
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Enigmatic
+  - Jazael
+  - Charles Feduke
+  - Jasperre

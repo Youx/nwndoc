@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetRacialTypeCount
+shortdesc: Determines the number of creatures of a race within 20 meters.
+return: int
+parameters:
+  - type: int
+    name: nRacialType
+    desc: | RACIAL_TYPE_*
+
+description: |
+  Returns the number of targets within 20m that are of the specified racial-type.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+seealso:
+  categories:
+    - Core AI
+  constants:
+    - RACIAL_TYPE_* Constants
+author: Tom Cassiotis
+

@@ -1,0 +1,34 @@
+---
+type: Function
+name: GetCreatureHasTalent
+shortdesc: Determines whether a creature has a specific talent.
+return: int
+parameters:
+  - type: talent
+    name: tTalent
+    desc: | The talent which will be checked for on the given creature.
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature to see if it has the specified talent. (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oCreature has tTalent, otherwise FALSE.
+remarks: |
+  This should help to make TalentSpell() etc. work correctly, by checking if they do have TalentSpell(SPELL_MAGIC_MISSILE). It is not used in any Bioware scripts, and the TalentSpell/Feat/Skill() has never been patched either.
+bugs: |
+  A bug regarding this causing a STACK_UNDERFLOW_ERROR in all other versions below 1.64 has been fixed in 1.64. It still may not allow TalentSpell() etc. to work correctly, however.
+version: 1.64
+seealso:
+  functions:
+    - GetCreatureTalentBest
+    - GetCreatureTalentRandom
+    - GetIsTalentValid
+  categories:
+    - Core AI Talent
+    - Get Data from Creature
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre

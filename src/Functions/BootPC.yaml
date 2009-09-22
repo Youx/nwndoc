@@ -1,0 +1,31 @@
+---
+type: Function
+name: BootPC
+shortdesc: Abruptly kicks a player off a multi-player server.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | The PC object of a player to boot.
+
+description: |
+  BootPC does what it sounds like - abruptly kicks a PC out of a multi-player game. The PC gets no option to save.
+remarks: |
+  If a PC rejoins immediately, they will start where they left off. 
+  BootPC has no effect in single-player mode.
+version: 1.22
+example: |
+  // A trigger designed to annoy OnEnter:
+  void main() {
+    BootPC(GetEnteringObject());
+  }
+seealso:
+  functions:
+    - GetPCPublicCDKey
+  categories:
+    - Miscellaneous
+    - PC Only
+    - Server
+author: Iskander Merriman
+editor: Jeremy Spilinek
+

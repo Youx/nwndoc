@@ -1,0 +1,29 @@
+---
+type: Function
+name: AssignPCDebugString
+shortdesc: Causes the nearest PC speak a string.
+return: void
+parameters:
+  - type: string
+    name: sString
+    desc: | The debug string to be spoken.
+
+description: |
+  Causes the nearest PC speak a string.
+remarks: |
+  // 1.30 source to this function 
+  void AssignPCDebugString(string sString) 
+  { 
+  object oPC = GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC); 
+  AssignCommand(oPC, SpeakString(sString)); 
+  } 
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.30
+seealso:
+  categories:
+    - Debug
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

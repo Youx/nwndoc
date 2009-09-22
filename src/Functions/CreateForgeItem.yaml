@@ -1,0 +1,20 @@
+---
+type: Function
+name: CreateForgeItem
+shortdesc: Used to create magic items at a "forge" container.
+return: void
+parameters:
+description: |
+  Called by the OnSpelLCast Event of a container and will create the item or cause a bad effect. The Script checks to see if the player has the "reagents" needed.
+remarks: |
+  Part of the Single Player Campaign. Found in nw_o0_itemmaker.nss.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.22
+seealso:
+  functions:
+    - GetForgeMatch
+  categories:
+    - Item Creation
+author: Michael Nork
+

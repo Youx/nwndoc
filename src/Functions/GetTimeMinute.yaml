@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetTimeMinute
+shortdesc: Gets the current minute.
+return: int
+parameters:
+description: |
+  Returns the current minute as an integer between 0 and 59 (maximum possible).
+remarks: |
+  By default an hour in game time is two minutes long so this function returns either a 0 or a 1. The number of minutes in an hour can be configured in the advanced properties of a module.
+version: 1.26
+seealso:
+  functions:
+    - GetIsDawn
+    - GetIsDay
+    - GetIsDusk
+    - GetIsNight
+    - GetTimeHour
+    - GetTimeMillisecond
+    - GetTimeSecond
+    - SetTime
+  categories:
+    - Time
+author: Charles Feduke
+additional_contributors:
+  - Dana C.

@@ -1,0 +1,30 @@
+---
+type: Function
+name: GetCreatureBodyPart 
+shortdesc: Returns the model number being used for the body part and creature specified.
+return: int
+parameters:
+  - type: int
+    name: nPart
+    desc: | CREATURE_PART_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature whose body part you wish to determine.
+
+description: |
+  Returns the model number being used for the body part and creature specified.
+  The model number returned is for the body part when the creature is not wearing armor (i.e. whether or not the creature is wearing armor does not affect the return value).
+  Only works on part based creatures, which is typically restricted to the playable races (unless some new part based custom content has been added to the module).
+  Returns CREATURE_PART_INVALID if used on a non-creature object, or if the creature does not use a part based model.
+version: 1.67
+seealso:
+  functions:
+    - SetCreatureBodyPart
+  constants:
+    - CREATURE_PART_*
+  categories:
+    - Get Data from Creature
+author: bernosky
+editor: Mistress

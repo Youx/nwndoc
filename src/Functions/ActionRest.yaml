@@ -1,0 +1,47 @@
+---
+type: Function
+name: ActionRest
+shortdesc: Causes the creature to rest.
+return: void
+parameters:
+  - type: int
+    name: bCreatureToEnemyLineOfSightCheck
+    default: FALSE
+    desc: | TRUE or FALSE. (Default: FALSE)
+
+description: |
+  The calling creature will enter the rest modal mode. 
+  Setting bCreatureToEnemyLineOfSightCheck to TRUE will allow the creature to rest if enemies are nearby, but the creature can't see the enemy.
+  Setting bCreatureToEnemyLineOfSightCheck to FALSE the creature will not rest if enemies are nearby regardless of whether or not the creature can see them, such as if an enemy is close by, but is in a different room behind a closed door.
+  This function is only applicable for creature type objects. 
+  Note that ActionRest cannot be used in combat (GetIsInCombat()) and automatically fails. It also, as noted below, cancels actions, therefore it is not wise to assign it during combat. 
+  It is useful for a conversation (which cannot be done in combat) which asks if you want to rest in an inn (or suchlike) and using AssignCommand, you can make the player rest when you want him to.
+remarks: |
+  ActionRest is added to the front of the action queue. If you want to add it as a normal action, you can call ActionDoCommand(ActionRest()); 
+  There is no default behavior for resting non-PC creatures (the OnRested default script is empty). So if you wish anything to happen, you have to code it yourself. Of course, the HP replenishment and spell and feat replenishment is automatic for any creature object - it happens instantly! 
+  Henchmen do not rest as normal. They rest for the same time a PC of thier level will, if thier PC master rests. If, of course, the NPC henchmen is a higher or lower level then the PC, then they take the approprate time (more or less then the PC). Otherwise, if they rest by themselves, they act like NPC resters - and it happens instantly. 
+  Any conditions which would stop the use of the rest button will also stop ActionRest(). usually, it is "You are too close to an enemy creature" or "You cannot rest in combat". It is hard to judge when these conditions (especially the first) is true, and so do not try and rely upon this to rest anything in hostile area's. 
+  To gain the effects of resting instatly, use ForceRest(). Especially useful for cutscenes and during battles (if required!) and ignores all conditions of ActionRest() for failure.
+version: 1.67
+example: |
+  // Action's Taken event. Jump the PC to a waypoint named "INN" 
+  // Then, make them rest, after 5 seconds. 
+  // Waypoint Should be in the same area as inn keeper. 
+  void main() 
+  { 
+      // Get the PC speaker and waypoint 
+      object oPC = GetPCSpeaker(); 
+      object oWP = GetWaypointByTag("INN"); 
+      // Jump the PC to the waypoint 
+      AssignCommand(oPC, JumpToObject(oWP)); 
+      // Wait, and do resting. 
+      DelayCommand(5.0, AssignCommand(oPC, ActionRest())); 
+  }
+seealso:
+  functions:
+    - ForceRest
+    - GetLastRestEventType
+  categories:
+    - Action on Object
+author: Troels Therkelsen
+editor: Jasperre

@@ -1,0 +1,42 @@
+---
+type: Function
+name: SoundObjectSetPosition
+shortdesc: Sets the position of a sound object relative to the player(s).
+return: void
+parameters:
+  - type: object
+    name: oSound
+    desc: | The sound to be played.
+
+  - type: vector
+    name: vPosition
+    desc: | The vector where the sound should originate from.
+
+description: |
+  This function can be used to change the position of the sound object that is placed in the module. For instance, a sound of moaning could be placed on a player when they open a chest.
+remarks: |
+  For people using surround sound in their game environment, this can be very effective.
+version: 1.22
+example: |
+  // assumes CryptMoans Sound is placed nearby
+  // this script placed in the OnDisturbed section of the chest
+  //
+  //  puts the sound of moaning crypt noises right on the person 
+  //  that disturbs the contents of the chest -  sccccaaaarrrrryyyy
+  void main()
+  {
+       vector vPlayer = GetPosition(GetLastDisturbed());
+       // location in vector format
+       object mySound = GetObjectByTag("CryptMoans");
+       SoundObjectSetPosition(mySound, vPlayer);
+  }
+seealso:
+  functions:
+    - SoundObjectSetVolume
+  categories:
+    - Action on Object
+    - Sound Effects
+    - Spell Casting Effects
+author: Bill Castello
+editor: Jeremy Spilinek
+

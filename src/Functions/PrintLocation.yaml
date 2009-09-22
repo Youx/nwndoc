@@ -1,0 +1,31 @@
+---
+type: Function
+name: PrintLocation
+shortdesc: Prints a location to the logfile
+return: void
+parameters:
+  - type: location
+    name: lLoc
+    desc: | Location to print
+
+description: |
+  Prints a location's string representation to the logfile.
+remarks: |
+  Simply calls LocationToString and SpeakString's that. 
+  This function will probably only be useful in debugging. 
+  Function is found in x0_i0_position, but including nw_i0_generic will suffice.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.61
+example: |
+  #include "nw_i0_generic"
+  //Print my current location for debugging purposes
+  void main()
+  {
+  PrintLocation(GetLocation(OBJECT_SELF));
+  }
+seealso:
+  categories:
+    - Debug
+author: Lilac Soul
+

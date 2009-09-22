@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetLastOpener
+shortdesc: Gets the creature that last opened or destroyed the container calling this script.
+return: object
+parameters:
+description: |
+  Returns an object variable representing the object that last opened or destroyed this container.
+remarks: |
+  Function can be found in nw_o2_coninclude.nss on line 159 
+  First checks GetLastOpenedBy() function and if it is not valid will then check GetLastKiller().
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.22
+seealso:
+  functions:
+    - GetLastKiller
+    - GetLastOpenedBy
+  categories:
+    - Inventory
+author: John Shuell
+

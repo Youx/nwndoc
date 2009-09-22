@@ -1,0 +1,43 @@
+---
+type: Function
+name: GetPlaceableIllumination
+shortdesc: Retrieves the current state of a placeables illumination.
+return: int
+parameters:
+  - type: object
+    name: oPlaceable
+    default: OBJECT_SELF
+    desc: | (Default: OBJECT_SELF)
+
+description: |
+  Returns TRUE if oPlaceable's illumination is on and returns FALSE if otherwise.
+version: 1.22
+example: |
+  // Demonstrates how to turn on and off a placeable's illumination based on the time of day.
+  // Designed to be used in the OnHeartbeat event of the placeable object.
+  void main()
+  {
+    if(GetTimeHour()==20)
+    {
+      // Sets the placables illumination state to the oposite of what it allready is
+      SetPlaceableIllumination(OBJECT_SELF, !GetPlaceableIllumination());
+      // Required for users to see static lighting changes
+      RecomputeStaticLighting(GetArea(OBJECT_SELF));
+    }
+    else if(GetTimeHour()==6)
+    {
+      // Sets the placables illumination state to the oposite of what it allready is
+      SetPlaceableIllumination(OBJECT_SELF, !GetPlaceableIllumination());
+      // Required for users to see static lighting changes
+      RecomputeStaticLighting(GetArea(OBJECT_SELF));
+    }
+  }
+seealso:
+  functions:
+    - RecomputeStaticLighting
+    - SetPlaceableIllumination
+  categories:
+    - Effects
+author: Tom Cassiotis
+editor: Sarev0k
+

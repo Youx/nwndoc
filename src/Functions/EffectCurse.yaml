@@ -1,0 +1,69 @@
+---
+type: Function
+name: EffectCurse
+shortdesc: Create a Curse effect.
+return: effect
+parameters:
+  - type: int
+    name: nStrMod
+    default: 1
+    desc: | strength modifier (Default: 1)
+
+  - type: int
+    name: nDexMod
+    default: 1
+    desc: | dexterity modifier (Default: 1)
+
+  - type: int
+    name: nConMod
+    default: 1
+    desc: | constitution modifier (Default: 1)
+
+  - type: int
+    name: nIntMod
+    default: 1
+    desc: | intelligence modifier (Default: 1)
+
+  - type: int
+    name: nWisMod
+    default: 1
+    desc: | wisdom modifier (Default: 1)
+
+  - type: int
+    name: nChaMod
+    default: 1
+    desc: | charisma modifier (Default: 1)
+
+description: |
+  Returns a new effect object that when applied to a target will reduce their ability scores by the amounts given in the parameters. 
+  It is unknown (although likely) that curses do not stack, or at least the peanlties from more then 1 curse together, as how EffectAbilityDecrease. 
+  A value of 0 should mean just no decrease in that ability. If all are 0, it is likely to return an invalid effect. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Modifiers should be given in positive amounts, the script will apply them negatively. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying a Curse of 1 of every stat to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eCurse = EffectCurse(1, 1, 1, 1, 1, 1);
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_REDUCE_ABILITY_SCORE);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eCurse, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Jasperre

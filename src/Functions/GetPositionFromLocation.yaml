@@ -1,0 +1,29 @@
+---
+type: Function
+name: GetPositionFromLocation
+shortdesc: Returns the vector part of a location.
+return: vector
+parameters:
+  - type: location
+    name: lLocation
+description: |
+  Returns the position vector of lLocation.
+remarks: |
+  Locations are made up of three types of variables: 
+  -An object, identifying the area the location is in. 
+  -A vector, identifying the (x, y, z) position coordinated within the area of the location. 
+  -A floating point value, identifying the direction the location faces (as degrees).
+version: 1.61
+seealso:
+  functions:
+    - GetAngleBetweenLocations
+    - GetLocation
+    - GetPosition
+    - Location
+    - LocationToString
+    - SetFacingPoint
+  categories:
+    - Miscellaneous
+author: Tom Cassiotis
+editor: Lilac Soul
+

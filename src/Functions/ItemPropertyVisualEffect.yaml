@@ -1,0 +1,44 @@
+---
+type: Function
+name: ItemPropertyVisualEffect
+shortdesc: Allows a melee weapon have a certain glow.
+return: itemproperty
+parameters:
+  - type: int
+    name: nEffect
+    desc: | ITEM_VISUAL_*
+
+description: |
+  Sets a visual effect (ITEM_VISUAL_*) that may be applied to melee weapons only.
+remarks: |
+  Does not in any way effect the damage the weapon deals. The effect is purely visual, as the function name implies. 
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The ITEM_VISUAL_* value can be retrieved off this type of item property using GetItemPropertySubType.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's onhand weapon glow electrically. Doesn't affect
+  //the damage it deals, and it will only work on melee weapons
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyVisualEffect(ITEM_VISUAL_ELECTRICAL);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - EffectVisualEffect
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+    - Visual Effects
+  constants:
+    - ITEM_VISUAL_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

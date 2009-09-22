@@ -1,0 +1,43 @@
+---
+type: Function
+name: EffectFrightened
+shortdesc: Create a frightened effect for use in making creatures shaken or flee.
+return: effect
+parameters:
+description: |
+  Constructor for a frightened effect. 
+  The default heartbeat script defined in the 2da file "statescripts.2da", called "nw_g0_fear" will run every 6 seconds when a creature is affected by fear. This is the same script as EffectTurned uses. 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Conversation actions don't work when the object is frightened. 
+  Fear can be counterd by immunity to mind spells or direct immunity to fear. 
+  Fear, while it can be applied as all effects can, with 2 or more at once, only 1 heartbeat will fire. 
+  Also note that most of the statescripts, like the Fear one, uses SetCommandable(). This is alright - it seems to get automatically turned on/off according to the effects used. 
+  Fear, in the normal game (without an edited feat heartbeat script) will mearly run from any enemy which comes within 5 meters - half a NwN tile side length. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying 1 strength damage to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eFear = EffectFrightened();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_HEAD_EVIL);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eFear, oTarget);
+  }
+seealso:
+  categories:
+    - Effects
+author: Michael Nork
+editor: Jasperre
+additional_contributors:
+  - Brian O'keefe
+  - Jasperre

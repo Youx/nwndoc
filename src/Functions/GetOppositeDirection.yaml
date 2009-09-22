@@ -1,0 +1,22 @@
+---
+type: Function
+name: GetOppositeDirection
+shortdesc: Returns a normalized direction that is -180 from fDirection
+return: float
+parameters:
+  - type: float
+    name: fDirection
+    desc: | Current direction
+
+description: |
+  This is a convenience function that returns a float representing a normalized angle that is -180 degrees from fDirection.
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Math
+    - Miscellaneous
+    - Movement
+author: Michael Nork
+

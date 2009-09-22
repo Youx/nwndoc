@@ -1,0 +1,37 @@
+---
+type: Function
+name: CheckIntelligenceHigh
+shortdesc: Determines if the Intelligence score of the speaking player is above 14.
+return: int
+parameters:
+description: |
+  Returns TRUE if the player character in the conversation has an intelligence higher than 14.
+remarks: |
+  Function found in nw_i0_plot.nss on line 728. 
+  This function always uses GetPCSpeaker() to determine the intelligence score, so using it anywhere besides in a conversation will return FALSE. This was used by BioWare to handle different conversation choices for the players depending on how intelligent they were.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.28
+example: |
+  //Add as a starting conditional on a conversation thread for a Wizard who will not bother 
+  //talking to anyone unless they are exceptionally bright.
+  #include "NW_I0_PLOT"
+  int StartingConditional()
+  {
+      int bSmart = CheckIntelligenceHigh();
+      return bSmart;
+  }
+seealso:
+  functions:
+    - CheckCharismaHigh
+    - CheckCharismaLow
+    - CheckCharismaMiddle
+    - CheckCharismaNormal
+    - CheckIntelligenceLow
+    - CheckIntelligenceNormal
+    - CheckWisdomHigh
+  categories:
+    - Get Data from Creature
+author: John Shuell
+editor: Charles Feduke
+

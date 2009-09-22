@@ -1,0 +1,35 @@
+---
+type: Function
+name: GetCreatureTalentRandom
+shortdesc: Retrieves a random talent from a group of talents that a creature possesses.
+return: talent
+parameters:
+  - type: int
+    name: nCategory
+    desc: | TALENT_CATEGORY_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature who potentially possesses a talent within the specified talent category. (Default: OBJECT_SELF)
+
+description: |
+  Returns a random talent of oCreature, within nCategory.
+remarks: |
+  It is possible for nCreature not to have any talent within the specified nCategory. In this case this function will return an invalid talent, akin to OBJECT_INVALID, but you must use the GetIsTalentValid() to test this.
+version: 1.22
+seealso:
+  functions:
+    - GetCreatureHasTalent
+    - GetCreatureTalentBest
+    - GetIsTalentValid
+  categories:
+    - Core AI Talent
+    - Get Data from Creature
+    - Talents/Skills/Feats
+  constants:
+    - TALENT_CATEGORY_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Jim Allen

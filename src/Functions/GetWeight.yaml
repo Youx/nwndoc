@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetWeight
+shortdesc: Retrieves the weight of an individual item, or the weight of all objects carried by a single creature.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | Target to determine the weight of. (Default: OBJECT_SELF)
+
+description: |
+  Returns the weight of an individual item. When used on a creature, returns the weight of all items combined carried by that creature (not the creature's actual weight by itself).
+remarks: |
+  The number returned isn’t in lbs, it’s in tenths of lbs. I tested it with a PC carrying 82 lbs worth of gear, and was shocked to learn that her weight was 818! 
+  The function returns 0 on anything that isn’t an item or doesn’t have items in its inventory. A creature without anything in its inventory has a weight of 0, as does doors, invalid objects, placeables without inventories or empty inventories, etc.
+version: 1.30
+seealso:
+  categories:
+    - Get Data from Creature
+    - Get Data from Object
+    - Inventory
+author: Charles Feduke
+editor: Lilac Soul
+

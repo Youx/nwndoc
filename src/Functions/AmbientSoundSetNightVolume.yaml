@@ -1,0 +1,32 @@
+---
+type: Function
+name: AmbientSoundSetNightVolume
+shortdesc: Change the volume of an area's ambient nighttime soundtrack
+return: void
+parameters:
+  - type: object
+    name: oArea
+    desc: | The area to change.
+
+  - type: int
+    name: nVolume
+    desc: | 0 - 100
+
+description: |
+  Set the ambient night volume for oArea to nVolume.
+remarks: |
+  See AmbientSoundChangeDay for an example. 
+  Note that this does not effect any change on the 'Sound effects' slider in a Client's options. This is relative to other server-side sound volumes, and is itself affected by the client's sound volume settings
+version: 1.22
+seealso:
+  functions:
+    - AmbientSoundChangeDay
+    - AmbientSoundChangeNight
+    - AmbientSoundPlay
+    - AmbientSoundSetDayVolume
+    - AmbientSoundStop
+  categories:
+    - Area
+    - Sound Effects
+author: Iskander Merriman
+

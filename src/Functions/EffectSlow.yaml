@@ -1,0 +1,49 @@
+---
+type: Function
+name: EffectSlow
+shortdesc: Creates a slow effect.
+return: effect
+parameters:
+description: |
+  Returns an effect type of Slow. 
+  Slowed creatures have no benifits from any haste applied to them, or if they have no haste, have -4AC, -1 attack, and -50% movement speed (the opposite bonuses to haste). 
+  The target this effect is applied to must be a creature for it to work. This effect cannot be applied instantly, only temporarily or permanently.
+remarks: |
+  Slow is not overriden or dispelled by, but mearly overlaps with Haste, as in they just cancel each other. 
+  Effect functions are Constructors, which are special methods that help construct effect "objects". You can declare and link effects, and apply them using an ApplyEffectToObject() Command. Once applied, each effect can be got seperately via. looping valid effects on the target (GetFirst/NextEffect()). See the Effect Tutorial for more details.
+version: 1.62
+example: |
+  // Sample code for applying slow to a target
+  void main()
+  {
+      // This is the Object to apply the effect to.
+      object oTarget = OBJECT_SELF;
+      // Create the effect to apply
+      effect eSlow = EffectSlow();
+      // Create the visual portion of the effect. This is instantly
+      // applied and not persistant with wether or not we have the
+      // above effect.
+      effect eVis = EffectVisualEffect(VFX_IMP_SLOW);
+      // Apply the visual effect to the target
+      ApplyEffectToObject(DURATION_TYPE_INSTANT, eVis, oTarget);
+      // Apply the effect to the object   
+      ApplyEffectToObject(DURATION_TYPE_PERMANENT, eSlow, oTarget);
+  }
+  // Example 1 - Create a slow effect and apply it to a PC
+  object oPC = GetLastUsedBy();
+  effect eSlow = EffectSlow();
+  ApplyEffectToObject(DURATION_TYPE_INSTANT,eSlow,oPC,30.0f);
+  // Example 2 - Use EffectSlow() directly without defining an effect
+  // variable.
+  object oPC = GetLastUsedBy();
+  ApplyEffectToObject(DURATION_TYPE_INSTANT,EffectSlow(),oPC,30.0f);
+seealso:
+  functions:
+    - ApplyEffectToObject
+  categories:
+    - Effects
+    - Spell Casting Effects
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Jasperre

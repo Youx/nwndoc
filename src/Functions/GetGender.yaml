@@ -1,0 +1,20 @@
+---
+type: Function
+name: GetGender
+shortdesc: Determines the gender of a creature.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature that we are interested in.
+
+description: |
+  Returnes the gender (GENDER_*) of oCreature.
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Creature
+  constants:
+    - GENDER_* Constants
+author: Tom Cassiotis
+

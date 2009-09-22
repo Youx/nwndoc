@@ -1,0 +1,28 @@
+---
+type: Function
+name: RunMelfAcidImpact
+shortdesc: Handles the dealing of damage each round by the Melf’s Acid Arrow spell.
+return: void
+parameters:
+  - type: int
+    name: nSecondsRemaining
+    desc: | Seconds to go yet
+
+  - type: object
+    name: oTarget
+    desc: | Creature being damaged by acid
+
+description: |
+  This function recursively calls itself once started. Deals a small amount of damage every round, decrementing nSecondsRemaining, until nSecondsRemaining reaches 0.
+remarks: |
+  Found in nw_s0_acidarrow.nss line 21 
+  This isn’t an include file, so you can’t include the function the usual way. Also, this function probably shouldn’t be called on its own – try using the entire nw_s0_acidarrow script instead.
+version: 1.28
+seealso:
+  categories:
+    - Effects
+    - Private
+    - Spells
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

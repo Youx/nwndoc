@@ -1,0 +1,26 @@
+---
+type: Function
+name: GetNumberOfItems
+shortdesc: Determines the number of items to create as treasure.
+return: int
+parameters:
+  - type: int
+    name: nTreasureType
+    desc: | TREASURE_*
+
+description: |
+  Returns the number of items to create for a treasure of type nTreasureType. 
+remarks: |
+  GetNumberOfItems() is used in the treasure generation scripts that drive BioWare's modules.
+requirements: |
+  #include "nw_o2_coninclude"
+version: 1.28
+seealso:
+  categories:
+    - Module Specific
+  constants:
+    - TREASURE_* Constants
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Rodney Sherrill

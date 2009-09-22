@@ -1,0 +1,86 @@
+---
+type: Function
+name: ExecuteScript
+shortdesc: Cause a script to execute.
+return: void
+parameters:
+  - type: string
+    name: sScript
+    desc: | oTarget
+
+  - type: object
+    name: oTarget
+description: |
+  Cause oTarget to run sScript as if called from an event and then return execution to the calling script. 
+  The advantage of executing the script as if it were called by an event is, default variables like OBJECT_SELF are valid and initialized to oTarget. Additionally, references to possession and inventory are defaulted to oTarget. This makes scripts needed by say, OnUsed events on placeable items or the OnActivateItem module event, easier to write and manage. 
+  If sScript does not specify a valid compiled script in your module, nothing happens.
+remarks: |
+  sScript must be the name of a script in your module's list of scripts. 
+  sScript does not take into account "lower" or "UPPER" case, it mearly does what is present. It will also cut the input string to the limit of 16 characters automatically - useful for item-tag-based-scripting. 
+  ExecuteScript() has NO delay! You can use it to run a section of code on another object (or the same one), then get a return value (via. Set/GetLocalInt()) for what happened. See the code sample for an example of how to get return values from executed scripts. 
+  There is no way to get how a script is fired - be it a normal event, an ExecuteScript() call, or any other way.
+version: 1.62
+example: |
+  // Example 1 - Cause oTarget to execute the script 
+  // named "sc_example" as if it were called by one of oTarget's events.
+  void main()
+  {
+      ExecuteScript("sc_example", oTarget);
+  }
+  // Example 2: A simple demonstration of "returning" a value via.
+  // ExecuteScript(), which can be useful.
+  // Script 1: Calls the execute script and does something on 
+  // the return value. This scripts name doesn't matter
+  void main()
+  {
+      // Can be, for example, the heartbeat event, conversation action...
+      // If we see a PC, we will run the script "PC_SEEN" (case doesn't
+      // matter) and if that script returns TRUE (1) it will attack the PC
+      object oPC = GetNearestCreature(CREATURE_TYPE_PERCEPTION, PERCEPTION_SEEN, OBJECT_SELF, 1, CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC, CREATURE_TYPE_IS_ALIVE, TRUE);
+      // Get if valid
+      if(GetIsObjectValid(oPC))
+      {
+          // Run the script
+          ExecuteScript("PC_SEEN", OBJECT_SELF);
+          // Get the return value
+          int nReturn = GetLocalInt(OBJECT_SELF, "PC_SEEN_RETURN_VALUE");
+          // If TRUE, we attack them!
+          if(nReturn == TRUE)
+          {
+              ClearAllActions();
+              ActionAttack(oPC);
+          }
+      }
+  }
+  // Script 2: The PC_SEEN named script. This will set a local (the
+  // return value) upon ourselves for the above script to function
+  // correctly.
+  void main()
+  {
+      // We cannot get the "oPC" declared above, unless we set it
+      // to a local object, or wanted to call the GetNearestCreature()
+      // function again.
+      // But, we only want to check a random variable. Why is it
+      // in a seperate script? Well, if we wanted, this script could
+      // be called according to what tag the calling creature has, so
+      // cirtain scripts will call for cirtain creatures.
+      // Anyway, random check
+      if(d100() >= 25)
+      {
+          // Attack!
+          SetLocalInt(OBJECT_SELF, "PC_SEEN_RETURN_VALUE", TRUE);
+      }
+      else
+      {
+          // Do not attack
+          SetLocalInt(OBJECT_SELF, "PC_SEEN_RETURN_VALUE", FALSE);
+      }
+  }
+seealso:
+  categories:
+    - Miscellaneous
+author: Brett Lathrope
+editor: Jasperre
+additional_contributors:
+  - Jochem van 't Hull
+  - Jasperre

@@ -1,0 +1,30 @@
+---
+type: Function
+name: LineOfSightVector
+shortdesc: Returns whether there's a direct line between two positions
+return: int
+parameters:
+  - type: vector
+    name: vSource
+    desc: | Source position
+
+  - type: vector
+    name: vTarget
+    desc: | Target position
+
+description: |
+  Returns whether or not there is a direct line of sight between the two vectors. (Not blocked by any geometry). 
+  This function must be run on a valid object in the area it will not work on the module or area. 
+  PLEASE NOTE: This is an expensive function and may degrade performance if used frequently.
+remarks: |
+  Vectors are location markers - being a set of 3 co-ordinates (X, Y, Z), and so this can be used instead of LineOfSightObject() if the 2 objects just had thier vector got by GetPosition().
+version: 1.61
+seealso:
+  functions:
+    - LineOfSightObject
+  categories:
+    - Get Data
+    - Targeting
+author: Lilac Soul
+editor: Jasperre
+

@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetListeningPatterns
+shortdesc: Prepares the listening patterns to allow for the AI to function properly.
+return: void
+parameters:
+description: |
+  Sets up the default shouts an NPC will listen for. 
+  This is usually called from within all Bioware spawn scripts, especially for henchmen.
+remarks: |
+  Sets the correct listen checks on the NPC by determining what talents they possess or what class they use. 
+  This is also a good place to set up all of the sleep and appear disappear animations for various models.
+requirements: |
+  #include "nw_i0_generic"
+version: 1.62
+seealso:
+  functions:
+    - CheckWayPoints
+    - GetListenPatternNumber
+    - GetMatchedSubstring
+    - GetMatchedSubstringsCount
+    - SetAssociateListenPatterns
+  categories:
+    - Core AI
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Tom Cassiotis
+  - Jasperre

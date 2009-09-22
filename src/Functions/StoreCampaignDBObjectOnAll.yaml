@@ -1,0 +1,36 @@
+---
+type: Function
+name: StoreCampaignDBObjectOnAll
+shortdesc: Stores a campaign DB object on all PCs of a PC's party
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: string
+    name: strVarName
+    desc: | campaign DB object variable name
+
+  - type: object
+    name: oObject
+    desc: | object to be stored
+
+description: |
+  Given a PC, variable name and object tag, stores a campaign database object on all Player Character members of the PC's party.
+remarks: |
+  Does not include associates. 
+  This does not store a reference, it stores the entire actual object, 
+  including all of its inventory. Storing many objects can be highly resource-intensive! It should NOT be used like Set/GetLocalObject. 
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors! 
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Database
+    - Party
+author: Peter Busby
+

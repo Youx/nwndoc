@@ -1,0 +1,24 @@
+---
+type: Function
+name: VectorToAngle
+shortdesc: Converts a vector variable to an angle.
+return: float
+parameters:
+  - type: vector
+    name: vVector
+    desc: | The vector to convert into an angle.
+
+description: |
+  Returns the value of vVector converted into an angle by comparing the supplied vVector to another vector at (0, 0, 0).
+version: 1.26
+seealso:
+  functions:
+    - AngleToVector
+    - Vector
+  categories:
+    - Type Casting/Conversion
+author: Charles Feduke
+editor: John Shuell
+additional_contributors:
+  - Cheiron
+  - Keith Voss

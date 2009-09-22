@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetAbilityModifier
+shortdesc: Get a creature's ability modifier for a specified ability.
+return: int
+parameters:
+  - type: int
+    name: nAbility
+    desc: | ABILITY_*
+
+  - type: object
+    name: oCreature
+    default: OBJECT_SELF
+    desc: | The creature whose ability modifer is sought. (Default: OBJECT_SELF)
+
+description: |
+  Returns oCreature's ability modifier for nAbility.
+version: 1.22
+seealso:
+  categories:
+    - Get Data from Creature
+  constants:
+    - ABILITY_* Constants
+author: Kristian Markon
+

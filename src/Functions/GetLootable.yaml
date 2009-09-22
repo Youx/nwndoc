@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetLootable
+shortdesc: Returns the lootable state of a creature
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | NPC to determine whether is lootable
+
+description: |
+  Returns the lootable state of a creature.
+remarks: |
+  This corresponds to the "leaves lootable corpse" NPC property (under advanced in the NPC's properties). 
+  Only NPCs can be lootable, and their lootable state must be set BEFORE they die. 
+  Function will return FALSE if oCreature is a PC or not a creature.
+version: 1.61
+seealso:
+  functions:
+    - SetLootable
+  categories:
+    - Get Data from Creature
+    - Inventory
+author: Lilac Soul
+

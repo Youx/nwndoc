@@ -1,0 +1,27 @@
+---
+type: Function
+name: GetForgeMatch
+shortdesc: Checks to see if the nPos item matches the current reward
+return: int
+parameters:
+  - type: int
+    name: nPos
+    desc: | The position number of the reward in the string array to compare against.
+
+description: |
+  Returns TRUE if a string held on the calling object in "M3Q1_VALIDITEM" is the same as the string found on the calling object in a variable named "NW_COMBO_REWARD" + nPos.
+remarks: |
+  Function can be found in nw_o0_itemmaker.nss on line 295. 
+  For the conversation scripts that tell you *which* item can succesfully be made from the forge. 
+  This has no use outside of the official campaign.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.22
+seealso:
+  functions:
+    - CreateForgeItem
+    - GetBackpackMatch
+  categories:
+    - Module Specific
+author: John Shuell
+

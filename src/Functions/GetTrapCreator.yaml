@@ -1,0 +1,57 @@
+---
+type: Function
+name: GetTrapCreator
+shortdesc: Returns the name of the creature that set the specific trap.
+return: object
+parameters:
+  - type: object
+    name: oTrapObject
+    desc: | a placeable, door or trigger
+
+description: |
+  Get the creator of oTrapObject, the creature that set the trap. 
+  Returns OBJECT_INVALID if oTrapObject was created in the toolset.
+remarks: |
+  Only PC's can set traps, and therefore, this will always be a PC.
+version: 1.22
+example: |
+  // On Disarm: If the trap creator is a valid PC, we give 10 XP because it is hard to disarm, as long as they didn't place it!
+  void main()
+  {
+      // Trap is us
+      object oTrap = OBJECT_SELF;
+      // Get creator
+      object oCreator = GetTrapCreator(oTrap);
+      object oDisarmer = GetLastDisarmed();
+      // Check if the creator is a PC, and not the disarmer
+      if(GetIsObjectValid(oCreator) &&
+         GetIsPC(oCreator) &&
+         oCreator != oDisarmer)
+      {
+          // Award 10XP
+          GiveXPToCreature(oDisarmer, 10);
+      }
+  }
+seealso:
+  functions:
+    - GetIsTrapped
+    - GetLastTrapDetected
+    - GetTrapBaseType
+    - GetTrapDetectable
+    - GetTrapDetectDC
+    - GetTrapDetectedBy
+    - GetTrapDisarmable
+    - GetTrapDisarmDC
+    - GetTrapFlagged
+    - GetTrapKeyTag
+    - GetTrapOneShot
+    - SetTrapDetectedBy
+    - SetTrapDisabled
+  categories:
+    - Traps
+  events:
+    - OnDisarm
+    - OnTrapTriggered
+author: Jody Fletcher
+editor: Jasperre
+

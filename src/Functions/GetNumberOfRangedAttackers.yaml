@@ -1,0 +1,31 @@
+---
+type: Function
+name: GetNumberOfRangedAttackers
+shortdesc: Determines the number of enemies outside a 5 meter radius of the target object.
+return: int
+parameters:
+description: |
+  Returns the number of enemies located outside a 5 meter radius, attacking the target object.
+remarks: |
+  GetNumberOfRangedAttackers() retrieves the number of ranged attackers where the source object is the object executing the script.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.22
+example: |
+  // Demonstrates how to yield speech based on the number of ranged attackers
+  #include "NW_I0_GENERIC"
+  void main()
+  {
+       if(GetNumberOfRangedAttackers()>8)
+       {
+             ActionSpeakString("Zounds! I'm being pelted with arrows!");
+       }
+  }
+seealso:
+  functions:
+    - GetNumberOfMeleeAttackers
+  categories:
+    - Get Data
+author: Sarev0k
+editor: Tom Cassiotis
+

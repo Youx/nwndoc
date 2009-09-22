@@ -1,0 +1,23 @@
+---
+type: Function
+name: AssignAOEDebugString
+shortdesc: Causes the creator of an area of effect spell to speak.
+return: void
+parameters:
+  - type: string
+    name: sString
+    desc: | The string that the AoE creator will speak.
+
+description: |
+  Assigns a debug string to the Area of Effect creator for them to speak.
+remarks: |
+  nw_i0_spells.nss: line 37
+requirements: |
+  #include "nw_i0_spells"
+version: 1.22
+seealso:
+  categories:
+    - Debug
+author: Tom Cassiotis
+editor: Dave Robinson
+
