@@ -1,0 +1,32 @@
+---
+type: Function
+name: SetPlaceableIllumination
+shortdesc: Sets the illumination for a placeable on or off.
+return: void
+parameters:
+  - type: object
+    name: oPlaceable
+    default: OBJECT_SELF
+    desc: | The placeable whose illumination will be changed. (Default: OBJECT_SELF)
+
+  - type: int
+    name: bIlluminate
+    default: TRUE
+    desc: | If this is TRUE, oPlaceable's illumination will be turned on. If this is FALSE, oPlaceable's illumination will be turned off. (Default: TRUE)
+
+description: |
+  Set the status of the illumination for oPlaceable.
+remarks: |
+  You must call RecomputeStaticLighting() after calling this function in order for the changes to occur visually for the players. SetPlaceableIllumination() buffers the illumination changes, which are then sent out to the players once RecomputeStaticLighting() is called. As such, it is best to call SetPlaceableIllumination() for all the placeables you wish to set the illumination on, and then call RecomputeStaticLighting() once after all the placeable illumination has been set.
+bugs: |
+  Lighting is bugged in NWN, and has been since day one. It appears that it can't be fixed. The bug is that, even turning of a placeable's illumination will still cause a glow around it when the PC is nearby.
+version: 1.22
+seealso:
+  functions:
+    - GetPlaceableIllumination
+    - RecomputeStaticLighting
+  categories:
+    - Lighting Effects
+author: Tom Cassiotis
+editor: Lilac Soul
+

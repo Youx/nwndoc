@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetVictim
+shortdesc: Specifies name of NPC to be assassinated.
+return: void
+parameters:
+  - type: object
+    name: oVictim
+    desc: | Specific victim to be assassinated.
+
+description: |
+  Sets the (NW_J_ASSASSIN_VICTIM) local variable with the object to be targeted.
+remarks: |
+  Script: nw_j_assassin.nss: Line: 349 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.29
+seealso:
+  functions:
+    - GetVictim
+    - VictimDead
+    - VictimDeadButNoItems
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

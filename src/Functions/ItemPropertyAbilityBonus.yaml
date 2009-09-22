@@ -1,0 +1,44 @@
+---
+type: Function
+name: ItemPropertyAbilityBonus
+shortdesc: Sets an ability bonus itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nAbility
+    desc: | IP_CONST_ABILITY_* test
+
+  - type: int
+    name: nBonus
+    desc: | Ability bonus to add; 1 to 12 are valid values.
+
+description: |
+  Sets item property Ability bonus, for abilities such as Charisma. You need to specify an ability constant (IP_CONST_ABILITY_*) and the bonus, which should be a positive integer between 1 and 12.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ABILITY_* constant can be retrieved off ability bonus itemproperties using GetItemPropertySubType. The bonus can be retrieved using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's belt a belt of +10 strength!
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oBelt=GetItemInSlot(INVENTORY_SLOT_BELT, oPC);
+  if (!GetIsObjectValid(oBelt)) return;
+  itemproperty ipAddStrength=ItemPropertyAbilityBonus(IP_CONST_ABILITY_STR, 10);
+  IPSafeAddItemProperty(oBelt, ipAddStrength);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ABILITY_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

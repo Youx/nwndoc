@@ -1,0 +1,31 @@
+---
+type: Function
+name: RewardGP
+shortdesc: Gives gold as a reward to a player and possible their party members.
+return: void
+parameters:
+  - type: int
+    name: nGP
+    desc: | The amount of to reward.
+
+  - type: object
+    name: oTarget
+    desc: | The PC who will receive the gold.
+
+  - type: int
+    name: bAllParty
+    default: TRUE
+    desc: | Whether the whole party that oTarget is a member of will receive gold. (Default: TRUE)
+
+description: |
+  Gives nGP gold as a reward to oTarget and if bAllParty is TRUE their party members.
+remarks: |
+  This will give the same GP to all people who receive it. So if nGP is 50, and there are 3 PCs the total GP rewarded would be 150gp.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Money
+author: Tom Cassiotis
+

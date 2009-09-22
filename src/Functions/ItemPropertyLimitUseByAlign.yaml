@@ -1,0 +1,55 @@
+---
+type: Function
+name: ItemPropertyLimitUseByAlign
+shortdesc: Sets an "only useable by alignment group" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nAlignGroup
+    desc: | IP_CONST_ALIGNMENTGROUP_*
+
+description: |
+  Sets item property Limit use by alignment group. You must specify the alignment group(s) to be able to use this item (IP_CONST_ALIGNMENTGROUP_*).
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first, unless you are stacking alignment groups. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report; Code Sample below includes a test for this bug. 
+  The IP_CONST_ALIGNMENTGROUP_* value can be retrieved off this type of item property using GetItemPropertySubType.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Restricts the use of the first PC's weapon so that only
+  //those of the same good/evil alignment as the PC can use it.
+  void main()
+  {
+  object oPC = GetFirstPC();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  int nAlign;
+  if (!GetIsObjectValid(oItem)) return;
+  switch (GetAlignmentGoodEvil(oPC))
+  {
+      case ALIGNMENT_GOOD: nAlign = IP_CONST_ALIGNMENTGROUP_GOOD; break;
+      case ALIGNMENT_NEUTRAL: nAlign = IP_CONST_ALIGNMENTGROUP_NEUTRAL; break;
+      default: nAlign = IP_CONST_ALIGNMENTGROUP_EVIL;
+  //using Switch ensures correct alignments: alternative nAlign = GetAlignmentGoodEvil(oPC) relies on
+  //corresponding constants being equal (4, 1 and 5, respectively), true at 1/24/04 but not guaranteed
+  }
+  itemproperty ipAdd = ItemPropertyLimitUseByAlign(nAlign);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  //The following OPTION adds Lawful characters as users
+  nAlign = ALIGNMENT_LAWFUL;
+  ipAdd = ItemPropertyLimitUseByAlign(nAlign);
+  AddItemProperty (DURATION_TYPE_PERMANENT, ipAdd, oItem); //not SafeAdd which strips previous properties
+  //IPSafeAddItemProperty(oItem, ipAdd); //this alternative shouldn't work except embedded ItemRemoveProperty is buggy 1/24/04 - ed.
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ALIGNMENTGROUP_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

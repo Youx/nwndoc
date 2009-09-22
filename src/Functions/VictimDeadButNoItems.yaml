@@ -1,0 +1,25 @@
+---
+type: Function
+name: VictimDeadButNoItems
+shortdesc: Determines whether the victim is dead but oPC does not carrying either the head or the personal item, otherwise FALSE.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | The victim to check the status of.
+
+description: |
+  Returns TRUE if the victim, oPC, is dead but oPC does not carrying either the head or the personal item, otherwise FALSE.
+remarks: |
+  Used to make the NWN assassin plots to work.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.22
+seealso:
+  functions:
+    - GetVictim
+    - SetVictim
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

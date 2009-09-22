@@ -1,0 +1,47 @@
+---
+type: Function
+name: ItemPropertyBonusSavingThrowVsX
+shortdesc: Sets a "saving throw bonus" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nBonusType
+    desc: | IP_CONST_SAVEVS_*
+
+  - type: int
+    name: nBonus
+    desc: | Saving throw bonus; 1 to 20 are valid.
+
+description: |
+  Sets item property Saving throw bonus vs. a specific effect or damage type, such as Acid, Cold, Death Magic, Disease, another 9 types and Universal. 
+  You must specify the save type constant (IP_CONST_SAVEVS_*) that the bonus is applied to and the bonus that is be applied, which should be an integer between 1 and 20.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_SAVEVS_* constant can be retrieved off this type of item property using GetItemPropertySubType. The bonus can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the first PC's helmet give +15 to saving throws
+  //against mind-affecting spells
+  void main()
+  {
+  object oPC = GetFirstPC();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyBonusSavingThrowVsX(IP_CONST_SAVEVS_MINDAFFECTING, 15);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertyReducedSavingThrowVsX
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_SAVEVS_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

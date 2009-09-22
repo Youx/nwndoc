@@ -1,0 +1,37 @@
+---
+type: Function
+name: SetAssociateState
+shortdesc: Changes the behavior of an associate.
+return: void
+parameters:
+  - type: int
+    name: nCondition
+    desc: | NW_ASC_*
+
+  - type: int
+    name: bValid
+    default: TRUE
+    desc: | Flag the NW_ASC_* value to TRUE or FALSE (on/off). (Default: TRUE)
+
+description: |
+  Changes one of the NW_ASC_*, NW_ASC_DISTANCE_*, NW_ASC_HEAL_AT_*, NW_ASC_AGGRESSIVE_* constant settings for an NPC associate to on (TRUE) or off (FALSE). 
+  These settings are stored and manipulated using bit arithmetic on the "NW_ASSOCIATE_MASTER" integer variable local to the NPC associate.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.29
+seealso:
+  functions:
+    - GetAssociate
+    - GetAssociateHealMaster
+    - GetAssociateState
+    - GetHenchman
+    - GetMaster
+    - SetAssociateListenPatterns
+    - SetAssociateStartLocation
+  categories:
+    - Henchmen/Familiars/Summoned
+  constants:
+    - NW_ASC_* Constants
+author: Charles Feduke
+editor: Jody Fletcher
+

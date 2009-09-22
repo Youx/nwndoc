@@ -1,0 +1,29 @@
+---
+type: Function
+name: IPGetIsRangedWeapon
+shortdesc: Checks if an item is a ranged weapon.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to check whether is a ranged weapon.
+
+description: |
+  Returns TRUE if oItem is a ranged weapon.
+remarks: |
+  Does exactly the same as GetWeaponRanged. From the "// doh !" comment in the function code, I'm guessing that Georg (creator of the function) forgot about that function... 
+  I'd recommend that you use GetWeaponRanged instead of this function, as it will be more CPU friendly. Granted, unless you loop through 1,000 items, you probably won't be able to tell the difference, but still...
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - GetWeaponRanged
+    - IPGetIsBludgeoningWeapon
+    - IPGetIsMeleeWeapon
+    - IPGetIsProjectile
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+

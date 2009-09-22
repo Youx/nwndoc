@@ -1,0 +1,55 @@
+---
+type: Function
+name: ItemPropertyLimitUseByClass
+shortdesc: Sets an "only useable by class" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nClass
+    desc: | IP_CONST_CLASS_*
+
+description: |
+  Sets item property Limit use by class. You must specify the class(es) who are able to use this item (IP_CONST_CLASS_*).
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first, unless you are stacking classes. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_CLASS_* value can be retrieved off this type of item property using GetItemPropertySubType.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Restricts the use of the PC speaker's weapon so that
+  //only those of the same class can use it.
+  //The class is determined as the first of the PC's three
+  //classes that isn't a prestige class.
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return; //stop if nothing there
+  int nClass;
+  int nCount = 1;
+  do
+  {   nClass = GetLevelByClass(nCount);
+      nCount++;
+  }
+  while (nClass>10); //loops through prestige classes
+  //The integer value for the standard PC classes
+  //(not prestige classes) are the same for CLASS_TYPE_*
+  //as for IP_CONST_CLASS_*, and are thus interchangeable.
+  //See comments under ItemPropertyLimitUseByAlign - ed.
+  itemproperty ipAdd = ItemPropertyLimitUseByClass(nClass);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  //Note: if adding more classes, use AddItemProperty - ed.
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_CLASS_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

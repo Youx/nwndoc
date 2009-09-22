@@ -1,0 +1,29 @@
+---
+type: Function
+name: HasChapterRewardItem
+shortdesc: Checks if player has the chapter reward item.
+return: int
+parameters:
+  - type: int
+    name: nChapter
+    desc: | A chapter of the official campaign
+
+  - type: object
+    name: oPC
+    desc: | The player to check for item on
+
+description: |
+  Returns TRUE if oPC has the henchman reward item for chapter number nChapter of the official campaign. If not, or on error, it returns FALSE.
+remarks: |
+  Found in nw_i0_henchman.nss on line 515 
+  Hardly useful for anyone except Bioware.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

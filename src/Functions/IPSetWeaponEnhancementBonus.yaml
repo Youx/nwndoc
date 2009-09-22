@@ -1,0 +1,46 @@
+---
+type: Function
+name: IPSetWeaponEnhancementBonus
+shortdesc: Sets an enhancement bonus on a weapon.
+return: void
+parameters:
+  - type: object
+    name: oWeapon
+    desc: | Weapon to set the bonus on.
+
+  - type: int
+    name: nBonus
+    desc: | Bonus to add. 1 to 20 are valid.
+
+  - type: int
+    name: bOnlyIfHigher
+    default: TRUE
+    desc: | TRUE or FALSE. See description. (Default: TRUE)
+
+description: |
+  Shortcut function to set the enhancement bonus of a weapon to a certain bonus 
+  Specifying bOnlyIfHigher as TRUE will prevent a bonus lower than the requested bonus from being applied. Valid values for nBonus are 1 to 20.
+remarks: |
+  A good alternative to IPSafeAddItemProperty or AddItemProperty when wanting to improve a PC's weapon. 
+  If nBonus is not between 1 and 20, nothing happens.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //Give the PC's weapon a +10 enhancement, unless it is already better than that
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oOnHand=GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  IPSetWeaponEnhancementBonus(oOnHand, 10);
+  }
+seealso:
+  functions:
+    - IPUpgradeWeaponEnhancementBonus
+    - ItemPropertyEnhancementBonus
+  categories:
+    - Item Creation
+    - Item Properties
+author: Lilac Soul
+

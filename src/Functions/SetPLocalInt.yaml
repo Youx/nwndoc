@@ -1,0 +1,37 @@
+---
+type: Function
+name: SetPLocalInt
+shortdesc: Sets a variable that remains attached to a PC party.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | PC within a party.
+
+  - type: string
+    name: sLocalName
+    desc: | Name of the variable.
+
+  - type: int
+    name: nValue
+    desc: | Value the variable holds.
+
+description: |
+  Sets a local integer on every PC who belongs to the party that the oPC belongs to, identified by sLocalName with the value of nValue. This is useful for servers when parties are constantly changing (players disconnecting/reconnecting).
+remarks: |
+  Multi-player friendly way of tracking integers among an entire party of PCs. Same as aSetPLocalInt(object, string, int).
+requirements: |
+  #include "nw_i0_plot"
+version: 1.28
+seealso:
+  functions:
+    - aGetPLocalInt
+    - aSetPLocalInt
+    - GetPLocalInt
+  categories:
+    - Local Variables
+    - Module
+    - Party
+author: Charles Feduke
+additional_contributors:
+  - Tom Cassiotis

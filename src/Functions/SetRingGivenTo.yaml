@@ -1,0 +1,24 @@
+---
+type: Function
+name: SetRingGivenTo
+shortdesc: Stores the PC that the ring was given to.
+return: void
+parameters:
+  - type: object
+    name: oPC
+description: |
+  Stores oPC in a local variable to indicate to whom the ring was given to.
+remarks: |
+  This function is of little use for general scripting needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - GetRingGivenTo
+    - GiveRingToPlayer
+    - PlayerHasRing
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

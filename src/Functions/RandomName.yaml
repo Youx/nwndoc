@@ -1,0 +1,24 @@
+---
+type: Function
+name: RandomName
+shortdesc: Generates a random name.
+return: string
+parameters:
+  - type: int
+    name: nNameType
+    default: NAME_FIRST_GENERIC_MALE
+    desc: | NAME_*
+
+description: |
+  Generate a random name.
+remarks: |
+  There is no way to actually set the name for a NPC from scripting.
+version: 1.67
+seealso:
+  categories:
+    - Miscellaneous
+  constants:
+    - NAME_* Constants
+author: Tom Cassiotis
+editor: Mistress
+

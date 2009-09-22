@@ -1,0 +1,31 @@
+---
+type: Function
+name: RemoveSummonedAssociate
+shortdesc: Removes an associate NPC from the service of a PC.
+return: void
+parameters:
+  - type: object
+    name: oMaster
+    desc: | Master PC to remove the associate of.
+
+  - type: object
+    name: oAssociate
+    default: OBJECT_SELF
+    desc: | Associate to remove from the service of oMaster. (Default: OBJECT_SELF)
+
+description: |
+  This function removes the "higher" abilities a PC has with summoned associates. (i.e. Heal me, Follow, etc.) The summoned associate is now set at Neutral to the PC, and it still disappears when PC rests.
+remarks: |
+  Aurora Toolset indicates associate will return to their original faction. 
+  Summoned Associate will at times still follow PC, and at others go stationary and just turn to keep PC in sight. 
+  Summoned associates removed from a PC and having neutral faction will still attack hostile creatures to PC.
+version: 1.22
+seealso:
+  functions:
+    - GetAssociate
+    - RemoveHenchman
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Jody Fletcher
+

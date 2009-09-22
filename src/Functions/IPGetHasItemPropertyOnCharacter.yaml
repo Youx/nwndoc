@@ -1,0 +1,42 @@
+---
+type: Function
+name: IPGetHasItemPropertyOnCharacter
+shortdesc: Returns whether a character has an item with a certain itemproperty type equipped.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | Character to check for itemproperty.
+
+  - type: int
+    name: nItemPropertyConst
+    desc: | ITEM_PROPERTY_*
+
+description: |
+  Returns TRUE if a character has any item equipped that has the itemproperty defined in nItemPropertyConst in it (ITEM_PROPERTY_* constant)
+remarks: |
+  This function performs a lot of loops, so you might want to be a little careful using it too often.
+bugs: |
+  Confirmed as of patch 1.61, this function does not check the left hand (offhand) item equipped by oPC.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The NPC doesn't like people with vampiric regeneration on their items
+  //put this on the line the NPC will speak if the PC does NOT have vampiric regen
+  int StartingConditional()
+  {
+  object oPC=GetPCSpeaker();
+  return !IPGetHasItemPropertyOnCharacter(oPC, ITEM_PROPERTY_REGENERATION_VAMPIRIC);
+  }
+seealso:
+  categories:
+    - Get Data from Creature
+    - Get Data from Object
+    - Item Properties
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Lilac Soul
+additional_contributors:
+  - Stefan Vitz

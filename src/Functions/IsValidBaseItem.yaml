@@ -1,0 +1,31 @@
+---
+type: Function
+name: IsValidBaseItem
+shortdesc: Checks to see if the baseitem type matches the one in the array AND if the item is "magical"
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to check whether or not matches
+
+  - type: int
+    name: nIndex
+    desc: | The array position to check for match in
+
+description: |
+  Used for forging items, it checks if oItem matches the one in the “array” and if it is magical.if the baseitem type matches
+remarks: |
+  Found in nw_o0_itemmaker.nss on line 212
+  The check to see whether an item is magical is done by the function GetIsMagical, which has certain limitations. I suggest you read its description.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.28
+seealso:
+  functions:
+    - GetIsMagical
+  categories:
+    - Get Data from Object
+    - Item Creation
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

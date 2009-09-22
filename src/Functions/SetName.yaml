@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetName 
+shortdesc: Set the name of an object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The object whose name is to be changed.
+
+  - type: string
+    name: sNewName
+    desc: | The new name to give oObject.
+
+description: |
+  Set the name of an object.
+remarks: |
+  NOTE: This will not work on player objects.
+  Setting an object's name to "" will make the object revert back to using the name it had originally had before any SetName() calls were made on the object.
+bugs: |
+version: 1.67
+seealso:
+  functions:
+    - GetName
+  categories:
+    - Get Data from Object
+author: Mistress

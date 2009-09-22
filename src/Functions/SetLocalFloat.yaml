@@ -1,0 +1,45 @@
+---
+type: Function
+name: SetLocalFloat
+shortdesc: Store a float as a local variable within an object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | Target object to store local variable in.
+
+  - type: string
+    name: sVarName
+    desc: | Unique variable name.
+
+  - type: float
+    name: fValue
+    desc: | Variable being stored in local object.
+
+description: |
+  Stores fValue as a local float within oObject using the variable name sVarName. The parameter sVarName is a unique string identifying a single local variable. Using the same value for sVarName in subsequent calls will overwrite the original value.
+remarks: |
+  As with all locals, there seems to be no size limit to sVarName, however, anything over 50 characters is probably a bit extreme. 
+  There is no way to set a local vector, however, vectors are mearly a set of 3 floats, defining positions X, Y and Z. To set a local vector position, you can easily set them to local floats, however, SetLocalLocation is probably a quicker and easier method.
+bugs: |
+  Setting a value to a newly created object has some particular nuances. See SetLocalString(object, string, string) for more information. Alternatively, whenever possible, set the local variable directly on the creature in the Toolset (available since version 1.59).
+version: 1.61
+example: |
+  // demonstrates syntax for SetLocalFloat
+  void main()
+  {
+       object oThis = OBJECT_SELF;
+       string sKey = “foo”;
+       float fValue = 20.0;
+       SetLocalFloat(oThis, sKey, fValue);
+  }
+seealso:
+  functions:
+    - GetLocalFloat
+  categories:
+    - Local Variables
+author: Daniel Beckman
+editor: Jasperre
+additional_contributors:
+  - Graziano Lenzi
+  - Lilac Soul

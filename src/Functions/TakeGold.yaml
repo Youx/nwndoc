@@ -1,0 +1,39 @@
+---
+type: Function
+name: TakeGold
+shortdesc: Removes a given amount of gold from the targets inventory, and optionally removes it from the game.
+return: void
+parameters:
+  - type: int
+    name: nAmount
+    desc: | The amount of gold to take.
+
+  - type: object
+    name: oGoldHolder
+    desc: | The object to take the gold from.
+
+  - type: int
+    name: bDestroy
+    default: TRUE
+    desc: | Should the amount taken be removed from the game? (Default: TRUE)
+
+description: |
+  Removes nAmount gold from oGoldHolder and removes it from the game world. Can optionally be called to give the gold to the caller.
+remarks: |
+  Function can be found in nw_i0_plot.nss on line 44. 
+  Function can be found in nw_i0_tool.nss on line 55. 
+  A very simple function which merely takes the passed in parameters and calls the TakeGoldFromCreature() function using those same parameters. It is also defined exactly the same in two different include files. This is also the unfortunate reason why you can't include those two files in the same script. 
+  This function will fail if called from an area or module event (like an area's OnEnter). However, it works on triggers, so you can just paint a trigger around the arrival area to get the same effect.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - TakeGoldFromCreature
+    - TakeNumItems
+  categories:
+    - Inventory
+    - Money
+author: John Shuell
+editor: Lilac Soul
+

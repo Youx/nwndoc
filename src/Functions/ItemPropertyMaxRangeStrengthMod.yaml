@@ -1,0 +1,47 @@
+---
+type: Function
+name: ItemPropertyMaxRangeStrengthMod
+shortdesc: Sets a mighty itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nModifier
+    desc: | Maximum allowed strength modifier; 1 to 20 are valid.
+
+description: |
+  Sets item property Max range strength modification (ie. mighty). You must specify the maximum modifier for strength that is allowed on a ranged weapon. 
+  The modifier should be a positive integer between 1 and 20.
+remarks: |
+  This itemproperty, usually known as mighty, allows you to add the strength modifier of a wielder of a ranged weapon to the damage it does. You can specify the maximum allowed strength modifier. If you set the nModifier to 5, a PC using that ranged weapon and has a strength modifier of 10 will still only do 5 additional damage. 
+  Also note that this is only valid for ranged weapons. 
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The modifier can be retrieved off this type of item property using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's onhand weapon mighty +10
+  //Only happens for shortbows and longbows.
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyMaxRangeStrengthMod(10);
+  switch (GetBaseItemType(oItem))
+  {
+      case BASE_ITEM_LONGBOW: // Note the fall-through selection scripting method
+      case BASE_ITEM_SHORTBOW:
+          IPSafeAddItemProperty(oItem, ipAdd); //for either case
+  }
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+author: Lilac Soul
+editor: Peter Busby
+

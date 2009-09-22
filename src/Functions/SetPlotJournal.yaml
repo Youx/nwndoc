@@ -1,0 +1,22 @@
+---
+type: Function
+name: SetPlotJournal
+shortdesc: Puts the current status of a plot during the Rescue mission of the Original Campaign.
+return: void
+parameters:
+  - type: string
+    name: sTag
+description: |
+  Using a global object, this function sets the local variable NW_J_RESCUE_JOURNAL to determine the current status of the Rescue mission on the Original Campaign.
+remarks: |
+  nw_j_rescue.nss: Line: 42
+requirements: |
+  #include "nw_j_rescue"
+version: 1.29
+seealso:
+  functions:
+    - GetPlotJournal
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

@@ -1,0 +1,30 @@
+---
+type: Function
+name: tan
+shortdesc: Gets the tangent of a given angle.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Angle in degrees to retrieve the tangent of.
+
+description: |
+  Returns the tangent of fValue. 
+  A tangent is a ratio of the opposite to the adjacent side.
+remarks: |
+  Ah good old Trig. The tan function is short for Tangent. A Tangent can best be expressed using a simple Right Triangle. The height of the triangle is considered the "Opposite Side", while the length is called the "Adjacent Side". To get the Tangent of the triangle simply divide the length of the "Opposite" by the length of the "Adjacent". So if a triangle is 10 units tall and is 2 units wide, the tan would equal 5. Somewhat more correctly, the tangent of angle theta, which is part of a right triangle, and has and opposite side of 10 units in length and an adjacent side 2 units in length, equals 2.
+version: 1.31
+seealso:
+  functions:
+    - acos
+    - asin
+    - atan
+    - cos
+    - sin
+  categories:
+    - Math
+author: Charles Feduke
+editor: John Shuell
+additional_contributors:
+  - Steven Mitcham
+  - Paul Catalano

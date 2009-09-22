@@ -1,0 +1,23 @@
+---
+type: Function
+name: IPGetIsIntelligentWeapon
+shortdesc: Returns whether an item has the intelligen itemproperty.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Weapon to check for intelligence.
+
+description: |
+  Returns TRUE if the item has the OnHit:IntelligentWeapon property.
+remarks: |
+  A wrapper to check for the intelligent weapon type and subtype.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+

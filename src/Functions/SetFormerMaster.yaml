@@ -1,0 +1,31 @@
+---
+type: Function
+name: SetFormerMaster
+shortdesc: Marks someone as an NPC henchman's former master PC.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The PC to mark as oHench's former master.
+
+  - type: object
+    name: oHench
+    desc: | The henchman NPC associate to mark.
+
+description: |
+  Sets a local object variable on the henchman NPC associate to the value of the PC as the former master.
+remarks: |
+  This is useful if you want to 'personalize' the NPC so that conversation threads or actions can focus on the last PC who was the 'master'.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  functions:
+    - GetFormerMaster
+    - GetHenchman
+    - GetMaster
+    - SetWorkingForPlayer
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Jody Fletcher

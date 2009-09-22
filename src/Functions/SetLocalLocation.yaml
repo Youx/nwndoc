@@ -1,0 +1,46 @@
+---
+type: Function
+name: SetLocalLocation
+shortdesc: Store a location as a local variable within an object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | Target object to store local variable in.
+
+  - type: string
+    name: sVarName
+    desc: | Unique variable name.
+
+  - type: location
+    name: lValue
+    desc: | Variable being stored in local object.
+
+description: |
+  Stores lValue as a local location within oObject using the variable name sVarName. The parameter sVarName is a unique string identifying a single local variable. Using the same value for sVarName in subsequent calls will overwrite the original value.
+remarks: |
+  Set the function Location for more information about locations.
+bugs: |
+  Setting a value to a newly created object has some particular nuances. See SetLocalString(object, string, string) for more information.
+version: 1.28
+example: |
+  // simple example that demonstrates syntax for SetLocalLocation
+  void main()
+  {
+       object oThis = OBJECT_SELF;
+       string sKey = “foo”;
+       object oArea = GetArea(OBJECT_SELF);
+       vector vPosition = Vector(0.0, 0.0, 0.0);
+       location lValue = Location(oArea, vPosition, 0.0);
+       SetLocalLocation(oThis, sKey, lValue);
+  }
+seealso:
+  functions:
+    - GetLocalLocation
+  categories:
+    - Local Variables
+author: Daniel Beckman
+editor: Jasperre
+additional_contributors:
+  - Steve U.
+  - Graziano Lenzi

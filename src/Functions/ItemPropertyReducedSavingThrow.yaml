@@ -1,0 +1,47 @@
+---
+type: Function
+name: ItemPropertyReducedSavingThrow
+shortdesc: Sets a "reduced saving throw" item property.
+return: itemproperty
+parameters:
+  - type: int
+    name: nBonusType
+    desc: | IP_CONST_SAVEBASETYPE_*
+
+  - type: int
+    name: nPenalty
+    desc: | Reduce saving throw by this; 1 to 20 are valid.
+
+description: |
+  Sets item property Reduced saving to base type. You must specify the base type to which the penalty applies (eg. will, reflex or fortitude) and the penalty to be applied. The constant for the base type starts with (IP_CONST_SAVEBASETYPE_*). 
+  The penalty should be a POSITIVE integer between 1 and 20 (a value of 1 reduces the saving throw by 1).
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_SAVEBASETYPE_* constant can be retrieved off this type of item property using GetItemPropertySubType. The penalty can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's helmet make the player miserable at will saving throws
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyReducedSavingThrow(IP_CONST_SAVEBASETYPE_WILL, 20);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertyBonusSavingThrow
+    - ItemPropertyReducedSavingThrowVsX
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_SAVEBASETYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

@@ -1,0 +1,33 @@
+---
+type: Function
+name: SetQuestDone
+shortdesc: Sets a quest as finished or done.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | A player object
+
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | The quest number (Default: 1)
+
+  - type: object
+    name: oNPC
+    default: OBJECT_SELF
+    desc: | The quest giver (Default: OBJECT_SELF)
+
+description: |
+  Call when a PC completes a quest
+remarks: |
+  Calls SetLocalIntOnAll, SetLocalInt on the PC, takes the plot and quest items and gives the reward item. 
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+

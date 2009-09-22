@@ -1,0 +1,48 @@
+---
+type: Function
+name: ItemPropertyDamageImmunity
+shortdesc: Sets a damage immunity itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nDamageType
+    desc: | IP_CONST_DAMAGETYPE_*
+
+  - type: int
+    name: nImmuneBonus
+    desc: | IP_CONST_DAMAGEIMMUNITY_*
+
+description: |
+  Sets item property Damage immunity. You must specify the damage type constant (IP_CONST_DAMAGETYPE_*) to which you want immunity and the immune bonus percentage constant (IP_CONST_DAMAGEIMMUNITY_*), which ranges from 5% to 100%. 
+  NOTE: not all the damage types will work; use only the following: Acid, Bludgeoning, Cold, Electrical, Fire, Piercing, Slashing, Sonic.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_DAMAGETYPE_* constant can be retrieved off this type of item property using GetItemPropertySubType. The IP_CONST_DAMAGEIMMUNITY_* constant can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's belt grant 25% immunity to fire damage
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_BELT, oPC);
+  int nDamageType = IP_CONST_DAMAGETYPE_FIRE;
+  int nImmuneBonus = IP_CONST_DAMAGEIMMUNITY_25_PERCENT;
+  if (!GetIsObjectValid(oItem)) return; //stop if no belt
+  itemproperty ipAdd = ItemPropertyDamageImmunity(nDamageType, nImmuneBonus);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_DAMAGEIMMUNITY_* Constants
+    - IP_CONST_DAMAGETYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

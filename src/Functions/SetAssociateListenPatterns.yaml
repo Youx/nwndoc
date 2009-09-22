@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetAssociateListenPatterns
+shortdesc: Prepares an associate (henchman, summoned, familiar) to be commanded.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | Associate to initialize as commandable. (Default: OBJECT_SELF)
+
+description: |
+  Initialize oTarget to listen for the standard ASSOCIATE_COMMAND_* commands.
+version: 1.22
+seealso:
+  functions:
+    - SetAssociateState
+    - SetListeningPatterns
+  categories:
+    - Henchmen/Familiars/Summoned
+  constants:
+    - ASSOCIATE_COMMAND_* Constants
+author: Charles Feduke
+editor: Jody Fletcher
+

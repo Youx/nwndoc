@@ -1,0 +1,24 @@
+---
+type: Function
+name: SetFetchee
+shortdesc: Sets the PC that is running an errand for an NPC during the original module.
+return: void
+parameters:
+  - type: object
+    name: oFetchee
+description: |
+  Set's the local variable (NW_J_FETCH_OWNER) to the name of the PC being tasked to fetch an item.
+remarks: |
+  Found on line 242 of nw_j_fetch.nss. 
+  It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. All of these functions are relatively straight forward and easy to understand at a glance. 
+  There is also another script of the exact same functions but works with "ArtifactItems" instead of Fetch. The scripts are identical but seperated to make coding between them easier to understand and add functionality to later. See the "See Also" section for the other functions.
+requirements: |
+  #include "nw_j_fetch"
+version: 1.29
+seealso:
+  functions:
+    - GetFetchee
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

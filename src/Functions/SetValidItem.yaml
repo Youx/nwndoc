@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetValidItem
+shortdesc: Specifices the location in a PC's inventory where a valid item exists for the Smithy plot in original campaign.
+return: void
+parameters:
+  - type: int
+    name: nPos
+    desc: | Inventory position where valid item is.
+
+description: |
+  After GetCombo function determines that the PC has the appropriate items, it determines the position of the item in their inventory by scanning each position. 
+  Once inventory location is identified local variable (M3Q1_VALIDITEM) is filled with nPos.
+remarks: |
+  Script: nw_o0_itemmaker.nss: Line: 241 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.29
+seealso:
+  functions:
+    - GetValidItem
+    - GetValidItemCost
+    - SetValidItemCost
+    - SetValidItemCostToken
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

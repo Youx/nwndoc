@@ -1,0 +1,28 @@
+---
+type: Function
+name: OpenInventory
+shortdesc: Opens a player's inventory panel.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to view the inventory of.
+
+  - type: object
+    name: oPlayer
+    desc: | Player who's screen to pop up the inventory panel on.
+
+description: |
+  Opens a creature's inventory panel. DMs can see any player's inventory. Players can view their own inventory, or that of a henchman, familiar, or animal companion. 
+  DM's never have a script to actually call this, however, they can just open it up via. the dial menu when they right click on a creature-object, if they are in the same area as the object.
+remarks: |
+  Trying to open the inventory of an object that doesn't fit into one of the aforementioned categories will not work. 
+  This function is used with the SoU henchman system. When the player presses the "open henchman inventory" button, a silent shout is sent which the henchman hears. This is picked up on in the OnConversation script, which calls the bkRespondToHenchmenShout function in x0_inc_henai, which ultimately calls OpenInventory.
+version: 1.30
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+    - Inventory
+author: Charles Feduke
+editor: Jasperre
+

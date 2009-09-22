@@ -1,0 +1,28 @@
+---
+type: Function
+name: PlayerHasPersonalItem
+shortdesc: Checks if a PC has the personal item of the assassination victim.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player to check for item.
+
+description: |
+  Returns TRUE if oPC possesses the victim’s personal item, which is retrieved with the function GetPersonalItem(); Returns FALSE in all other cases, including errors.
+remarks: |
+  Found in nw_j_assassin.nss line 206 
+  Of little use for general scripting purposes, as this is part of Bioware’s quest and reward system.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.28
+seealso:
+  functions:
+    - CreatePersonalItemOn
+    - GetPersonalItem
+    - SetPersonalItem
+  categories:
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

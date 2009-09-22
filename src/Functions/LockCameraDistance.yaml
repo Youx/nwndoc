@@ -1,0 +1,26 @@
+---
+type: Function
+name: LockCameraDistance 
+shortdesc: Locks the player's camera distance to its current distance setting, or unlocks the player's camera distance.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | A player object.
+
+  - type: int
+    name: bLocked
+    default: TRUE
+    desc: | TRUE or FALSE. (Default: TRUE)
+
+description: |
+  Locks the player's camera distance to its current distance setting, or unlocks the player's camera distance.
+  Stops the player from being able to zoom the camera in or out.
+version: 1.67
+seealso:
+  functions:
+    - LockCameraDirection
+    - LockCameraPitch
+  categories:
+    - PC Only
+author: Mistress

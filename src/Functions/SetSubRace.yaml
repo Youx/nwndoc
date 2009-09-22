@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetSubRace
+shortdesc: Sets or changes a creature's or PC's subrace
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to set the subrace on
+
+  - type: string
+    name: sSubRace
+    desc: | Name of the subrace to set
+
+description: |
+  Set the name of oCreature's sub race to sSubRace.
+remarks: |
+  Unknown at this time if objects other than creatures can belong to subraces.
+version: 1.31
+seealso:
+  functions:
+    - GetSubRace
+  categories:
+    - Miscellaneous
+author: Lilac Soul
+

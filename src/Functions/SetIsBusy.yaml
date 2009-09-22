@@ -1,0 +1,24 @@
+---
+type: Function
+name: SetIsBusy
+shortdesc: Causes an associate to be considered busy.
+return: void
+parameters:
+  - type: int
+    name: bIsBusy
+    desc: | TRUE if busy, FALSE otherwise.
+
+description: |
+  Causes an associate to be considered busy or not busy.
+remarks: |
+  This works in conjunction with IsBusy to determine if an associate is busy. This just sets a local integer on the associate.
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.22
+seealso:
+  functions:
+    - IsBusy
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Tom Cassiotis
+

@@ -1,0 +1,37 @@
+---
+type: Function
+name: sin
+shortdesc: Returns the sine of fValue.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Float value, in degrees not radians, to return the sine of.
+
+description: |
+  The sine is the ratio of the opposite side from the specified angle to the hypotenuse of a right triangle. The sin function takes an angle (in degrees) and returns the ratio of the side opposite of that angle divided by the hypotenuse. The return value (the range of sine) goes from -1.0 to 1.0. 
+  This function, as well as the other math functions listed in the "See Also" below, can be used to calculate various angles and distances between objects.
+version: 1.61
+example: |
+  // Calculate the sine of a Float value
+  void main()
+  {
+       float fOffsetRatio;
+       fOffsetRatio = sin(30.0);  // 30.0 is the specified angle
+       // fOffsetRatio will now have the value of 0.5, 
+       // the sine of 30 degrees
+  }
+seealso:
+  functions:
+    - acos
+    - asin
+    - atan
+    - cos
+    - GetChangeInY
+    - tan
+  categories:
+    - Math
+author: Charles Feduke
+editor: Peter Busby
+additional_contributors:
+  - Paul Catalano

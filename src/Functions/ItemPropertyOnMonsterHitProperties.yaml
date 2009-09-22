@@ -1,0 +1,68 @@
+---
+type: Function
+name: ItemPropertyOnMonsterHitProperties
+shortdesc: Sets an "on monster hit" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nProperty
+    desc: | IP_CONST_ONHIT
+
+  - type: int
+    name: nSpecial
+    default: 0
+    desc: | Varies with nProperty. (Default: 0)
+
+description: |
+  Sets item property Monster on hit apply effect property. You must specify the property that you want applied on hit. There are some properties that require an additional special parameter to be specified. For the others that don't require any additional parameter you may just put in the one. The special cases are as follows: 
+  ABILITYDRAIN: nSpecial is the ability to drain, constant (IP_CONST_ABILITY_*) 
+  DISEASE: nSpecial is the disease that you want applied, constant (DISEASE_*) 
+  LEVELDRAIN: nSpecial is the number of levels that you want drained, an integer between 1 and 5. 
+  POISON: nSpecial is the type of poison that will effect the victim, constant (IP_CONST_POISON_*) 
+  WOUNDING: nSpecial is the amount of wounding, an integer between 1 and 5. 
+  NOTE: These can only be applied to monster NATURAL weapons (bite, claw, gore and slam). THEY WILL NOT WORK ON NORMAL WEAPONS.
+remarks: |
+  Only the following properties appear to be addible to monster weapons: 
+  -Ability drain 
+  -Confusion 
+  -Disease 
+  -Doom 
+  -Fear 
+  -Level drain 
+  -Poison 
+  -Slow 
+  -Stun 
+  -Wounding 
+  The other IP_CONST_ONHIT properties should be addible even to monster weapons with the ItemPropertyOnHitProps constructor. 
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ONHIT value can be retrieved off this type of item property using GetItemPropertySubType. There is no entry in itempropdef.2da for the cost table or param1 table, but it is speculated that nSpecial can be retrieved by either GetItemPropertyCostTableValue or GetItemPropertyParam1Value. This is untested, though.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's specially equipped bite weapon
+  //cause ability drain of strength
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_CWEAPON_B, oPC);
+  int nProperty = IP_CONST_ONHIT_ABILITYDRAIN;
+  int nSpecial = IP_CONST_ABILITY_STR;
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyOnMonsterHitProperties(nProperty, nSpecial);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertyOnHitCastSpell
+    - ItemPropertyOnHitProps
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ABILITY_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

@@ -1,0 +1,31 @@
+---
+type: Function
+name: IPGetNumberOfAppearances
+shortdesc: Returns the number of armor part variations for the specified part.
+return: int
+parameters:
+  - type: int
+    name: nPart
+    desc: | ITEM_APPR_ARMOR_MODEL_*
+
+description: |
+  Returns the number of possible armor part variations for the specified part 
+  nPart - ITEM_APPR_ARMOR_MODEL_* constant 
+  Uses Get2DAstring, so do not use in loops
+remarks: |
+  Used by the crafting system (x2_im_*).
+bugs: |
+  BROKEN! This function does not exist! It is declared, but never implemented. Trying to use it will give this error message: 
+  ERROR: UNDEFINED IDENTIFIER ()
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Object
+    - Item Creation
+    - Item Properties
+  constants:
+    - ITEM_APPR_* Constants
+author: Lilac Soul
+

@@ -1,0 +1,27 @@
+---
+type: Function
+name: HasPersonalItem
+shortdesc: Checks if the player has the henchman’s personal item.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | The player to check for the item
+
+description: |
+  Returns TRUE if oPC has either: The personal item for the henchman, or the reward item for the henchman from either chapter 1 or 2 of the official campaign. If oPC has neither of these, and on error, it returns FALSE.
+remarks: |
+  Found in nw_i0_henchman.nss on line 283 
+  Hardly useful for anyone except Bioware.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  functions:
+    - StripAllPersonalItemsFromEveryone
+  categories:
+    - Henchmen/Familiars/Summoned
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,52 @@
+---
+type: Function
+name: ItemPropertyACBonusVsAlign
+shortdesc: Sets an "armor class bonus against an alignment group" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nAlignGroup
+    desc: | IP_CONST_ALIGNMENTGROUP_*
+
+  - type: int
+    name: nACBonus
+    desc: | AC bonus to add; 1 to 20 are valid
+
+description: |
+  Sets item property AC bonus vs. alignment group. An example of an alignment group is Chaotic, or Good. You need to specify the alignment group constant (IP_CONST_ALIGNMENTGROUP_*) and the AC bonus, which should be an integer between 1 and 20. 
+  The type of AC bonus depends on the type of the item. Thanks to Nailog for providing this information: 
+  Items that gain a Deflection bonus: Creature Skins, staves, rings, melee weapons, helmets, cloaks, belts, gloves, and ranged weapons that use ammunition. 
+  Items that gain an Armor bonus: Armors and bracers. 
+  Items that gain a Natural Armor bonus: Amulets. 
+  Items that gain a Shield bonus: Shields. 
+  Items that gain a Dodge bonus: Boots.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ALIGNMENTGROUP_* constant can be retrieved off this type of item property using GetItemPropertySubType. The bonus can be retrieved using GetItemPropertCostTableValue. 
+version: 1.62
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Gives the first PC's armor a +15 AC bonus against evil
+  void main()
+  {
+  object oPC=GetFirstPC();
+  object oItem=GetItemInSlot(INVENTORY_SLOT_CHEST, oPC);
+  if (!GetIsObjectValid(oItem)) return; //stop if no armor/clothing
+      //[Note: the test is not mandatory, but it is a Best Practice - ed
+  itemproperty ipAdd=ItemPropertyACBonusVsAlign(IP_CONST_ALIGNMENTGROUP_EVIL, 15);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ALIGNMENTGROUP_* Constants
+author: Lilac Soul
+editor: Peter Busby
+additional_contributors:
+  - Nailog

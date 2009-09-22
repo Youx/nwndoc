@@ -1,0 +1,76 @@
+---
+type: Function
+name: ItemPropertyOnHitProps
+shortdesc: Sets an OnHit itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nProperty
+    desc: | IP_CONST_ONHIT_*
+
+  - type: int
+    name: nSaveDC
+    desc: | IP_CONST_ONHIT_SAVEDC_*
+
+  - type: int
+    name: nSpecial
+    default: 0
+    desc: | Varies, see description. (Default: 0)
+
+description: |
+  Sets item property On hit do effect property. You must specify the on hit property constant (IP_CONST_ONHIT_*) and the save DC constant (IP_CONST_ONHIT_SAVEDC_*), which range from 14 to 26. 
+  Some of the item properties require a special parameter as well. If the property does not require one you may leave out the last one. The list of the ones with 3 parameters are as follows: 
+  ABILITYDRAIN: nSpecial is the ability it is to drain (IP_CONST_ABILITY_*) 
+  BLINDNESS: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  CONFUSION: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  DAZE: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  DEAFNESS: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  DISEASE: nSpecial is the type of disease that will affect the victim (DISEASE_*) 
+  DOOM: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  FEAR: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  HOLD: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  ITEMPOISON: nSpecial is the type of poison that will affect the victim (IP_CONST_POISON_*) 
+  SILENCE: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  SLAYRACE: nSpecial is the race that will be slain (IP_CONST_RACIALTYPE_*) 
+  SLAYALIGNMENTGROUP:nSpecial is the alignment group that will be slain (eg. chaotic) (IP_CONST_ALIGNMENTGROUP_*) 
+  SLAYALIGNMENT: nSpecial is the specific alignment that will be slain (IP_CONST_ALIGNMENT_*) 
+  SLEEP: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  SLOW: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*) 
+  STUN: nSpecial is the duration/percentage of affecting victim (IP_CONST_ONHIT_DURATION_*)
+remarks: |
+  Though not mentioned by BioWare's description, the LEVELDRAIN and WOUNDING also require the special parameter of 1-5, being how many levels to drain / the amount of wounding. 
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ONHIT_* constant can be retrieved off this type of item property using GetItemPropertySubType. The IP_CONST_ONHIT_SAVEDC_* constant can be retrieved using GetItemPropertCostTableValue. There is no entry in itempropdef.2da for the param1 table, but I speculate that the nSpecial value can be retrieved by using GetItemPropertyParam1Value. This is untested, though.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's onhand weapon cause intelligence-decreasing
+  //poison OnHit of the target with a pretty rough DC.
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  int nProperty = IP_CONST_ONHIT_ITEMPOISON;
+  int nSaveDC = IP_CONST_ONHIT_SAVEDC_26;
+  int nSpecial = IP_CONST_POISON_1D2_INTDAMAGE;
+  if (!GetIsObjectValid(oItem)) return; // nothing at hand
+  itemproperty ipAdd = ItemPropertyOnHitProps(nProperty, nSaveDC, nSpecial);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertyOnHitCastSpell
+    - ItemPropertyOnMonsterHitProperties
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ONHIT_* Constants
+    - IP_CONST_ONHIT_DURATION_* Constants
+    - IP_CONST_ONHIT_SAVEDC_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

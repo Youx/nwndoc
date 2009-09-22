@@ -1,0 +1,51 @@
+---
+type: Function
+name: PopUpDeathGUIPanel
+shortdesc: Displays a customizable death panel.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The player to show panel to.
+
+  - type: int
+    name: bRespawnButtonEnabled
+    default: TRUE
+    desc: | If this is TRUE, the "Respawn" button will be enabled (Default: TRUE)
+
+  - type: int
+    name: bWaitForHelpButtonEnabled
+    default: TRUE
+    desc: | If this is TRUE, the "Wait For Help" button will be enabled (Default: TRUE)
+
+  - type: int
+    name: nHelpStringReference
+    default: 0
+    desc: | String reference to display for help. (Default: 0)
+
+  - type: string
+    name: sHelpString
+    default: ""
+    desc: | String to display for help which appears in the top of the panel. (Default: "")
+
+description: |
+  Displays a death panel that can turn off the "Respawn" or "Wait for Help" buttons. The "Wait for Help" button is only enabled when the game is running in multiplayer mode. 
+  By default if sHelpString isn't specified, the value "Choose an option below. Respawning will incur a penalty of 50 XP per level of your character and the loss of 10% of your gold." is used (strref 66219 single player, 6600 for multiplayer).
+remarks: |
+  The Bioware death dialog can be displayed using the PopUpGUIPanel() function. 
+  sHelpString should be changed when using a penalty for dying other than the default to avoid inconsistencies. 
+  nHelpStringReference is an index into either the dialog.tlk file or a custom .tlk file associated with the module.
+version: 1.61
+seealso:
+  functions:
+    - PopUpGUIPanel
+  categories:
+    - PC Only
+  events:
+    - OnDeath
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Ross Meeks
+  - Jonathan Williams
+  - Lilac Soul

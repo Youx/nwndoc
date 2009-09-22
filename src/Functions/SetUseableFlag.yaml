@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetUseableFlag 
+shortdesc: Set a placeable's useable object status.
+return: void
+parameters:
+  - type: object
+    name: oPlaceable
+    desc: | The placeable object to change the useable status of.
+
+  - type: int
+    name: nUseableFlag
+    desc: | Presumably this is a TRUE (useable) / FALSE (not useable) setting.
+
+description: |
+  Set a placeable's useable object status.
+remarks: |
+  Note: Only works on non-static placeables.
+version: 1.68
+seealso:
+  functions:
+    - GetUseableFlag
+  categories:
+    - Get Data from Object
+author: Mistress

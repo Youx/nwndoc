@@ -1,0 +1,33 @@
+---
+type: Function
+name: SetLocalStringOnAll
+shortdesc: Sets a local string on all members and associates of PC's party
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player Character
+
+  - type: string
+    name: strVarName
+    desc: | local string variable name
+
+  - type: string
+    name: strValue
+    desc: | string to be stored
+
+description: |
+  Given a PC, variable name and string value, sets a local string variable on all members of the PC's party, including associates.
+remarks: |
+  Include library for party-wide functions. 
+  NOTE: this library is included in "x0_i0_common" already. 
+  Do NOT dual-include both files or you will get errors! 
+requirements: |
+  #include "X0_I0_PARTYWIDE"
+version: 1.61
+seealso:
+  categories:
+    - Local Variables
+    - Party
+author: Peter Busby
+

@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetFetchItem
+shortdesc: Specifies what item the PC needs to fetch in the Original Campaign.
+return: void
+parameters:
+  - type: string
+    name: sTag
+description: |
+  Sets the local variable NW_J_FETCH_ITEM with the tag of the object the PC will be tasked with getting.
+remarks: |
+  Found on line 129 of nw_j_fetch.nss. 
+  It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. All of these functions are relatively straight forward and easy to understand at a glance. 
+  There is also another script of the exact same functions but works with "ArtifactItems" instead of Fetch. The scripts are identical but seperated to make coding between them easier to understand and add functionality to later. See the "See Also" section for the other functions.
+requirements: |
+  #include "nw_j_fetch"
+version: 1.29
+seealso:
+  functions:
+    - GetFetchee
+    - GetFetchItem
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

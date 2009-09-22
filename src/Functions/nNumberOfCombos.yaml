@@ -1,0 +1,20 @@
+---
+type: Function
+name: nNumberOfCombos
+shortdesc: Returns number of possible combinations
+return: int
+parameters:
+description: |
+  Returns number of possible combinations, simply retrieved from a local variable on the caller.
+remarks: |
+  Found in nw_o0_itemmaker.nss line 83 
+  Part of the core item creation system. Hardly useful for anybody not using an exact replica of that system.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.28
+seealso:
+  categories:
+    - Item Creation
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

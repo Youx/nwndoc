@@ -1,0 +1,63 @@
+---
+type: Function
+name: ItemPropertyLimitUseBySAlign
+shortdesc: Sets an "only useable by specific alignment" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nAlignment
+    desc: | IP_CONST_ALIGNMENT_*
+
+description: |
+  Sets item property Limit use by specific alignment. You must specify the alignment(s) of those allowed to use the item (IP_CONST_ALIGNMENT_*).
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first, unless you are stacking alignments. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ALIGNMENT_* value can be retrieved off this type of item property using GetItemPropertySubType.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Restricts the use of the PC speaker's weapon so that
+  //only those of the same specific alignment can use it
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  int nAlignGE = GetAlignmentGoodEvil(oPC);
+  int nAlignLC = GetAlignmentLawChaos(oPC);
+  int nAlign = 0;
+  //Calculate the IP_CONST_ALIGNMENT_* integer value
+  switch (nAlignGE) //Good is the default 0 [ethics unintended - ed.]
+  {
+  case ALIGNMENT_NEUTRAL: nAlign = 1; break;
+  case ALIGNMENT_EVIL: nAlign = 2;
+  }
+  switch (nAlignLC) //Lawful = 0
+  {
+  case ALIGNMENT_NEUTRAL: nAlign+=3; break; //increment nAlign by 3
+  case ALIGNMENT_CHAOTIC: nAlign+=6; break; //increment nAlign by 6
+  }
+  itemproperty ipAdd = ItemPropertyLimitUseBySAlign(nAlign);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  //Note: if adding more alignments, use AddItemProperty - ed.
+  }
+  //The nAlign switches derive from the following table:
+  /////// IP_CONST_ALIGNMENT ////////
+  //       0         1         2   //
+  // 0  LG = 0 // LN = 1 // LE = 2 //
+  // 3  NG = 3 // TN = 4 // NE = 5 //
+  // 6  CG = 6 // CN = 7 // CE = 8 //
+  ///////////////////////////////////
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ALIGNMENT_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

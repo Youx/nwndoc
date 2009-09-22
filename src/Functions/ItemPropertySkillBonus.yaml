@@ -1,0 +1,45 @@
+---
+type: Function
+name: ItemPropertySkillBonus
+shortdesc: Sets a skill bonus itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+  - type: int
+    name: nBonus
+    desc: | Bonus amount; 1 to 50 are valid.
+
+description: |
+  Sets item property Skill bonus. You must specify the skill to which the user will get a bonus(SKILL_*) and the amount of the bonus, which should be an integer between 1 and 50.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The SKILL_* constant can be retrieved off this type of item property using GetItemPropertySubType. The bonus can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's helmet grant a concentration bonus of 30
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;// Stop if no helmet
+  itemproperty ipAdd = ItemPropertySkillBonus(SKILL_CONCENTRATION, 30);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertyDecreaseSkill
+  categories:
+    - Item Creation
+  constants:
+    - SKILL_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

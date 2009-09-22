@@ -1,0 +1,42 @@
+---
+type: Function
+name: ItemPropertyArcaneSpellFailure
+shortdesc: Sets an itemproperty which modifies an arcane spell failure factor.
+return: itemproperty
+parameters:
+  - type: int
+    name: nModLevel
+    desc: | IP_CONST_ARCANE_SPELL_FAILURE_*
+
+description: |
+  Creates an item property which can be applied to an item to change the effect on arcane spell casting that item has; the modifier can range from a 50% decrease to a 50% increase in failure, in 5% steps. Parameters come from the IP_CONST_ARCANE_SPELL_FAILURE_* group.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ARCANE_SPELL_FAILURE_* value can be retrieved off this type of item property using GetItemPropertyCostTableValue. 
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the activating PC's armor less prone to cause arcane spell failure
+  void main()
+  {
+  object oPC = GetItemActivator();
+  if (!GetIsPC(oPC)) return; // stop if not a PC
+  object oItem = GetItemInSlot(INVENTORY_SLOT_CHEST, oPC);
+  if (!GetIsObjectValid(oItem)) return; // stop if not armor/clothing
+  int nModLevel = IP_CONST_ARCANE_SPELL_FAILURE_MINUS_25_PERCENT;
+  itemproperty ipAdd = ItemPropertyArcaneSpellFailure(nModLevel);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ARCANE_SPELL_FAILURE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

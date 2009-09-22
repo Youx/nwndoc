@@ -1,0 +1,42 @@
+---
+type: Function
+name: ItemPropertyMonsterDamage
+shortdesc: Sets a monster damage itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nDamage
+    desc: | IP_CONST_MONSTERDAMAGE_*
+
+description: |
+  Sets item property Monster damage. You must specify the amount of damage the monster's attack will do (IP_CONST_MONSTERDAMAGE_*). 
+  NOTE: This can be applied only to monster NATURAL weapons (bite, claw, gore and slam). IT WILL NOT WORK ON NORMAL WEAPONS.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_MONSTERDAMAGE_* value can be retrieved off this type of item property using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's specially equipped creature bite
+  //cause 10d10 of damage
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_CWEAPON_B, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyMonsterDamage(IP_CONST_MONSTERDAMAGE_10d10);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_MONSTERDAMAGE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

@@ -1,0 +1,24 @@
+---
+type: Function
+name: nDetermineClassToUse
+shortdesc: Determines which of a PCs three classes to use in the random treasure system.
+return: int
+parameters:
+  - type: object
+    name: oCharacter
+    desc: | The PC to help choose which treasure class should be preferred.
+
+description: |
+  This function determines, using some random chance, which of the PCs three classes it should use to determine which treasure to spawn.
+remarks: |
+  Used within the item creation include file (nw_i0_coninclude), this function does exactly the same as nw_i0_generic's DetermineClassToUse, except it takes a parameter, which means that this function can more easily be used on PCs.
+requirements: |
+  #include "NW_O2_CONINCLUDE"
+version: 1.28
+seealso:
+  categories:
+    - Item Creation
+author: Tom Cassiotis
+editor: Lilac Soul
+additional_contributors:
+  - Lilac Soul

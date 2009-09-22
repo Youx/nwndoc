@@ -1,0 +1,65 @@
+---
+type: Function
+name: SetLocalString
+shortdesc: Store a string as a local variable within an object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | Target object to store local variable in.
+
+  - type: string
+    name: sVarName
+    desc: | Unique variable name.
+
+  - type: string
+    name: sValue
+    desc: | Variable being stored in local object.
+
+description: |
+  Stores sValue as a local string within oObject using the variable name sVarName. The parameter sVarName is a unique string identifying a single local variable. Using the same value for sVarName in subsequent calls will overwrite the original value.
+remarks: |
+  Caution should be used when setting a string on an object that has just been created. Instead of just using SetLocalString(object, string, string), one should use ActionDoCommand(SetLocalString(object, string, string)) to force the command to be added to the created creature's action queue. This ensures the string will be set, even on a freshly created object. Speculation suggests that this problem occurs because the "spawning initialization process" is still finishing on a newly created object, and it is difficult to determine exactly when "spawning initialization process" will complete. 
+  Alternatively, whenever possible, set the local variable directly on the creature in the Toolset (available since version 1.59). 
+  As with all locals, there seems to be no size limit to sVarName, however, anything over 50 characters is probably a bit extreme.
+bugs: |
+  Setting strings on objects just created can fail to work. Use ActionDoCommand(void) to set a string on a newly created object. This bug appears in all of the SetLocal* functions (each has been annotated to reference this function for an the work around to this problem).
+version: 1.61
+example: |
+  // sets a string to OBJECT_SELF which can be later retrieved
+  // using something similiar to:
+  // string sValue = GetLocalString(OBJECT_SELF, "foo");
+  void main()
+  {
+       object oThis = OBJECT_SELF;
+       string sKey = “foo”;
+       string sValue = “some string”;
+       SetLocalString(oThis, sKey, sValue);
+  }
+  /* the following two examples assume arbitrary values
+      previously specified for nObjectType, sTemplate, and 
+      lLocation.  See CreateObject(int, string, location, int) for more 
+      information.
+  */
+  // INCORRECT
+  // the following will not work on a freshly created object
+  object oTarget = CreateObject(nObjectType, sTemplate, lLocation, FALSE);
+  SetLocalString(oTarget, "STRING_NAME", "This is my string value");
+  // CORRECT
+  // the following WILL work on a freshly created object
+  object oTarget = CreateObject(nObjectType, sTemplate, lLocation, FALSE);
+  // Remember: You cannot define an action (action aAction =) 
+  // so we must pass it directly into the AssignCommand.
+  AssignCommand(oTarget, ActionDoCommand(SetLocalString(oTarget, "STRING_NAME", "This is my string"));
+seealso:
+  functions:
+    - GetLocalString
+    - SetLocalArrayString
+  categories:
+    - Local Variables
+author: Daniel Beckman
+editor: Jasperre
+additional_contributors:
+  - Xepherys
+  - Graziano Lenzi
+  - Lilac Soul

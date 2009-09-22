@@ -1,0 +1,28 @@
+---
+type: Function
+name: PlayerWearsUniform
+shortdesc: Checks if a PC has a certain uniform equipped.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player to check for uniform.
+
+description: |
+  Returns TRUE if oPC’s equipped uniform has the correct tag, as determined by the function GetUniform(); Returns FALSE in all other cases, including errors.
+remarks: |
+  Found in nw_j_guard.nss line 130 
+  Though Bioware’s way of doing this may be of little use to the rest of us, it can still be a good way to learn how to make guards that attack the player if he isn’t wearing the correct uniform.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.28
+seealso:
+  functions:
+    - GetUniform
+    - SetUniform
+  categories:
+    - Get Data from Object
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

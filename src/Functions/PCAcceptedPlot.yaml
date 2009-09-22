@@ -1,0 +1,24 @@
+---
+type: Function
+name: PCAcceptedPlot
+shortdesc: Returns true if the player accepted the assassin plot.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | The PC to check
+
+description: |
+  Checks for a local variable on everybody in oPC’s party. Returns TRUE if variable is set to TRUE on anyone in the party. If not, or if oPC is not a valid object, it returns FALSE.
+remarks: |
+  Found in nw_j_assassin.nss on line 283 
+  I am not sure where this local variable is set. Probably by a script that fires when PC accepts the assassination plot. There’s no really good reason to use Bioware’s function for this – you’d be better off making a system of your own so you know exactly how and when everything works.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.28
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

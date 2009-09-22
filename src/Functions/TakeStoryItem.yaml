@@ -1,0 +1,57 @@
+---
+type: Function
+name: TakeStoryItem
+shortdesc: Removes the plot related item from a player's inventory.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The player to remove the item from.
+
+description: |
+  Gets the Tag name of the complex item from a local object called NW_J_STORY_MYGLOBALS on the calling creature then searches the target's inventory and equiped items for any item with that the returned Tag name and destroys it.
+remarks: |
+  Function can be found in nw_j_story.nss on line 146. 
+  It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. This particular function only utilizes 2 out of the 7 other functions available. All of these functions are relatively straight forward and easy to understand at a glance. There are two other sets very much similiar to this one where the only difference is in the function naming scheme. See the "See Also" for links. 
+  --- 
+  You'll probably never need to call this function in normal scripting, since it is very specific to BioWare's plot handling system.
+requirements: |
+  #include "nw_j_story"
+version: 1.61
+example: |
+  // OnSpawn of the NPC to give the quest out.
+  #include "NW_J_STORY"
+      SetGlobal(OBJECT_SELF,OBJECT_SELF);
+      SetStoryItem("STORY_ITEM02");
+      SetPlotTag("NW_DRAGONHUNT_PLOT"); //Matches Journal Entry that has experience to be rewarded for this quest
+  //Conversation Conditional of the NPC to reward the player for returning the item.
+  #include "NW_I0_PLOT"
+  #include "NW_J_STORY"
+  int StartingConditional()
+  {
+      if (PlayerHasStoryItem(GetPCSpeaker()) == TRUE)
+      {
+          ActionPauseConversation();
+          TakeStoryItem(GetPCSpeaker()); //Destroys the item from the players inventory.
+          RewardXP(GetPlotTag(),100,GetPCSpeaker());
+          ActionResumeConversation();
+      }
+      return FALSE;
+  }
+seealso:
+  functions:
+    - GetPlotTag
+    - GetStoryItem
+    - Global
+    - PlayerHasStoryItem
+    - SetGlobal
+    - SetPlotTag
+    - SetStoryItem
+    - TakeArtifactItem
+    - TakeComplexItem
+    - TakeFetchItem
+  categories:
+    - Inventory
+author: John Shuell
+editor: Lilac Soul
+

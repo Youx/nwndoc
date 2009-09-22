@@ -1,0 +1,40 @@
+---
+type: Function
+name: SetLocked
+shortdesc: Locks or unlocks a door or placeable.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The door or placeable to lock
+
+  - type: int
+    name: bLocked
+    desc: | TRUE to lock, FALSE to unlock.
+
+description: |
+  Used by objects or creatures to set the locked status of an object or placeable without checking the Open Locks skill. 
+  Note that DM Force Lock does the same thing as this. You can actually lock doors which cannot be normally re-locked, but it is not recommended.
+remarks: |
+  Alternatively, ActionLockObject and ActionUnlockObject can be used by creatures so appropriate skill checks are made. Make sure, as well, that your door has the 're-lockable' box checked. 
+  You can lock an open door. If you do, it will be locked once it closes.
+version: 1.61
+example: |
+  // Unlocked an object with the tag DOOR_TAG
+  void main()
+  {
+      object oDoor = GetObjectByTag("DOOR_TAG");
+      SetLocked(oDoor, FALSE);
+  }
+seealso:
+  functions:
+    - ActionCloseDoor
+    - ActionLockObject
+    - ActionOpenDoor
+    - ActionUnlockObject
+    - GetLastUnlocked
+  categories:
+    - Action on Object
+author: Tom Cassiotis
+editor: Jasperre
+

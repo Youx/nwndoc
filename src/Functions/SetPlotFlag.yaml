@@ -1,0 +1,37 @@
+---
+type: Function
+name: SetPlotFlag
+shortdesc: Sets an object's plot status.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Target object.
+
+  - type: int
+    name: bPlotFlag
+    desc: | A TRUE or FALSE value.
+
+description: |
+  Sets the plot flag of object oTarget to the boolean value bPlotFlag. The parameter bPlotFlag can be either TRUE or FALSE. 
+  It will do the same as checking the checkbox for "Plot" on a creature or items properties.
+remarks: |
+  Setting the plot flag for an object to TRUE marks this object as unable to be killed or destroyed; a necessary function for plot related NPCs, creatures and objects. 
+  To let an NPC be damaged, but not destroyed, use SetImmortalFlag(), which stops damage down to 1HP. 
+  Items set as plot cannot be sold (And are reported as "You cannot sell quest items").
+version: 1.22
+example: |
+  void main()
+  {
+      // mark this object as not able to be destroyed
+      SetPlotFlag(OBJECT_SELF, TRUE);
+  }
+seealso:
+  functions:
+    - GetPlotFlag
+    - SetImmortal
+  categories:
+    - Miscellaneous
+author: Daniel Beckman
+editor: Jasperre
+

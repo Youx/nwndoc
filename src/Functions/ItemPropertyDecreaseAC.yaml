@@ -1,0 +1,55 @@
+---
+type: Function
+name: ItemPropertyDecreaseAC
+shortdesc: Sets a "decrease armor class" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nModifierType
+    desc: | IP_CONST_ACMODIFIERTYPE_*
+
+  - type: int
+    name: nPenalty
+    desc: | Decrease AC by how much. 1 to 5 are valid.
+
+description: |
+  Sets item property Decrease Armor Class. You must specify the armor modifier type constant (IP_CONST_ACMODIFIERTYPE_*), which are Armor, Deflection, Dodge, Natural and Shield, and the armor class penalty. The penalty must be a POSITIVE integer between 1 and 5; a penalty of 1 reduces the modifier by 1.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ACMODIFIERTYPE_* constant can be retrieved off this type of item property using GetItemPropertySubType. The penalty can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's shield a little more useless...
+  void main()
+  {
+  object oPC=GetFirstPC();//GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_LEFTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return; //stop if nothing there
+  itemproperty ipAdd = ItemPropertyDecreaseAC(IP_CONST_ACMODIFIERTYPE_SHIELD, 5);
+  //only add to shields:
+  switch (GetBaseItemType(oItem))
+  {
+      case BASE_ITEM_LARGESHIELD: //defaults to next case
+      case BASE_ITEM_SMALLSHIELD: //defaults to next case
+      case BASE_ITEM_TOWERSHIELD:
+          IPSafeAddItemProperty(oItem, ipAdd); //selected by all 3 cases
+  }
+  }
+  /* Alternative coding for the test for shields:
+  int nItemType = GetBaseItemType(oItem);
+  if (nItemType = (BASE_ITEM_LARGESHIELD || BASE_ITEM_SMALLSHIELD || BASE_ITEM_TOWERSHIELD))
+      IPSafeAddItemProperty(oItem, ipAdd);
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ACMODIFIERTYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

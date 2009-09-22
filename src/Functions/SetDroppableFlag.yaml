@@ -1,0 +1,38 @@
+---
+type: Function
+name: SetDroppableFlag
+shortdesc: Marks an item as droppable or undroppable.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to set the droppable flag of.
+
+  - type: int
+    name: bDroppable
+    desc: | Determines if the item is droppable (TRUE if it can be dropped, FALSE otherwise).
+
+description: |
+  Sets the flag of an item as a droppable item or an undroppable item.
+remarks: |
+  Useful function. For instance, if you have a bunch of enemies with a certain item, and you only want some of them to drop that, but want it determined randomly, you can call SetDroppableFlag either OnSpawn or OnDeath of those creatures with a randomness factor determining if the item should be droppable or not.
+version: 1.30
+example: |
+  //A bunch of creatures have items tagged "some_boots". You
+  //want, statistically, 25% of them to drop those boots
+  //when slain. Goes either OnDeath or OnSpawn
+  void main()
+  {
+  object oItem=GetItemPossessedBy(OBJECT_SELF, "some_boots");
+  //25% chance of being droppable
+  int bDroppable=d100()>75;
+  SetDroppableFlag(oItem, bDroppable);
+  }
+seealso:
+  functions:
+    - GetDroppableFlag
+  categories:
+    - Miscellaneous
+author: Charles Feduke
+editor: Lilac Soul
+

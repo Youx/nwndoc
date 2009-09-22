@@ -1,0 +1,30 @@
+---
+type: Function
+name: PlayerHasArtifactItem
+shortdesc: Checks if a PC has the artifact item.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player to check for item
+
+description: |
+  Returns TRUE if oPC possesses the artifact item, which is retrieved with the function GetArtifactItem(); Returns FALSE in all other cases, including errors.
+remarks: |
+  Found in nw_j_artifact.nss line 130 
+  In the words of John Shuell: It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. All of these functions are relatively straight forward and easy to understand at a glance. 
+  There is also another script of the exact same functions but works with "ComplexItems" instead of Artifacts. The scripts are identical but seperated to make coding between them easier to understand and add functionality to later. 
+requirements: |
+  #include "nw_j_artifact"
+version: 1.28
+seealso:
+  functions:
+    - GetArtifactItem
+    - SetArtifactItem
+    - TakeArtifactItem
+    - TakeComplexItem
+  categories:
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

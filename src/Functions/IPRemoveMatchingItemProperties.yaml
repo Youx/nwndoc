@@ -1,0 +1,64 @@
+---
+type: Function
+name: IPRemoveMatchingItemProperties
+shortdesc: Removes itemproperties of a given type, duration, and subtype from an item.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to remove property from
+
+  - type: int
+    name: nItemPropertyType
+    desc: | Itemproperty type to remove
+
+  - type: int
+    name: nItemPropertyDuration
+    default: DURATION_TYPE_TEMPORARY
+    desc: | Duration type to remove. See description and remarks (Default: DURATION_TYPE_TEMPORARY)
+
+  - type: int
+    name: nItemPropertySubType
+    default: -1
+    desc: | Subtype of itemproperty to remove (Default: -1)
+
+description: |
+  Removes all itemproperties with matching nItemPropertyType and nItemPropertyDuration
+remarks: |
+  The nItemProperty parameter should either be DURATION_TYPE_PERMANENT, DURATION_TYPE_TEMPORARY, or -1. If it is -1, the duration type of the itemproperty is ignored. 
+  If it is DURATION_TYPE_TEMPORARY, only temporary itemproperties are removed. 
+  If it is DURATION_TYPE_PERMANENT, only permanent itemproperties are removed. 
+  if the nItemPropertySubType is -1, all itemproperties of the appropriate type and duration are removed, regardless of subtype. If a value other than -1 is provided, only itemproperties of that particular subtype will be removed.
+bugs: |
+  Uses RemoveItemProperty, which has an accumulator 
+  bug that may give an erroneous Stacking error message or affect subsequent functions in the same script.- 1/16/04, NWN Toolset version vts026, game version 1.61.8042 English 
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //Remove true seeing from the entering PC's headgear
+  void main()
+  {
+  //Entering object
+  object oPC=GetEnteringObject();
+  //Only PCs
+  if (!GetIsPC(oPC)) return;
+  //That PC's helmet
+  object oItem=GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  //Stop script if the PC had no helmet on
+  if (!GetIsObjectValid(oItem)) return;
+  IPRemoveMatchingItemProperties(oItem, ITEM_PROPERTY_TRUE_SEEING, -1);
+  }
+seealso:
+  functions:
+    - IPRemoveAllItemProperties
+    - RemoveItemProperty
+  categories:
+    - Item Creation
+    - Item Properties
+  constants:
+    - DURATION_TYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

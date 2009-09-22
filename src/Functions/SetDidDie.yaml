@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetDidDie
+shortdesc: Stores if the henchman has just died
+return: void
+parameters:
+  - type: int
+    name: bDie
+    desc: | Value to store (TRUE or FALSE)
+
+description: |
+  Sets a local integer on the caller (henchman), "NW_L_HEN_I_DIED", to the value specified in bDie.
+remarks: |
+  Found in nw_i0_henchman.nss line 75 
+  This function is used to set whether a henchman has just died, so that (as used in the official campaign), the next time the (now former) master talks to the henchman, they get their ‘brought back to life’ conversation line. 
+  It is not, actually, called from the henchmen’s OnDeath script – they just run a SetLocalInt(OBJECT_SELF, “"NW_L_HEN_I_DIED", TRUE), which does exactly the same. The one place this function is ever used is in the GetDidDie command. If that command returns TRUE, it calls SetDidDie(FALSE) as well, to make sure the player doesn't get the 'I just died' greeting until the next time the henchman dies. 
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.22
+seealso:
+  functions:
+    - GetDidDie
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+

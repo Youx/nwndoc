@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetPlotTag
+shortdesc: Specifies the name of the item used in the Artifact plot line in the Original Campaign.
+return: void
+parameters:
+  - type: string
+    name: sTag
+    desc: | Name of item.
+
+description: |
+  Sets the local variable (NW_J_ARTIFACT_PLOT_TAG) with the tag of the item being searched for in the Artifact plot.
+remarks: |
+  Script: nw_j_artifact.nss: Line: 65 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_j_artifact"
+version: 1.29
+seealso:
+  functions:
+    - Global
+    - TakeArtifactItem
+    - TakeComplexItem
+    - TakeStoryItem
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

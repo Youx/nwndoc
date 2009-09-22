@@ -1,0 +1,31 @@
+---
+type: Function
+name: PopUpGUIPanel
+shortdesc: Displays a GUI panel to a player.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The player to show the GUI to.
+
+  - type: int
+    name: nGUIPanel
+    desc: | GUI_PANEL_*
+
+description: |
+  Spawn a GUI panel for the client that controls oPC. 
+  Nothing happens if oPC is not a player character or if an invalid value is used for nGUIPanel.
+remarks: |
+  Currently only one GUI panel exists; the player death panel: 
+  GUI_PANEL_PLAYER_DEATH
+version: 1.61
+seealso:
+  functions:
+    - PopUpDeathGUIPanel
+  categories:
+    - Miscellaneous
+  constants:
+    - GUI_PANEL_* Constants
+author: Tom Cassiotis
+editor: Lilac Soul
+

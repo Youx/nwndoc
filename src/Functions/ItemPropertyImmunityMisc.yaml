@@ -1,0 +1,40 @@
+---
+type: Function
+name: ItemPropertyImmunityMisc
+shortdesc: Sets an immunity itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nImmunityType
+    desc: | IP_CONST_IMMUNITYMISC_*
+
+description: |
+  Sets item property Immunity to miscellaneous effects. You must specify the effect constant to which the user is immune, (IP_CONST_IMMUNITYMISC_*), such as Backstab or Fear.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_IMMUNITYMISC_* value can be retrieved off this type of item property using GetItemPropertySubType.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the first PC speaker's helmet give immunity to mind-affecting spells
+  void main()
+  {
+  object oPC=GetFirstPC();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyImmunityMisc(IP_CONST_IMMUNITYMISC_MINDSPELLS);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_IMMUNITYMISC_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

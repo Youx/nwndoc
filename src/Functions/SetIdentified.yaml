@@ -1,0 +1,67 @@
+---
+type: Function
+name: SetIdentified
+shortdesc: Sets whether an object has been identified.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to have its identified flag altered.
+
+  - type: int
+    name: bIdentified
+    desc: | TRUE if the object is identified, otherwise FALSE.
+
+description: |
+  Sets whether oItem has been identified. 
+  If bIdentified equals TRUE the item will be mark as having been identified, otherwise it will be marked as not identified.
+remarks: |
+  A common use for this function could be to make a henchman identify items.
+version: 1.61
+example: |
+  //This is the x1_hen_identify script used by BioWare to make a henchman
+  //identify stuff for the PC.
+  // Henchman tries to identify all items in his and the player's inventory.
+  void IdentifyAll(object oObject, object oMaster);
+  void main()
+  {
+      object oPC = GetMaster(OBJECT_SELF);
+      IdentifyAll(oPC, oPC);
+      IdentifyAll(OBJECT_SELF, oPC);
+  }
+  void IdentifyAll(object oObject, object oPC)
+  {
+      int nMyLore = GetSkillRank(SKILL_LORE, OBJECT_SELF); // henchman lore rank
+      int nItemValue; // gold value of item
+      string sMaxValue = Get2DAString("SkillVsItemCost", "DeviceCostMax", nMyLore); // max value that the henchman can id
+      int nMaxValue = StringToInt(sMaxValue);
+      // * Handle overflow (November 2003 - BK)
+      if (sMaxValue == "")
+      {
+          nMaxValue = 120000000;
+      }
+      object oItem = GetFirstItemInInventory(oObject);
+      while(oItem != OBJECT_INVALID)
+      {
+          if(!GetIdentified(oItem))
+          {
+              SetIdentified(oItem, TRUE); // setting TRUE to get the true value of the item
+              nItemValue = GetGoldPieceValue(oItem);
+              SetIdentified(oItem, FALSE); // back to FALSE
+              if(nMaxValue >= nItemValue)
+              {
+                  SetIdentified(oItem, TRUE);
+                  SendMessageToPC(oPC, GetName(OBJECT_SELF) + " " +  GetStringByStrRef(75930) + " " + GetName(oItem));
+              }
+          }
+          oItem = GetNextItemInInventory(oObject);
+      }
+  }
+seealso:
+  functions:
+    - GetIdentified
+  categories:
+    - Get Data from Object
+author: Tom Cassiotis
+editor: Lilac Soul
+

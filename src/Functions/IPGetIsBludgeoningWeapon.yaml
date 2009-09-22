@@ -1,0 +1,29 @@
+---
+type: Function
+name: IPGetIsBludgeoningWeapon
+shortdesc: Checks if an item is a bludgeoning weapon.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Object to check whether is a bludgeoning weapon.
+
+description: |
+  Returns true if weapon is blugeoning (used for poison) 
+  This uses Get2DAstring, so it is slow. Avoid using in loops!
+remarks: |
+  Checks in the baseitems.2da file's WeaponType column, in the row index that is the item's base type. It does not check if the weapon has any additional damagetypes via itemproperties. 
+  Returns FALSE if the item isn't a bludgeoning type weapon, and on error, e.g. if oItem isn't a valid object.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - IPGetIsMeleeWeapon
+    - IPGetIsProjectile
+    - IPGetIsRangedWeapon
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+

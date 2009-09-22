@@ -1,0 +1,41 @@
+---
+type: Function
+name: LevelUpHenchman
+shortdesc: Levels up a creature using the default settings.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to level up.
+
+  - type: int
+    name: nClass
+    default: CLASS_TYPE_INVALID
+    desc: | CLASS_TYPE_* (Default: CLASS_TYPE_INVALID)
+
+  - type: int
+    name: bReadyAllSpells
+    default: FALSE
+    desc: | Determines if all memorizable spell slots will be filled without requiring rest. (Default: FALSE)
+
+  - type: int
+    name: nPackage
+    default: PACKAGE_INVALID
+    desc: | PACKAGE_* (Default: PACKAGE_INVALID)
+
+description: |
+  Levels up a creature using the default settings. Returns the new level if successful, or 0 if the function fails. You can assign a new class to level up in by specifying anything CLASS_TYPE_* constant other than CLASS_TYPE_INVALID (when CLASS_TYPE_INVALID is specified, the creature advances on an unknown default path). If an invalid class combination is chosen, like Barbarian and Paladin, the default class is levelled up. 
+  The nPackage determines which package to level up with. If omitted, it will use the starting package assigned to that class or just the class package.
+remarks: |
+  It is unknown which class is levelled up when a creature is already multiclassed. 
+  In order to level up a henchman (or any NPC, it isn't restricted to henchmen), that NPC must have followed its packages stringently. When you create a creature in the toolset, giving it, say, 5 levels of wizard, it automatically follows it packages. If you then start adding feats manually to it, for instance, you'll no longer be able to use the LevelUpHenchman command successfully on that NPC. As of HotU and patch 1.61, there a level up wizard available in the Toolset.
+version: 1.61
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+  constants:
+    - CLASS_TYPE_* Constants
+    - PACKAGE_* Constants
+author: Charles Feduke
+editor: Lilac Soul
+

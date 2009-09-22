@@ -1,0 +1,54 @@
+---
+type: Function
+name: Random
+shortdesc: Returns a pseudo-random number with a range.
+return: int
+parameters:
+  - type: int
+    name: nMaxInteger
+    desc: | Specifies the upper limit of the return value (will be less than nMaxInteger).
+
+description: |
+  Returns an integer between 0 and nMaxInteger - 1. The maximum value this can return is 65,534 (one less than the maximum value of a signed integer, 65,535).
+bugs: |
+  The random number sequence is always the same for single player, but is usually different for multiplayer (assuming there is more than a single player playing in multiplayer mode). 
+  1. The random number seed is reset when you enter a new area. This is true for single and multiplayer. 
+  2. This seed is always the same for each area. The sequence for each area will be identical every time. 
+  3. This seed is some combination of bits taken from basic area information. If you create "identical" areas they will have the same seed, and therefore the same sequence. Obviously this is also true of copied areas. 
+  4. Bits are definitely pulled from the area height and width (in tiles) and the indoor/outdoor and natural/artifical flags. Changing any of these can change the sequence. 
+  5. Bits are not pulled from the areas tag, name, or resref. Changing these will not change the sequence. 
+  6. Bits might be pulled from the tileset field (not sure). 
+  7. There is a delay between the resetting of the seed and the calling of the OnAreaEnter script. During this period other scripts (heartbeats, perceptions, etc.) and maybe some hard-coded stuff can call the random number function, "consuming" the start of the sequence. 
+  8. If the module has nothing in it but the player character the sequence will therefore be identical everytime. 
+  9. If there is other stuff in the module the sequence will start at some point further down the list (as the first numbers have already been used). Since there is some variation in area load time etc.. this will be a random offset into the sequence. This is why it often looks like you have several sequences turning up, but really they are just different parts of the same sequence. 
+  10. The random seed works exactly the same in single player and multiplayer - at least when the multiplayer game only has one PC.
+version: 1.61
+example: |
+  // This will assign the value of 0, 1, 2 or 3 to the variable nValue.
+  nValue = Random(4);
+  // For non-standard die rolls: This example is for a 30 sided die.
+  // It will assign a value to the variable nValue with a range of 1
+  // to 30.
+  nValue = Random(30) + 1;
+seealso:
+  functions:
+    - d10
+    - d100
+    - d12
+    - d2
+    - d20
+    - d3
+    - d4
+    - d6
+    - d8
+    - GetRandomDelay
+  categories:
+    - Math
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - John Harris
+  - Mark Schuit
+  - Harold Myles
+  - Matthew Glisson
+  - Ima Dufas

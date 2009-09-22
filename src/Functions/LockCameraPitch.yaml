@@ -1,0 +1,26 @@
+---
+type: Function
+name: LockCameraPitch 
+shortdesc: Locks the player's camera pitch to its current pitch setting, or unlocks the player's camera pitch.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | A player object.
+
+  - type: int
+    name: bLocked
+    default: TRUE
+    desc: | TURE or FALSE. (Default: TRUE)
+
+description: |
+  Locks the player's camera pitch to its current pitch setting, or unlocks the player's camera pitch.
+  Stops the player from tilting their camera angle.
+version: 1.67
+seealso:
+  functions:
+    - LockCameraDirection
+    - LockCameraDistance
+  categories:
+    - PC Only
+author: Mistress

@@ -1,0 +1,54 @@
+---
+type: Function
+name: IPRemoveAllItemProperties
+shortdesc: Removes all itemproperties from an item.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to remove the properties from.
+
+  - type: int
+    name: nItemPropertyDuration
+    default: DURATION_TYPE_TEMPORARY
+    desc: | DURATION_TYPE_* (Default: DURATION_TYPE_TEMPORARY)
+
+description: |
+  Removes ALL item properties from oItem matching nItemPropertyDuration
+remarks: |
+  The value for nItemPropertyDuration must be either DURATION_TYPE_PERMANENT or DURATION_TYPE_TEMPORARY. The instant duration does not apply to itemproperties. 
+  If the value provided is DURATION_TYPE_PERMANENT, all permanent itemproperties are removed, leaving all temporary ones behind. And vice versa for DURATION_TYPE_TEMPORARY.
+bugs: |
+  Uses RemoveItemProperty, which has an accumulator 
+  bug that may give an erroneous Stacking error message or affect subsequent functions in the same script.- 1/16/04, NWN Toolset version vts026, game version 1.61.8042 English 
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //Remove all properties from entering PC's helmet.
+  void main()
+  {
+  //Entering object
+  object oPC=GetEnteringObject();
+  //Only PCs
+  if (!GetIsPC(oPC)) return;
+  //That PC's helmet
+  object oItem=GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  //Stop script if the PC had no helmet on
+  if (!GetIsObjectValid(oItem)) return;
+  IPRemoveAllItemProperties(oItem, DURATION_TYPE_PERMANENT);
+  IPRemoveAllItemProperties(oItem, DURATION_TYPE_TEMPORARY);
+  }
+seealso:
+  functions:
+    - IPRemoveMatchingItemProperties
+    - RemoveItemProperty
+  categories:
+    - Item Creation
+    - Item Properties
+  constants:
+    - DURATION_TYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

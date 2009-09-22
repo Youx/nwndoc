@@ -1,0 +1,61 @@
+---
+type: Function
+name: SetLocalArrayString
+shortdesc: Simulates storing a local string in an array.
+return: void
+parameters:
+  - type: object
+    name: oidObject
+    desc: | Object to store the array on.
+
+  - type: string
+    name: sVarName
+    desc: | Name of the array.
+
+  - type: int
+    name: nVarNum
+    desc: | Position (index) in the array to store the variable in.
+
+  - type: string
+    name: nValue
+    desc: | String to store in the array.
+
+description: |
+  Although this is hardly an array, it can be accessed like one, and can even be looped through. It works by creating a new local string object on whatever object you passed in through the parameters. This local string is called sVarName + nVarNum, so in otherwords if the following is executed: 
+  SetLocalArrayString(oPC, "myarray", 1, "hello"); 
+  What actually happens is: 
+  SetLocalString(oPC, "myarray1", "hello");
+remarks: |
+  Found in nw_o0_itemmaker.nss on line 20. 
+  In essence, arrays are nice because they: 
+  a) Allow for cleaner code, and 
+  b) Allows you to make a simple loop statement to get many variables' values, rather than having to type a bunch of variable names yourself.
+bugs: |
+  Setting a value to a newly created object has some particular nuances. See SetLocalString(object, string, string) for more information.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.28
+example: |
+  //Sets 10 variables quickly on the PC, using a for loop.
+  //myarray1 is set to "number 1", 
+  //myarray2 is set to "number 2", etc.
+  #include "nw_o0_itemmaker"
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  int nLoop;
+  for (nLoop=1; nLoop<=10; nLoop++)
+     {
+     SetLocalArrayString(oPC, "myarray", nLoop, "number "+IntToString(nLoop));
+     }
+  }
+seealso:
+  functions:
+    - GetLocalArrayString
+    - SetLocalString
+  categories:
+    - Local Variables
+author: Lilac Soul
+editor: Charles Feduke
+additional_contributors:
+  - Graziano Lenzi

@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetPlotGiver
+shortdesc: Stores the victim of an assasin.
+return: void
+parameters:
+  - type: object
+    name: oVictim
+    desc: | The victim that will be the target of the assasin.
+
+description: |
+  Stores oVictim which represents the target of an assasin to a local variable on a global object.
+remarks: |
+  oVictim can be retrieved using GetPlotGiver(). 
+  However, these functions are of little use for general scripting needs.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.22
+seealso:
+  functions:
+    - GetPlotGiver
+    - GetPlotJournal
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

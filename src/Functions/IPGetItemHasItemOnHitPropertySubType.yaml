@@ -1,0 +1,48 @@
+---
+type: Function
+name: IPGetItemHasItemOnHitPropertySubType
+shortdesc: Checks if an item has a specified onhit subtype itemproperty.
+return: int
+parameters:
+  - type: object
+    name: oTarget
+    desc: | Item to check whether has the subtype on hit property.
+
+  - type: int
+    name: nSubType
+    desc: | Subtype to check for.
+
+description: |
+  Returns TRUE if an item has ITEM_PROPERTY_ON_HIT and the specified nSubType 
+  possible values for nSubType can be taken from IPRP_ONHIT.2da 
+  popular ones: 
+  5 - Daze 19 - ItemPoison 24 - Vorpal
+remarks: |
+  Returns TRUE if the item has the specified OnHit property subtype, otherwise it returns FALSE, including on error. 
+  I recommend using this program to view your .2da files, the NWN Explorer, which can be downloaded here: 
+  http://nwvault.ign.com/Files/other/data/1055545441750.shtml 
+  If you have HotU installed, you should always open the HotU data. If you don't have HotU, but you do have SoU, you should always open the SoU data. Otherwise, you must use the NWN data. First, check if the patch has the IPRP_ONHIT.2da file in it (open your data's patch section, open the file called patch.bif or something similar (e.g. xp2patch.bif), game data, and that is where you should find it. If it isn't there, it means it hasn't been updated in a patch, and you should look in the data section mentioned before. 
+  Following the above procedure will ensure that you ALWAYS view the more recent version of the .2da file, provided that your patch of NWN is up-to-date. 
+  Please note that older versions of the NWN Explorer might not look in the patch files, so it is recommended that you download the latest version.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.62
+example: |
+  #include "x2_inc_itemprop"
+  //Return TRUE in a conversation if the PC speaker's equipped
+  //weapon has the OnHit - Vorpal property.
+  int StartingConditional()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem=GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return FALSE;
+  return IPGetItemHasItemOnHitPropertySubType(oItem, 24);
+  }
+seealso:
+  categories:
+    - Get Data from Object
+    - Item Properties
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Lilac Soul
+

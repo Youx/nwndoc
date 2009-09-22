@@ -1,0 +1,19 @@
+---
+type: Function
+name: IsRecall
+shortdesc: Recalls a player through the use of Recall Stones.
+return: int
+parameters:
+description: |
+  Attempts to transport the player back to closest Temple of Tyr using a Recall Stone.
+remarks: |
+  This is specifically written to work with the BioWare modules. 
+  Recommendation: DO NOT USE.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

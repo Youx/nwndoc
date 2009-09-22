@@ -1,0 +1,63 @@
+---
+type: Function
+name: RemoveItemProperty
+shortdesc: Removes an itemproperty from an item.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to remove property from
+
+  - type: itemproperty
+    name: ipProperty
+    desc: | Property to remove
+
+description: |
+  Removes an item property from the specified item.
+remarks: |
+  The itemproperty to remove must already be on the item. It is a common mistake to do something like this: 
+  itemproperty ipRemove=ItemPropertyTrueSeeing(); 
+  RemoveItemProperty(oItem, ipRemove); 
+  This won't work, because ipRemove is a new itemproperty. Think of it as an object. It does the same as the True Seeing property on the item, but since it isn't currently on the item, it can't be removed from it either. Instead, you'll have to loop through the itemproperties on the item, and remove those of the true seeing type. See code example. For an easy way to do that, please view the IPRemoveMatchingItemProperties function.
+bugs: |
+  The itemproperty value does not change within the calling script, but is corrected when the script is exited. This may lead to an erroneous Stacking error message, or may provide incorrect values to subsequent functions within the same script. - 1/16/04, NWN Toolset version vts026, game version 1.61.8042 English 
+  See test code under ItemPropertyLimitUseByAlign. - PB 
+version: 1.61
+example: |
+  //Remove true seeing from the entering PC's headgear
+  void main()
+  {
+  //Entering object
+  object oPC=GetEnteringObject();
+  //Only PCs
+  if (!GetIsPC(oPC)) return;
+  //That PC's helmet
+  object oItem=GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  //Stop script if the PC had no helmet on
+  if (!GetIsObjectValid(oItem)) return;
+  //Get the first itemproperty on the helmet
+  itemproperty ipLoop=GetFirstItemProperty(oItem);
+  //Loop for as long as the ipLoop variable is valid
+  while (GetIsItemPropertyValid(ipLoop))
+     {
+     //If ipLoop is a true seeing property, remove it
+     if (GetItemPropertyType(ipLoop)==ITEM_PROPERTY_TRUE_SEEING)
+        RemoveItemProperty(oItem, ipLoop);
+     //Next itemproperty on the list...
+     ipLoop=GetNextItemProperty(oItem);
+     }
+  }
+seealso:
+  functions:
+    - GetFirstItemProperty
+    - GetItemPropertyType
+    - GetNextItemProperty
+    - IPGetDamageBonusConstantFromNumber
+    - IPRemoveAllItemProperties
+    - IPRemoveMatchingItemProperties
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+author: Lilac Soul
+editor: Peter Busby
+

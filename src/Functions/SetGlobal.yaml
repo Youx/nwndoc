@@ -1,0 +1,39 @@
+---
+type: Function
+name: SetGlobal
+shortdesc: Sets where all the globals for a plot are going to be stored.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object you wish to store the plot related information on.
+
+  - type: object
+    name: oGlobal
+    desc: | The object to store the plot information on, created using the Global() function.
+
+description: |
+  Creates an object on oTarget to hold the plot related information object created using the Global() function.
+remarks: |
+  Part of a series of scripts that are used to store quest related information and make simple quests easy to script. This particular function is defined in more than one file: 
+  Function can be found in nw_j_complex.nss on line 44. 
+  Function can be found in nw_j_story.nss on line 47. 
+  Function can be found in nw_j_theft.nss on line 44. 
+  Function can be found in nw_j_fetch.nss on line 47. 
+  Function can be found in nw_j_artifact.nss on line 47. 
+  Function can be found in nw_j_assassin.nss on line 107. 
+  Function can be found in nw_j_guard.nss on line 47. 
+  Function can be found in nw_j_rescue.nss on line 64. 
+requirements: |
+  #include "nw_j_artifact"
+version: 1.22
+seealso:
+  functions:
+    - Global
+    - TakeArtifactItem
+    - TakeComplexItem
+    - TakeStoryItem
+  categories:
+    - Local Variables
+author: John Shuell
+

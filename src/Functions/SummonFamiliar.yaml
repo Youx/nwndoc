@@ -1,0 +1,24 @@
+---
+type: Function
+name: SummonFamiliar
+shortdesc: Summon a familiar for a creature.
+return: void
+parameters:
+  - type: object
+    name: oMaster
+    default: OBJECT_SELF
+    desc: | The creature to summon the familiar of. (Default: OBJECT_SELF)
+
+description: |
+  Summons a wizards or sorcerer's familiar. If oMaster has no familiar, nothing happens.
+version: 1.22
+seealso:
+  functions:
+    - EffectSummonCreature
+    - EffectSwarm
+    - GetFamiliarCreatureType
+    - GetFamiliarName
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+

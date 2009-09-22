@@ -1,0 +1,48 @@
+---
+type: Function
+name: ItemPropertyLight
+shortdesc: Sets a light itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nBrightness
+    desc: | IP_CONST_LIGHTBRIGHTNESS_*
+
+  - type: int
+    name: nColor
+    desc: | IP_CONST_LIGHTCOLOR_*
+
+description: |
+  Sets item property Light. You must specify the intensity constant of the light (IP_CONST_LIGHTBRIGHTNESS_*) and the color constant of the light (IP_CONST_LIGHTCOLOR_*).
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_LIGHTBRIGHTNESS_* constant can be retrieved using GetItemPropertCostTableValue. The IP_CONST_LIGHTCOLOR_* constant can be retrieved using GetItemPropertyParam1Value. 
+  Note that this does not cause the item to glow.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the first PC's onhand weapon emit a bright red light
+  void main()
+  {
+  object oPC = GetFirstPC();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  int nBrightness = IP_CONST_LIGHTBRIGHTNESS_BRIGHT;
+  int nColor = IP_CONST_LIGHTCOLOR_RED;
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyLight(nBrightness, nColor);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_LIGHTBRIGHTNESS_* Constants
+    - IP_CONST_LIGHTCOLOR_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

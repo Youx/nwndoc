@@ -1,0 +1,21 @@
+---
+type: Function
+name: SpawnHenchman
+shortdesc: Creates the henchmen for each chapter of the original campaign of appropriate level for PC.
+return: void
+parameters:
+description: |
+  Determines the appropriate level of henchmen for the chapter the PC enters. Spawns each henchman at their specific spot in the (NW_HENCHMAN_BAR). 
+  Does ensure proper level of the henchmen by starting them at level 3, 7 or 10 depending on either Chap. 1E, Chap. 2E or Chap. 4.
+remarks: |
+  Script: nw_i0_henchman.nss: Line: 592
+requirements: |
+  #include "NW_I0_HENCHMAN"
+version: 1.29
+seealso:
+  categories:
+    - Henchmen/Familiars/Summoned
+  events:
+    - OnClientEnter
+author: Jody Fletcher
+

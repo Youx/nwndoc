@@ -1,0 +1,38 @@
+---
+type: Function
+name: ItemPropertyAttackBonus
+shortdesc: Sets an attack bonus itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nBonus
+    desc: | Attack bonus to add; 1 to 20 are valid.
+
+description: |
+  Sets item property Attack bonus. You must specify an attack bonus, which should be an integer between 1 and 20.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The bonus can be retrieved off this type of item property using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Grants the PC speaker's onhand weapon a +10 attack bonus
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return; // Stop if nothing equipped
+  itemproperty ipAdd = ItemPropertyAttackBonus(10);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+author: Lilac Soul
+editor: Peter Busby
+

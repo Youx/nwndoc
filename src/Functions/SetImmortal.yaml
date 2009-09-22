@@ -1,0 +1,38 @@
+---
+type: Function
+name: SetImmortal
+shortdesc: Sets a creature as immortal.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to affect the mortality of.
+
+  - type: int
+    name: bImmortal
+    desc: | Sets the creature to immortal (TRUE) or mortal (FALSE).
+
+description: |
+  Marks a creature as immortal; that is immune to death (cannot die but still takes damage). 
+  Remember to script it so a player either knows the creature cannot ever die, or that the flag is removed at some point, else they might die as it appears they are still damaging the NPC with it set - see below.
+remarks: |
+  The damage still appears to happen, EG: "Tomas damages Goblin for 4 damage" while it actually stops at 1 hit point. Effects such as EffectDeath will not work, but most other effects should work the same as if this flag wasn't set.
+bugs: |
+  Previous bug reported with EffectDeath has been solved (as well as Vorpal and other instant-kill effects on items) 
+  Also, it appears that only creatures, not placeables can be set as immortal. This may not be a bug, though, but could be something intended.
+version: 1.30
+example: |
+  // We set ourselves to Immortal On Spawn
+  void main()
+  {
+      // We won't die, but get left at 1 hit point.
+      SetImmortal(OBJECT_SELF, TRUE);
+  }
+seealso:
+  functions:
+    - SetPlotFlag
+  categories:
+    - Miscellaneous
+author: Charles Feduke
+editor: Jasperre
+

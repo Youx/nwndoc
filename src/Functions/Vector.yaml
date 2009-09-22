@@ -1,0 +1,39 @@
+---
+type: Function
+name: Vector
+shortdesc: Creates a vector (position) from three points.
+return: vector
+parameters:
+  - type: float
+    name: fX
+    default: 0.0f
+    desc: | x point of a triangle. (Default: 0.0f)
+
+  - type: float
+    name: fY
+    default: 0.0f
+    desc: | y point of a triangle. (Default: 0.0f)
+
+  - type: float
+    name: fZ
+    default: 0.0f
+    desc: | z point of a triangle. (Default: 0.0f)
+
+description: |
+  Returns a vector with the specified point values of fX, fY, and fZ.
+remarks: |
+  A common use for this command is when creating a new Location based on an objects location. Some knowledge of how vectors work is probably good for this purpose.
+version: 1.61
+seealso:
+  functions:
+    - ActionJumpToLocation
+    - AngleToVector
+    - Location
+    - VectorMagnitude
+    - VectorNormalize
+    - VectorToAngle
+  categories:
+    - Movement
+author: Charles Feduke
+editor: Lilac Soul
+

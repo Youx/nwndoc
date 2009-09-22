@@ -1,0 +1,29 @@
+---
+type: Function
+name: IPGetHasUseLimitation
+shortdesc: Returns whether an item has any usage limitations.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to check for usage limitations.
+
+description: |
+  Returns TRUE if a use limitation of any kind is present on oItem.
+remarks: |
+  Checks if one of the four usage limitations itemproperties is present on the item: 
+  Alignmentgroup 
+  Racialtype 
+  Class 
+  Specific alignment 
+  Returns FALSE on error, and if the item has no usage limitations. 
+  Note, ItemRestriction based on hitdice will still apply if enabled.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+

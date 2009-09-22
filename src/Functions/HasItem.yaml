@@ -1,0 +1,28 @@
+---
+type: Function
+name: HasItem
+shortdesc: Determines if a creature possesses an item.
+return: int
+parameters:
+  - type: object
+    name: oCreature
+    desc: | The creature to check if they possess an item.
+
+  - type: string
+    name: sTag
+    desc: | The item's tag to search for.
+
+description: |
+  Returns TRUE if oCreature possesses an item with the tag sTag, otherwise returns FALSE.
+remarks: |
+  This is simply a wrapper for GetItemPossessedBy().
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - GetItemPossessedBy
+  categories:
+    - Inventory
+author: Tom Cassiotis
+

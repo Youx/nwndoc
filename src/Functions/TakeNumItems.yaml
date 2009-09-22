@@ -1,0 +1,41 @@
+---
+type: Function
+name: TakeNumItems
+shortdesc: Takes the number of items specified from the target.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object to remove the multiple items from.
+
+  - type: string
+    name: sItem
+    desc: | The Tag of the Items to remove.
+
+  - type: int
+    name: nNumItems
+    desc: | The maximum number of items found in the objects inventory, to remove.
+
+description: |
+  Loops through the inventory of oTarget looking for objects with the Tag sItem and places them into the calling objects inventory. The loop will continue until nNumItems have been found and removed or all the items in the objects inventory have already been gone through.
+remarks: |
+  Function can be found in nw_i0_plot.nss on line 847. 
+  The function simply uses a loop based on GetFirstItemInInventory and GetNextItemInInventory combined with ActionTakeItem. Thus, it won't take items equipped by oTarget.
+bugs: |
+  If the object calling this function has no inventory then the game will crash. 
+  This function doesnt handle stacks of items correctly, it will simply delete the required number of stacks of items regardless of how many items each stack holds.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.61
+seealso:
+  functions:
+    - ActionTakeItem
+    - GiveNumItems
+    - SetItemStackSize
+    - TakeGold
+    - TakeGoldFromCreature
+  categories:
+    - Inventory
+author: John Shuell
+editor: Grimlar
+

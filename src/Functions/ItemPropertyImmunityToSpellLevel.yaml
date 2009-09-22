@@ -1,0 +1,38 @@
+---
+type: Function
+name: ItemPropertyImmunityToSpellLevel
+shortdesc: Sets an "immunity to spell level" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nLevel
+    desc: | Immune to this level and below; 1 to 9 are valid.
+
+description: |
+  Sets item property Immunity to spell level. You must specify the level of spell to which the user will be immune. The level must be an integer between 1 and 9. By putting in a 3 it will mean the user is immune to all 3rd level and lower spells.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The level can be retrieved off this type of item property using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the first PC's amulet grant immunity to spells of level 5 and below
+  void main()
+  {
+  object oPC = GetFirstPC();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_NECK, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyImmunityToSpellLevel(5);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+author: Lilac Soul
+editor: Peter Busby
+

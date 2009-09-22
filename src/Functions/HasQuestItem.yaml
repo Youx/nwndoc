@@ -1,0 +1,33 @@
+---
+type: Function
+name: HasQuestItem
+shortdesc: Checks if the PC's party possesses a given quest item.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | PC whose party we want to check for the item
+
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | The quest number (Default: 1)
+
+  - type: object
+    name: oNPC
+    default: OBJECT_SELF
+    desc: | The quest giver (Default: OBJECT_SELF)
+
+description: |
+  See if a PC's party is carrying the quest item.
+remarks: |
+  Returns TRUE if the party has the quest item in its possession, otherwise it returns FALSE, including if either oPC or oNPC is an invalid object. 
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+

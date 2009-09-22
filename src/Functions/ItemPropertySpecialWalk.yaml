@@ -1,0 +1,41 @@
+---
+type: Function
+name: ItemPropertySpecialWalk
+shortdesc: Sets a special walk itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nWalkType
+    default: 0
+    desc: | Walktype. (Default: 0)
+
+description: |
+  Sets item property Special walk. If no parameters are specified it will automatically use the zombie walk. This will apply the special walk animation to the user.
+remarks: |
+  This appears to be applicable only to creature hides. Also, it seems the only valid walktype is the default 0 (zombie walk). Could be fun perhaps to use in a spell to make your opponent start walking like a zombie... 
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  [NT-ed.]
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's specially equipped creature hide
+  //make the PC walk like a zombie
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_CARMOUR, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertySpecialWalk();
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+author: Lilac Soul
+editor: Peter Busby
+

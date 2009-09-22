@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetMachineState
+shortdesc: When PC uses specific machine in City of Luskan in Original Campaign, sets the machine for operation or not.
+return: void
+parameters:
+  - type: int
+    name: nCondition
+    desc: | bValid
+
+  - type: int
+    name: bValid
+description: |
+  Set the new state of the machine after the lever is pressed. 
+  After getting the status of the local variable (2Q4_ColmarrEng) determines if machine state can be changed, then alters the local variable (NW_2Q4_COLMARR_MACHINE_LEVER_STATE) as needed.
+remarks: |
+  Part of the Original Campaign Module. File :nw_i0_2q4luskan.nss: Line 38
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.29
+seealso:
+  functions:
+    - GetMachineState
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

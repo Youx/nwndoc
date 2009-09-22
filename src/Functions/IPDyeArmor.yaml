@@ -1,0 +1,41 @@
+---
+type: Function
+name: IPDyeArmor
+shortdesc: Changes the color of an armor.
+return: object
+parameters:
+  - type: object
+    name: oItem
+    desc: | Armor to dye.
+
+  - type: int
+    name: nColorType
+    desc: | ITEM_APPR_ARMOR_COLOR_*
+
+  - type: action
+    name: nColor
+    desc: | Color from 0 to 63
+
+description: |
+  Changes the color of an item armor 
+  oItem - The armor 
+  nColorType - ITEM_APPR_ARMOR_COLOR_* constant 
+  nColor - color from 0 to 63 
+  Since oItem is destroyed in the process, the function returns the item created with the color changed
+remarks: |
+  Simply a wrapper function that calls CopyItemAndModify and destroys the original oItem.
+bugs: |
+  Not really a bug, but: No checks are made to see if the copied item is valid. Thus, it will delete the original oItem even if the function fails, for instance if you feed it something other than an armor for oItem (like a weapon or a placeable).
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - CopyItemAndModify
+  categories:
+    - Item Creation
+    - Item Properties
+  constants:
+    - ITEM_APPR_* Constants
+author: Lilac Soul
+

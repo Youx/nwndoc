@@ -1,0 +1,25 @@
+---
+type: Function
+name: StoreCameraFacing
+shortdesc: Stores the camera facing and position so it can be restored later.
+return: void
+parameters:
+description: |
+  Stores (bookmarks) the camera's facing and position so it can be restored later with RestoreCameraFacing.
+remarks: |
+  Note that StoreCameraFacing and RestoreCameraFacing don’t take parameter about whose camera we want to deal with. So you need to call them in an AssignCommand call with the PC being assigned the camera job. 
+  RestoreCameraFacing can be used, once, to restore the camera facing and mode stored by a call of StoreCameraFacing. Calling RestoreCameraFacing when the PC is in a cutscene doesn’t work. I’m not sure if that is a bug or intended behaviour. 
+  It also appears that when SetCutsceneMode is set to TRUE, the PC’s camera facing is automatically stored, and when you call SetCutsceneMode to FALSE, the camera facing is automatically restored. This means you can do all sorts of stuff with the camera mode and facing in a cutscene without having to worry about it afterwards. If you move the PC around in the cutscene, though, the restored camera facing may no longer be a good angle etc. In that case, you can always call SetCameraFacing when the PC exits the cutscene.
+version: 1.30
+seealso:
+  functions:
+    - RestoreCameraFacing
+    - SetCameraFacing
+    - SetCameraMode
+    - SetCutsceneMode
+  categories:
+    - Miscellaneous
+    - PC Only
+author: Charles Feduke
+editor: Jasperre
+

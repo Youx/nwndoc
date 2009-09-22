@@ -1,0 +1,26 @@
+---
+type: Function
+name: LockCameraDirection 
+shortdesc: Locks the player's camera direction to its current direction, or unlocks the player's camera direction to enable it to move freely again.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | A player object.
+
+  - type: int
+    name: bLocked
+    default: TRUE
+    desc: | TRUE or FALSE. (Default: TRUE)
+
+description: |
+  Locks the player's camera direction to its current direction, or unlocks the player's camera direction to enable it to move freely again.
+  Stops the player from being able to rotate the camera direction.
+version: 1.67
+seealso:
+  functions:
+    - LockCameraDistance LockCameraPitch
+  categories:
+    - PC Only
+author: bernosky
+editor: Mistress

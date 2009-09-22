@@ -1,0 +1,33 @@
+---
+type: Function
+name: SetStoryVar
+shortdesc: Used to track the current storyline for the henchman a PC has working for him. Original Campaign.
+return: void
+parameters:
+  - type: int
+    name: nChapter
+    desc: | Current chapter of the module.
+
+  - type: int
+    name: nVal
+    desc: | Current place in the henchman storyline the PC has reached.
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The henchman. (Default: OBJECT_SELF)
+
+description: |
+  This tracks the status of the specific story a henchman may have through the PC's movement through the storyline of the module. 
+  It puts the current status of the Henchman story in a local variable that starts with (NW_L_HENSTORYC) and is appended by the current chapter of the game.
+remarks: |
+  Script: nw_i0_henchman.nss: Line: 152 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

@@ -1,0 +1,34 @@
+---
+type: Function
+name: IPWildShapeCopyItemProperties
+shortdesc: Copies itemproperties from one item to another.
+return: void
+parameters:
+  - type: object
+    name: oOld
+    desc: | Item equipped before polymorphing. (source for item props) 
+
+  - type: object
+    name: oNew
+    desc: | Item equipped after polymorphing. (target for item props) 
+
+  - type: int
+    name: bWeapon
+    default: FALSE
+    desc: | Must be TRUE if oOld is a weapon. (Default: FALSE)
+
+description: |
+  Special Version of Copy Item Properties for use with greater wild shape 
+remarks: |
+  Copies itemproperties from oOld to oNew, while preserving the itemproperties already on oNew. 
+  If bWeapon is TRUE, which it should be for weapons, the itemproperties are not added if one is a ranged weapons and the other is a melee weapon. 
+  This function is called in both x2_s2_gwildshp and nw_s2_wildshape.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+    - Item Properties
+author: Lilac Soul
+

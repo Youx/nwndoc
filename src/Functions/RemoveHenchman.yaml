@@ -1,0 +1,29 @@
+---
+type: Function
+name: RemoveHenchman
+shortdesc: Removes the henchmen from the employ of a PC.
+return: void
+parameters:
+  - type: object
+    name: oMaster
+    desc: | The master PC with an attached henchman.
+
+  - type: object
+    name: oHenchman
+    default: OBJECT_SELF
+    desc: | The henchman to remove. (Default: OBJECT_SELF)
+
+description: |
+  Removes oHenchman from the service of oMaster, returning them to their original faction.
+version: 1.22
+seealso:
+  functions:
+    - GetHenchman
+    - RemoveFromParty
+    - RemoveSummonedAssociate
+    - ResetHenchmenState
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Tom Cassiotis
+

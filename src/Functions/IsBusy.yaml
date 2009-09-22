@@ -1,0 +1,31 @@
+---
+type: Function
+name: IsBusy
+shortdesc: Determines whether an associate is busy.
+return: int
+parameters:
+description: |
+  Determines whether an associate is busy with combat or other tasks.
+remarks: |
+  This checks local ints that were set up by other associate functions. SetIsBusy can be used to set a henchmen to busy (like when unlocking an object).
+requirements: |
+  #include "nw_i0_assoc"
+version: 1.22
+example: |
+  // 1.24 source for this function
+  int IsBusy()
+  {
+  	// * if no valid attack targets then I am not in combat
+  	if (GetIsObjectValid(GetAttackTarget()) == FALSE && GetIsObjectValid(GetAttemptedAttackTarget()) == FALSE && GetLocalInt(OBJECT_SELF,"NW_ASSOCAMIBUSY") == FALSE)
+  	{
+  		return FALSE;
+  	}
+  	return TRUE;
+  }
+seealso:
+  functions:
+    - SetIsBusy
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Tom Cassiotis
+

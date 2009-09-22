@@ -1,0 +1,38 @@
+---
+type: Function
+name: ItemPropertyDamagePenalty
+shortdesc: Sets a damage penalty itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nPenalty
+    desc: | Damage penalty; 1 to 5 are valid.
+
+description: |
+  Sets item property Damage penalty. You must specify the damage penalty. The damage penalty should be a POSITIVE integer between 1 and 5: a penalty of 1 reduces the item's damaging ability by 1.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The penalty can be retrieved off this type of item property using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Gives the PC speaker's onhand weapon a -5 damage penalty
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return; //stop if no weapon
+  itemproperty ipAdd = ItemPropertyDamagePenalty(5);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+author: Lilac Soul
+editor: Peter Busby
+

@@ -1,0 +1,35 @@
+---
+type: Function
+name: HasAnyItemOfBaseType
+shortdesc: Cycles through the players inventory looking for any item that has a certain Base Item Type. If the Base Item Type is Armor, make sure the AC matches.
+return: int
+parameters:
+  - type: int
+    name: nBaseType
+    desc: | The Type of Item as defined by the BASE_ITEM_* constants group.
+
+  - type: int
+    name: nAC
+    desc: | If the Base Item is Armor only return TRUE if the AC is this.
+
+  - type: object
+    name: oPC
+    desc: | The player whose inventory should be checked.
+
+description: |
+  Returns TRUE if oPC has any item in their inventory of a Base Type of nBaseType (as defined in the BASE_ITEM_* constants group). If the item is an Armor type, then only return TRUE if the AC matches nAC.
+remarks: |
+  Used by BackPackMatch to tell if characters have an item necessary for item creation scenarios.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.22
+seealso:
+  functions:
+    - GetBackpackMatch
+  categories:
+    - Inventory
+    - Item Creation
+  constants:
+    - BASE_ITEM_* Constants
+author: John Shuell
+

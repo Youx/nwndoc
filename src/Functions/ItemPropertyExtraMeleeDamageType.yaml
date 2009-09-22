@@ -1,0 +1,42 @@
+---
+type: Function
+name: ItemPropertyExtraMeleeDamageType
+shortdesc: Sets an "extra melee damagetype" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nDamageType
+    desc: | IP_CONST_DAMAGETYPE_*
+
+description: |
+  Sets item property Extra melee damage type. You must specify the extra melee base damage type constant (IP_CONST_DAMAGETYPE_*) that you want applied: Piercing, Slashing or Bludgeoning. 
+  NOTE: It is applicable only to melee weapons.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_DAMAGETYPE_* value can be retrieved off this type of item property using GetItemPropertySubType.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's onhand melee weapon also deal slashing damage
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyExtraMeleeDamageType(IP_CONST_DAMAGETYPE_SLASHING);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertyExtraRangeDamageType
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_DAMAGETYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

@@ -1,0 +1,45 @@
+---
+type: Function
+name: ItemPropertyBonusSavingThrow
+shortdesc: Sets a saving throw bonus itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nBaseSaveType
+    desc: | IP_CONST_SAVEBASETYPE_*
+
+  - type: int
+    name: nBonus
+    desc: | Bonus to add; 1 to 20 are valid.
+
+description: |
+  Sets item property Saving throw bonus to the base type (Will, Reflex or Fortitude). You must specify the base type constant (IP_CONST_SAVEBASETYPE_*) to which the user gets the bonus and the amount of bonus, which should be an integer between 1 and 20.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_SAVEBASETYPE_* constant can be retrieved off this type of item property using GetItemPropertySubType. The bonus can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's helmet give +15 to reflex saving throws
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyBonusSavingThrow(IP_CONST_SAVEBASETYPE_REFLEX, 15);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertyReducedSavingThrow
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_SAVEBASETYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

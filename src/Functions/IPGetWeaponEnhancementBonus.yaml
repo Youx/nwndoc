@@ -1,0 +1,35 @@
+---
+type: Function
+name: IPGetWeaponEnhancementBonus
+shortdesc: Returns a weapon's enhancement bonus.
+return: int
+parameters:
+  - type: object
+    name: oWeapon
+    desc: | Weapon to get enhancement bonus from.
+
+  - type: int
+    name: nEnhancementBonusType
+    default: ITEM_PROPERTY_ENHANCEMENT_BONUS
+    desc: | See remarks. (Default: ITEM_PROPERTY_ENHANCEMENT_BONUS)
+
+description: |
+  Returns the current enhancement bonus of a weapon (+1 to +20), 0 if there is no enhancement bonus. You can test for a specific type of enhancement bonus by passing the appropritate ITEM_PROPERTY_ENHANCEMENT_BONUS_* constant into nEnhancementBonusType
+remarks: |
+  The following values are valid for nEnhancementBonusType: 
+  ITEM_PROPERTY_ENHANCEMENT_BONUS 
+  ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP 
+  ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP 
+  ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT 
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Object
+    - Item Creation
+    - Item Properties
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Lilac Soul
+

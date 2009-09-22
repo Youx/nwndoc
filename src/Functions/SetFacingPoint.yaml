@@ -1,0 +1,37 @@
+---
+type: Function
+name: SetFacingPoint
+shortdesc: Sets the object to face the direction of a vector.
+return: void
+parameters:
+  - type: vector
+    name: vTarget
+    desc: | The vector to have the object face.
+
+description: |
+  Cause the caller to face vTarget. 
+  Functions GetPosition and GetPositionFromLocation will provide vectors that can be used as parameters to this function.
+version: 1.61
+example: |
+  //Make the caller face oTarget
+  void SetFacingObject(object oTarget)
+  {
+  vector vFace=GetPosition(oTarget);
+  SetFacingPoint(vFace);
+  }
+  void main()
+  {
+  //Example of use: Caller faces the nearest PC:
+  object oPC=GetNearestCreature(CREATURE_TYPE_PLAYER_CHAR, PLAYER_CHAR_IS_PC);
+  if (GetIsObjectValid(oPC)) SetFacingObject(oPC);
+  }
+seealso:
+  functions:
+    - GetPosition
+    - GetPositionFromLocation
+    - SetFacing
+  categories:
+    - Movement
+author: Tom Cassiotis
+editor: Lilac Soul
+

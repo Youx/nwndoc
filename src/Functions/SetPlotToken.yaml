@@ -1,0 +1,22 @@
+---
+type: Function
+name: SetPlotToken
+shortdesc: Stores the plot token to a value.
+return: void
+parameters:
+  - type: int
+    name: nID
+    desc: | The value of the plot token.
+
+description: |
+  Stores nID in a local variable to be later retrieved by GetPlotToken()
+requirements: |
+  #include "nw_j_assassin"
+version: 1.22
+seealso:
+  functions:
+    - GetPlotToken
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

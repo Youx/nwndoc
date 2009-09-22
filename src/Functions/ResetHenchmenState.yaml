@@ -1,0 +1,23 @@
+---
+type: Function
+name: ResetHenchmenState
+shortdesc: Henchman becomes available for other instructions by PC.
+return: void
+parameters:
+description: |
+  Sets the henchman to commandable, deletes local variables having to do with doors and clears the henchman's queued actions. 
+  Local variables concerning doors focuses on current door (if any) the henchmen has targeted to bash and the doors hit points.
+remarks: |
+  This is a short and sweet function that clears the henchmen and makes them ready for new orders.
+requirements: |
+  #include "NW_I0_GENERIC"
+version: 1.29
+seealso:
+  functions:
+    - GetHenchman
+    - RemoveHenchman
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Jody Fletcher
+

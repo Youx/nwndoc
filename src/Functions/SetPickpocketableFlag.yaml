@@ -1,0 +1,23 @@
+---
+type: Function
+name: SetPickpocketableFlag 
+shortdesc: Sets the pickpocketable flag on the item.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to change.
+
+  - type: int
+    name: bPickpocketable
+    desc: | TRUE or FALSE, whether the item can be pickpocketed.
+
+description: |
+  Sets the pickpocketable flag on the item.
+version: 1.66
+seealso:
+  functions:
+    - GetPickpocketableFlag
+  categories:
+    - Inventory
+author: Mistress

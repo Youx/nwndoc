@@ -1,0 +1,18 @@
+---
+type: Function
+name: VectorMagnitude
+shortdesc: Determines the magnitute of a vector.
+return: float
+parameters:
+  - type: vector
+    name: vVector
+description: |
+  Returns the magnitude of vVector (which can be used to determine the distance between two points) and 0.0f on any error. 
+version: 1.22
+seealso:
+  functions:
+    - Vector
+  categories:
+    - Movement
+author: Tom Cassiotis
+

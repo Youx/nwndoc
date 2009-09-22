@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetUniform
+shortdesc: Specifies the name of the uniform to be taken by the player during the original campaign.
+return: void
+parameters:
+  - type: string
+    name: sTag
+    desc: | Identifier for clothing of guards.
+
+description: |
+  Saves the tag of the uniform the player must use to continue with the Guard Plot in the original campaign.
+remarks: |
+  Script: nw_j_guard.nss: Line: 97 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_j_guard"
+version: 1.29
+seealso:
+  functions:
+    - GetUniform
+    - PlayerWearsUniform
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

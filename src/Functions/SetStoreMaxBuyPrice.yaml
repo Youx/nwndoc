@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetStoreMaxBuyPrice
+shortdesc: Sets the maximum amount a store will pay for any item.
+return: void
+parameters:
+  - type: object
+    name: oidStore
+    desc: | Store object to handle
+
+  - type: int
+    name: nMaxBuy
+    desc: | Maximum price the store will pay
+
+description: |
+  Gets the maximum amount a store will pay for any item. -1 means price unlimited.
+remarks: |
+  This can also be set directly in the Toolset. 
+  By default, stores don't have a maximum buy price.
+version: 1.61
+seealso:
+  functions:
+    - GetStoreMaxBuyPrice
+  categories:
+    - Store
+    - Money
+author: Lilac Soul
+editor: Mistress
+

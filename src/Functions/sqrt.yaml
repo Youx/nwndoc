@@ -1,0 +1,22 @@
+---
+type: Function
+name: sqrt
+shortdesc: Square root function
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Float to get the square root of.
+
+description: |
+  Returns the square root of fValue. 
+  Returns zero if fValue is less than 0 (does not support imaginary numbers).
+version: 1.22
+seealso:
+  functions:
+    - log
+    - pow
+  categories:
+    - Math
+author: Charles Feduke
+

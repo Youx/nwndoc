@@ -1,0 +1,29 @@
+---
+type: Function
+name: TurnToFaceObject
+shortdesc: Turns the target object to face another object
+return: void
+parameters:
+  - type: object
+    name: oObjectToFace
+    desc: | The object to face
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The object to turn (Default: OBJECT_SELF)
+
+description: |
+  Turns the target object specified as oTarget to face the object specified as oObjectToFace. This is accomplished by wrapping calls to GetPosition and SetFacingPoint in an AssignCommand. 
+  Calls 
+  void AssignCommand(object oTarget) 
+  void SetFacingPoint(float fPosition) 
+  void GetPosition(object oTarget) 
+requirements: |
+  #include "x0_i0_position"
+version: 1.61
+seealso:
+  categories:
+    - Movement
+author: Michael Nork
+

@@ -1,0 +1,24 @@
+---
+type: Function
+name: RemoveFromParty
+shortdesc: Removes a PC from their party.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Removes this player from whatever party they're currently in.
+
+description: |
+  Remove oPC from their current party. This will only work on a PC.
+remarks: |
+  To remove a henchman NPC from the service of a PC use RemoveHenchman(). As of patch 1.28, no longer removes a player from the party when the server is set to "One Party Only".
+version: 1.28
+seealso:
+  functions:
+    - AddToParty
+    - RemoveHenchman
+  categories:
+    - Party
+author: Tom Cassiotis
+editor: Charles Feduke
+

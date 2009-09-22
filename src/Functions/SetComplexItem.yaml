@@ -1,0 +1,30 @@
+---
+type: Function
+name: SetComplexItem
+shortdesc: Stores the tag of the complex item in a local string.
+return: void
+parameters:
+  - type: string
+    name: sTag
+    desc: | Tag of the complex item
+
+description: |
+  Stores the tag of the complex in a local string for later retrieval with GetComplexItem and PlayerHasComplexItem.
+remarks: |
+  Found in nw_j_complex.nss line 97 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail, which in my opinion there is very little reason to do.
+requirements: |
+  #include "nw_j_complex"
+version: 1.28
+seealso:
+  functions:
+    - GetComplexItem
+    - Global
+    - PlayerHasComplexItem
+    - TakeArtifactItem
+    - TakeComplexItem
+  categories:
+    - Local Variables
+    - Module Specific
+author: Lilac Soul
+

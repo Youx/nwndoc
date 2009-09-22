@@ -1,0 +1,25 @@
+---
+type: Function
+name: IsMisc
+shortdesc: Returns true if the basetype of the item is one of the misc. types of basetype.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | The item to check for basetype.
+
+description: |
+  If the basetype of oItem is BASE_ITEM_GEM, BASE_ITEM_MISCLARGE, BASE_ITEM_MISCMEDIUM, BASE_ITEM_MISCTALL, BASE_ITEM_MISCSMALL, or BASE_ITEM_MISCTHIN, this function returns TRUE. For other basetypes, or on error, it returns FALSE.
+remarks: |
+  Found in nw_o0_itemmaker.nss on line 120
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.28
+seealso:
+  categories:
+    - Get Data from Object
+  constants:
+    - BASE_ITEM_* Constants
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

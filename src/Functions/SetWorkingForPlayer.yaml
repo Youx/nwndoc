@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetWorkingForPlayer
+shortdesc: Specifies the PC name the henchman is working for.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player the henchman is working for.
+
+description: |
+  Sets a local variable of (NW_L_HIRED + the tag of the henchman) to 10.
+remarks: |
+  Script: nw_i0_henchman.nss: Line: 116
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  functions:
+    - GetFormerMaster
+    - GetWorkingForPlayer
+    - SetFormerMaster
+  categories:
+    - Henchmen/Familiars/Summoned
+    - Local Variables
+author: Jody Fletcher
+

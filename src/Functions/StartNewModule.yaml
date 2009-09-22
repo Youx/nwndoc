@@ -1,0 +1,40 @@
+---
+type: Function
+name: StartNewModule
+shortdesc: Moves the existing players to a new module.
+return: void
+parameters:
+  - type: string
+    name: sModuleName
+    desc: | The file name of the module to start.
+
+description: |
+  Shut down the currently loaded module and start a new one (moving all currently-connected players to the starting point.
+remarks: |
+  The StartNewModule command requires the filename of the module to start, not the internal name. There is a handy way to restart modules, used in testing, ie creating a unique power item that restarts the module this way: 
+  StartNewModule(GetName(GetModule())); 
+  GetName(GetModule()) returns the internal name, not the filename, so for that approach to work, the filename and the internal name of the module need to exactly the same. 
+  Also note that if this is used with tag-based scripting, and is called within a On Item Aquired or On Item Activate event, then it might load, load up the reactivate module script via. the On Item Aquired firing (a recent change to the event for HotU), and do the same over and over. Be careful when using it - use it rarely for debugging and starting modules at the end of the current one.
+bugs: |
+  The bug / issue that caused StartNewModule to crash if called with an invalid filename has been fixed with patch 1.61. If the filename doesn't exist, the function simply fails.
+version: 1.64
+example: |
+  // Start a new module called "module001", this is the FILENAME, remember!
+  void main()
+  {
+      StartNewModule("module001");
+  }
+  // Restart the currently running module - IF the name of the
+  // module is the same as the filename of the module (see above).
+  void main()
+  {
+      StartNewModule(GetName(GetModule()));
+  }
+seealso:
+  categories:
+    - Module
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Jasperre
+  - Gangster No. 1

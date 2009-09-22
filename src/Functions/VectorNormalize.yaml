@@ -1,0 +1,18 @@
+---
+type: Function
+name: VectorNormalize
+shortdesc: Normalize a vector.
+return: vector
+parameters:
+  - type: vector
+    name: vVector
+description: |
+  vVector is forced to be a unit vector; i.e. to have a length of 1.
+version: 1.22
+seealso:
+  functions:
+    - Vector
+  categories:
+    - Movement
+author: Tom Cassiotis
+

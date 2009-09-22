@@ -1,0 +1,34 @@
+---
+type: Function
+name: TakePlotItem
+shortdesc: Take the plot item from oPC's party.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | PC whose party we want to take the item from
+
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | The quest number (Default: 1)
+
+  - type: object
+    name: oNPC
+    default: OBJECT_SELF
+    desc: | The quest giver (Default: OBJECT_SELF)
+
+description: |
+  Remove a plot item from a PC.
+remarks: |
+  This function assumes that the item to be removed is unique. If several copies of the item is found within oPC's party, only one of them will be taken. 
+  The item is not actually taken, it is simply destroyed. 
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+

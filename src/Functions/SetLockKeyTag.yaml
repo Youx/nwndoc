@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetLockKeyTag 
+shortdesc: Set the key tag required to open the object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door, placeable or trigger.
+
+  - type: string
+    name: sNewKeyTag
+    desc: | The tag of the key that is required to open the locked object.
+
+description: |
+  Set the key tag required to open the object.
+  This will only have an effect if oObject is set to "Key required to unlock or lock" either in the toolset or by using the scripting command SetLockKeyRequired().
+version: 1.67
+seealso:
+  functions:
+    - GetLockKeyTag
+    - GetLockKeyRequired
+    - SetLockKeyRequired
+    - GetLockLockable
+    - SetLockLockable
+  categories:
+    - Get Data from Object
+author: Mistress

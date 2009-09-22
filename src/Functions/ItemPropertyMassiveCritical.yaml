@@ -1,0 +1,40 @@
+---
+type: Function
+name: ItemPropertyMassiveCritical
+shortdesc: Sets a massive criticals itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nDamage
+    desc: | IP_CONST_DAMAGEBONUS_*
+
+description: |
+  Sets item property Massive critical. You must specify the extra damage constant (IP_CONST_DAMAGEBONUS_*) of the criticals.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_DAMAGEBONUS_* value can be retrieved off this type of item property using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's onhand weapon add 2d8 damage on massive criticals
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyMassiveCritical(IP_CONST_DAMAGEBONUS_2d8);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_DAMAGEBONUS_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

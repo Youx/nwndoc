@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetGreetingVar
+shortdesc: This variable keeps track of whether or not the player has talked to this henchman.
+return: void
+parameters:
+  - type: int
+    name: nChapter
+    desc: | The chapter the player is in.
+
+  - type: object
+    name: oPC
+    desc: | The player to set the variable on.
+
+description: |
+  Sets the integer found on the player with the variable name of "NW_L_HEN"+ henchmans tag + nChapter to the value of 10.
+remarks: |
+  Function found in nw_i0_henchman.nss on line 176 
+  This function can let a henchman know if he has talked to the player for this particular chapter yet.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.22
+seealso:
+  functions:
+    - GetGreetingVar
+  categories:
+    - Module Specific
+author: John Shuell
+

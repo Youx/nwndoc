@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetLockKeyRequired 
+shortdesc: When set the object can not be opened unless the opener possesses the required key.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door, or placeable.
+
+  - type: int
+    name: nKeyRequired
+    default: TRUE
+    desc: | TRUE or FALSE. (Default: TRUE)
+
+description: |
+  When set the object can not be opened unless the opener possesses the required key.
+  The key tag required can be specified either in the toolset, or by using the SetLockKeyTag() scripting command.
+version: 1.67
+seealso:
+  functions:
+    - GetLockKeyRequired
+    - GetLockKeyTag
+    - SetLockKeyTag
+  categories:
+    - Get Data from Object
+author: Mistress

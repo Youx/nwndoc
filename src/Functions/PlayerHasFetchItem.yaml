@@ -1,0 +1,28 @@
+---
+type: Function
+name: PlayerHasFetchItem
+shortdesc: Checks if a PC has the fetch item.
+return: int
+parameters:
+  - type: object
+    name: oPC
+    desc: | Player to check for item
+
+description: |
+  Returns TRUE if oPC possesses the fetch item, which is retrieved with the function GetFetchItem(); Returns FALSE in all other cases, including errors.
+remarks: |
+  Found in nw_j_fetch.nss on line 162 
+  In the words of John Shuell: It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. All of these functions are relatively straight forward and easy to understand at a glance. 
+  There is also another script of the exact same functions but works with "ArtifactItems" instead of Fetch. The scripts are identical but seperated to make coding between them easier to understand and add functionality to later. 
+requirements: |
+  #include "nw_j_fetch"
+version: 1.28
+seealso:
+  functions:
+    - GetFetchee
+    - GetFetchItem
+  categories:
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

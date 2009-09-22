@@ -1,0 +1,55 @@
+---
+type: Function
+name: TakeArtifactItem
+shortdesc: Removes the plot related item from a player's inventory.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The player to remove the item from.
+
+description: |
+  Gets the Tag name of the artifact from a local object called NW_J_ARTIFACT_MYGLOBALS on the calling creature then searches the target's inventory and equiped items for any item with that the returned Tag name and destroys it.
+remarks: |
+  Function can be found in nw_j_artifact.nss on line 146. 
+  It seems this set of functions are centered around storing plot item related information on NPCs for simple fetch related quests. This particular function only utilizes 2 out of the 7 other functions available. All of these functions are relatively straight forward and easy to understand at a glance. 
+  There is also another script of the exact same functions but works with "ComplexItems" instead of Artifacts. The scripts are identical but seperated to make coding between them easier to understand and add functionality to later. See the "See Also" section for the other functions.
+version: 1.22
+example: |
+  // OnSpawn of the NPC to give the quest out.
+  #include "NW_J_ARTIFACT"
+      SetGlobal(OBJECT_SELF,OBJECT_SELF);
+      SetArtifactItem("ART_ITEM01");
+      SetPlotTag("NW_ARTI_PLOT"); //Matches Journal Entry that has experience to be rewarded for this quest
+  //Conversation Conditional of the NPC to reward the player for returning the item.
+  #include "NW_I0_PLOT"
+  #include "NW_J_ARTIFACT"
+  int StartingConditional()
+  {
+      if (PlayerHasArtifactItem(GetPCSpeaker()) == TRUE)
+      {
+          ActionPauseConversation();
+          TakeArtifactItem(GetPCSpeaker()); //Destroys the item from the players inventory.
+          RewardXP(GetPlotTag(),100,GetPCSpeaker());
+          ActionResumeConversation();
+      }
+      return FALSE;
+  }
+seealso:
+  functions:
+    - GetArtifactItem
+    - GetComplexItem
+    - GetPlotTag
+    - PlayerHasArtifactItem
+    - PlayerHasComplexItem
+    - SetArtifactItem
+    - SetComplexItem
+    - SetGlobal
+    - SetPlotTag
+    - TakeComplexItem
+    - TakeStoryItem
+  categories:
+    - Inventory
+    - Miscellaneous
+author: John Shuell
+

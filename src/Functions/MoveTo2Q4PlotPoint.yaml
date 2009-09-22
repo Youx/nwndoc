@@ -1,0 +1,23 @@
+---
+type: Function
+name: MoveTo2Q4PlotPoint
+shortdesc: Makes the caller walk to a waypoint.
+return: void
+parameters:
+  - type: int
+    name: nPlotPointIndex
+    desc: | Number in the line of waypoints to move to.
+
+description: |
+  Creates a string using, among other things, nPlotPointIndex, then checks if there is a waypoint with that string as a tag. If there is, the caller is forced to move there.
+remarks: |
+  Found in nw_i0_2q4luskan.nss line 26
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.28
+seealso:
+  categories:
+    - Movement
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

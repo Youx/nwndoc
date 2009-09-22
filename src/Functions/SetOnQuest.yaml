@@ -1,0 +1,33 @@
+---
+type: Function
+name: SetOnQuest
+shortdesc: Sets that a PC has taken a quest
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | A player object
+
+  - type: int
+    name: nQuest
+    default: 1
+    desc: | The quest number (Default: 1)
+
+  - type: object
+    name: oNPC
+    default: OBJECT_SELF
+    desc: | The quest giver (Default: OBJECT_SELF)
+
+description: |
+  Call when a PC takes the quest
+remarks: |
+  A wrapper function for a SetLocalIntOnAll and GiveQuestItem call. 
+  This is part of BioWare's quest handling system. Unless you delve thoroughly into that system, and use it all the time, you probably won't need this function.
+requirements: |
+  #include "x0_i0_plotgiver"
+version: 1.61
+seealso:
+  categories:
+    - Module Specific
+author: Lilac Soul
+

@@ -1,0 +1,20 @@
+---
+type: Function
+name: SetModuleXPScale 
+shortdesc: Set the XP scale used by the module.
+return: void
+parameters:
+  - type: int
+    name: nXPScale
+    desc: | The XP scale to be used. Must be between 0 and 200.
+
+description: |
+  Set the XP scale used by the module.
+version: 1.67
+seealso:
+  functions:
+    - GetModuleXPScale
+  categories:
+    - Experience
+    - Module
+author: Mistress

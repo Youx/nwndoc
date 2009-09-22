@@ -1,0 +1,44 @@
+---
+type: Function
+name: ItemPropertyDamageResistance
+shortdesc: Sets a damage resistance itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nDamageType
+    desc: | IP_CONST_DAMAGETYPE_*
+
+  - type: int
+    name: nHPResist
+    desc: | IP_CONST_DAMAGERESIST_*
+
+description: |
+  Sets item property Damage resistance. You must specify the damage type constant (IP_CONST_DAMAGETYPE_*), such as Acid or Electrical, and the amount of HP of damage constant (IP_CONST_DAMAGERESIST_*), ranging from 5 to 50 hit points, that will be resisted each round.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_DAMAGETYPE_* constant can be retrieved off this type of item property using GetItemPropertySubType. The IP_CONST_DAMAGERESIST_* constant can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's amulet resist 20 cold damage each round
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_NECK, oPC);
+  int nDamageType =IP_CONST_DAMAGETYPE_COLD;
+  int nHPResist = IP_CONST_DAMAGERESIST_20;
+  if (!GetIsObjectValid(oItem)) return; //stop if nothing on neck
+  itemproperty ipAdd = ItemPropertyDamageResistance(nDamageType, nHPResist);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_DAMAGERESIST_* Constants
+    - IP_CONST_DAMAGETYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

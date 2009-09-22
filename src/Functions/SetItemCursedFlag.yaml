@@ -1,0 +1,47 @@
+---
+type: Function
+name: SetItemCursedFlag
+shortdesc: Sets whether an item is cursed or not
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to set cursed flag on
+
+  - type: int
+    name: nCursed
+    desc: | TRUE or FALSE
+
+description: |
+  When cursed, items cannot be dropped. 
+  This is the same as the flag as can be set in an items properties.
+remarks: |
+  This doesn't stop an item being removed from thier inventory slots, but it cannot be dropped on the floor. 
+  Items which are cursed and which are in a placeable cannot be "dropped" by the placeable, so cannot be removed. 
+  Inventory containers (IE: Bags of Holding and Boxes) act like new containers for the purposes of where items can be moved to or taken from. 
+  Note: It can still be sold! Setting the plot flag on the item is a good idea. 1.63 is meant to fix this.
+version: 1.62
+example: |
+  // When aquired, an item with the variable "CURSED" is set
+  // to TRUE on it, it will curse and plot the item.
+  void main()
+  {
+      // Check what item was aquired
+      object oItem = GetModuleItemAcquired();
+      // Check the variable
+      if(GetLocalInt(oItem, "CURSED") == TRUE)
+      {
+          // Set so it cannot be sold or removed from the inventory
+          SetItemCursedFlag(oItem, TRUE);
+          SetPlotFlag(oItem, TRUE);
+      }
+  }
+seealso:
+  functions:
+    - GetItemCursedFlag
+  categories:
+    - Miscellaneous
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

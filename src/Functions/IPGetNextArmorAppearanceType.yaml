@@ -1,0 +1,36 @@
+---
+type: Function
+name: IPGetNextArmorAppearanceType
+shortdesc: Returns the next valid appearance type for an armor.
+return: int
+parameters:
+  - type: object
+    name: oArmor
+    desc: | Armor to get appearance type of.
+
+  - type: int
+    name: nPart
+    desc: | ITEM_APPR_ARMOR_MODEL_*
+
+description: |
+  Returns the next valid appearance type for oArmor 
+  nPart - ITEM_APPR_ARMOR_MODEL_* constant 
+  Uses Get2DAstring, so do not use in loops
+remarks: |
+  Simply a wrapper for the IPGetArmorAppearanceType function in the same include file. 
+  Used by the crafting system (x2_im_*).
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - IPGetPrevArmorAppearanceType
+    - IPGetRandomArmorAppearanceType
+  categories:
+    - Get Data from Object
+    - Item Creation
+    - Item Properties
+  constants:
+    - ITEM_APPR_* Constants
+author: Lilac Soul
+

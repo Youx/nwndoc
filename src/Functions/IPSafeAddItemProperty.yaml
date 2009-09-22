@@ -1,0 +1,68 @@
+---
+type: Function
+name: IPSafeAddItemProperty
+shortdesc: Safely add an itemproperty to an item.
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to add property to
+
+  - type: itemproperty
+    name: nip
+    desc: | Itemproperty to add
+
+  - type: float
+    name: fDuration
+    default: 0.0f
+    desc: | 0.0 for permanent, anything else is temporary (Default: 0.0f)
+
+  - type: int
+    name: nAddItemPropertyPolicy
+    default: X2_IP_ADDPROP_POLICY_REPLACE_EXISTING
+    desc: | X2_IP_ADDPROP_POLICY_* (Default: X2_IP_ADDPROP_POLICY_REPLACE_EXISTING)
+
+  - type: int
+    name: bIgnoreDurationType
+    default: FALSE
+    desc: | TRUE or FALSE (Default: FALSE)
+
+  - type: int
+    name: bIgnoreSubType
+    default: FALSE
+    desc: | TRUE or FALSE (Default: FALSE)
+
+description: |
+  Add an item property in a safe fashion, preventing unwanted stacking. 
+  * Parameters: 
+  * oItem - the item to add the property to 
+  * ip - the itemproperty to add 
+  * fDuration - set 0.0f to add the property permanent, anything else is temporary 
+  * nAddItemPropertyPolicy - How to handle existing properties. Valid values are: 
+  * X2_IP_ADDPROP_POLICY_REPLACE_EXISTING - remove any property of the same type, subtype, durationtype before adding; 
+  * X2_IP_ADDPROP_POLICY_KEEP_EXISTING - do not add if any property with same type, subtype and durationtype already exists; 
+  * X2_IP_ADDPROP_POLICY_IGNORE_EXISTING - add itemproperty in any case - Do not Use with OnHit or OnHitSpellCast props! 
+  * 
+  * bIgnoreDurationType - If set to TRUE, an item property will be considered identical even if the DurationType is different. Be careful when using this with X2_IP_ADDPROP_POLICY_REPLACE_EXISTING, as this could lead to a temporary item property removing a permanent one 
+  * bIgnoreSubType - If set to TRUE an item property will be considered identical even if the SubType is different.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be, for instance, applied to an item using the AddItemProperty command. Much like effects need to be first constructed, then applied with ApplyEffectToObject.
+bugs: |
+  Uses RemoveItemProperty, which has an accumulator 
+  bug that may give an erroneous Stacking error message or affect subsequent functions in the same script.- 1/16/04, NWN Toolset version vts026, game version 1.61.8042 English 
+  See test code under ItemPropertyLimitUseByAlign. -PB 
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - AddItemProperty
+    - RemoveItemProperty
+  categories:
+    - Item Creation
+    - Item Properties
+  constants:
+    - X2_IP_ADDPROP_POLICY_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

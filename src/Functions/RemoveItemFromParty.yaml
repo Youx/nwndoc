@@ -1,0 +1,33 @@
+---
+type: Function
+name: RemoveItemFromParty
+shortdesc: Removes the specified item from whichever member of the party has it.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | The character whose party will be checked.
+
+  - type: string
+    name: sItemTag
+    desc: | The item to be found.
+
+description: |
+  Remove an item (tag sItemTag) from whichever member of the party containing oPC has it. 
+  This function will only remove the first copy of the item it finds. 
+  This function only checks PCs, not associates. 
+  This function will destroy items marked with the plot flag.
+remarks: |
+  This function relies on GetItemPossessedByParty to find the item, as such it checks oPC first and then everybody else. 
+  Also note that x0_i0_partywide is already included in x0_i0_common. So you will only need to include one, not both.
+requirements: |
+  #include "x0_i0_partywide"
+version: 1.61
+seealso:
+  functions:
+    - GetItemPossessedByParty
+  categories:
+    - Inventory
+    - Party
+author: Grimlar
+

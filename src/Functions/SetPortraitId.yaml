@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetPortraitId 
+shortdesc: Change the portrait of oTarget to use nPortraitId.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object for which you are changing the portrait.
+
+  - type: int
+    name: nPortraitId
+    desc: | The Id of the new portrait to use. nPortraitId refers to a row in the Portraits.2da.
+
+description: |
+  Change the portrait of oTarget to use nPortraitId.
+remarks: |
+  Note: Not all portrait Ids are suitable for use with all object types. Setting the portrait Id will also cause the portrait ResRef to be set to the appropriate portrait ResRef for the Id specified.
+version: 1.67
+seealso:
+  functions:
+    - GetPortraitId
+    - GetPortraitResRef
+    - SetPortraitResRef
+  categories:
+    - Get Data from Object
+author: Mistress

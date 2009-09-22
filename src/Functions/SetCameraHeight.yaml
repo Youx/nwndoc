@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetCameraHeight
+shortdesc: Sets the camera to a certain height
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | Player to move the camera of
+
+  - type: float
+    name: fHeight
+    default: 0.0f
+    desc: | Height of camera (Default: 0.0f)
+
+description: |
+  Forces this player's camera to be set to this height. Setting this value to zero will restore the camera to the racial default height.
+remarks: |
+  Currently unknown if this can accomplish more than the SetCameraFacing command's distance parameter. 
+  Currently unknown what will happen if a height that isn't valid is used.
+version: 1.61
+seealso:
+  functions:
+    - SetCameraFacing
+  categories:
+    - Miscellaneous
+    - PC Only
+author: Lilac Soul
+

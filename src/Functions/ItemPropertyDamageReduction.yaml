@@ -1,0 +1,47 @@
+---
+type: Function
+name: ItemPropertyDamageReduction
+shortdesc: Sets a damage reduction itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nEnhancement
+    desc: | IP_CONST_DAMAGEREDUCTION_*
+
+  - type: int
+    name: nHPSoak
+    desc: | IP_CONST_DAMAGESOAK_*
+
+description: |
+  Sets item property Damage reduction. You must specify the attacking weapon's enhancement level (IP_CONST_DAMAGEREDUCTION_*), ranging from 1 to 20, that is required to get past the damage reduction; and the amount of HP of damage constant (IP_CONST_DAMAGESOAK_*), ranging from 5 to 50 hit points, which will be soaked up if the weapon is not of high enough enhancement.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_DAMAGEREDUCTION_* constant can be retrieved off this type of item property using GetItemPropertySubType. The IP_CONST_DAMAGESOAK_* constant can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's armor soak up 10 HP of damage if attacker's weapon is not enhanced to +15
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_CHEST, oPC);
+  int nEnhancement = IP_CONST_DAMAGEREDUCTION_10;
+  int nHPSoak = IP_CONST_DAMAGESOAK_15_HP;
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyDamageReduction(nEnhancement, nHPSoak);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_DAMAGEREDUCTION_* Constants
+    - IP_CONST_DAMAGESOAK_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

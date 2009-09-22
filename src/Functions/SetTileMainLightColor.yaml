@@ -1,0 +1,32 @@
+---
+type: Function
+name: SetTileMainLightColor
+shortdesc: Sets the main light colors for a tile.
+return: void
+parameters:
+  - type: location
+    name: lTileLocation
+    desc: | This specifies the location of the tile.
+
+  - type: int
+    name: nMainLight1Color
+    desc: | TILE_MAIN_LIGHT_COLOR_*
+
+  - type: int
+    name: nMainLight2Color
+    desc: | TILE_MAIN_LIGHT_COLOR_*
+
+description: |
+  Sets the main light colors on the tile located at lTileLocation.
+remarks: |
+  You must call RecomputeStaticLighting() after calling this function in order for the changes to occur visually for the players.
+version: 1.22
+seealso:
+  functions:
+    - SetFogColor
+  categories:
+    - Lighting Effects
+  constants:
+    - TILE_MAIN_LIGHT_COLOR_* Constants
+author: Tom Cassiotis
+

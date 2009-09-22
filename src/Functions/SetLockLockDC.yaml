@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetLockLockDC 
+shortdesc: Sets the DC for locking the object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door or placeable object.
+
+  - type: int
+    name: nNewLockDC
+    desc: | Must be between 0 and 250.
+
+description: |
+  Sets the DC for locking the object.
+version: 1.67
+seealso:
+  functions:
+    - GetLockLockDC
+    - GetLockUnlockDC
+    - SetLockUnlockDC
+  categories:
+    - Get Data from Object
+author: Mistress

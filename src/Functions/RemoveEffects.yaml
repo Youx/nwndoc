@@ -1,0 +1,24 @@
+---
+type: Function
+name: RemoveEffects
+shortdesc: Removes all negative effects from a creature.
+return: void
+parameters:
+  - type: object
+    name: oDead
+    desc: | The creature whose negative effects will be removed.
+
+description: |
+  Removes all negative effects from oDead.
+remarks: |
+  Used to bring a dead character back to life without any of the negative effect that plagued his prior life. Also plays a visual effect of restoration.
+requirements: |
+  #include "nw_i0_plot"
+version: 1.22
+seealso:
+  functions:
+    - GreaterRestore
+  categories:
+    - PC Only
+author: Tom Cassiotis
+

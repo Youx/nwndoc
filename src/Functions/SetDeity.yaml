@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetDeity
+shortdesc: Set the deity of a creature or PC
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Creature to assign a religion
+
+  - type: string
+    name: sDeity
+    desc: | Deity for oCreature to believe in
+
+description: |
+  Set the name of oCreature's deity to sDeity.
+remarks: |
+  Unknown at this time if objects other than creatures can be given deities with this function.
+version: 1.31
+seealso:
+  functions:
+    - GetDeity
+  categories:
+    - Miscellaneous
+author: Lilac Soul
+

@@ -1,0 +1,54 @@
+---
+type: Function
+name: ItemPropertyDamageBonusVsSAlign
+shortdesc: Sets a "damage bonus versus specific alignment" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nAlign
+    desc: | IP_CONST_ALIGNMENT_*
+
+  - type: int
+    name: nDamageType
+    desc: | IP_CONST_DAMAGETYPE_*
+
+  - type: int
+    name: nDamage
+    desc: | IP_CONST_DAMAGEBONUS_*
+
+description: |
+  Sets item property Damage bonus vs. specific alignment. You must specify the specific alignment constant (IP_CONST_ALIGNMENT_*), the damage type constant (IP_CONST_DAMAGETYPE_*) and the amount of damage constant (IP_CONST_DAMAGEBONUS_*). 
+  NOTE: not all the damage types will work; use only the following: Acid, Bludgeoning, Cold, Electrical, Fire, Piercing, Slashing, Sonic.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ALIGNMENT_* constant can be retrieved off this type of item property using GetItemPropertySubType. The IP_CONST_DAMAGEBONUS_* constant can be retrieved using GetItemPropertCostTableValue. The IP_CONST_DAMAGETYPE_* constant can be retrieved using GetItemPropertyParam1Value.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's onhand weapon deal 4 additional slashing damage against true neutral
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  int nAlign = IP_CONST_ALIGNMENT_TN;
+  int nDamageType = IP_CONST_DAMAGETYPE_SLASHING;
+  int nDamage = IP_CONST_DAMAGEBONUS_4;
+  if (!GetIsObjectValid(oItem)) return; //stop if no weapon
+  itemproperty ipAdd = ItemPropertyDamageBonusVsAlign( nAlign, nDamageType, nDamage);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ALIGNMENT_* Constants
+    - IP_CONST_DAMAGEBONUS_* Constants
+    - IP_CONST_DAMAGETYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

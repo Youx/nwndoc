@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetValidItemCost
+shortdesc: Specifies the amount of gold the combined item is worth during the Smith plot in original campaign.
+return: void
+parameters:
+  - type: int
+    name: nPos
+    desc: | Amount of Gold.
+
+description: |
+  Determines amount of gold by cross-referencing a local array string of OBJECT_SELF. Sets the amount of gold into local variable (NW_COMBO_REWARD_GOLD).
+remarks: |
+  Script: nw_o0_itemmaker.nss: Line: 245 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_o0_itemmaker"
+version: 1.29
+seealso:
+  functions:
+    - GetValidItem
+    - GetValidItemCost
+    - SetValidItem
+    - SetValidItemCostToken
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

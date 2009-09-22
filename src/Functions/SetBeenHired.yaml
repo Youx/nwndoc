@@ -1,0 +1,36 @@
+---
+type: Function
+name: SetBeenHired
+shortdesc: Sets whether a henchman has been hired before
+return: void
+parameters:
+  - type: int
+    name: bHired
+    default: TRUE
+    desc: | Has this henchman been hired (Default: TRUE)
+
+  - type: object
+    name: oTarget
+    default: OBJECT_SELF
+    desc: | The henchman (Default: OBJECT_SELF)
+
+description: |
+  From the source code: 
+  Henchmen can only be hired once, ever. 
+  This checks or sets the local on the henchmen 
+  that keeps track whether they've ever been hired.
+remarks: |
+  Found in: nw_i0_henchman.nss: 105 
+  Basically, it just sets a local variable on the henchman, telling us that this henchman has been hired.
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.28
+seealso:
+  functions:
+    - CopyLocals
+    - GetBeenHired
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,44 @@
+---
+type: Function
+name: SignalEvent
+shortdesc: Causes an object to fire a specified event.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | The Object you want to have run an event.
+
+  - type: event
+    name: evToRun
+    desc: | The event to have the object run. Must be constructed using one of the event functions.
+
+description: |
+  Causes oObject to run evToRun. Allows objects to fire off events in other objects. The events you can run include the default events provided by Bioware as well as user defined events the object has scripted. The event parameter must be an actual event created by one of the many event functions.
+remarks: |
+  The only events which are valid are: 
+  - EventActivateItem(), which calls a modules Activate Item script. 
+  - EventConversation(), which calls an objects conversation script. 
+  - EventSpellCastAt(), which fires an objects On Spell Cast At script. 
+  - EventUserDefined(), which fires an object/module/area's User Defined Event script. 
+  They could be defined, but it is more likely they are put directly into the SignalEvent, like the example below.
+version: 1.64
+example: |
+  // Fire the modules event 100, which could trigger some event such as a cutseen.
+  void main()
+  {
+      // Get the module
+      object oModule = GetModule();
+      // Signal the user defined event
+      SignalEvent(oModule, EventUserDefined(100));
+  }
+seealso:
+  functions:
+    - EventActivateItem
+    - EventConversation
+    - EventUserDefined
+  categories:
+    - Miscellaneous
+author: John Shuell
+editor: Jasperre
+additional_contributors:
+  - Darrell Knapp

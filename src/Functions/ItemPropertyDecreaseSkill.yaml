@@ -1,0 +1,45 @@
+---
+type: Function
+name: ItemPropertyDecreaseSkill
+shortdesc: Sets a decrease skill item property.
+return: itemproperty
+parameters:
+  - type: int
+    name: nSkill
+    desc: | SKILL_*
+
+  - type: int
+    name: nPenalty
+    desc: | Amount of ability to reduce skill; 1 to 10 are valid.
+
+description: |
+  Sets item property Decrease skill. You must specify the constant for the skill to be decreased (SKILL_*), such as Parry or Persuade, and the amount of the penalty. The penalty must be a POSITIVE integer between 1 and 10 (a value of 1 reduces the skill ability by 1).
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The SKILL_* constant can be retrieved off this type of item property using GetItemPropertySubType. The penalty can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's helmet make the player really hard to hide
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyDecreaseSkill(SKILL_HIDE, 10);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+    - ItemPropertySkillBonus
+  categories:
+    - Item Creation
+  constants:
+    - SKILL_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

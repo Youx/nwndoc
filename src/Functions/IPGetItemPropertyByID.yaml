@@ -1,0 +1,49 @@
+---
+type: Function
+name: IPGetItemPropertyByID
+shortdesc: Returns an itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nPropID
+    desc: | ITEM_PROPERTY_*
+
+  - type: int
+    name: nParam1
+    default: 0
+    desc: | First parameter. (Default: 0)
+
+  - type: int
+    name: nParam2
+    default: 0
+    desc: | Second parameter. (Default: 0)
+
+  - type: int
+    name: nParam3
+    default: 0
+    desc: | Third parameter. (Default: 0)
+
+  - type: int
+    name: nParam4
+    default: 0
+    desc: | Fourth parameter. (Default: 0)
+
+description: |
+  Returns an itemproperty.
+remarks: |
+  This is a wrapper function for creating an itemproperty based off of an ITEM_PROPERTY_* parameter. For each different value of the nPropID parameter, it calls the appropriate ItemProperty function with as many parameters as that function requires. Thus, if you pass ITEM_PROPERTY_TRUE_SEEING, you don't need to pass anything for either of the nParam parameters. If you pass, for instance, ITEM_PROPERTY_ABILITY_BONUS, you'll need both nParam1 and nParam2. It is recommended that you look under the individual ItemProperty functions for more information on which types of itemproperties require which types of parameters.
+bugs: |
+  According to BioWare, the following is not a bug, but it is still something to be aware of: 
+  This function is quite incomplete. I ran a test, and about half of the valid ITEM_PROPERTY_* constants did either not return a valid itemproperty, or returned an itemproperty of the incorrect type. 
+  I recommend against using this function, unless you are absolutely certain that all the inputs you give it will produce the desired output.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+    - Item Properties
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Lilac Soul
+

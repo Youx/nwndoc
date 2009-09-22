@@ -1,0 +1,49 @@
+---
+type: Function
+name: IPGetIsMeleeWeapon
+shortdesc: Checks if an item is a melee weapon.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Object to check whether is a melee weapon.
+
+description: |
+  Returns TRUE if oItem is a melee weapon.
+remarks: |
+  Checks the base item type against the list of types that are known to be melee weapons. 
+  Previously noted was that !GetWeaponRanged() could be used. Of course, this can only be used if the object tested is definatly a weapon of some sort (for example, the object right hand). In some cases (for example, the left hand) this cannot be always tested sucessfully, and this function can be used instead.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.62
+example: |
+  // Speak something if the PC speaker has a melee weapon
+  // equipped.
+  // Conversation action.
+  #include "x2_inc_itemprop"
+  void main()
+  {
+      // Get PC Speaker
+      object oPC = GetPCSpeaker();
+      // Get object in right hand
+      object oObject = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+      // Check if melee weapon, or not.
+      if(IPGetIsMeleeWeapon(oItem))
+      {
+          // Speak a (not at all witty) response
+          SpeakString("Armed for melee fights eh? Well good luck to you! You'll need it!");
+      }
+  }
+seealso:
+  functions:
+    - GetWeaponRanged
+    - IPGetIsBludgeoningWeapon
+    - IPGetIsProjectile
+    - IPGetIsRangedWeapon
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - wyrmwood

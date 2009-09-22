@@ -1,0 +1,47 @@
+---
+type: Function
+name: ItemPropertyACBonus
+shortdesc: Sets an armor class bonus itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nBonus
+    desc: | Bonus to add; 1 to 20 are valid.
+
+description: |
+  Sets item property AC bonus. You need to specify the bonus, which should be a positive integer between 1 and 20. 
+  The type of AC bonus depends on the type of the item. Thanks to Nailog for providing this information: 
+  Items that gain a Deflection bonus: Creature Skins, staves, rings, melee weapons, helmets, cloaks, belts, gloves, and ranged weapons that use ammunition. 
+  Items that gain an Armor bonus: Armors and bracers. 
+  Items that gain a Natural Armor bonus: Amulets. 
+  Items that gain a Shield bonus: Shields. 
+  Items that gain a Dodge bonus: Boots.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The bonus can be retrieved off AC bonus item properties using GetItemPropertyCostTableValue.
+version: 1.62
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Gives the PC speaker's armor a +15 AC bonus
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem=GetItemInSlot(INVENTORY_SLOT_CHEST, oPC);
+  itemproperty ipAdd=ItemPropertyACBonus(15);
+  if (GetIsObjectValid(oItem))
+      IPSafeAddItemProperty(oItem, ipAdd);
+  // debug message:
+  SendMessageToPC(GetFirstPC(), "armor AC Bonus = "+IntToString(GetItemACValue(oItem)));
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+author: Lilac Soul
+editor: Peter Busby
+additional_contributors:
+  - Nailog

@@ -1,0 +1,31 @@
+---
+type: Function
+name: IPGetHasItemPropertyByConst
+shortdesc: Returns whether an item has an itemproperty.
+return: int
+parameters:
+  - type: int
+    name: nItemProp
+    desc: | ITEM_PROPERTY_*
+
+  - type: object
+    name: oItem
+    desc: | Item to check for the property.
+
+description: |
+  Returns whether an item has an itemproperty.
+remarks: |
+  Appears to do exactly the same as GetItemHasItemProperty.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - GetItemHasItemProperty
+  categories:
+    - Get Data from Object
+    - Item Properties
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Lilac Soul
+

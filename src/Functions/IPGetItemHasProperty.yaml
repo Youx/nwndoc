@@ -1,0 +1,46 @@
+---
+type: Function
+name: IPGetItemHasProperty
+shortdesc: Checks if an item has a matchine itemproperty.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to check for property.
+
+  - type: itemproperty
+    name: ipCompareTo
+    desc: | ItemProperty to compare to
+
+  - type: int
+    name: nDurationType
+    desc: | See description and remarks.
+
+  - type: int
+    name: bIgnoreSubType
+    default: FALSE
+    desc: | TRUE to ignore subtype. Otherwise FALSE. (Default: FALSE)
+
+description: |
+  Wrapper for GetItemHasItemProperty that returns true if oItem has an itemproperty that matches ipCompareTo by Type AND DurationType AND SubType 
+  nDurationType = Valid DURATION_TYPE_* or -1 to ignore 
+  bIgnoreSubType - If set to TRUE an item property will be considered identical even if the SubType is different.
+remarks: |
+  Only DURATION_TYPE_TEMPORARY, DURATION_TYPE_PERMANENT, and -1 are valid for nDurationType. 
+  This differs from GetItemHasItemProperty in several ways. First of all because it also takes duration type and subtype into accound. And also because it uses an itemproperty value for parameter, instead of the ITEM_PROPERTY_* integer constant. 
+  Returns TRUE if oItem has the same type of itemproperty that ipCompareTo is. If nDurationType is different from -1, it also needs to be that same duration type. If bIgnoreSubType is FALSE, it also needs to be of the same subtype. 
+  Returns FALSE if the above isn't mean. It also prints "Not Found" to the log.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.62
+seealso:
+  functions:
+    - GetItemHasItemProperty
+  categories:
+    - Get Data from Object
+    - Item Creation
+    - Item Properties
+  constants:
+    - DURATION_TYPE_* Constants
+author: Lilac Soul
+

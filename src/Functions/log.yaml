@@ -1,0 +1,58 @@
+---
+type: Function
+name: log
+shortdesc: This function calculates the logarithmic value of fValue
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | Float value to retrieve the logarithm of.
+
+description: |
+  Returns the natural logarithm of fValue, not the base 10 logarithm. To get the base 10 log^x log of fValue, use the code provided below. 
+  A logarithm is an exponent used in mathematical calculations to depict the perceived levels of variable quantities such as visible light energy, electromagnetic field strength, and sound intensity.
+remarks: |
+  If you need to ask what a logarithm is you don’t need to use this function. Logarithms are used to calculate the flight of an arrow and how far away a sound can be heard. 
+  The only concieveable reason you might need it is to, from Bioware's own scripts, work out how long it takes a magic missile visual, or an acid arrow visual, to hit the target. Look in the appropriate spell script for the little snippits of code.
+version: 1.62
+example: |
+  // Work out e^25, the natural log of 25
+  void main()
+  {
+      fNew = log(25.0);
+  }
+  // Function for getting log base 10 value of fValue
+  float log_10(float fValue)
+  {
+      return log(fValue)/log(10);
+  }
+  // Example provided by slow slosh, a use of log() proving
+  // it is the natural log.
+  // Gets a challenge rating of oPC. A more accurate or better
+  // way of using this function is to have something to get the total
+  // value of all items possessed by oPC, rather then just GetGold()
+  float GetPCChallengeRating(object oPC) {
+      float fTGold = IntToFloat(GetGold(oPC));
+      float fCR;
+      if(fTGold>3000.0) {
+          fCR = pow((log(fTGold)-8.0), 1.55);
+      } else {
+          fCR = 0.0;
+      }
+      fCR += GetHitDice(oPC)-1.0;
+      if(fCR<0.5) { fCR=0.5; }
+      return fCR;
+  }
+seealso:
+  functions:
+    - pow
+    - sqrt
+  categories:
+    - Math
+author: Charles Feduke
+editor: Jasperre
+additional_contributors:
+  - Honour Mai
+  - Tim Stokman
+  - Jasperre
+  - slow slosh

@@ -1,0 +1,27 @@
+---
+type: Function
+name: IPGetIsProjectile
+shortdesc: Checks if an item is a projectile.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Object to check whether is a projectile.
+
+description: |
+  Return TRUE if oItem is a projectile (bolt, arrow, etc).
+remarks: |
+  Only returns true for arrows, bolts, and bullets. Grenadetype weapons, darts, throwing axes all cause this function to return FALSE.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - IPGetIsBludgeoningWeapon
+    - IPGetIsMeleeWeapon
+    - IPGetIsRangedWeapon
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+

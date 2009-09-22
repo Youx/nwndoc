@@ -1,0 +1,41 @@
+---
+type: Function
+name: IPUpgradeWeaponEnhancementBonus
+shortdesc: Upgrades a weapon's enhancement bonus.
+return: void
+parameters:
+  - type: object
+    name: oWeapon
+    desc: | Weapon to upgrade.
+
+  - type: int
+    name: nUpgradeBy
+    desc: | Upgrade weapon's enhancement bonus by this much.
+
+description: |
+  Shortcut function to upgrade the enhancement bonus of a weapon by the number specified in nUpgradeBy. If the resulting new enhancement bonus would be out of bounds (>+20), it will be set to +20.
+remarks: |
+  You can also use this function to degrade a weapon's enhancement bonus by providing a negative number as nUpgradeBy. If the enhancement bonus would then be set to lower than 1, it is set to 1 instead. 
+  Only melee weapons can have enhancement bonuses - neither ranged weapons nor ammunition can hold such an itemproperty.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.62
+example: |
+  #include "x2_inc_itemprop"
+  //Give the PC's weapon an additional +13 enhancement
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oOnHand=GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  IPUpgradeWeaponEnhancementBonus(oOnHand, 3);
+  }
+seealso:
+  functions:
+    - IPSetWeaponEnhancementBonus
+    - ItemPropertyEnhancementBonus
+  categories:
+    - Item Creation
+    - Item Properties
+author: Lilac Soul
+additional_contributors:
+  - hbunny

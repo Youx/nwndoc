@@ -1,0 +1,32 @@
+---
+type: Function
+name: IPGetDamageBonusConstantFromNumber
+shortdesc: Converts a number into a damage bonus itemproperty constant.
+return: void
+parameters:
+  - type: int
+    name: nNumber
+    desc: | Number to convert to damage bonus constant.
+
+description: |
+  returns the appropriate ITEM_PROPERTY_DAMAGE_BONUS_= constant for nNumber 
+  Do not pass in any number <1 ! Will return -1 on error
+remarks: |
+  Returns a DAMAGE_BONUS_* constant. Returns DAMAGE_BONUS_20 if nNumber is above 20, and -1 if nNumber is 0 or less.
+bugs: |
+  Uses RemoveItemProperty, which has an accumulator 
+  bug that may give an erroneous Stacking error message or affect subsequent functions in the same script.- 1/16/04, NWN Toolset version vts026, game version 1.61.8042 English 
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - RemoveItemProperty
+  categories:
+    - Item Creation
+    - Item Properties
+  constants:
+    - ITEM_PROPERTY_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

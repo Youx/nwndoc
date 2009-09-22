@@ -1,0 +1,48 @@
+---
+type: Function
+name: SetStolenFlag
+shortdesc: Set whether the item is stolen
+return: void
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to set flag on
+
+  - type: int
+    name: nStolenFlag
+    desc: | TRUE or FALSE
+
+description: |
+  Sets whether this item is 'stolen' or not. 
+  The stolen flag means only certain stores (with "Buys Stolen Goods" ticked) will buy the item, normally at a much lower amount.
+remarks: |
+  The stolen flag can be retrieved with GetStolenFlag(). 
+  The stolen flag is set automatically on anything that is pickpocketed, and custom-made traps made with the Craft Trap skill are also set as stolen.
+version: 1.62
+example: |
+  // Add to OnDisturbed for a chest.
+  // Any item taken from this chest is stolen! Thieves beware...
+  void main()
+  {
+      // Was an item taken or added?
+      if(GetInventoryDisturbType() == INVENTORY_DISTURB_TYPE_REMOVED)
+      {
+          // Get item taken
+          object oStolen = GetInventoryDisturbItem();
+          // Check if the item is valid (or not...somehow)
+          if(GetIsObjectValid(oStolen))
+          {
+              // Set it to stolen, they won't sell this easily!
+              SetStolenFlag(oStolen, TRUE);
+          }
+      }
+  }
+seealso:
+  functions:
+    - GetStolenFlag
+  categories:
+    - Inventory
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

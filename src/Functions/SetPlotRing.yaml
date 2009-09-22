@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetPlotRing
+shortdesc: Stores the tag that represents the plot ring.
+return: void
+parameters:
+  - type: string
+    name: sTag
+    desc: | The tag of the plot ring.
+
+description: |
+  Stores sTag that represents the plot ring in a local variable that can be later retrieved with GetPlotRingTag().
+remarks: |
+  This function is of little use for general scripting 
+  needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - GetPlotRingTag
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

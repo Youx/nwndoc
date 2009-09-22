@@ -1,0 +1,28 @@
+---
+type: Function
+name: IPGetIsItemEquipable
+shortdesc: Checks if an item can be equipped.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to check whether or not can be equipped.
+
+description: |
+  Returns TRUE if item can be equipped. 
+  Uses Get2DAString, so do not use in a loop!
+remarks: |
+  Simply queries the EquipableSlots column in "baseitems" with the basetype of oItem. Get2DAString can cause major lag when used in loops of even a fairly small size, so be careful if you want to use this in a loop.
+bugs: |
+  You should first check if the object is a valid item, because the function will return TRUE on an error, not FALSE.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  functions:
+    - ActionEquipItem
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+

@@ -1,0 +1,23 @@
+---
+type: Function
+name: UnpossessFamiliar
+shortdesc: Unpossesses a familiar from its controller.
+return: void
+parameters:
+  - type: object
+    name: oCreature
+    desc: | Familiar to unpossess, or controlling player character of familiar to unpossess.
+
+description: |
+  This forces a player character to unpossess their familiar. This does not work on any DM-controlled creatures.
+remarks: |
+  First, call GetIsPossessedFamiliar do make sure the familiar isn't possessed while unsummoning it.
+version: 1.30
+seealso:
+  functions:
+    - GetIsPossessedFamiliar
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Charles Feduke
+editor: Lilac Soul
+

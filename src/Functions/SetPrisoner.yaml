@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetPrisoner
+shortdesc: Stores the prisoner in a local variable.
+return: void
+parameters:
+  - type: object
+    name: oPrisoner
+    desc: | The object that represents the prisoner.
+
+description: |
+  Stores oPrisoner in a local variable to be later retrieved by GetPrisoner().
+remarks: |
+  This function is of little use for general scripting 
+  needs.
+requirements: |
+  #include "nw_j_rescue"
+version: 1.22
+seealso:
+  functions:
+    - GetPrisoner
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+

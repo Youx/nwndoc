@@ -1,0 +1,45 @@
+---
+type: Function
+name: VictimDead
+shortdesc: Determines whether the victim is dead.
+return: int
+parameters:
+description: |
+  Returns TRUE if the assassin plot victim is dead, otherwise FALSE.
+remarks: |
+  Used to make the NWN assassin plots to work. 
+  Hardly useful for normal scripting purposes, as this requires you to stick to BioWare's way of handling quests.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.61
+example: |
+  // 1.24 souce for this function
+  //::///////////////////////////////////////////////
+  //:: VictimDead
+  //:: Copyright (c) 2001 Bioware Corp.
+  //:://////////////////////////////////////////////
+  /*
+        Returns true if the assassin plot victim
+        is dead.
+  */
+  //:://////////////////////////////////////////////
+  //:: Created By:   Brent
+  //:: Created On:   December 2001
+  //:://////////////////////////////////////////////
+  int VictimDead()
+  {
+          if (!GetIsObjectValid(GetVictim()))
+          {
+              return TRUE;
+          }
+              return FALSE;
+  }
+seealso:
+  functions:
+    - GetVictim
+    - SetVictim
+  categories:
+    - Module Specific
+author: Tom Cassiotis
+editor: Lilac Soul
+

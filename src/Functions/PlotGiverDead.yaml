@@ -1,0 +1,22 @@
+---
+type: Function
+name: PlotGiverDead
+shortdesc: Returns whether or not the assassin plot giver is dead.
+return: int
+parameters:
+description: |
+  Simply checks if the object stored with SetPlotGiver is valid – if it isn’t, that means that object is dead, and the function returns TRUE. Otherwise, it returns FALSE.
+remarks: |
+  Found in nw_j_assassin.nss line 440 
+remarks: |
+requirements: |
+  #include "nw_j_assassin"
+version: 1.28
+seealso:
+  functions:
+    - GetPlotGiver
+  categories:
+    - Module Specific
+author: Lilac Soul
+additional_contributors:
+  - Lilac Soul

@@ -1,0 +1,42 @@
+---
+type: Function
+name: SetFacing
+shortdesc: Sets the object to face a certain direction.
+return: void
+parameters:
+  - type: float
+    name: fDirection
+    desc: | A floating point number that represents the direction to face. See description for additional details.
+
+description: |
+  Causes the caller of this function to face fDirection. 
+  There are some predefined constants for a direction: 
+  DIRECTION_EAST = 0.0 
+  DIRECTION_NORTH = 90.0 
+  DIRECTION_WEST = 180.0 
+  DIRECTION_SOUTH = 270.0
+remarks: |
+  Note that GetFacing will correctly return the facing to the nearest degree from 1.62.
+bugs: |
+  There are issues with setting the facing of sitting creatures.
+version: 1.22
+example: |
+  // Used in the OnSpawn of a creature to set 
+  // their facing to a random direction.
+  main()
+  {
+     // Get a random direction from 0 to 360
+     float fDirection = IntToFloat(Random(361));
+     SetFacing(fDirection);
+  }
+seealso:
+  functions:
+    - MoveToNewLocation
+    - SetFacingPoint
+  categories:
+    - Movement
+  constants:
+    - DIRECTION_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+

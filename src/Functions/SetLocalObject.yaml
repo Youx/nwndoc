@@ -1,0 +1,48 @@
+---
+type: Function
+name: SetLocalObject
+shortdesc: Store an object as a local variable within an object.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | Target object to store local variable in.
+
+  - type: string
+    name: sVarName
+    desc: | Unique variable name.
+
+  - type: object
+    name: oValue
+    desc: | Variable being stored in local object.
+
+description: |
+  Stores oValue as a local object within oObject using the variable name sVarName. The parameter sVarName is a unique string identifying a single local variable. Using the same value for sVarName in subsequent calls will overwrite the original value. 
+  Objects get assigned a unique reference in a list depending when they are created and what object type they are - for this reason, it is never persistant - see below. Even when a PC enters, each item is given its unique reference so the module knows it exsists. 
+  No object cannot be stored using this. If it is destroyed or expires (if an AOE) it will obviously return an invalid object.
+remarks: |
+  Note that the Campaign version actually copies information from the game to the database - this, however, stores a local objects "identifier". For this reason, because now local variables can be set on a PC's items and be persistant, any GetLocalObject() calls after the server has reset and it is retrieved from the item will return an odd, or totally invalid object reference (the default OBJECT_INVALID will be returned). 
+  As with all locals, there seems to be no size limit to sVarName, however, anything over 50 characters is probably a bit extreme.
+bugs: |
+  Setting a value to a newly created object has some particular nuances. See SetLocalString(object, string, string) for more information.
+version: 1.62
+example: |
+  // assumes there is an object tagged "npc_henchment"
+  // running about in the module
+  void main()
+  {
+       object oThis = OBJECT_SELF;
+       object oObject = GetObjectByTag("npc_henchment");
+       SetLocalObject(oThis, "hench", oObject);
+  }
+seealso:
+  functions:
+    - GetLocalObject
+  categories:
+    - Local Variables
+author: Daniel Beckman
+editor: Jasperre
+additional_contributors:
+  - Xepherys
+  - Graziano Lenzi
+  - Jasperre

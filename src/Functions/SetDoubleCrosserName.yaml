@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetDoubleCrosserName
+shortdesc: Used to track the name of the PC that double-crosses an NPC during a plot of the Original Campaign.
+return: void
+parameters:
+  - type: object
+    name: oPC
+    desc: | name of the PC
+
+description: |
+  Sets a plot token with the name of the PC that doublecrosses an NPC during the Assassin plot-line of the Original Campaign.
+remarks: |
+  Script: nw_j_assassin.nss: Line: 490 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.29
+seealso:
+  functions:
+    - SetAssassinHead
+  categories:
+    - Module Specific
+author: Jody Fletcher
+

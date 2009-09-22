@@ -1,0 +1,26 @@
+---
+type: Function
+name: pow
+shortdesc: Calculates a number raised to a power.
+return: float
+parameters:
+  - type: float
+    name: fValue
+    desc: | The value to raise.
+
+  - type: float
+    name: fExponent
+    desc: | The exponent to raise the value by.
+
+description: |
+  Returns the result of fValue raised by fExponent and 0 if fValue is 0 and fExponent is less than 0.
+version: 1.22
+seealso:
+  functions:
+    - log
+    - sqrt
+  categories:
+    - Math
+author: Charles Feduke
+editor: Tom Cassiotis
+

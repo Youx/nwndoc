@@ -1,0 +1,30 @@
+---
+type: Function
+name: SetCameraMode
+shortdesc: Changes the perspective view of the player on the screen.
+return: void
+parameters:
+  - type: object
+    name: oPlayer
+    desc: | PC mode change to occur to.
+
+  - type: int
+    name: nCameraMode
+    desc: | CAMERA_MODE_*
+
+description: |
+  Set the camera mode for oPlayer. 
+  If oPlayer is not player-controlled or nCameraMode is invalid, nothing happens.
+version: 1.22
+seealso:
+  functions:
+    - RestoreCameraFacing
+    - SetCameraFacing
+    - SetCutsceneMode
+    - StoreCameraFacing
+  categories:
+    - Miscellaneous
+  constants:
+    - CAMERA_MODE_* Constants
+author: Jody Fletcher
+

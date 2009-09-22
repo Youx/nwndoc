@@ -1,0 +1,43 @@
+---
+type: Function
+name: IPGetModifiedArmor
+shortdesc: Copies and modifies an armor and returns it as an object.
+return: void
+parameters:
+  - type: object
+    name: oArmor
+    desc: | Armor to modify.
+
+  - type: int
+    name: nPart
+    desc: | ITEM_APPR_ARMOR_MODEL_*
+
+  - type: int
+    name: nMode
+    desc: | X2_IP_ARMORTYPE_*
+
+  - type: int
+    name: bDestroyOldOnSuccess
+    desc: | TRUE to destroy original armor on success, FALSE to not do so.
+
+description: |
+  Returns a new armor based of oArmor with nPartModified 
+  nPart - ITEM_APPR_ARMOR_MODEL_* constant of the part to be changed 
+  nMode - 
+  X2_IP_ARMORTYPE_NEXT - next valid appearance 
+  X2_IP_ARMORTYPE_PREV - previous valid apperance; 
+  X2_IP_ARMORTYPE_RANDOM - random valid appearance (torso is never changed); 
+  bDestroyOldOnSuccess - Destroy oArmor in process? 
+  Uses Get2DAstring, so do not use in loops
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Item Creation
+    - Item Properties
+  constants:
+    - ITEM_APPR_* Constants
+    - X2_IP_ARMORTYPE_* Constants
+author: Lilac Soul
+

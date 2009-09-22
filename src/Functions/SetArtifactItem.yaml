@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetArtifactItem
+shortdesc: Stores the tag of the artifact item in a local string.
+return: void
+parameters:
+  - type: string
+    name: sTag
+    desc: | Tag of the artifact item
+
+description: |
+  Stores the tag of the artifact in a local string for later retrieval with GetArtifactItem and PlayerHasArtifactItem.
+remarks: |
+  Found in nw_j_artifact.nss line 97 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail, which in my opinion there is very little reason to do.
+requirements: |
+  #include "nw_j_artifact"
+version: 1.28
+seealso:
+  functions:
+    - GetArtifactItem
+    - Global
+    - PlayerHasArtifactItem
+    - TakeArtifactItem
+  categories:
+    - Local Variables
+    - Module Specific
+author: Lilac Soul
+

@@ -1,0 +1,23 @@
+---
+type: Function
+name: StripAllPersonalItemsFromEveryone
+shortdesc: Removes henchmen 'hired' items for use in the original campaign.
+return: void
+parameters:
+description: |
+  Scans all PCs in an area to remove any henchman 'hired' items. It then replaces these items if the PC currently has a henchman. This is used only for Chapters 1, 2 and 3.
+remarks: |
+  Script: nw_i0_henchman.nss: Line: 313
+requirements: |
+  #include "nw_i0_henchman"
+version: 1.29
+seealso:
+  functions:
+    - DestroyAllPersonalItems
+    - GivePersonalItem
+    - HasPersonalItem
+  categories:
+    - Henchmen/Familiars/Summoned
+    - Inventory
+author: Jody Fletcher
+

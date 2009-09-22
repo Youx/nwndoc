@@ -1,0 +1,38 @@
+---
+type: Function
+name: SetMaxHenchmen
+shortdesc: Sets the maximum number of henchmen
+return: void
+parameters:
+  - type: int
+    name: nNumHenchmen
+    desc: | Maximum allowed number of henchmen in module
+
+description: |
+  Sets the maximum number of henchmen. 
+  This value is only probably checked when a AddHenchman() call is done, so setting it when they already have henchmen will probably not work.
+remarks: |
+  Since Hordes of the Underdark, it has been possible for a PC to have more than one henchman. By default, the max number of henchmen will still be 1, so you must call this function manually, for instance in your OnModuleLoad event, to allow for more than one henchman. 
+  It is an internal game limit, as in, it is hardcoded - of course, as the limit is unknown (and probably over 200) you can set it high enough so that AddHenchmen always works. 
+  You can retrieve this number with a simple call of GetMaxHenchmen(). It has no significance apart from the amount of henchmen the game allows you to have, as noted, checked when AddHenchman() is used.
+version: 1.62
+example: |
+  // Example code for On Module Load to make the maximum
+  // number of henchmen 3
+  void main()
+  {
+      // No parameter other then a number needed
+      SetMaxHenchmen(3);
+      // Thats it!
+  }
+seealso:
+  functions:
+    - AddHenchman
+    - GetHenchman
+    - GetMaxHenchmen
+  categories:
+    - Henchmen/Familiars/Summoned
+author: Lilac Soul
+editor: Jasperre
+additional_contributors:
+  - Jasperre

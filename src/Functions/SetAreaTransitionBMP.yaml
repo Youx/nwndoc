@@ -1,0 +1,47 @@
+---
+type: Function
+name: SetAreaTransitionBMP
+shortdesc: Sets the graphic shown when a PC moves between two different areas in a module.
+return: void
+parameters:
+  - type: int
+    name: nPredefinedAreaTransition
+    desc: | AREA_TRANSITION_*
+
+  - type: string
+    name: sCustomAreaTransitionBMP
+    default: ""
+    desc: | File name of an area transition bitmap. (Default: "")
+
+description: |
+  Sets the area transition bitmap; this is only useful in OnAreaTransitionClick scripts. This action should be run by the person "clicking" the area transition via AssignCommand. 
+  To use a predefined area transition bitmap, use one of AREA_TRANSITION_* 
+  To use a custom, user-defined area transition bitmap, use AREA_TRANSITION_USER_DEFINED and specify the filename in the second parameter.
+remarks: |
+  Even though the script "nw_g0_transition" uses it, it actually uses it incorrectly so you never get a random transition BMP. The correct use would be that in the code sample. 
+  It is most likely this command only works once per transition, and so is tempoary, as there is no default AREA_TRANSITION_* constant.
+version: 1.22
+example: |
+  // This will use the wizard-set target object to move to, similar to the file "nw_g0_transition"
+  // It will always show the 1st crypt transition BMP, however!
+  void main()
+  {
+      // Declare who is moving, and the target.
+      object oClicker = GetClickingObject();
+      object oTarget = GetTransitionTarget(OBJECT_SELF);
+      // Make them show the crypt BMP for the area transition
+      AssignCommand(oClicker, SetAreaTransitionBMP(AREA_TRANSITION_CRYPT));
+      // Move them to the target
+      AssignCommand(oClicker, JumpToObject(oTarget));
+  }
+seealso:
+  categories:
+    - Miscellaneous
+    - Module
+  constants:
+    - AREA_TRANSITION_* Constants
+  events:
+    - OnAreaTransitionClick
+author: Charles Feduke
+editor: Jasperre
+

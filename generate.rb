@@ -18,6 +18,7 @@ start = Time.now
 FileUtils.rm_r('output') if File.exists?('output')
 
 tree = []
+hftree = {}
 search_data = {}
 
 tree.push(["Functions","README.html","",[]])
@@ -32,7 +33,7 @@ search_data["index"]["info"] = []
 
 ftemplate = Liquid::Template.parse(File.read(File.join('templates','functions.liquid')))
 main_template = Liquid::Template.parse(File.read(File.join('templates','main.html')))
-limit_parse = 9000
+limit_parse = 9999
 limit_curr = 0
 
 Dir.open(File.join('src','Functions')).each do |filename|
@@ -51,17 +52,33 @@ Dir.open(File.join('src','Functions')).each do |filename|
 				1,0
 				]
 				)
+
+		tree_el = [function_info["name"], "Functions/#{function_info['name']}.html","",[]]
+		function_info['seealso']['categories'].each do |cat|
+			if !hftree[cat]
+				hftree[cat] = [cat, '', '', []] 
+				tree[0][3].push(hftree[cat])
+			end
+			hftree[cat][3].push(tree_el)
+		end
+
 		redcloth = RedCloth.new(ftemplate.render('function' => function_info)).to_html
 		Dir.mkdir('output') if ! File.exists?('output')
 		Dir.mkdir(File.join('output','Functions')) if ! File.exists?(File.join('output','Functions'))
 		File.open(File.join("output", 'Functions', filename.gsub('yaml','html')), "w") do |out|
-			out.write(main_template.render('content' => redcloth))
+			out.write(main_template.render('content' => redcloth, 'function' =>function_info))
 		end
 		limit_curr+=1
 	end
 end
 
 puts('')
+
+# Sort the tree
+tree[0][3].sort! {|x,y| x[0] <=> y[0] }
+#tree[0][3].each {|cat| cat.sort! {|x,y|
+#	puts("#{x[0]} <=> #{y[0]}")
+#	x[0] <=> y[0]}}
 
 File.open(File.join('panel','search_index.js'),'w') do |f| f.write("var search_data = #{search_data.to_json};") end
 File.open(File.join('panel','tree.js'),'w') do |f| f.write("var tree = #{tree.to_json};") end

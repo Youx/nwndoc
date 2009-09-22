@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetAssassinHead
+shortdesc: Stores the tag of the assassin victim’s head in a local string.
+return: void
+parameters:
+  - type: string
+    name: sTag
+    desc: | Tag of the assassin head
+
+description: |
+  Stores the tag of the assassin victim’s head in a local string for later retrieval with GetAssassinHead and PlayerHasHead.
+remarks: |
+  Found in nw_j_assassin.nss line 299 
+  This is part of Bioware’s own quest and reward system. It is hardly useful for anyone not copying that system to the very last detail.
+requirements: |
+  #include "nw_j_assassin"
+version: 1.28
+seealso:
+  functions:
+    - GetAssassinHead
+    - PlayerHasHead
+    - SetDoubleCrosserName
+  categories:
+    - Local Variables
+    - Module Specific
+author: Lilac Soul
+editor: Jody Fletcher
+

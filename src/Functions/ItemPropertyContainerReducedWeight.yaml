@@ -1,0 +1,41 @@
+---
+type: Function
+name: ItemPropertyContainerReducedWeight
+shortdesc: Sets a "reduced weight container" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nContainerType
+    desc: | IP_CONST_CONTAINERWEIGHTRED_*
+
+description: |
+  Sets item property Container reduced weight. This is used to create special containers that reduce the mass of the objects inside them. You must specify the container weight reduction type constant (IP_CONST_CONTAINERWEIGHTRED_*), which range in 20% steps from 20% reduction to 100% - weightless!
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_CONTAINERWEIGHTRED_* value can be retrieved off this type of item property using GetItemPropertyCostTableValue. 
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Gives the PC speaker a magic pouch and makes it reduce
+  //its contents' weight even further
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem=CreateItemOnObject("nw_it_contain002", oPC);
+  int nContainerType = IP_CONST_CONTAINERWEIGHTRED_60_PERCENT;
+  itemproperty ipAdd = ItemPropertyContainerReducedWeight(nContainerType);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_CONTAINERWEIGHTRED_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

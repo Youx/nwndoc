@@ -1,0 +1,50 @@
+---
+type: Function
+name: ItemPropertyLimitUseByRace
+shortdesc: Sets an "only useable by race" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nRace
+    desc: | IP_CONST_RACIALTYPE_*
+
+description: |
+  Sets item property Limit use by race. You must specify the race(s) who are allowed to use this item (IP_CONST_RACIALTYPE_*). 
+  [LS says in the coding sample that the races are limited to the player races: Dwarf, Elf, Gnome, Halfling, Halfelf, Halforc and Human; I haven't tested this yet. - ed.]
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first, if you are not stacking races. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_RACIALTYPE_* value can be retrieved off this type of item property using GetItemPropertySubType.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Restricts the use of the PC speaker's weapon so that
+  //only those of the same race can use it
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_RIGHTHAND, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  int nRace = GetRacialType(oPC);
+  //Not a valid racial type for this purpose:
+  if (nRace > RACIAL_TYPE_HUMAN) return;
+  //The integer value for the standard PC races
+  //are the same for RACIAL_TYPE_*
+  //as for IP_CONST_RACIALTYPE_*, and are thus interchangeable.
+  //See comments under ItemPropertyLimitUseByAlign - ed.
+  itemproperty ipAdd = ItemPropertyLimitUseByRace(nRace);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  //Note: if adding more races, use AddItemProperty - ed.
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_RACIALTYPE_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

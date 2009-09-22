@@ -1,0 +1,38 @@
+---
+type: Function
+name: SetTileSourceLightColor
+shortdesc: Sets the source light color for a tile.
+return: void
+parameters:
+  - type: location
+    name: lTileLocation
+    desc: | The location of the tile to change the light color.
+
+  - type: int
+    name: nSourceLight1Color
+    desc: | TILE_SOURCE_LIGHT_COLOR_*
+
+  - type: int
+    name: nSourceLight2Color
+    desc: | TILE_SOURCE_LIGHT_COLOR_*
+
+description: |
+  Set the source light color on the tile located at lTileLocation.
+remarks: |
+  You must call RecomputeStaticLighting() after calling this function in order for the changes to occur visually for the players.
+bugs: |
+  It is reported that it is almost impossible for torches (the source lights themselves) to turn off properly, if at all.
+version: 1.64
+seealso:
+  functions:
+    - SetFogColor
+  categories:
+    - Lighting Effects
+  constants:
+    - TILE_SOURCE_LIGHT_* Constants
+author: Tom Cassiotis
+editor: Jasperre
+additional_contributors:
+  - Charles Feduke
+  - Jasperre
+  - Ruben

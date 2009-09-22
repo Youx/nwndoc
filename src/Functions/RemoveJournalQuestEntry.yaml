@@ -1,0 +1,47 @@
+---
+type: Function
+name: RemoveJournalQuestEntry
+shortdesc: Removes a journal quest entry from a PCs journal.
+return: void
+parameters:
+  - type: string
+    name: sPlotID
+    desc: | The tag for the quest as used in the toolset's Journal Editor.
+
+  - type: object
+    name: oCreature
+    desc: | The PC.
+
+  - type: int
+    name: bAllPartyMembers
+    default: TRUE
+    desc: | If this is TRUE, the entry will be removed from the journal of everyone in the party. (Default: TRUE)
+
+  - type: int
+    name: bAllPlayers
+    default: FALSE
+    desc: | If this is TRUE, the entry will be removed from the journal of everyone in the world. (Default: FALSE)
+
+description: |
+  Function will remove all entries from the category specified (sPlotID) from the 'Quests' tab or 'Completed Quests' tab in the player's journal. Gives no feedback to player.
+remarks: |
+  Clears the local integer variable 
+  "NW_JOURNAL_ENTRY" + sQuestTag 
+  where sQuestTag is the tag for the quest, same as sPlotID. This local variable normally holds the ID for the current entry for the specified quest.
+version: 1.61
+example: |
+  void main()
+  {
+      //Remove the quest with tag 'Quest001' from just the PC    
+      //involved in this conversation 
+      object oPC = GetPCSpeaker();
+      RemoveJournalQuestEntry("Quest001",oPC,FALSE);
+  }
+seealso:
+  functions:
+    - AddJournalQuestEntry
+  categories:
+    - Journal
+author: Jody Fletcher
+editor: Grimlar
+

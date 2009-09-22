@@ -1,0 +1,44 @@
+---
+type: Function
+name: ItemPropertyDecreaseAbility
+shortdesc: Sets a decrease ability itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nAbility
+    desc: | IP_CONST_ABILITY_*
+
+  - type: int
+    name: nModifier
+    desc: | Amount to decrease by; 1 to 10 are valid.
+
+description: |
+  Sets item property Decrease ability score. You must specify the ability constant (IP_CONST_ABILITY_*), such as Charisma or Wisdom, and the modifier constant. The modifier must be a POSITIVE integer between 1 and 10, by which the ability score is reduced.
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_ABILITY_* constant can be retrieved off this type of item property using GetItemPropertySubType. The modifier can be retrieved using GetItemPropertCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's helmet cause stupidity :-(
+  void main()
+  {
+  object oPC=GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertyDecreaseAbility(IP_CONST_ABILITY_INT, 5);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_ABILITY_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

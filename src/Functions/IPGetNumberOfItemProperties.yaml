@@ -1,0 +1,21 @@
+---
+type: Function
+name: IPGetNumberOfItemProperties
+shortdesc: Returns the number of item properties present on an item.
+return: int
+parameters:
+  - type: object
+    name: oItem
+    desc: | Item to count itemproperties on.
+
+description: |
+  Returns an integer with the number of properties present on oItem.
+requirements: |
+  #include "x2_inc_itemprop"
+version: 1.61
+seealso:
+  categories:
+    - Get Data from Object
+    - Item Properties
+author: Lilac Soul
+

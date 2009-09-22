@@ -1,0 +1,29 @@
+---
+type: Function
+name: SetMapPinEnabled
+shortdesc: Enable a map pin.
+return: void
+parameters:
+  - type: object
+    name: oMapPin
+    desc: | Map pin on the displayable map.
+
+  - type: int
+    name: nEnabled
+    desc: | TRUE or FALSE.
+
+description: |
+  Enables or disables a map pin on the displayed map.
+remarks: |
+  A VERY useful function if you want to add some realism to your modules. Personally, I dislike knowing that "oh, so that's where the bad guy is because that's where the map pin is", even if I don't look at the map pin's caption. 
+  Thus, this can for instance be used OnEnter of a trigger to make a PC get the panel button.
+bugs: |
+  Not a bug, but it is too bad that there is no "oPC" parameter to only enable the map pin for a single player instead of all players in a multiplayer environment.
+version: 1.61
+seealso:
+  categories:
+    - Miscellaneous
+author: Charles Feduke
+editor: Lilac Soul
+additional_contributors:
+  - Drake Coker

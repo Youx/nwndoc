@@ -1,0 +1,30 @@
+---
+type: Function
+name: SetPortraitResRef 
+shortdesc: Change the portrait of object to use the portrait ResRef.
+return: void
+parameters:
+  - type: object
+    name: oTarget
+    desc: | The object for which you are changing the portrait.
+
+  - type: object
+    name: sPortraitResRef
+    desc: | The ResRef of the new portrait to use.
+
+description: |
+  Change the portrait of oTarget to use the Portrait ResRef specified.
+remarks: |
+  sPortraitResRef should not include any trailing size letter ( e.g. po_el_f_09_ ).
+  Not all portrait ResRefs are suitable for use with all object types.
+  Setting the portrait ResRef will also cause the portrait Id to be set to PORTRAIT_INVALID.
+bugs: |
+version: 1.67
+seealso:
+  functions:
+    - GetPortraitResRef
+    - GetPortraitId
+    - SetPortraitId
+  categories:
+    - Get Data from Object
+author: Mistress

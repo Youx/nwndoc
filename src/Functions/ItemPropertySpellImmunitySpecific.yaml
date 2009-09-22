@@ -1,0 +1,41 @@
+---
+type: Function
+name: ItemPropertySpellImmunitySpecific
+shortdesc: Sets an "immunity to specific spell" itemproperty.
+return: itemproperty
+parameters:
+  - type: int
+    name: nSpell
+    desc: | IP_CONST_IMMUNITYSPELL_*
+
+description: |
+  Sets item property Spell immunity vs. specific spell. You must specify the spell to which the user will be immune (IP_CONST_IMMUNITYSPELL_*).
+remarks: |
+  The itemproperty commands are special constructors - they construct an itemproperty "object" which can then be applied to an item using the AddItemProperty command, much like effects need to be first constructed, then applied with ApplyEffectToObject. 
+  It will often be a good idea to remove similar itemproperties from the item first. There's a command in the "x2_inc_itemprop" include file called IPSafeAddItemProperty which will do that for you. Check IPSafeAddItemProperty for current bug report. 
+  The IP_CONST_IMMUNITYSPELL_* value can be retrieved off this type of item property using GetItemPropertyCostTableValue.
+version: 1.61
+example: |
+  #include "x2_inc_itemprop"
+  //The include is for the IPSafeAddItemProperty function
+  //Makes the PC speaker's helmet grant immunity to stinking cloud
+  //(I guess the helmet is fitted with nose-plugs lol)
+  void main()
+  {
+  object oPC = GetPCSpeaker();
+  object oItem = GetItemInSlot(INVENTORY_SLOT_HEAD, oPC);
+  if (!GetIsObjectValid(oItem)) return;
+  itemproperty ipAdd = ItemPropertySpellImmunitySpecific(IP_CONST_IMMUNITYSPELL_STINKING_CLOUD);
+  IPSafeAddItemProperty(oItem, ipAdd);
+  }
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation
+  constants:
+    - IP_CONST_IMMUNITYSPELL_* Constants
+author: Lilac Soul
+editor: Peter Busby
+

@@ -1,0 +1,24 @@
+---
+type: Function
+name: SetLockLockable 
+shortdesc: Sets whether or not the object can be locked.
+return: void
+parameters:
+  - type: object
+    name: oObject
+    desc: | A door or placeable.
+
+  - type: int
+    name: nLockable
+    default: TRUE
+    desc: | TRUE or FALSE. (Default: TRUE)
+
+description: |
+  Sets whether or not the object can be locked.
+version: 1.67
+seealso:
+  functions:
+    - GetLockLockable
+  categories:
+    - Get Data from Object
+author: Mistress

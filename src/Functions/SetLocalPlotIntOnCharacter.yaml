@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetLocalPlotIntOnCharacter
+shortdesc: Sets a plot-specific integer on a creature.
+return: void
+parameters:
+  - type: object
+    name: oNPC
+    desc: | Creature or PC to set the plot integer on.
+
+  - type: int
+    name: nPlotStateIndex
+    desc: | Plot state integer to set.
+
+description: |
+  Sets a local integer on oNPC with the name "PLOT2Q4" + GetTag(oNPC). This is used for tracking the movement/state of the plot.
+remarks: |
+  Found in nw_i0_2q4luskan.nss on line 28.
+requirements: |
+  #include "nw_i0_2q4luskan"
+version: 1.28
+seealso:
+  functions:
+    - GetLocalPlotIntFromCharacter
+  categories:
+    - Module Specific
+author: Charles Feduke
+

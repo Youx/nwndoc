@@ -1,0 +1,46 @@
+---
+type: Function
+name: HasGold
+shortdesc: Determines if a player has more than a certain amount of gold on them.
+return: int
+parameters:
+  - type: int
+    name: nAmount
+    desc: | The amount of gold to check.
+
+  - type: object
+    name: oGoldHolder
+    desc: | The person to check how much gold they carry.
+
+description: |
+  Returns TRUE if oGoldHolder has nAmount or more gold on them, otherwise returns FALSE.
+remarks: |
+  This is a wrapper function for GetGold(). 
+  Does not remove any gold from the inventory during the check.
+requirements: |
+  #include "NW_I0_PLOT"
+version: 1.22
+example: |
+  // This example will check the player who is currently speaking 
+  // to see if they have enough gold to purchase something for 
+  // 250 GP.
+  #include "NW_I0_PLOT"
+  // Do they have enough gold to buy it?
+  if (HasGold (250, GetPCSpeaker()))
+  {
+      // do something here.
+  }
+  else
+  {
+      // poor, make the NPC insult them
+  }
+seealso:
+  functions:
+    - GetGold
+  categories:
+    - Inventory
+    - Money
+author: Tom Cassiotis
+editor: Charles Feduke
+additional_contributors:
+  - Ivan Hawkes
