@@ -1,0 +1,21 @@
+---
+type: Constants
+category: CAMERA_MODE_*
+shortdesc: | 
+  Selects one of the three perspective views available in the game.
+constants:
+  - name: CAMERA_MODE_CHASE_CAMERA
+    value: 0
+    desc: | 
+      Perspective 'field-of-view' from behind player, perspective rotates around PC allowing view of surroundings to the sides and behind player.
+  - name: CAMERA_MODE_STIFF_CHASE_CAMERA
+    value: 2
+    desc: | 
+      Perspective view with camera behind PC, with rotation locked.
+  - name: CAMERA_MODE_TOP_DOWN
+    value: 1
+    desc: | 
+      Perspective view with camera above player, looking directly down on action.
+seealso:
+  functions:
+    - SetCameraMode

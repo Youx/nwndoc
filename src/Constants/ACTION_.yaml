@@ -1,0 +1,71 @@
+---
+type: Constants
+category: ACTION_*
+shortdesc: | 
+  Standard actions.
+constants:
+  - name: ACTION_ANIMALEMPATHY
+    value: 16
+  - name: ACTION_ATTACKOBJECT
+    value: 3
+  - name: ACTION_CASTSPELL
+    value: 4
+  - name: ACTION_CLOSEDOOR
+    value: 6
+  - name: ACTION_COUNTERSPELL
+    value: 31
+  - name: ACTION_DIALOGOBJECT
+    value: 7
+  - name: ACTION_DISABLETRAP
+    value: 8
+  - name: ACTION_DROPITEM
+    value: 2
+  - name: ACTION_EXAMINETRAP
+    value: 11
+  - name: ACTION_FLAGTRAP
+    value: 10
+  - name: ACTION_FOLLOW
+    value: 35
+  - name: ACTION_HEAL
+    value: 33
+  - name: ACTION_INVALID
+    value: 65535
+  - name: ACTION_ITEMCASTSPELL
+    value: 19
+  - name: ACTION_KIDAMAGE
+    value: 41
+  - name: ACTION_LOCK
+    value: 14
+  - name: ACTION_MOVETOPOINT
+    value: 0
+  - name: ACTION_OPENDOOR
+    value: 5
+  - name: ACTION_OPENLOCK
+    value: 13
+  - name: ACTION_PICKPOCKET
+    value: 34
+  - name: ACTION_PICKUPITEM
+    value: 1
+  - name: ACTION_RANDOMWALK
+    value: 43
+    desc: | 
+      This was added in the hordes sets of patches. It is the value in association with ActionRandomWalk(). Note: In pre-1.64 patches, it referenced the wrong line in the actions.2da file, but it has now been corrected.
+  - name: ACTION_RECOVERTRAP
+    value: 9
+  - name: ACTION_REST
+    value: 17
+  - name: ACTION_SETTRAP
+    value: 12
+  - name: ACTION_SIT
+    value: 37
+  - name: ACTION_SMITEGOOD
+    value: 40
+  - name: ACTION_TAUNT
+    value: 18
+  - name: ACTION_USEOBJECT
+    value: 15
+  - name: ACTION_WAIT
+    value: 36
+seealso:
+  functions:
+    - GetCurrentAction

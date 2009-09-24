@@ -1,0 +1,53 @@
+---
+type: Constants
+category: IP_CONST_TRAPTYPE_*
+shortdesc: | 
+  Itemproperty constants relating to trap types.
+constants:
+  - name: IP_CONST_TRAPTYPE_ACID_SPLASH
+    value: 9
+    desc: | 
+      Acid splash traps.
+  - name: IP_CONST_TRAPTYPE_BLOBOFACID
+    value: 4
+    desc: | 
+      Blob of acid traps.
+  - name: IP_CONST_TRAPTYPE_ELECTRICAL
+    value: 6
+    desc: | 
+      Electrical traps.
+  - name: IP_CONST_TRAPTYPE_FIRE
+    value: 5
+    desc: | 
+      Fire traps.
+  - name: IP_CONST_TRAPTYPE_FROST
+    value: 8
+    desc: | 
+      Frost (cold) traps.
+  - name: IP_CONST_TRAPTYPE_GAS
+    value: 7
+    desc: | 
+      Gas traps.
+  - name: IP_CONST_TRAPTYPE_HOLY
+    value: 2
+    desc: | 
+      Holy (divine energy) traps.
+  - name: IP_CONST_TRAPTYPE_NEGATIVE
+    value: 11
+    desc: | 
+      Negative energy traps.
+  - name: IP_CONST_TRAPTYPE_SONIC
+    value: 10
+    desc: | 
+      Sonic traps.
+  - name: IP_CONST_TRAPTYPE_SPIKE
+    value: 1
+    desc: | 
+      Spike traps.
+  - name: IP_CONST_TRAPTYPE_TANGLE
+    value: 3
+    desc: | 
+      Tangle traps.
+seealso:
+  functions:
+    - ItemPropertyTrap

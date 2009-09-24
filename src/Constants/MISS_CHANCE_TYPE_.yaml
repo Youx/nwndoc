@@ -1,0 +1,21 @@
+---
+type: Constants
+category: MISS_CHANCE_TYPE_*
+shortdesc: | 
+  Used to specify the miss chance type for EffectMissChance.
+constants:
+  - name: MISS_CHANCE_TYPE_NORMAL
+    value: 0
+    desc: | 
+      Normal miss chance.
+  - name: MISS_CHANCE_TYPE_VS_MELEE
+    value: 2
+    desc: | 
+      Miss chance versus melee.
+  - name: MISS_CHANCE_TYPE_VS_RANGED
+    value: 1
+    desc: | 
+      Miss chance versus ranged.
+seealso:
+  functions:
+    - EffectMissChance

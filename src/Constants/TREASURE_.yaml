@@ -1,0 +1,32 @@
+---
+type: Constants
+category: TREASURE_*
+shortdesc: | 
+  Treasure types.
+requirements: |
+  #include "nw_o2_coninclude"
+
+constants:
+  - name: TREASURE_BOOK
+    value: 5
+    desc: | 
+      One of the many books.
+  - name: TREASURE_BOSS
+    value: 4
+    desc: | 
+      The best type of treasure that can be acquired. Normally boss treasures are determined based on the character acquiring them.
+  - name: TREASURE_HIGH
+    value: 3
+    desc: | 
+      A good treasure.
+  - name: TREASURE_LOW
+    value: 1
+    desc: | 
+      A small amount of treasure.
+  - name: TREASURE_MEDIUM
+    value: 2
+    desc: | 
+      A standard alottment of treasure.
+seealso:
+  functions:
+    - GetNumberOfItems

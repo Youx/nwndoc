@@ -1,0 +1,49 @@
+---
+type: Constants
+category: IP_CONST_DAMAGESOAK_*
+shortdesc: | 
+  Itemproperty constants relating to damage soaking.
+constants:
+  - name: IP_CONST_DAMAGESOAK_5_HP
+    value: 1
+    desc: | 
+      Soak 5 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_10_HP
+    value: 2
+    desc: | 
+      Soak 10 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_15_HP
+    value: 3
+    desc: | 
+      Soak 15 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_20_HP
+    value: 4
+    desc: | 
+      Soak 20 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_25_HP
+    value: 5
+    desc: | 
+      Soak 25 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_30_HP
+    value: 6
+    desc: | 
+      Soak 30 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_35_HP
+    value: 7
+    desc: | 
+      Soak 35 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_40_HP
+    value: 8
+    desc: | 
+      Soak 40 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_45_HP
+    value: 9
+    desc: | 
+      Soak 45 hitpoints.
+  - name: IP_CONST_DAMAGESOAK_50_HP
+    value: 10
+    desc: | 
+      Soak 50 hitpoints.
+seealso:
+  functions:
+    - ItemPropertyDamageReduction

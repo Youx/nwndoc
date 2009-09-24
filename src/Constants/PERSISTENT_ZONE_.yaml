@@ -1,0 +1,14 @@
+---
+type: Constants
+category: PERSISTENT_ZONE_*
+shortdesc: | 
+  Used with GetFirstInPersistentObject() and GetNextInPersistentObject() functions.
+constants:
+  - name: PERSISTENT_ZONE_ACTIVE
+    value: 0
+  - name: PERSISTENT_ZONE_FOLLOW
+    value: 1
+seealso:
+  functions:
+    - GetFirstInPersistentObject
+    - GetNextInPersistentObject

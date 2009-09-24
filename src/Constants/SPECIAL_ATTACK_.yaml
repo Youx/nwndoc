@@ -1,0 +1,53 @@
+---
+type: Constants
+category: SPECIAL_ATTACK_*
+shortdesc: | 
+  Special attacks that can be performed during combat.
+constants:
+  - name: SPECIAL_ATTACK_CALLED_SHOT_ARM
+    value: 2
+    desc: | 
+      Attempt to disable or hinder a foe's ability to fight with its arms.
+  - name: SPECIAL_ATTACK_CALLED_SHOT_LEG
+    value: 1
+    desc: | 
+      Attempt to disable or hinder a foe's ability to move by walking.
+  - name: SPECIAL_ATTACK_DISARM
+    value: 4
+    desc: | 
+      Attempt to disarm a foe by sundering their weapon; provokes an attack of opportunity.
+  - name: SPECIAL_ATTACK_FLURRY_OF_BLOWS
+    value: 9
+    desc: | 
+      Monk's Flurry of Blows ability (additional unarmed attacks with a penalty to attack rolls).
+  - name: SPECIAL_ATTACK_IMPROVED_DISARM
+    value: 5
+    desc: | 
+      Attempt to disarm a foe by sundering his weapon without drawing an attack of opportunity.
+  - name: SPECIAL_ATTACK_IMPROVED_KNOCKDOWN
+    value: 7
+    desc: | 
+      Attempts to knock a foe down; does not draw an attack of opportunity.
+  - name: SPECIAL_ATTACK_INVALID
+    value: 0
+    desc: | 
+      Invalid special attack.
+  - name: SPECIAL_ATTACK_KNOCKDOWN
+    value: 6
+    desc: | 
+      Attempts to knock a foe down; draws an attack of opportunity.
+  - name: SPECIAL_ATTACK_RAPID_SHOT
+    value: 10
+    desc: | 
+      Grants an additional missile attack with all missile attack rolls taken at a penalty.
+  - name: SPECIAL_ATTACK_SAP
+    value: 3
+    desc: | 
+      Inflict subdual damage to try to knock out a foe. Inflicting subdual damage with a weapon that normally inflicts actual damage is done at a penalty to attack rolls.
+  - name: SPECIAL_ATTACK_STUNNING_FIST
+    value: 8
+    desc: | 
+      Monk's stunning fist ability.
+seealso:
+  functions:
+    - GetLastAttackType

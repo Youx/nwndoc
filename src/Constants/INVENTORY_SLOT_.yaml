@@ -1,0 +1,82 @@
+---
+type: Constants
+category: INVENTORY_SLOT_*
+shortdesc: | 
+  Constant group for inventory equipment slots. These are the slots where items are placed when that are equiped (in use), and not the slots where items are just stored. Also there exists a constant NUM_INVENTORY_SLOTS (integer value of 18) which can be used with a for loop as an upper limit (start at 0) to iterate through all inventory slots for equiped items.
+constants:
+  - name: INVENTORY_SLOT_ARMS
+    value: 3
+    desc: | 
+      The gloves or bracers slot in the inventory.
+  - name: INVENTORY_SLOT_ARROWS
+    value: 11
+    desc: | 
+      The arrows slot in the inventory. Can have up to 99 arrows stacked.
+  - name: INVENTORY_SLOT_BELT
+    value: 10
+    desc: | 
+      The belt slot in the inventory.
+  - name: INVENTORY_SLOT_BOLTS
+    value: 13
+    desc: | 
+      The bolts slot in the inventory. Can have up to 99 bolts stacked.
+  - name: INVENTORY_SLOT_BOOTS
+    value: 2
+    desc: | 
+      The boots slot in the inventory.
+  - name: INVENTORY_SLOT_BULLETS
+    value: 12
+    desc: | 
+      The bullets slot in the inventory. Can have up to 99 bullets stacked.
+  - name: INVENTORY_SLOT_CARMOUR
+    value: 17
+    desc: | 
+      Creature skin/hide slot (natural armor).
+  - name: INVENTORY_SLOT_CHEST
+    value: 1
+    desc: | 
+      The chest (or main armor) slot in the inventory. Clothes and body armor would go here.
+  - name: INVENTORY_SLOT_CLOAK
+    value: 6
+    desc: | 
+      The cloak slot in the inventory.
+  - name: INVENTORY_SLOT_CWEAPON_B
+    value: 16
+    desc: | 
+      Creature special attack slot (typically a bite).
+  - name: INVENTORY_SLOT_CWEAPON_L
+    value: 14
+    desc: | 
+      Creature's natural left attack (typically a claw).
+  - name: INVENTORY_SLOT_CWEAPON_R
+    value: 15
+    desc: | 
+      Creature's natural right attack (typically a claw).
+  - name: INVENTORY_SLOT_HEAD
+    value: 0
+    desc: | 
+      The head (or helmet) slot in the inventory.
+  - name: INVENTORY_SLOT_LEFTHAND
+    value: 5
+    desc: | 
+      Off-hand weapon slot.
+  - name: INVENTORY_SLOT_LEFTRING
+    value: 7
+    desc: | 
+      The left hand ring slot in the inventory.
+  - name: INVENTORY_SLOT_NECK
+    value: 9
+    desc: | 
+      The neck (or amulet) slot in the inventory.
+  - name: INVENTORY_SLOT_RIGHTHAND
+    value: 4
+    desc: | 
+      Primary weapon slot.
+  - name: INVENTORY_SLOT_RIGHTRING
+    value: 8
+    desc: | 
+      The right hand ring slot in the inventory.
+seealso:
+  functions:
+    - ActionEquipItem
+    - GetItemInSlot

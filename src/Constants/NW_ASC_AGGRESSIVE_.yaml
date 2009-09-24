@@ -1,0 +1,22 @@
+---
+type: Constants
+category: NW_ASC_AGGRESSIVE_*
+shortdesc: | 
+  Determines what skills or abilities an NPC associate uses automatically. These are not actually constants, and do not exist in nwscript.nss.
+requirements: |
+  #include "x0_i0_assoc"
+
+constants:
+  - name: NW_ASC_AGGRESSIVE_BUFF
+    value: 0x00000040
+    desc: | 
+      Benefits the master by bestowing spells or effects that increase hit points, blesses, or otherwise buffs.
+  - name: NW_ASC_AGGRESSIVE_SEARCH
+    value: 0x00000080
+    desc: | 
+      Constantly search for traps in the immediate area.
+  - name: NW_ASC_AGGRESSIVE_STEALTH
+    value: 0x00000100
+    desc: | 
+      Always move silently and hide in the shadows for sneak attacks.
+seealso:

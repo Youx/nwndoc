@@ -1,0 +1,27 @@
+---
+type: Constants
+category: CREATURE_TYPE_*
+shortdesc: | 
+  NWN-specific subtype denoting special attributes for a given creature.
+constants:
+  - name: CREATURE_TYPE_CLASS
+    value: 2
+  - name: CREATURE_TYPE_DOES_NOT_HAVE_SPELL_EFFECT
+    value: 6
+  - name: CREATURE_TYPE_HAS_SPELL_EFFECT
+    value: 5
+  - name: CREATURE_TYPE_IS_ALIVE
+    value: 4
+  - name: CREATURE_TYPE_PERCEPTION
+    value: 7
+  - name: CREATURE_TYPE_PLAYER_CHAR
+    value: 1
+  - name: CREATURE_TYPE_RACIAL_TYPE
+    value: 0
+  - name: CREATURE_TYPE_REPUTATION
+    value: 3
+seealso:
+  functions:
+    - ClearNearbyFriendActions
+    - GetNearestCreature
+    - GetNearestCreatureToLocation

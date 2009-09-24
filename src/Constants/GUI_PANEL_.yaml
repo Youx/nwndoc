@@ -1,0 +1,15 @@
+---
+type: Constants
+category: GUI_PANEL_*
+shortdesc: | 
+  List of all graphical panels (dialogs in windows programming terminology).
+constants:
+  - name: GUI_PANEL_DEATH
+    value: UNKNOWN
+    desc: | 
+      Specifies the PC death panel.
+  - name: GUI_PANEL_PLAYER_DEATH
+    value: 0
+seealso:
+  functions:
+    - PopUpGUIPanel

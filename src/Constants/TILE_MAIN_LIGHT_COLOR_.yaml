@@ -1,0 +1,139 @@
+---
+type: Constants
+category: TILE_MAIN_LIGHT_COLOR_*
+shortdesc: | 
+  List of available colors to be used as the main light source of a tile.
+constants:
+  - name: TILE_MAIN_LIGHT_COLOR_AQUA
+    value: 15
+    desc: | 
+      Specifies a aqua colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_BLACK
+    value: 0
+    desc: | 
+      Specifies a black light (dark).
+  - name: TILE_MAIN_LIGHT_COLOR_BLUE
+    value: 19
+    desc: | 
+      Specifies a blue colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_BRIGHT_WHITE
+    value: 3
+    desc: | 
+      Specifies a bright white colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DARK_AQUA
+    value: 13
+    desc: | 
+      Specifies a dark aqua colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DARK_BLUE
+    value: 17
+    desc: | 
+      Specifies a dark blue colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DARK_GREEN
+    value: 9
+    desc: | 
+      Specifies a dark green colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DARK_ORANGE
+    value: 29
+    desc: | 
+      Specifies a dark orange colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DARK_PURPLE
+    value: 21
+    desc: | 
+      Specifies a dark purple colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DARK_RED
+    value: 25
+    desc: | 
+      Specifies a dark red colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DARK_YELLOW
+    value: 5
+    desc: | 
+      Specifies a dark yellow colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_DIM_WHITE
+    value: 1
+    desc: | 
+      Specifies a dim white light.
+  - name: TILE_MAIN_LIGHT_COLOR_GREEN
+    value: 11
+    desc: | 
+      Specifies a green colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_ORANGE
+    value: 31
+    desc: | 
+      Specifies a orange colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_AQUA
+    value: 14
+    desc: | 
+      Specifies a pale aqua colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_BLUE
+    value: 18
+    desc: | 
+      Specifies a pale blue colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_DARK_AQUA
+    value: 12
+    desc: | 
+      Specifies a pale dark aqua colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_DARK_BLUE
+    value: 16
+    desc: | 
+      Specifies a pale dark blue colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_DARK_GREEN
+    value: 8
+    desc: | 
+      Specifies a pale dark green colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_DARK_ORANGE
+    value: 28
+    desc: | 
+      Specifies a pale dark orange colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_DARK_PURPLE
+    value: 20
+    desc: | 
+      Specifies a pale dark purple colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_DARK_RED
+    value: 24
+    desc: | 
+      Specifies a pale dark red colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_DARK_YELLOW
+    value: 4
+    desc: | 
+      Specifies a pale dark yellow colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_GREEN
+    value: 10
+    desc: | 
+      Specifies a pale green colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_ORANGE
+    value: 30
+    desc: | 
+      Specifies a pale orange colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_PURPLE
+    value: 22
+    desc: | 
+      Specifies a pale purple colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_RED
+    value: 26
+    desc: | 
+      Specifies a pale red colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PALE_YELLOW
+    value: 6
+    desc: | 
+      Specifies a pale yellow colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_PURPLE
+    value: 23
+    desc: | 
+      Specifies a purple colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_RED
+    value: 27
+    desc: | 
+      Specifies a red colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_WHITE
+    value: 2
+    desc: | 
+      Specifies a white colored light.
+  - name: TILE_MAIN_LIGHT_COLOR_YELLOW
+    value: 7
+    desc: | 
+      Specifies a yellow colored light.
+seealso:
+  functions:
+    - GetTileMainLight1Color
+    - GetTileMainLight2Color
+    - SetTileMainLightColor

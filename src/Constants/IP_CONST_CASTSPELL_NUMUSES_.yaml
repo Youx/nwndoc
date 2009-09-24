@@ -1,0 +1,59 @@
+---
+type: Constants
+category: IP_CONST_CASTSPELL_NUMUSES_*
+shortdesc: | 
+  Itemproperty constants relating to the number of uses an item has of a specific spell.
+constants:
+  - name: IP_CONST_CASTSPELL_NUMUSES_0_CHARGES_PER_USE
+    value: 7
+  - name: IP_CONST_CASTSPELL_NUMUSES_1_CHARGE_PER_USE
+    value: 6
+    desc: | 
+      1 charge spent per use of item.
+  - name: IP_CONST_CASTSPELL_NUMUSES_1_USE_PER_DAY
+    value: 8
+    desc: | 
+      Item can cast spell once per day.
+  - name: IP_CONST_CASTSPELL_NUMUSES_2_CHARGES_PER_USE
+    value: 5
+    desc: | 
+      2 charges spent per use of item.
+  - name: IP_CONST_CASTSPELL_NUMUSES_2_USES_PER_DAY
+    value: 9
+    desc: | 
+      Item can cast spell twice per day.
+  - name: IP_CONST_CASTSPELL_NUMUSES_3_CHARGES_PER_USE
+    value: 4
+    desc: | 
+      3 charges spent per use of item.
+  - name: IP_CONST_CASTSPELL_NUMUSES_3_USES_PER_DAY
+    value: 10
+    desc: | 
+      Item can cast spell three times per day.
+  - name: IP_CONST_CASTSPELL_NUMUSES_4_CHARGES_PER_USE
+    value: 3
+    desc: | 
+      4 charges spent per use of item.
+  - name: IP_CONST_CASTSPELL_NUMUSES_4_USES_PER_DAY
+    value: 11
+    desc: | 
+      Item can cast spell four times per day.
+  - name: IP_CONST_CASTSPELL_NUMUSES_5_CHARGES_PER_USE
+    value: 2
+    desc: | 
+      5 charges spent per use of item.
+  - name: IP_CONST_CASTSPELL_NUMUSES_5_USES_PER_DAY
+    value: 12
+    desc: | 
+      Item can cast spell five times per day.
+  - name: IP_CONST_CASTSPELL_NUMUSES_SINGLE_USE
+    value: 1
+    desc: | 
+      Item can cast spell once and once only.
+  - name: IP_CONST_CASTSPELL_NUMUSES_UNLIMITED_USE
+    value: 13
+    desc: | 
+      Item can cast spell without limits of usage.
+seealso:
+  functions:
+    - ItemPropertyCastSpell

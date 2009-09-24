@@ -1,0 +1,122 @@
+---
+type: Constants
+category: NW_FLAG_*
+shortdesc: | 
+  Used to cause events to fire various numeric signals to OnUserDefined and set other attributes of a creature during the OnSpawn script using SetSpawnInCondition. The OnUserDefined event can thus be used to customize the behavior of an object without actually modifying the default behavior.
+requirements: |
+  #include "x0_i0_spawncond"
+
+constants:
+  - name: NW_FLAG_AMBIENT_ANIMATIONS
+    value: 0x00080000
+    desc: | 
+      This will cause the NPC to play ambient animations until the NPC sees an enemy or is cleared. These animations will play automatically for encounter creatures.
+  - name: NW_FLAG_AMBIENT_ANIMATIONS_AVIAN
+    value: 0x00800000
+    desc: | 
+      Causes the NPC to play avian ambient animations.
+  - name: NW_FLAG_APPEAR_SPAWN_IN_ANIMATION
+    value: 0x01000000
+    desc: | 
+      Causes a spawn in animation to occur when the NPC spawns in.
+  - name: NW_FLAG_ATTACK_EVENT
+    value: 0x00000400
+    desc: | 
+      Used to fire OnUserDefined event signal 1005.
+  - name: NW_FLAG_DAMAGED_EVENT
+    value: 0x00000800
+    desc: | 
+      Used to fire OnUserDefined event signal 1006.
+  - name: NW_FLAG_DAY_NIGHT_POSTING
+    value: 0x00400000
+    desc: | 
+      Causes the NPC to act appropriately for the time of the day. SetSpawnInCondition(NW_FLAG_SLEEPING_AT_NIGHT) to cause the NPC to sleep at night (40% chance) and walk a set of waypoints during the day.
+  - name: NW_FLAG_DEATH_EVENT
+    value: 0x00020000
+    desc: | 
+      Used to fire OnUserDefined event signal 1007. Considered unreliable by Bioware. Please see the OnUserDefined event description for more information.
+  - name: NW_FLAG_DISTURBED_EVENT
+    value: 0x00002000
+    desc: | 
+      Used to fire OnUserDefined event signal 1008.
+  - name: NW_FLAG_END_COMBAT_ROUND_EVENT
+    value: 0x00004000
+    desc: | 
+      Used to fire OnUserDefined event signal 1003.
+  - name: NW_FLAG_ESCAPE_LEAVE
+    value: 0x00000040
+    desc: | 
+      Flee to a waypoint and do not return.
+  - name: NW_FLAG_ESCAPE_RETURN
+    value: 0x00000020
+    desc: | 
+      Causes the creature to flee to a waypoint and return a short time later.
+  - name: NW_FLAG_FAST_BUFF_ENEMY
+    value: 0x04000000
+    desc: | 
+      This means that the creature will cast all the buff spells (summons, stat and armor improvements etc) instantaneously in preperation for combat. Note: If TalentAdvancedBuff(40.0) returns TRUE, this flag is automatically disabled.
+  - name: NW_FLAG_HEARTBEAT_EVENT
+    value: 0x00100000
+    desc: | 
+      Used to fire OnUserDefined event signal 1001.
+  - name: NW_FLAG_IMMOBILE_AMBIENT_ANIMATIONS
+    value: 0x00200000
+    desc: | 
+      This will cause the NPC to play immobile ambient animations until the NPC sees an enemy or is cleared. These animations will play automatically for encounter creatures.
+  - name: NW_FLAG_ON_DIALOGUE_EVENT
+    value: 0x00008000
+    desc: | 
+      Used to fire OnUserDefined event signal 1004.
+  - name: NW_FLAG_PERCIEVE_EVENT
+    value: 0x00000200
+    desc: | 
+      Used to fire OnUserDefined event signal 1002.
+  - name: NW_FLAG_RESTED_EVENT
+    value: 0x00010000
+    desc: | 
+      Used to fire OnUserDefined event signal (UNKNOWN).
+  - name: NW_FLAG_SEARCH
+    value: 0x00000008
+    desc: | 
+      If the creature has search, it goes into search mode.
+  - name: NW_FLAG_SET_WARNINGS
+    value: 0x00000010
+  - name: NW_FLAG_SHOUT_ATTACK_MY_TARGET
+    value: 0x00000002
+    desc: | 
+      Sets the listening pattern on the NPC to attack when allies call.
+  - name: NW_FLAG_SLEEPING_AT_NIGHT
+    value: 0x02000000
+    desc: | 
+      Determines if the NPC sleeps at night. Use in conjuction with SetSpawnInCondition(NW_FLAG_DAY_NIGHT_POSTING) to cause the NPC to sleep at night (40% chance) or walk a set of waypoints during the day.
+  - name: NW_FLAG_SPECIAL_COMBAT_CONVERSATION
+    value: 0x00040000
+    desc: | 
+      This causes the NPC to say a special greeting in their conversation file upon perceiving the player (OnPerceive event). Attach the [NW_D2_GenCheck.nss] script to the desired greeting in order to designate it. As the NPC is actually saying this to himself, don't attach any player responses to the greeting.
+  - name: NW_FLAG_SPECIAL_CONVERSATION
+    value: 0x00000001
+    desc: | 
+      This causes the NPC to say a special greeting in their conversation file upon perceiving the player (OnPerceive event). Attach the [NW_D2_GenCheck.nss] script to the desired greeting in order to designate it. As the NPC is actually saying this to himself, don't attach any player responses to the greeting.
+  - name: NW_FLAG_SPELL_CAST_AT_EVENT
+    value: 0x00001000
+    desc: | 
+      Used to fire OnUserDefined event signal 1011.
+  - name: NW_FLAG_STEALTH
+    value: 0x00000004
+    desc: | 
+      If the NPC has stealth and they are a rogue, they go into stealth mode.
+  - name: NW_FLAG_TELEPORT_LEAVE
+    value: 0x00000100
+    desc: | 
+      Teleport to safety and do no return.
+  - name: NW_FLAG_TELEPORT_RETURN
+    value: 0x00000080
+    desc: | 
+      Teleport to safety and return a short time later.
+seealso:
+  functions:
+    - ActivateFleeToExit
+    - CheckWayPoints
+    - GetSpawnInCondition
+    - SetSpawnInCondition
+    - SetSpawnInLocals

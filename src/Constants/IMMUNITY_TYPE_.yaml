@@ -1,0 +1,142 @@
+---
+type: Constants
+category: IMMUNITY_TYPE_*
+shortdesc: | 
+  Constants to identify different immunities that creatures could possible have.
+constants:
+  - name: IMMUNITY_TYPE_ABILITY_DECREASE
+    value: 19
+    desc: | 
+      Specifies immunity to effects that decrease abilities.
+  - name: IMMUNITY_TYPE_AC_DECREASE
+    value: 23
+    desc: | 
+      Specifies immunity to effects that decrease armor class.
+  - name: IMMUNITY_TYPE_ATTACK_DECREASE
+    value: 20
+    desc: | 
+      Specifies immunity to effects that decrease attacks.
+  - name: IMMUNITY_TYPE_BLINDNESS
+    value: 7
+    desc: | 
+      Specifies immunity to blindness.
+  - name: IMMUNITY_TYPE_CHARM
+    value: 14
+    desc: | 
+      Specifies immunity to charm.
+  - name: IMMUNITY_TYPE_CONFUSED
+    value: 16
+    desc: | 
+      Specifies immunity to confusion.
+  - name: IMMUNITY_TYPE_CRITICAL_HIT
+    value: 31
+    desc: | 
+      Specifies immunity to critical hits.
+  - name: IMMUNITY_TYPE_CURSED
+    value: 17
+    desc: | 
+      Specifies immunity to curses.
+  - name: IMMUNITY_TYPE_DAMAGE_DECREASE
+    value: 21
+    desc: | 
+      Specifies immunity to effects that decrease damage.
+  - name: IMMUNITY_TYPE_DAMAGE_IMMUNITY_DECREASE
+    value: 22
+    desc: | 
+      Specifies immunity to effects that decrease immunity to damage.
+  - name: IMMUNITY_TYPE_DAZED
+    value: 18
+    desc: | 
+      Specifies immunity to daze.
+  - name: IMMUNITY_TYPE_DEAFNESS
+    value: 8
+    desc: | 
+      Specifies immunity to deafness.
+  - name: IMMUNITY_TYPE_DEATH
+    value: 32
+    desc: | 
+      Specifies immunity to death attacks.
+  - name: IMMUNITY_TYPE_DISEASE
+    value: 3
+    desc: | 
+      Specifies immunity to disease.
+  - name: IMMUNITY_TYPE_DOMINATE
+    value: 15
+    desc: | 
+      Specifies immunity to domination.
+  - name: IMMUNITY_TYPE_ENTANGLE
+    value: 10
+    desc: | 
+      Specifies immunity to entanglement.
+  - name: IMMUNITY_TYPE_FEAR
+    value: 4
+    desc: | 
+      Specifies immunity to fear.
+  - name: IMMUNITY_TYPE_KNOCKDOWN
+    value: 28
+    desc: | 
+      Specifies immunity to knockdown.
+  - name: IMMUNITY_TYPE_MIND_SPELLS
+    value: 1
+    desc: | 
+      Specifies immunity to mind spells.
+  - name: IMMUNITY_TYPE_MOVEMENT_SPEED_DECREASE
+    value: 24
+    desc: | 
+      Specifies immunity to effects that decrease movement speed.
+  - name: IMMUNITY_TYPE_NEGATIVE_LEVEL
+    value: 29
+    desc: | 
+      Specifies immunity to level drains.
+  - name: IMMUNITY_TYPE_NONE
+    value: 0
+    desc: | 
+      Specifies the no immunity.
+  - name: IMMUNITY_TYPE_PARALYSIS
+    value: 6
+    desc: | 
+      Specifies immunity to paralysis.
+  - name: IMMUNITY_TYPE_POISON
+    value: 2
+    desc: | 
+      Specifies immunity to poison.
+  - name: IMMUNITY_TYPE_SAVING_THROW_DECREASE
+    value: 25
+    desc: | 
+      Specifies immunity to effects that decrease saving throws.
+  - name: IMMUNITY_TYPE_SILENCE
+    value: 11
+    desc: | 
+      Specifies immunity to silence.
+  - name: IMMUNITY_TYPE_SKILL_DECREASE
+    value: 27
+    desc: | 
+      Specifies immunity to effects that decrease skills.
+  - name: IMMUNITY_TYPE_SLEEP
+    value: 13
+    desc: | 
+      Specifies immunity to sleep.
+  - name: IMMUNITY_TYPE_SLOW
+    value: 9
+    desc: | 
+      Specifies immunity to slow.
+  - name: IMMUNITY_TYPE_SNEAK_ATTACK
+    value: 30
+    desc: | 
+      Specifies immunity to sneak attacks.
+  - name: IMMUNITY_TYPE_SPELL_RESISTANCE_DECREASE
+    value: 26
+    desc: | 
+      Specifies immunity to effects that decrease spell resistance.
+  - name: IMMUNITY_TYPE_STUN
+    value: 12
+    desc: | 
+      Specifies immunity to being stunned.
+  - name: IMMUNITY_TYPE_TRAP
+    value: 5
+    desc: | 
+      Specifies immunity to traps.
+seealso:
+  functions:
+    - EffectImmunity
+    - GetIsImmune

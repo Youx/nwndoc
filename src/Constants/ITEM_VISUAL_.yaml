@@ -1,0 +1,23 @@
+---
+type: Constants
+category: ITEM_VISUAL_*
+shortdesc: | 
+  Visual effects performed by an item.
+constants:
+  - name: ITEM_VISUAL_ACID
+    value: 0
+  - name: ITEM_VISUAL_COLD
+    value: 1
+  - name: ITEM_VISUAL_ELECTRICAL
+    value: 2
+  - name: ITEM_VISUAL_EVIL
+    value: 6
+  - name: ITEM_VISUAL_FIRE
+    value: 3
+  - name: ITEM_VISUAL_HOLY
+    value: 5
+  - name: ITEM_VISUAL_SONIC
+    value: 4
+seealso:
+  functions:
+    - ItemPropertyVisualEffect

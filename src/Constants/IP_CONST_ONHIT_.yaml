@@ -1,0 +1,109 @@
+---
+type: Constants
+category: IP_CONST_ONHIT_*
+shortdesc: | 
+  Itemproperty constants relating to when a weapons successfully hits something.
+constants:
+  - name: IP_CONST_ONHIT_ABILITYDRAIN
+    value: 18
+    desc: | 
+      Drain ability OnHit.
+  - name: IP_CONST_ONHIT_BLINDNESS
+    value: 16
+    desc: | 
+      Make creature blind OnHit.
+  - name: IP_CONST_ONHIT_CONFUSION
+    value: 3
+    desc: | 
+      Confuse target OnHit.
+  - name: IP_CONST_ONHIT_DAZE
+    value: 5
+    desc: | 
+      Daze target OnHit.
+  - name: IP_CONST_ONHIT_DEAFNESS
+    value: 15
+    desc: | 
+      Make target deaf OnHit.
+  - name: IP_CONST_ONHIT_DISEASE
+    value: 20
+    desc: | 
+      Make target diseased OnHit.
+  - name: IP_CONST_ONHIT_DISPELMAGIC
+    value: 11
+    desc: | 
+      Dispel magic off target OnHit.
+  - name: IP_CONST_ONHIT_DOOM
+    value: 6
+    desc: | 
+      Give the target the doom effect OnHit.
+  - name: IP_CONST_ONHIT_FEAR
+    value: 7
+    desc: | 
+      Cause fear in the target OnHit.
+  - name: IP_CONST_ONHIT_GREATERDISPEL
+    value: 12
+    desc: | 
+      Use greater dispel on target OnHit.
+  - name: IP_CONST_ONHIT_HOLD
+    value: 2
+    desc: | 
+      Hold the target OnHit.
+  - name: IP_CONST_ONHIT_ITEMPOISON
+    value: 19
+    desc: | 
+      Poison the target OnHit.
+  - name: IP_CONST_ONHIT_KNOCK
+    value: 8
+    desc: | 
+      Knock (unlock) the target OnHit.
+  - name: IP_CONST_ONHIT_LESSERDISPEL
+    value: 10
+    desc: | 
+      Use lesser dispel on target OnHit.
+  - name: IP_CONST_ONHIT_LEVELDRAIN
+    value: 17
+    desc: | 
+      Leveldrain target OnHit.
+  - name: IP_CONST_ONHIT_MORDSDISJUNCTION
+    value: 13
+    desc: | 
+      Use Mordenkainen's disjunction on target OnHit.
+  - name: IP_CONST_ONHIT_SILENCE
+    value: 14
+    desc: | 
+      Silence the target OnHit.
+  - name: IP_CONST_ONHIT_SLAYALIGNMENT
+    value: 23
+    desc: | 
+      Slay alignment OnHit.
+  - name: IP_CONST_ONHIT_SLAYALIGNMENTGROUP
+    value: 22
+    desc: | 
+      Slay alignmentgroup OnHit.
+  - name: IP_CONST_ONHIT_SLAYRACE
+    value: 21
+    desc: | 
+      Slay race OnHit.
+  - name: IP_CONST_ONHIT_SLEEP
+    value: 0
+    desc: | 
+      Make target sleep OnHit.
+  - name: IP_CONST_ONHIT_SLOW
+    value: 9
+    desc: | 
+      Slow target OnHit.
+  - name: IP_CONST_ONHIT_STUN
+    value: 1
+    desc: | 
+      Stun target OnHit.
+  - name: IP_CONST_ONHIT_VORPAL
+    value: 24
+    desc: | 
+      Vorpal OnHit.
+  - name: IP_CONST_ONHIT_WOUNDING
+    value: 25
+    desc: | 
+      Wound target OnHit. Will keep taking damage until healed.
+seealso:
+  functions:
+    - ItemPropertyOnHitProps

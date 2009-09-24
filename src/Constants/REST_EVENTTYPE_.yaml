@@ -1,0 +1,25 @@
+---
+type: Constants
+category: REST_EVENTTYPE_*
+shortdesc: | 
+  Determines the status of the last rest event for the PC.
+constants:
+  - name: REST_EVENTTYPE_REST_CANCELLED
+    value: 3
+    desc: | 
+      Rest event was cancelled through PC action, monster interaction, or another interrupting event.
+  - name: REST_EVENTTYPE_REST_FINISHED
+    value: 2
+    desc: | 
+      Rest event completed successfully. This is the normal constant sent after a rest.
+  - name: REST_EVENTTYPE_REST_INVALID
+    value: 0
+    desc: | 
+      Rest event last attempted was invalid due to closeness to hostile creatures, attempt was right after a combat, or another invalidating type of occurance happened to stop PC from resting.
+  - name: REST_EVENTTYPE_REST_STARTED
+    value: 1
+    desc: | 
+      Indicates that a rest event has been started for the specific PC.
+seealso:
+  functions:
+    - GetLastRestEventType

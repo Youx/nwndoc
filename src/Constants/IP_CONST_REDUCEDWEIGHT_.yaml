@@ -1,0 +1,29 @@
+---
+type: Constants
+category: IP_CONST_REDUCEDWEIGHT_*
+shortdesc: | 
+  Constants for the reduced weight itemproperty.
+constants:
+  - name: IP_CONST_REDUCEDWEIGHT_10_PERCENT
+    value: 5
+    desc: | 
+      Weight reduced by 10%.
+  - name: IP_CONST_REDUCEDWEIGHT_20_PERCENT
+    value: 4
+    desc: | 
+      Weight reduced by 20%.
+  - name: IP_CONST_REDUCEDWEIGHT_40_PERCENT
+    value: 3
+    desc: | 
+      Weight reduced by 40%.
+  - name: IP_CONST_REDUCEDWEIGHT_60_PERCENT
+    value: 2
+    desc: | 
+      Weight reduced by 60%.
+  - name: IP_CONST_REDUCEDWEIGHT_80_PERCENT
+    value: 1
+    desc: | 
+      Weight reduced by 80%.
+seealso:
+  functions:
+    - ItemPropertyWeightReduction

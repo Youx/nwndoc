@@ -1,0 +1,28 @@
+---
+type: Constants
+category: QUEST_*
+shortdesc: | 
+  Various quest statuses for quest functions.
+requirements: |
+  #include "x0_i0_plotgiver"
+
+constants:
+  - name: QUEST_QUEST_COMPLETE
+    value: 2
+    desc: | 
+      The quest has been completed.
+  - name: QUEST_QUEST_COMPLETE_OTHER
+    value: 3
+    desc: | 
+      Quest is complete, but was completed by someone else.
+  - name: QUEST_QUEST_IN_PROGRESS
+    value: 1
+    desc: | 
+      The quest is currently in progress.
+  - name: QUEST_QUEST_NOT_TAKEN
+    value: 0
+    desc: | 
+      Quest has not yet been accepted.
+seealso:
+  functions:
+    - GetQuestStatus

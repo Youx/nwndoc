@@ -1,0 +1,89 @@
+---
+type: Constants
+category: IP_CONST_ARCANE_SPELL_FAILURE_*
+shortdesc: | 
+  Itemproperty constants relating to arcane spell failure.
+constants:
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_5_PERCENT
+    value: 9
+    desc: | 
+      5% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_10_PERCENT
+    value: 8
+    desc: | 
+      10% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_15_PERCENT
+    value: 7
+    desc: | 
+      15% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_20_PERCENT
+    value: 6
+    desc: | 
+      20% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_25_PERCENT
+    value: 5
+    desc: | 
+      25% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_30_PERCENT
+    value: 4
+    desc: | 
+      30% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_35_PERCENT
+    value: 3
+    desc: | 
+      35% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_40_PERCENT
+    value: 2
+    desc: | 
+      40% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_45_PERCENT
+    value: 1
+    desc: | 
+      45% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_MINUS_50_PERCENT
+    value: 0
+    desc: | 
+      50% less Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_5_PERCENT
+    value: 10
+    desc: | 
+      5% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_10_PERCENT
+    value: 11
+    desc: | 
+      10% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_15_PERCENT
+    value: 12
+    desc: | 
+      15% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_20_PERCENT
+    value: 13
+    desc: | 
+      20% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_25_PERCENT
+    value: 14
+    desc: | 
+      25% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_30_PERCENT
+    value: 15
+    desc: | 
+      30% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_35_PERCENT
+    value: 16
+    desc: | 
+      35% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_40_PERCENT
+    value: 17
+    desc: | 
+      40% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_45_PERCENT
+    value: 18
+    desc: | 
+      45% higher Arcane Spell Failure.
+  - name: IP_CONST_ARCANE_SPELL_FAILURE_PLUS_50_PERCENT
+    value: 19
+    desc: | 
+      50% higher Arcane Spell Failure.
+seealso:
+  functions:
+    - ItemPropertyArcaneSpellFailure

@@ -1,0 +1,45 @@
+---
+type: Constants
+category: SPELL_SCHOOL_*
+shortdesc: | 
+  Schools of spells.
+constants:
+  - name: SPELL_SCHOOL_ABJURATION
+    value: 1
+    desc: | 
+      Spells that protect, block, or banish.
+  - name: SPELL_SCHOOL_CONJURATION
+    value: 2
+    desc: | 
+      Spells that bring creatures or materials to the caster.
+  - name: SPELL_SCHOOL_DIVINATION
+    value: 3
+    desc: | 
+      Spells that reveal information.
+  - name: SPELL_SCHOOL_ENCHANTMENT
+    value: 4
+    desc: | 
+      Spells that imbue the recipient with some property or grant the caster power over another being.
+  - name: SPELL_SCHOOL_EVOCATION
+    value: 5
+    desc: | 
+      Spells that manipulate energy or create something for nothing.
+  - name: SPELL_SCHOOL_GENERAL
+    value: 0
+    desc: | 
+      Standard spells that all casters have access to.
+  - name: SPELL_SCHOOL_ILLUSION
+    value: 6
+    desc: | 
+      Spells that alter perception or create false images.
+  - name: SPELL_SCHOOL_NECROMANCY
+    value: 7
+    desc: | 
+      Spells that maniputlate, create, or destroy life or life force.
+  - name: SPELL_SCHOOL_TRANSMUTATION
+    value: 8
+    desc: | 
+      Spells that transform the recipient physically or change its properties in a more subtle way.
+seealso:
+  functions:
+    - EffectSpellFailure

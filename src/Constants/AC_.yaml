@@ -1,0 +1,34 @@
+---
+type: Constants
+category: AC_*
+shortdesc: | 
+  Armor class adjustments.
+constants:
+  - name: AC_ARMOUR_ENCHANTMENT_BONUS
+    value: 2
+    desc: | 
+      Defines a bonus as coming from magical vestments cast upon the armor or really fine craftsmanship. Applies to worn armor only; not shields.
+  - name: AC_DEFLECTION_BONUS
+    value: 4
+    desc: | 
+      A bonus that applies to armor class from a skill or item that allows the creature to deflect or parry incoming attacks.
+  - name: AC_DODGE_BONUS
+    value: 0
+    desc: | 
+      A bonus to armor class gained from a skill that allows the creature to dodge out of the way of an incoming attack.
+  - name: AC_NATURAL_BONUS
+    value: 1
+    desc: | 
+      A natural bonus given to the armor class of the creature due to attributes such as tough hide or high dexterity.
+  - name: AC_SHIELD_ENCHANTMENT_BONUS
+    value: 3
+    desc: | 
+      A bonus granted to the armor class of a shield wearing creature derived from magical enchanments placed on the shield or fine craftsmanship.
+  - name: AC_VS_DAMAGE_TYPE_ALL
+    value: 4103
+    desc: | 
+      Special versus flag just for AC effects.
+seealso:
+  functions:
+    - EffectACDecrease
+    - EffectACIncrease

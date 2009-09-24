@@ -1,0 +1,27 @@
+---
+type: Constants
+category: STANDARD_FACTION_*
+shortdesc: | 
+  The four generic factions used to determine enmity and friendship by NPCs.
+constants:
+  - name: STANDARD_FACTION_COMMONER
+    value: 1
+    desc: | 
+      Characterized as an average townsperson. Indifferent to PCs, merchant and defender factions, defend other commoner faction members, and attack hostile faction members.
+  - name: STANDARD_FACTION_DEFENDER
+    value: 3
+    desc: | 
+      Characterized by a town guard. Defends commoners, merchants, other defenders, and PCs, and attacks hostile faction members.
+  - name: STANDARD_FACTION_HOSTILE
+    value: 0
+    desc: | 
+      Characterized as a normal monster. Attacks all other factions except other hostile faction members.
+  - name: STANDARD_FACTION_MERCHANT
+    value: 2
+    desc: | 
+      Characterized as a normal tradesman or merchant. Indifferent to PCs and commoners, defends other merchants and defenders, and attacks hostile.
+seealso:
+  functions:
+    - ChangeToStandardFaction
+    - GetStandardFactionReputation
+    - SetStandardFactionReputation

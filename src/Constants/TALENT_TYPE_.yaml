@@ -1,0 +1,21 @@
+---
+type: Constants
+category: TALENT_TYPE_*
+shortdesc: | 
+  Primary category of talents for use by creatures in game.
+constants:
+  - name: TALENT_TYPE_FEAT
+    value: 1
+    desc: | 
+      Feat talent.
+  - name: TALENT_TYPE_SKILL
+    value: 2
+    desc: | 
+      Primary category for all skills in the game.
+  - name: TALENT_TYPE_SPELL
+    value: 0
+    desc: | 
+      Spell casting talent.
+seealso:
+  functions:
+    - GetTypeFromTalent

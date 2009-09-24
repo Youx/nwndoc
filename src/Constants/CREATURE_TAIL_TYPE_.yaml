@@ -1,0 +1,20 @@
+---
+type: Constants
+category: CREATURE_TAIL_TYPE_*
+shortdesc: | 
+  For use with GetCreatureTailType() and SetCreatureTailType(). These constants must match those in the TailModel.2da.
+constants:
+  - name: CREATURE_TAIL_TYPE_BONE
+    value: 2
+  - name: CREATURE_TAIL_TYPE_DEVIL
+    value: 3
+  - name: CREATURE_TAIL_TYPE_LIZARD
+    value: 1
+  - name: CREATURE_TAIL_TYPE_NONE
+    value: 0
+seealso:
+  functions:
+    - GetCreatureTailType
+    - SetCreatureTailType
+author: Mistress
+

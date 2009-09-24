@@ -1,0 +1,24 @@
+---
+type: Constants
+category: X2_IP_ADDPROP_POLICY_*
+shortdesc: | 
+  These constants are only available if you include x2_inc_itemprop in your script. They are used in the IPSafeAddItemProperty command in the same include file and determine what should happen when adding a type of itemproperty to an item that already has one of that type.
+requirements: |
+  #include "x2_inc_itemprop"
+
+constants:
+  - name: X2_IP_ADDPROP_POLICY_IGNORE_EXISTING
+    value: 2
+    desc: | 
+      Adds itemproperty in any case - do not Use with OnHit or OnHitSpellCast props!
+  - name: X2_IP_ADDPROP_POLICY_KEEP_EXISTING
+    value: 1
+    desc: | 
+      Itemproperty won't be added if any property with same type, subtype and durationtype already exists.
+  - name: X2_IP_ADDPROP_POLICY_REPLACE_EXISTING
+    value: 0
+    desc: | 
+      Removes any property of the same type, subtype, and durationtype before adding.
+seealso:
+  functions:
+    - IPSafeAddItemProperty

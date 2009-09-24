@@ -1,0 +1,24 @@
+---
+type: Constants
+category: NW_ASC_HEAL_AT_*
+shortdesc: | 
+  Used to determine at which percentage of the master's hit points an NPC associate should attempt to heal the master. These are not actually constants, and do not exist in nwscript.nss.
+requirements: |
+  #include "x0_i0_assoc"
+
+constants:
+  - name: NW_ASC_HEAL_AT_25
+    value: 0x00000020
+    desc: | 
+      Heal master at 25% or less hit points of total.
+  - name: NW_ASC_HEAL_AT_50
+    value: 0x00000010
+    desc: | 
+      Heal master at 50% or less hit points of total.
+  - name: NW_ASC_HEAL_AT_75
+    value: 0x00000008
+    desc: | 
+      Heal master at 75% or less hit points of total.
+seealso:
+  functions:
+    - GetAssociateHealMaster

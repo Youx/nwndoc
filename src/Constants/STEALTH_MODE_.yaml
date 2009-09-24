@@ -1,0 +1,13 @@
+---
+type: Constants
+category: STEALTH_MODE_*
+shortdesc: | 
+  Determines if stealth mode (moving silently, hiding in shadows) is activated. Characters move slower when stealth mode is activated.
+constants:
+  - name: STEALTH_MODE_ACTIVATED
+    value: 1
+  - name: STEALTH_MODE_DISABLED
+    value: 0
+seealso:
+  functions:
+    - GetStealthMode

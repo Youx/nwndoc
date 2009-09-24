@@ -1,0 +1,192 @@
+---
+type: Constants
+category: EFFECT_TYPE_*
+shortdesc: | 
+  Constants that reflect the different effects that can be applied to creatures.
+constants:
+  - name: EFFECT_TYPE_ABILITY_DECREASE
+    value: 39
+  - name: EFFECT_TYPE_ABILITY_INCREASE
+    value: 38
+  - name: EFFECT_TYPE_AC_DECREASE
+    value: 47
+  - name: EFFECT_TYPE_AC_INCREASE
+    value: 46
+  - name: EFFECT_TYPE_ARCANE_SPELL_FAILURE
+    value: 18
+  - name: EFFECT_TYPE_AREA_OF_EFFECT
+    value: 20
+  - name: EFFECT_TYPE_ATTACK_DECREASE
+    value: 41
+  - name: EFFECT_TYPE_ATTACK_INCREASE
+    value: 40
+  - name: EFFECT_TYPE_BEAM
+    value: 21
+  - name: EFFECT_TYPE_BLINDNESS
+    value: 67
+  - name: EFFECT_TYPE_CHARMED
+    value: 23
+  - name: EFFECT_TYPE_CONCEALMENT
+    value: 72
+  - name: EFFECT_TYPE_CONFUSED
+    value: 24
+  - name: EFFECT_TYPE_CURSE
+    value: 33
+  - name: EFFECT_TYPE_CUTSCENE_PARALYZE
+    value: 80
+    desc: | 
+      An effect constructed with EffectCutsceneParalyze.
+  - name: EFFECT_TYPE_CUTSCENEGHOST
+    value: 83
+  - name: EFFECT_TYPE_CUTSCENEIMMOBILIZE
+    value: 84
+  - name: EFFECT_TYPE_DAMAGE_DECREASE
+    value: 43
+  - name: EFFECT_TYPE_DAMAGE_IMMUNITY_DECREASE
+    value: 45
+  - name: EFFECT_TYPE_DAMAGE_IMMUNITY_INCREASE
+    value: 44
+  - name: EFFECT_TYPE_DAMAGE_INCREASE
+    value: 42
+  - name: EFFECT_TYPE_DAMAGE_REDUCTION
+    value: 7
+  - name: EFFECT_TYPE_DAMAGE_RESISTANCE
+    value: 1
+  - name: EFFECT_TYPE_DARKNESS
+    value: 58
+  - name: EFFECT_TYPE_DAZED
+    value: 28
+  - name: EFFECT_TYPE_DEAF
+    value: 13
+  - name: EFFECT_TYPE_DISAPPEARAPPEAR
+    value: 75
+    desc: | 
+      An effect constructed with EffectDisappearAppear.
+  - name: EFFECT_TYPE_DISEASE
+    value: 32
+  - name: EFFECT_TYPE_DISPELMAGICALL
+    value: 59
+  - name: EFFECT_TYPE_DISPELMAGICBEST
+    value: 69
+  - name: EFFECT_TYPE_DOMINATED
+    value: 26
+  - name: EFFECT_TYPE_ELEMENTALSHIELD
+    value: 60
+  - name: EFFECT_TYPE_ENEMY_ATTACK_BONUS
+    value: 17
+  - name: EFFECT_TYPE_ENTANGLE
+    value: 11
+  - name: EFFECT_TYPE_ETHEREAL
+    value: 81
+    desc: | 
+      An effect constructed with EffectEthereal.
+  - name: EFFECT_TYPE_FRIGHTENED
+    value: 25
+  - name: EFFECT_TYPE_HASTE
+    value: 36
+  - name: EFFECT_TYPE_IMMUNITY
+    value: 15
+  - name: EFFECT_TYPE_IMPROVEDINVISIBILITY
+    value: 57
+  - name: EFFECT_TYPE_INVALIDEFFECT
+    value: 0
+  - name: EFFECT_TYPE_INVISIBILITY
+    value: 56
+  - name: EFFECT_TYPE_INVULNERABLE
+    value: 12
+  - name: EFFECT_TYPE_MISS_CHANCE
+    value: 71
+  - name: EFFECT_TYPE_MOVEMENT_SPEED_DECREASE
+    value: 49
+  - name: EFFECT_TYPE_MOVEMENT_SPEED_INCREASE
+    value: 48
+  - name: EFFECT_TYPE_NEGATIVELEVEL
+    value: 61
+  - name: EFFECT_TYPE_PARALYZE
+    value: 27
+  - name: EFFECT_TYPE_PETRIFY
+    value: 79
+    desc: | 
+      An effect constructed with EffectPetrify.
+  - name: EFFECT_TYPE_POISON
+    value: 31
+  - name: EFFECT_TYPE_POLYMORPH
+    value: 62
+  - name: EFFECT_TYPE_REGENERATE
+    value: 3
+  - name: EFFECT_TYPE_RESURRECTION
+    value: 14
+  - name: EFFECT_TYPE_SANCTUARY
+    value: 63
+  - name: EFFECT_TYPE_SAVING_THROW_DECREASE
+    value: 51
+  - name: EFFECT_TYPE_SAVING_THROW_INCREASE
+    value: 50
+  - name: EFFECT_TYPE_SEEINVISIBLE
+    value: 65
+  - name: EFFECT_TYPE_SILENCE
+    value: 34
+  - name: EFFECT_TYPE_SKILL_DECREASE
+    value: 55
+  - name: EFFECT_TYPE_SKILL_INCREASE
+    value: 54
+  - name: EFFECT_TYPE_SLEEP
+    value: 30
+  - name: EFFECT_TYPE_SLOW
+    value: 37
+  - name: EFFECT_TYPE_SPELL_FAILURE
+    value: 82
+    desc: | 
+      An effect constructed with EffectSpellFailure.
+  - name: EFFECT_TYPE_SPELL_IMMUNITY
+    value: 73
+  - name: EFFECT_TYPE_SPELL_RESISTANCE_DECREASE
+    value: 53
+  - name: EFFECT_TYPE_SPELL_RESISTANCE_INCREASE
+    value: 52
+  - name: EFFECT_TYPE_SPELLLEVELABSORPTION
+    value: 68
+  - name: EFFECT_TYPE_STUNNED
+    value: 29
+  - name: EFFECT_TYPE_SWARM
+    value: 76
+    desc: | 
+      An effect constructed with EffectSwarm.
+  - name: EFFECT_TYPE_TEMPORARY_HITPOINTS
+    value: 9
+  - name: EFFECT_TYPE_TIMESTOP
+    value: 66
+  - name: EFFECT_TYPE_TRUESEEING
+    value: 64
+  - name: EFFECT_TYPE_TURN_RESISTANCE_DECREASE
+    value: 77
+    desc: | 
+      An effect constructed with EffectTurnResistanceDecrease.
+  - name: EFFECT_TYPE_TURN_RESISTANCE_INCREASE
+    value: 78
+    desc: | 
+      An effect constructed with EffectTurnResistanceIncrease.
+  - name: EFFECT_TYPE_TURNED
+    value: 35
+  - name: EFFECT_TYPE_ULTRAVISION
+    value: 70
+  - name: EFFECT_TYPE_VISUALEFFECT
+    value: 74
+    desc: | 
+      An effect constructed with EffectVisualEffect.
+seealso:
+  functions:
+    - EffectBeam
+    - EffectEthereal
+    - EffectHeal
+    - EffectHitPointChangeWhenDying
+    - EffectLinkEffects
+    - EffectMissChance
+    - EffectModifyAttacks
+    - EffectNegativeLevel
+    - EffectSkillDecrease
+    - EffectSpellLevelAbsorption
+    - EffectTemporaryHitpoints
+    - GetEffectType
+    - GetHasEffect
+    - RemoveSpecificEffect

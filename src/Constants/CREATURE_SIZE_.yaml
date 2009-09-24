@@ -1,0 +1,33 @@
+---
+type: Constants
+category: CREATURE_SIZE_*
+shortdesc: | 
+  The size classes that creatures can belong to. Does not include gargantuan and colossal.
+constants:
+  - name: CREATURE_SIZE_HUGE
+    value: 5
+    desc: | 
+      Specifies the huge creature size.
+  - name: CREATURE_SIZE_INVALID
+    value: 0
+    desc: | 
+      Specifies an invalid creature size.
+  - name: CREATURE_SIZE_LARGE
+    value: 4
+    desc: | 
+      Specifies the large creature size.
+  - name: CREATURE_SIZE_MEDIUM
+    value: 3
+    desc: | 
+      Specifies the medium creature size.
+  - name: CREATURE_SIZE_SMALL
+    value: 2
+    desc: | 
+      Specifies the small creature size.
+  - name: CREATURE_SIZE_TINY
+    value: 1
+    desc: | 
+      Specifies the tiny creature size.
+seealso:
+  functions:
+    - GetCreatureSize

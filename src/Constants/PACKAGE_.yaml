@@ -1,0 +1,276 @@
+---
+type: Constants
+category: PACKAGE_*
+shortdesc: | 
+  Represent the default packages for classes. Used in conjunction with the LevelUpHenchman command.
+constants:
+  - name: PACKAGE_ABERRATION
+    value: 73
+  - name: PACKAGE_ANIMAL
+    value: 74
+  - name: PACKAGE_ARCANE_ARCHER
+    value: 65
+  - name: PACKAGE_ASSASSIN
+    value: 66
+  - name: PACKAGE_BARBARIAN
+    value: 0
+  - name: PACKAGE_BARBARIAN_BLACKGUARD
+    value: 90
+  - name: PACKAGE_BARBARIAN_BLACKGUARD_2NDCLASS
+    value: 118
+  - name: PACKAGE_BARBARIAN_BRUTE
+    value: 15
+  - name: PACKAGE_BARBARIAN_ORCBLOOD
+    value: 18
+  - name: PACKAGE_BARBARIAN_SAVAGE
+    value: 17
+  - name: PACKAGE_BARBARIAN_SLAYER
+    value: 16
+  - name: PACKAGE_BARD
+    value: 1
+  - name: PACKAGE_BARD_BLADE
+    value: 43
+  - name: PACKAGE_BARD_GALLANT
+    value: 44
+  - name: PACKAGE_BARD_HARPER
+    value: 91
+  - name: PACKAGE_BARD_HARPER_2NDCLASS
+    value: 119
+  - name: PACKAGE_BARD_JESTER
+    value: 45
+  - name: PACKAGE_BARD_LOREMASTER
+    value: 46
+  - name: PACKAGE_BEAST
+    value: 83
+  - name: PACKAGE_BLACKGUARD
+    value: 67
+  - name: PACKAGE_CLERIC
+    value: 2
+  - name: PACKAGE_CLERIC_BATTLE_PRIEST
+    value: 22
+  - name: PACKAGE_CLERIC_DEADWALKER
+    value: 20
+  - name: PACKAGE_CLERIC_DIVINE
+    value: 92
+  - name: PACKAGE_CLERIC_DIVINE_2NDCLASS
+    value: 120
+  - name: PACKAGE_CLERIC_ELEMENTALIST
+    value: 21
+  - name: PACKAGE_CLERIC_SHAMAN
+    value: 19
+  - name: PACKAGE_COMMONER
+    value: 82
+  - name: PACKAGE_CONSTRUCT
+    value: 75
+  - name: PACKAGE_DIVINE_CHAMPION
+    value: 109
+  - name: PACKAGE_DRAGON
+    value: 80
+  - name: PACKAGE_DRAGON_DISCIPLE
+    value: 111
+  - name: PACKAGE_DRUID
+    value: 3
+  - name: PACKAGE_DRUID_DEATH
+    value: 13
+  - name: PACKAGE_DRUID_GRAY
+    value: 12
+  - name: PACKAGE_DRUID_HAWKMASTER
+    value: 14
+  - name: PACKAGE_DRUID_INTERLOPER
+    value: 11
+  - name: PACKAGE_DRUID_SHIFTER
+    value: 93
+  - name: PACKAGE_DRUID_SHIFTER_2NDCLASS
+    value: 121
+  - name: PACKAGE_DWARVEN_DEFENDER
+    value: 89
+  - name: PACKAGE_ELEMENTAL
+    value: 78
+  - name: PACKAGE_FEY
+    value: 79
+  - name: PACKAGE_FIGHTER
+    value: 4
+  - name: PACKAGE_FIGHTER_COMMANDER
+    value: 26
+  - name: PACKAGE_FIGHTER_FINESSE
+    value: 23
+  - name: PACKAGE_FIGHTER_GLADIATOR
+    value: 25
+  - name: PACKAGE_FIGHTER_PIRATE
+    value: 24
+  - name: PACKAGE_FIGHTER_WEAPONMASTER
+    value: 94
+  - name: PACKAGE_FIGHTER_WEAPONMASTER_2NDCLASS
+    value: 122
+  - name: PACKAGE_GIANT
+    value: 84
+  - name: PACKAGE_HARPER
+    value: 64
+  - name: PACKAGE_HUMANOID
+    value: 76
+  - name: PACKAGE_INVALID
+    value: 255
+    desc: | 
+      When used with LevelUpHenchman (from the description): "if nPackage is PACKAGE_INVALID then it will use the starting package assigned to that class or just the class package"
+  - name: PACKAGE_MAGICBEAST
+    value: 85
+  - name: PACKAGE_MONK
+    value: 5
+  - name: PACKAGE_MONK_ASSASSIN
+    value: 95
+  - name: PACKAGE_MONK_ASSASSIN_2NDCLASS
+    value: 123
+  - name: PACKAGE_MONK_DEVOUT
+    value: 49
+  - name: PACKAGE_MONK_GIFTED
+    value: 48
+  - name: PACKAGE_MONK_PEASANT
+    value: 50
+  - name: PACKAGE_MONK_SPIRIT
+    value: 47
+  - name: PACKAGE_MONSTROUS
+    value: 77
+  - name: PACKAGE_NPC_ARIBETH_BLACKGUARD
+    value: 130
+  - name: PACKAGE_NPC_ARIBETH_PALADIN
+    value: 129
+  - name: PACKAGE_NPC_BARBARIAN_DAELAN
+    value: 105
+  - name: PACKAGE_NPC_BARD
+    value: 72
+  - name: PACKAGE_NPC_BARD_DEEKIN_2
+    value: 117
+  - name: PACKAGE_NPC_BARD_FIGHTER
+    value: 106
+  - name: PACKAGE_NPC_BARD_FIGHTER_SHARWYN2
+    value: 114
+  - name: PACKAGE_NPC_CLERIC_LINU
+    value: 104
+  - name: PACKAGE_NPC_FT_WEAPONMASTER
+    value: 102
+  - name: PACKAGE_NPC_FT_WEAPONMASTER_VALEN_2
+    value: 113
+  - name: PACKAGE_NPC_PALADIN_FALLING
+    value: 107
+  - name: PACKAGE_NPC_RG_SHADOWDANCER
+    value: 103
+  - name: PACKAGE_NPC_RG_TOMI_2
+    value: 116
+  - name: PACKAGE_NPC_ROGUE
+    value: 71
+  - name: PACKAGE_NPC_SORCERER
+    value: 70
+  - name: PACKAGE_NPC_WIZASSASSIN
+    value: 101
+  - name: PACKAGE_NPC_WIZASSASSIN_NATHYRRA
+    value: 115
+  - name: PACKAGE_OUTSIDER
+    value: 86
+  - name: PACKAGE_PALADIN
+    value: 6
+  - name: PACKAGE_PALADIN_CHAMPION
+    value: 54
+  - name: PACKAGE_PALADIN_DIVINE
+    value: 96
+  - name: PACKAGE_PALADIN_DIVINE_2NDCLASS
+    value: 124
+  - name: PACKAGE_PALADIN_ERRANT
+    value: 51
+  - name: PACKAGE_PALADIN_INQUISITOR
+    value: 53
+  - name: PACKAGE_PALADIN_UNDEAD
+    value: 52
+  - name: PACKAGE_PALE_MASTER
+    value: 110
+  - name: PACKAGE_RANGER
+    value: 7
+  - name: PACKAGE_RANGER_ARCANEARCHER
+    value: 97
+  - name: PACKAGE_RANGER_ARCANEARCHER_2NDCLASS
+    value: 125
+  - name: PACKAGE_RANGER_GIANTKILLER
+    value: 58
+  - name: PACKAGE_RANGER_MARKSMAN
+    value: 55
+  - name: PACKAGE_RANGER_STALKER
+    value: 57
+  - name: PACKAGE_RANGER_WARDEN
+    value: 56
+  - name: PACKAGE_ROGUE
+    value: 8
+  - name: PACKAGE_ROGUE_BANDIT
+    value: 60
+  - name: PACKAGE_ROGUE_GYPSY
+    value: 59
+  - name: PACKAGE_ROGUE_SCOUT
+    value: 61
+  - name: PACKAGE_ROGUE_SHADOWDANCER
+    value: 98
+  - name: PACKAGE_ROGUE_SHADOWDANCER_2NDCLASS
+    value: 126
+  - name: PACKAGE_ROGUE_SWASHBUCKLER
+    value: 62
+  - name: PACKAGE_SHADOWDANCER
+    value: 63
+    desc: | 
+      .
+  - name: PACKAGE_SHAPECHANGER
+    value: 87
+  - name: PACKAGE_SHIFTER
+    value: 108
+  - name: PACKAGE_SORCERER
+    value: 9
+  - name: PACKAGE_SORCERER_ABJURATION
+    value: 35
+  - name: PACKAGE_SORCERER_CONJURATION
+    value: 36
+  - name: PACKAGE_SORCERER_DIVINATION
+    value: 37
+  - name: PACKAGE_SORCERER_DRAGONDISCIPLE
+    value: 99
+  - name: PACKAGE_SORCERER_DRAGONDISCIPLE_2NDCLASS
+    value: 127
+  - name: PACKAGE_SORCERER_ENCHANTMENT
+    value: 38
+  - name: PACKAGE_SORCERER_EVOCATION
+    value: 31
+  - name: PACKAGE_SORCERER_ILLUSION
+    value: 40
+  - name: PACKAGE_SORCERER_NECROMANCY
+    value: 41
+  - name: PACKAGE_SORCERER_TRANSMUTATION
+    value: 42
+  - name: PACKAGE_UNDEAD
+    value: 81
+  - name: PACKAGE_VERMIN
+    value: 88
+  - name: PACKAGE_WEAPONMASTER
+    value: 112
+  - name: PACKAGE_WIZARD_ABJURATION
+    value: 27
+  - name: PACKAGE_WIZARD_CONJURATION
+    value: 28
+  - name: PACKAGE_WIZARD_DIVINATION
+    value: 29
+  - name: PACKAGE_WIZARD_ENCHANTMENT
+    value: 30
+  - name: PACKAGE_WIZARD_EVOCATION
+    value: 31
+  - name: PACKAGE_WIZARD_ILLUSION
+    value: 32
+  - name: PACKAGE_WIZARD_NECROMANCY
+    value: 33
+  - name: PACKAGE_WIZARD_PALEMASTER
+    value: 100
+  - name: PACKAGE_WIZARD_PALEMASTER_2NDCLASS
+    value: 128
+  - name: PACKAGE_WIZARD_TRANSMUTATION
+    value: 34
+  - name: PACKAGE_WIZARDGENERALIST
+    value: 10
+    desc: | 
+      The missing _ between WIZARD and GENERALIST is missing on BioWare's behalf, not the Lexicon's.
+seealso:
+  functions:
+    - GetCreatureStartingPackage
+    - LevelUpHenchman

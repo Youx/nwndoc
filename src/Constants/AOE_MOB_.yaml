@@ -1,0 +1,49 @@
+---
+type: Constants
+category: AOE_MOB_*
+shortdesc: | 
+  Area effects with mobile areas. Usually fixed on a mobile creature or target.
+constants:
+  - name: AOE_MOB_BLINDING
+    value: 17
+  - name: AOE_MOB_CIRCCHAOS
+    value: 15
+  - name: AOE_MOB_CIRCEVIL
+    value: 12
+  - name: AOE_MOB_CIRCGOOD
+    value: 13
+  - name: AOE_MOB_CIRCLAW
+    value: 14
+  - name: AOE_MOB_DRAGON_FEAR
+    value: 36
+  - name: AOE_MOB_ELECTRICAL
+    value: 25
+  - name: AOE_MOB_FEAR
+    value: 16
+  - name: AOE_MOB_FIRE
+    value: 23
+  - name: AOE_MOB_FROST
+    value: 24
+  - name: AOE_MOB_HORRIFICAPPEARANCE
+    value: 44
+  - name: AOE_MOB_INVISIBILITY_PURGE
+    value: 35
+  - name: AOE_MOB_MENACE
+    value: 19
+  - name: AOE_MOB_PROTECTION
+    value: 22
+  - name: AOE_MOB_SILENCE
+    value: 30
+  - name: AOE_MOB_STUN
+    value: 21
+  - name: AOE_MOB_TIDE_OF_BATTLE
+    value: 41
+  - name: AOE_MOB_TROGLODYTE_STENCH
+    value: 45
+  - name: AOE_MOB_TYRANT_FOG
+    value: 27
+  - name: AOE_MOB_UNEARTHLY
+    value: 18
+  - name: AOE_MOB_UNNATURAL
+    value: 20
+seealso:

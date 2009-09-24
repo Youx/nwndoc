@@ -1,0 +1,27 @@
+---
+type: Constants
+category: AREA_*
+shortdesc: | 
+  Constants pertaining to the properties of the area as set in the area's properties, and used with GetIsAreaAboveGround and GetIsAreaNatural.
+constants:
+  - name: AREA_ABOVEGROUND
+    value: 1
+    desc: | 
+      The area is aboveground, as opposed to underground.
+  - name: AREA_ARTIFICIAL
+    value: 0
+    desc: | 
+      The area is artificial, as opposed to natural.
+  - name: AREA_INVALID
+    value: -1
+    desc: | 
+      Return value for incorrect use of GetIsAreaAboveGround and GetIsAreaNatural.
+  - name: AREA_NATURAL
+    value: 1
+    desc: | 
+      The area is natural, as opposed to artificial.
+  - name: AREA_UNDERGROUND
+    value: 0
+    desc: | 
+      The area is underground, as opposed to aboveground.
+seealso:

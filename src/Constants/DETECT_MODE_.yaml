@@ -1,0 +1,17 @@
+---
+type: Constants
+category: DETECT_MODE_*
+shortdesc: | 
+  Determines how a perceptive a creature is being.
+constants:
+  - name: DETECT_MODE_ACTIVE
+    value: 1
+    desc: | 
+      Actively looking or searching.
+  - name: DETECT_MODE_PASSIVE
+    value: 0
+    desc: | 
+      Not actively looking or searching.
+seealso:
+  functions:
+    - GetDetectMode

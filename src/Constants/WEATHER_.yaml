@@ -1,0 +1,28 @@
+---
+type: Constants
+category: WEATHER_*
+shortdesc: | 
+  Different weather types.
+constants:
+  - name: WEATHER_CLEAR
+    value: 0
+    desc: | 
+      Clear.
+  - name: WEATHER_INVALID
+    value: -1
+  - name: WEATHER_RAIN
+    value: 1
+    desc: | 
+      Rain.
+  - name: WEATHER_SNOW
+    value: 2
+    desc: | 
+      Snow.
+  - name: WEATHER_USE_AREA_SETTINGS
+    value: -1
+    desc: | 
+      Use the settings defined for the current area.
+seealso:
+  functions:
+    - GetWeather
+    - SetWeather

@@ -1,0 +1,117 @@
+---
+type: Constants
+category: RACIAL_TYPE_*
+shortdesc: | 
+  Constants used to identify different races (human, dwarf etc)
+constants:
+  - name: RACIAL_TYPE_ABERRATION
+    value: 7
+    desc: | 
+      An aberration has a bizarre anatomy, strange abilities, an alien mindset, or any combination of the three. Aberrations almost always have darkvision of 60 feet.
+  - name: RACIAL_TYPE_ALL
+    value: 28
+    desc: | 
+      Specifies all races. Used to have unrestricted race in searches.
+  - name: RACIAL_TYPE_ANIMAL
+    value: 8
+    desc: | 
+      An animal is a nonhumanoid creature, usually a vertebrate. Almost all animal have low-light vision.
+  - name: RACIAL_TYPE_BEAST
+    value: 9
+    desc: | 
+      A beast is a nonhistorical, vertebrate creature with a reasonably normal anatomy and no magical or unusual abilities. Almost all beasts have low-light vision and darkvision of 60 feet.
+  - name: RACIAL_TYPE_CONSTRUCT
+    value: 10
+    desc: | 
+      A construct is an animcated object or artificially constructed creature. Constructs are not subject to critical hits, subdual damage, ability damage, ability drain, or energy drain. A constract cannot be raised or resurrected. Nearly all constructs have darkvision with a range of 60 feet.
+  - name: RACIAL_TYPE_DRAGON
+    value: 11
+    desc: | 
+      A dragon is a reptilian creature, usually winged, with magical or unusual abilities. Dragons are immune to sleep and paralysis effects. All dragons have dark vision of 60 feet.
+  - name: RACIAL_TYPE_DWARF
+    value: 0
+    desc: | 
+      Specifies the dwarven race.
+  - name: RACIAL_TYPE_ELEMENTAL
+    value: 16
+    desc: | 
+      An elemental is a composed of one of the four classical elements: air, earth, fire, or water. Elementals are immune to poison, sleep, paralysis, stunning, critical hits, or flanking. All elementals have dark vision of 60 feet.
+  - name: RACIAL_TYPE_ELF
+    value: 1
+    desc: | 
+      Specifies the elven race.
+  - name: RACIAL_TYPE_FEY
+    value: 17
+    desc: | 
+      A fey is a creature with supernatural abilities and connections to nature or to some other force or place. Fey are usually human-shaped. Almost all fey have low-light vision.
+  - name: RACIAL_TYPE_GIANT
+    value: 18
+    desc: | 
+      A giant is a humanoid creature of great strength, usualy of at least Large size. Nearly all giants have darkvision with a range of 60 feet.
+  - name: RACIAL_TYPE_GNOME
+    value: 2
+    desc: | 
+      Specifies the gnomish race.
+  - name: RACIAL_TYPE_HALFELF
+    value: 4
+    desc: | 
+      Specifies the half-elven race.
+  - name: RACIAL_TYPE_HALFLING
+    value: 3
+    desc: | 
+      Specifies the halfling race.
+  - name: RACIAL_TYPE_HALFORC
+    value: 5
+    desc: | 
+      Specifies the half-orc race.
+  - name: RACIAL_TYPE_HUMAN
+    value: 6
+    desc: | 
+      Specifies the human race.
+  - name: RACIAL_TYPE_HUMANOID_GOBLINOID
+    value: 12
+    desc: | 
+      A humanoid usually has two arms, two legs, and one head, or a humanlike torse, arms, and head. Goblinoids are among the weakest of humanoids.
+  - name: RACIAL_TYPE_HUMANOID_MONSTROUS
+    value: 13
+    desc: | 
+      These are humanoid creatures with monstrous or animalistic features, often having supernatural abilities. Most monstrous humanoids have darkvision with a range of 60 feet.
+  - name: RACIAL_TYPE_HUMANOID_ORC
+    value: 14
+    desc: | 
+      A humanoid usually has two arms, two legs, and one head, or a humanlike torse, arms, and head. Orcs a brutal warlike race who raids, pillages, and attacks others.
+  - name: RACIAL_TYPE_HUMANOID_REPTILIAN
+    value: 15
+    desc: | 
+      A humanoid usually has two arms, two legs, and one head, or a humanlike torse, arms, and head. Reptialian humanoids comprise lizardfolk, troglodytes, and kobolds.
+  - name: RACIAL_TYPE_INVALID
+    value: 28
+    desc: | 
+      Specifies an invalid race.
+  - name: RACIAL_TYPE_MAGICAL_BEAST
+    value: 19
+    desc: | 
+      Magical beasts are similar to beatss but have supernatural or extraordinary abilities. Most magical beasts have darkvision of 60 feet.
+  - name: RACIAL_TYPE_OOZE
+    value: 29
+  - name: RACIAL_TYPE_OUTSIDER
+    value: 20
+    desc: | 
+      An outsider is a nonelemental creature that comes from another dimension, reality, or plane. All outsiders have darkvision with a range of 60 feet.
+  - name: RACIAL_TYPE_SHAPECHANGER
+    value: 23
+    desc: | 
+      Shapechangers have a stable body but can assume other forms. Most shapechangers have darkvision with a range of 60 feet.
+  - name: RACIAL_TYPE_UNDEAD
+    value: 24
+    desc: | 
+      Undead are once-living creatures animated by spiritual or supernatural forces. Undead are immune to poson, slepp, paralysis, stunning, disease, death effects, and necromantic effects, and they ignore mind-influencing effects. Undead are not subject to critical hits, subdual damage, ability damage, ability drain, or energy drain. Most undead have darkvision with a range of 60 feet.
+  - name: RACIAL_TYPE_VERMIN
+    value: 25
+    desc: | 
+      Insects, arachnids, arthropods, worms, and similar invertibrates are treated as vermin. Vermin normally have darkvision of 60 feet.
+seealso:
+  functions:
+    - GetRacialType
+    - GetRacialTypeCount
+    - VersusRacialTypeEffect

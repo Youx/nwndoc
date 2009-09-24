@@ -1,0 +1,45 @@
+---
+type: Constants
+category: IP_CONST_UNLIMITEDAMMO_*
+shortdesc: | 
+  Itemproperty constants relating to unlimited ammunition.
+constants:
+  - name: IP_CONST_UNLIMITEDAMMO_1D6COLD
+    value: 3
+    desc: | 
+      Unlimited ammo doing 1d6 of cold damage.
+  - name: IP_CONST_UNLIMITEDAMMO_1D6FIRE
+    value: 2
+    desc: | 
+      Unlimited ammo doing 1d6 of fire damage.
+  - name: IP_CONST_UNLIMITEDAMMO_1D6LIGHT
+    value: 4
+    desc: | 
+      Unlimited ammo doing 1d6 of lightning damage.
+  - name: IP_CONST_UNLIMITEDAMMO_BASIC
+    value: 1
+    desc: | 
+      Unlimited ammo of base type (basic arrows / bolts / bullets depending on type of ranged weapon).
+  - name: IP_CONST_UNLIMITEDAMMO_PLUS1
+    value: 11
+    desc: | 
+      Unlimited ammo doing +1 damage.
+  - name: IP_CONST_UNLIMITEDAMMO_PLUS2
+    value: 12
+    desc: | 
+      Unlimited ammo doing +2 damage.
+  - name: IP_CONST_UNLIMITEDAMMO_PLUS3
+    value: 13
+    desc: | 
+      Unlimited ammo doing +3 damage.
+  - name: IP_CONST_UNLIMITEDAMMO_PLUS4
+    value: 14
+    desc: | 
+      Unlimited ammo doing +4 damage.
+  - name: IP_CONST_UNLIMITEDAMMO_PLUS5
+    value: 15
+    desc: | 
+      Unlimited ammo doing +5 damage.
+seealso:
+  functions:
+    - ItemPropertyUnlimitedAmmo

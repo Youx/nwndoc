@@ -1,0 +1,39 @@
+---
+type: Constants
+category: PERCEPTION_*
+shortdesc: | 
+  Determines if a creature perceives another creature using its Spot skill vs. the other creature's Hide skill and its Listen skill vs. the other creature's Move Silently skill.
+constants:
+  - name: PERCEPTION_HEARD
+    value: 5
+    desc: | 
+      Heard (Listen beats Move Silently), no line of sight.
+  - name: PERCEPTION_HEARD_AND_NOT_SEEN
+    value: 2
+    desc: | 
+      Heard only (Hide beats Spot, Listen beats Move Silently). Usually arouses suspicion for a creature to take a closer look.
+  - name: PERCEPTION_NOT_HEARD
+    value: 4
+    desc: | 
+      Not heard (Move Silently beats Listen), no line of sight.
+  - name: PERCEPTION_NOT_SEEN
+    value: 6
+    desc: | 
+      Not seen (Hide beats Spot), too far away to heard or magically silcenced.
+  - name: PERCEPTION_NOT_SEEN_AND_NOT_HEARD
+    value: 1
+    desc: | 
+      Neither seen nor heard (Hide beats Spot, Move Silently beats Listen).
+  - name: PERCEPTION_SEEN
+    value: 7
+    desc: | 
+      Seen (Spot beats Hide), too far away to heard or magically silcenced.
+  - name: PERCEPTION_SEEN_AND_HEARD
+    value: 0
+    desc: | 
+      Both seen and heard (Spot beats Hide, Listen beats Move Silently).
+  - name: PERCEPTION_SEEN_AND_NOT_HEARD
+    value: 3
+    desc: | 
+      Seen only (Spot beats Hide, Move Silently beats Listen). Usually causes a creature to take instant notice.
+seealso:

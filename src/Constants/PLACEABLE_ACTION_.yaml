@@ -1,0 +1,26 @@
+---
+type: Constants
+category: PLACEABLE_ACTION_*
+shortdesc: | 
+  Actions that can be performed on placeable objects.
+constants:
+  - name: PLACEABLE_ACTION_BASH
+    value: 2
+    desc: | 
+      Refers to the "Bash" action on placeable objects.
+  - name: PLACEABLE_ACTION_KNOCK
+    value: 4
+    desc: | 
+      Refers to the "Knock" action on placeable objects.
+  - name: PLACEABLE_ACTION_UNLOCK
+    value: 1
+    desc: | 
+      Refers to the "Unlock" action on placeable objects.
+  - name: PLACEABLE_ACTION_USE
+    value: 0
+    desc: | 
+      Refers to the "Use" action on placeable objects.
+seealso:
+  functions:
+    - DoPlaceableObjectAction
+    - GetIsPlaceableObjectActionPossible

@@ -1,0 +1,37 @@
+---
+type: Constants
+category: IP_CONST_ALIGNMENTGROUP_*
+shortdesc: | 
+  Constants used for itemproperties relating to specific alignment groups - for instance AC bonus vs an alignment group.
+constants:
+  - name: IP_CONST_ALIGNMENTGROUP_ALL
+    value: 0
+    desc: | 
+      All alignments.
+  - name: IP_CONST_ALIGNMENTGROUP_CHAOTIC
+    value: 3
+    desc: | 
+      Any chaotic alignment (chaotic good, chaotic neutral, chaotic evil).
+  - name: IP_CONST_ALIGNMENTGROUP_EVIL
+    value: 5
+    desc: | 
+      Any evil alignment (lawful evil, neutral evil, chaotic evil).
+  - name: IP_CONST_ALIGNMENTGROUP_GOOD
+    value: 4
+    desc: | 
+      Any good alignment (lawful good, neutral good, chaotic good).
+  - name: IP_CONST_ALIGNMENTGROUP_LAWFUL
+    value: 2
+    desc: | 
+      Any lawful alignment (lawful good, lawful neutral, lawful evil).
+  - name: IP_CONST_ALIGNMENTGROUP_NEUTRAL
+    value: 1
+    desc: | 
+      Any neutral alignment (lawful neutral, true neutral, chaotic neutral).
+seealso:
+  functions:
+    - ItemPropertyACBonusVsAlign
+    - ItemPropertyAttackBonusVsAlign
+    - ItemPropertyDamageBonusVsAlign
+    - ItemPropertyEnhancementBonusVsAlign
+    - ItemPropertyLimitUseByAlign

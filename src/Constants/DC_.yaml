@@ -1,0 +1,42 @@
+---
+type: Constants
+category: DC_*
+shortdesc: | 
+  Difficulty Class constants used by the AutoDC function. Listed in the table below in order from easiest to hardest.
+requirements: |
+  #include "nw_i0_plot"
+
+constants:
+  - name: DC_EASY
+    value: 0
+    desc: | 
+      The easiest DC.
+  - name: DC_MEDIUM
+    value: 1
+    desc: | 
+      The second easiest DC.
+  - name: DC_HARD
+    value: 2
+    desc: | 
+      The third easiest DC.
+  - name: DC_SUPERIOR
+    value: 3
+    desc: | 
+      The DC truly in the middle.
+  - name: DC_MASTER
+    value: 4
+    desc: | 
+      The third hardest DC.
+  - name: DC_LEGENDARY
+    value: 5
+    desc: | 
+      The second hardest DC.
+  - name: DC_EPIC
+    value: 6
+    desc: | 
+      The hardest DC.
+seealso:
+  functions:
+    - AutoAlignE
+    - AutoAlignG
+    - AutoDC

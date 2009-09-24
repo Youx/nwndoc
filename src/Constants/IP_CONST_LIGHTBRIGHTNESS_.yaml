@@ -1,0 +1,25 @@
+---
+type: Constants
+category: IP_CONST_LIGHTBRIGHTNESS_*
+shortdesc: | 
+  Itemproperty constants relating to the brightness of light an item emits.
+constants:
+  - name: IP_CONST_LIGHTBRIGHTNESS_BRIGHT
+    value: 4
+    desc: | 
+      Bright light.
+  - name: IP_CONST_LIGHTBRIGHTNESS_DIM
+    value: 1
+    desc: | 
+      Dim light.
+  - name: IP_CONST_LIGHTBRIGHTNESS_LOW
+    value: 2
+    desc: | 
+      Low light.
+  - name: IP_CONST_LIGHTBRIGHTNESS_NORMAL
+    value: 3
+    desc: | 
+      Normal light.
+seealso:
+  functions:
+    - ItemPropertyLight

@@ -1,0 +1,93 @@
+---
+type: Constants
+category: ITEM_APPR_*
+shortdesc: | 
+  Various item appearance constants which describe the way certain classes of items can appear.
+constants:
+  - name: ITEM_APPR_ARMOR_COLOR_CLOTH1
+    value: 2
+  - name: ITEM_APPR_ARMOR_COLOR_CLOTH2
+    value: 3
+  - name: ITEM_APPR_ARMOR_COLOR_LEATHER1
+    value: 0
+  - name: ITEM_APPR_ARMOR_COLOR_LEATHER2
+    value: 1
+  - name: ITEM_APPR_ARMOR_COLOR_METAL1
+    value: 4
+  - name: ITEM_APPR_ARMOR_COLOR_METAL2
+    value: 5
+  - name: ITEM_APPR_ARMOR_MODEL_BELT
+    value: 8
+  - name: ITEM_APPR_ARMOR_MODEL_LBICEP
+    value: 13
+  - name: ITEM_APPR_ARMOR_MODEL_LFOOT
+    value: 1
+  - name: ITEM_APPR_ARMOR_MODEL_LFOREARM
+    value: 11
+  - name: ITEM_APPR_ARMOR_MODEL_LHAND
+    value: 17
+  - name: ITEM_APPR_ARMOR_MODEL_LSHIN
+    value: 3
+  - name: ITEM_APPR_ARMOR_MODEL_LSHOULDER
+    value: 15
+  - name: ITEM_APPR_ARMOR_MODEL_LTHIGH
+    value: 4
+  - name: ITEM_APPR_ARMOR_MODEL_NECK
+    value: 9
+  - name: ITEM_APPR_ARMOR_MODEL_PELVIS
+    value: 6
+  - name: ITEM_APPR_ARMOR_MODEL_RBICEP
+    value: 12
+  - name: ITEM_APPR_ARMOR_MODEL_RFOOT
+    value: 0
+  - name: ITEM_APPR_ARMOR_MODEL_RFOREARM
+    value: 10
+  - name: ITEM_APPR_ARMOR_MODEL_RHAND
+    value: 16
+  - name: ITEM_APPR_ARMOR_MODEL_ROBE
+    value: 18
+  - name: ITEM_APPR_ARMOR_MODEL_RSHIN
+    value: 2
+  - name: ITEM_APPR_ARMOR_MODEL_RSHOULDER
+    value: 14
+  - name: ITEM_APPR_ARMOR_MODEL_RTHIGH
+    value: 5
+  - name: ITEM_APPR_ARMOR_MODEL_TORSO
+    value: 7
+  - name: ITEM_APPR_ARMOR_NUM_COLORS
+    value: 6
+  - name: ITEM_APPR_ARMOR_NUM_MODELS
+    value: 19
+  - name: ITEM_APPR_NUM_TYPES
+    value: 5
+  - name: ITEM_APPR_TYPE_ARMOR_COLOR
+    value: 4
+  - name: ITEM_APPR_TYPE_ARMOR_MODEL
+    value: 3
+  - name: ITEM_APPR_TYPE_SIMPLE_MODEL
+    value: 0
+  - name: ITEM_APPR_TYPE_WEAPON_COLOR
+    value: 1
+  - name: ITEM_APPR_TYPE_WEAPON_MODEL
+    value: 2
+  - name: ITEM_APPR_WEAPON_COLOR_BOTTOM
+    value: 0
+  - name: ITEM_APPR_WEAPON_COLOR_MIDDLE
+    value: 1
+  - name: ITEM_APPR_WEAPON_COLOR_TOP
+    value: 2
+  - name: ITEM_APPR_WEAPON_MODEL_BOTTOM
+    value: 0
+  - name: ITEM_APPR_WEAPON_MODEL_MIDDLE
+    value: 1
+  - name: ITEM_APPR_WEAPON_MODEL_TOP
+    value: 2
+seealso:
+  functions:
+    - CopyItemAndModify
+    - IPDyeArmor
+    - IPGetModifiedArmor
+    - IPGetNextArmorAppearanceType
+    - IPGetNumberOfAppearances
+    - IPGetPrevArmorAppearanceType
+    - IPGetRandomArmorAppearanceType

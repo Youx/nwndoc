@@ -1,0 +1,17 @@
+---
+type: Constants
+category: CREATURE_MODEL_TYPE_*
+shortdesc: | 
+  UNKNOWN
+constants:
+  - name: CREATURE_MODEL_TYPE_NONE
+    value: 0
+  - name: CREATURE_MODEL_TYPE_SKIN
+    value: 1
+  - name: CREATURE_MODEL_TYPE_TATTOO
+    value: 2
+  - name: CREATURE_MODEL_TYPE_UNDEAD
+    value: 255
+seealso:
+author: Mistress
+

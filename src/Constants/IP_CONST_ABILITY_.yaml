@@ -1,0 +1,35 @@
+---
+type: Constants
+category: IP_CONST_ABILITY_*
+shortdesc: | 
+  Itemproperty constants regarding abilities.
+constants:
+  - name: IP_CONST_ABILITY_CHA
+    value: 5
+    desc: | 
+      Charisma.
+  - name: IP_CONST_ABILITY_CON
+    value: 2
+    desc: | 
+      Constitution.
+  - name: IP_CONST_ABILITY_DEX
+    value: 1
+    desc: | 
+      Dexterity.
+  - name: IP_CONST_ABILITY_INT
+    value: 3
+    desc: | 
+      Intelligence.
+  - name: IP_CONST_ABILITY_STR
+    value: 0
+    desc: | 
+      Strength.
+  - name: IP_CONST_ABILITY_WIS
+    value: 4
+    desc: | 
+      Wisdom.
+seealso:
+  functions:
+    - ItemPropertyAbilityBonus
+    - ItemPropertyDecreaseAbility
+    - ItemPropertyOnMonsterHitProperties

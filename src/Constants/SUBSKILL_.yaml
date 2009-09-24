@@ -1,0 +1,19 @@
+---
+type: Constants
+category: SUBSKILL_*
+shortdesc: | 
+  Subskills for dealing with traps; additions for Rogues to their standard Search skill.
+constants:
+  - name: SUBSKILL_EXAMINETRAP
+    value: 102
+  - name: SUBSKILL_FLAGTRAP
+    value: 100
+    desc: | 
+      Allows a Rogue to find a trap.
+  - name: SUBSKILL_RECOVERTRAP
+    value: 101
+    desc: | 
+      Allows a rogue to disable, recover, and pocket a trap if the Disable Device skill check is high enough.
+seealso:
+  functions:
+    - ActionUseSkill

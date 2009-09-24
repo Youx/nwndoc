@@ -1,0 +1,153 @@
+---
+type: Constants
+category: IP_CONST_FEAT_*
+shortdesc: | 
+  Constants for feat related itemproperties. The descriptions here are identical to the ones in the FEAT_* constants section. Far from all the feats can be added to items. Note that even if a description says that a feat requires a prerequisite, this isn't the case when granting that feat through the use of an item.
+constants:
+  - name: IP_CONST_FEAT_ALERTNESS
+    value: 0
+    desc: | 
+      Prerequisite: None. Gives +2 on all Spot and Listen checks. Use: Automatic. NWN Manual - pg. 87.
+  - name: IP_CONST_FEAT_AMBIDEXTROUS
+    value: 1
+    desc: | 
+      Prerequisite: DEX 15+. When fighting with two weapons, this feat reduces the penalty for the off-hand weapon by 4. Use: Automatic when fighting with two weapons. Rangers get this feat at 1st level. NWN Manual - pg. 87.
+  - name: IP_CONST_FEAT_ARMOR_PROF_HEAVY
+    value: 24
+    desc: | 
+      Prerequisite: Armor Proficiency (Light) and Armor Proficiency (Medium). Knowledge of effective use of heavy armor. Use: Automatic. Fighters, Paladins and Clerics receive this feat for free. NWN Manual - pg. 87.
+  - name: IP_CONST_FEAT_ARMOR_PROF_LIGHT
+    value: 25
+    desc: | 
+      Knowledge of effective use of light armor. Use: Automatic. All classes except Monk, Wizard and Sorcerers get this feat free. NWN Manual - pg. 87.
+  - name: IP_CONST_FEAT_ARMOR_PROF_MEDIUM
+    value: 26
+    desc: | 
+      Prerequisite: Armor Proficiency (Light). Ability to effectively use medium armor. Use: Automatic. All classes except monks, rogues, wizards and sorcerers get this feat free. NWN Manual - pg. 88.
+  - name: IP_CONST_FEAT_CLEAVE
+    value: 2
+    desc: | 
+      Prerequisite: STR 13+, Power Attack feat. If a character with this feat kills an opponent in melee combat, they get a free attack against any opponent who is within melee range. Use: Automatic. NWN Manual - pg. 88.
+  - name: IP_CONST_FEAT_COMBAT_CASTING
+    value: 3
+    desc: | 
+      Prerequisite: Ability to cast 1st level spells. Character is adept at casting spells in combat removing the standard -4 penalty to Concentration checks when within 3 meters of an enemy. Use: Automatic. NWN Manual - pg. 89.
+  - name: IP_CONST_FEAT_DISARM
+    value: 28
+    desc: | 
+      Prerequisite: INT 13+, The character can attempt to disarm an opponent in melee combat. Attempting a disarm applies a -6 penalty to the character's attack roll, and the combatant with the larger weapon gains a +4 bonus per size category of difference. A successful hit deals normal damage, and if the opponent fails a Discipline check then the weapon files from the opponent's hands. Use: Selected. A disarm attempt provokes an attack of opportunity. NWN Manual - pg. 89.
+  - name: IP_CONST_FEAT_DISARM_WHIP
+    value: 37
+  - name: IP_CONST_FEAT_DODGE
+    value: 4
+    desc: | 
+      Prerequisite: DEX 13+. Increased agility grants a +1 dodge bonus to AC against attacks from a characters current target (or last attacker). Use: Automatic, though a condition that negates a Dexterity bonus to AC also negates any dodge bonuses. Multiple dodge bonuses (different feats, racial bonuses) are cumulative. NWN Manual - pg. 89.
+  - name: IP_CONST_FEAT_EXTRA_TURNING
+    value: 5
+    desc: | 
+      Prerequisite: Exclusive to cleric or paladin. This divine ability allows the character to turn undead 6 additional times per day. Use: Automatic.
+  - name: IP_CONST_FEAT_HIDE_IN_PLAIN_SIGHT
+    value: 31
+  - name: IP_CONST_FEAT_IMPCRITUNARM
+    value: 20
+    desc: | 
+      Improved critical: unarmed strike. Prerequisite: Proficiency with specific weapon, Base attack bonus of +8 or higher. Combat ability doubles the critical threat range with a given weapon. A weapon with a normal critical range of 19-20 would now threaten on a roll of 17-20. Use: Automatic. The threat range of a Keen weapon is already doubled, increasing to triple with this feat. This feat can be selected multiple time, applying to a new weapon category each time.
+  - name: IP_CONST_FEAT_KNOCKDOWN
+    value: 6
+    desc: | 
+      Prerequisite: None. With this maneuver, a character can attempt to knock an opponent to the ground. An attack roll is made with a -4 penalty to the attack and, if successful, an opposed roll is made, comparing your attack roll with the defender's Discipline skill check. If successful, the target is knocked to a prone position. Use: Selected. Prone characters cannot attack. Refer to NWN Manual - pg. 93 for more info.
+  - name: IP_CONST_FEAT_MOBILITY
+    value: 27
+    desc: | 
+      Prerequisite: DEX 13+ and Dodge, A character with this feat has learned to avoid attacks of opportunity more effectively, gaining a +4 dodge bonus to AC against them. Use: Automatic, though a condition that negates a Dexterity bonus to AC also negates any dodge bonuses. Multiple dodge bonuses (from different feats or racial bonuses) are cumulative. NWN Manual - pg. 94.
+  - name: IP_CONST_FEAT_POINTBLANK
+    value: 7
+    desc: | 
+      Point blank shot. Prerequisite: None. Unfazed by close combat, a character with this feat negates the -4 penalty for using missile weapons within melee attack range, and gains an additional +1 to attack and damage with ranged weapons when the target is within 15 feet. Use: Automatic. NWN Manual - pg. 94.
+  - name: IP_CONST_FEAT_POWERATTACK
+    value: 16
+    desc: | 
+      Prerequisite: STR 13+. A character with this feat can make powerful but ungainly attacks. When selected, this grants a +5 bonus to the damage roll, but inflicts a -5 penalty to the attack roll. Use: Combat mode. NWN Manual - pg. 94.
+  - name: IP_CONST_FEAT_RAPID_SHOT
+    value: 30
+    desc: | 
+      Prerequisite: DEX 13+ and Point Blank Shot, A character with this freat is quick with ranged weapons, gaining an extra atack per round while using them. When a rapid attack round is attempted, the extra attack is made at the highest base attack bonus, though all attacks within the round suffer a -2 penalty. Use: Selected. NWN Manual - pg. 95.
+  - name: IP_CONST_FEAT_SHIELD_PROFICIENCY
+    value: 35
+    desc: | 
+      Prerequisite: None, A character with this feat has the basic knowledge of how to effectively use a shield. Use: All classes except monks, rogues, sorcerers, and wizards have this feat for free. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SNEAK_ATTACK_1D6
+    value: 32
+  - name: IP_CONST_FEAT_SNEAK_ATTACK_2D6
+    value: 33
+  - name: IP_CONST_FEAT_SNEAK_ATTACK_3D6
+    value: 34
+  - name: IP_CONST_FEAT_SNEAK_ATTACK_5D6
+    value: 39
+  - name: IP_CONST_FEAT_SPELLFOCUSABJ
+    value: 8
+    desc: | 
+      Spell focus abjuration. Prerequisite: Ability to cast 1st-level spells. A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells that the character casts from that school. This makes it more difficult for enemies to resist the effects of spells of this school when the caster casts them. Use: Automatic. This feat may be selected multiple times, but the effects do not stack. It applies to a different school of magic in each case. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SPELLFOCUSCON
+    value: 9
+    desc: | 
+      Spell focus conjuration. Prerequisite: Ability to cast 1st-level spells. A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells that the character casts from that school. This makes it more difficult for enemies to resist the effects of spells of this school when the caster casts them. Use: Automatic. This feat may be selected multiple times, but the effects do not stack. It applies to a different school of magic in each case. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SPELLFOCUSDIV
+    value: 10
+    desc: | 
+      Spell focus divination. Prerequisite: Ability to cast 1st-level spells. A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells that the character casts from that school. This makes it more difficult for enemies to resist the effects of spells of this school when the caster casts them. Use: Automatic. This feat may be selected multiple times, but the effects do not stack. It applies to a different school of magic in each case. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SPELLFOCUSENC
+    value: 11
+    desc: | 
+      Spell focus enchantment. Prerequisite: Ability to cast 1st-level spells. A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells that the character casts from that school. This makes it more difficult for enemies to resist the effects of spells of this school when the caster casts them. Use: Automatic. This feat may be selected multiple times, but the effects do not stack. It applies to a different school of magic in each case. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SPELLFOCUSEVO
+    value: 12
+    desc: | 
+      Spell focus evocation. Prerequisite: Ability to cast 1st-level spells. A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells that the character casts from that school. This makes it more difficult for enemies to resist the effects of spells of this school when the caster casts them. Use: Automatic. This feat may be selected multiple times, but the effects do not stack. It applies to a different school of magic in each case. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SPELLFOCUSILL
+    value: 13
+    desc: | 
+      Spell focus illusion. Prerequisite: Ability to cast 1st-level spells. A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells that the character casts from that school. This makes it more difficult for enemies to resist the effects of spells of this school when the caster casts them. Use: Automatic. This feat may be selected multiple times, but the effects do not stack. It applies to a different school of magic in each case. Gnome racial ability. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SPELLFOCUSNEC
+    value: 14
+    desc: | 
+      Spell focus necromancy. Prerequisite: Ability to cast 1st-level spells. A character with this feat is adept in a certain school of magic, granting a +2 bonus to spell save DC for all spells that the character casts from that school. This makes it more difficult for enemies to resist the effects of spells of this school when the caster casts them. Use: Automatic. This feat may be selected multiple times, but the effects do not stack. It applies to a different school of magic in each case. NWN Manual - pg. 96.
+  - name: IP_CONST_FEAT_SPELLPENETRATION
+    value: 15
+    desc: | 
+      Prerequisite: Ability to cast 1st-level spells. A character with this feat can use magic to better pierce the defenses of his opponents, gaining a +2 bonus to caster level checks to beat a creature's spell resistance. Use: Automatic. NWN Manual - pg. 97.
+  - name: IP_CONST_FEAT_USE_POISON
+    value: 36
+  - name: IP_CONST_FEAT_TWO_WEAPON_FIGHTING
+    value: 17
+    desc: | 
+      Prerequisite: None. A character with this feat reduces the penalties suffered when using a weapon in each hand. The normal penalty of -6 to the primary hand and -10 to off-hand becomes -4 for the primary hand and -8 for the off-hand. Use: The ambidexterity feat further reduces the attack penalty for the second weapon by 4 (-4/-4). Best results are achieved if the off-hand weapon is light, further reducing the penalty for both the primary and off-hand by 2 (-2/-2). Rangers receive this feat for free at 1st level. NWN Manual - pg. 98.
+  - name: IP_CONST_FEAT_WEAPFINESSE
+    value: 19
+    desc: | 
+      Weapon finesse. Prerequisite: Base attack bonus +1 or higher. A character with this feat isa dept at using light weapons subtly and effectively, allowing him to calculate attack rolls with their Dexterity modifier bonus instead of their Strength bonus (if Dexterity is higher than Strength). Use: Automatic when using any of the following weapons: dagger, handaxe, kama, kukri, light crossbow, light hammer, mace, rapier, short sword, shuriken, sickle, sling, throwing axe, and unarmed strike. NWN Manual - pg. 98.
+  - name: IP_CONST_FEAT_WEAPON_PROF_CREATURE
+    value: 38
+  - name: IP_CONST_FEAT_WEAPON_PROF_EXOTIC
+    value: 21
+    desc: | 
+      Prerequisite: Base attack bonus +1 or higher. This feat allows effective use of all exotic weapons. The exotic weapons list includes the dire mace, double axe, kama, katana, kukri, scythe, shuriken, and two-bladed sword. Use: Automatic. NWN Manual - pg. 99.
+  - name: IP_CONST_FEAT_WEAPON_PROF_MARTIAL
+    value: 22
+    desc: | 
+      Prerequisite: None. This feat allows effective use of all martial weapons. A character cannot equip weapons they are not proficient in. The martial weapons list includes the bastard sword, battleaxe, greataxe, greatsword, halberd, handaxe, heavy flail, light flail, light hammer, longbow, longsword, rapier, scimitar, short sword, shortbow, throwing axe, and warhammer. Use: Barbarians, fighters, paladins, and rangers are automatically proficient with all martial weapons. NWN Manual - pg. 99.
+  - name: IP_CONST_FEAT_WEAPON_PROF_SIMPLE
+    value: 23
+    desc: | 
+      Prerequisite: None. This feat allows effective use of all simple weapons including club, dagger, mace, sickle, spear, morningstar, quarterstaff, light crossbow, dart, sling, and havey crossbow. A character cannot equip weapons they are not proficient in. Use: All characters except for druids, monks, rogues, and wizards are automatically proficient with all simple weapons. The spell Tenser's Transformation gives a wizard a temporary proficiency with all simple weapons. NWN Manual - pg. 100.
+  - name: IP_CONST_FEAT_WEAPSPEUNARM
+    value: 18
+    desc: | 
+      Weapon specialization unarmed strike. Prerequisite: Fighter with Base attack bonus of +4 or higher, Weapon Focus in the chosen weapon type. A character with this feat has trained especially hard with a specific weapon group, gaining a +2 damage bonus with that category. Use: This feat may be selected multiple times, but the effects do not stack. It applies to a new weapon in each case, so long as that group is already associated with Weapon Focus. NWN Manual - pg. 100.
+  - name: IP_CONST_FEAT_WHIRLWIND
+    value: 29
+    desc: | 
+      Prerequisite: Int 13+, Expertise, Dex 13+, Dodge, Mobility, Spring Attack, base attack of +4 or higher, The character performs a full attack action and makes one melee attack at full base attack bonus against each opponent within five feet. Use: Selected. NWN Manual - pg. 96.
+seealso:
+  functions:
+    - ItemPropertyBonusFeat

@@ -1,0 +1,21 @@
+---
+type: Constants
+category: FOG_TYPE_*
+shortdesc: | 
+  For use with SetFogColor(), it is to specify which time of day the color change will affect.
+constants:
+  - name: FOG_TYPE_ALL
+    value: 0
+    desc: | 
+      Both Moonlight (Night) and Sunlight (Day) fog colors will be affected.
+  - name: FOG_TYPE_MOON
+    value: 2
+    desc: | 
+      Only Moonlight (Night) fog color will be affected.
+  - name: FOG_TYPE_SUN
+    value: 1
+    desc: | 
+      Only Sunlight (Day) fog color will be affected.
+seealso:
+  functions:
+    - SetFogColor

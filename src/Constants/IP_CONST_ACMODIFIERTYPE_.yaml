@@ -1,0 +1,29 @@
+---
+type: Constants
+category: IP_CONST_ACMODIFIERTYPE_*
+shortdesc: | 
+  Itemproperty constants relating to armor class modifier types.
+constants:
+  - name: IP_CONST_ACMODIFIERTYPE_ARMOR
+    value: 2
+    desc: | 
+      Armor modifier.
+  - name: IP_CONST_ACMODIFIERTYPE_DEFLECTION
+    value: 4
+    desc: | 
+      Deflection modifier.
+  - name: IP_CONST_ACMODIFIERTYPE_DODGE
+    value: 0
+    desc: | 
+      Dodge modifier.
+  - name: IP_CONST_ACMODIFIERTYPE_NATURAL
+    value: 1
+    desc: | 
+      Natural armor modifier.
+  - name: IP_CONST_ACMODIFIERTYPE_SHIELD
+    value: 3
+    desc: | 
+      Shield AC modifier.
+seealso:
+  functions:
+    - ItemPropertyDecreaseAC

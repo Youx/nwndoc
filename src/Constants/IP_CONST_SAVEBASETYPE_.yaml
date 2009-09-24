@@ -1,0 +1,22 @@
+---
+type: Constants
+category: IP_CONST_SAVEBASETYPE_*
+shortdesc: | 
+  Itemproperty constants relating to saving throw base types.
+constants:
+  - name: IP_CONST_SAVEBASETYPE_FORTITUDE
+    value: 1
+    desc: | 
+      Fortitude saving throw.
+  - name: IP_CONST_SAVEBASETYPE_REFLEX
+    value: 3
+    desc: | 
+      Reflex saving throw.
+  - name: IP_CONST_SAVEBASETYPE_WILL
+    value: 2
+    desc: | 
+      Will saving throw.
+seealso:
+  functions:
+    - ItemPropertyBonusSavingThrow
+    - ItemPropertyReducedSavingThrow

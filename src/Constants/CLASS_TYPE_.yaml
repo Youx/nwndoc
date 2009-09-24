@@ -1,0 +1,193 @@
+---
+type: Constants
+category: CLASS_TYPE_*
+shortdesc: | 
+  Defines the standard class types.
+constants:
+  - name: CLASS_TYPE_ABBERATION
+    value: 11
+    desc: | 
+      Creatures with bizarre anatomy, strange abilities, an alien mindset, or any combination of the three. Monster Manual v3.5 - page 305. Examples: beholder, drider, mimic, and mind flayer.
+  - name: CLASS_TYPE_ANIMAL
+    value: 12
+    desc: | 
+      Animals are living, nonhuman creatures. They usually have a vertebrate. They possess no magical abilities and no innate capacity for langauge or culture. Monster Manual v3.5 - page 306. Examples: bears, cats, and wolves.
+  - name: CLASS_TYPE_ARCANE_ARCHER
+    value: 29
+    desc: | 
+      One of the prestige classes added with SoU and/or HotU. Master of the elven war bands, the arcane archer is a warrior skilled in using magic to supplement his combat prowess. Fighters, rangers, paladins, and barbarians become arcane archers to add a little magic to their combat abilities. Conversely, wizards and sorcerers may adopt this prestige class to add combat abilities to their repetoires. SoU Manual - page 13.
+  - name: CLASS_TYPE_ASSASSIN
+    value: 30
+    desc: | 
+      One of the prestige classes added with SoU and/or HotU. The assassin is a master of dealing quick, lethal blows. Assassins often function as spies, informants, killers for hire, or agents of vengeance. The assassin's skills in a variety of dark arts allows him to carry out missions of death with shocking, terrifying precision. Rogues, monks, and bards are ideal candidates for training as assassins. Unlike the blackguard, the assassin is not evil due to devotion to an evil power, but rather due to a complete lack of morals or ethics. These ruthless and avaricious killers have but one requirement other than a predisposition for evil and a penchant for stealth. They must kill another intelligent being for no other reason than pay. SoU Manual - page 14.
+  - name: CLASS_TYPE_BARBARIAN
+    value: 0
+    desc: | 
+      Barbarians are brave, even reckless, and their warrior skills make them well to adventuure. Instead of training and discipline, barbarians have a prowerful rage that makes them stronger, tougher, and better able to withstand attacks. NWN Manual - page 45.
+  - name: CLASS_TYPE_BARD
+    value: 1
+    desc: | 
+      Bards often serve as negotiators, messengers, scouts and spies. They love to accompany heroes (and villains) to witness heroic (or villainous) deeds firsthand. NWN Manual - page 46.
+  - name: CLASS_TYPE_BEAST
+    value: 21
+    desc: | 
+      A beast is a nonhistorical, vertebrate creature with a reasonably normal anatomy and no magical or unusual abilities. Almost all beasts have low-light vision and darkvision of 60 feet.
+  - name: CLASS_TYPE_BLACKGUARD
+    value: 31
+    desc: | 
+      One of the prestige classes added with SoU and/or HotU. A blackguard epitomizes evil. He is nothing short of a mortal fiend, a black knight with the foulest sort of reputation. A blackguard is an evil villain of the first order, equivalent in power to the righteous paladin, but devoted to the powers of darkness. No one class makes the best blackguard - all that is required is a willingness to serve the forces of darkness. SoU Manual - page 15.
+  - name: CLASS_TYPE_CLERIC
+    value: 2
+    desc: | 
+      Clerics act as intermediaries between the earthly and the divine (or infernal) worlds. All CLerics can heal wounds and bring people back from the brink of death, and powerful clerics can even raise the dead. NWN Manual - page 47.
+  - name: CLASS_TYPE_COMMONER
+    value: 20
+    desc: | 
+      The common folk farm the fields, staff the shops, build the homes, and produce the goods in the world around the adventurers. Commoners usually have no desire to live the dangerous life of an adventurer and none of the skills needed to undertake the challenges adventurers must face. Commoners are skilled in their own vocations and make up the majority of the population. Dungeon Master's Guide v3.5 - page 108.
+  - name: CLASS_TYPE_CONSTRUCT
+    value: 13
+    desc: | 
+      An animated object or atifically constructed creature. Monster Manual v3.5 - page 307. Example: golems.
+  - name: CLASS_TYPE_DIVINECHAMPION
+    value: 32
+    desc: | 
+      One of the prestige classes added with HotU. Champions of Torm are mighty warriors who dedicate themselves to Tom's cause, defending holy ground, destroying enemies of the church and slaying mythical beasts. HotU manual - page 25.
+  - name: CLASS_TYPE_DIVINE_CHAMPION
+    value: 32
+    desc: | 
+      Same as CLASS_TYPE_DIVINECHAMPION.
+  - name: CLASS_TYPE_DRAGON
+    value: 18
+    desc: | 
+      A reptilelike creature, usually winged, with magical or unusual abilities. Monster Manual v3.5 - page 308. Example: adult black dragon.
+  - name: CLASS_TYPE_DRAGONDISCIPLE
+    value: 37
+    desc: | 
+      One of the prestige classes added with HotU. It is rumored that the magical powers of sorcers and bards are somehow connected to the presense of dragon blood in their family tree. Red Dragon Disciples are sorcerers, and somteimes bards, who use their magical power as a catalyst to ignite their red dragon blood, realizing its fullest potential. They prefer a life of exploration to a cloistered existence. Already adept at magic, many pursue adventure, especially if it furthers their goal of finding more about their draconic heritage. They often feel drawn to areas known to harbor dragons. HotU manual - page 31.
+  - name: CLASS_TYPE_DRAGON_DISCIPLE
+    value: 37
+    desc: | 
+      Same as CLASS_TYPE_DRAGONDISCIPLE.
+  - name: CLASS_TYPE_DRUID
+    value: 3
+    desc: | 
+      Druids gain power not by ruling nature but by being at one with it. They hate the unnatural, including abberrations or undead, and destroy them where possible. NWN Manual - page 48.
+  - name: CLASS_TYPE_DWARVENDEFENDER
+    value: 36
+    desc: | 
+      One of the prestige classes added with HotU. The defender is a sponsored champion of a dwarven cause, a dwarven aristocrat, a dwarven deity or the dwarven way of life. As the name might imply, this character is a skilled combatant trained in the arts of defense. A line of dwarven defenders is far better defense than a 10-foot-thick wall of stone and is much more dangerous. HotU manual - page 27.
+  - name: CLASS_TYPE_DWARVEN_DEFENDER
+    value: 36
+    desc: | 
+      Same as CLASS_TYPE_DWARVENDEFENDER.
+  - name: CLASS_TYPE_ELEMENTAL
+    value: 16
+    desc: | 
+      A being composed of one of the four classical elements: air, earth, fire, or water. Monster Manual v3.5 - page 308. Example: greater air elemental.
+  - name: CLASS_TYPE_EYE_OF_GRUUMSH
+    value: 39
+  - name: CLASS_TYPE_FEY
+    value: 17
+    desc: | 
+      A creature with supernatural abilities and connections to nature or to some other force or place. They are usual human-shaped. Monster Manual v3.5 - page 309. Example: dryad, grig, pixie.
+  - name: CLASS_TYPE_FIGHTER
+    value: 4
+    desc: | 
+      Fighters can be many things, from soldiers to criminal enforcers. Some see adventure as a way to get rich, while others use their skills to protect the innocent. Fighters have the best all-around fighting capabilities of the PC classes, and they are trained to use all standard weapons and armor. NWN Manual - page 49.
+  - name: CLASS_TYPE_GIANT
+    value: 22
+    desc: | 
+      A giant is a humanoid-shaped creature of great strength. Monster Manual v3.5 - page 310. Example: ettin, ogre, and troll.
+  - name: CLASS_TYPE_HARPER
+    value: 28
+    desc: | 
+      One of the prestige classes added with SoU and/or HotU. Harpers are members of a secret society dedicated to holding back evil, preserving knowledge, and maintaining the balance between civilization and the wild. Harpers learn arcane spells and many skills to help them in their duties of espionage, stealth and reporting information. Many Harpers are bards, but by no means all. Ranger, rogue, sorcerer and wizard are common vocations for Harpers, as these classes tend to have versatility and mobility. All have some skill at manipulating others, a resistance to outside mental influences, acute abilities of perception, and a talent for solving problems. Not all Harpers are members of the Harper scout prestige class, and rank within the organization does not depend upon a character’s level in this or any other class. However, most of the higher-ranked Harpers have at least one level in the Harper scout prestige class. SoU Manual - page 16.
+  - name: CLASS_TYPE_HUMANOID
+    value: 14
+    desc: | 
+      A humanoid usually has two arms, two legs, and one head, or a human like torso, arms and a head. Humanoids have few or no supernatural or extradordinary abilities, but most can speak and uaully have well-developed societies. Monster Manual v3.5 - page 310. Examples: bugbear, gnoll, and kobold.
+  - name: CLASS_TYPE_INVALID
+    value: 255
+    desc: | 
+      The value which represents an invalid class type.
+  - name: CLASS_TYPE_MAGICAL_BEAST
+    value: 23
+    desc: | 
+      These creatures are similar to animals but can have intelligence scores higher than 2. Magical beasts usually have supernatural or extraordinary abilities, but sometimes are merely bizarre in appearance or habits. Monster Manual v3.5 - page 311. Examples: gray render, griffon, and manticore.
+  - name: CLASS_TYPE_MONK
+    value: 5
+    desc: | 
+      Monks are versatile warriors skilled at fighting without weapons or armor. Good-aligned monks serve as protectors of the people, while evil monks make ideal spies and assassins. NWN Manual - page 50.
+  - name: CLASS_TYPE_MONSTROUS
+    value: 15
+  - name: CLASS_TYPE_OOZE
+    value: 38
+    desc: | 
+      An ooze is an amorphous or mutable creature, usually mindless. Monster Manual v3.5 - page 313. Examples: black pudding, gelatinous cube and ochre jelly.
+  - name: CLASS_TYPE_OUTSIDER
+    value: 24
+    desc: | 
+      An outsider is at least partially composed of the essence (but not necessarily the material) of some plane other than the material plane. Some creatures start out as some other type and become outsiders when they attain a highter (or lower) state of spiritual existance. Monster Manual v3.5 - page 313. Examples: demons, earth mephit, and rakshasa.
+  - name: CLASS_TYPE_PALADIN
+    value: 6
+    desc: | 
+      Paladins take their adventures seriously, and even a mundane mission is, in the heart of the Paladin, a personal test - an opportunity to demonstrate bravery, to learn tactics, and to find ways to do good. NWN Manual - page 51.
+  - name: CLASS_TYPE_PALEMASTER
+    value: 34
+    desc: | 
+      One of the prestige classes added with HotU. Necromancy is usualy a poor choice for arcane spellcasters. Those who really want to master the deathless arts almost always pursue divine means. However, an alternative exists for those who desire power over undead, without losing too much of their arcane power. Enter the pale master, who draws on a font of special lore that provides a macabre power all its own. HotU manual - page 29.
+  - name: CLASS_TYPE_PALE_MASTER
+    value: 34
+    desc: | 
+      Same as CLASS_TYPE_PALEMASTER.
+  - name: CLASS_TYPE_RANGER
+    value: 7
+    desc: | 
+      Rangers are skilled stalkers and hunters who make their home in the woods. Their martial skill is nearly the equal of the fighter, but they lack the latter's dedication to the craft of fighting. Instead, the Ranger focuses his skill and training on a specific enemy - a type creature he bears a vengeful grudge against and hunts above all others. NWN Manual - page 52.
+  - name: CLASS_TYPE_ROGUE
+    value: 8
+    desc: | 
+      Rogues have little in common with each other. While some - maybe even the majority - are stealthy thieves, many serve as scouts, spies, investigators, diplomats, and simple thugs. Rogues are versatile, adaptable, and skilled at getting what others don't want them to get. NWN Manual - page 53.
+  - name: CLASS_TYPE_SHADOWDANCER
+    value: 27
+    desc: | 
+      One of the prestige classes added with SoU and/or HotU. Rogues, bards and monks make excellent shadowdancers, but fighters, barbarians, rangers and paladins also find that shadowdancer abilities allow them to strike at their opponents with surprise and skill. Wizard, sorcerer, cleric and druid shadowdancers employ the defensive capabilities inherent in the prestige class to allow them to cast their spells from safety and move away quickly. Despite their link with shadows and trickery, shadowdancers are as often good as evil. They may use their incredible abilities as they wish. Shadowdancers often work in troupes, never staying in one place too long. Some use their abilities to entertain. Others operate as thieves, using their abilities to infiltrate past defenses and dupe others. All shadowdancer troupes maintain an aura of mystery among the populace, who never know whether to think well or ill of them. SoU Manual - page 18.
+  - name: CLASS_TYPE_SHAPECHANGER
+    value: 25
+    desc: | 
+      A shapechanger has the supernatural ability to assume one or more alternate forms. Many magical effects allow some kind of shape shifting, and not evry creature that can change shapes is a shapechater. Monster Manual v3.5 - page 314. Examples: barghest and lycanthropes.
+  - name: CLASS_TYPE_SHOU_DISCIPLE
+    value: 40
+  - name: CLASS_TYPE_SHIFTER
+    value: 35
+    desc: | 
+      A shifter has no form they call their own. Instead, they clothe themselves in whatever shape is most expedient at the time. While others base their identities largely on their external forms, the shifter actually comes closer to their true self through all of their transformations. Of necessity, their sense of self is not based on their outward form, but on their soul, which is truly the only constant about them. It is the inner strength of that soul that enables them to take on any shape and remain themselves within. HotU manual - page 33.
+  - name: CLASS_TYPE_SORCERER
+    value: 9
+    desc: | 
+      Sorcerers are arcane spellcasters who manipulate magic energy with imagination and talent rather than studious discipline. They have no books, no mentors, no theories -- just raw power they direct at will. NWN Manual - page 54
+  - name: CLASS_TYPE_UNDEAD
+    value: 19
+    desc: | 
+      Undead are once-living creatures animated by spiritual or supernatural forces. Monster Manual v3.5 - page 317. Examples: lich, skeleton, and vampire.
+  - name: CLASS_TYPE_VERMIN
+    value: 26
+    desc: | 
+      These creatures include insects, arachnids, other arthropods, worms and similar invertebrates. Monster Manual v3.5 - page 317.
+  - name: CLASS_TYPE_WEAPON_MASTER
+    value: 33
+    desc: | 
+      One of the prestige classes added with HotU. For a weapon master, perfection is found in the mastery of a single melee weapon. A weapon master seeks to unite this weapon of choise with the body, to make them one and to use the weapon as naturally and without thought of any other limb. HotU manual - page 36.
+  - name: CLASS_TYPE_WIZARD
+    value: 10
+    desc: | 
+      Wizards are arcane spellcasters who depend on intensive study to create their magic. To wizards, magic is not a talent but a difficult, rewarding art. NWN Manual - page 55.
+seealso:
+  functions:
+    - GetClassByPosition
+    - GetFactionMostFrequentClass
+    - GetLastSpellCastClass
+    - GetLevelByClass
+    - GetNearestCreature
+    - GetNearestCreatureToLocation
+    - LevelUpHenchman

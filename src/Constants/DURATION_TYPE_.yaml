@@ -1,0 +1,27 @@
+---
+type: Constants
+category: DURATION_TYPE_*
+shortdesc: | 
+  Duration types for ApplyEffectAtLocation and ApplyEffectToObject functions.
+constants:
+  - name: DURATION_TYPE_INSTANT
+    value: 0
+    desc: | 
+      Instantaneous. This would apply to any effect that is both immediate and permanent and cannot be removed. EffectDamage would be one example, as well as any of the 'fire-and-forget' visual effects.
+  - name: DURATION_TYPE_PERMANENT
+    value: 2
+    desc: | 
+      Permanent duration. This is as it sounds... the effect lasts until removed or dispelled
+  - name: DURATION_TYPE_TEMPORARY
+    value: 1
+    desc: | 
+      A temporary duration means that the effect must have a duration specified in the command (and is the only time this is so). Once the time has expired, the effect will be removed.
+seealso:
+  functions:
+    - AddItemProperty
+    - ApplyEffectAtLocation
+    - ApplyEffectToObject
+    - GetEffectDurationType
+    - IPGetItemHasProperty
+    - IPRemoveAllItemProperties
+    - IPRemoveMatchingItemProperties

@@ -1,0 +1,130 @@
+---
+type: Constants
+category: SKILL_*
+shortdesc: | 
+  Skills used in NWN. The SKILL_* constants are actually integers, the corresponding values of which can be found in nwscript.nss. Those integers, in turn, are references to row-numbers in the gamefile skills.2da.
+constants:
+  - name: SKILL_ALL_SKILLS
+    value: 255
+    desc: | 
+      All skills.
+  - name: SKILL_ANIMAL_EMPATHY
+    value: 0
+    desc: | 
+      Improves the attitude of an animal. Can be used on normal animals with no penalty, and with penalty on beasts and magical beasts.
+  - name: SKILL_APPRAISE
+    value: 20
+    desc: | 
+      One of the skills added with the Shadows of Undrentide expansion. The higher the character’s skill, the more money that character can expect to receive when selling goods, and the less that character will have to pay when buying goods. SoU Manual – page 20. Editor’s note: Please note that the appraise skill has no effect in a module unless it has been scripted to take it into account, for instance by using the gplotAppraiseOpenStore function rather than just OpenStore.
+  - name: SKILL_BLUFF
+    value: 23
+    desc: | 
+      The character can make the outrageous or the untrue seem plausible. The skill encompasses acting, conning, fat talking, misdirection and misleading body language. HotU manual - page 38.
+  - name: SKILL_CONCENTRATION
+    value: 1
+    desc: | 
+      Permits the casting of a spell despite distractions, such as taking damage, getting hit by an unfriendly spell, and so on.
+  - name: SKILL_CRAFT_ARMOR
+    value: 25
+    desc: | 
+      The character knows how to create all types of armor from different materials. HotU manual - page 39.
+  - name: SKILL_CRAFT_TRAP
+    value: 22
+    desc: | 
+      One of the skills added with the Shadows of Undrentide expansion. The character using this skill can combine raw components to form various trap kits. Some traps require the use of new grenade-like weapons. SoU Manual – page 20.
+  - name: SKILL_CRAFT_WEAPON
+    value: 26
+    desc: | 
+      The character knows how to create all types of weapons from different materials. HotU manual - page 40.
+  - name: SKILL_DISABLE_TRAP
+    value: 2
+    desc: | 
+      Disarm a located trap (see Disarm Device skill in 3rd Edition Player's Handbook).
+  - name: SKILL_DISCIPLINE
+    value: 3
+    desc: | 
+      A successful check allows the character to resist the effects of any combat feat (Disarm, Called Shot, Sap or Knockdown). NWN manual - page 78.
+  - name: SKILL_HEAL
+    value: 4
+    desc: | 
+      Used for applying Healer's Kit items for healing.
+  - name: SKILL_HIDE
+    value: 5
+    desc: | 
+      Opposed by an opponent's Spot skill for remaining visibly undetected.
+  - name: SKILL_INTIMIDATE
+    value: 24
+    desc: | 
+      The character can use this skill to get a bully to back down or make a prisoner give him the information he wants. HotU manual - page 40.
+  - name: SKILL_LISTEN
+    value: 6
+    desc: | 
+      Opposed by an opponent's Move Silently skill to locate stealthy foes.
+  - name: SKILL_LORE
+    value: 7
+    desc: | 
+      Ability to identify magical items and their properties without the aid of an Identify spell.
+  - name: SKILL_MOVE_SILENTLY
+    value: 8
+    desc: | 
+      Opposed by an opponent's Listen skill for remaining audibly undetected.
+  - name: SKILL_OPEN_LOCK
+    value: 9
+    desc: | 
+      Used for opening locks on doors and chests.
+  - name: SKILL_PARRY
+    value: 10
+    desc: | 
+      Used to increase armor class against attacks.
+  - name: SKILL_PERFORM
+    value: 11
+    desc: | 
+      Used for performances.
+  - name: SKILL_PERSUADE
+    value: 12
+    desc: | 
+      Used for convincing an NPC to be more reasonable by sharing information, giving the PC a discount on a price of an item, etc.
+  - name: SKILL_PICK_POCKET
+    value: 13
+    desc: | 
+      Sleight of hand.
+  - name: SKILL_SEARCH
+    value: 14
+    desc: | 
+      Used for discovering hidden treasures, or secret doors in an area. SUBSKILL_FLAGTRAP is used by a Rogue when searching for traps.
+  - name: SKILL_SET_TRAP
+    value: 15
+    desc: | 
+      Sets a trap.
+  - name: SKILL_SPELLCRAFT
+    value: 16
+    desc: | 
+      Used for identifying spells and spell-like effects.
+  - name: SKILL_SPOT
+    value: 17
+    desc: | 
+      Opposed by an opponent's Hide skill to locate stealthy foes.
+  - name: SKILL_TAUNT
+    value: 18
+    desc: | 
+      Used to distract an opponent from attacking another member of your party.
+  - name: SKILL_TUMBLE
+    value: 21
+    desc: | 
+      One of the skills added with the Shadows of Undrentide expansion. Characters with high tumbling are able to roll away from attacks during combat, positioning themselves safely at all times.
+  - name: SKILL_USE_MAGIC_DEVICE
+    value: 19
+    desc: | 
+      Allows a PC to "fake" a requirement for a magical item (i.e. cast a spell from an arcane spell if the PC is a Rogue only).
+seealso:
+  functions:
+    - ActionUseSkill
+    - AutoDC
+    - EffectSkillDecrease
+    - EffectSkillIncrease
+    - GetHasSkill
+    - GetIsSkillSuccessful
+    - GetSkillRank
+    - ItemPropertyDecreaseSkill
+    - ItemPropertySkillBonus
+    - TalentSkill

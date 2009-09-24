@@ -1,0 +1,70 @@
+---
+type: Constants
+category: DAMAGE_TYPE_*
+shortdesc: | 
+  The type of damage that can be inflicted.
+constants:
+  - name: DAMAGE_TYPE_ACID
+    value: 16
+    desc: | 
+      Damage inflicted by acid.
+  - name: DAMAGE_TYPE_BASE_WEAPON
+    value: 4096
+    desc: | 
+      In the words of "nwscript.nss", although it is not mentioned in the 1.64 patch notes: The base weapon damage is the base damage delivered by the weapon before any additional types of damage (e.g. fire) have been added. This is to be used only with GetDamageDealtByType(), and is not valid for EffectDamage().
+  - name: DAMAGE_TYPE_BLUDGEONING
+    value: 1
+    desc: | 
+      Damage inflicted by bludgeoning (eg. club).
+  - name: DAMAGE_TYPE_COLD
+    value: 32
+    desc: | 
+      Damage inflicted by cold and cold based attacks.
+  - name: DAMAGE_TYPE_DIVINE
+    value: 64
+    desc: | 
+      Damage inflicted by divine based attacks.
+  - name: DAMAGE_TYPE_ELECTRICAL
+    value: 128
+    desc: | 
+      Damage inflicted by electrical based attacks.
+  - name: DAMAGE_TYPE_FIRE
+    value: 256
+    desc: | 
+      Damage inflicted by fire and fire based attacks.
+  - name: DAMAGE_TYPE_MAGICAL
+    value: 8
+    desc: | 
+      Damage inflicted by magical effects.
+  - name: DAMAGE_TYPE_NEGATIVE
+    value: 512
+    desc: | 
+      Damage inflicted by negative attacks.
+  - name: DAMAGE_TYPE_PIERCING
+    value: 2
+    desc: | 
+      Damage inflicted by piercing attacks. Value = 2.
+  - name: DAMAGE_TYPE_POSITIVE
+    value: 1024
+    desc: | 
+      Damage inflicted by positive attacks.
+  - name: DAMAGE_TYPE_SLASHING
+    value: 4
+    desc: | 
+      Damage dealt from a slashing weapon, such as a sword or hand axe.
+  - name: DAMAGE_TYPE_SONIC
+    value: 2048
+    desc: | 
+      Damage inflicted by sonic attacks.
+seealso:
+  functions:
+    - EffectACDecrease
+    - EffectACIncrease
+    - EffectDamage
+    - EffectDamageDecrease
+    - EffectDamageImmunityDecrease
+    - EffectDamageImmunityIncrease
+    - EffectDamageIncrease
+    - EffectDamageResistance
+    - EffectDamageShield
+    - GetDamageDealtByType

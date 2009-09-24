@@ -1,0 +1,57 @@
+---
+type: Constants
+category: IP_CONST_SPELLRESISTANCEBONUS_*
+shortdesc: | 
+  Itemproperty constants relating to spell resistance bonuses.
+constants:
+  - name: IP_CONST_SPELLRESISTANCEBONUS_10
+    value: 0
+    desc: | 
+      +10 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_12
+    value: 1
+    desc: | 
+      +12 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_14
+    value: 2
+    desc: | 
+      +14 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_16
+    value: 3
+    desc: | 
+      +16 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_18
+    value: 4
+    desc: | 
+      +18 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_20
+    value: 5
+    desc: | 
+      +20 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_22
+    value: 6
+    desc: | 
+      +22 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_24
+    value: 7
+    desc: | 
+      +24 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_26
+    value: 8
+    desc: | 
+      +26 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_28
+    value: 9
+    desc: | 
+      +28 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_30
+    value: 10
+    desc: | 
+      +30 spell resistance.
+  - name: IP_CONST_SPELLRESISTANCEBONUS_32
+    value: 11
+    desc: | 
+      +32 spell resistance.
+seealso:
+  functions:
+    - ItemPropertyBonusSpellResistance

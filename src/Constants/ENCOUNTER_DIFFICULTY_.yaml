@@ -1,0 +1,30 @@
+---
+type: Constants
+category: ENCOUNTER_DIFFICULTY_*
+shortdesc: | 
+  The list of encounter difficulties.
+constants:
+  - name: ENCOUNTER_DIFFICULTY_EASY
+    value: 1
+    desc: | 
+      An easy difficulty encounter
+  - name: ENCOUNTER_DIFFICULTY_HARD
+    value: 3
+    desc: | 
+      The hard encounter difficulty.
+  - name: ENCOUNTER_DIFFICULTY_IMPOSSIBLE
+    value: 4
+    desc: | 
+      The impossible encounter difficulty.
+  - name: ENCOUNTER_DIFFICULTY_NORMAL
+    value: 2
+    desc: | 
+      The normal encounter difficulty.
+  - name: ENCOUNTER_DIFFICULTY_VERY_EASY
+    value: 0
+    desc: | 
+      The easiest encounter level.
+seealso:
+  functions:
+    - GetEncounterDifficulty
+    - SetEncounterDifficulty

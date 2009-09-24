@@ -1,0 +1,306 @@
+---
+type: Constants
+category: ITEM_PROPERTY_*
+shortdesc: | 
+  Magical or other properties that can be applied to an item.
+constants:
+  - name: ITEM_PROPERTY_ABILITY_BONUS
+    value: 0
+    desc: | 
+      Increases one of the six primary ability scores.
+  - name: ITEM_PROPERTY_AC_BONUS
+    value: 1
+    desc: | 
+      Grants a bonus to armor class (AC).
+  - name: ITEM_PROPERTY_AC_BONUS_VS_ALIGNMENT_GROUP
+    value: 2
+    desc: | 
+      Grants a bonus to armor class (AC) when attacked by a particular alignment group (Lawful, Neutral, Chaotic).
+  - name: ITEM_PROPERTY_AC_BONUS_VS_DAMAGE_TYPE
+    value: 3
+    desc: | 
+      Grants a bonus to armor class (AC) when attacked by a specific damage type (see DAMAGE_TYPE_* for available damage types).
+  - name: ITEM_PROPERTY_AC_BONUS_VS_RACIAL_GROUP
+    value: 4
+    desc: | 
+      Grants a bonus to armor class (AC) when attacked by a member of a particular racial group (see RACIAL_TYPE_* for racial groups).
+  - name: ITEM_PROPERTY_AC_BONUS_VS_SPECIFIC_ALIGNMENT
+    value: 5
+    desc: | 
+      Grants a bonus to armor class (AC) when attacked by a specific alignment (Lawful, Neutral, Chaotic; and Good, Neutral, or Evil).
+  - name: ITEM_PROPERTY_ARCANE_SPELL_FAILURE
+    value: 84
+  - name: ITEM_PROPERTY_ATTACK_BONUS
+    value: 56
+    desc: | 
+      Grants the wearer/wielder a bonus to attack rolls.
+  - name: ITEM_PROPERTY_ATTACK_BONUS_VS_ALIGNMENT_GROUP
+    value: 57
+    desc: | 
+      Grants the wearer/wielder a bonus to attack rolls against a particular alignment group (Lawful, Neutral, or Chaotic).
+  - name: ITEM_PROPERTY_ATTACK_BONUS_VS_RACIAL_GROUP
+    value: 58
+    desc: | 
+      Grants the wearer/wielder a bonus to attack rolls against a particular racial group (see RACIAL_TYPE_* for available racial groups).
+  - name: ITEM_PROPERTY_ATTACK_BONUS_VS_SPECIFIC_ALIGNMENT
+    value: 59
+    desc: | 
+      Grants the wearer/wielder a bonus to attack rolls against a specific alignment group (Lawful, Neutral, Chaotic; and Good, Neutral, or Evil).
+  - name: ITEM_PROPERTY_BASE_ITEM_WEIGHT_REDUCTION
+    value: 11
+    desc: | 
+      Reduces the weight of the item this property is applied to.
+  - name: ITEM_PROPERTY_BONUS_FEAT
+    value: 12
+    desc: | 
+      Grants the wearer/wielder a bonus feat specific to the item.
+  - name: ITEM_PROPERTY_BONUS_SPELL_SLOT_OF_LEVEL_N
+    value: 13
+    desc: | 
+      Grants the wearer/wielder a bonus spell slot of a specified level, if the wearer/wielder is capable of casting a particular type of magic (divine or arcane).
+  - name: ITEM_PROPERTY_CAST_SPELL
+    value: 15
+    desc: | 
+      Casts a spell.
+  - name: ITEM_PROPERTY_DAMAGE_BONUS
+    value: 16
+    desc: | 
+      Grants a damage bonus (see DAMAGE_BONUS_* for damage bonuses).
+  - name: ITEM_PROPERTY_DAMAGE_BONUS_VS_ALIGNMENT_GROUP
+    value: 17
+    desc: | 
+      Grants a damage bonus (see DAMAGE_BONUS_* for damage bonuses) against a particular alignment group (Lawful, Neutral, or Chaotic).
+  - name: ITEM_PROPERTY_DAMAGE_BONUS_VS_RACIAL_GROUP
+    value: 18
+    desc: | 
+      Grants a damage bonus (see DAMAGE_BONUS_* for damage bonuses) against a racial group (see RACIAL_TYPE_* for racial groups).
+  - name: ITEM_PROPERTY_DAMAGE_BONUS_VS_SPECIFIC_ALIGNMENT
+    value: 19
+    desc: | 
+      Grants a damage bonus (see DAMAGE_BONUS_* for damage bonuses) against a specific alignment (Lawful, Neutral, Chaotic; and Good, Neutral, or Evil).
+  - name: ITEM_PROPERTY_DAMAGE_REDUCTION
+    value: 22
+    desc: | 
+      Grants the wearer/wielder damage reduction to a particular damage type (see DAMAGE_TYPE_* for damage types). Note damage reduction can normally be passed by weapons or attacks with certain magical enhancement bonuses.
+  - name: ITEM_PROPERTY_DAMAGE_RESISTANCE
+    value: 23
+    desc: | 
+      Grants the weilder/wearer complete immunity to a particular type of damage (see DAMAGE_TYPE_* for damage types).
+  - name: ITEM_PROPERTY_DAMAGE_VULNERABILITY
+    value: 24
+    desc: | 
+      Gives the wearer/wielder an inherant weakness to a particular type of damage (see DAMAGE_TYPE_* for damage types).
+  - name: ITEM_PROPERTY_DARKVISION
+    value: 26
+    desc: | 
+      Grants the wearer/wielder darkvision (ability to see in complete darkness).
+  - name: ITEM_PROPERTY_DECREASED_ABILITY_SCORE
+    value: 27
+    desc: | 
+      Gives the wearer/wielder a decreased ability score in one of the six primary abilities. Normally this is the result of a curse.
+  - name: ITEM_PROPERTY_DECREASED_AC
+    value: 28
+    desc: | 
+      Gives the wearer/wielder a decreased armor class (AC). Normally this is the result of a curse.
+  - name: ITEM_PROPERTY_DECREASED_ATTACK_MODIFIER
+    value: 60
+    desc: | 
+      Gives the wearer/wielder a decreased attack roll modifier. This is normally due to a curse.
+  - name: ITEM_PROPERTY_DECREASED_DAMAGE
+    value: 21
+    desc: | 
+      Causes the item, typically a weapon (missile or melee), to inflict decreased damage. Normally cursed items have decreased damage, but damaged, worn, or ruined items may also be affected by this property.
+  - name: ITEM_PROPERTY_DECREASED_ENHANCEMENT_MODIFIER
+    value: 10
+    desc: | 
+      Usually denotes a cursed item by applying some sort of negative modifier to an item, typically a weapon (missile or melee).
+  - name: ITEM_PROPERTY_DECREASED_SAVING_THROWS
+    value: 49
+    desc: | 
+      Gives the wearer/wielder a general decrease to all three types of saving throws. This is normally the effect of a curse.
+  - name: ITEM_PROPERTY_DECREASED_SAVING_THROWS_SPECIFIC
+    value: 50
+    desc: | 
+      Gives the wearer/wielder a general decrease to a specific type of saving throw (Fortitude, Reflex, Will). This is normally the effect of a curse.
+  - name: ITEM_PROPERTY_DECREASED_SKILL_MODIFIER
+    value: 29
+    desc: | 
+      Gives the wearer/wielder a decreased skill modifier to a particular skill. Normally this is the result of a curse.
+  - name: ITEM_PROPERTY_ENHANCED_CONTAINER_REDUCED_WEIGHT
+    value: 32
+    desc: | 
+      Grants a magical container reduced overall weight for making heavy things easier to carry.
+  - name: ITEM_PROPERTY_ENHANCEMENT_BONUS
+    value: 6
+    desc: | 
+      Grants an enhancement bonus to an item, typically a weapon (missile or melee).
+  - name: ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_ALIGNMENT_GROUP
+    value: 7
+    desc: | 
+      Grants an enhancement bonus to an item, typically a weapon (missile or melee), against a particular alignment group (Lawful, Neutral, Chaotic).
+  - name: ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_RACIAL_GROUP
+    value: 8
+    desc: | 
+      Grants an enhancement bonus to an item, typically a weapon (missile or melee), against a particular racial group (see RACIAL_TYPE_* for a racial groups).
+  - name: ITEM_PROPERTY_ENHANCEMENT_BONUS_VS_SPECIFIC_ALIGNEMENT
+    value: 9
+    desc: | 
+      Grants an enhancement bonus to an item, typically a weapon (missile or melee), against a specific alignment combination (Lawful, Neutral, Chaotic; and Good, Neutral, or Evil). 
+    desc: | 
+      NOTE: As of 1.68, this constant is not spelled correctly in nwscript.
+  - name: ITEM_PROPERTY_EXTRA_MELEE_DAMAGE_TYPE
+    value: 33
+    desc: | 
+      Extra damage type dealt with a melee weapon (see DAMAGE_TYPE_* for available damage types).
+  - name: ITEM_PROPERTY_EXTRA_RANGED_DAMAGE_TYPE
+    value: 34
+    desc: | 
+      Extra damage type dealt with a missile weapon (see DAMAGE_TYPE_* for available damage types).
+  - name: ITEM_PROPERTY_FREEDOM_OF_MOVEMENT
+    value: 75
+    desc: | 
+      Grants the wearer/wielder the ability to move freely in environments that restrict movements (like that of an area effected by a Web or Entangle spell).
+  - name: ITEM_PROPERTY_HASTE
+    value: 35
+    desc: | 
+      Grants the wearer/wielder the benefits of a Haste spell (allows an extra partial action every round (six seconds)).
+  - name: ITEM_PROPERTY_HEALERS_KIT
+    value: 80
+  - name: ITEM_PROPERTY_HOLY_AVENGER
+    value: 36
+    desc: | 
+      Oh, the destruction that can be wrought when found in the hands of a paladin...
+  - name: ITEM_PROPERTY_IMMUNITY_DAMAGE_TYPE
+    value: 20
+    desc: | 
+      Grants the wearer/wielder immunity to a particular damage type (see DAMAGE_TYPE_* for damage types).
+  - name: ITEM_PROPERTY_IMMUNITY_MISCELLANEOUS
+    value: 37
+    desc: | 
+      Grants one of the following immunities: Critical hits, death magic, disease, fear, knockdown, level/ability drain, mind-affecting spells, paralysis, poison, or sneak attack.
+  - name: ITEM_PROPERTY_IMMUNITY_SPECIFIC_SPELL
+    value: 53
+    desc: | 
+      Grants the wearer/wielder immunity to a specific spell.
+  - name: ITEM_PROPERTY_IMMUNITY_SPELL_SCHOOL
+    value: 54
+  - name: ITEM_PROPERTY_IMMUNITY_SPELLS_BY_LEVEL
+    value: 78
+    desc: | 
+      Grants the wearer/wielder immunity to all spells of a particular level.
+  - name: ITEM_PROPERTY_IMPROVED_EVASION
+    value: 38
+    desc: | 
+      Grants the wearer/wielder the improved evasion special ability (allows them to completely avoid area of effect spells on a successful saving throw, half damage on a failed save, and avoid traps that require reflex saves).
+  - name: ITEM_PROPERTY_KEEN
+    value: 43
+    desc: | 
+      Doubles the threat range of a piercing or slashing weapon.
+  - name: ITEM_PROPERTY_LIGHT
+    value: 44
+    desc: | 
+      Generates light.
+  - name: ITEM_PROPERTY_MASSIVE_CRITICALS
+    value: 74
+  - name: ITEM_PROPERTY_MIGHTY
+    value: 45
+    desc: | 
+      Causes a ranged weapon, usually a short bow or long bow, to permit the weilder's Strength modifier to damage due to extra powerful stringing.
+  - name: ITEM_PROPERTY_MIND_BLANK
+    value: 46
+  - name: ITEM_PROPERTY_MONSTER_DAMAGE
+    value: 77
+  - name: ITEM_PROPERTY_NO_DAMAGE
+    value: 47
+    desc: | 
+      When applied to a weapon (missile or melee) that weapon does not inflict damage.
+  - name: ITEM_PROPERTY_ON_HIT_PROPERTIES
+    value: 48
+  - name: ITEM_PROPERTY_ON_MONSTER_HIT
+    value: 72
+  - name: ITEM_PROPERTY_ONHITCASTSPELL
+    value: 82
+  - name: ITEM_PROPERTY_POISON
+    value: 76
+    desc: | 
+      Weapons (missile or melee) with this property also inflict poison on a successful hit.
+  - name: ITEM_PROPERTY_REGENERATION
+    value: 51
+    desc: | 
+      Grants the wearer/wielder hit point regeneration.
+  - name: ITEM_PROPERTY_REGENERATION_VAMPIRIC
+    value: 67
+    desc: | 
+      Grants the wearer/wielder hit point regeneration equal to the damage inflicted by an attack with a weapon (melee or missile) with this property.
+  - name: ITEM_PROPERTY_SAVING_THROW_BONUS
+    value: 40
+    desc: | 
+      Grants the wearer/wielder a general bonus to all three types of saving throws.
+  - name: ITEM_PROPERTY_SAVING_THROW_BONUS_SPECIFIC
+    value: 41
+    desc: | 
+      Grants the wearer/wielder a general bonus to a specify type of saving throw (Fortitude, Reflex, Will).
+  - name: ITEM_PROPERTY_SKILL_BONUS
+    value: 52
+    desc: | 
+      Grants the wearer/wielder a bonus to a particular skill.
+  - name: ITEM_PROPERTY_SPECIAL_WALK
+    value: 79
+  - name: ITEM_PROPERTY_SPELL_RESISTANCE
+    value: 39
+    desc: | 
+      Grants the wearer/wielder spell resistance to a specified degree.
+  - name: ITEM_PROPERTY_THIEVES_TOOLS
+    value: 55
+    desc: | 
+      Marks an item as thieves tools used for opening locks and disarming traps.
+  - name: ITEM_PROPERTY_TRAP
+    value: 70
+    desc: | 
+      Denotes an item as a trap that can be placed.
+  - name: ITEM_PROPERTY_TRUE_SEEING
+    value: 71
+    desc: | 
+      Grants the wearer/wielder the benefits of a True Seeing spell (see invisible or magically concealed creatures).
+  - name: ITEM_PROPERTY_TURN_RESISTANCE
+    value: 73
+    desc: | 
+      Grants the wearer/wielder additional turn resistance.
+  - name: ITEM_PROPERTY_UNLIMITED_AMMUNITION
+    value: 61
+    desc: | 
+      Grants the wearer/wielder unlimited ammunition with a missile weapon that requires ammunition.
+  - name: ITEM_PROPERTY_USE_LIMITATION_ALIGNMENT_GROUP
+    value: 62
+    desc: | 
+      Restricts the use of a particular item to a particular alignment group (Lawful, Neutral, or Chaotic).
+  - name: ITEM_PROPERTY_USE_LIMITATION_CLASS
+    value: 63
+    desc: | 
+      Restricts the use of a particular item to a specific class (see CLASS_TYPE_* for available classes).
+  - name: ITEM_PROPERTY_USE_LIMITATION_RACIAL_TYPE
+    value: 64
+    desc: | 
+      Restricts the use of a particular item to a particular racial group (see RACIAL_TYPE_* for available racial groups).
+  - name: ITEM_PROPERTY_USE_LIMITATION_SPECIFIC_ALIGNMENT
+    value: 65
+    desc: | 
+      Restricts the use of a particular item to a specific alignment (Lawful, Neutral, Chaotic; Good, Neutral, or Evil).
+  - name: ITEM_PROPERTY_USE_LIMITATION_TILESET
+    value: 66
+    desc: | 
+      Restricts the use of a particular item to a particular tileset (for example, an item may only be used while underground in the "Mines and Caverns" tileset).
+  - name: ITEM_PROPERTY_VISUALEFFECT
+    value: 83
+  - name: ITEM_PROPERTY_WEIGHT_INCREASE
+    value: 81
+seealso:
+  functions:
+    - GetItemHasItemProperty
+    - IPGetDamageBonusConstantFromNumber
+    - IPGetDamagePowerConstantFromNumber
+    - IPGetHasItemPropertyByConst
+    - IPGetHasItemPropertyOnCharacter
+    - IPGetItemHasItemOnHitPropertySubType
+    - IPGetItemPropertyByID
+    - IPGetWeaponEnhancementBonus

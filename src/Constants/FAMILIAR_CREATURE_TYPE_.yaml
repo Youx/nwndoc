@@ -1,0 +1,47 @@
+---
+type: Constants
+category: FAMILIAR_CREATURE_TYPE_*
+shortdesc: | 
+  Familiars are creatures specially summoned and bound to a wizard or sorcerer. They help the caster with tasks such as gathering spell components, delivering messages, or even combat, although most of them just perch on the wizards shoulder or pointing hat and grin impishly. When a wizard's or sorcerer's familiar dies, the caster suffers physical shock. Note that familiars are different from animal companions.
+constants:
+  - name: FAMILIAR_CREATURE_TYPE_BAT
+    value: 0
+    desc: | 
+      Bats are winged, nocturnal rodents that are rarely considered threatening in their own right, though traditional folklore does associate them with vampirism and the undead. 3rd Edition MM page 193.
+  - name: FAMILIAR_CREATURE_TYPE_CRAGCAT
+    value: 1
+    desc: | 
+      The fabled "hunter-of-men" is a sure-footed predator of the North. More than just a simple bobcat, however, it wields some magical properties as well (spell immunity: enchantment). 3rd Edition MM 195.
+  - name: FAMILIAR_CREATURE_TYPE_EYEBALL
+    value: 10
+  - name: FAMILIAR_CREATURE_TYPE_FAIRY_DRAGON
+    value: 8
+  - name: FAMILIAR_CREATURE_TYPE_FIREMEPHIT
+    value: 4
+    desc: | 
+      Chaotic and destructive, mephits come in many shapes and have a wide range of abilities. Fire mephits come from the elemental plane of Fire and appropriately deal and soak fire-based attacks. 3rd Edition MM page 132.
+  - name: FAMILIAR_CREATURE_TYPE_HELLHOUND
+    value: 2
+    desc: | 
+      Hellhouds are aggressive, fire-breathing canines brought to the Prime Material plan from the depths of the Abyss to serve their evil masters. 3rd Edition MM page 118.
+  - name: FAMILIAR_CREATURE_TYPE_ICEMEPHIT
+    value: 5
+    desc: | 
+      Chaotic and destructive, mephits come in many shapes and have a wide range of abilities. Ice mephits come from the quasi-elemental plane of Ice and appropriately deal and soak cold-based attacks. 3rd Edition MM page 132.
+  - name: FAMILIAR_CREATURE_TYPE_IMP
+    value: 3
+    desc: | 
+      Small but insidious devils often bound to the service of sorcerers and wizards, imps have a gleeful attraction to pranks, riddles, and bawdy jokes. 3rd Edition MM page 48.
+  - name: FAMILIAR_CREATURE_TYPE_NONE
+    value: 255
+    desc: | 
+      This value is used to symbolize that a creature does not have an associated familiar.
+  - name: FAMILIAR_CREATURE_TYPE_PIXIE
+    value: 6
+  - name: FAMILIAR_CREATURE_TYPE_PSEUDO_DRAGON
+    value: 9
+  - name: FAMILIAR_CREATURE_TYPE_RAVEN
+    value: 7
+seealso:
+  functions:
+    - GetAnimalCompanionCreatureType

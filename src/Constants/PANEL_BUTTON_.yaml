@@ -1,0 +1,41 @@
+---
+type: Constants
+category: PANEL_BUTTON_*
+shortdesc: | 
+  Client panel buttons including character sheet, inventory, journal, map, options, player vs player, resting and spellbook.
+constants:
+  - name: PANEL_BUTTON_CHARACTER
+    value: 3
+    desc: | 
+      Character sheet panel button.
+  - name: PANEL_BUTTON_INVENTORY
+    value: 1
+    desc: | 
+      Inventory panel button.
+  - name: PANEL_BUTTON_JOURNAL
+    value: 2
+    desc: | 
+      Quest journal panel button.
+  - name: PANEL_BUTTON_MAP
+    value: 0
+    desc: | 
+      Map panel button.
+  - name: PANEL_BUTTON_OPTIONS
+    value: 4
+    desc: | 
+      Game options panel button.
+  - name: PANEL_BUTTON_PLAYER_VERSUS_PLAYER
+    value: 7
+    desc: | 
+      Player versus player panel button.
+  - name: PANEL_BUTTON_REST
+    value: 6
+    desc: | 
+      Resting panel button.
+  - name: PANEL_BUTTON_SPELLS
+    value: 5
+    desc: | 
+      Spellbook panel button.
+seealso:
+  functions:
+    - SetPanelButtonFlash

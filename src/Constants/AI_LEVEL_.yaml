@@ -1,0 +1,36 @@
+---
+type: Constants
+category: AI_LEVEL_*
+shortdesc: | 
+  Determines the AI (artificial intelligence) level of a creature controlled by the computer. The AI level determines how "smart" the creature is by how much CPU time is given to it.
+constants:
+  - name: AI_LEVEL_DEFAULT
+    value: -1
+    desc: | 
+      Default game-specified setting. The game will apply the appropriate AI setting as necessary.
+  - name: AI_LEVEL_HIGH
+    value: 3
+    desc: | 
+      High priority, smartest AI, but extremely high CPU usage required for AI. Avoid using this except during a cut-scene.
+  - name: AI_LEVEL_INVALID
+    value: -1
+    desc: | 
+      Invalid AI level setting.
+  - name: AI_LEVEL_LOW
+    value: 1
+    desc: | 
+      Low priority, mildly stupid, but slightly more CPU usage for AI. Typically used when not in combat, but a player is in the area.
+  - name: AI_LEVEL_NORMAL
+    value: 2
+    desc: | 
+      Normal priority, average AI, but more CPU usage required for AI. Typically used when creature is in combat.
+  - name: AI_LEVEL_VERY_HIGH
+    value: 4
+  - name: AI_LEVEL_VERY_LOW
+    value: 0
+    desc: | 
+      Very Low priority, very stupid, but low CPU usage for AI. Typically used when no players are in the area.
+seealso:
+  functions:
+    - GetAILevel
+    - SetAILevel

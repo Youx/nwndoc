@@ -1,0 +1,439 @@
+---
+type: Constants
+category: AREA_TRANSITION_*
+shortdesc: | 
+  Defines the various different categories of area transition screens that are displayed when an area is loading.
+constants:
+  - name: AREA_TRANSITION_BEHOLDER_01
+    value: 95
+    desc: | 
+      Corridor ending in a closed door.
+  - name: AREA_TRANSITION_BEHOLDER_02
+    value: 96
+    desc: | 
+      Corridor ending in a bend to the left.
+  - name: AREA_TRANSITION_CARAVAN_DESERT
+    value: 84
+  - name: AREA_TRANSITION_CARAVAN_RURAL
+    value: 85
+  - name: AREA_TRANSITION_CARAVAN_WINTER
+    value: 83
+  - name: AREA_TRANSITION_CASTLE_01
+    value: 34
+    desc: | 
+      Corridor ending in an open metal door.
+  - name: AREA_TRANSITION_CASTLE_02
+    value: 35
+    desc: | 
+      Corridor ending in stairs up.
+  - name: AREA_TRANSITION_CASTLE_03
+    value: 36
+    desc: | 
+      Corridor ending in stairs down.
+  - name: AREA_TRANSITION_CASTLE_04
+    value: 37
+    desc: | 
+      Library with desk.
+  - name: AREA_TRANSITION_CASTLE_05
+    value: 38
+    desc: | 
+      Dungeon.
+  - name: AREA_TRANSITION_CASTLE_06
+    value: 39
+    desc: | 
+      Storage room.
+  - name: AREA_TRANSITION_CASTLE_07
+    value: 40
+    desc: | 
+      Room with stone flooring and candle stand.
+  - name: AREA_TRANSITION_CASTLE_08
+    value: 41
+    desc: | 
+      Room with stone flooring, bookcase, table, potted plant and hanging banners.
+  - name: AREA_TRANSITION_CITY
+    value: 2
+    desc: | 
+      Closed wall gate. Legacy constant; same as AREA_TRANSITION_CITY_01.
+  - name: AREA_TRANSITION_CITY_01
+    value: 2
+    desc: | 
+      Closed wall gate. Same as the legacy constant AREA_TRANSITION_CITY.
+  - name: AREA_TRANSITION_CITY_02
+    value: 3
+    desc: | 
+      Harbor.
+  - name: AREA_TRANSITION_CITY_03
+    value: 4
+    desc: | 
+      Buildings surrounding a grass tile.
+  - name: AREA_TRANSITION_CITY_04
+    value: 5
+    desc: | 
+      Buildings.
+  - name: AREA_TRANSITION_CITY_05
+    value: 6
+    desc: | 
+      Buildings with a fountain.
+  - name: AREA_TRANSITION_CRYPT
+    value: 7
+    desc: | 
+      Closed double wooden doors. Legacy constant; same as AREA_TRANSITION_CRYPT_01.
+  - name: AREA_TRANSITION_CRYPT_01
+    value: 7
+    desc: | 
+      Closed double wooden doors. Same as the legacy constant AREA_TRANSITION_CRYPT.
+  - name: AREA_TRANSITION_CRYPT_02
+    value: 8
+    desc: | 
+      Transition splash image related to the crypt tileset.
+  - name: AREA_TRANSITION_CRYPT_03
+    value: 9
+    desc: | 
+      Wooden bridge over pit.
+  - name: AREA_TRANSITION_CRYPT_04
+    value: 10
+    desc: | 
+      Corridor.
+  - name: AREA_TRANSITION_CRYPT_05
+    value: 11
+    desc: | 
+      Room with crypt.
+  - name: AREA_TRANSITION_DESERT_01
+    value: 73
+    desc: | 
+      Several cliff faces.
+  - name: AREA_TRANSITION_DESERT_02
+    value: 74
+    desc: | 
+      Top down view of several cliff faces.
+  - name: AREA_TRANSITION_DESERT_03
+    value: 75
+    desc: | 
+      Between two cliff faces heading to a small stream.
+  - name: AREA_TRANSITION_DESERT_04
+    value: 76
+    desc: | 
+      Between a cliff face and the beginnings of a pit.
+  - name: AREA_TRANSITION_DESERT_05
+    value: 77
+    desc: | 
+      Tent city.
+  - name: AREA_TRANSITION_DROW_01
+    value: 97
+    desc: | 
+      Corridor with branch to the left then right.
+  - name: AREA_TRANSITION_DROW_02
+    value: 98
+    desc: | 
+      Floor style 1.
+  - name: AREA_TRANSITION_DROW_03
+    value: 104
+    desc: | 
+      Temple.
+  - name: AREA_TRANSITION_DROW_04
+    value: 105
+    desc: | 
+      Bedroom.
+  - name: AREA_TRANSITION_DUNGEON_01
+    value: 12
+    desc: | 
+      Corridor ending in closed metal door.
+  - name: AREA_TRANSITION_DUNGEON_02
+    value: 13
+    desc: | 
+      Stairs down.
+  - name: AREA_TRANSITION_DUNGEON_03
+    value: 14
+    desc: | 
+      Stairs up.
+  - name: AREA_TRANSITION_DUNGEON_04
+    value: 15
+    desc: | 
+      Room with lava.
+  - name: AREA_TRANSITION_DUNGEON_05
+    value: 16
+    desc: | 
+      Lava Pit.
+  - name: AREA_TRANSITION_DUNGEON_06
+    value: 17
+    desc: | 
+      Wall section 2 with flames.
+  - name: AREA_TRANSITION_DUNGEON_07
+    value: 18
+    desc: | 
+      Corridor.
+  - name: AREA_TRANSITION_DUNGEON_08
+    value: 19
+    desc: | 
+      Platform 5.
+  - name: AREA_TRANSITION_FOREST
+    value: 58
+    desc: | 
+      Trees with sunbeams. Legacy constant; same as AREA_TRANSITION_FOREST_01.
+  - name: AREA_TRANSITION_FOREST_01
+    value: 58
+    desc: | 
+      Trees with sunbeams. Same as legacy constant AREA_TRANSITION_FOREST.
+  - name: AREA_TRANSITION_FOREST_02
+    value: 59
+    desc: | 
+      Trees and cliffs with snow.
+  - name: AREA_TRANSITION_FOREST_03
+    value: 60
+    desc: | 
+      Foggy land and pits.
+  - name: AREA_TRANSITION_FOREST_04
+    value: 61
+    desc: | 
+      Trees with yellow lighting.
+  - name: AREA_TRANSITION_FOREST_05
+    value: 62
+    desc: | 
+      Trees and cliffs at night.
+  - name: AREA_TRANSITION_ILLITHID_01
+    value: 99
+    desc: | 
+      Transporter.
+  - name: AREA_TRANSITION_ILLITHID_02
+    value: 100
+  - name: AREA_TRANSITION_INTERIOR_01
+    value: 42
+    desc: | 
+      Inn with pitcher and closed wooden door.
+  - name: AREA_TRANSITION_INTERIOR_02
+    value: 43
+    desc: | 
+      Inn with table and benches.
+  - name: AREA_TRANSITION_INTERIOR_03
+    value: 44
+    desc: | 
+      Shop.
+  - name: AREA_TRANSITION_INTERIOR_04
+    value: 45
+    desc: | 
+      Kitchen with crates.
+  - name: AREA_TRANSITION_INTERIOR_05
+    value: 46
+    desc: | 
+      Kitchen with crates.
+  - name: AREA_TRANSITION_INTERIOR_06
+    value: 47
+    desc: | 
+      Corridor to closed wooden door.
+  - name: AREA_TRANSITION_INTERIOR_07
+    value: 48
+    desc: | 
+      Living room between two bookcases looking towards fireplace.
+  - name: AREA_TRANSITION_INTERIOR_08
+    value: 49
+    desc: | 
+      Stairs up.
+  - name: AREA_TRANSITION_INTERIOR_09
+    value: 50
+    desc: | 
+      Living room with bookcases and a large wooden chair.
+  - name: AREA_TRANSITION_INTERIOR_10
+    value: 51
+    desc: | 
+      Kitchen with coat rack and open wooden door.
+  - name: AREA_TRANSITION_INTERIOR_11
+    value: 52
+    desc: | 
+      Stairs down.
+  - name: AREA_TRANSITION_INTERIOR_12
+    value: 53
+    desc: | 
+      Wizard den.
+  - name: AREA_TRANSITION_INTERIOR_13
+    value: 54
+    desc: | 
+      Good temple view of kneeling statues.
+  - name: AREA_TRANSITION_INTERIOR_14
+    value: 55
+    desc: | 
+      Shop with desk.
+  - name: AREA_TRANSITION_INTERIOR_15
+    value: 56
+    desc: | 
+      Tent interior.
+  - name: AREA_TRANSITION_INTERIOR_16
+    value: 57
+    desc: | 
+      Barn.
+  - name: AREA_TRANSITION_MAGICAL_01
+    value: 86
+  - name: AREA_TRANSITION_MAGICAL_02
+    value: 87
+  - name: AREA_TRANSITION_MINES_01
+    value: 20
+    desc: | 
+      Double wooden doors and corridor with mine cart rails.
+  - name: AREA_TRANSITION_MINES_02
+    value: 21
+    desc: | 
+      Cave exit out.
+  - name: AREA_TRANSITION_MINES_03
+    value: 22
+    desc: | 
+      Winding mine cart corridor.
+  - name: AREA_TRANSITION_MINES_04
+    value: 23
+    desc: | 
+      Room with a wall on the left and a building on the right.
+  - name: AREA_TRANSITION_MINES_05
+    value: 24
+    desc: | 
+      Water.
+  - name: AREA_TRANSITION_MINES_06
+    value: 25
+    desc: | 
+      Cave floor with stalagmites and water.
+  - name: AREA_TRANSITION_MINES_07
+    value: 26
+    desc: | 
+      Cave with yellow lighting.
+  - name: AREA_TRANSITION_MINES_08
+    value: 27
+    desc: | 
+      Corridor with yellow lighting.
+  - name: AREA_TRANSITION_MINES_09
+    value: 28
+    desc: | 
+      Cave with yellow lighting and rock group.
+  - name: AREA_TRANSITION_RANDOM
+    value: 0
+    desc: | 
+      Randomly chosen area transition splash screen, based on neither coming nor going tilesets.
+  - name: AREA_TRANSITION_RUINS_01
+    value: 78
+    desc: | 
+      Large pillar.
+  - name: AREA_TRANSITION_RUINS_02
+    value: 79
+    desc: | 
+      Room.
+  - name: AREA_TRANSITION_RUINS_03
+    value: 80
+    desc: | 
+      Corridor.
+  - name: AREA_TRANSITION_RUINS_04
+    value: 81
+    desc: | 
+      Raised platform.
+  - name: AREA_TRANSITION_RUINS_05
+    value: 82
+    desc: | 
+      Room with beginnings of a pit on the right side.
+  - name: AREA_TRANSITION_RURAL
+    value: 63
+    desc: | 
+      Grass, cliff, trees and rock. Legacy constant; same as AREA_TRANSITION_RURAL_01.
+  - name: AREA_TRANSITION_RURAL_01
+    value: 63
+    desc: | 
+      Grass, cliff, trees and rock. Same as legacy constant AREA_TRANSITION_RURAL.
+  - name: AREA_TRANSITION_RURAL_02
+    value: 64
+    desc: | 
+      Buildings and windmill.
+  - name: AREA_TRANSITION_RURAL_03
+    value: 65
+    desc: | 
+      Waterfall, rivers and cliffs.
+  - name: AREA_TRANSITION_RURAL_04
+    value: 66
+    desc: | 
+      Harbor.
+  - name: AREA_TRANSITION_RURAL_05
+    value: 67
+    desc: | 
+      Snowing.
+    desc: | 
+      ?REA_TRANSITION_SEWER_01	29	
+    desc: | 
+      Stairs down.
+  - name: AREA_TRANSITION_SEWER_02
+    value: 30
+    desc: | 
+      Stairs up.
+  - name: AREA_TRANSITION_SEWER_03
+    value: 31
+    desc: | 
+      Dead end corridor.
+  - name: AREA_TRANSITION_SEWER_04
+    value: 32
+    desc: | 
+      Pipes and nasty water.
+  - name: AREA_TRANSITION_SEWER_05
+    value: 33
+    desc: | 
+      Corner with pipes and small bit of nasty water.
+  - name: AREA_TRANSITION_UNDERDARK_01
+    value: 88
+    desc: | 
+      Cave floor with stalagmites.
+  - name: AREA_TRANSITION_UNDERDARK_02
+    value: 89
+    desc: | 
+      River.
+  - name: AREA_TRANSITION_UNDERDARK_03
+    value: 90
+    desc: | 
+      Temple.
+  - name: AREA_TRANSITION_UNDERDARK_04
+    value: 91
+    desc: | 
+      Illithid Grand Hall.
+  - name: AREA_TRANSITION_UNDERDARK_05
+    value: 92
+    desc: | 
+      Poor sector.
+  - name: AREA_TRANSITION_UNDERDARK_06
+    value: 93
+    desc: | 
+      Drow Sector.
+  - name: AREA_TRANSITION_UNDERDARK_07
+    value: 94
+    desc: | 
+      Spiral stairs up.
+  - name: AREA_TRANSITION_USER_DEFINED
+    value: 1
+    desc: | 
+      Transition splash image related to user-defined content.
+  - name: AREA_TRANSITION_WASTELAND_01
+    value: 101
+    desc: | 
+      Snow.
+  - name: AREA_TRANSITION_WASTELAND_02
+    value: 102
+    desc: | 
+      Structure.
+  - name: AREA_TRANSITION_WASTELAND_03
+    value: 103
+    desc: | 
+      Raised Cliff.
+  - name: AREA_TRANSITION_WRURAL_01
+    value: 68
+    desc: | 
+      Wooden bridge with door over lake.
+  - name: AREA_TRANSITION_WRURAL_02
+    value: 69
+    desc: | 
+      Road winding over water and towards a wooden wall.
+  - name: AREA_TRANSITION_WRURAL_03
+    value: 70
+    desc: | 
+      Shrine 2 atop a cliff.
+  - name: AREA_TRANSITION_WRURAL_04
+    value: 71
+    desc: | 
+      Shrine 2 viewed from the top down.
+  - name: AREA_TRANSITION_WRURAL_05
+    value: 72
+    desc: | 
+      Road heading into the forest.
+seealso:
+  functions:
+    - GetIsAreaAboveGround
+    - GetIsAreaNatural
+    - SetAreaTransitionBMP

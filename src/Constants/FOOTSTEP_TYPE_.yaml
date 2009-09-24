@@ -1,0 +1,48 @@
+---
+type: Constants
+category: FOOTSTEP_TYPE_*
+shortdesc: | 
+  These constants must match those in the FootstepSounds.2da. For use with GetFootstepType()) and SetFootstepType().
+constants:
+  - name: FOOTSTEP_TYPE_BEETLE
+    value: 6
+  - name: FOOTSTEP_TYPE_DEFAULT
+    value: 65535
+  - name: FOOTSTEP_TYPE_DRAGON
+    value: 2
+  - name: FOOTSTEP_TYPE_FEATHER_WING
+    value: 10
+  - name: FOOTSTEP_TYPE_HOOF
+    value: 4
+  - name: FOOTSTEP_TYPE_HOOF_LARGE
+    value: 5
+  - name: FOOTSTEP_TYPE_INVALID
+    value: -1
+  - name: FOOTSTEP_TYPE_LARGE
+    value: 1
+  - name: FOOTSTEP_TYPE_LEATHER_WING
+    value: 9
+  - name: FOOTSTEP_TYPE_NONE
+    value: 12
+  - name: FOOTSTEP_TYPE_NORMAL
+    value: 0
+  - name: FOOTSTEP_TYPE_SEAGULL
+    value: 13
+  - name: FOOTSTEP_TYPE_SHARK
+    value: 14
+  - name: FOOTSTEP_TYPE_SKELETON
+    value: 8
+  - name: FOOTSTEP_TYPE_SOFT
+    value: 3
+  - name: FOOTSTEP_TYPE_SPIDER
+    value: 7
+  - name: FOOTSTEP_TYPE_WATER_LARGE
+    value: 16
+  - name: FOOTSTEP_TYPE_WATER_NORMAL
+    value: 15
+seealso:
+  functions:
+    - GetFootstepType
+    - SetFootstepType
+author: Mistress
+

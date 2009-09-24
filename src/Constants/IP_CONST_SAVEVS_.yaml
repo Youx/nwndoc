@@ -1,0 +1,66 @@
+---
+type: Constants
+category: IP_CONST_SAVEVS_*
+shortdesc: | 
+  Itemproperty constants relating to saving throws versus specific effects or damage types.
+constants:
+  - name: IP_CONST_SAVEVS_ACID
+    value: 1
+    desc: | 
+      Acid.
+  - name: IP_CONST_SAVEVS_COLD
+    value: 3
+    desc: | 
+      Cold.
+  - name: IP_CONST_SAVEVS_DEATH
+    value: 4
+    desc: | 
+      Death magic.
+  - name: IP_CONST_SAVEVS_DISEASE
+    value: 5
+    desc: | 
+      Disease.
+  - name: IP_CONST_SAVEVS_DIVINE
+    value: 6
+    desc: | 
+      Divine energy.
+  - name: IP_CONST_SAVEVS_ELECTRICAL
+    value: 7
+    desc: | 
+      Electrical.
+  - name: IP_CONST_SAVEVS_FEAR
+    value: 8
+    desc: | 
+      Fear.
+  - name: IP_CONST_SAVEVS_FIRE
+    value: 9
+    desc: | 
+      Fire.
+  - name: IP_CONST_SAVEVS_MINDAFFECTING
+    value: 11
+    desc: | 
+      Mind-affecting spells.
+  - name: IP_CONST_SAVEVS_NEGATIVE
+    value: 12
+    desc: | 
+      Negative energy.
+  - name: IP_CONST_SAVEVS_POISON
+    value: 13
+    desc: | 
+      Poison.
+  - name: IP_CONST_SAVEVS_POSITIVE
+    value: 14
+    desc: | 
+      Positive energy.
+  - name: IP_CONST_SAVEVS_SONIC
+    value: 15
+    desc: | 
+      Sonic.
+  - name: IP_CONST_SAVEVS_UNIVERSAL
+    value: 0
+    desc: | 
+      Universal - all of the above!
+seealso:
+  functions:
+    - ItemPropertyBonusSavingThrowVsX
+    - ItemPropertyReducedSavingThrowVsX

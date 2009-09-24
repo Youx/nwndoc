@@ -1,0 +1,49 @@
+---
+type: Constants
+category: IP_CONST_IMMUNITYMISC_*
+shortdesc: | 
+  Itemproperty constants relating to miscellaneous immunities.
+constants:
+  - name: IP_CONST_IMMUNITYMISC_BACKSTAB
+    value: 0
+    desc: | 
+      Immunity to backstabbing.
+  - name: IP_CONST_IMMUNITYMISC_CRITICAL_HITS
+    value: 8
+    desc: | 
+      Immunity to critical hits.
+  - name: IP_CONST_IMMUNITYMISC_DEATH_MAGIC
+    value: 9
+    desc: | 
+      Immunity to death magic.
+  - name: IP_CONST_IMMUNITYMISC_DISEASE
+    value: 4
+    desc: | 
+      Immunity to disease.
+  - name: IP_CONST_IMMUNITYMISC_FEAR
+    value: 5
+    desc: | 
+      Immunity to fear.
+  - name: IP_CONST_IMMUNITYMISC_KNOCKDOWN
+    value: 6
+    desc: | 
+      Immunity to knockdown.
+  - name: IP_CONST_IMMUNITYMISC_LEVEL_ABIL_DRAIN
+    value: 1
+    desc: | 
+      Immunity to level / ability drain.
+  - name: IP_CONST_IMMUNITYMISC_MINDSPELLS
+    value: 2
+    desc: | 
+      Immunity to mind-affecting spells.
+  - name: IP_CONST_IMMUNITYMISC_PARALYSIS
+    value: 7
+    desc: | 
+      Immunity to paralysis.
+  - name: IP_CONST_IMMUNITYMISC_POISON
+    value: 3
+    desc: | 
+      Immunity to poison.
+seealso:
+  functions:
+    - ItemPropertyImmunityMisc

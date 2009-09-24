@@ -1,0 +1,49 @@
+---
+type: Constants
+category: IP_CONST_DAMAGERESIST_*
+shortdesc: | 
+  Itemproperty constants relating to damage resistance.
+constants:
+  - name: IP_CONST_DAMAGERESIST_5
+    value: 1
+    desc: | 
+      Resist 5 damage.
+  - name: IP_CONST_DAMAGERESIST_10
+    value: 2
+    desc: | 
+      Resist 10 damage.
+  - name: IP_CONST_DAMAGERESIST_15
+    value: 3
+    desc: | 
+      Resist 15 damage.
+  - name: IP_CONST_DAMAGERESIST_20
+    value: 4
+    desc: | 
+      Resist 20 damage.
+  - name: IP_CONST_DAMAGERESIST_25
+    value: 5
+    desc: | 
+      Resist 25 damage.
+  - name: IP_CONST_DAMAGERESIST_30
+    value: 6
+    desc: | 
+      Resist 30 damage.
+  - name: IP_CONST_DAMAGERESIST_35
+    value: 7
+    desc: | 
+      Resist 35 damage.
+  - name: IP_CONST_DAMAGERESIST_40
+    value: 8
+    desc: | 
+      Resist 40 damage.
+  - name: IP_CONST_DAMAGERESIST_45
+    value: 9
+    desc: | 
+      Resist 45 damage.
+  - name: IP_CONST_DAMAGERESIST_50
+    value: 10
+    desc: | 
+      Resist 50 damage.
+seealso:
+  functions:
+    - ItemPropertyDamageResistance

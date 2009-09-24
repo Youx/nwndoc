@@ -1,0 +1,543 @@
+---
+type: Constants
+category: IP_CONST_ONHIT_CASTSPELL_*
+shortdesc: | 
+  Itemproperty constants relating to OnHit: Cast spell. Please consult the SPELL_* constant section of the Lexicon for further info.
+constants:
+  - name: IP_CONST_ONHIT_CASTSPELL_ACID_FOG
+    value: 0
+    desc: | 
+      Cast the acid fog spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ACID_SPLASH
+    value: 81
+    desc: | 
+      Cast the acid splash spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ACTIVATE_ITEM
+    value: 78
+    desc: | 
+      Executes the x2_s3_onhitcast script. See that script for details of what it does. You can set it up to work with the tag based scripting method so it will execute the script with the name the same as the tag of the weapon. NOTE: It is unknown if this differs from the IP_CONST_ONHIT_CASTSPELL_ONHIT_UNIQUEPOWER constant's effect.
+  - name: IP_CONST_ONHIT_CASTSPELL_BALAGARNSIRONHORN
+    value: 91
+    desc: | 
+      Cast the Balagarn's Iron Horn spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BALL_LIGHTNING
+    value: 113
+    desc: | 
+      Cast the ball lightning spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BANE
+    value: 100
+    desc: | 
+      Cast the bane spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BANISHMENT
+    value: 85
+    desc: | 
+      Cast the banishment spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BESTOW_CURSE
+    value: 1
+    desc: | 
+      Cast the bestow curse spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BIGBYS_CLENCHED_FIST
+    value: 106
+    desc: | 
+      Cast Bigby's clenched fist spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BIGBYS_CRUSHING_HAND
+    value: 107
+    desc: | 
+      Cast the Bigby's crushing hand spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BIGBYS_FORCEFUL_HAND
+    value: 104
+    desc: | 
+      Cast the Bigby's forceful hand spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BIGBYS_GRASPING_HAND
+    value: 105
+    desc: | 
+      Cast the Bigby's grasping hand spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BIGBYS_INTERPOSING_HAND
+    value: 103
+    desc: | 
+      Cast the Bigby's interposing hand spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BLADE_BARRIER
+    value: 2
+    desc: | 
+      Cast the blade barrier spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BLINDNESS_AND_DEAFNESS
+    value: 3
+    desc: | 
+      Cast the blindness and deafness spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_BOMBARDMENT
+    value: 80
+    desc: | 
+      Cast the bombardment spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_CALL_LIGHTNING
+    value: 4
+    desc: | 
+      Cast the call lightning spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_CHAIN_LIGHTNING
+    value: 5
+    desc: | 
+      Cast the chain lightning spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_CLOUDKILL
+    value: 6
+    desc: | 
+      Cast the cloudkill spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_COMBUST
+    value: 140
+    desc: | 
+      Cast the combust spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_CONFUSION
+    value: 7
+    desc: | 
+      Cast the confusion spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_CONTAGION
+    value: 8
+    desc: | 
+      Cast the contagion spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_CREEPING_DOOM
+    value: 72
+    desc: | 
+      Cast the creeping doom spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_CRUMBLE
+    value: 110
+    desc: | 
+      Cast the crumble spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DARKNESS
+    value: 9
+    desc: | 
+      Cast the darkness spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DAZE
+    value: 10
+    desc: | 
+      Cast the daze spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DEAFENING_CLNG
+    value: 137
+    desc: | 
+      Cast the deafening clang spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DELAYED_BLAST_FIREBALL
+    value: 11
+    desc: | 
+      Cast the delayed blast fireball spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DESTRUCTION
+    value: 73
+    desc: | 
+      Cast the destruction spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DISMISSAL
+    value: 12
+    desc: | 
+      Cast the dismissal spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DISPEL_MAGIC
+    value: 13
+    desc: | 
+      Cast the dispel magic spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DOOM
+    value: 14
+    desc: | 
+      Cast the doom spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_DROWN
+    value: 92
+    desc: | 
+      Cast the drown spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_EARTHQUAKE
+    value: 83
+    desc: | 
+      Cast the earthquake spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ELECTRIC_JOLT
+    value: 93
+    desc: | 
+      Cast the electric jolt spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ENERGY_DRAIN
+    value: 15
+    desc: | 
+      Cast the energy drain spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ENERVATION
+    value: 16
+    desc: | 
+      Cast the enervation spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ENTANGLE
+    value: 17
+    desc: | 
+      Cast the entangle spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_EVARDS_BLACK_TENTACLES
+    value: 77
+    desc: | 
+      Cast the Evard's black tentacles spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_EVIL_BLIGHT
+    value: 121
+    desc: | 
+      Cast the evil blight spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FEAR
+    value: 18
+    desc: | 
+      Cast the fear spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FEEBLEMIND
+    value: 19
+    desc: | 
+      Cast the feeblemind spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FIRE_STORM
+    value: 20
+    desc: | 
+      Cast the firestorm spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FIREBALL
+    value: 21
+    desc: | 
+      Cast the fireball spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FIREBRAND
+    value: 94
+    desc: | 
+      Cast the firebrand spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FLAME_LASH
+    value: 22
+    desc: | 
+      Cast the flamelash spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FLAME_STRIKE
+    value: 23
+    desc: | 
+      Cast the flamestrike spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FLARE
+    value: 79
+    desc: | 
+      Cast the flare spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FLESH_TO_STONE
+    value: 108
+    desc: | 
+      Cast the flesh to stone spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_FREEZE
+    value: 139
+    desc: | 
+      Cast the freeze spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_GEDLEES_ELECTRIC_LOOP
+    value: 114
+    desc: | 
+      Cast the Gedlee's electric loop spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_GHOUL_TOUCH
+    value: 24
+    desc: | 
+      Cast the ghoul touch spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_GREASE
+    value: 25
+    desc: | 
+      Cast the grease spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_GREAT_THUNDERCLAP
+    value: 112
+    desc: | 
+      Cast the great thunderclap spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_GREATER_DISPELLING
+    value: 26
+    desc: | 
+      Cast the greater dispelling spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_GREATER_SPELL_BREACH
+    value: 27
+    desc: | 
+      Cast the greater spell breach spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_GUST_OF_WIND
+    value: 28
+    desc: | 
+      Cast the gust of wind spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_HAMMER_OF_THE_GODS
+    value: 29
+    desc: | 
+      Cast the hammer of the gods spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_HARM
+    value: 30
+    desc: | 
+      Cast the harm spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_HOLD_ANIMAL
+    value: 31
+    desc: | 
+      Cast the hold animal spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_HOLD_MONSTER
+    value: 32
+    desc: | 
+      Cast the hold monster spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_HOLD_PERSON
+    value: 33
+    desc: | 
+      Cast the hold person spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_HORIZIKAULS_BOOM
+    value: 115
+    desc: | 
+      Cast the Horizikaul's boom spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_HORRID_WILTING
+    value: 74
+    desc: | 
+      Cast the horrid wilting spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ICE_STORM
+    value: 75
+    desc: | 
+      Cast the ice storm spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_IMPLOSION
+    value: 34
+    desc: | 
+      Cast the implosion spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INCENDIARY_CLOUD
+    value: 35
+    desc: | 
+      Cast the incendiary cloud spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INFERNO
+    value: 97
+    desc: | 
+      Cast the inferno spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INFESTATION_OF_MAGGOTS
+    value: 111
+    desc: | 
+      Cast the infestation of maggots spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INFLICT_CRITICAL_WOUNDS
+    value: 90
+    desc: | 
+      Cast the inflich critical wounds spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INFLICT_LIGHT_WOUNDS
+    value: 87
+    desc: | 
+      Cast the inflict light wounds spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INFLICT_MINOR_WOUNDS
+    value: 86
+    desc: | 
+      Cast the inflict minor wounds spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INFLICT_MODERATE_WOUNDS
+    value: 88
+    desc: | 
+      Cast the inflict moderate wounds spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INFLICT_SERIOUS_WOUNDS
+    value: 89
+    desc: | 
+      Cast the inflict serious wounds spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_INTELLIGENT_WEAPON_ONHIT
+    value: 135
+    desc: | 
+      Cast the intelligent weapon OnHit spell.
+  - name: IP_CONST_ONHIT_CASTSPELL_ISAACS_GREATER_MISSILE_STORM
+    value: 99
+    desc: | 
+      Cast the Isaac's greater missile storm spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ISAACS_LESSER_MISSILE_STORM
+    value: 98
+    desc: | 
+      Cast the Isaac's lesser missile storm spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_KNOCKDOWN
+    value: 138
+    desc: | 
+      Cast the knockdown spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_LESSER_DISPEL
+    value: 36
+    desc: | 
+      Cast the lesser dispel spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_LESSER_SPELL_BREACH
+    value: 38
+    desc: | 
+      Cast the lesser spell breach spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_LIGHT
+    value: 40
+    desc: | 
+      Cast the light spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_LIGHTNING_BOLT
+    value: 41
+    desc: | 
+      Cast the lightning bolt spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_MAGIC_MISSILE
+    value: 42
+    desc: | 
+      Cast the magic missile spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_MASS_BLINDNESS_AND_DEAFNESS
+    value: 43
+    desc: | 
+      Cast the mass blindness and deafness spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_MASS_CHARM
+    value: 44
+    desc: | 
+      Cast the mass charm spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_MELFS_ACID_ARROW
+    value: 45
+    desc: | 
+      Cast the Melf's acid arrow spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_MESTILS_ACID_BREATH
+    value: 116
+    desc: | 
+      Cast the Mestil's acid breath spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_METEOR_SWARM
+    value: 46
+    desc: | 
+      Cast the meteor swarm spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_MIND_FOG
+    value: 47
+    desc: | 
+      Cast the mind fog spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_NEGATIVE_ENERGY_BURST
+    value: 76
+    desc: | 
+      Cast the negative energy burst spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_CHAOSSHIELD
+    value: 130
+    desc: | 
+      Cast the chaosshield spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_CONSTRICTWEAPON
+    value: 131
+    desc: | 
+      Cast the constrict weapon spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_DARKFIRE
+    value: 127
+    desc: | 
+      Cast the darkfire spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_EXTRACTBRAIN
+    value: 128
+    desc: | 
+      Cast the extract brain spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_FIREDAMAGE
+    value: 124
+    desc: | 
+      Cast the firedamage spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_PLANARRIFT
+    value: 126
+    desc: | 
+      Cast the planar rift spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_SLAYRAKSHASA
+    value: 123
+    desc: | 
+      Cast the slay rakshasa spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_TELEPORT
+    value: 122
+    desc: | 
+      Cast the teleport spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHIT_UNIQUEPOWER
+    value: 125
+    desc: | 
+      Executes the x2_s3_onhitcast script. See that script for details of what it does. You can set it up to work with the tag based scripting method so it will execute the script with the name the same as the tag of the weapon. NOTE: It is unknown if this differs from the IP_CONST_ONHIT_CASTSPELL_ACTIVATE_ITEM constant's effect.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHITDEMILICHTOUCH
+    value: 133
+    desc: | 
+      Cast the demilich touch spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHITDRACOLICHTOUCH
+    value: 134
+    desc: | 
+      Cast the dracolich touch spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHITFLAMINGSKIN
+    value: 129
+    desc: | 
+      Cast the flaming skin spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_ONHITRUINARMORBEBILITH
+    value: 132
+    desc: | 
+      Cast the ruin armor bebilith spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_PARALYZE_2
+    value: 136
+  - name: IP_CONST_ONHIT_CASTSPELL_PHANTASMAL_KILLER
+    value: 49
+    desc: | 
+      Cast the phantasmal killer spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_POISON
+    value: 50
+    desc: | 
+      Cast the poison spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_POWER_WORD_KILL
+    value: 51
+    desc: | 
+      Cast the power word: kill spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_POWER_WORD_STUN
+    value: 52
+    desc: | 
+      Cast the power word: stun spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_QUILLFIRE
+    value: 82
+    desc: | 
+      Cast the quillfire spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SCARE
+    value: 54
+    desc: | 
+      Cast the scare spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SCINTILLATING_SPHERE
+    value: 117
+    desc: | 
+      Cast the scintillating sphere spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SEARING_LIGHT
+    value: 55
+    desc: | 
+      Cast the searing light spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SILENCE
+    value: 56
+    desc: | 
+      Cast the silence spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SLAY_LIVING
+    value: 57
+    desc: | 
+      Cast the slay living spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SLEEP
+    value: 58
+    desc: | 
+      Cast the sleep spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SLOW
+    value: 59
+    desc: | 
+      Cast the slow spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SOUND_BURST
+    value: 60
+    desc: | 
+      Cast the sound burst spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SPIKE_GROWTH
+    value: 101
+    desc: | 
+      Cast the spike growth spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_STINKING_CLOUD
+    value: 61
+    desc: | 
+      Cast the stinking cloud spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_STONE_TO_FLESH
+    value: 109
+    desc: | 
+      Cast the stone to flesh spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_STONEHOLD
+    value: 119
+    desc: | 
+      Cast the stonehold spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_STORM_OF_VENGEANCE
+    value: 63
+    desc: | 
+      Cast the storm of vengeance spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SUNBEAM
+    value: 64
+    desc: | 
+      Cast the sunbeam spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_SUNBURST
+    value: 84
+    desc: | 
+      Cast the sunburst spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_TASHAS_HIDEOUS_LAUGHTER
+    value: 102
+    desc: | 
+      Cast the tasha's hideous laughter spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_UNDEATH_TO_DEATH
+    value: 118
+    desc: | 
+      Cast the undeath to death spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_UNDEATHS_ETERNAL_FOE
+    value: 96
+    desc: | 
+      Cast the undeaths' eternal foe spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_VAMPIRIC_TOUCH
+    value: 65
+    desc: | 
+      Cast the vampiric touch spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_WAIL_OF_THE_BANSHEE
+    value: 66
+    desc: | 
+      Cast the wail of the banshee spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_WALL_OF_FIRE
+    value: 67
+    desc: | 
+      Cast the wall of fire spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_WEB
+    value: 68
+    desc: | 
+      Cast the web spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_WEIRD
+    value: 69
+    desc: | 
+      Cast the weird spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_WORD_OF_FAITH
+    value: 70
+    desc: | 
+      Cast the word of faith spell OnHit.
+  - name: IP_CONST_ONHIT_CASTSPELL_WOUNDING_WHISPERS
+    value: 95
+    desc: | 
+      Cast the wounding whispers spell OnHit.
+seealso:
+  functions:
+    - ItemPropertyOnHitCastSpell

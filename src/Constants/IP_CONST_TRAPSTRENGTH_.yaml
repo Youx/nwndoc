@@ -1,0 +1,25 @@
+---
+type: Constants
+category: IP_CONST_TRAPSTRENGTH_*
+shortdesc: | 
+  Itemproperty constants relating to traps' strength.
+constants:
+  - name: IP_CONST_TRAPSTRENGTH_AVERAGE
+    value: 1
+    desc: | 
+      Average strength traps.
+  - name: IP_CONST_TRAPSTRENGTH_DEADLY
+    value: 3
+    desc: | 
+      Deadly strength traps.
+  - name: IP_CONST_TRAPSTRENGTH_MINOR
+    value: 0
+    desc: | 
+      Minor strength traps.
+  - name: IP_CONST_TRAPSTRENGTH_STRONG
+    value: 2
+    desc: | 
+      Strong traps.
+seealso:
+  functions:
+    - ItemPropertyTrap

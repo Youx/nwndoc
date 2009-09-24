@@ -1,0 +1,136 @@
+---
+type: Constants
+category: VOICE_CHAT_*
+shortdesc: | 
+  List of character voice sayings.
+constants:
+  - name: VOICE_CHAT_ATTACK
+    value: 0
+    desc: | 
+      Attack saying.
+  - name: VOICE_CHAT_BADIDEA
+    value: 47
+  - name: VOICE_CHAT_BATTLECRY1
+    value: 1
+    desc: | 
+      First battlecry voice.
+  - name: VOICE_CHAT_BATTLECRY2
+    value: 2
+    desc: | 
+      Second battlecry.
+  - name: VOICE_CHAT_BATTLECRY3
+    value: 3
+    desc: | 
+      Third battlecry.
+  - name: VOICE_CHAT_BORED
+    value: 39
+  - name: VOICE_CHAT_CANDO
+    value: 29
+  - name: VOICE_CHAT_CANTDO
+    value: 30
+  - name: VOICE_CHAT_CHEER
+    value: 44
+  - name: VOICE_CHAT_CUSS
+    value: 43
+  - name: VOICE_CHAT_DEATH
+    value: 18
+  - name: VOICE_CHAT_ENCUMBERED
+    value: 32
+  - name: VOICE_CHAT_ENEMIES
+    value: 6
+    desc: | 
+      The enemies are close saying.
+  - name: VOICE_CHAT_FLEE
+    value: 7
+    desc: | 
+      Call to flee saying.
+  - name: VOICE_CHAT_FOLLOWME
+    value: 22
+  - name: VOICE_CHAT_GATTACK1
+    value: 11
+    desc: | 
+      UNKOWN
+  - name: VOICE_CHAT_GATTACK2
+    value: 12
+    desc: | 
+      UNKOWN
+  - name: VOICE_CHAT_GATTACK3
+    value: 13
+    desc: | 
+      UNKOWN
+  - name: VOICE_CHAT_GOODBYE
+    value: 40
+  - name: VOICE_CHAT_GOODIDEA
+    value: 46
+  - name: VOICE_CHAT_GROUP
+    value: 24
+  - name: VOICE_CHAT_GUARDME
+    value: 9
+    desc: | 
+      The "guard me" saying.
+  - name: VOICE_CHAT_HEALME
+    value: 4
+    desc: | 
+      The "heal me" saying.
+  - name: VOICE_CHAT_HELLO
+    value: 34
+  - name: VOICE_CHAT_HELP
+    value: 5
+    desc: | 
+      Call for help saying
+  - name: VOICE_CHAT_HIDE
+    value: 28
+  - name: VOICE_CHAT_HOLD
+    value: 10
+    desc: | 
+      The hold position saying.
+  - name: VOICE_CHAT_LAUGH
+    value: 42
+  - name: VOICE_CHAT_LOOKHERE
+    value: 23
+  - name: VOICE_CHAT_MOVEOVER
+    value: 25
+  - name: VOICE_CHAT_NEARDEATH
+    value: 17
+  - name: VOICE_CHAT_NO
+    value: 36
+  - name: VOICE_CHAT_PAIN1
+    value: 14
+  - name: VOICE_CHAT_PAIN2
+    value: 15
+  - name: VOICE_CHAT_PAIN3
+    value: 16
+  - name: VOICE_CHAT_PICKLOCK
+    value: 26
+  - name: VOICE_CHAT_POISONED
+    value: 19
+  - name: VOICE_CHAT_REST
+    value: 38
+  - name: VOICE_CHAT_SEARCH
+    value: 27
+  - name: VOICE_CHAT_SELECTED
+    value: 33
+  - name: VOICE_CHAT_SPELLFAILED
+    value: 20
+  - name: VOICE_CHAT_STOP
+    value: 37
+  - name: VOICE_CHAT_TALKTOME
+    value: 45
+  - name: VOICE_CHAT_TASKCOMPLETE
+    value: 31
+  - name: VOICE_CHAT_TAUNT
+    value: 8
+    desc: | 
+      Taunt.
+  - name: VOICE_CHAT_THANKS
+    value: 41
+  - name: VOICE_CHAT_THREATEN
+    value: 48
+  - name: VOICE_CHAT_WEAPONSUCKS
+    value: 21
+  - name: VOICE_CHAT_YES
+    value: 35
+seealso:
+  functions:
+    - ActionStartConversation
+    - PlayVoiceChat

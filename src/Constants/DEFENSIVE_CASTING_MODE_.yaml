@@ -1,0 +1,19 @@
+---
+type: Constants
+category: DEFENSIVE_CASTING_MODE_*
+shortdesc: | 
+  Determines if a creature is casting a spell defensively so they suffer no attacks of opportunity.
+constants:
+  - name: DEFENSIVE_CASTING_MODE_ACTIVATED
+    value: 1
+  - name: DEFENSIVE_CASTING_MODE_DISABLED
+    value: 0
+    desc: | 
+      Defensive casting mode is disabled; the creature will suffer attacks of opportunity when applicable.
+  - name: DEFENSIVE_CASTING_MODE_ENABLED
+    value: UNKNOWN
+    desc: | 
+      Defensive casting mode is enabled; the creature won't suffer attacks of opportunity, but runs the risk of losing the spell completely if they cannot keep their concentraction.
+seealso:
+  functions:
+    - GetDefensiveCastingMode

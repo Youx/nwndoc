@@ -1,0 +1,27 @@
+---
+type: Constants
+category: SPELL_CRAFT_*
+shortdesc: | 
+  Unknown.
+constants:
+  - name: SPELL_CRAFT_ADD_ITEM_PROPERTY
+    value: 654
+  - name: SPELL_CRAFT_CRAFT_ARMOR_SKILL
+    value: 657
+  - name: SPELL_CRAFT_CRAFT_WEAPON_SKILL
+    value: 656
+  - name: SPELL_CRAFT_DYE_CLOTHCOLOR_1
+    value: 648
+  - name: SPELL_CRAFT_DYE_CLOTHCOLOR_2
+    value: 649
+  - name: SPELL_CRAFT_DYE_LEATHERCOLOR_1
+    value: 650
+  - name: SPELL_CRAFT_DYE_LEATHERCOLOR_2
+    value: 651
+  - name: SPELL_CRAFT_DYE_METALCOLOR_1
+    value: 652
+  - name: SPELL_CRAFT_DYE_METALCOLOR_2
+    value: 653
+  - name: SPELL_CRAFT_POISON_WEAPON_OR_AMMO
+    value: 655
+seealso:

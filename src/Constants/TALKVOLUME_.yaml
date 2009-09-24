@@ -1,0 +1,32 @@
+---
+type: Constants
+category: TALKVOLUME_*
+shortdesc: | 
+  Sets the broadcast range of text displayed using SpeakString() and ActionSpeakString() functions.
+constants:
+  - name: TALKVOLUME_SHOUT
+    value: 2
+    desc: | 
+      Sets the text visibility range to long.
+  - name: TALKVOLUME_SILENT_SHOUT
+    value: 4
+    desc: | 
+      Sets the text visibility to long, but hides the text from the screen (so it can still be heard and acted on by creatures in the area).
+  - name: TALKVOLUME_SILENT_TALK
+    value: 3
+    desc: | 
+      Sets the text visibility to short, but hides the text from the screen (so it can still be heard and acted on by creatures in the area).
+  - name: TALKVOLUME_TALK
+    value: 0
+    desc: | 
+      Set the text visibility to medium.
+  - name: TALKVOLUME_WHISPER
+    value: 1
+    desc: | 
+      Sets the text visibility range to short. Must be standing very near to the speaker to see. Placeables will not display whispered text.
+seealso:
+  functions:
+    - ActionSpeakString
+    - ActionSpeakStringByStrRef
+    - SpeakString
+    - SpeakStringByStrRef

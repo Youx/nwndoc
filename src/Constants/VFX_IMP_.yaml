@@ -1,0 +1,647 @@
+---
+type: Constants
+category: VFX_IMP_*
+shortdesc: | 
+  Impact visual effects that are generally used for spells when the spell effect hits someone. VFX_IMP_* -type effects can only be applied with DURATION_TYPE_INSTANT These constants are actually integers which can be found in nwscript.nss and refer to row numbers in the file visualeffects.2da - this file also contains visual effects for which there are no constants. If you want to use one of those, just use EffectVisualEffect(XXX) where XXX is the rownumber.
+constants:
+  - name: VFX_IMP_AC_BONUS
+    value: 42
+    desc: | 
+      Three white rings orbit body (similar to the Mage Armor spell).
+    location: About Body
+    colors:
+      - White
+  - name: VFX_IMP_ACID_L
+    value: 43
+    desc: | 
+      Acid burst at feet.
+    location: Feet
+    colors:
+      - Green
+  - name: VFX_IMP_ACID_S
+    value: 44
+    desc: | 
+      Acid burst on body.
+    location: Torso
+    colors:
+      - Green
+  - name: VFX_IMP_AURA_FEAR
+    value: 275
+    desc: | 
+      Small balls orbiting body at approximately 10m.
+    location: Feet
+    colors:
+      - Green
+  - name: VFX_IMP_AURA_HOLY
+    value: 273
+    desc: | 
+      Small balls orbiting body at approximately 10m.
+    location: Feet
+    colors:
+      - Yellow
+  - name: VFX_IMP_AURA_NEGATIVE_ENERGY
+    value: 276
+    desc: | 
+      Small balls orbiting body at approximately 10m.
+    location: Feet
+    colors:
+      - Red
+      - white
+  - name: VFX_IMP_AURA_UNEARTHLY
+    value: 274
+    desc: | 
+      Small balls orbiting body at approximately 10m.
+    location: Feet
+    colors:
+      - Green
+  - name: VFX_IMP_BIGBYS_FORCEFUL_HAND
+    value: 315
+    desc: | 
+      A green impact around the body of the target.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_IMP_BLIND_DEAF_M
+    value: 46
+    desc: | 
+      White halo effect around head.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_IMP_BREACH
+    value: 47
+    desc: | 
+      White sparkle effect about body.
+    location: About Body
+    colors:
+      - White
+      - blue
+  - name: VFX_IMP_CHARM
+    value: 140
+    desc: | 
+      Purple/Blue effect about body.
+    location: About Body
+    colors:
+      - Purple
+      - blue
+  - name: VFX_IMP_CONFUSION_S
+    value: 48
+    desc: | 
+      White lightning effect about head.
+    location: Above Head
+    colors:
+      - White
+  - name: VFX_IMP_DAZED_S
+    value: 49
+    desc: | 
+      White orbit effect about head.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_IMP_DEATH
+    value: 50
+    desc: | 
+      White imploding effect about body.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_IMP_DEATH_L
+    value: 217
+    colors:
+      - White
+  - name: VFX_IMP_DEATH_WARD
+    value: 146
+    desc: | 
+      Purple orbit effect about body.
+    location: About Body
+    colors:
+      - Purple
+  - name: VFX_IMP_DESTRUCTION
+    value: 234
+    desc: | 
+      Purple imploding effect at body.
+    location: About Body
+    colors:
+      - Purple
+  - name: VFX_IMP_DISEASE_S
+    value: 51
+    desc: | 
+      Brown/Green burst on neck.
+    location: Neck
+    colors:
+      - Brown
+      - green
+  - name: VFX_IMP_DISPEL
+    value: 52
+    desc: | 
+      White sparkle effect about body.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_IMP_DISPEL_DISJUNCTION
+    value: 53
+    desc: | 
+      Shakes the screen for about one second.
+  - name: VFX_IMP_DIVINE_STRIKE_FIRE
+    value: 54
+    desc: | 
+      Fiery beam from above.
+    location: Area
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_IMP_DIVINE_STRIKE_HOLY
+    value: 55
+    desc: | 
+      White orbiting and imploding effect about head.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_IMP_DOMINATE_S
+    value: 56
+    desc: | 
+      White orbiting effect about head.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_IMP_DOOM
+    value: 57
+    desc: | 
+      Black lightning cloud over head.
+    location: Over Head
+    colors:
+      - Dark
+      - black
+  - name: VFX_IMP_DUST_EXPLOSION
+    value: 460
+  - name: VFX_IMP_ELEMENTAL_PROTECTION
+    value: 152
+    desc: | 
+      Fire consume and white rain effects.
+    location: About Body
+    colors:
+      - Green
+      - yellow
+  - name: VFX_IMP_EVIL_HELP
+    value: 144
+    desc: | 
+      Red translucent pattern on floor.
+    location: Floor
+    colors:
+      - Red
+  - name: VFX_IMP_FEAR_S
+    value: 58
+    desc: | 
+      No noticable effect.
+  - name: VFX_IMP_FLAME_M
+    value: 60
+    desc: | 
+      Fire consume effect.
+    location: About Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_IMP_FLAME_S
+    value: 61
+    desc: | 
+      Yellow flash then smoke around head.
+  - name: VFX_IMP_FORTITUDE_SAVING_THROW_USE
+    value: 255
+    desc: | 
+      Single purple ball rising above head.
+    location: Over head
+    colors:
+      - Purple
+  - name: VFX_IMP_FROST_L
+    value: 62
+    desc: | 
+      Blue bursting effect about body.
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_IMP_FROST_S
+    value: 63
+    desc: | 
+      White bursting effect about neck with smoke.
+    location: Neck
+    colors:
+      - White
+  - name: VFX_IMP_GLOBE_USE
+    value: 251
+    desc: | 
+      White flickering globe surrounding target.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_IMP_GOOD_HELP
+    value: 145
+    desc: | 
+      Yellow translucent design on floor.
+    location: Floor
+    colors:
+      - Yellow
+  - name: VFX_IMP_GREASE
+    value: 64
+    desc: | 
+      No noticable effect.
+  - name: VFX_IMP_HARM
+    value: 246
+    desc: | 
+      Red beam of light from above.
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_IMP_HASTE
+    value: 65
+    desc: | 
+      Blue impoding effect on floor about feet.
+    location: Floor
+    colors:
+      - Blue
+  - name: VFX_IMP_HEAD_ACID
+    value: 194
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+    colors:
+      - Green
+  - name: VFX_IMP_HEAD_COLD
+    value: 198
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+  - name: VFX_IMP_HEAD_ELECTRICITY
+    value: 197
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+    colors:
+      - Electric
+      - blue
+      - white
+  - name: VFX_IMP_HEAD_EVIL
+    value: 203
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+    colors:
+      - Red
+  - name: VFX_IMP_HEAD_FIRE
+    value: 195
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+    colors:
+      - Fire
+      - flame
+      - yellow
+  - name: VFX_IMP_HEAD_HEAL
+    value: 201
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+  - name: VFX_IMP_HEAD_HOLY
+    value: 199
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+  - name: VFX_IMP_HEAD_MIND
+    value: 202
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+  - name: VFX_IMP_HEAD_NATURE
+    value: 200
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+  - name: VFX_IMP_HEAD_ODD
+    value: 204
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+  - name: VFX_IMP_HEAD_SONIC
+    value: 196
+    desc: | 
+      Four small beams which rise above the head and join over head.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_IMP_HEALING_G
+    value: 66
+    desc: | 
+      Cure critical wounds.
+    location: About Body
+    colors:
+      - Yellow
+      - blue
+  - name: VFX_IMP_HEALING_L
+    value: 67
+    desc: | 
+      Cure light wounds.
+    location: About Body
+    colors:
+      - White
+      - blue
+  - name: VFX_IMP_HEALING_M
+    value: 68
+    desc: | 
+      Cure moderate wounds.
+    location: About Head
+    colors:
+      - White
+      - yellow
+  - name: VFX_IMP_HEALING_S
+    value: 69
+    desc: | 
+      Cure serious wounds.
+    location: About Body
+    colors:
+      - White
+      - blue
+  - name: VFX_IMP_HEALING_X
+    value: 70
+    desc: | 
+      Heal spell effect.
+    location: About Body
+    colors:
+      - White
+      - blue
+  - name: VFX_IMP_HOLY_AID
+    value: 71
+    desc: | 
+      Yellow imploding effect on body.
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_IMP_IMPROVE_ABILITY_SCORE
+    value: 139
+    desc: | 
+      Multi-color lights orbiting head.
+    location: About Head
+    colors:
+      - Multicolor
+  - name: VFX_IMP_KNOCK
+    value: 72
+    desc: | 
+      White-blue light on body.
+    location: About Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_IMP_LIGHTNING_M
+    value: 74
+    desc: | 
+      Huge lightning bolt from above.
+    location: About Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_IMP_LIGHTNING_S
+    value: 75
+    desc: | 
+      Lightning blast from body.
+    location: About Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_IMP_MAGBLUE
+    value: 76
+    desc: | 
+      White burst about body.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_IMP_MAGIC_PROTECTION
+    value: 149
+    desc: | 
+      Blue consume turns into a white rain effect.
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_IMP_MAGIC_RESISTANCE_USE
+    value: 250
+    desc: | 
+      Small white burst above head.
+    location: Over head
+    colors:
+      - White
+  - name: VFX_IMP_MAGICAL_VISION
+    value: 141
+    desc: | 
+      Little multi-color eyes orbiting head.
+    location: About Head
+    colors:
+      - Multicolor
+  - name: VFX_IMP_MIRV
+    value: 181
+    desc: | 
+      Magical projectile (like magic missile).
+    location: Body
+    colors:
+      - White
+  - name: VFX_IMP_MIRV_ELECTRIC
+    value: 503
+    desc: | 
+      No noticable effect.
+  - name: VFX_IMP_MIRV_FLAME
+    value: 233
+    desc: | 
+      Flaming arrow.
+    location: Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_IMP_NEGATIVE_ENERGY
+    value: 81
+    desc: | 
+      Red/White burst about body with a red cloud.
+    location: Body
+    colors:
+      - Red
+      - white
+  - name: VFX_IMP_POISON_L
+    value: 83
+    desc: | 
+      Green cloud about body.
+    location: Body
+    colors:
+      - Green
+  - name: VFX_IMP_POISON_S
+    value: 84
+    desc: | 
+      Looks similar to VFX_IMP_POISON_L.
+  - name: VFX_IMP_POLYMORPH
+    value: 85
+    desc: | 
+      Green/White consume effect.
+    location: About Body
+    colors:
+      - White
+      - green
+  - name: VFX_IMP_PULSE_COLD
+    value: 86
+    desc: | 
+      Pulse of energy along floor.
+    location: Floor
+  - name: VFX_IMP_PULSE_FIRE
+    value: 87
+    desc: | 
+      Pulse of energy along floor.
+    location: Floor
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_IMP_PULSE_HOLY
+    value: 88
+    desc: | 
+      Pulse of energy along floor.
+    location: Floor
+    colors:
+      - Yellow
+  - name: VFX_IMP_PULSE_HOLY_SILENT
+    value: 461
+    desc: | 
+      Erratic behavior. Feedback message indicates this constant is displaying “SCENE_SEWER_WATER”. No noticeable visual effect is displayed.
+  - name: VFX_IMP_PULSE_NATURE
+    value: 266
+    desc: | 
+      No noticable effect.
+  - name: VFX_IMP_PULSE_NEGATIVE
+    value: 89
+    desc: | 
+      Pulse of energy along floor.
+    location: Floor
+    colors:
+      - Red
+  - name: VFX_IMP_PULSE_WATER
+    value: 264
+    desc: | 
+      No noticable effect.
+  - name: VFX_IMP_PULSE_WIND
+    value: 265
+    desc: | 
+      No noticable effect.
+  - name: VFX_IMP_RAISE_DEAD
+    value: 90
+    desc: | 
+      Floating skeleton (horizontal).
+    location: About Body
+    colors:
+      - White
+  - name: VFX_IMP_REDUCE_ABILITY_SCORE
+    value: 91
+    desc: | 
+      Red imploding effect about body.
+    location: About Body
+    colors:
+      - Red
+      - dark
+      - black
+  - name: VFX_IMP_REFLEX_SAVE_THROW_USE
+    value: 256
+    desc: | 
+      Single green ball rising above head.
+    location: Above Head
+    colors:
+      - Green
+  - name: VFX_IMP_REMOVE_CONDITION
+    value: 92
+  - name: VFX_IMP_RESTORATION
+    value: 222
+  - name: VFX_IMP_RESTORATION_GREATER
+    value: 223
+  - name: VFX_IMP_RESTORATION_LESSER
+    value: 221
+  - name: VFX_IMP_SILENCE
+    value: 93
+    desc: | 
+      White burst effect above head.
+    location: Above Head
+    colors:
+      - White
+  - name: VFX_IMP_SLEEP
+    value: 94
+    desc: | 
+      Floating white Z's above head.
+    location: Above Head
+    colors:
+      - White
+  - name: VFX_IMP_SLOW
+    value: 95
+    desc: | 
+      Purple imploding effect on floor
+    location: Floor
+    colors:
+      - Purple
+  - name: VFX_IMP_SONIC
+    value: 96
+    desc: | 
+      White halo.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_IMP_SPELL_MANTLE_USE
+    value: 254
+    desc: | 
+      White-blue globe of square panels about body.
+    location: About Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_IMP_SPIKE_TRAP
+    value: 253
+    desc: | 
+      Spike trap effect.
+  - name: VFX_IMP_STUN
+    value: 97
+    desc: | 
+      White rays from head.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_IMP_SUNSTRIKE
+    value: 98
+    desc: | 
+      Yellow/White burst about body.
+    location: About Body
+    colors:
+      - Yellow
+      - white
+  - name: VFX_IMP_SUPER_HEROISM
+    value: 150
+    desc: | 
+      White consume effect.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_IMP_TORNADO
+    value: 407
+  - name: VFX_IMP_UNSUMMON
+    value: 99
+    desc: | 
+      Blue translucent floor design & white consume.
+    location: Floor, About Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_IMP_WALLSPIKE
+    value: 486
+  - name: VFX_IMP_WILL_SAVING_THROW_USE
+    value: 252
+    desc: | 
+      Single white ball rising above head.
+    location: Above Head
+    colors:
+      - White
+seealso:
+  functions:
+    - PlaySuccessVisual
+  constants:
+    - VFX_BEAM_*
+    - VFX_COM_*
+    - VFX_DUR_*
+    - VFX_EYES_*
+    - VFX_FNF_*
+author: NWN Lexicon Group
+editor: KooKoo

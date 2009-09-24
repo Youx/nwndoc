@@ -1,0 +1,99 @@
+---
+type: Constants
+category: SAVING_THROW_TYPE_*
+shortdesc: | 
+  Describes different saving throw types.
+constants:
+  - name: SAVING_THROW_TYPE_ACID
+    value: 6
+    desc: | 
+      Specifies saving throws against acid.
+  - name: SAVING_THROW_TYPE_ALL
+    value: 0
+    desc: | 
+      Specifies all types of saving throws.
+  - name: SAVING_THROW_TYPE_CHAOS
+    value: 19
+    desc: | 
+      Specifies saving throws against chaos effects.
+  - name: SAVING_THROW_TYPE_COLD
+    value: 12
+    desc: | 
+      Specifies saving throws against cold based effects.
+  - name: SAVING_THROW_TYPE_DEATH
+    value: 11
+    desc: | 
+      Specifies saving throws against death effects.
+  - name: SAVING_THROW_TYPE_DISEASE
+    value: 3
+    desc: | 
+      Specifies saving throws against disease.
+  - name: SAVING_THROW_TYPE_DIVINE
+    value: 13
+    desc: | 
+      Specifies saving throws against divine effects.
+  - name: SAVING_THROW_TYPE_ELECTRICITY
+    value: 8
+    desc: | 
+      Specifies saving throws against electical based effects.
+  - name: SAVING_THROW_TYPE_EVIL
+    value: 17
+    desc: | 
+      Specifies saving throws against evil effects.
+  - name: SAVING_THROW_TYPE_FEAR
+    value: 4
+    desc: | 
+      Specifies saving throws against fear.
+  - name: SAVING_THROW_TYPE_FIRE
+    value: 7
+    desc: | 
+      Specifies saving throws against fire.
+  - name: SAVING_THROW_TYPE_GOOD
+    value: 16
+    desc: | 
+      Specifies saving throws against good effects.
+  - name: SAVING_THROW_TYPE_LAW
+    value: 18
+    desc: | 
+      Specifies saving throws against law effects.
+  - name: SAVING_THROW_TYPE_MIND_SPELLS
+    value: 1
+    desc: | 
+      Specifies saving throws against mind affecting spells.
+  - name: SAVING_THROW_TYPE_NEGATIVE
+    value: 10
+    desc: | 
+      Specifies saving throws against negative effects.
+  - name: SAVING_THROW_TYPE_NONE
+    value: 0
+    desc: | 
+      Specifies no saving throw type.
+  - name: SAVING_THROW_TYPE_POISON
+    value: 2
+    desc: | 
+      Specifies saving throws against poison.
+  - name: SAVING_THROW_TYPE_POSITIVE
+    value: 9
+    desc: | 
+      Specifies saving throws against positive effects.
+  - name: SAVING_THROW_TYPE_SONIC
+    value: 5
+    desc: | 
+      Specifies saving throws against sound based effects.
+  - name: SAVING_THROW_TYPE_SPELL
+    value: 15
+    desc: | 
+      Specifies saving throws against spells.
+  - name: SAVING_THROW_TYPE_TRAP
+    value: 14
+    desc: | 
+      Specifies saving throws against trap type effects.
+seealso:
+  functions:
+    - EffectSavingThrowDecrease
+    - EffectSavingThrowIncrease
+    - FortitudeSave
+    - GetReflexAdjustedDamage
+    - MySavingThrow
+    - ReflexSave
+    - WillSave

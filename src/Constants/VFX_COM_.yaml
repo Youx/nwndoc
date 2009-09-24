@@ -1,0 +1,263 @@
+---
+type: Constants
+category: VFX_COM_*
+shortdesc: | 
+  Common visual special effects. These constants are actually integers which can be found in nwscript.nss and refer to row numbers in the file visualeffects.2da - this file also contains visual effects for which there are no constants. If you want to use one of those, just use EffectVisualEffect(XXX) where XXX is the rownumber.
+constants:
+  - name: VFX_COM_BLOOD_CRT_GREEN
+    value: 116
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Green
+  - name: VFX_COM_BLOOD_CRT_RED
+    value: 115
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Red
+  - name: VFX_COM_BLOOD_CRT_WIMP
+    value: 108
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+  - name: VFX_COM_BLOOD_CRT_YELLOW
+    value: 117
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Yellow
+  - name: VFX_COM_BLOOD_LRG_GREEN
+    value: 113
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Green
+  - name: VFX_COM_BLOOD_LRG_RED
+    value: 112
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Red
+  - name: VFX_COM_BLOOD_LRG_WIMP
+    value: 107
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+  - name: VFX_COM_BLOOD_LRG_YELLOW
+    value: 114
+    desc: | 
+      This effect produces a small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Yellow
+  - name: VFX_COM_BLOOD_REG_GREEN
+    value: 110
+    desc: | 
+      This effect produces a very small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Green
+  - name: VFX_COM_BLOOD_REG_RED
+    value: 109
+    desc: | 
+      This effect produces a very small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Red
+  - name: VFX_COM_BLOOD_REG_WIMP
+    value: 106
+    desc: | 
+      This effect produces a very small ring of color around the neck area for a second.
+    location: Neck
+  - name: VFX_COM_BLOOD_REG_YELLOW
+    value: 111
+    desc: | 
+      This effect produces a very small ring of color around the neck area for a second.
+    location: Neck
+    colors:
+      - Yellow
+  - name: VFX_COM_BLOOD_SPARK_LARGE
+    value: 239
+    desc: | 
+      White sparks coming from chest area of target.
+    location: Chest
+    colors:
+      - White
+  - name: VFX_COM_BLOOD_SPARK_MEDIUM
+    value: 238
+    desc: | 
+      White sparks coming from chest area of target.
+    location: Chest
+    colors:
+      - White
+  - name: VFX_COM_BLOOD_SPARK_SMALL
+    value: 237
+    desc: | 
+      White sparks coming from chest area of target.
+    location: Chest
+    colors:
+      - White
+  - name: VFX_COM_CHUNK_BONE_MEDIUM
+    value: 236
+    desc: | 
+      Gray cloud of smoke and bones exploding about head area.
+    location: About Head
+    colors:
+      - Gray
+  - name: VFX_COM_CHUNK_GREEN_MEDIUM
+    value: 124
+    desc: | 
+      Green slime and bones exploding and falling to the ground.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_COM_CHUNK_GREEN_SMALL
+    value: 123
+    desc: | 
+      Smaller version of VFX_COM_CHUNK_GREEN_MEDIUM.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_COM_CHUNK_RED_BALLISTA
+    value: 504
+  - name: VFX_COM_CHUNK_RED_LARGE
+    value: 235
+    desc: | 
+      Red blood and bones exploding and falling to the ground.
+    location: About Body
+    colors:
+      - Red
+      - bones
+  - name: VFX_COM_CHUNK_RED_MEDIUM
+    value: 122
+    desc: | 
+      Smaller version of VFX_COM_CHUNK_RED_LARGE.
+    location: About Body
+    colors:
+      - Red
+      - bones
+  - name: VFX_COM_CHUNK_RED_SMALL
+    value: 121
+    desc: | 
+      Smaller version of VFX_COM_CHUNK_RED_LARGE.
+    location: About Body
+    colors:
+      - Red
+      - bones
+  - name: VFX_COM_CHUNK_STONE_MEDIUM
+    value: 354
+  - name: VFX_COM_CHUNK_STONE_SMALL
+    value: 353
+  - name: VFX_COM_CHUNK_YELLOW_MEDIUM
+    value: 126
+    desc: | 
+      Yellow-green slime and bones exploding and falling to the ground.
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_COM_CHUNK_YELLOW_SMALL
+    value: 125
+    desc: | 
+      Smaller version of VFX_COM_CHUNK_YELLOW_MEDIUM.
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_COM_HIT_ACID
+    value: 283
+    desc: | 
+      Green spears of light protruding from torso area.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_COM_HIT_DIVINE
+    value: 289
+    desc: | 
+      Yellow spears of light protruding from torso area.
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_COM_HIT_ELECTRICAL
+    value: 282
+    desc: | 
+      Blue-White (electric) spears of light protruding from torso area.
+    location: About Body
+    colors:
+      - Electric
+  - name: VFX_COM_HIT_FIRE
+    value: 280
+    desc: | 
+      Puff of fire covering torso area.
+    location: About Body
+    colors:
+      - Fire
+  - name: VFX_COM_HIT_FROST
+    value: 281
+    desc: | 
+      White spears of light protruding from torso area.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_COM_HIT_NEGATIVE
+    value: 288
+    desc: | 
+      Red spears of light protruding from torso area.
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_COM_HIT_SONIC
+    value: 284
+    desc: | 
+      White spears of light protruding from torso area.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_COM_SPARKS_PARRY
+    value: 118
+    desc: | 
+      Sparks from a parry.
+    location: Feet
+    colors:
+      - White
+  - name: VFX_COM_SPECIAL_BLUE_RED
+    value: 100
+    desc: | 
+      No noticable effect.
+  - name: VFX_COM_SPECIAL_PINK_ORANGE
+    value: 101
+    desc: | 
+      No noticable effect.
+  - name: VFX_COM_SPECIAL_RED_ORANGE
+    value: 103
+    desc: | 
+      No noticable effect.
+  - name: VFX_COM_SPECIAL_RED_WHITE
+    value: 102
+    desc: | 
+      No noticable effect.
+  - name: VFX_COM_SPECIAL_WHITE_BLUE
+    value: 104
+    desc: | 
+      No noticable effect.
+  - name: VFX_COM_SPECIAL_WHITE_ORANGE
+    value: 105
+    desc: | 
+      No noticable effect.
+  - name: VFX_COM_UNLOAD_MODEL
+    value: 120
+    desc: | 
+      No noticable effect.
+seealso:
+  constants:
+    - VFX_BEAM_*
+    - VFX_DUR_*
+    - VFX_EYES_*
+    - VFX_FNF_*
+    - VFX_IMP_*
+author: NWN Lexicon Group
+editor: KooKoo

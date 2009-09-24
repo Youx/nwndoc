@@ -1,0 +1,98 @@
+---
+type: Constants
+category: DAMAGE_POWER_*
+shortdesc: | 
+  Determines the magical strength of a melee or missile attack (for harming creatures with damage reduction). Does not determine actual magical bonus (see DAMAGE_BONUS_*), just determines what damage reductions an attack bypasses.
+constants:
+  - name: DAMAGE_POWER_ENERGY
+    value: 6
+    desc: | 
+      Harms creatures no matter what their damage resistance is, as if the spell was a force spell (like Magic Missile).
+  - name: DAMAGE_POWER_NORMAL
+    value: 0
+    desc: | 
+      Standard, non-magical damage source. Will not penetrate any form of Soak Damage.
+  - name: DAMAGE_POWER_PLUS_EIGHT
+    value: 9
+    desc: | 
+      Harms creatures with a normal damage reduction of */+8 or lower.
+  - name: DAMAGE_POWER_PLUS_EIGHTEEN
+    value: 19
+    desc: | 
+      Harms creatures with a normal damage reduction of */+18 or lower.
+  - name: DAMAGE_POWER_PLUS_ELEVEN
+    value: 12
+    desc: | 
+      Harms creatures with a normal damage reduction of */+11 or lower.
+  - name: DAMAGE_POWER_PLUS_FIFTEEN
+    value: 16
+    desc: | 
+      Harms creatures with a normal damage reduction of */+15 or lower.
+  - name: DAMAGE_POWER_PLUS_FIVE
+    value: 5
+    desc: | 
+      Harms creatures with a normal damage reduction of */+5 or lower.
+  - name: DAMAGE_POWER_PLUS_FOUR
+    value: 4
+    desc: | 
+      Harms creatures with a normal damage reduction of */+4 or lower.
+  - name: DAMAGE_POWER_PLUS_FOURTEEN
+    value: 15
+    desc: | 
+      Harms creatures with a normal damage reduction of */+14 or lower.
+  - name: DAMAGE_POWER_PLUS_NINE
+    value: 10
+    desc: | 
+      Harms creatures with a normal damage reduction of */+9 or lower.
+  - name: DAMAGE_POWER_PLUS_NINTEEN
+    value: 20
+    desc: | 
+      Harms creatures with a normal damage reduction of */+19 or lower.
+  - name: DAMAGE_POWER_PLUS_ONE
+    value: 1
+    desc: | 
+      Harms creatures with a normal damage reduction of */+1 or */silver.
+  - name: DAMAGE_POWER_PLUS_SEVEN
+    value: 8
+    desc: | 
+      Harms creatures with a normal damage reduction of */+7 or lower.
+  - name: DAMAGE_POWER_PLUS_SEVENTEEN
+    value: 18
+    desc: | 
+      Harms creatures with a normal damage reduction of */+17 or lower.
+  - name: DAMAGE_POWER_PLUS_SIX
+    value: 7
+    desc: | 
+      Harms creatures with a normal damage reduction of */+6 or lower.
+  - name: DAMAGE_POWER_PLUS_SIXTEEN
+    value: 17
+    desc: | 
+      Harms creatures with a normal damage reduction of */+16 or lower.
+  - name: DAMAGE_POWER_PLUS_TEN
+    value: 11
+    desc: | 
+      Harms creatures with a normal damage reduction of */+10 or lower.
+  - name: DAMAGE_POWER_PLUS_THIRTEEN
+    value: 14
+    desc: | 
+      Harms creatures with a normal damage reduction of */+13 or lower.
+  - name: DAMAGE_POWER_PLUS_THREE
+    value: 3
+    desc: | 
+      Harms creatures with a normal damage reduction of */+3 or lower.
+  - name: DAMAGE_POWER_PLUS_TWELVE
+    value: 13
+    desc: | 
+      Harms creatures with a normal damage reduction of */+12 or lower.
+  - name: DAMAGE_POWER_PLUS_TWENTY
+    value: 21
+    desc: | 
+      Harms creatures with a normal damage reduction of */+20 or lower. As */+20 is the highest possible, this basically penetrates all damage reduction (Except */-, which is damage resistance)
+  - name: DAMAGE_POWER_PLUS_TWO
+    value: 2
+    desc: | 
+      Harms creatures with a normal damage reduction of */+2 or lower.
+seealso:
+  functions:
+    - EffectDamage
+    - EffectDamageReduction

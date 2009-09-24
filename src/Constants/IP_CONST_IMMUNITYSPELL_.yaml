@@ -1,0 +1,473 @@
+---
+type: Constants
+category: IP_CONST_IMMUNITYSPELL_*
+shortdesc: | 
+  Itemproperty constants relating to spell immunities.
+constants:
+  - name: IP_CONST_IMMUNITYSPELL_ACID_FOG
+    value: 0
+    desc: | 
+      Immunity to acid fog.
+  - name: IP_CONST_IMMUNITYSPELL_AID
+    value: 1
+    desc: | 
+      Immunity to aid.
+  - name: IP_CONST_IMMUNITYSPELL_AURA_OF_VITALITY
+    value: 182
+    desc: | 
+      Immunity to aura of vitality.
+  - name: IP_CONST_IMMUNITYSPELL_BARKSKIN
+    value: 2
+    desc: | 
+      Immunity to barkskin.
+  - name: IP_CONST_IMMUNITYSPELL_BESTOW_CURSE
+    value: 3
+    desc: | 
+      Immunity to bestow curse.
+  - name: IP_CONST_IMMUNITYSPELL_BLINDNESS_AND_DEAFNESS
+    value: 6
+    desc: | 
+      Immunity to blindness and deafness.
+  - name: IP_CONST_IMMUNITYSPELL_BURNING_HANDS
+    value: 8
+    desc: | 
+      Immunity to burning hands.
+  - name: IP_CONST_IMMUNITYSPELL_CALL_LIGHTNING
+    value: 9
+    desc: | 
+      Immunity to call lightning.
+  - name: IP_CONST_IMMUNITYSPELL_CHAIN_LIGHTNING
+    value: 12
+    desc: | 
+      Immunity to chain lightning.
+  - name: IP_CONST_IMMUNITYSPELL_CHARM_MONSTER
+    value: 13
+    desc: | 
+      Immunity to charm monster.
+  - name: IP_CONST_IMMUNITYSPELL_CHARM_PERSON
+    value: 14
+    desc: | 
+      Immunity to charm person.
+  - name: IP_CONST_IMMUNITYSPELL_CHARM_PERSON_OR_ANIMAL
+    value: 15
+    desc: | 
+      Immunity to the charm person or animal spell.
+  - name: IP_CONST_IMMUNITYSPELL_CIRCLE_OF_DEATH
+    value: 16
+    desc: | 
+      Immunity to circle of death.
+  - name: IP_CONST_IMMUNITYSPELL_CIRCLE_OF_DOOM
+    value: 17
+    desc: | 
+      Immunity to circle of doom.
+  - name: IP_CONST_IMMUNITYSPELL_CLOUDKILL
+    value: 21
+    desc: | 
+      Immunity to cloudkill.
+  - name: IP_CONST_IMMUNITYSPELL_COLOR_SPRAY
+    value: 22
+    desc: | 
+      Immunity to colorspray.
+  - name: IP_CONST_IMMUNITYSPELL_CONE_OF_COLD
+    value: 23
+    desc: | 
+      Immunity to cone of cold.
+  - name: IP_CONST_IMMUNITYSPELL_CONFUSION
+    value: 24
+    desc: | 
+      Immunity to confusion.
+  - name: IP_CONST_IMMUNITYSPELL_CONTAGION
+    value: 25
+    desc: | 
+      Immunity to contagion.
+  - name: IP_CONST_IMMUNITYSPELL_CONTROL_UNDEAD
+    value: 26
+    desc: | 
+      Immunity to control undead.
+  - name: IP_CONST_IMMUNITYSPELL_CURE_CRITICAL_WOUNDS
+    value: 27
+    desc: | 
+      Immunity to cure critical wounds.
+  - name: IP_CONST_IMMUNITYSPELL_CURE_LIGHT_WOUNDS
+    value: 28
+    desc: | 
+      Immunity to cure light wounds.
+  - name: IP_CONST_IMMUNITYSPELL_CURE_MINOR_WOUNDS
+    value: 29
+    desc: | 
+      Immunity to cure minor wounds.
+  - name: IP_CONST_IMMUNITYSPELL_CURE_MODERATE_WOUNDS
+    value: 30
+    desc: | 
+      Immunity to cure moderate wounds.
+  - name: IP_CONST_IMMUNITYSPELL_CURE_SERIOUS_WOUNDS
+    value: 31
+    desc: | 
+      Immunity to cure serious wounds.
+  - name: IP_CONST_IMMUNITYSPELL_DARKNESS
+    value: 32
+    desc: | 
+      Immunity to darkness.
+  - name: IP_CONST_IMMUNITYSPELL_DAZE
+    value: 33
+    desc: | 
+      Immunity to daze.
+  - name: IP_CONST_IMMUNITYSPELL_DEATH_WARD
+    value: 34
+    desc: | 
+      Immunity to death ward.
+  - name: IP_CONST_IMMUNITYSPELL_DELAYED_BLAST_FIREBALL
+    value: 35
+    desc: | 
+      Immunity to delayed blast fireball.
+  - name: IP_CONST_IMMUNITYSPELL_DISMISSAL
+    value: 36
+    desc: | 
+      Immunity to dismissal.
+  - name: IP_CONST_IMMUNITYSPELL_DISPEL_MAGIC
+    value: 37
+    desc: | 
+      Immunity to dispel magic.
+  - name: IP_CONST_IMMUNITYSPELL_DOMINATE_ANIMAL
+    value: 39
+    desc: | 
+      Immunity to dominate animal.
+  - name: IP_CONST_IMMUNITYSPELL_DOMINATE_MONSTER
+    value: 40
+    desc: | 
+      Immunity to dominate monster.
+  - name: IP_CONST_IMMUNITYSPELL_DOMINATE_PERSON
+    value: 41
+    desc: | 
+      Immunity to dominate person.
+  - name: IP_CONST_IMMUNITYSPELL_DOOM
+    value: 42
+    desc: | 
+      Immunity to doom.
+  - name: IP_CONST_IMMUNITYSPELL_EAGLE_SPLEDOR
+    value: 173
+    desc: | 
+      Immunity to eagle's splendor (constant is misspelled, it's supposed to be as shown here...)
+  - name: IP_CONST_IMMUNITYSPELL_ENERGY_DRAIN
+    value: 46
+    desc: | 
+      Immunity to energy drain.
+  - name: IP_CONST_IMMUNITYSPELL_ENERVATION
+    value: 47
+    desc: | 
+      Immunity to enervation.
+  - name: IP_CONST_IMMUNITYSPELL_ENTANGLE
+    value: 48
+    desc: | 
+      Immunity to entangle.
+  - name: IP_CONST_IMMUNITYSPELL_EVARDS_BLACK_TENTACLES
+    value: 185
+    desc: | 
+      Immunity to Evard's black tentacles.
+  - name: IP_CONST_IMMUNITYSPELL_FEAR
+    value: 49
+    desc: | 
+      Immunity to fear.
+  - name: IP_CONST_IMMUNITYSPELL_FEEBLEMIND
+    value: 50
+    desc: | 
+      Immunity to feeblemind.
+  - name: IP_CONST_IMMUNITYSPELL_FIND_TRAPS
+    value: 187
+    desc: | 
+      Immunity to find traps.
+  - name: IP_CONST_IMMUNITYSPELL_FINGER_OF_DEATH
+    value: 51
+    desc: | 
+      Immunity to finger of death.
+  - name: IP_CONST_IMMUNITYSPELL_FIRE_STORM
+    value: 52
+    desc: | 
+      Immunity to firestorm.
+  - name: IP_CONST_IMMUNITYSPELL_FIREBALL
+    value: 53
+    desc: | 
+      Immunity to fireball.
+  - name: IP_CONST_IMMUNITYSPELL_FLAME_ARROW
+    value: 54
+    desc: | 
+      Immunity to flame arrow.
+  - name: IP_CONST_IMMUNITYSPELL_FLAME_LASH
+    value: 55
+    desc: | 
+      Immunity to flame lash.
+  - name: IP_CONST_IMMUNITYSPELL_FLAME_STRIKE
+    value: 56
+    desc: | 
+      Immunity to flame strike.
+  - name: IP_CONST_IMMUNITYSPELL_FOXS_CUNNING
+    value: 175
+    desc: | 
+      Immunity to fox's cunning.
+  - name: IP_CONST_IMMUNITYSPELL_FREEDOM_OF_MOVEMENT
+    value: 57
+    desc: | 
+      Immunity to freedom of movement.
+  - name: IP_CONST_IMMUNITYSPELL_GREASE
+    value: 59
+    desc: | 
+      Immunity to grease.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_BULLS_STRENGTH
+    value: 179
+    desc: | 
+      Immunity to greater bull's strength.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_CATS_GRACE
+    value: 180
+    desc: | 
+      Immunity to greater cat's grace.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_DISPELLING
+    value: 60
+    desc: | 
+      Immunity to greater dispelling.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_EAGLES_SPLENDOR
+    value: 176
+    desc: | 
+      Immunity to greater eagle's splendor.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_ENDURANCE
+    value: 181
+    desc: | 
+      Immunity to greater endurance.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_FOXS_CUNNING
+    value: 178
+    desc: | 
+      Immunity to greater fox's cunning.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_OWLS_WISDOM
+    value: 177
+    desc: | 
+      Immunity to greater owl's wisdom.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_PLANAR_BINDING
+    value: 62
+    desc: | 
+      Immunity to greater planar binding.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_SHADOW_CONJURATION
+    value: 64
+    desc: | 
+      Immunity to greater shadow conjuration.
+  - name: IP_CONST_IMMUNITYSPELL_GREATER_SPELL_BREACH
+    value: 65
+    desc: | 
+      Immunity to greater spell breach.
+  - name: IP_CONST_IMMUNITYSPELL_HAMMER_OF_THE_GODS
+    value: 68
+    desc: | 
+      Immunity to hammer of the gods.
+  - name: IP_CONST_IMMUNITYSPELL_HARM
+    value: 69
+    desc: | 
+      Immunity to harm.
+  - name: IP_CONST_IMMUNITYSPELL_HEAL
+    value: 71
+    desc: | 
+      Immunity to heal.
+  - name: IP_CONST_IMMUNITYSPELL_HEALING_CIRCLE
+    value: 72
+    desc: | 
+      Immunity to healing circle.
+  - name: IP_CONST_IMMUNITYSPELL_HOLD_ANIMAL
+    value: 73
+    desc: | 
+      Immunity to hold animal.
+  - name: IP_CONST_IMMUNITYSPELL_HOLD_MONSTER
+    value: 74
+    desc: | 
+      Immunity to hold monster.
+  - name: IP_CONST_IMMUNITYSPELL_HOLD_PERSON
+    value: 75
+    desc: | 
+      Immunity to hold person.
+  - name: IP_CONST_IMMUNITYSPELL_IMPLOSION
+    value: 78
+    desc: | 
+      Immunity to implosion.
+  - name: IP_CONST_IMMUNITYSPELL_IMPROVED_INVISIBILITY
+    value: 79
+    desc: | 
+      Immunity to improved invisibility.
+  - name: IP_CONST_IMMUNITYSPELL_INCENDIARY_CLOUD
+    value: 80
+    desc: | 
+      Immunity to incendiary cloud.
+  - name: IP_CONST_IMMUNITYSPELL_INVISIBILITY_PURGE
+    value: 82
+    desc: | 
+      Immunity to invisibility purge.
+  - name: IP_CONST_IMMUNITYSPELL_LEGEND_LORE
+    value: 186
+    desc: | 
+      Immunity to legend lore.
+  - name: IP_CONST_IMMUNITYSPELL_LESSER_DISPEL
+    value: 84
+    desc: | 
+      Immunity to lesser dispel.
+  - name: IP_CONST_IMMUNITYSPELL_LESSER_PLANAR_BINDING
+    value: 86
+    desc: | 
+      Immunity to lesser planar binding.
+  - name: IP_CONST_IMMUNITYSPELL_LESSER_SPELL_BREACH
+    value: 88
+    desc: | 
+      Immunity to lesser spell breach.
+  - name: IP_CONST_IMMUNITYSPELL_LIGHTNING_BOLT
+    value: 91
+    desc: | 
+      Immunity to lightning bolt.
+  - name: IP_CONST_IMMUNITYSPELL_MAGIC_CIRCLE_AGAINST_ALIGNMENT
+    value: 171
+    desc: | 
+      Immunity to magic circle against alignment.
+  - name: IP_CONST_IMMUNITYSPELL_MAGIC_MISSILE
+    value: 97
+    desc: | 
+      Immunity to magic missile.
+  - name: IP_CONST_IMMUNITYSPELL_MASS_BLINDNESS_AND_DEAFNESS
+    value: 100
+    desc: | 
+      Immunity to mass blindness and deafness.
+  - name: IP_CONST_IMMUNITYSPELL_MASS_CHARM
+    value: 101
+    desc: | 
+      Immunity to mass charm.
+  - name: IP_CONST_IMMUNITYSPELL_MASS_HEAL
+    value: 104
+    desc: | 
+      Immunity to mass heal.
+  - name: IP_CONST_IMMUNITYSPELL_MELFS_ACID_ARROW
+    value: 105
+    desc: | 
+      Immunity to Melf's acid arrow.
+  - name: IP_CONST_IMMUNITYSPELL_METEOR_SWARM
+    value: 106
+    desc: | 
+      Immunity to meteor swarm.
+  - name: IP_CONST_IMMUNITYSPELL_MIND_FOG
+    value: 108
+    desc: | 
+      Immunity to mind fog.
+  - name: IP_CONST_IMMUNITYSPELL_MORDENKAINENS_DISJUNCTION
+    value: 112
+    desc: | 
+      Immunity to Mordenkainen's disjunction.
+  - name: IP_CONST_IMMUNITYSPELL_OWLS_WISDOM
+    value: 174
+    desc: | 
+      Immunity to owl's wisdom.
+  - name: IP_CONST_IMMUNITYSPELL_PHANTASMAL_KILLER
+    value: 116
+    desc: | 
+      Immunity to phantasmal killer.
+  - name: IP_CONST_IMMUNITYSPELL_PLANAR_BINDING
+    value: 117
+    desc: | 
+      Immunity to planar binding.
+  - name: IP_CONST_IMMUNITYSPELL_POISON
+    value: 118
+    desc: | 
+      Immunity to poison.
+  - name: IP_CONST_IMMUNITYSPELL_POWER_WORD_KILL
+    value: 120
+    desc: | 
+      Immunity to power word: kill.
+  - name: IP_CONST_IMMUNITYSPELL_POWER_WORD_STUN
+    value: 121
+    desc: | 
+      Immunity to power word: stun.
+  - name: IP_CONST_IMMUNITYSPELL_PRISMATIC_SPRAY
+    value: 124
+    desc: | 
+      Immunity to prismatic spray.
+  - name: IP_CONST_IMMUNITYSPELL_RAY_OF_ENFEEBLEMENT
+    value: 131
+    desc: | 
+      Immunity to ray of enfeeblement.
+  - name: IP_CONST_IMMUNITYSPELL_RAY_OF_FROST
+    value: 132
+    desc: | 
+      Immunity to ray of frost.
+  - name: IP_CONST_IMMUNITYSPELL_REGENERATE
+    value: 184
+    desc: | 
+      Immunity to regenerate.
+  - name: IP_CONST_IMMUNITYSPELL_SCARE
+    value: 142
+    desc: | 
+      Immunity to scare.
+  - name: IP_CONST_IMMUNITYSPELL_SEARING_LIGHT
+    value: 143
+    desc: | 
+      Immunity to searing light.
+  - name: IP_CONST_IMMUNITYSPELL_SHADES
+    value: 145
+    desc: | 
+      Immunity to shades.
+  - name: IP_CONST_IMMUNITYSPELL_SHADOW_CONJURATION
+    value: 146
+    desc: | 
+      Immunity to shadow conjuration.
+  - name: IP_CONST_IMMUNITYSPELL_SILENCE
+    value: 150
+    desc: | 
+      Immunity to silence.
+  - name: IP_CONST_IMMUNITYSPELL_SLAY_LIVING
+    value: 151
+    desc: | 
+      Immunity to slay living.
+  - name: IP_CONST_IMMUNITYSPELL_SLEEP
+    value: 152
+    desc: | 
+      Immunity to sleep.
+  - name: IP_CONST_IMMUNITYSPELL_SLOW
+    value: 153
+    desc: | 
+      Immunity to slow.
+  - name: IP_CONST_IMMUNITYSPELL_SOUND_BURST
+    value: 154
+    desc: | 
+      Immunity to sound burst.
+  - name: IP_CONST_IMMUNITYSPELL_STINKING_CLOUD
+    value: 158
+    desc: | 
+      Immunity to stinking cloud.
+  - name: IP_CONST_IMMUNITYSPELL_STONESKIN
+    value: 159
+    desc: | 
+      Immunity to stoneskin.
+  - name: IP_CONST_IMMUNITYSPELL_STORM_OF_VENGEANCE
+    value: 160
+    desc: | 
+      Immunity to storm of vengeance.
+  - name: IP_CONST_IMMUNITYSPELL_SUNBEAM
+    value: 161
+    desc: | 
+      Immunity to sunbeam.
+  - name: IP_CONST_IMMUNITYSPELL_VIRTUE
+    value: 165
+    desc: | 
+      Immunity to virtue.
+  - name: IP_CONST_IMMUNITYSPELL_WAIL_OF_THE_BANSHEE
+    value: 166
+    desc: | 
+      Immunity to wail of the banshee.
+  - name: IP_CONST_IMMUNITYSPELL_WAR_CRY
+    value: 183
+    desc: | 
+      Immunity to warcry.
+  - name: IP_CONST_IMMUNITYSPELL_WEB
+    value: 167
+    desc: | 
+      Immunity to web.
+  - name: IP_CONST_IMMUNITYSPELL_WEIRD
+    value: 168
+    desc: | 
+      Immunity to weird.
+  - name: IP_CONST_IMMUNITYSPELL_WORD_OF_FAITH
+    value: 169
+    desc: | 
+      Immunity to word of faith.
+seealso:
+  functions:
+    - ItemPropertySpellImmunitySpecific

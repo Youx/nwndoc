@@ -1,0 +1,57 @@
+---
+type: Constants
+category: AOE_PER_*
+shortdesc: | 
+  Area effects centered on a fixed point. Location data type? UNKNOWN
+constants:
+  - name: AOE_PER_CREEPING_DOOM
+    value: 33
+  - name: AOE_PER_CUSTOM_AOE
+    value: 37
+  - name: AOE_PER_DARKNESS
+    value: 11
+  - name: AOE_PER_DELAY_BLAST_FIREBALL
+    value: 31
+  - name: AOE_PER_ENTANGLE
+    value: 9
+  - name: AOE_PER_EVARDS_BLACK_TENTACLES
+    value: 34
+  - name: AOE_PER_FOG_OF_BEWILDERMENT
+    value: 39
+  - name: AOE_PER_FOGACID
+    value: 0
+  - name: AOE_PER_FOGFIRE
+    value: 1
+  - name: AOE_PER_FOGGHOUL
+    value: 26
+  - name: AOE_PER_FOGKILL
+    value: 3
+  - name: AOE_PER_FOGMIND
+    value: 4
+  - name: AOE_PER_FOGSTINK
+    value: 2
+  - name: AOE_PER_GLYPH_OF_WARDING
+    value: 38
+  - name: AOE_PER_GREASE
+    value: 32
+  - name: AOE_PER_INVIS_SPHERE
+    value: 29
+  - name: AOE_PER_OVERMIND
+    value: 43
+  - name: AOE_PER_STONEHOLD
+    value: 42
+  - name: AOE_PER_STORM
+    value: 28
+    desc: | 
+      Required to be used with the VFX_FNF_STORM to cause the Storm of Vengeance spell visual effect.
+  - name: AOE_PER_VINE_MINE_CAMOUFLAGE
+    value: 40
+  - name: AOE_PER_WALLBLADE
+    value: 7
+  - name: AOE_PER_WALLFIRE
+    value: 5
+  - name: AOE_PER_WALLWIND
+    value: 6
+  - name: AOE_PER_WEB
+    value: 8
+seealso:

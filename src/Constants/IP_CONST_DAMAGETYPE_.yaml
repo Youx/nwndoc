@@ -1,0 +1,74 @@
+---
+type: Constants
+category: IP_CONST_DAMAGETYPE_*
+shortdesc: | 
+  Constants relating to itemproperties specific to damagetypes, such as AC bonus against a specific damagetype.
+constants:
+  - name: IP_CONST_DAMAGETYPE_ACID
+    value: 6
+    desc: | 
+      Acid damagetype.
+  - name: IP_CONST_DAMAGETYPE_BLUDGEONING
+    value: 0
+    desc: | 
+      Bludgenoning damagetype.
+  - name: IP_CONST_DAMAGETYPE_COLD
+    value: 7
+    desc: | 
+      Cold damagetype.
+  - name: IP_CONST_DAMAGETYPE_DIVINE
+    value: 8
+    desc: | 
+      Divine energy damage type.
+  - name: IP_CONST_DAMAGETYPE_ELECTRICAL
+    value: 9
+    desc: | 
+      Electrical damage type.
+  - name: IP_CONST_DAMAGETYPE_FIRE
+    value: 10
+    desc: | 
+      Fire damage type.
+  - name: IP_CONST_DAMAGETYPE_MAGICAL
+    value: 5
+    desc: | 
+      Any magical (i.e. not physical) damage type.
+  - name: IP_CONST_DAMAGETYPE_NEGATIVE
+    value: 11
+    desc: | 
+      Negative energy damage type.
+  - name: IP_CONST_DAMAGETYPE_PHYSICAL
+    value: 4
+    desc: | 
+      Physical (i.e. not magical) damage type.
+  - name: IP_CONST_DAMAGETYPE_PIERCING
+    value: 1
+    desc: | 
+      Piercing damage type.
+  - name: IP_CONST_DAMAGETYPE_POSITIVE
+    value: 12
+    desc: | 
+      Positive energy damage type.
+  - name: IP_CONST_DAMAGETYPE_SLASHING
+    value: 2
+    desc: | 
+      Slashing damage type.
+  - name: IP_CONST_DAMAGETYPE_SONIC
+    value: 13
+    desc: | 
+      Sonic damage type.
+  - name: IP_CONST_DAMAGETYPE_SUBDUAL
+    value: 3
+    desc: | 
+      Subdual damage type.
+seealso:
+  functions:
+    - ItemPropertyACBonusVsDmgType
+    - ItemPropertyDamageBonus
+    - ItemPropertyDamageBonusVsAlign
+    - ItemPropertyDamageBonusVsRace
+    - ItemPropertyDamageBonusVsSAlign
+    - ItemPropertyDamageImmunity
+    - ItemPropertyDamageResistance
+    - ItemPropertyDamageVulnerability
+    - ItemPropertyExtraMeleeDamageType
+    - ItemPropertyExtraRangeDamageType

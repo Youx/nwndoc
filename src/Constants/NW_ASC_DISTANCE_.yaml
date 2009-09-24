@@ -1,0 +1,24 @@
+---
+type: Constants
+category: NW_ASC_DISTANCE_*
+shortdesc: | 
+  Determines the distance, in meters, the NPC associate follows the PC at. These are not actually constants, and do not exist in nwscript.nss.
+requirements: |
+  #include "x0_i0_assoc"
+
+constants:
+  - name: NW_ASC_DISTANCE_2_METERS
+    value: 0x00000001
+    desc: | 
+      Follow at 2 meters.
+  - name: NW_ASC_DISTANCE_4_METERS
+    value: 0x00000002
+    desc: | 
+      Follow at 4 meters.
+  - name: NW_ASC_DISTANCE_6_METERS
+    value: 0x00000004
+    desc: | 
+      Follow at 6 meters.
+seealso:
+  functions:
+    - GetFollowDistance

@@ -1,0 +1,99 @@
+---
+type: Constants
+category: TALENT_CATEGORY_*
+shortdesc: | 
+  Groups the talents into categories.
+constants:
+  - name: TALENT_CATEGORY_BENEFICIAL_CONDITIONAL_AREAEFFECT
+    value: 6
+    desc: | 
+      Used with Restoration, Clarity, and other spells that remove effects (in a given area of effect).
+  - name: TALENT_CATEGORY_BENEFICIAL_CONDITIONAL_POTION
+    value: 18
+    desc: | 
+      Used for beneficial spells that occur as the result of imbibing a potion.
+  - name: TALENT_CATEGORY_BENEFICIAL_CONDITIONAL_SINGLE
+    value: 7
+    desc: | 
+      Used for Restoration, Clarity, and other spells that remove effects (single target).
+  - name: TALENT_CATEGORY_BENEFICIAL_ENHANCEMENT_AREAEFFECT
+    value: 8
+    desc: | 
+      Specifies a talent that enhances the abilities of creatures in an area.
+  - name: TALENT_CATEGORY_BENEFICIAL_ENHANCEMENT_POTION
+    value: 21
+    desc: | 
+      Specifies the talent of using a potion of some type of ability enhancement.
+  - name: TALENT_CATEGORY_BENEFICIAL_ENHANCEMENT_SELF
+    value: 10
+    desc: | 
+      Specifies a talent that enhances the abilities of the creature queried (OBJECT_SELF).
+  - name: TALENT_CATEGORY_BENEFICIAL_ENHANCEMENT_SINGLE
+    value: 9
+    desc: | 
+      Specifies a talent that enhances the abilities of a creature.
+  - name: TALENT_CATEGORY_BENEFICIAL_HEALING_AREAEFFECT
+    value: 4
+    desc: | 
+      Specifies the talents that are area of effect and cause healing.
+  - name: TALENT_CATEGORY_BENEFICIAL_HEALING_POTION
+    value: 17
+    desc: | 
+      Specifies a talent that of using a healing potion (whether a healing potion is accessible).
+  - name: TALENT_CATEGORY_BENEFICIAL_HEALING_TOUCH
+    value: 5
+    desc: | 
+      Specifies the talents that heal by touch.
+  - name: TALENT_CATEGORY_BENEFICIAL_OBTAIN_ALLIES
+    value: 15
+    desc: | 
+      Specifies a talent that will call forth allies.
+  - name: TALENT_CATEGORY_BENEFICIAL_PROTECTION_AREAEFFECT
+    value: 14
+    desc: | 
+      Specifies a talent that will protect creatues in an area in some way.
+  - name: TALENT_CATEGORY_BENEFICIAL_PROTECTION_POTION
+    value: 20
+    desc: | 
+      Specifies the talent of using a potion of some type of protection.
+  - name: TALENT_CATEGORY_BENEFICIAL_PROTECTION_SELF
+    value: 12
+    desc: | 
+      Specifies a talent that will protect the caller in some way.
+  - name: TALENT_CATEGORY_BENEFICIAL_PROTECTION_SINGLE
+    value: 13
+    desc: | 
+      Specifies a talent that will protect a single creatue in some way.
+  - name: TALENT_CATEGORY_DRAGONS_BREATH
+    value: 19
+    desc: | 
+      Specifies the talent of dragon's breath.
+  - name: TALENT_CATEGORY_HARMFUL_AREAEFFECT_DISCRIMINANT
+    value: 1
+    desc: | 
+      Specifies the talents that are area of effect and harmful but do not damage friendlies.
+  - name: TALENT_CATEGORY_HARMFUL_AREAEFFECT_INDISCRIMINANT
+    value: 11
+    desc: | 
+      Specifies a talent that causes harm to all creatures in an area.
+  - name: TALENT_CATEGORY_HARMFUL_MELEE
+    value: 22
+    desc: | 
+      Specifies the talent of melee based attack.
+  - name: TALENT_CATEGORY_HARMFUL_RANGED
+    value: 2
+    desc: | 
+      Specifies the talents that are harmful and are delivered over a range.
+  - name: TALENT_CATEGORY_HARMFUL_TOUCH
+    value: 3
+    desc: | 
+      Specifies the talents that are harmful and are delivered by touch.
+  - name: TALENT_CATEGORY_PERSISTENT_AREA_OF_EFFECT
+    value: 16
+    desc: | 
+      Specifies a talent that will have a persistent effect in an area like an aura.
+seealso:
+  functions:
+    - GetCanCastHealingSpells
+    - GetCreatureTalentBest
+    - GetCreatureTalentRandom

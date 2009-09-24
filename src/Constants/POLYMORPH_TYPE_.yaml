@@ -1,0 +1,239 @@
+---
+type: Constants
+category: POLYMORPH_TYPE_*
+shortdesc: | 
+  These constants define the properties applied to targets when they are polymorphed into different creatures.
+constants:
+  - name: POLYMORPH_TYPE_ANCIENT_BLUE_DRAGON
+    value: 71
+  - name: POLYMORPH_TYPE_ANCIENT_GREEN_DRAGON
+    value: 73
+  - name: POLYMORPH_TYPE_ANCIENT_RED_DRAGON
+    value: 72
+  - name: POLYMORPH_TYPE_BADGER
+    value: 25
+    desc: | 
+      Badger Properties Racial Type: Animal STR: 16 CON: 16 DEX: 16 Natural AC Bonus: 0 Hit Point Bonus: 10 Creature Weapon 1: Claw1d2 Monster Damage 1d2 Damage Creature Weapon 2: Claw1d2 Monster Damage 1d2 Damage Creature Weapon 3: Bite1d3 Monster Damage 1d3 Damage
+  - name: POLYMORPH_TYPE_BALOR
+    value: 10
+    desc: | 
+      Balor Properties Racial Type: Outsider STR: 24 CON: 24 DEX: 30 Natural AC Bonus: 10 Hit Point Bonus: 250 Creature Weapon 1: Balor Slam Monster Damage 1d6 Damage On Monster Hit: Fear Creature Hide: Balor Properties Damage Resistance: Acid Resist 20 / - Damage Resistance: Cold Resist 20 / - Damage Resistance: Fire Resist 20 / - Immunity: Damage Type: Electrical 100% Immunity Bonus Immunity: Miscellaneous: Poison Spell Resistance 28
+  - name: POLYMORPH_TYPE_BASILISK
+    value: 61
+  - name: POLYMORPH_TYPE_BEHOLDER
+    value: 63
+  - name: POLYMORPH_TYPE_BOAR
+    value: 24
+    desc: | 
+      Boar Properties Racial Type: Animal STR: 18 CON: 12 DEX: 18 Natural AC Bonus: 3 Hit Point Bonus: 10 Creature Weapon 3: Gore1d8 Monster Damage 1d8 Damage
+  - name: POLYMORPH_TYPE_BROWN_BEAR
+    value: 21
+    desc: | 
+      Brown Bear Properties Racial Type: Animal STR: 20 CON: 16 DEX: 12 Natural AC Bonus: 5 Hit Point Bonus: 10 Creature Weapon 1: Claw1d8 Monster Damage 1d8 Damage Creature Weapon 2: Claw1d8 Monster Damage 1d8 Damage Creature Weapon 3: Bite2d8 Monster Damage 2d8 Damage
+  - name: POLYMORPH_TYPE_CELESTIAL_AVENGER
+    value: 38
+    desc: | 
+      Celestial Avenger Properties. Racial Type: Outsider. STR: 20 CON: 20 DEX: 20. Natural AC bonus: 4. Hit Points bonus: 0. No creature weapons. Creature hide: Celestial Avenger Properties: Damage reduction +1 (soak 10 damage). Immunity damage type electrical 100%. Immunity to paralysis. Saving throw bonus +4 vs. poison. Spell resistance 28. Equipped: Tenser's sword.
+  - name: POLYMORPH_TYPE_CHICKEN
+    value: 40
+  - name: POLYMORPH_TYPE_COW
+    value: 27
+    desc: | 
+      Cow Properties Racial Type: Animal STR: 0 CON: 0 DEX: 0 Natural AC Bonus: 0 Hit Point Bonus: 0 Creature Weapon 3: Gore1d8 Monster Damage 1d8 Damage
+  - name: POLYMORPH_TYPE_DEATH_SLAAD
+    value: 11
+    desc: | 
+      Death Slaad Properties Racial Type: Outsider STR: 24 CON: 24 DEX: 36 Natural AC Bonus: 10 Hit Point Bonus: 225 Creature Weapon 1: Claw3d6 Monster Damage 3d6 Damage Creature Weapon 2: Claw3d6 Monster Damage 3d6 Damage Creature Weapon 3: Bite2d10 Monster Damage 2d10 Damage Creature Hide: Death Slaad Properties Damage Reduction: +2 Soak 20 Damage Damage Resistance: Acid Resist 5 / - Damage Resistance: Cold Resist 5 / - Damage Resistance: Electrical Resist 5 / - Damage Resistance: Fire Resist 5 / - Damage Resistance: Sonic Resist 5 / - Regeneration +5
+  - name: POLYMORPH_TYPE_DIRE_BADGER
+    value: 37
+    desc: | 
+      Dire badger Properties. Racial Type: Animal. STR: 14 CON: 19 DEX: 17. Natural AC bonus: 10. Hit Points bonus: 20. Creature weapon 1: Claw 1d8. Creature weapon 2: Claw 1d8. Creature weapon 3: Claw 1d8.
+  - name: POLYMORPH_TYPE_DIRE_BOAR
+    value: 36
+    desc: | 
+      Dire boar Properties. Racial Type: Animal. STR: 27 CON: 17 DEX: 10. Natural AC bonus: 10. Hit Points bonus: 20. Creature weapon 1: Claw 1d8. Creature weapon 2: Claw 1d8. Creature weapon 3: Claw 1d8.
+  - name: POLYMORPH_TYPE_DIRE_BROWN_BEAR
+    value: 33
+    desc: | 
+      Dire brown bear Properties. Racial Type: Animal. STR: 31 CON: 19 DEX: 13. Natural AC bonus: 5. Hit Points bonus: 40. Creature weapon 1: Claw 1d8. Creature weapon 2: Claw 1d8. Creature weapon 3: Claw 1d8.
+  - name: POLYMORPH_TYPE_DIRE_PANTHER
+    value: 34
+    desc: | 
+      Dire panther Properties. Racial Type: Animal. STR: 25 CON: 17 DEX: 15. Natural AC bonus: 8. Hit Points bonus: 30. Creature weapon 1: Claw 1d8. Creature weapon 2: Claw 1d8. Creature weapon 3: Claw 1d8.
+  - name: POLYMORPH_TYPE_DIRE_WOLF
+    value: 35
+    desc: | 
+      Dire wolf Properties. Racial Type: Animal. STR: 25 CON: 17 DEX: 15. Natural AC bonus: 8. Hit Points bonus: 30. Creature weapon 1: Claw 1d8. Creature weapon 2: Claw 1d8. Creature weapon 3: Claw 1d8.
+  - name: POLYMORPH_TYPE_DIRETIGER
+    value: 69
+  - name: POLYMORPH_TYPE_DOOM_KNIGHT
+    value: 28
+    desc: | 
+      Doom Knight Properties Racial Type: Elf STR: 20 CON: 20 DEX: 20 Natural AC Bonus: 4 Hit Point Bonus: 0 Creature Hide: Doom Knight Properties Damage Reduction: +1 Soak 15 Damage Immunity: Miscellaneous: Critical Hits Immunity: Miscellaneous: Death Magic Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Level/Ability Drain Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack Spell Resistance 12
+  - name: POLYMORPH_TYPE_DRIDER
+    value: 62
+  - name: POLYMORPH_TYPE_ELDER_AIR_ELEMENTAL
+    value: 20
+    desc: | 
+      Elder Air Elemental Properties Racial Type: Outsider STR: 22 CON: 33 DEX: 18 Natural AC Bonus: 8 Hit Point Bonus: 0 Creature Weapon 1: Slam2d8 Monster Damage 2d8 Damage Creature Hide: Elder Elemental Properties Damage Reduction: +3 Soak 15 Damage Immunity: Miscellaneous: Critical Hits Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_ELDER_EARTH_ELEMENTAL
+    value: 19
+    desc: | 
+      Elder Earth Elemental Properties Racial Type: Outsider STR: 33 CON: 8 DEX: 21 Natural AC Bonus: 15 Hit Point Bonus: 0 Creature Weapon 1: Slam2d10 Monster Damage 2d10 Damage Creature Hide: Elder Elemental Properties Damage Reduction: +3 Soak 15 Damage Immunity: Miscellaneous: Critical Hits Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_ELDER_FIRE_ELEMENTAL
+    value: 17
+    desc: | 
+      Elder Fire Elemental Properties Racial Type: Outsider STR: 22 CON: 29 DEX: 18 Natural AC Bonus: 8 Hit Point Bonus: 0 Creature Weapon 1: Elder/Greater/Huge Fire Elemental Slam Damage Bonus: Fire 1d8 Damage Damage Bonus: Fire 1d8 Damage Monster Damage 2d8 Damage Creature Hide: Elder Fire Elemental Properties Immunity: Miscellaneous: Critical Hits Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_ELDER_WATER_ELEMENTAL
+    value: 18
+    desc: | 
+      Elder Water Elemental Properties Racial Type: Outsider STR: 28 CON: 22 DEX: 21 Natural AC Bonus: 9 Hit Point Bonus: 0 Creature Weapon 1: Slam2d10 Monster Damage 2d10 Damage Creature Hide: Elder Water Elemental Properties Immunity: Miscellaneous: Critical Hits Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_FEMALE_DROW
+    value: 70
+  - name: POLYMORPH_TYPE_FIRE_GIANT
+    value: 9
+    desc: | 
+      Fire Giant Properties Racial Type: Giant STR: 30 CON: 21 DEX: 30 Natural AC Bonus: 10 Hit Point Bonus: 200 Creature Weapon 1: Slam2d10 Monster Damage 2d10 Damage Creature Hide: Fire Giant/Hellhound Properties Damage Vulnerability: Cold 50% Damage Vulnerability Immunity: Damage Type: Fire 100% Immunity Bonus
+  - name: POLYMORPH_TYPE_FROST_GIANT_FEMALE
+    value: 42
+    desc: | 
+      Frost giant female Properties. Racial Type: Giant. STR: 29 CON: 21 DEX: 9. Natural AC bonus: 13. Hit Points bonus: 100. Creature weapon 1: Slam 2d10. Creature hide: Frost giant / winter wolf properties: Damage Vulnerability Fire 50%. Damage Immunity type cold 100%. Equipped: Greatsword +2.
+  - name: POLYMORPH_TYPE_FROST_GIANT_MALE
+    value: 41
+    desc: | 
+      Frost giant male Properties. Racial Type: Giant. STR: 29 CON: 21 DEX: 9. Natural AC bonus: 13. Hit Points bonus: 100. Creature weapon 1: Slam 2d10. Creature hide: Frost giant / winter wolf properties: Damage Vulnerability Fire 50%. Damage Immunity type cold 100%. Equipped: Greatsword +2.
+  - name: POLYMORPH_TYPE_GARGOYLE
+    value: 65
+  - name: POLYMORPH_TYPE_GIANT_SPIDER
+    value: 3
+    desc: | 
+      Giant Spider Properties Racial Type: Vermin STR: 19 CON: 12 DEX: 17 Natural AC Bonus: 5 Hit Point Bonus: 5 Creature Weapon 3: Sword/Giant Spider Bite Monster Damage 1d8 Damage On Monster Hit: POISON_LARGE_SPIDER_VENOM Creature Hide: Polymorph Giant Spider Properties Freedom of Movement
+  - name: POLYMORPH_TYPE_GOLEM_AUTOMATON
+    value: 57
+  - name: POLYMORPH_TYPE_HARPY
+    value: 60
+  - name: POLYMORPH_TYPE_HEURODIS
+    value: 43
+  - name: POLYMORPH_TYPE_HUGE_AIR_ELEMENTAL
+    value: 16
+    desc: | 
+      Huge Air Elemental Properties Racial Type: Outsider STR: 18 CON: 29 DEX: 18 Natural AC Bonus: 4 Hit Point Bonus: 0 Creature Weapon 1: Slam2d8 Monster Damage 2d8 Damage Creature Hide: Huge/Greater Elemental Properties Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_HUGE_EARTH_ELEMENTAL
+    value: 15
+    desc: | 
+      Huge Earth Elemental Properties Racial Type: Outsider STR: 29 CON: 8 DEX: 21 Natural AC Bonus: 11 Hit Point Bonus: 0 Creature Weapon 1: Slam2d10 Monster Damage 2d10 Damage Creature Hide: Huge/Greater Elemental Properties Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_HUGE_FIRE_ELEMENTAL
+    value: 13
+    desc: | 
+      Huge Fire Elemental Properties Racial Type: Outsider STR: 18 CON: 25 DEX: 18 Natural AC Bonus: 4 Hit Point Bonus: 0 Creature Weapon 1: Elder/Greater/Huge Fire Elemental Slam Damage Bonus: Fire 1d8 Damage Damage Bonus: Fire 1d8 Damage Monster Damage 2d8 Damage Creature Hide: Huge/Greater Fire Elemental Properties Immunity: Miscellaneous: Critical Hits Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_HUGE_WATER_ELEMENTAL
+    value: 14
+    desc: | 
+      Huge Water Elemental Properties Racial Type: Outsider STR: 24 CON: 18 DEX: 21 Natural AC Bonus: 9 Hit Point Bonus: 0 Creature Weapon 1: Slam2d10 Monster Damage 2d10 Damage Creature Hide: Huge/Greater Water Elemental Properties Immunity: Miscellaneous: Critical Hits Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_IMP
+    value: 30
+    desc: | 
+      Imp Properties Racial Type: Outsider STR: 0 CON: 0 DEX: 0 Natural AC Bonus: 3 Hit Point Bonus: 0 Creature Weapon 1: Claw1d4 Monster Damage 1d4 Damage Creature Weapon 2: Claw1d4 Monster Damage 1d4 Damage Creature Weapon 3: Imp Stinger Monster Damage 1d4 Damage On Monster Hit: Poison Quasit Venom	 Creature Hide: Imp Properties Damage Reduction: +1 Soak 5 Damage Damage Resistance: Fire Resist 20 / - Immunity: Miscellaneous: Poison Regeneration +2 Spell Resistance 10
+  - name: POLYMORPH_TYPE_IRON_GOLEM
+    value: 12
+    desc: | 
+      Iron Golem Properties Racial Type: Construct STR: 30 CON: 20 DEX: 20 Natural AC Bonus: 10 Hit Point Bonus: 300 Creature Weapon 1: Slam2d10 Monster Damage 2d10 Damage Creature Hide: Iron Golem Properties Immunity: Miscellaneous: Disease Immunity: Miscellaneous: Level/Ability Drain Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Poison Immunity: Miscellaneous: Sneak Attack
+  - name: POLYMORPH_TYPE_JNAH_GIANT_FEMAL
+    value: 45
+  - name: POLYMORPH_TYPE_JNAH_GIANT_MALE
+    value: 44
+  - name: POLYMORPH_TYPE_MALE_DROW
+    value: 59
+  - name: POLYMORPH_TYPE_MANTICORE
+    value: 58
+  - name: POLYMORPH_TYPE_MEDUSA
+    value: 64
+  - name: POLYMORPH_TYPE_MINDFLAYER
+    value: 68
+  - name: POLYMORPH_TYPE_MINOTAUR
+    value: 66
+  - name: POLYMORPH_TYPE_NULL_HUMAN
+    value: 78
+  - name: POLYMORPH_TYPE_PANTHER
+    value: 22
+    desc: | 
+      Panther Properties Racial Type: Animal STR: 14 CON: 14 DEX: 22 Natural AC Bonus: 3 Hit Point Bonus: 7 Creature Weapon 1: Claw1d3 Monster Damage 1d3 Damage Creature Weapon 2: Claw1d3 Monster Damage 1d3 Damage Creature Weapon 3: Bite1d6 Monster Damage 1d6 Damage
+  - name: POLYMORPH_TYPE_PENGUIN
+    value: 26
+    desc: | 
+      Penguin Properties Racial Type: Animal STR: 0 CON: 0 DEX: 0 Natural AC Bonus: 0 Hit Point Bonus: 0 Creature Weapon 3: Bite2d6 Monster Damage 2d6 Damage
+  - name: POLYMORPH_TYPE_PIXIE
+    value: 6
+    desc: | 
+      Pixie Properties Racial Type: Fey STR: 10 CON: 10 DEX: 24 Natural AC Bonus: 2 Hit Point Bonus: 0 Creature Weapon 1: Claw1d4 Monster Damage 1d4 Damage Creature Weapon 2: Claw1d4 Monster Damage 1d4 Damage Creature Hide: Polymorph Pixie Properties Immunity: Spell School: Enchantment Immunity: Spells by Level Level 3 or Lower
+  - name: POLYMORPH_TYPE_QUASIT
+    value: 31
+    desc: | 
+      Quasit Properties Racial Type: Outsider STR: 0 CON: 0 DEX: 0 Natural AC Bonus: 3 Hit Point Bonus: 0 Creature Weapon 1: Claw1d4 Monster Damage 1d4 Damage Creature Weapon 2: Claw1d4 Monster Damage 1d4 Damage Creature Weapon 3: Imp Stinger Monster Damage 1d4 Damage On Monster Hit: Poison Quasit Venom	 Creature Hide: Imp Properties Damage Reduction: +1 Soak 5 Damage Damage Resistance: Fire Resist 20 / - Immunity: Miscellaneous: Poison Regeneration +2 Spell Resistance 10
+  - name: POLYMORPH_TYPE_RED_DRAGON
+    value: 8
+    desc: | 
+      Red Dragon Properties Racial Type: Dragon STR: 36 CON: 21 DEX: 30 Natural AC Bonus: 10 Hit Point Bonus: 150 Creature Weapon 1: Claw2d6 Monster Damage 2d6 Damage Creature Weapon 2: Claw2d6 Monster Damage 2d6 Damage Creature Weapon 3: Bite2d8 Monster Damage 2d8 Damage Creature Hide: Adult Red Dragon Properties Immunity: Damage Type: Fire 100% Immunity Bonus Immunity: Miscellaneous: Mind-Affecting Spells Immunity: Miscellaneous: Paralysis Immunity: Miscellaneous: Sneak Attack Spell Resistance 20 True Seeing
+  - name: POLYMORPH_TYPE_RISEN_LORD
+    value: 75
+  - name: POLYMORPH_TYPE_SPECTRE
+    value: 76
+  - name: POLYMORPH_TYPE_SUCCUBUS
+    value: 32
+    desc: | 
+      Succubus Properties Racial Type: Outsider STR: 0 CON: 0 DEX: 0 Natural AC Bonus: 9 Hit Point Bonus: 0 Creature Weapon 1: Claw1d6 Monster Damage 1d6 Damage Creature Weapon 2: Claw1d6 Monster Damage 1d6 Damage Creature Hide: Imp Properties Damage Reduction: +1 Soak 5 Damage Damage Resistance: Fire Resist 20 / - Immunity: Miscellaneous: Poison Regeneration +2 Spell Resistance 10
+  - name: POLYMORPH_TYPE_SUPER_CHICKEN
+    value: 67
+  - name: POLYMORPH_TYPE_TROLL
+    value: 4
+    desc: | 
+      Troll Properties Racial Type: Giant STR: 23 CON: 23 DEX: 14 Natural AC Bonus: 7 Hit Point Bonus: 10 Creature Weapon 1: Claw1d6 Monster Damage 1d6 Damage Creature Weapon 2: Claw1d6 Monster Damage 1d6 Damage Creature Weapon 3: Bite1d6 Monster Damage 1d6 Damage Creature Hide: Polymorph Troll Properties Regeneration +5
+  - name: POLYMORPH_TYPE_UMBER_HULK
+    value: 5
+    desc: | 
+      Umber Hulk Properties Racial Type: Aberration STR: 23 CON: 19 DEX: 13 Natural AC Bonus: 7 Hit Point Bonus: 20 Creature Weapon 1: Claw2d4 Monster Damage 2d4 Damage Creature Weapon 2: Claw2d4 Monster Damage 2d4 Damage Creature Weapon 3: Bite2d8 Monster Damage 2d8 Damage Creature Hide: Polymorph Umberhulk Properties True Seeing
+  - name: POLYMORPH_TYPE_VAMPIRE_FEMALE
+    value: 77
+  - name: POLYMORPH_TYPE_VAMPIRE_MALE
+    value: 74
+  - name: POLYMORPH_TYPE_VROCK
+    value: 39
+    desc: | 
+      Vrock Properties. Racial Type: Outsider. STR: 20 CON: 17 DEX: 16. Natural AC bonus: 4. Hit Points bonus: 0. Creature weapon 1: Claw 1d8. Creature weapon 2: Claw 1d8. Creature weapon 3: Bite 1d6. Creature hide: Vrock properties: Damage reduction +2 (soak 20 damage). Damge resistance acid, cold, and fire (each 20%). Immunity to damage type: Electrical 100%. Immunity to poison. Spell resistance 22.
+  - name: POLYMORPH_TYPE_WERECAT
+    value: 2
+    desc: | 
+      Werecat Properties Racial Type: Shapechanger STR: 20 CON: 16 DEX: 20 Natural AC Bonus: 5 Hit Point Bonus: 15 Creature Weapon 1: Claw1d8 Monster Damage 1d8 Damage Creature Weapon 2: Claw1d8 Monster Damage 1d8 Damage Creature Weapon 3: Bite2d6 Monster Damage 2d6 Damage Creature Hide: Shapechanger Properties Damage Reduction: +1 Soak 10 Damage
+  - name: POLYMORPH_TYPE_WERERAT
+    value: 1
+    desc: | 
+      Wererat Properties Racial Type: Shapechanger STR: 16 CON: 16 DEX: 22 Natural AC Bonus: 5 Hit Point Bonus: 5 Creature Weapon 3: Claw1d3 Monster Damage 1d3 Damage Creature Hide: Shapechanger Properties Damage Reduction: +1 Soak 10 Damage
+  - name: POLYMORPH_TYPE_WEREWOLF
+    value: 0
+    desc: | 
+      Werewolf Properties Racial Type: Shapechanger STR: 18 CON: 18 DEX: 18 Natural AC Bonus: 5 Hit Point Bonus: 10 Creature Weapon 1: Claw1d3 Monster Damage 1d3 Damage Creature Weapon 2: Claw1d3 Monster Damage 1d3 Damage Creature Weapon 3: Bite1d6 Monster Damage 1d6 Damage Creature Hide: Shapechanger Properties Damage Reduction: +1 Soak 10 Damage
+  - name: POLYMORPH_TYPE_WOLF
+    value: 23
+    desc: | 
+      Wolf Properties Racial Type: Animal STR: 16 CON: 16 DEX: 16 Natural AC Bonus: 3 Hit Point Bonus: 7 Creature Weapon 3: Bite1d6 Monster Damage 1d6 Damage
+  - name: POLYMORPH_TYPE_WYRMLING_BLACK
+    value: 56
+  - name: POLYMORPH_TYPE_WYRMLING_BLUE
+    value: 53
+  - name: POLYMORPH_TYPE_WYRMLING_GREEN
+    value: 55
+  - name: POLYMORPH_TYPE_WYRMLING_RED
+    value: 54
+  - name: POLYMORPH_TYPE_WYRMLING_WHITE
+    value: 52
+  - name: POLYMORPH_TYPE_YUANTI
+    value: 29
+    desc: | 
+      Yuan Ti Properties Racial Type: Humanoid, Reptilian STR: 20 CON: 20 DEX: 20 Natural AC Bonus: 4 Hit Point Bonus: 0 Creature Weapon 1: Tenser's Transformation Slam Enhancement Bonus +3 Monster Damage 1d8 Damage Creature Weapon 2: Tenser's Transformation Slam Enhancement Bonus +3 Monster Damage 1d8 Damage Creature Hide: Yuan-ti Properties Spell Resistance 16
+  - name: POLYMORPH_TYPE_ZOMBIE
+    value: 7
+    desc: | 
+      Zombie Properties Racial Type: Undead STR: 14 CON: 14 DEX: 14 Natural AC Bonus: 0 Hit Point Bonus: 40 Creature Weapon 1: Slam1d6 Monster Damage 1d6 Damage Creature Hide: Polymorph Zombie Properties Damage Resistance: Bludgeoning Resist 10 / - Damage Resistance: Piercing Resist 10 / - Damage Resistance: Slashing Resist 10 / -
+seealso:
+  functions:
+    - EffectPolymorph

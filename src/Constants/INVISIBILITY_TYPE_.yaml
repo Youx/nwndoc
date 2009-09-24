@@ -1,0 +1,21 @@
+---
+type: Constants
+category: INVISIBILITY_TYPE_*
+shortdesc: | 
+  Determines how a creature is protected from the sight of other creatures.
+constants:
+  - name: INVISIBILITY_TYPE_DARKNESS
+    value: 2
+    desc: | 
+      Miss chance due to darkness.
+  - name: INVISIBILITY_TYPE_IMPROVED
+    value: 4
+    desc: | 
+      Under the effects of an Improved Invisibility spell. The creature does not lose invisibility by performing a hostile action.
+  - name: INVISIBILITY_TYPE_NORMAL
+    value: 1
+    desc: | 
+      Under the effects of a standard Invisibility spell. When the creature performs a hostile action, it loses its Invisiblity.
+seealso:
+  functions:
+    - EffectInvisibility

@@ -1,0 +1,43 @@
+---
+type: Constants
+category: TILE_SOURCE_LIGHT_*
+shortdesc: | 
+  Colors for dynamic lighting to shine upon tiles.
+constants:
+  - name: TILE_SOURCE_LIGHT_COLOR_BLACK
+    value: 0
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_AQUA
+    value: 7
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_BLUE
+    value: 9
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_DARK_AQUA
+    value: 6
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_DARK_BLUE
+    value: 8
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_DARK_GREEN
+    value: 4
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_DARK_ORANGE
+    value: 14
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_DARK_PURPLE
+    value: 10
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_DARK_RED
+    value: 12
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_DARK_YELLOW
+    value: 2
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_GREEN
+    value: 5
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_ORANGE
+    value: 15
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_PURPLE
+    value: 11
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_RED
+    value: 13
+  - name: TILE_SOURCE_LIGHT_COLOR_PALE_YELLOW
+    value: 3
+  - name: TILE_SOURCE_LIGHT_COLOR_WHITE
+    value: 1
+seealso:
+  functions:
+    - GetTileSourceLight1Color
+    - GetTileSourceLight2Color
+    - SetTileSourceLightColor

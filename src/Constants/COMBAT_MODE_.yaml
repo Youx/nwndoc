@@ -1,0 +1,43 @@
+---
+type: Constants
+category: COMBAT_MODE_*
+shortdesc: | 
+  Different combat modes.
+constants:
+  - name: COMBAT_MODE_DEFENSIVE_CASTING
+    value: 8
+  - name: COMBAT_MODE_DEFENSIVE_STANCE
+    value: 10
+  - name: COMBAT_MODE_DIRTY_FIGHTING
+    value: 9
+  - name: COMBAT_MODE_EXPERTISE
+    value: 6
+  - name: COMBAT_MODE_FLURRY_OF_BLOWS
+    value: 4
+    desc: | 
+      Monk's Flurry of Blows ability (additional unarmed attacks with a penalty to attack rolls).
+  - name: COMBAT_MODE_IMPROVED_EXPERTISE
+    value: 7
+  - name: COMBAT_MODE_IMPROVED_POWER_ATTACK
+    value: 3
+    desc: | 
+      Gives the attacker a -10 to the attack, but a +10 to the damage.
+  - name: COMBAT_MODE_INVALID
+    value: 0
+    desc: | 
+      Invalid combat mode.
+  - name: COMBAT_MODE_PARRY
+    value: 1
+    desc: | 
+      Increases the defender's AC by sacrificing attacks.
+  - name: COMBAT_MODE_POWER_ATTACK
+    value: 2
+    desc: | 
+      Gives the attacker a -5 to hit but a +5 to damage.
+  - name: COMBAT_MODE_RAPID_SHOT
+    value: 5
+    desc: | 
+      Grants an additional missile attack with all missile attack rolls taken at a penalty.
+seealso:
+  functions:
+    - GetLastAttackMode

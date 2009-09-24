@@ -1,0 +1,37 @@
+---
+type: Constants
+category: CAMERA_TRANSITION_TYPE_*
+shortdesc: | 
+  Used with SetCameraFacing() to determine how smoothly to transition the camera.
+constants:
+  - name: CAMERA_TRANSITION_TYPE_CRAWL
+    value: 2
+    desc: | 
+      Slowest camera transition.
+  - name: CAMERA_TRANSITION_TYPE_FAST
+    value: 70
+    desc: | 
+      Fast camera transition.
+  - name: CAMERA_TRANSITION_TYPE_MEDIUM
+    value: 40
+    desc: | 
+      Middle speed camera transition.
+  - name: CAMERA_TRANSITION_TYPE_SLOW
+    value: 20
+    desc: | 
+      Slow camera transition.
+  - name: CAMERA_TRANSITION_TYPE_SNAP
+    value: 0
+    desc: | 
+      Snaps the camera immediately into place (fastest camera transition).
+  - name: CAMERA_TRANSITION_TYPE_VERY_FAST
+    value: 100
+    desc: | 
+      Second fastest camera transition.
+  - name: CAMERA_TRANSITION_TYPE_VERY_SLOW
+    value: 5
+    desc: | 
+      Second slowest camera transition.
+seealso:
+  functions:
+    - SetCameraFacing

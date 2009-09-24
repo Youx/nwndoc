@@ -1,0 +1,47 @@
+---
+type: Constants
+category: ANIMAL_COMPANION_CREATURE_TYPE_*
+shortdesc: | 
+  Categories of possible animal companions. Note that animal companions are different from familiars.
+constants:
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_BADGER
+    value: 0
+    desc: | 
+      The common badger is a small but fierce mammal. Its strong forlimbs are armed with long claws, used for both digging and self defense. Gnomes favor badgers as familiars and animal companions. 3rd Edition MM page 193.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_BEAR
+    value: 2
+    desc: | 
+      Brown bears are commonly considered to be very bad-tempered and territorial. Bears are often found in the company of a druid as an animal companion. 3rd Edition MM page 193.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_BOAR
+    value: 3
+    desc: | 
+      Though not true carnivours, these wild swine are very bad-tempered and usually charge anyone who distrubs them, ripping at them with their tusks. 3rd Edition MM page 194.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_DIRERAT
+    value: 8
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_DIREWOLF
+    value: 7
+    desc: | 
+      Dire wolves are larger, more vicious versions of their common cousins. They are often found in the company of powerful rangers or druids. 3rd Edition MM page 57.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_HAWK
+    value: 4
+    desc: | 
+      Hawks are birds of prey who hunt rodents, using their excellent sight to spot their targets from up high. 3rd Edition MM page 196.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_NONE
+    value: 255
+    desc: | 
+      This value is used to symbolize that a creature does not have an associated animal companion.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_PANTHER
+    value: 5
+    desc: | 
+      Panthers attack from the shadows, disappearing back into them once the hunt is through.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_SPIDER
+    value: 6
+    desc: | 
+      Spiders are eight legged creatures that typically spin webs of various shapes and sizes used to catch their prey. Spider animal companions are of the larger-sized spiders. 3rd Edition MM page 210.
+  - name: ANIMAL_COMPANION_CREATURE_TYPE_WOLF
+    value: 1
+    desc: | 
+      An icon of ruggest individualism, yet renowned for its ability to hunt in packs, the noble wolf is an animal of both mystique and power. 3rd Edition MM page 204.
+seealso:
+  functions:
+    - GetFamiliarCreatureType

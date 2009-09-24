@@ -1,0 +1,37 @@
+---
+type: Constants
+category: IP_CONST_LIGHTCOLOR_*
+shortdesc: | 
+  Itemproperty constants relating to the color of light an item emits.
+constants:
+  - name: IP_CONST_LIGHTCOLOR_BLUE
+    value: 0
+    desc: | 
+      Blue light.
+  - name: IP_CONST_LIGHTCOLOR_GREEN
+    value: 4
+    desc: | 
+      Green light.
+  - name: IP_CONST_LIGHTCOLOR_ORANGE
+    value: 5
+    desc: | 
+      Orange light.
+  - name: IP_CONST_LIGHTCOLOR_PURPLE
+    value: 2
+    desc: | 
+      Purple light.
+  - name: IP_CONST_LIGHTCOLOR_RED
+    value: 3
+    desc: | 
+      Red light.
+  - name: IP_CONST_LIGHTCOLOR_WHITE
+    value: 6
+    desc: | 
+      White light.
+  - name: IP_CONST_LIGHTCOLOR_YELLOW
+    value: 1
+    desc: | 
+      Yellow light.
+seealso:
+  functions:
+    - ItemPropertyLight

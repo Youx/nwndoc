@@ -1,0 +1,30 @@
+---
+type: Constants
+category: SHAPE_*
+shortdesc: | 
+  SHAPE_* constants are used in the GetFirstObjectInShape() and GetNextObjectInShape() functions.
+constants:
+  - name: SHAPE_CONE
+    value: 1
+    desc: | 
+      A cone. The difference(s) between SHAPE_CONE and SHAPE_SPELLCONE are unkown. Their constant values are, however, definitely different. SHAPE_CONE is used in only one spell script: nw_s1_krenscare.nss.
+  - name: SHAPE_CUBE
+    value: 2
+    desc: | 
+      A cube.
+  - name: SHAPE_SPELLCONE
+    value: 3
+    desc: | 
+      Presumably, a cone. The difference(s) between SHAPE_CONE and SHAPE_SPELLCONE are unkown. Their constant values are, however, definitely different.
+  - name: SHAPE_SPELLCYLINDER
+    value: 0
+    desc: | 
+      A cylinder.
+  - name: SHAPE_SPHERE
+    value: 4
+    desc: | 
+      A sphere.
+seealso:
+  functions:
+    - GetFirstObjectInShape
+    - GetNextObjectInShape

@@ -1,0 +1,367 @@
+---
+type: Constants
+category: SPELLABILITY_*
+shortdesc: | 
+  Magical spell-like abilities some creatures possess.
+constants:
+  - name: SPELLABILITY_AA_ARROW_OF_DEATH
+    value: 604
+  - name: SPELLABILITY_AA_HAIL_OF_ARROWS
+    value: 603
+  - name: SPELLABILITY_AA_IMBUE_ARROW
+    value: 600
+  - name: SPELLABILITY_AA_SEEKER_ARROW_1
+    value: 601
+  - name: SPELLABILITY_AA_SEEKER_ARROW_2
+    value: 602
+  - name: SPELLABILITY_ACTIVATE_ITEM
+    value: 386
+  - name: SPELLABILITY_AS_DARKNESS
+    value: 606
+  - name: SPELLABILITY_AS_GHOSTLY_VISAGE
+    value: 605
+  - name: SPELLABILITY_AS_IMPROVED_INVISIBLITY
+    value: 608
+  - name: SPELLABILITY_AS_INVISIBILITY
+    value: 607
+  - name: SPELLABILITY_AURA_BLINDING
+    value: 195
+  - name: SPELLABILITY_AURA_COLD
+    value: 196
+  - name: SPELLABILITY_AURA_ELECTRICITY
+    value: 197
+  - name: SPELLABILITY_AURA_FEAR
+    value: 198
+  - name: SPELLABILITY_AURA_FIRE
+    value: 199
+  - name: SPELLABILITY_AURA_HORRIFICAPPEARANCE
+    value: 804
+  - name: SPELLABILITY_AURA_MENACE
+    value: 200
+  - name: SPELLABILITY_AURA_OF_COURAGE
+    value: 314
+  - name: SPELLABILITY_AURA_PROTECTION
+    value: 201
+  - name: SPELLABILITY_AURA_STUN
+    value: 202
+  - name: SPELLABILITY_AURA_UNEARTHLY_VISAGE
+    value: 203
+  - name: SPELLABILITY_AURA_UNNATURAL
+    value: 204
+  - name: SPELLABILITY_BARBARIAN_RAGE
+    value: 307
+  - name: SPELLABILITY_BATTLE_MASTERY
+    value: 380
+  - name: SPELLABILITY_BG_BULLS_STRENGTH
+    value: 614
+  - name: SPELLABILITY_BG_CONTAGION
+    value: 613
+  - name: SPELLABILITY_BG_CREATEDEAD
+    value: 609
+  - name: SPELLABILITY_BG_FIENDISH_SERVANT
+    value: 610
+  - name: SPELLABILITY_BG_INFLICT_CRITICAL_WOUNDS
+    value: 612
+  - name: SPELLABILITY_BG_INFLICT_SERIOUS_WOUNDS
+    value: 611
+  - name: SPELLABILITY_BOLT_ABILITY_DRAIN_CHARISMA
+    value: 205
+  - name: SPELLABILITY_BOLT_ABILITY_DRAIN_CONSTITUTION
+    value: 206
+  - name: SPELLABILITY_BOLT_ABILITY_DRAIN_DEXTERITY
+    value: 207
+  - name: SPELLABILITY_BOLT_ABILITY_DRAIN_INTELLIGENCE
+    value: 208
+  - name: SPELLABILITY_BOLT_ABILITY_DRAIN_STRENGTH
+    value: 209
+  - name: SPELLABILITY_BOLT_ABILITY_DRAIN_WISDOM
+    value: 210
+  - name: SPELLABILITY_BOLT_ACID
+    value: 211
+  - name: SPELLABILITY_BOLT_CHARM
+    value: 212
+  - name: SPELLABILITY_BOLT_COLD
+    value: 213
+  - name: SPELLABILITY_BOLT_CONFUSE
+    value: 214
+  - name: SPELLABILITY_BOLT_DAZE
+    value: 215
+  - name: SPELLABILITY_BOLT_DEATH
+    value: 216
+  - name: SPELLABILITY_BOLT_DISEASE
+    value: 217
+  - name: SPELLABILITY_BOLT_DOMINATE
+    value: 218
+  - name: SPELLABILITY_BOLT_FIRE
+    value: 219
+  - name: SPELLABILITY_BOLT_KNOCKDOWN
+    value: 220
+  - name: SPELLABILITY_BOLT_LEVEL_DRAIN
+    value: 221
+  - name: SPELLABILITY_BOLT_LIGHTNING
+    value: 222
+  - name: SPELLABILITY_BOLT_PARALYZE
+    value: 223
+  - name: SPELLABILITY_BOLT_POISON
+    value: 224
+  - name: SPELLABILITY_BOLT_SHARDS
+    value: 225
+  - name: SPELLABILITY_BOLT_SLOW
+    value: 226
+  - name: SPELLABILITY_BOLT_STUN
+    value: 227
+  - name: SPELLABILITY_BOLT_WEB
+    value: 228
+  - name: SPELLABILITY_BREATH_PETRIFY
+    value: 495
+    desc: | 
+      New spellability from the Shadows of Undrentide expansion. Description from the x0_s1_PetrBreath script which handles this “Petrification breath monster ability. Fortitude save (DC 17) or be turned to stone permanently. This will be changed to a temporary effect.”
+  - name: SPELLABILITY_CHARMMONSTER
+    value: 552
+  - name: SPELLABILITY_COMMAND_THE_HORDE
+    value: 571
+  - name: SPELLABILITY_CONE_ACID
+    value: 229
+  - name: SPELLABILITY_CONE_COLD
+    value: 230
+  - name: SPELLABILITY_CONE_DISEASE
+    value: 231
+  - name: SPELLABILITY_CONE_FIRE
+    value: 232
+  - name: SPELLABILITY_CONE_LIGHTNING
+    value: 233
+  - name: SPELLABILITY_CONE_POISON
+    value: 234
+  - name: SPELLABILITY_CONE_SONIC
+    value: 235
+  - name: SPELLABILITY_DC_DIVINE_WRATH
+    value: 622
+  - name: SPELLABILITY_DETECT_EVIL
+    value: 312
+  - name: SPELLABILITY_DIVINE_PROTECTION
+    value: 382
+  - name: SPELLABILITY_DIVINE_STRENGTH
+    value: 381
+  - name: SPELLABILITY_DIVINE_TRICKERY
+    value: 384
+  - name: SPELLABILITY_DRAGON_BREATH_ACID
+    value: 236
+  - name: SPELLABILITY_DRAGON_BREATH_COLD
+    value: 237
+  - name: SPELLABILITY_DRAGON_BREATH_FEAR
+    value: 238
+  - name: SPELLABILITY_DRAGON_BREATH_FIRE
+    value: 239
+  - name: SPELLABILITY_DRAGON_BREATH_GAS
+    value: 240
+  - name: SPELLABILITY_DRAGON_BREATH_LIGHTNING
+    value: 241
+  - name: SPELLABILITY_DRAGON_BREATH_NEGATIVE
+    value: 698
+  - name: SPELLABILITY_DRAGON_BREATH_PARALYZE
+    value: 242
+  - name: SPELLABILITY_DRAGON_BREATH_SLEEP
+    value: 243
+  - name: SPELLABILITY_DRAGON_BREATH_SLOW
+    value: 244
+  - name: SPELLABILITY_DRAGON_BREATH_WEAKEN
+    value: 245
+  - name: SPELLABILITY_DRAGON_FEAR
+    value: 412
+  - name: SPELLABILITY_DRAGON_WING_BUFFET
+    value: 246
+  - name: SPELLABILITY_DW_DEFENSIVE_STANCE
+    value: 641
+  - name: SPELLABILITY_ELEMENTAL_SHAPE
+    value: 319
+  - name: SPELLABILITY_EMPTY_BODY
+    value: 311
+  - name: SPELLABILITY_EPIC_CURSE_SONG
+    value: 644
+  - name: SPELLABILITY_EPIC_IMPROVED_WHIRLWIND
+    value: 645
+  - name: SPELLABILITY_EPIC_MIGHTY_RAGE
+    value: 642
+  - name: SPELLABILITY_EPIC_SHAPE_DRAGON
+    value: 647
+  - name: SPELLABILITY_EPIC_SHAPE_DRAGONKIN
+    value: 646
+  - name: SPELLABILITY_FEROCITY_1
+    value: 247
+  - name: SPELLABILITY_FEROCITY_2
+    value: 248
+  - name: SPELLABILITY_FEROCITY_3
+    value: 249
+  - name: SPELLABILITY_GAZE_CHARM
+    value: 250
+  - name: SPELLABILITY_GAZE_CONFUSION
+    value: 251
+  - name: SPELLABILITY_GAZE_DAZE
+    value: 252
+  - name: SPELLABILITY_GAZE_DEATH
+    value: 253
+  - name: SPELLABILITY_GAZE_DESTROY_CHAOS
+    value: 254
+  - name: SPELLABILITY_GAZE_DESTROY_EVIL
+    value: 255
+  - name: SPELLABILITY_GAZE_DESTROY_GOOD
+    value: 256
+  - name: SPELLABILITY_GAZE_DESTROY_LAW
+    value: 257
+  - name: SPELLABILITY_GAZE_DOMINATE
+    value: 258
+  - name: SPELLABILITY_GAZE_DOOM
+    value: 259
+  - name: SPELLABILITY_GAZE_FEAR
+    value: 260
+  - name: SPELLABILITY_GAZE_PARALYSIS
+    value: 261
+  - name: SPELLABILITY_GAZE_PETRIFY
+    value: 497
+    desc: | 
+      New spellability from the Shadows of Undrentide expansion. Description from the x0_s1_PetrGaze script which handles this “Petrification gaze monster ability. Fortitude save (DC 15) or be turned to stone permanently. This will be changed to a temporary effect.”
+  - name: SPELLABILITY_GAZE_STUNNED
+    value: 262
+  - name: SPELLABILITY_GOLEM_BREATH_GAS
+    value: 263
+  - name: SPELLABILITY_HELL_HOUND_FIREBREATH
+    value: 264
+  - name: SPELLABILITY_HOWL_CONFUSE
+    value: 265
+  - name: SPELLABILITY_HOWL_DAZE
+    value: 266
+  - name: SPELLABILITY_HOWL_DEATH
+    value: 267
+  - name: SPELLABILITY_HOWL_DOOM
+    value: 268
+  - name: SPELLABILITY_HOWL_FEAR
+    value: 269
+  - name: SPELLABILITY_HOWL_PARALYSIS
+    value: 270
+  - name: SPELLABILITY_HOWL_SONIC
+    value: 271
+  - name: SPELLABILITY_HOWL_STUN
+    value: 272
+  - name: SPELLABILITY_INTENSITY_1
+    value: 273
+  - name: SPELLABILITY_INTENSITY_2
+    value: 274
+  - name: SPELLABILITY_INTENSITY_3
+    value: 275
+  - name: SPELLABILITY_KRENSHAR_SCARE
+    value: 276
+  - name: SPELLABILITY_LAY_ON_HANDS
+    value: 313
+  - name: SPELLABILITY_LESSER_BODY_ADJUSTMENT
+    value: 277
+  - name: SPELLABILITY_MANTICORE_SPIKES
+    value: 498
+    desc: | 
+      New spellability from the Shadows of Undrentide expansion. Description from the x0_s1_MantSpike script which handles this “Handles the damage effects of the manticore spikes.”
+  - name: SPELLABILITY_MEPHIT_SALT_BREATH
+    value: 278
+  - name: SPELLABILITY_MEPHIT_STEAM_BREATH
+    value: 279
+  - name: SPELLABILITY_MINDBLAST
+    value: 551
+  - name: SPELLABILITY_MUMMY_BOLSTER_UNDEAD
+    value: 280
+  - name: SPELLABILITY_NEGATIVE_PLANE_AVATAR
+    value: 383
+  - name: SPELLABILITY_PM_ANIMATE_DEAD
+    value: 623
+  - name: SPELLABILITY_PM_DEATHLESS_MASTER_TOUCH
+    value: 628
+  - name: SPELLABILITY_PM_SUMMON_GREATER_UNDEAD
+    value: 627
+  - name: SPELLABILITY_PM_SUMMON_UNDEAD
+    value: 624
+  - name: SPELLABILITY_PM_UNDEAD_GRAFT_1
+    value: 625
+  - name: SPELLABILITY_PM_UNDEAD_GRAFT_2
+    value: 626
+  - name: SPELLABILITY_PULSE_ABILITY_DRAIN_CHARISMA
+    value: 292
+  - name: SPELLABILITY_PULSE_ABILITY_DRAIN_CONSTITUTION
+    value: 293
+  - name: SPELLABILITY_PULSE_ABILITY_DRAIN_DEXTERITY
+    value: 294
+  - name: SPELLABILITY_PULSE_ABILITY_DRAIN_INTELLIGENCE
+    value: 291
+  - name: SPELLABILITY_PULSE_ABILITY_DRAIN_STRENGTH
+    value: 295
+  - name: SPELLABILITY_PULSE_ABILITY_DRAIN_WISDOM
+    value: 296
+  - name: SPELLABILITY_PULSE_COLD
+    value: 286
+  - name: SPELLABILITY_PULSE_DEATH
+    value: 289
+  - name: SPELLABILITY_PULSE_DISEASE
+    value: 298
+  - name: SPELLABILITY_PULSE_DROWN
+    value: 281
+  - name: SPELLABILITY_PULSE_FIRE
+    value: 284
+  - name: SPELLABILITY_PULSE_HOLY
+    value: 288
+  - name: SPELLABILITY_PULSE_LEVEL_DRAIN
+    value: 290
+  - name: SPELLABILITY_PULSE_LIGHTNING
+    value: 285
+  - name: SPELLABILITY_PULSE_NEGATIVE
+    value: 287
+  - name: SPELLABILITY_PULSE_POISON
+    value: 297
+  - name: SPELLABILITY_PULSE_SPORES
+    value: 282
+  - name: SPELLABILITY_PULSE_WHIRLWIND
+    value: 283
+  - name: SPELLABILITY_QUIVERING_PALM
+    value: 310
+  - name: SPELLABILITY_RAGE_3
+    value: 299
+  - name: SPELLABILITY_RAGE_4
+    value: 300
+  - name: SPELLABILITY_RAGE_5
+    value: 301
+  - name: SPELLABILITY_REMOVE_DISEASE
+    value: 316
+  - name: SPELLABILITY_ROGUES_CUNNING
+    value: 385
+  - name: SPELLABILITY_SEAHAG_EVILEYE
+    value: 803
+  - name: SPELLABILITY_SMITE_EVIL
+    value: 315
+  - name: SPELLABILITY_SMOKE_CLAW
+    value: 302
+  - name: SPELLABILITY_SUMMON_ANIMAL_COMPANION
+    value: 317
+  - name: SPELLABILITY_SUMMON_CELESTIAL
+    value: 379
+  - name: SPELLABILITY_SUMMON_FAMILIAR
+    value: 318
+  - name: SPELLABILITY_SUMMON_MEPHIT
+    value: 378
+  - name: SPELLABILITY_SUMMON_SLAAD
+    value: 303
+  - name: SPELLABILITY_SUMMON_TANARRI
+    value: 304
+  - name: SPELLABILITY_TOUCH_PETRIFY
+    value: 496
+    desc: | 
+      New spellability from the Shadows of Undrentide expansion. Description from the x0_s1_PetrTouch script which handles this “Petrification touch attack monster ability. Fortitude save (DC 15) or be turned to stone permanently.”
+  - name: SPELLABILITY_TROGLODYTE_STENCH
+    value: 805
+  - name: SPELLABILITY_TRUMPET_BLAST
+    value: 305
+  - name: SPELLABILITY_TURN_UNDEAD
+    value: 308
+  - name: SPELLABILITY_TYRANT_FOG_MIST
+    value: 306
+  - name: SPELLABILITY_WHIRLWIND
+    value: 561
+  - name: SPELLABILITY_WHOLENESS_OF_BODY
+    value: 309
+  - name: SPELLABILITY_WILD_SHAPE
+    value: 320
+seealso:

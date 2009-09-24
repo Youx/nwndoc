@@ -1,0 +1,89 @@
+---
+type: Constants
+category: IP_CONST_DAMAGEREDUCTION_*
+shortdesc: | 
+  Itemproperty constants relating to damage reduction.
+constants:
+  - name: IP_CONST_DAMAGEREDUCTION_1
+    value: 0
+    desc: | 
+      1damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_2
+    value: 1
+    desc: | 
+      2 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_3
+    value: 2
+    desc: | 
+      3 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_4
+    value: 3
+    desc: | 
+      4 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_5
+    value: 4
+    desc: | 
+      5 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_6
+    value: 5
+    desc: | 
+      6 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_7
+    value: 6
+    desc: | 
+      7 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_8
+    value: 7
+    desc: | 
+      8 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_9
+    value: 8
+    desc: | 
+      9 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_10
+    value: 9
+    desc: | 
+      10 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_11
+    value: 10
+    desc: | 
+      11 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_12
+    value: 11
+    desc: | 
+      12 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_13
+    value: 12
+    desc: | 
+      13 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_14
+    value: 13
+    desc: | 
+      14 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_15
+    value: 14
+    desc: | 
+      15 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_16
+    value: 15
+    desc: | 
+      16 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_17
+    value: 16
+    desc: | 
+      17 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_18
+    value: 17
+    desc: | 
+      18 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_19
+    value: 18
+    desc: | 
+      19 damage reduction.
+  - name: IP_CONST_DAMAGEREDUCTION_20
+    value: 19
+    desc: | 
+      20 damage reduction.
+seealso:
+  functions:
+    - ItemPropertyDamageReduction

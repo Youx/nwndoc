@@ -1,0 +1,58 @@
+---
+type: Constants
+category: ACTION_MODE_*
+shortdesc: | 
+  Action modes a creature can enter. Used with SetActionMode and GetActionMode.
+constants:
+  - name: ACTION_MODE_COUNTERSPELL
+    value: 5
+    desc: | 
+      Counterspell mode.
+  - name: ACTION_MODE_DEFENSIVE_CAST
+    value: 10
+    desc: | 
+      Defensive casting mode.
+  - name: ACTION_MODE_DETECT
+    value: 0
+    desc: | 
+      Detect mode.
+  - name: ACTION_MODE_DIRTY_FIGHTING
+    value: 11
+    desc: | 
+      Dirty fighting mode.
+  - name: ACTION_MODE_EXPERTISE
+    value: 8
+    desc: | 
+      Expertise mode.
+  - name: ACTION_MODE_FLURRY_OF_BLOWS
+    value: 6
+    desc: | 
+      Flurry of blows mode.
+  - name: ACTION_MODE_IMPROVED_EXPERTISE
+    value: 9
+    desc: | 
+      Improved expertise mode.
+  - name: ACTION_MODE_IMPROVED_POWER_ATTACK
+    value: 4
+    desc: | 
+      Improved power attack mode.
+  - name: ACTION_MODE_PARRY
+    value: 2
+    desc: | 
+      Parry mode.
+  - name: ACTION_MODE_POWER_ATTACK
+    value: 3
+    desc: | 
+      Power attack mode.
+  - name: ACTION_MODE_RAPID_SHOT
+    value: 7
+    desc: | 
+      Rapid shot mode.
+  - name: ACTION_MODE_STEALTH
+    value: 1
+    desc: | 
+      Stealth mode.
+seealso:
+  functions:
+    - GetActionMode
+    - SetActionMode

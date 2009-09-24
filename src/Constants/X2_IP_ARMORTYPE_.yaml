@@ -1,0 +1,24 @@
+---
+type: Constants
+category: X2_IP_ARMORTYPE_*
+shortdesc: | 
+  Armortype constants for use with various of the x2_inc_itemprop itemproperty functions.
+requirements: |
+  #include "x2_inc_itemprop"
+
+constants:
+  - name: X2_IP_ARMORTYPE_NEXT
+    value: 0
+    desc: | 
+      Next valid appearance.
+  - name: X2_IP_ARMORTYPE_PREV
+    value: 1
+    desc: | 
+      Previous valid appearance.
+  - name: X2_IP_ARMORTYPE_RANDOM
+    value: 2
+    desc: | 
+      Random valid appearance.
+seealso:
+  functions:
+    - IPGetModifiedArmor

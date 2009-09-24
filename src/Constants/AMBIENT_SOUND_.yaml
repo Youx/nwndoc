@@ -1,0 +1,223 @@
+---
+type: Constants
+category: AMBIENT_SOUND_*
+shortdesc: | 
+  These constants must match those in the AmbientSound.2da.
+constants:
+  - name: AMBIENT_SOUND_BLACK_SMITH
+    value: 80
+  - name: AMBIENT_SOUND_BORDELLO_MEN_AND_WOMEN
+    value: 21
+  - name: AMBIENT_SOUND_BORDELLO_WOMEN
+    value: 20
+  - name: AMBIENT_SOUND_CASTLE_INTERIOR_LARGE
+    value: 68
+  - name: AMBIENT_SOUND_CASTLE_INTERIOR_MEDIUM
+    value: 67
+  - name: AMBIENT_SOUND_CASTLE_INTERIOR_SMALL
+    value: 66
+  - name: AMBIENT_SOUND_CAVE_EVIL_1_XP2
+    value: 104
+  - name: AMBIENT_SOUND_CAVE_EVIL_2_XP2
+    value: 105
+  - name: AMBIENT_SOUND_CAVE_EVIL_3_XP2
+    value: 106
+  - name: AMBIENT_SOUND_CAVE_INSECTS_1
+    value: 42
+  - name: AMBIENT_SOUND_CAVE_INSECTS_2
+    value: 43
+  - name: AMBIENT_SOUND_CAVE_LARGE
+    value: 62
+  - name: AMBIENT_SOUND_CAVE_MEDIUM
+    value: 61
+  - name: AMBIENT_SOUND_CAVE_SMALL
+    value: 60
+  - name: AMBIENT_SOUND_CITY_DAY_CROWDED
+    value: 12
+  - name: AMBIENT_SOUND_CITY_DAY_SPARSE
+    value: 13
+  - name: AMBIENT_SOUND_CITY_MARKET
+    value: 15
+  - name: AMBIENT_SOUND_CITY_NIGHT
+    value: 14
+  - name: AMBIENT_SOUND_CITY_SLUMS_DAY_CROWDED
+    value: 9
+  - name: AMBIENT_SOUND_CITY_SLUMS_DAY_SPARSE
+    value: 10
+  - name: AMBIENT_SOUND_CITY_SLUMS_NIGHT
+    value: 11
+  - name: AMBIENT_SOUND_CITY_TEMPLE_DISTRICT
+    value: 16
+  - name: AMBIENT_SOUND_COMBAT_MUFFLED_1
+    value: 26
+  - name: AMBIENT_SOUND_COMBAT_MUFFLED_2
+    value: 27
+  - name: AMBIENT_SOUND_COMBAT_OUTSIDE_1
+    value: 24
+  - name: AMBIENT_SOUND_COMBAT_OUTSIDE_2
+    value: 25
+  - name: AMBIENT_SOUND_COMMONER_TAVERN_TALK
+    value: 7
+  - name: AMBIENT_SOUND_CRYPT_MEDIUM_1
+    value: 70
+  - name: AMBIENT_SOUND_CRYPT_MEDIUM_2
+    value: 71
+  - name: AMBIENT_SOUND_CRYPT_SMALL
+    value: 69
+  - name: AMBIENT_SOUND_DESERT_DAY_XP1
+    value: 92
+  - name: AMBIENT_SOUND_DESERT_NIGHT_XP1
+    value: 93
+  - name: AMBIENT_SOUND_DUNGEON_LAKE_LAVA
+    value: 28
+  - name: AMBIENT_SOUND_EVIL_DRONE_XP2
+    value: 101
+  - name: AMBIENT_SOUND_EVIL_DUNGEON_LARGE
+    value: 59
+  - name: AMBIENT_SOUND_EVIL_DUNGEON_MEDIUM
+    value: 58
+  - name: AMBIENT_SOUND_EVIL_DUNGEON_SMALL
+    value: 57
+  - name: AMBIENT_SOUND_FOREST_DAY_1
+    value: 49
+  - name: AMBIENT_SOUND_FOREST_DAY_2
+    value: 50
+  - name: AMBIENT_SOUND_FOREST_DAY_3
+    value: 51
+  - name: AMBIENT_SOUND_FOREST_DAY_SCARY
+    value: 52
+  - name: AMBIENT_SOUND_FOREST_MAGICAL
+    value: 56
+  - name: AMBIENT_SOUND_FOREST_NIGHT_1
+    value: 53
+  - name: AMBIENT_SOUND_FOREST_NIGHT_2
+    value: 54
+  - name: AMBIENT_SOUND_FOREST_NIGHT_SCARY
+    value: 55
+  - name: AMBIENT_SOUND_FROZEN_HELL_XP2
+    value: 103
+  - name: AMBIENT_SOUND_GUST_CAVERN
+    value: 35
+  - name: AMBIENT_SOUND_GUST_CHASM
+    value: 34
+  - name: AMBIENT_SOUND_GUST_DRAFT
+    value: 37
+  - name: AMBIENT_SOUND_GUST_GRASS
+    value: 36
+  - name: AMBIENT_SOUND_HAUNTED_INTERIOR_1
+    value: 77
+  - name: AMBIENT_SOUND_HAUNTED_INTERIOR_2
+    value: 78
+  - name: AMBIENT_SOUND_HAUNTED_INTERIOR_3
+    value: 79
+  - name: AMBIENT_SOUND_HOUSE_INTERIOR_1
+    value: 72
+  - name: AMBIENT_SOUND_HOUSE_INTERIOR_2
+    value: 73
+  - name: AMBIENT_SOUND_HOUSE_INTERIOR_3
+    value: 74
+  - name: AMBIENT_SOUND_INTERIOR_INSECTS_1
+    value: 44
+  - name: AMBIENT_SOUND_INTERIOR_INSECTS_2
+    value: 45
+  - name: AMBIENT_SOUND_KITCHEN_INTERIOR_LARGE
+    value: 76
+  - name: AMBIENT_SOUND_KITCHEN_INTERIOR_SMALL
+    value: 75
+  - name: AMBIENT_SOUND_LARGE_GROUP_TALKS_INSIDE
+    value: 6
+  - name: AMBIENT_SOUND_LIZARD_FOLK_CAVE_CRYSTALS
+    value: 46
+  - name: AMBIENT_SOUND_MAGICAL_INTERIOR_AIRLAB
+    value: 88
+  - name: AMBIENT_SOUND_MAGICAL_INTERIOR_EARTHLAB
+    value: 87
+  - name: AMBIENT_SOUND_MAGICAL_INTERIOR_FIRELAB
+    value: 86
+  - name: AMBIENT_SOUND_MAGICAL_INTERIOR_WATERLAB
+    value: 89
+  - name: AMBIENT_SOUND_MAGIC_INTERIOR_EVIL
+    value: 85
+  - name: AMBIENT_SOUND_MAGIC_INTERIOR_LARGE
+    value: 84
+  - name: AMBIENT_SOUND_MAGIC_INTERIOR_MEDIUM
+    value: 83
+  - name: AMBIENT_SOUND_MAGIC_INTERIOR_SMALL
+    value: 82
+  - name: AMBIENT_SOUND_MEDIUM_GROUP_TALKS_INSIDE
+    value: 5
+  - name: AMBIENT_SOUND_MEN_WHISPER_INSIDE
+    value: 1
+  - name: AMBIENT_SOUND_MINE_LARGE
+    value: 65
+  - name: AMBIENT_SOUND_MINE_MEDIUM
+    value: 64
+  - name: AMBIENT_SOUND_MINE_SMALL
+    value: 63
+  - name: AMBIENT_SOUND_MONASTERY_INTERIOR_XP1
+    value: 94
+  - name: AMBIENT_SOUND_NOBLE_TAVERN_TALK
+    value: 8
+  - name: AMBIENT_SOUND_NONE
+    value: 0
+  - name: AMBIENT_SOUND_PEOPLE_WHISPER_INSIDE
+    value: 3
+  - name: AMBIENT_SOUND_PIT_CRIES
+    value: 81
+  - name: AMBIENT_SOUND_PLAIN_OF_FIRE_XP2
+    value: 102
+  - name: AMBIENT_SOUND_RAIN_HARD
+    value: 39
+  - name: AMBIENT_SOUND_RAIN_LIGHT
+    value: 38
+  - name: AMBIENT_SOUND_RAIN_STORM_BIG
+    value: 41
+  - name: AMBIENT_SOUND_RAIN_STORM_SMALL
+    value: 40
+  - name: AMBIENT_SOUND_RIOT_MUFFLED
+    value: 23
+  - name: AMBIENT_SOUND_RIOT_OUTSIDE
+    value: 22
+  - name: AMBIENT_SOUND_RUIN_HAUNTED_XP1
+    value: 98
+  - name: AMBIENT_SOUND_RUIN_RUMBLING_XP1
+    value: 97
+  - name: AMBIENT_SOUND_RUIN_WET_XP1
+    value: 96
+  - name: AMBIENT_SOUND_SAND_STORM_EXTREME_XP1
+    value: 100
+  - name: AMBIENT_SOUND_SAND_STORM_LIGHT_XP1
+    value: 99
+  - name: AMBIENT_SOUND_SEWERS_1
+    value: 47
+  - name: AMBIENT_SOUND_SEWERS_2
+    value: 48
+  - name: AMBIENT_SOUND_SEWER_SLUDGE_LAKE
+    value: 29
+  - name: AMBIENT_SOUND_SMALL_GROUP_TALKS_INSIDE
+    value: 4
+  - name: AMBIENT_SOUND_TAVERN_ROWDY
+    value: 107
+  - name: AMBIENT_SOUND_TOWN_DAY_CROWDED
+    value: 17
+  - name: AMBIENT_SOUND_TOWN_DAY_SPARSE
+    value: 18
+  - name: AMBIENT_SOUND_TOWN_NIGHT
+    value: 19
+  - name: AMBIENT_SOUND_WIND_FOREST
+    value: 33
+  - name: AMBIENT_SOUND_WIND_MEDIUM
+    value: 31
+  - name: AMBIENT_SOUND_WIND_SOFT
+    value: 30
+  - name: AMBIENT_SOUND_WIND_STRONG
+    value: 32
+  - name: AMBIENT_SOUND_WINTER_DAY_WET_XP1
+    value: 90
+  - name: AMBIENT_SOUND_WINTER_DAY_WINDY_XP1
+    value: 91
+  - name: AMBIENT_SOUND_WOMEN_WHISPER_INSIDE
+    value: 2
+seealso:
+author: Mistress
+editor: KooKoo

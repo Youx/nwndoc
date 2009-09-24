@@ -1,0 +1,224 @@
+---
+type: Constants
+category: VFX_EYES_*
+shortdesc: | 
+  Race specific glowing eye effects. These constants are actually integers which can be found in nwscript.nss and refer to row numbers in the file visualeffects.2da - this file also contains visual effects for which there are no constants. If you want to use one of those, just use EffectVisualEffect(XXX) where XXX is the rownumber.
+constants:
+  - name: VFX_EYES_GREEN_DWARF_FEMALE
+    value: 570
+    desc: | 
+      Dwarf female green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_DWARF_MALE
+    value: 569
+    desc: | 
+      Dwarf male green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_ELF_FEMALE
+    value: 572
+    desc: | 
+      Elf female green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_ELF_MALE
+    value: 571
+    desc: | 
+      Elf male green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_GNOME_FEMALE
+    value: 574
+    desc: | 
+      Gnome female green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_GNOME_MALE
+    value: 573
+    desc: | 
+      Gnome male green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HALFELF_FEMALE
+    value: 568
+    desc: | 
+      Half-elf female green glowing eyes. Same as VFX_EYES_GREEN_HUMAN_FEMALE.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HALFELF_MALE
+    value: 567
+    desc: | 
+      Half-elf male green glowing eyes. Same as VFX_EYES_GREEN_HUMAN_MALE.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HALFLING_FEMALE
+    value: 576
+    desc: | 
+      Halfling female green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HALFLING_MALE
+    value: 575
+    desc: | 
+      Halfling male green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HALFORC_FEMALE
+    value: 578
+    desc: | 
+      Half-orc female green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HALFORC_MALE
+    value: 577
+    desc: | 
+      Half-orc male green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HUMAN_FEMALE
+    value: 568
+    desc: | 
+      Human female green glowing eyes. Same as VFX_EYES_GREEN_HALFELF_FEMALE.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_HUMAN_MALE
+    value: 567
+    desc: | 
+      Human male green glowing eyes. Same as VFX_EYES_GREEN_HALFELF_MALE.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_GREEN_TROGLODYTE
+    value: 579
+    desc: | 
+      Troglodyte green glowing eyes.
+    location: Head
+    colors:
+      - Green
+  - name: VFX_EYES_RED_FLAME_DWARF_FEMALE
+    value: 363
+    desc: | 
+      Dwarf female red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_DWARF_MALE
+    value: 362
+    desc: | 
+      Dwarf male red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_ELF_FEMALE
+    value: 365
+    desc: | 
+      Elf female red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_ELF_MALE
+    value: 364
+    desc: | 
+      Elf male red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_GNOME_FEMALE
+    value: 367
+    desc: | 
+      Gnome female red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_GNOME_MALE
+    value: 366
+    desc: | 
+      Gnome male red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HALFELF_FEMALE
+    value: 361
+    desc: | 
+      Half-elf female red glowing eyes. Same as VFX_EYES_RED_FLAME_HUMAN_FEMALE.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HALFELF_MALE
+    value: 360
+    desc: | 
+      Half-elf male red glowing eyes. Same as VFX_EYES_RED_FLAME_HUMAN_MALE.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HALFLING_FEMALE
+    value: 369
+    desc: | 
+      Halfling female red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HALFLING_MALE
+    value: 368
+    desc: | 
+      Halfling male red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HALFORC_FEMALE
+    value: 371
+    desc: | 
+      Half-orc female red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HALFORC_MALE
+    value: 370
+    desc: | 
+      Half-orc male red glowing eyes.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HUMAN_FEMALE
+    value: 361
+    desc: | 
+      Human female red glowing eyes. Same as VFX_EYES_RED_FLAME_HALFELF_FEMALE.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_HUMAN_MALE
+    value: 360
+    desc: | 
+      Human male red glowing eyes. Same as VFX_EYES_RED_FLAME_HALFELF_MALE.
+    location: Head
+    colors:
+      - Red
+  - name: VFX_EYES_RED_FLAME_TROGLODYTE
+    value: 372
+    desc: | 
+      Troglodyte red glowing eyes.
+    location: Head
+    colors:
+      - Red
+seealso:
+  constants:
+    - VFX_BEAM_*
+    - VFX_COM_*
+    - VFX_DUR_*
+    - VFX_FNF_*
+    - VFX_IMP_*
+author: KooKoo

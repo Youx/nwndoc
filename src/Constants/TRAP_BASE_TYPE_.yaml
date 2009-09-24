@@ -1,0 +1,201 @@
+---
+type: Constants
+category: TRAP_BASE_TYPE_*
+shortdesc: | 
+  Used to catagorize the strength and type of traps.
+constants:
+  - name: TRAP_BASE_TYPE_AVERAGE_ACID
+    value: 13
+    desc: | 
+      Average damage amount, Acid damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_ACID_SPLASH
+    value: 41
+    desc: | 
+      Average damage amount, Acid splash damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_ELECTRICAL
+    value: 21
+    desc: | 
+      Average damage amount, Electrical damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_FIRE
+    value: 17
+    desc: | 
+      Average damage amount, Fire damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_FROST
+    value: 29
+    desc: | 
+      Average frost trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_GAS
+    value: 25
+    desc: | 
+      Average damage amount, Gas damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_HOLY
+    value: 5
+    desc: | 
+      Average damage amount, Holy damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_NEGATIVE
+    value: 33
+    desc: | 
+      Average damage amount, Negative damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_SONIC
+    value: 37
+    desc: | 
+      Average damage amount, Sonic damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_SPIKE
+    value: 1
+    desc: | 
+      Average damage amount, Spike damage type trap.
+  - name: TRAP_BASE_TYPE_AVERAGE_TANGLE
+    value: 9
+    desc: | 
+      Average damage & duration amount, Tangle damage type trap. This trap also slows PC for a length of time.
+  - name: TRAP_BASE_TYPE_DEADLY_ACID
+    value: 15
+    desc: | 
+      Deadly damage amount, Acid damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_ACID_SPLASH
+    value: 43
+    desc: | 
+      Deadly damage amount, Acid splash damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_ELECTRICAL
+    value: 23
+    desc: | 
+      Deadly damage amount, Electrical damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_FIRE
+    value: 19
+    desc: | 
+      Deadly damage amount, Fire damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_FROST
+    value: 31
+    desc: | 
+      Deadly damage amount, Frost damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_GAS
+    value: 27
+    desc: | 
+      Deadly damage amount, Gas damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_HOLY
+    value: 7
+    desc: | 
+      Deadly damage amount, Holy damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_NEGATIVE
+    value: 35
+    desc: | 
+      Deadly damage amount, Negative damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_SONIC
+    value: 39
+    desc: | 
+      Deadly damage amount, Sonic damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_SPIKE
+    value: 3
+    desc: | 
+      Deadly damage amount, Spike damage type trap.
+  - name: TRAP_BASE_TYPE_DEADLY_TANGLE
+    value: 11
+    desc: | 
+      Deadly damage and duration amount, Tangle damage type trap. This trap also slows the PC down for a length of time.
+  - name: TRAP_BASE_TYPE_EPIC_ELECTRICAL
+    value: 44
+    desc: | 
+      Epic damage amount, Electrical damage type trap.
+  - name: TRAP_BASE_TYPE_EPIC_FIRE
+    value: 45
+    desc: | 
+      Epic damage amount, Fire damage type trap.
+  - name: TRAP_BASE_TYPE_EPIC_FROST
+    value: 46
+    desc: | 
+      Epic damage amount, Frost damage type trap.
+  - name: TRAP_BASE_TYPE_EPIC_SONIC
+    value: 47
+    desc: | 
+      Epic damage amount, Sonic damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_ACID
+    value: 12
+    desc: | 
+      Minor damage amount, Acid damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_ACID_SPLASH
+    value: 40
+    desc: | 
+      Minor damage amount, Acid splash damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_ELECTRICAL
+    value: 20
+    desc: | 
+      Minor damage amount, Electrical damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_FIRE
+    value: 16
+    desc: | 
+      Minor damage amount, Fire damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_FROST
+    value: 28
+    desc: | 
+      Minor damage amount, Frost damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_GAS
+    value: 24
+    desc: | 
+      Minor damage amount, Gas damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_HOLY
+    value: 4
+    desc: | 
+      Minor damage amount, Holy damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_NEGATIVE
+    value: 32
+    desc: | 
+      Minor damage amount, Negative damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_SONIC
+    value: 36
+    desc: | 
+      Minor damage amount, Sonic damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_SPIKE
+    value: 0
+    desc: | 
+      Minor damage amount, Spike damage type trap.
+  - name: TRAP_BASE_TYPE_MINOR_TANGLE
+    value: 8
+    desc: | 
+      Minor damage and duration amount, Tangle damage type trap. This type of trap also slows the PC down for a length of time.
+  - name: TRAP_BASE_TYPE_STRONG_ACID
+    value: 14
+    desc: | 
+      Strong damage amount, Acid damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_ACID_SPLASH
+    value: 42
+    desc: | 
+      Strong damage amount, Acid splash damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_ELECTRICAL
+    value: 22
+    desc: | 
+      Strong damage amount, Electrical splash damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_FIRE
+    value: 18
+    desc: | 
+      Strong damage amount, Fire damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_FROST
+    value: 30
+    desc: | 
+      Strong damage amount, Frost damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_GAS
+    value: 26
+    desc: | 
+      Strong damage amount, Gas damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_HOLY
+    value: 6
+    desc: | 
+      Strong damage amount, Holy damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_NEGATIVE
+    value: 37
+    desc: | 
+      Strong damage amount, Negative damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_SONIC
+    value: 38
+    desc: | 
+      Strong damage amount, Sonic damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_SPIKE
+    value: 2
+    desc: | 
+      Strong damage amount, Spike damage type trap.
+  - name: TRAP_BASE_TYPE_STRONG_TANGLE
+    value: 10
+    desc: | 
+      Strong damage and duration amount, Tangle damage type trap. This trap also slows the PC down for a length of time.
+seealso:
+  functions:
+    - GetTrapBaseType

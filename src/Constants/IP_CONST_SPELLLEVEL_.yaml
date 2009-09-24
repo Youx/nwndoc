@@ -1,0 +1,27 @@
+---
+type: Constants
+category: IP_CONST_SPELLLEVEL_*
+shortdesc: | 
+  Denotes different levels of magical spells.
+constants:
+  - name: IP_CONST_SPELLLEVEL_0
+    value: 0
+  - name: IP_CONST_SPELLLEVEL_1
+    value: 1
+  - name: IP_CONST_SPELLLEVEL_2
+    value: 2
+  - name: IP_CONST_SPELLLEVEL_3
+    value: 3
+  - name: IP_CONST_SPELLLEVEL_4
+    value: 4
+  - name: IP_CONST_SPELLLEVEL_5
+    value: 5
+  - name: IP_CONST_SPELLLEVEL_6
+    value: 6
+  - name: IP_CONST_SPELLLEVEL_7
+    value: 7
+  - name: IP_CONST_SPELLLEVEL_8
+    value: 8
+  - name: IP_CONST_SPELLLEVEL_9
+    value: 9
+seealso:

@@ -1,0 +1,22 @@
+---
+type: Constants
+category: ATTACK_BONUS_*
+shortdesc: | 
+  Used to specify which attacks are modified by an EffectAttackIncrease() or EffectAttackDecrease() effect.
+constants:
+  - name: ATTACK_BONUS_MISC
+    value: 0
+    desc: | 
+      The default attack bonus type for EffectAttackIncrease() and EffectAttackDecrease(), applied to all attacks, regardless of hand used.
+  - name: ATTACK_BONUS_OFFHAND
+    value: 2
+    desc: | 
+      When used in EffectAttackIncrease() and EffectAttackDecrease(), specifies that the effect applies only to off-hand attacks.
+  - name: ATTACK_BONUS_ONHAND
+    value: 1
+    desc: | 
+      When used in EffectAttackIncrease() and EffectAttackDecrease(), specifies that the effect applies only to on-hand attacks (i.e., not off-hand attacks).
+seealso:
+  functions:
+    - EffectAttackDecrease
+    - EffectAttackIncrease

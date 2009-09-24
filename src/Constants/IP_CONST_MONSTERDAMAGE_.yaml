@@ -1,0 +1,123 @@
+---
+type: Constants
+category: IP_CONST_MONSTERDAMAGE_*
+shortdesc: | 
+  Different damage range (dice) for monsters.
+constants:
+  - name: IP_CONST_MONSTERDAMAGE_1d2
+    value: 1
+  - name: IP_CONST_MONSTERDAMAGE_1d3
+    value: 2
+  - name: IP_CONST_MONSTERDAMAGE_1d4
+    value: 3
+  - name: IP_CONST_MONSTERDAMAGE_1d6
+    value: 8
+  - name: IP_CONST_MONSTERDAMAGE_1d8
+    value: 18
+  - name: IP_CONST_MONSTERDAMAGE_1d10
+    value: 28
+  - name: IP_CONST_MONSTERDAMAGE_1d12
+    value: 38
+  - name: IP_CONST_MONSTERDAMAGE_1d20
+    value: 48
+  - name: IP_CONST_MONSTERDAMAGE_2d4
+    value: 4
+  - name: IP_CONST_MONSTERDAMAGE_2d6
+    value: 9
+  - name: IP_CONST_MONSTERDAMAGE_2d8
+    value: 19
+  - name: IP_CONST_MONSTERDAMAGE_2d10
+    value: 29
+  - name: IP_CONST_MONSTERDAMAGE_2d12
+    value: 39
+  - name: IP_CONST_MONSTERDAMAGE_2d20
+    value: 49
+  - name: IP_CONST_MONSTERDAMAGE_3d4
+    value: 5
+  - name: IP_CONST_MONSTERDAMAGE_3d6
+    value: 10
+  - name: IP_CONST_MONSTERDAMAGE_3d8
+    value: 20
+  - name: IP_CONST_MONSTERDAMAGE_3d10
+    value: 30
+  - name: IP_CONST_MONSTERDAMAGE_3d12
+    value: 40
+  - name: IP_CONST_MONSTERDAMAGE_3d20
+    value: 50
+  - name: IP_CONST_MONSTERDAMAGE_4d4
+    value: 6
+  - name: IP_CONST_MONSTERDAMAGE_4d6
+    value: 11
+  - name: IP_CONST_MONSTERDAMAGE_4d8
+    value: 21
+  - name: IP_CONST_MONSTERDAMAGE_4d10
+    value: 31
+  - name: IP_CONST_MONSTERDAMAGE_4d12
+    value: 41
+  - name: IP_CONST_MONSTERDAMAGE_4d20
+    value: 51
+  - name: IP_CONST_MONSTERDAMAGE_5d4
+    value: 7
+  - name: IP_CONST_MONSTERDAMAGE_5d6
+    value: 12
+  - name: IP_CONST_MONSTERDAMAGE_5d8
+    value: 22
+  - name: IP_CONST_MONSTERDAMAGE_5d10
+    value: 32
+  - name: IP_CONST_MONSTERDAMAGE_5d12
+    value: 42
+  - name: IP_CONST_MONSTERDAMAGE_5d20
+    value: 52
+  - name: IP_CONST_MONSTERDAMAGE_6d6
+    value: 13
+  - name: IP_CONST_MONSTERDAMAGE_6d8
+    value: 23
+  - name: IP_CONST_MONSTERDAMAGE_6d10
+    value: 33
+  - name: IP_CONST_MONSTERDAMAGE_6d12
+    value: 43
+  - name: IP_CONST_MONSTERDAMAGE_6d20
+    value: 53
+  - name: IP_CONST_MONSTERDAMAGE_7d6
+    value: 14
+  - name: IP_CONST_MONSTERDAMAGE_7d8
+    value: 24
+  - name: IP_CONST_MONSTERDAMAGE_7d10
+    value: 34
+  - name: IP_CONST_MONSTERDAMAGE_7d12
+    value: 44
+  - name: IP_CONST_MONSTERDAMAGE_7d20
+    value: 54
+  - name: IP_CONST_MONSTERDAMAGE_8d6
+    value: 15
+  - name: IP_CONST_MONSTERDAMAGE_8d8
+    value: 25
+  - name: IP_CONST_MONSTERDAMAGE_8d10
+    value: 35
+  - name: IP_CONST_MONSTERDAMAGE_8d12
+    value: 45
+  - name: IP_CONST_MONSTERDAMAGE_8d20
+    value: 55
+  - name: IP_CONST_MONSTERDAMAGE_9d6
+    value: 16
+  - name: IP_CONST_MONSTERDAMAGE_9d8
+    value: 26
+  - name: IP_CONST_MONSTERDAMAGE_9d10
+    value: 36
+  - name: IP_CONST_MONSTERDAMAGE_9d12
+    value: 46
+  - name: IP_CONST_MONSTERDAMAGE_9d20
+    value: 56
+  - name: IP_CONST_MONSTERDAMAGE_10d6
+    value: 17
+  - name: IP_CONST_MONSTERDAMAGE_10d8
+    value: 27
+  - name: IP_CONST_MONSTERDAMAGE_10d10
+    value: 37
+  - name: IP_CONST_MONSTERDAMAGE_10d12
+    value: 47
+  - name: IP_CONST_MONSTERDAMAGE_10d20
+    value: 57
+seealso:
+  functions:
+    - ItemPropertyMonsterDamage

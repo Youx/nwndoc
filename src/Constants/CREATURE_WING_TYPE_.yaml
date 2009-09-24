@@ -1,0 +1,26 @@
+---
+type: Constants
+category: CREATURE_WING_TYPE_*
+shortdesc: | 
+  For use with GetCreatureWingType() and SetCreatureWingType(). These constants must match those in the WingModel.2da.
+constants:
+  - name: CREATURE_WING_TYPE_ANGEL
+    value: 2
+  - name: CREATURE_WING_TYPE_BAT
+    value: 3
+  - name: CREATURE_WING_TYPE_BIRD
+    value: 6
+  - name: CREATURE_WING_TYPE_BUTTERFLY
+    value: 5
+  - name: CREATURE_WING_TYPE_DEMON
+    value: 1
+  - name: CREATURE_WING_TYPE_DRAGON
+    value: 4
+  - name: CREATURE_WING_TYPE_NONE
+    value: 0
+seealso:
+  functions:
+    - GetCreatureWingType
+    - SetCreatureWingType
+author: Mistress
+

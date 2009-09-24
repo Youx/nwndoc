@@ -1,0 +1,43 @@
+---
+type: Constants
+category: METAMAGIC_*
+shortdesc: | 
+  Metamagic feats applied to a spell.
+constants:
+  - name: METAMAGIC_ANY
+    value: 255
+    desc: | 
+      Any metamagic spell effect (empower, extend, maximize, quicken, silent, still).
+  - name: METAMAGIC_EMPOWER
+    value: 1
+    desc: | 
+      All variable, numeric effects of an empowered spell are increased by one-half. An empowered spell uses up a spell slot two levels higher than the shell's actual level.
+  - name: METAMAGIC_EXTEND
+    value: 2
+    desc: | 
+      An extended spell lasts twice as long as normal. An extended spell uses up a spell slot one level higher than the spell's actual level.
+  - name: METAMAGIC_MAXIMIZE
+    value: 4
+    desc: | 
+      All variable, numeric effects of a maximized spell are maximized. A maximized spell uses up a spell slot three levels higher than the spell's actual level.
+  - name: METAMAGIC_NONE
+    value: 0
+    desc: | 
+      No metamagic feats attached to the spell.
+  - name: METAMAGIC_QUICKEN
+    value: 8
+    desc: | 
+      Casting a quickened spell is a free action. A quickened spell uses up a spell slot four levels higher than the spell's actual level.
+  - name: METAMAGIC_SILENT
+    value: 16
+    desc: | 
+      A silent spell can be cast with no verbal components. A silent spell uses up a spell slot one level higher than the spell's actual level.
+  - name: METAMAGIC_STILL
+    value: 32
+    desc: | 
+      A still spell can be cast with no somatic components. A still spell uses up a spell slot one level higher than the spell's actual level.
+seealso:
+  functions:
+    - ActionCastSpellAtLocation
+    - ActionCastSpellAtObject
+    - GetMetaMagicFeat

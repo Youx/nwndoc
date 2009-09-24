@@ -1,0 +1,37 @@
+---
+type: Constants
+category: IP_CONST_ONHIT_SAVEDC_*
+shortdesc: | 
+  Itemproperty constants relating to the save DC (saving throw difficulty class) against an OnHit property.
+constants:
+  - name: IP_CONST_ONHIT_SAVEDC_14
+    value: 0
+  - name: DC
+    value: 14.
+  - name: IP_CONST_ONHIT_SAVEDC_16
+    value: 1
+  - name: DC
+    value: 16.
+  - name: IP_CONST_ONHIT_SAVEDC_18
+    value: 2
+  - name: DC
+    value: 18.
+  - name: IP_CONST_ONHIT_SAVEDC_20
+    value: 3
+  - name: DC
+    value: 20.
+  - name: IP_CONST_ONHIT_SAVEDC_22
+    value: 4
+  - name: DC
+    value: 22.
+  - name: IP_CONST_ONHIT_SAVEDC_24
+    value: 5
+  - name: DC
+    value: 24.
+  - name: IP_CONST_ONHIT_SAVEDC_26
+    value: 6
+  - name: DC
+    value: 26.
+seealso:
+  functions:
+    - ItemPropertyOnHitProps

@@ -1,0 +1,166 @@
+---
+type: Constants
+category: VFX_BEAM_*
+shortdesc: | 
+  Beams fire in a straight line towards their targets. These constants are actually integers which can be found in nwscript.nss and refer to row numbers in the file visualeffects.2da - this file also contains visual effects for which there are no constants. If you want to use one of those, just use EffectVisualEffect(XXX) where XXX is the rownumber.
+constants:
+  - name: VFX_BEAM_BLACK
+    value: 485
+    desc: | 
+      Another color beam attack.
+    location: Body
+    colors:
+      - Black
+      - negative
+  - name: VFX_BEAM_CHAIN
+    value: 484
+    desc: | 
+      A non-moving normal metal chain, no sound.
+    location: Body
+    colors:
+      - Chain
+  - name: VFX_BEAM_COLD
+    value: 211
+    desc: | 
+      A beam of frost from the source to target.
+    location: Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_BEAM_EVIL
+    value: 214
+    desc: | 
+      A beam of evil from the source to target.
+    location: Body
+    colors:
+      - Red
+      - white
+  - name: VFX_BEAM_FIRE
+    value: 210
+    desc: | 
+      A beam of fire from the source to target.
+    location: Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_BEAM_FIRE_LASH
+    value: 216
+    desc: | 
+      Two lashing whips of fire from source to target.
+    location: Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_BEAM_FIRE_W
+    value: 482
+    desc: | 
+      A larger/more firey version of VFX_BEAM_FIRE.
+    location: Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_BEAM_FIRE_W_SILENT
+    value: 483
+    desc: | 
+      Another color beam attack.
+    location: Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_BEAM_HOLY
+    value: 212
+    desc: | 
+      A divine beam from source to target.
+    location: Body
+    colors:
+      - Yellow
+  - name: VFX_BEAM_LIGHTNING
+    value: 73
+    desc: | 
+      A beam of lightning from the source to target.
+    location: Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_BEAM_MIND
+    value: 213
+    desc: | 
+      A beam of mental power from the source to target.
+    location: Body
+    colors:
+      - Purple
+      - white
+  - name: VFX_BEAM_ODD
+    value: 215
+    desc: | 
+      Another color beam attack.
+    location: Body
+    colors:
+      - Purple
+      - white
+  - name: VFX_BEAM_SILENT_COLD
+    value: 309
+    desc: | 
+      A beam of frost from the source to target. Like VFX_BEAM_COLD, but without sound.
+    location: Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_BEAM_SILENT_EVIL
+    value: 312
+    desc: | 
+      A beam of evil from the source to target. Like VFX_BEAM_EVIL, but without sound.
+    location: Body
+    colors:
+      - Red
+      - white
+  - name: VFX_BEAM_SILENT_FIRE
+    value: 308
+    desc: | 
+      A beam of fire from the source to target. Like VFX_BEAM_FIRE, but without sound.
+    location: Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_BEAM_SILENT_HOLY
+    value: 310
+    desc: | 
+      A divine beam from source to target. Like VFX_BEAM_HOLY, but without sound.
+    location: Body
+    colors:
+      - Yellow
+  - name: VFX_BEAM_SILENT_LIGHTNING
+    value: 307
+    desc: | 
+      A beam of lightning from the source to target. Like VFX_BEAM_LIGHTNING, but without sound.
+    location: Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_BEAM_SILENT_MIND
+    value: 311
+    desc: | 
+      A beam of mental power from the source to target. Like VFX_BEAM_MIND, but without sound.
+    location: Body
+    colors:
+      - Purple
+      - white
+  - name: VFX_BEAM_SILENT_ODD
+    value: 313
+    desc: | 
+      Another color beam attack. Like VFX_BEAM_ODD, but without sound.
+    location: Body
+    colors:
+      - Purple
+      - white
+seealso:
+  functions:
+    - EffectBeam
+  constants:
+    - VFX_COM_*
+    - VFX_DUR_*
+    - VFX_EYES_*
+    - VFX_FNF_*
+    - VFX_IMP_*
+author: NWN Lexicon Group
+editor: KooKoo

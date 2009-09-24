@@ -1,0 +1,228 @@
+---
+type: Constants
+category: ANIMATION_*
+shortdesc: | 
+  List of animations.
+constants:
+  - name: ANIMATION_FIREFORGET_BOW
+    value: 105
+    desc: | 
+      The bow animation.
+  - name: ANIMATION_FIREFORGET_DODGE_DUCK
+    value: 115
+    desc: | 
+      The animation of someone dodging something by ducking
+  - name: ANIMATION_FIREFORGET_DODGE_SIDE
+    value: 114
+    desc: | 
+      The animation of someone dodging something by taking a half-step to the side.
+  - name: ANIMATION_FIREFORGET_DRINK
+    value: 113
+    desc: | 
+      The drinking animation.
+  - name: ANIMATION_FIREFORGET_GREETING
+    value: 107
+    desc: | 
+      The animation of a creature greeting someone.
+  - name: ANIMATION_FIREFORGET_HEAD_TURN_LEFT
+    value: 100
+    desc: | 
+      The animation of a creature turning its head left.
+  - name: ANIMATION_FIREFORGET_HEAD_TURN_RIGHT
+    value: 101
+    desc: | 
+      The animation of a creature turning its head right.
+  - name: ANIMATION_FIREFORGET_PAUSE_BORED
+    value: 103
+    desc: | 
+      The animation of a creature standing around bored.
+  - name: ANIMATION_FIREFORGET_PAUSE_SCRATCH_HEAD
+    value: 102
+    desc: | 
+      The animation of a creature standing around scratching its head.
+  - name: ANIMATION_FIREFORGET_READ
+    value: 112
+    desc: | 
+      The reading animation.
+  - name: ANIMATION_FIREFORGET_SALUTE
+    value: 104
+    desc: | 
+      The animation of a creature saluting.
+  - name: ANIMATION_FIREFORGET_SPASM
+    value: 116
+    desc: | 
+      The animation of a creature having a spasm. Actually looks a little creepy in my opinion...
+  - name: ANIMATION_FIREFORGET_STEAL
+    value: 106
+    desc: | 
+      The stealing animation.
+  - name: ANIMATION_FIREFORGET_TAUNT
+    value: 108
+    desc: | 
+      The taunting animation.
+  - name: ANIMATION_FIREFORGET_VICTORY1
+    value: 109
+    desc: | 
+      One of the celebration animations.
+  - name: ANIMATION_FIREFORGET_VICTORY2
+    value: 110
+    desc: | 
+      One of the celebration animations.
+  - name: ANIMATION_FIREFORGET_VICTORY3
+    value: 111
+    desc: | 
+      One of the celebration animations.
+  - name: ANIMATION_LOOPING_CONJURE1
+    value: 18
+    desc: | 
+      The looping animation of someone conjuring something by moving hands in a pattern in front of themself.
+  - name: ANIMATION_LOOPING_CONJURE2
+    value: 19
+    desc: | 
+      The looping animation of someone conjuring something by waving their hands over their head.
+  - name: ANIMATION_LOOPING_CUSTOM1
+    value: 21
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM2
+    value: 22
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM3
+    value: 23
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM4
+    value: 24
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM5
+    value: 25
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM6
+    value: 26
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM7
+    value: 27
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM8
+    value: 28
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM9
+    value: 29
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_CUSTOM10
+    value: 30
+    desc: | 
+      Placeholder for custom content based animation.
+  - name: ANIMATION_LOOPING_DEAD_BACK
+    value: 17
+    desc: | 
+      Like ANIMATION_LOOPING_DEAD_FRONT, except the creature will lie face up instead of face down.
+  - name: ANIMATION_LOOPING_DEAD_FRONT
+    value: 16
+    desc: | 
+      Creates a feign death or sleep-lik effect that ends when the player moves or clicks on himself. If attacked while down, the player will not get up if hit.
+  - name: ANIMATION_LOOPING_GET_LOW
+    value: 12
+    desc: | 
+      Causes the object to bend down low to retrieve something from the floor.
+  - name: ANIMATION_LOOPING_GET_MID
+    value: 13
+    desc: | 
+      Causes the object to bend down to get something at about waist height.
+  - name: ANIMATION_LOOPING_LISTEN
+    value: 2
+    desc: | 
+      The looping animation of a creature listening.
+  - name: ANIMATION_LOOPING_LOOK_FAR
+    value: 5
+    desc: | 
+      The looping animation of a creature looking at a distance.
+  - name: ANIMATION_LOOPING_MEDITATE
+    value: 3
+    desc: | 
+      The looping animation of a creature meditating.
+  - name: ANIMATION_LOOPING_PAUSE
+    value: 0
+    desc: | 
+      The looping animation of a creature standing around.
+  - name: ANIMATION_LOOPING_PAUSE_DRUNK
+    value: 15
+    desc: | 
+      The looping animation of a drunk creature standing around.
+  - name: ANIMATION_LOOPING_PAUSE_TIRED
+    value: 14
+    desc: | 
+      The looping animation of a tired creature standing around.
+  - name: ANIMATION_LOOPING_PAUSE2
+    value: 1
+    desc: | 
+      The looping animation of a creature standing around.
+  - name: ANIMATION_LOOPING_SIT_CHAIR
+    value: 6
+    desc: | 
+      The looping animation of a creature sitting on a chair.
+  - name: ANIMATION_LOOPING_SIT_CROSS
+    value: 7
+    desc: | 
+      The looping animation of a creature sitting cross-legged.
+  - name: ANIMATION_LOOPING_SPASM
+    value: 20
+    desc: | 
+      The looping animation of someone having a spasm. Actually looks a little creepy in my opinion...
+  - name: ANIMATION_LOOPING_TALK_FORCEFUL
+    value: 10
+    desc: | 
+      The looping animation of a creature talking forcefully.
+  - name: ANIMATION_LOOPING_TALK_LAUGHING
+    value: 11
+    desc: | 
+      The looping animation of a creature laughing.
+  - name: ANIMATION_LOOPING_TALK_NORMAL
+    value: 8
+    desc: | 
+      The looping animation of a creature talking.
+  - name: ANIMATION_LOOPING_TALK_PLEADING
+    value: 9
+    desc: | 
+      The looping animation of a creature pleading.
+  - name: ANIMATION_LOOPING_WORSHIP
+    value: 4
+    desc: | 
+      The looping animation of the creature worshipping.
+  - name: ANIMATION_PLACEABLE_ACTIVATE
+    value: 200
+    desc: | 
+      The animation of a placeable becoming activated.
+  - name: ANIMATION_PLACEABLE_CLOSE
+    value: 203
+    desc: | 
+      The closing animation of a placeable.
+  - name: ANIMATION_PLACEABLE_DEACTIVATE
+    value: 201
+    desc: | 
+      The animation of a placeable becoming deactivated.
+  - name: ANIMATION_PLACEABLE_OPEN
+    value: 202
+    desc: | 
+      The opening of a placeable animation.
+  - name: ANIMATION_DOOR_CLOSE
+    value: 204
+  - name: ANIMATION_DOOR_DESTROY
+    value: 207
+  - name: ANIMATION_DOOR_OPEN1
+    value: 205
+  - name: ANIMATION_DOOR_OPEN2
+    value: 206
+seealso:
+  functions:
+    - ActionPlayAnimation
+    - MakeDrunk
+    - PlayAnimation
+    - PlayConversationAnimation

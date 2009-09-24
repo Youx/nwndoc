@@ -1,0 +1,59 @@
+---
+type: Constants
+category: NAME_*
+shortdesc: | 
+  These constants determine which name table to use when generating random names.
+constants:
+  - name: NAME_ANIMAL
+    value: 0
+  - name: NAME_FAMILIAR
+    value: 1
+  - name: NAME_FIRST_DWARF_FEMALE
+    value: 3
+  - name: NAME_FIRST_DWARF_MALE
+    value: 2
+  - name: NAME_FIRST_ELF_FEMALE
+    value: 6
+  - name: NAME_FIRST_ELF_MALE
+    value: 5
+  - name: NAME_FIRST_GENERIC_MALE
+    value: -1
+  - name: NAME_FIRST_GNOME_FEMALE
+    value: 9
+  - name: NAME_FIRST_GNOME_MALE
+    value: 8
+  - name: NAME_FIRST_HALFELF_FEMALE
+    value: 12
+  - name: NAME_FIRST_HALFELF_MALE
+    value: 11
+  - name: NAME_FIRST_HALFLING_FEMALE
+    value: 15
+  - name: NAME_FIRST_HALFLING_MALE
+    value: 14
+  - name: NAME_FIRST_HALFORC_FEMALE
+    value: 18
+  - name: NAME_FIRST_HALFORC_MALE
+    value: 17
+  - name: NAME_FIRST_HUMAN_FEMALE
+    value: 21
+  - name: NAME_FIRST_HUMAN_MALE
+    value: 20
+  - name: NAME_LAST_DWARF
+    value: 4
+  - name: NAME_LAST_ELF
+    value: 7
+  - name: NAME_LAST_GNOME
+    value: 10
+  - name: NAME_LAST_HALFELF
+    value: 13
+  - name: NAME_LAST_HALFLING
+    value: 16
+  - name: NAME_LAST_HALFORC
+    value: 19
+  - name: NAME_LAST_HUMAN
+    value: 22
+seealso:
+  functions:
+    - RandomName
+author: Mistress
+

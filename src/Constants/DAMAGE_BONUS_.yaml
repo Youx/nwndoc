@@ -1,0 +1,90 @@
+---
+type: Constants
+category: DAMAGE_BONUS_*
+shortdesc: | 
+  Determines magical adjustments to damage. Not treated the same as DAMAGE_POWER_*, which determines if an attack can penetrate damage reduction.
+constants:
+  - name: DAMAGE_BONUS_1
+    value: 1
+    desc: | 
+      Magical +1 bonus. Deals 1 extra point of damage on a successful hit.
+  - name: DAMAGE_BONUS_2
+    value: 2
+    desc: | 
+      Magical +2 bonus. Deals 2 extra points of damage on a successful hit.
+  - name: DAMAGE_BONUS_3
+    value: 3
+    desc: | 
+      Magical +3 bonus. Deals 3 extra points of damage on a successful hit.
+  - name: DAMAGE_BONUS_4
+    value: 4
+    desc: | 
+      Magical +4 bonus. Deals 4 extra points of damage on a successful hit.
+  - name: DAMAGE_BONUS_5
+    value: 5
+    desc: | 
+      Magical +5 bonus. Deals 5 extra points of damage on a successful hit.
+  - name: DAMAGE_BONUS_6
+    value: 16
+  - name: DAMAGE_BONUS_7
+    value: 17
+  - name: DAMAGE_BONUS_8
+    value: 18
+  - name: DAMAGE_BONUS_9
+    value: 19
+  - name: DAMAGE_BONUS_10
+    value: 20
+  - name: DAMAGE_BONUS_11
+    value: 21
+  - name: DAMAGE_BONUS_12
+    value: 22
+  - name: DAMAGE_BONUS_13
+    value: 23
+  - name: DAMAGE_BONUS_14
+    value: 24
+  - name: DAMAGE_BONUS_15
+    value: 25
+  - name: DAMAGE_BONUS_16
+    value: 26
+  - name: DAMAGE_BONUS_17
+    value: 27
+  - name: DAMAGE_BONUS_18
+    value: 28
+  - name: DAMAGE_BONUS_19
+    value: 29
+  - name: DAMAGE_BONUS_20
+    value: 30
+  - name: DAMAGE_BONUS_1d4
+    value: 6
+    desc: | 
+      An extra 1d4 (1-4) points of damage due to an additional property (fire, cold, sonic, acid, etc).
+  - name: DAMAGE_BONUS_1d6
+    value: 7
+    desc: | 
+      An extra 1d6 (1-6) points of damage due to an additional property (fire, cold, sonic, acid, etc).
+  - name: DAMAGE_BONUS_1d8
+    value: 8
+    desc: | 
+      An extra 1d8 (1-8) points of damage due to an additional property (fire, cold, sonic, acid, etc).
+  - name: DAMAGE_BONUS_1d10
+    value: 9
+    desc: | 
+      An extra 1d10 (1-10) points of damage due to an additional property (fire, cold, sonic, acid, etc).
+  - name: DAMAGE_BONUS_1d12
+    value: 14
+  - name: DAMAGE_BONUS_2d4
+    value: 12
+  - name: DAMAGE_BONUS_2d6
+    value: 10
+    desc: | 
+      An extra 2d6 (2-12) points of damage due to an additional property (fire, cold, sonic, acid, etc).
+  - name: DAMAGE_BONUS_2d8
+    value: 11
+  - name: DAMAGE_BONUS_2d10
+    value: 13
+  - name: DAMAGE_BONUS_2d12
+    value: 15
+seealso:
+  functions:
+    - EffectDamageIncrease
+    - EffectDamageShield

@@ -1,0 +1,39 @@
+---
+type: Constants
+category: EVENT_*
+shortdesc: | 
+  User-defined event codes.
+constants:
+  - name: EVENT_ATTACKED
+    value: 1005
+    desc: | 
+      OnPhysicalAttacked event.
+  - name: EVENT_DAMAGED
+    value: 1006
+    desc: | 
+      OnDamaged event.
+  - name: EVENT_DIALOGUE
+    value: 1004
+    desc: | 
+      OnConversation event.
+  - name: EVENT_DISTURBED
+    value: 1008
+    desc: | 
+      OnDisturbed event.
+  - name: EVENT_END_COMBAT_ROUND
+    value: 1003
+    desc: | 
+      OnCombatRoundEnd event.
+  - name: EVENT_HEARTBEAT
+    value: 1001
+    desc: | 
+      OnHeardbeat event.
+  - name: EVENT_PERCEIVE
+    value: 1002
+    desc: | 
+      OnPerception event.
+  - name: EVENT_SPELL_CAST_AT
+    value: 1011
+    desc: | 
+      OnSpellCastAt event.
+seealso:

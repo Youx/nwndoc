@@ -1,0 +1,77 @@
+---
+type: Constants
+category: FOG_COLOR_*
+shortdesc: | 
+  The color of the fog, to be specified within SetFogColor(). Remember to check the documentation of SetFogColor() for the ability to get exactly the right color you want.
+constants:
+  - name: FOG_COLOR_BLACK
+    value: 0
+    desc: | 
+      Totally black fog color.
+  - name: FOG_COLOR_BLUE
+    value: 255
+    desc: | 
+      Blue fog color.
+  - name: FOG_COLOR_BLUE_DARK
+    value: 102
+    desc: | 
+      A dark blue fog color.
+  - name: FOG_COLOR_BROWN
+    value: 10053120
+    desc: | 
+      A brown fog color.
+  - name: FOG_COLOR_BROWN_DARK
+    value: 6697728
+    desc: | 
+      A dark brown fog color.
+  - name: FOG_COLOR_CYAN
+    value: 65535
+    desc: | 
+      A Cyan (you know, that color that isn't quite green, or quite blue...but I swear it was one of them rather then the other, or maybe that is turquoise?) fog color.
+  - name: FOG_COLOR_GREEN
+    value: 65280
+    desc: | 
+      A green fog color.
+  - name: FOG_COLOR_GREEN_DARK
+    value: 23112
+    desc: | 
+      A dark green fog color.
+  - name: FOG_COLOR_GREY
+    value: 10066329
+    desc: | 
+      A grey (not GRAY, its GREY, right?) fog color.
+  - name: FOG_COLOR_MAGENTA
+    value: 16711935
+    desc: | 
+      A magenta ("A purplish red") fog color.
+  - name: FOG_COLOR_ORANGE
+    value: 16750848
+    desc: | 
+      A orange fog color.
+  - name: FOG_COLOR_ORANGE_DARK
+    value: 13395456
+    desc: | 
+      A dark orange fog color.
+  - name: FOG_COLOR_RED
+    value: 16711680
+    desc: | 
+      A red fog color.
+  - name: FOG_COLOR_RED_DARK
+    value: 6684672
+    desc: | 
+      A dark red fog color.
+  - name: FOG_COLOR_WHITE
+    value: 16777215
+    desc: | 
+      A white fog color.
+  - name: FOG_COLOR_YELLOW
+    value: 16776960
+    desc: | 
+      A yellow fog color.
+  - name: FOG_COLOR_YELLOW_DARK
+    value: 11184640
+    desc: | 
+      A dark yellow fog color.
+seealso:
+  functions:
+    - SetFogColor

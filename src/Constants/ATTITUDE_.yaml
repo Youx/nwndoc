@@ -1,0 +1,23 @@
+---
+type: Constants
+category: ATTITUDE_*
+shortdesc: | 
+  Determines attitudes between creatures.
+constants:
+  - name: ATTITUDE_AGGRESSIVE
+    value: 1
+    desc: | 
+      Attacks creatures that are not liked or viewed as friendly toward's a creature's faction.
+  - name: ATTITUDE_DEFENSIVE
+    value: 2
+    desc: | 
+      Defends other creatures of its faction from attack.
+  - name: ATTITUDE_NEUTRAL
+    value: 0
+    desc: | 
+      Neutral, passive attitude.
+  - name: ATTITUDE_SPECIAL
+    value: 3
+    desc: | 
+      Special attitude settings.
+seealso:

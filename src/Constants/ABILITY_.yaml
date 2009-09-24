@@ -1,0 +1,36 @@
+---
+type: Constants
+category: ABILITY_*
+shortdesc: | 
+  The standard six ability scores.
+constants:
+  - name: ABILITY_CHARISMA
+    value: 5
+    desc: | 
+      One of the standard six ability scores; measures a character's persuasiveness, personal magnetism, and ability to lead. Abbreviated "CHR".
+  - name: ABILITY_CONSTITUTION
+    value: 2
+    desc: | 
+      One of the standard six ability scores; encompasses his physique, fitness, health, and physical resistance to hardship, injury, and disease. Abbreviated as "CON".
+  - name: ABILITY_DEXTERITY
+    value: 1
+    desc: | 
+      One of the standard six ability scores; encompasses several physical attributes including hand-eye coordination, agility, reaction speed, reflexes, and balance. Abbreviated as "DEX".
+  - name: ABILITY_INTELLIGENCE
+    value: 3
+    desc: | 
+      One of the standard six ability scores; represents a character's memory, reasoning, and learning ability, including areas outside those measured by the written word. Abbreviated as "INT".
+  - name: ABILITY_STRENGTH
+    value: 0
+    desc: | 
+      One of the standard six ability scores; measures a character's muscle, endurance, and stamina. Abbreviated as "STR".
+  - name: ABILITY_WISDOM
+    value: 4
+    desc: | 
+      One of the standard six ability scores; describes a composite of the character's enlightenment, judgment, guile, willpower, common sense, and intuition. Abbreviated as "WIS".
+seealso:
+  functions:
+    - EffectAbilityDecrease
+    - EffectAbilityIncrease
+    - GetAbilityModifier
+    - GetAbilityScore

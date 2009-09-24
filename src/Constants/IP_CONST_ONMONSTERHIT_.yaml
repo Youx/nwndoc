@@ -1,0 +1,27 @@
+---
+type: Constants
+category: IP_CONST_ONMONSTERHIT_*
+shortdesc: | 
+  Special abilities a monster can perform when it scores a successful hit.
+constants:
+  - name: IP_CONST_ONMONSTERHIT_ABILITYDRAIN
+    value: 0
+  - name: IP_CONST_ONMONSTERHIT_CONFUSION
+    value: 1
+  - name: IP_CONST_ONMONSTERHIT_DISEASE
+    value: 2
+  - name: IP_CONST_ONMONSTERHIT_DOOM
+    value: 3
+  - name: IP_CONST_ONMONSTERHIT_FEAR
+    value: 4
+  - name: IP_CONST_ONMONSTERHIT_LEVELDRAIN
+    value: 5
+  - name: IP_CONST_ONMONSTERHIT_POISON
+    value: 6
+  - name: IP_CONST_ONMONSTERHIT_SLOW
+    value: 7
+  - name: IP_CONST_ONMONSTERHIT_STUN
+    value: 8
+  - name: IP_CONST_ONMONSTERHIT_WOUNDING
+    value: 9
+seealso:

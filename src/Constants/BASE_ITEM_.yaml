@@ -1,0 +1,371 @@
+---
+type: Constants
+category: BASE_ITEM_*
+shortdesc: | 
+  Base items that other items can be built on top of.
+constants:
+  - name: BASE_ITEM_AMULET
+    value: 19
+    desc: | 
+      Amulet
+  - name: BASE_ITEM_ARMOR
+    value: 16
+    desc: | 
+      Armor (there isn't any differentiation in the BASE_ITEM_* constants between types of armor)
+  - name: BASE_ITEM_ARROW
+    value: 20
+    desc: | 
+      Arrows
+  - name: BASE_ITEM_BASTARDSWORD
+    value: 3
+    desc: | 
+      Bastard Sword
+  - name: BASE_ITEM_BATTLEAXE
+    value: 2
+    desc: | 
+      Battleaxe
+  - name: BASE_ITEM_BELT
+    value: 21
+    desc: | 
+      Belt
+  - name: BASE_ITEM_BLANK_POTION
+    value: 101
+    desc: | 
+      Blank potions are used in the Hordes of the Underdark crafting system - Brew Potion.
+  - name: BASE_ITEM_BLANK_SCROLL
+    value: 102
+    desc: | 
+      Blank scrolls are used in the Hordes of the Underdark crafting system - Scribe Scroll.
+  - name: BASE_ITEM_BLANK_WAND
+    value: 103
+    desc: | 
+      Blank wands are used in the Hordes of the Underdark crafting system - Craft Wand.
+  - name: BASE_ITEM_BOLT
+    value: 25
+    desc: | 
+      Bolts
+  - name: BASE_ITEM_BOOK
+    value: 74
+    desc: | 
+      Book
+  - name: BASE_ITEM_BOOTS
+    value: 26
+    desc: | 
+      Boots
+  - name: BASE_ITEM_BRACER
+    value: 78
+    desc: | 
+      Bracer
+  - name: BASE_ITEM_BULLET
+    value: 27
+    desc: | 
+      Bullets
+  - name: BASE_ITEM_CBLUDGWEAPON
+    value: 71
+    desc: | 
+      Creature Bludgeoning weapon
+  - name: BASE_ITEM_CLOAK
+    value: 80
+    desc: | 
+      Cloak
+  - name: BASE_ITEM_CLUB
+    value: 28
+    desc: | 
+      Club
+  - name: BASE_ITEM_CPIERCWEAPON
+    value: 70
+    desc: | 
+      Creature Piercing Weapon
+  - name: BASE_ITEM_CRAFTMATERIALMED
+    value: 109
+    desc: | 
+      Crafting material, Medium. For use with Craft Armor and Craft Weapon skills - Crafting weapons and so on from base materials such as iron rods.
+  - name: BASE_ITEM_CRAFTMATERIALSML
+    value: 110
+    desc: | 
+      Crafting material, small. For use with Craft Armor and Craft Weapon skills - Crafting weapons and so on from base materials such as iron rods.
+  - name: BASE_ITEM_CREATUREITEM
+    value: 73
+    desc: | 
+      Creature items are the hide (INVENTRORY_SLOT_CARMOR) of the creature. Don't put these in a creatures inventory. PC's can only sell these, never use them, and cirtainly cannot equip them manually.
+  - name: BASE_ITEM_CSLASHWEAPON
+    value: 69
+    desc: | 
+      Creature Slashing Weapon
+  - name: BASE_ITEM_CSLSHPRCWEAP
+    value: 72
+    desc: | 
+      Creature Slashing and Piercing Weapon
+  - name: BASE_ITEM_DAGGER
+    value: 22
+    desc: | 
+      Dagger
+  - name: BASE_ITEM_DART
+    value: 31
+    desc: | 
+      Dart
+  - name: BASE_ITEM_DIREMACE
+    value: 32
+    desc: | 
+      Dire Mace
+  - name: BASE_ITEM_DOUBLEAXE
+    value: 33
+    desc: | 
+      Double Axe
+  - name: BASE_ITEM_DWARVENWARAXE
+    value: 108
+    desc: | 
+      Dwarven Waraxe. Stats: Requires Exotic Weapon Proficiency. 1d10 damage, 20-20/3x critical. Base cost: 30. 15lbs weight.
+  - name: BASE_ITEM_ENCHANTED_POTION
+    value: 104
+    desc: | 
+      Enchanted potions are created from the Brew Potion feat. They act exactly like normal potions, of course.
+  - name: BASE_ITEM_ENCHANTED_SCROLL
+    value: 105
+    desc: | 
+      Enchanted Scrolls are created from the Scribe Scroll feat. They act exactly like normal scrolls, of course.
+  - name: BASE_ITEM_ENCHANTED_WAND
+    value: 106
+    desc: | 
+      Enchanted Wands from the Craft Wand feat, do not always carry 50 charges as a default, but act like normal wands otherwise.
+  - name: BASE_ITEM_GEM
+    value: 77
+    desc: | 
+      Gem
+  - name: BASE_ITEM_GLOVES
+    value: 36
+    desc: | 
+      Gloves
+  - name: BASE_ITEM_GOLD
+    value: 76
+    desc: | 
+      Gold
+  - name: BASE_ITEM_GREATAXE
+    value: 18
+    desc: | 
+      Greataxe
+  - name: BASE_ITEM_GREATSWORD
+    value: 13
+    desc: | 
+      Greatsword
+  - name: BASE_ITEM_GRENADE
+    value: 81
+    desc: | 
+      Grenadelike weapons.
+  - name: BASE_ITEM_HALBERD
+    value: 10
+    desc: | 
+      Halberd
+  - name: BASE_ITEM_HANDAXE
+    value: 38
+    desc: | 
+      Handaxe
+  - name: BASE_ITEM_HEALERSKIT
+    value: 39
+    desc: | 
+      Healer's Kit
+  - name: BASE_ITEM_HEAVYCROSSBOW
+    value: 6
+    desc: | 
+      Heavy Crossbow
+  - name: BASE_ITEM_HEAVYFLAIL
+    value: 35
+    desc: | 
+      Heavy Flail
+  - name: BASE_ITEM_HELMET
+    value: 17
+    desc: | 
+      Helmet
+  - name: BASE_ITEM_INVALID
+    value: 256
+    desc: | 
+      An Invalid Object.
+  - name: BASE_ITEM_KAMA
+    value: 40
+    desc: | 
+      Kama
+  - name: BASE_ITEM_KATANA
+    value: 41
+    desc: | 
+      Katana
+  - name: BASE_ITEM_KEY
+    value: 65
+    desc: | 
+      Key
+  - name: BASE_ITEM_KUKRI
+    value: 42
+    desc: | 
+      Kukri
+  - name: BASE_ITEM_LARGEBOX
+    value: 66
+    desc: | 
+      Large Box (a container)
+  - name: BASE_ITEM_LARGESHIELD
+    value: 56
+    desc: | 
+      Large Shield
+  - name: BASE_ITEM_LIGHTCROSSBOW
+    value: 7
+    desc: | 
+      Light Crossbow
+  - name: BASE_ITEM_LIGHTFLAIL
+    value: 4
+    desc: | 
+      Light Flail
+  - name: BASE_ITEM_LIGHTHAMMER
+    value: 37
+    desc: | 
+      Light Hammer
+  - name: BASE_ITEM_LIGHTMACE
+    value: 9
+    desc: | 
+      Light Mace
+  - name: BASE_ITEM_LONGBOW
+    value: 8
+    desc: | 
+      Longbow
+  - name: BASE_ITEM_LONGSWORD
+    value: 1
+    desc: | 
+      Longsword
+  - name: BASE_ITEM_MAGICROD
+    value: 44
+    desc: | 
+      Magic Rod
+  - name: BASE_ITEM_MAGICSTAFF
+    value: 45
+    desc: | 
+      Magic Staff
+  - name: BASE_ITEM_MAGICWAND
+    value: 46
+    desc: | 
+      Magic Wand
+  - name: BASE_ITEM_MISCLARGE
+    value: 34
+    desc: | 
+      A miscellaneous large (3x2 in inventory) item.
+  - name: BASE_ITEM_MISCMEDIUM
+    value: 29
+    desc: | 
+      A miscellaneous medium-sized (2x2 in inventory) item.
+  - name: BASE_ITEM_MISCSMALL
+    value: 24
+    desc: | 
+      A miscellaneous small (1x1 in inventory) item.
+  - name: BASE_ITEM_MISCTALL
+    value: 43
+    desc: | 
+      A miscellaneous tall item. Not sure on the size of these, as they don't seem to be createable in the toolset.
+  - name: BASE_ITEM_MISCTHIN
+    value: 79
+    desc: | 
+      A miscellaneous thin (2x1 in inventory) item.
+  - name: BASE_ITEM_MISCWIDE
+    value: 68
+    desc: | 
+      A miscellaneous wide item. Not sure on the size of these, as they don't seem to be createable in the toolset.
+  - name: BASE_ITEM_MORNINGSTAR
+    value: 47
+    desc: | 
+      Morningstar
+  - name: BASE_ITEM_POTIONS
+    value: 49
+    desc: | 
+      Potion
+  - name: BASE_ITEM_QUARTERSTAFF
+    value: 50
+    desc: | 
+      Quarterstaff
+  - name: BASE_ITEM_RAPIER
+    value: 51
+    desc: | 
+      Rapier
+  - name: BASE_ITEM_RING
+    value: 52
+    desc: | 
+      Ring
+  - name: BASE_ITEM_SCIMITAR
+    value: 53
+    desc: | 
+      Scimitar
+  - name: BASE_ITEM_SCROLL
+    value: 54
+  - name: DO
+    value: NOT
+  - name: BASE_ITEM_SCYTHE
+    value: 55
+    desc: | 
+      Scythe
+  - name: BASE_ITEM_SHORTBOW
+    value: 11
+    desc: | 
+      Shortbow
+  - name: BASE_ITEM_SHORTSPEAR
+    value: 58
+    desc: | 
+      Short Spear
+  - name: BASE_ITEM_SHORTSWORD
+    value: 0
+    desc: | 
+      Short Sword
+  - name: BASE_ITEM_SHURIKEN
+    value: 59
+    desc: | 
+      Shuriken
+  - name: BASE_ITEM_SICKLE
+    value: 60
+    desc: | 
+      Sickle
+  - name: BASE_ITEM_SLING
+    value: 61
+    desc: | 
+      Sling. Stats: Small ranged weapon. All classes can use this. 1d4 Bludgeoning damage, 20-20/x2 critical. Base cost: 1. Weight is 0.1lbs. Note: Only usable as primary weapon. Uses BASE_ITEM_BULLETS for ammo, in the bullets slot.
+  - name: BASE_ITEM_SMALLSHIELD
+    value: 14
+    desc: | 
+      Small Shield. AC bonus +1. Armor check penalty -1. Arcane Spell Failure: 5%. Base Cost 9. Weight is 6lbs. Note: All shields can only go in the off hand. They all require only the Shield Proficiency feat to use.
+  - name: BASE_ITEM_SPELLSCROLL
+    value: 75
+    desc: | 
+      Magical spell scroll. Base Cost 1 (with no magic on them). Weight is 0.1lbs. Stacks up to 10. Note: Inventory item for casting spells. These normally require a specific class to cast the spell on it. Use magical device can, of course, emulate the caster ability. In Hordes, and with Hardcore or higher rules, it added an additional use magical device check to cast the spell on the scroll. Any wizard who doesn't know a spell on a scroll (and it is identified) can scribe it rather then cast it - no chance of failure.
+  - name: BASE_ITEM_THIEVESTOOLS
+    value: 62
+    desc: | 
+      Thieves' Tools. Base Cost 1. Weight is 0.5lbs. Stacks up to 10. Note: Inventory item for helping pick door and chest locks. They have special lock pick properties, allowing an additional +1 to +10 to be added to the users unlock skill, for one use each.
+  - name: BASE_ITEM_THROWINGAXE
+    value: 63
+    desc: | 
+      Throwing Axe. Stats: Small ranged weapon. Requires Martial Weapon Proficiency. 1d6 slashing damage, plus strength modifier, 20-20/x2 critical. Base cost: 1 (Each). Stack up to 50. Weight is 1lbs each. Note: Only usable as primary weapon, each time one is thrown, one is lost from the used stack, just like arrows.
+  - name: BASE_ITEM_TORCH
+    value: 15
+    desc: | 
+      Torch. Base Cost 1. Weight is 0.1lbs. Note: Torches can only have light sources added to them (which will not increase the cost over 1 normally). Torches can only be put in the off hand, and require no skill to carry.
+  - name: BASE_ITEM_TOWERSHIELD
+    value: 57
+    desc: | 
+      Tower Shield. AC bonus +3. Armor check penalty -10. Arcane Spell Failure: 50%. Base Cost 100. Weight is 45lbs. Note: All shields can only go in the off hand. They all require only the Shield Proficiency feat to use.
+  - name: BASE_ITEM_TRAPKIT
+    value: 64
+    desc: | 
+      Trap Kit. Base Cost 1. Weight is 0.5lbs. Note: Inventory item for setting traps. The trap item properties allow a trap to be set up from one of these (at varying levels of difficulty) by PC characters. NPCs cannot use trap kits (unless a DM uses one).
+  - name: BASE_ITEM_TRIDENT
+    value: 95
+    desc: | 
+      Trident
+  - name: BASE_ITEM_TWOBLADEDSWORD
+    value: 12
+    desc: | 
+      Two-bladed Sword. Stats: Double Handed/Headed, Large weapon. Requires Exotic Weapon Proficiency. 1d8/1d8 bludgeoning damage, 19-20/2x critical. Base cost: 100. Weight is 30lbs.
+  - name: BASE_ITEM_WARHAMMER
+    value: 5
+    desc: | 
+      Warhammer weapon. Stats: Medium weapon. Requires Martial Weapon Proficiency. 1d8 bludgeoning damage, 20-20/3x critical. Base cost: 12. Weight is 8lbs.
+  - name: BASE_ITEM_WHIP
+    value: 111
+    desc: | 
+      Whip weapon. Stats: Small weapon. Requires Exotic Weapon Proficiency. 1d2 slashing damage, 20-20/x2 critical. Base cost: 1. Weight is 2lbs. Note: Only usable as primary weapon, Should have disarm feat applied to it (which only makes the cost 2).
+seealso:
+  functions:
+    - GetBaseItemType
+    - HasAnyItemOfBaseType
+    - IsMisc

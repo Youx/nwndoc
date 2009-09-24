@@ -1,0 +1,107 @@
+---
+type: Constants
+category: IP_CONST_RACIALTYPE_*
+shortdesc: | 
+  Itemproperty constants relating to racial types - e.g. AC bonus against a certain racial type.
+constants:
+  - name: IP_CONST_RACIALTYPE_ABERRATION
+    value: 7
+    desc: | 
+      Aberrations.
+  - name: IP_CONST_RACIALTYPE_ANIMAL
+    value: 8
+    desc: | 
+      Animals.
+  - name: IP_CONST_RACIALTYPE_BEAST
+    value: 9
+    desc: | 
+      Beasts.
+  - name: IP_CONST_RACIALTYPE_CONSTRUCT
+    value: 10
+    desc: | 
+      Constructs, e.g. golems.
+  - name: IP_CONST_RACIALTYPE_DRAGON
+    value: 11
+    desc: | 
+      Dragons.
+  - name: IP_CONST_RACIALTYPE_DWARF
+    value: 0
+    desc: | 
+      Dwarves.
+  - name: IP_CONST_RACIALTYPE_ELEMENTAL
+    value: 16
+    desc: | 
+      Elementals.
+  - name: IP_CONST_RACIALTYPE_ELF
+    value: 1
+    desc: | 
+      Elves.
+  - name: IP_CONST_RACIALTYPE_FEY
+    value: 17
+    desc: | 
+      Fey.
+  - name: IP_CONST_RACIALTYPE_GIANT
+    value: 18
+    desc: | 
+      Giants.
+  - name: IP_CONST_RACIALTYPE_GNOME
+    value: 2
+    desc: | 
+      Gnomes.
+  - name: IP_CONST_RACIALTYPE_HALFELF
+    value: 4
+    desc: | 
+      Halfelves.
+  - name: IP_CONST_RACIALTYPE_HALFLING
+    value: 3
+    desc: | 
+      Halflings.
+  - name: IP_CONST_RACIALTYPE_HALFORC
+    value: 5
+    desc: | 
+      Halforcs.
+  - name: IP_CONST_RACIALTYPE_HUMAN
+    value: 6
+    desc: | 
+      Humans.
+  - name: IP_CONST_RACIALTYPE_HUMANOID_GOBLINOID
+    value: 12
+    desc: | 
+      Goblins.
+  - name: IP_CONST_RACIALTYPE_HUMANOID_MONSTROUS
+    value: 13
+  - name: IP_CONST_RACIALTYPE_HUMANOID_ORC
+    value: 14
+    desc: | 
+      Orcs.
+  - name: IP_CONST_RACIALTYPE_HUMANOID_REPTILIAN
+    value: 15
+    desc: | 
+      Reptilians (including kobolds).
+  - name: IP_CONST_RACIALTYPE_MAGICAL_BEAST
+    value: 19
+    desc: | 
+      Magical beasts.
+  - name: IP_CONST_RACIALTYPE_OUTSIDER
+    value: 20
+    desc: | 
+      Outsiders, such as balors and other planar and celestial creatures.
+  - name: IP_CONST_RACIALTYPE_SHAPECHANGER
+    value: 23
+    desc: | 
+      Shapechangers.
+  - name: IP_CONST_RACIALTYPE_UNDEAD
+    value: 24
+    desc: | 
+      Undead.
+  - name: IP_CONST_RACIALTYPE_VERMIN
+    value: 25
+    desc: | 
+      Vermin.
+seealso:
+  functions:
+    - ItemPropertyACBonusVsRace
+    - ItemPropertyAttackBonusVsRace
+    - ItemPropertyDamageBonusVsRace
+    - ItemPropertyEnhancementBonusVsRace
+    - ItemPropertyLimitUseByRace

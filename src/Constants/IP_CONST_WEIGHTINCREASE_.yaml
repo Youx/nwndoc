@@ -1,0 +1,33 @@
+---
+type: Constants
+category: IP_CONST_WEIGHTINCREASE_*
+shortdesc: | 
+  Itemproperty constants relating to weight increase of items.
+constants:
+  - name: IP_CONST_WEIGHTINCREASE_10_LBS
+    value: 1
+    desc: | 
+      Increase weight by 10 pounds.
+  - name: IP_CONST_WEIGHTINCREASE_100_LBS
+    value: 5
+    desc: | 
+      Increase weight 100 pounds.
+  - name: IP_CONST_WEIGHTINCREASE_15_LBS
+    value: 2
+    desc: | 
+      Increase weight by 15 pounds.
+  - name: IP_CONST_WEIGHTINCREASE_30_LBS
+    value: 3
+    desc: | 
+      Increase weight by 30 pounds.
+  - name: IP_CONST_WEIGHTINCREASE_5_LBS
+    value: 0
+    desc: | 
+      Increase weight by 5 pounds.
+  - name: IP_CONST_WEIGHTINCREASE_50_LBS
+    value: 4
+    desc: | 
+      Increase weight by 50 pounds.
+seealso:
+  functions:
+    - ItemPropertyWeightIncrease

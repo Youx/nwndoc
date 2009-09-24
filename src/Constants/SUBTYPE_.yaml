@@ -1,0 +1,24 @@
+---
+type: Constants
+category: SUBTYPE_*
+shortdesc: | 
+  Effect subtypes.
+constants:
+  - name: SUBTYPE_EXTRAORDINARY
+    value: 24
+    desc: | 
+      Extraordinary abilities are non-magical. They are, however, not something that just anyone can do or even learn to do without extensive training (Which, in game terms, means to take a new character class). A monk's ability to evade attacks and a barbarian's uncanny dodge are extraordinary abilities. Effects or areas that negate or disrupt magic have no effect on extraordinary abilities. Dungeon Master's Guide v3.5 - page 289. The extent to which the Aurora Engine follows these restrictions is unknown.
+  - name: SUBTYPE_MAGICAL
+    value: 8
+    desc: | 
+      Default subtype for effects.
+  - name: SUBTYPE_SUPERNATURAL
+    value: 16
+    desc: | 
+      Supernatural abilites are magical but not spell-like. This far-reaching category includes the basilisk's petrifying stare, the monk's ki strike, and the shoul's paralytic touch. Supernatural abilities are not subject to spell resistance and do not function in areas were magic is suppressed or negated (such as an antimagic field). A supernatural ability's effect cannot be dispelled and is not subject to counterspells. Dungeon Master's Guide v3.5 - page 289. The extent to which the Aurora Engine follows these restrictions is unknown.
+seealso:
+  functions:
+    - ExtraordinaryEffect
+    - GetEffectSubType
+    - MagicalEffect
+    - SupernaturalEffect

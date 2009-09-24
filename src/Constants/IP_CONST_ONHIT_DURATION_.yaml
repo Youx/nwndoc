@@ -1,0 +1,29 @@
+---
+type: Constants
+category: IP_CONST_ONHIT_DURATION_*
+shortdesc: | 
+  Itemproperty constants relating to the duration / percentage of effecting the target of certain OnHit properties.
+constants:
+  - name: IP_CONST_ONHIT_DURATION_5_PERCENT_5_ROUNDS
+    value: 0
+    desc: | 
+      5% / 5 rounds.
+  - name: IP_CONST_ONHIT_DURATION_10_PERCENT_4_ROUNDS
+    value: 1
+    desc: | 
+      10% / 4 rounds.
+  - name: IP_CONST_ONHIT_DURATION_25_PERCENT_3_ROUNDS
+    value: 2
+    desc: | 
+      25% / 3 rounds.
+  - name: IP_CONST_ONHIT_DURATION_50_PERCENT_2_ROUNDS
+    value: 3
+    desc: | 
+      50% / 2 rounds.
+  - name: IP_CONST_ONHIT_DURATION_75_PERCENT_1_ROUND
+    value: 4
+    desc: | 
+      75% / 1 round.
+seealso:
+  functions:
+    - ItemPropertyOnHitProps

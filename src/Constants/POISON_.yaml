@@ -1,0 +1,185 @@
+---
+type: Constants
+category: POISON_*
+shortdesc: | 
+  This constant group defines the many in game poisons.
+constants:
+  - name: POISON_ARANEA_VENOM
+    value: 33
+    desc: | 
+      Aranea Venom. Initial Save DC: 13 Initial Effect: Lowers STR by 1D6. Secondary Effect: Lowers STR by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_ARSENIC
+    value: 23
+    desc: | 
+      Arsenic Poison. Initial Save DC: 13 Initial Effect: Lowers CON by 1. Secondary Effect: Lowers CON by 2D8. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_BEBILITH_VENOM
+    value: 29
+    desc: | 
+      Bebilith Venom. Initial Save DC: 20 Initial Effect: Lowers CON by 1D6. Secondary Effect: Lowers CON by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_BLACK_ADDER_VENOM
+    value: 11
+    desc: | 
+      Black Adder Venom. Initial Save DC: 12 Initial Effect: Nothing Secondary Effect: Lowers STR by 1D6. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_BLACK_LOTUS_EXTRACT
+    value: 19
+    desc: | 
+      Black Lotus Extract Poison. Initial Save DC: 20 Initial Effect: Lowers CON by 3D6. Secondary Effect: Lowers CON by 3D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_BLADE_BANE
+    value: 2
+    desc: | 
+      Blade Bane Poison. Initial Save DC: 15 Initial Effect: Lowers STR by 1D4. Secondary Effect: Lowers CON by 1D2. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_BLOODROOT
+    value: 4
+    desc: | 
+      Bloodroot Poison. Initial Save DC: 12 Initial Effect: Lowers WIS by 1D3. Secondary Effect: Lowers CON by 1D4. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_BLUE_WHINNIS
+    value: 8
+    desc: | 
+      Blue Whinnis Poison. Initial Save DC: 14 Initial Effect: Lowers CON by 1. Secondary Effect: Puts the target to sleep for 10 rounds. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_BURNT_OTHUR_FUMES
+    value: 27
+    desc: | 
+      Burnt Othur Fumes Poison. Initial Save DC: 18 Initial Effect: Lowers CON by 1 permanently. Secondary Effect: Lowers CON by 3D6. Visual Effects: VFX_IMP_REDUCE_ABILITY_SCORE, VFX_IMP_POISON_L
+  - name: POISON_CARRION_CRAWLER_BRAIN_JUICE
+    value: 18
+    desc: | 
+      Carrion Crawler Brain Juice Poison. Initial Save DC: 13 Initial Effect: Paralyzation. Secondary Effect: Nothing. Visual Effects: VFX_DUR_PARALYZED, VFX_IMP_POISON_S
+  - name: POISON_CHAOS_MIST
+    value: 28
+    desc: | 
+      Chaos Mist Poison. Initial Save DC: 15 Initial Effect: Lowers WIS by 1D4. Secondary Effect: Lowers WIS by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_COLOSSAL_SPIDER_VENOM
+    value: 40
+    desc: | 
+      Colossal Spider Venom. Initial Save DC: 35 Initial Effect: Lowers STR by 2D8. Secondary Effect: Lowers STR by 2D8. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_DARK_REAVER_POWDER
+    value: 25
+    desc: | 
+      Dark ReaverPowder Poison. Initial Save DC: 18 Initial Effect: Lowers CON by 2D6. Secondary Effect: Lowers CON by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_DEATHBLADE
+    value: 12
+    desc: | 
+      Deathblade Poison. Initial Save DC: 20 Initial Effect: Lowers CON by 1D6. Secondary Effect: Lowers CON by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_DRAGON_BILE
+    value: 15
+    desc: | 
+      Dragon Bile Poison. Initial Save DC: 26 Initial Effect: Lowers STR by 3D6. Secondary Effect: Nothing. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_ETTERCAP_VENOM
+    value: 32
+    desc: | 
+      Ettercap Venom. Initial Save DC: 13 Initial Effect: Lowers DEX by 1D6. Secondary Effect: Lowers DEX by 2D4. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_GARGANTUAN_SPIDER_VENOM
+    value: 39
+    desc: | 
+      Gargantuan Spider Venom. Initial Save DC: 36 Initial Effect: Lowers STR by 2D6. Secondary Effect: Lowers STR by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_GIANT_WASP_POISON
+    value: 9
+    desc: | 
+      Giant Wasp Poison. Initial Save DC: 18 Initial Effect: Lowers DEX by 1D6. Secondary Effect: Lowers DEX by 1D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_GREENBLOOD_OIL
+    value: 3
+    desc: | 
+      Greenblood Oil Poison. Initial Save DC: 13 Initial Effect: Lowers CON by 1. Secondary Effect: Lowers CON by 1D2. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_HUGE_SPIDER_VENOM
+    value: 38
+    desc: | 
+      Huge Spider Venom. Initial Save DC: 26 Initial Effect: Lowers STR by 1D8. Secondary Effect: Lowers STR by 2D8. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_ID_MOSS
+    value: 21
+    desc: | 
+      Id Moss Poison. Initial Save DC: 14 Initial Effect: Lowers INT by 1D4. Secondary Effect: Lowers INT by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_IRON_GOLEM
+    value: 43
+    desc: | 
+      Iron Golem Fumes. Initial Save DC: 17 Initial Effect: Lowers CON by 1D4. Secondary Effect: Causes Death in the target. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_LARGE_SCORPION_VENOM
+    value: 6
+    desc: | 
+      Large Scorpion Venom. Initial Save DC: 18 Initial Effect: Lowers STR by 1D6. Secondary Effect: Lowers STR by 1D6. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_LARGE_SPIDER_VENOM
+    value: 37
+    desc: | 
+      Large Spider Venom. Initial Save DC: 18 Initial Effect: Lowers STR by 1D6. Secondary Effect: Lowers STR by 1D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_LICH_DUST
+    value: 24
+    desc: | 
+      Lich Dust Poison. Initial Save DC: 17 Initial Effect: Lowers STR by 2D6. Secondary Effect: Lowers STR by 1D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_MALYSS_ROOT_PASTE
+    value: 13
+    desc: | 
+      Malyss Root Paste Poison. Initial Save DC: 16 Initial Effect: Lowers DEX by 1. Secondary Effect: Lowers DEX by 2D4. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_MEDIUM_SPIDER_VENOM
+    value: 36
+    desc: | 
+      Medium Spider Venom. Initial Save DC: 14 Initial Effect: Lowers STR by 1D4. Secondary Effect: Lowers STR by 1D4. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_NIGHTSHADE
+    value: 0
+    desc: | 
+      Nightshade poison. Initial Save DC: 10 Initial Effect: Lowers DEX by 1. Secondary Effect: Lowers DEX by 1D2.
+  - name: POISON_NITHARIT
+    value: 14
+    desc: | 
+      Nitharit Poison. Initial Save DC: 13 Initial Effect: Nothing. Secondary Effect: Lowers CON by 3D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_OIL_OF_TAGGIT
+    value: 20
+    desc: | 
+      Oil of Taggit Poison. Initial Save DC: 15 Initial Effect: Nothing. Secondary Effect: Puts target to sleep for 10 rounds. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_PHASE_SPIDER_VENOM
+    value: 41
+    desc: | 
+      Phase Spider Venom. Initial Save DC: 15 Initial Effect: Lowers CON by 2D6. Secondary Effect: Lowers CON by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_PIT_FIEND_ICHOR
+    value: 31
+    desc: | 
+      Pit Fiend Ichor Poison. Initial Save DC: 21 Initial Effect: Lowers CON by 3D6. Secondary Effect: Causes Death to the target. Visual Effects: VFX_IMP_DEATH, VFX_IMP_POISON_L
+  - name: POISON_PURPLE_WORM_POISON
+    value: 5
+    desc: | 
+      Purple Worm Poison. Initial Save DC: 24 Initial Effect: Lowers STR by 1D6. Secondary Effect: Lowers STR by 1D6. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_QUASIT_VENOM
+    value: 30
+    desc: | 
+      Quasit Venom. Initial Save DC: 13 Initial Effect: Lowers DEX by 1D4. Secondary Effect: Lowers DEX by 2D4. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_SASSONE_LEAF_RESIDUE
+    value: 16
+    desc: | 
+      Sassone Leaf Residue Poison. Initial Save DC: 16 Initial Effect: 2D12 Acid damage. Secondary Effect: Lowers CON by 1D6. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_SHADOW_ESSENCE
+    value: 10
+    desc: | 
+      Shadow Essence Poison. Initial Save DC: 17 Initial Effect: Lowers STR by 1 permanently. Secondary Effect: Lowers STR by 2D6. Visual Effects: VFX_IMP_REDUCE_ABILITY_SCORE, VFX_IMP_POISON_S
+  - name: POISON_SMALL_CENTIPEDE_POISON
+    value: 1
+    desc: | 
+      Small Centipede Poison. Initial Save DC: 11 Initial Effect: Lowers DEX by 1D2. Secondary Effect: Lowers DEX by 1D2. Visual Effect: VFX_IMP_POISON_S
+  - name: POISON_SMALL_SPIDER_VENOM
+    value: 35
+    desc: | 
+      Small Spider Venom. Initial Save DC: 11 Initial Effect: Lowers STR by 1D3. Secondary Effect: Lowers STR by 1D3. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_STRIPED_TOADSTOOL
+    value: 22
+    desc: | 
+      Striped Toadstool Poison. Initial Save DC: 11 Initial Effect: Lowers WIS by 1. Secondary Effect: Lowers WIS by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_TERINAV_ROOT
+    value: 17
+    desc: | 
+      Terinav Root Poison. Initial Save DC: 16 Initial Effect: Lowers DEX by 1D6. Secondary Effect: Lowers DEX by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_TINY_SPIDER_VENOM
+    value: 34
+    desc: | 
+      Tiny Spider Venom. Initial Save DC: 11 Initial Effect: Lowers STR by 1D2. Secondary Effect: Lowers STR by 1D2. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_UNGOL_DUST
+    value: 26
+    desc: | 
+      Ungol Dust Poison. Initial Save DC: 15 Initial Effect: Lowers CHA by 1. Secondary Effect: Lowers CHA by 1D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_WRAITH_SPIDER_VENOM
+    value: 42
+    desc: | 
+      Wraith Spider Venom. Initial Save DC: 26 Initial Effect: Lowers CON by 1D6. Secondary Effect: Lowers STR by 2D6. Visual Effect: VFX_IMP_POISON_L
+  - name: POISON_WYVERN_POISON
+    value: 7
+    desc: | 
+      Wyvern Poison. Initial Save DC: 17 Initial Effect: Lowers CON by 2D6. Secondary Effect: Lowers CON by 2D6. Visual Effect: VFX_IMP_POISON_L
+seealso:
+  functions:
+    - EffectPoison

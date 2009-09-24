@@ -1,0 +1,18 @@
+h4. Description
+
+{{ constants.shortdesc }}
+
+{% if function.requirements %}
+h4. Requirements
+
+{% highlight nw %}
+{{ function.requirements }}
+{% endhighlight %}
+{% endif %}
+
+h4. Constants List
+
+|_. Constant |_. Value |_. Description |
+{% for c in constants.constants %}|<. {{c.name}} |=. {{c.value}} |<>. {{c.desc}} |
+{% endfor %}
+

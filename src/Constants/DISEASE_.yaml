@@ -1,0 +1,77 @@
+---
+type: Constants
+category: DISEASE_*
+shortdesc: | 
+  Different types of Diseases used in creating disease effect objects.
+constants:
+  - name: DISEASE_BLINDING_SICKNESS
+    value: 0
+    desc: | 
+      The Blinding Sickness Disease First save at a DC of 16. Subsequent saves at a DC of 16. Incubates for 1 hour then lowers STR by 1D4. Extradinary Effect. After 24 hours, 40% chance to cause blindness in target.
+  - name: DISEASE_BURROW_MAGGOTS
+    value: 14
+    desc: | 
+      The Burrow Maggots Disease. First save at a DC of 17. Subsequent saves at a DC of 17. Incubates for 1 hour then lowers INT by 1D4 and WIS by 1D4. Supernatural Effect.
+  - name: DISEASE_CACKLE_FEVER
+    value: 1
+    desc: | 
+      The Cackle Fever Disease. First save at a DC of 16. Subsequent saves at a DC of 16. Incubates for 1 hour then lowers WIS by 1D6. Extradinary Effect.
+  - name: DISEASE_DEMON_FEVER
+    value: 3
+    desc: | 
+      The Demon Fever Disease. First save at a DC of 18. Subsequent saves at a DC of 18. Incubates for 1 hour then lowers CON by 1D6. Supernatural Effect. Lowers Constitution again (permanently) by 1 if target fails a Fortitude save at a DC of 18.
+  - name: DISEASE_DEVIL_CHILLS
+    value: 2
+    desc: | 
+      The Devil Chills Disease. First save at a DC of 14. Subsequent saves at a DC of 14. Incubates for 1 hour then lowers STR by 1D4. Supernatural Effect.
+  - name: DISEASE_DREAD_BLISTERS
+    value: 13
+    desc: | 
+      The Dread Blisters Disease. First save at a DC of 13. Subsequent saves at a DC of 13. Incubates for 1 hour then lowers CHA by 1D4 and CON by 1D4. Supernatural Effect.
+  - name: DISEASE_FILTH_FEVER
+    value: 4
+    desc: | 
+      The Filth Fever Disease. First save at a DC of 12. Subsequent saves at a DC of 12. Incubates for 1 hour then lowers CON by 1D3 and INT by 1D3. Extraordinary Effect.
+  - name: DISEASE_GHOUL_ROT
+    value: 11
+    desc: | 
+      The Ghoul Rot Disease. First save at a DC of 18. Subsequent saves at a DC of 18. Incubates for 1 hour then lowers CON by 1D6 and STR by 1D6. Supernatural Effect.
+  - name: DISEASE_MINDFIRE
+    value: 5
+    desc: | 
+      The Mindfire Disease. First save at a DC of 12. Subsequent saves at a DC of 12. Incubates for 1 hour then lowers INT by 1D4. Extraordinary Effect.
+  - name: DISEASE_MUMMY_ROT
+    value: 6
+    desc: | 
+      The Mummy Rot Disease. First save at a DC of 20. Subsequent saves at a DC of 20. Incubates for 1 hour then lowers CON by 1D6. Supernatural Effect.
+  - name: DISEASE_RED_ACHE
+    value: 7
+    desc: | 
+      The Red Ache Disease. First save at a DC of 15. Subsequent saves at a DC of 15. Incubates for 1 hour then lowers STR by 1D6. Extraordinary Effect.
+  - name: DISEASE_RED_SLAAD_EGGS
+    value: 10
+    desc: | 
+      The Red Slaad Eggs Disease. First save at a DC of 17. Subsequent saves at a DC of 17. Incubates for 1 hour then lowers DEX by 2D6, STR by 2D6, and CON by 2D6. Extraordinary Effect. At the end of the hour incubation period, the diseased target will take 4D6 of magical damage, be knocked down and a Red Slaad will burst forth from them.
+  - name: DISEASE_SHAKES
+    value: 8
+    desc: | 
+      The Shakes Disease. First save at a DC of 13. Subsequent saves at a DC of 13. Incubates for 1 hour then lowers STR by 1D6. Extraordinary Effect.
+  - name: DISEASE_SLIMY_DOOM
+    value: 9
+    desc: | 
+      The Slimy Doom Disease. First save at a DC of 14. Subsequent saves at a DC of 14. Incubates for 1 hour then lowers DEX by 1D4. Extraordinary Effect.
+  - name: DISEASE_SOLDIER_SHAKES
+    value: 15
+    desc: | 
+      The Soldier Shakes Disease. First save at a DC of 25. Supernatural Effect. After 24 hours, the diseased will have one of their ability scores lowered by 1 (permanently).
+  - name: DISEASE_VERMIN_MADNESS
+    value: 16
+    desc: | 
+      The Vermin Madness Disease. First save at a DC of 13. Subsequent saves at a DC of 13. Incubates for 1 hour then lowers INT by 1, WIS by 1 and CHA by 1. Extraordinary Effect.
+  - name: DISEASE_ZOMBIE_CREEP
+    value: 12
+    desc: | 
+      The Zombie Creep Disease. First save at a DC of 15. Subsequent saves at a DC of 15. Incubates for 1 hour then lowers DEX by 1D4 and CON by 1D4. Supernatural Effect.
+seealso:
+  functions:
+    - EffectDisease

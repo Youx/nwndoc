@@ -1,0 +1,62 @@
+---
+type: Constants
+category: OBJECT_TYPE_*
+shortdesc: | 
+  Used to categorize types of objects.
+constants:
+  - name: OBJECT_TYPE_ALL
+    value: 32767
+    desc: | 
+      Specifies all objects. Used for unrestricted searches. Strangely, OBJECT_TYPE_ALL and OBJECT_TYPE_INVALID equal the same value.
+  - name: OBJECT_TYPE_AREA_OF_EFFECT
+    value: 16
+    desc: | 
+      Specifies the object is an area of effect (AOE).
+  - name: OBJECT_TYPE_CREATURE
+    value: 1
+    desc: | 
+      Specifies the object is a creature (PC, animal, monster etc).
+  - name: OBJECT_TYPE_DOOR
+    value: 8
+    desc: | 
+      Specifies the object is a door.
+  - name: OBJECT_TYPE_ENCOUNTER
+    value: 256
+    desc: | 
+      Should specify an object which is an encounter, although no reference to this constant appears within NWScript other than its declaration.
+  - name: OBJECT_TYPE_INVALID
+    value: 32767
+    desc: | 
+      Specifies the object is invalid. Strangely, OBJECT_TYPE_INVALID and OBJECT_TYPE_ALL equal the same value. OBJECT_TYPE_INVALID has an integer value of 32,767.
+  - name: OBJECT_TYPE_ITEM
+    value: 2
+    desc: | 
+      Specifies the object is an item.
+  - name: OBJECT_TYPE_PLACEABLE
+    value: 64
+    desc: | 
+      Specifies the object is a placeable.
+  - name: OBJECT_TYPE_STORE
+    value: 128
+    desc: | 
+      Specifies the object is a store.
+  - name: OBJECT_TYPE_TRIGGER
+    value: 4
+    desc: | 
+      Specifies the object is a trigger.
+  - name: OBJECT_TYPE_WAYPOINT
+    value: 32
+    desc: | 
+      Specifies the object is a waypoint.
+seealso:
+  functions:
+    - CreateObject
+    - CreateObjectVoid
+    - GetFirstInPersistentObject
+    - GetFirstObjectInShape
+    - GetNearestObject
+    - GetNearestObjectToLocation
+    - GetNextInPersistentObject
+    - GetNextObjectInShape
+    - GetObjectType
+    - SpeakOneLinerConversation

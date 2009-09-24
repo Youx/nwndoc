@@ -1,0 +1,29 @@
+---
+type: Constants
+category: IP_CONST_CONTAINERWEIGHTRED_*
+shortdesc: | 
+  Itemproperty constants relating to containers reducing the weight of their contents.
+constants:
+  - name: IP_CONST_CONTAINERWEIGHTRED_20_PERCENT
+    value: 1
+    desc: | 
+      Reduce contents' weight by 20%
+  - name: IP_CONST_CONTAINERWEIGHTRED_40_PERCENT
+    value: 2
+    desc: | 
+      Reduce contents' weight by 40%
+  - name: IP_CONST_CONTAINERWEIGHTRED_60_PERCENT
+    value: 3
+    desc: | 
+      Reduce contents' weight by 60%
+  - name: IP_CONST_CONTAINERWEIGHTRED_80_PERCENT
+    value: 4
+    desc: | 
+      Reduce contents' weight by 80%
+  - name: IP_CONST_CONTAINERWEIGHTRED_100_PERCENT
+    value: 5
+    desc: | 
+      Reduce contents' weight by 100% - makes them weightless.
+seealso:
+  functions:
+    - ItemPropertyContainerReducedWeight

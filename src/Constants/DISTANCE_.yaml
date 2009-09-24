@@ -1,0 +1,39 @@
+---
+type: Constants
+category: DISTANCE_*
+shortdesc: | 
+  Distances used for determining positions.
+requirements: |
+  #include "x0_i0_position"
+
+constants:
+  - name: DISTANCE_HUGE
+    value: 20.0
+    desc: | 
+      A very long distance.
+  - name: DISTANCE_LARGE
+    value: 10.0
+    desc: | 
+      A long distance.
+  - name: DISTANCE_MEDIUM
+    value: 5.0
+    desc: | 
+      A medium distance.
+  - name: DISTANCE_SHORT
+    value: 3.0
+    desc: | 
+      A short distance.
+  - name: DISTANCE_TINY
+    value: 1.0
+    desc: | 
+      A very short distance.
+seealso:
+  functions:
+    - AnimActionFindFriend
+    - GetAheadLocation
+    - GetBehindLocation
+    - GetFlankingLeftLocation
+    - GetFlankingRightLocation
+    - GetForwardFlankingLeftLocation
+    - GetForwardFlankingRightLocation
+    - GetOppositeLocation

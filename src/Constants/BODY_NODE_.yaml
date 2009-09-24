@@ -1,0 +1,37 @@
+---
+type: Constants
+category: BODY_NODE_*
+shortdesc: | 
+  Location on a body; either hand or chest. Used for the EffectBeam effect.
+constants:
+  - name: BODY_NODE_CHEST
+    value: 1
+    desc: | 
+      Chest.
+  - name: BODY_NODE_HAND
+    value: 0
+    desc: | 
+      Hand.
+  - name: BODY_NODE_MONSTER_0
+    value: 2
+  - name: BODY_NODE_MONSTER_1
+    value: 3
+  - name: BODY_NODE_MONSTER_2
+    value: 4
+  - name: BODY_NODE_MONSTER_3
+    value: 5
+  - name: BODY_NODE_MONSTER_4
+    value: 6
+  - name: BODY_NODE_MONSTER_5
+    value: 7
+  - name: BODY_NODE_MONSTER_6
+    value: 8
+  - name: BODY_NODE_MONSTER_7
+    value: 9
+  - name: BODY_NODE_MONSTER_8
+    value: 10
+  - name: BODY_NODE_MONSTER_9
+    value: 11
+seealso:
+  functions:
+    - EffectBeam

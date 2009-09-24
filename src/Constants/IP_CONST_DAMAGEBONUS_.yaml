@@ -1,0 +1,57 @@
+---
+type: Constants
+category: IP_CONST_DAMAGEBONUS_*
+shortdesc: | 
+  Itemproperty constants relating to damage bonus.
+constants:
+  - name: IP_CONST_DAMAGEBONUS_1
+    value: 1
+    desc: | 
+      1 additional damage.
+  - name: IP_CONST_DAMAGEBONUS_2
+    value: 2
+  - name: IP_CONST_DAMAGEBONUS_3
+    value: 3
+  - name: IP_CONST_DAMAGEBONUS_4
+    value: 4
+  - name: IP_CONST_DAMAGEBONUS_5
+    value: 5
+  - name: IP_CONST_DAMAGEBONUS_6
+    value: 16
+  - name: IP_CONST_DAMAGEBONUS_7
+    value: 17
+  - name: IP_CONST_DAMAGEBONUS_8
+    value: 18
+  - name: IP_CONST_DAMAGEBONUS_9
+    value: 19
+  - name: IP_CONST_DAMAGEBONUS_10
+    value: 20
+    desc: | 
+      10 additional damage.
+  - name: IP_CONST_DAMAGEBONUS_1d4
+    value: 6
+  - name: IP_CONST_DAMAGEBONUS_1d6
+    value: 7
+  - name: IP_CONST_DAMAGEBONUS_1d8
+    value: 8
+  - name: IP_CONST_DAMAGEBONUS_1d10
+    value: 9
+  - name: IP_CONST_DAMAGEBONUS_1d12
+    value: 14
+  - name: IP_CONST_DAMAGEBONUS_2d4
+    value: 12
+  - name: IP_CONST_DAMAGEBONUS_2d6
+    value: 10
+  - name: IP_CONST_DAMAGEBONUS_2d8
+    value: 11
+  - name: IP_CONST_DAMAGEBONUS_2d10
+    value: 13
+  - name: IP_CONST_DAMAGEBONUS_2d12
+    value: 15
+seealso:
+  functions:
+    - ItemPropertyDamageBonus
+    - ItemPropertyDamageBonusVsAlign
+    - ItemPropertyDamageBonusVsRace
+    - ItemPropertyDamageBonusVsSAlign
+    - ItemPropertyMassiveCritical

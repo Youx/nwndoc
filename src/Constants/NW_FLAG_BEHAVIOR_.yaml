@@ -1,0 +1,28 @@
+---
+type: Constants
+category: NW_FLAG_BEHAVIOR_*
+shortdesc: | 
+  Determines how an NPC reacts, irregardless of faction.
+requirements: |
+  #include "x0_i0_behavior"
+
+constants:
+  - name: NW_FLAG_BEHAVIOR_CARNIVORE
+    value: 0x00000002
+    desc: | 
+      The NPC will always attack regardless of faction.
+  - name: NW_FLAG_BEHAVIOR_HERBIVORE
+    value: 0x00000008
+    desc: | 
+      The NPC will never attack and will always flee.
+  - name: NW_FLAG_BEHAVIOR_OMNIVORE
+    value: 0x00000004
+    desc: | 
+      The NPC will only attack if approached.
+  - name: NW_FLAG_BEHAVIOR_SPECIAL
+    value: 0x00000001
+seealso:
+  functions:
+    - DetermineSpecialBehavior
+    - GetBehaviorState
+    - SetBehaviorState

@@ -1,0 +1,30 @@
+---
+type: Constants
+category: GAME_DIFFICULTY_*
+shortdesc: | 
+  Specifies the list of available setting for game difficulty.
+constants:
+  - name: GAME_DIFFICULTY_CORE_RULES
+    value: 3
+    desc: | 
+      Specifies the 'core rules' game difficulty setting.
+  - name: GAME_DIFFICULTY_DIFFICULT
+    value: 4
+    desc: | 
+      Specifies the 'difficult' game difficulty setting.
+  - name: GAME_DIFFICULTY_EASY
+    value: 1
+    desc: | 
+      Specifies the 'easy' game difficulty setting.
+  - name: GAME_DIFFICULTY_NORMAL
+    value: 2
+    desc: | 
+      Specifies the 'normal' game difficulty setting.
+  - name: GAME_DIFFICULTY_VERY_EASY
+    value: 0
+    desc: | 
+      Specifies the 'very easy' game difficulty setting.
+seealso:
+  functions:
+    - GetGameDifficulty
+    - GetScaledEffect

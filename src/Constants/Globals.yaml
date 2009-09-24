@@ -1,0 +1,37 @@
+---
+type: Constants
+category: Globals
+shortdesc: | 
+  Global, non-grouped constant values.
+constants:
+  - name: | FALSE
+    value: 0
+    desc: | 
+      Boolean false. Zero is always treated as false. False should remain defined as the numerical value 0 so problems with bitwise AND ("&") and bitwise OR ("|") do not occur.
+  - name: NUM_INVENTORY_SLOTS
+    value: 18
+    desc: | 
+      Defines the maximum number of inventory slots as 18.
+  - name: OBJECT_INVALID
+    value: UNKNOWN
+    desc: | 
+      Invalid object reference.
+  - name: OBJECT_SELF
+    value: UNKNOWN
+    desc: | 
+      Not truely a constant. Refers to the object that generates an event within an event handler.
+  - name: PI
+    value: 3.141592
+    desc: | 
+      Used when determining radius, area, or other mathematical operations with a circle (3.141592).
+  - name: PORTRAIT_INVALID
+    value: 65535
+  - name: | TRUE
+    value: 1
+    desc: | 
+      Boolean true. Any non-zero number (even negatives) is true. True should remain defined as the numerical value 1 so problems with bitwise AND ("&") and bitwise OR ("|") do not occur.
+  - name: USE_CREATURE_LEVEL
+    value: 0
+  - name: VFX_NONE
+    value: -1
+seealso:

@@ -1,0 +1,411 @@
+---
+type: Constants
+category: VFX_FNF_*
+shortdesc: | 
+  Bigger, flashier visual effects. These constants are actually integers which can be found in nwscript.nss and refer to row numbers in the file visualeffects.2da - this file also contains visual effects for which there are no constants. If you want to use one of those, just use EffectVisualEffect(XXX) where XXX is the rownumber.
+constants:
+  - name: VFX_FNF_BLINDDEAF
+    value: 18
+    desc: | 
+      Bright white light effect.
+    location: Area
+    colors:
+      - White
+  - name: VFX_FNF_DECK
+    value: 322
+  - name: VFX_FNF_DEMON_HAND
+    value: 475
+    location: Torso
+    colors:
+      - Red
+  - name: VFX_FNF_DISPEL
+    value: 19
+    desc: | 
+      Bright white light effect.
+    location: Area
+    colors:
+      - White
+  - name: VFX_FNF_DISPEL_DISJUNCTION
+    value: 20
+    desc: | 
+      Bright white/blue light effect.
+    location: Area
+    colors:
+      - White
+      - blue
+  - name: VFX_FNF_DISPEL_GREATER
+    value: 21
+    desc: | 
+      Bright white light effect.
+    location: Area
+    colors:
+      - White
+  - name: VFX_FNF_ELECTRIC_EXPLOSION
+    value: 459
+  - name: VFX_FNF_FIREBALL
+    value: 22
+    desc: | 
+      Exploding Fireball
+    location: Area
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_FNF_FIRESTORM
+    value: 23
+    desc: | 
+      Imploding area (huge)
+    location: Area
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_FNF_GAS_EXPLOSION_ACID
+    value: 257
+    desc: | 
+      An explosion from the feet moving up and out.
+    location: Feet
+    colors:
+      - Green
+  - name: VFX_FNF_GAS_EXPLOSION_EVIL
+    value: 258
+    desc: | 
+      An explosion from the feet moving up and out.
+    location: Feet
+    colors:
+      - Red
+  - name: VFX_FNF_GAS_EXPLOSION_FIRE
+    value: 260
+    desc: | 
+      An explosion from the feet moving up and out.
+    location: Feet
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_FNF_GAS_EXPLOSION_GREASE
+    value: 261
+    desc: | 
+      An explosion from the feet moving up and out.
+    location: Feet
+    colors:
+      - Black
+      - dark
+  - name: VFX_FNF_GAS_EXPLOSION_MIND
+    value: 262
+    desc: | 
+      An explosion from the feet moving up and out.
+    location: Feet
+    colors:
+      - Blue
+      - white
+  - name: VFX_FNF_GAS_EXPLOSION_NATURE
+    value: 259
+    desc: | 
+      An explosion from the feet moving up and out.
+    location: Feet
+    colors:
+      - Brown
+      - green
+  - name: VFX_FNF_GREATER_RUIN
+    value: 487
+  - name: VFX_FNF_HORRID_WILTING
+    value: 241
+    desc: | 
+      This looks like a bog of stench.
+    location: Area
+    colors:
+      - Brown
+      - green
+  - name: VFX_FNF_HOWL_MIND
+    value: 278
+    desc: | 
+      A bursting ring starting at the head and moving outward.
+    location: About Head
+    colors:
+      - Blue
+  - name: VFX_FNF_HOWL_ODD
+    value: 279
+    desc: | 
+      A bursting ring starting at the head and moving outward.
+    location: About Head
+    colors:
+      - Purple
+  - name: VFX_FNF_HOWL_WAR_CRY
+    value: 285
+    desc: | 
+      A bursting ring starting at the head and moving outward.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_FNF_HOWL_WAR_CRY_FEMALE
+    value: 290
+    desc: | 
+      A bursting ring starting at the head and moving outward.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_FNF_ICESTORM
+    value: 231
+    desc: | 
+      Huge icicles rain down from the sky.
+    location: Area
+    colors:
+      - Blue
+  - name: VFX_FNF_IMPLOSION
+    value: 24
+    desc: | 
+      Dark area in center, firey circle implodes.
+    location: Area
+    colors:
+      - Fire
+      - yellow
+      - black
+  - name: VFX_FNF_LOS_EVIL_10
+    value: 185
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - Red
+  - name: VFX_FNF_LOS_EVIL_20
+    value: 186
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - Red
+  - name: VFX_FNF_LOS_EVIL_30
+    value: 187
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - Red
+  - name: VFX_FNF_LOS_HOLY_10
+    value: 188
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - Yellow
+  - name: VFX_FNF_LOS_HOLY_20
+    value: 189
+    desc: | 
+      Very large, translucent design on the floor.
+    location: Area
+    colors:
+      - Yellow
+  - name: VFX_FNF_LOS_HOLY_30
+    value: 190
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - Yellow
+  - name: VFX_FNF_LOS_NORMAL_10
+    value: 191
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - White
+  - name: VFX_FNF_LOS_NORMAL_20
+    value: 192
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - White
+  - name: VFX_FNF_LOS_NORMAL_30
+    value: 193
+    desc: | 
+      Large, translucent design on the floor.
+    location: Area
+    colors:
+      - White
+  - name: VFX_FNF_MASS_HEAL
+    value: 26
+    desc: | 
+      No noticable effect.
+  - name: VFX_FNF_MASS_MIND_AFFECTING
+    value: 27
+    desc: | 
+      No noticable effect.
+  - name: VFX_FNF_METEOR_SWARM
+    value: 28
+    desc: | 
+      Falling meteors from the sky.
+    location: Area
+    colors:
+      - Fire
+      - black
+  - name: VFX_FNF_MYSTICAL_EXPLOSION
+    value: 477
+  - name: VFX_FNF_NATURES_BALANCE
+    value: 29
+    desc: | 
+      Green vapors lifting from the ground around the target.
+    location: Area
+    colors:
+      - Green
+  - name: VFX_FNF_PWKILL
+    value: 30
+    desc: | 
+      Red translucent circular designs on the floor.
+    location: Area
+    colors:
+      - Red
+  - name: VFX_FNF_PWSTUN
+    value: 31
+    desc: | 
+      White dots orbiting and purple vapors lifting.
+    location: About Body
+    colors:
+      - White
+      - purple
+  - name: VFX_FNF_SCREEN_BUMP
+    value: 287
+    desc: | 
+      One bump/shake of the screen.
+    location: Area
+    colors:
+      - None
+  - name: VFX_FNF_SCREEN_SHAKE
+    value: 286
+    desc: | 
+      Continual shaking of the screen.
+    location: Area
+    colors:
+      - None
+  - name: VFX_FNF_SMOKE_PUFF
+    value: 263
+    desc: | 
+      Light gray smoke rising from floor.
+    location: Floor
+    colors:
+      - White
+      - gray
+  - name: VFX_FNF_SOUND_BURST
+    value: 183
+    desc: | 
+      White rings on floor and white rays above head.
+    location: Floor
+    colors:
+      - White
+  - name: VFX_FNF_SOUND_BURST_SILENT
+    value: 446
+    desc: | 
+      White rings on floor and white rays above head.
+    location: Floor
+    colors:
+      - White
+  - name: VFX_FNF_STORM
+    value: 151
+    desc: | 
+      Requires the use of AOE_PER_STORM constant in conjunction with this constant to fire off the Storm of Vengeance spell visual effect.
+  - name: VFX_FNF_STRIKE_HOLY
+    value: 184
+    desc: | 
+      Huge yellow/white beam from above floods target
+    location: Area
+    colors:
+      - Yellow
+      - white
+  - name: VFX_FNF_SUMMON_CELESTIAL
+    value: 219
+    desc: | 
+      Three large ice pillars rise from the floor and a bright blue, white beam of light comes down from above.
+    location: Area
+    colors:
+      - Blue
+      - white
+  - name: VFX_FNF_SUMMON_EPIC_UNDEAD
+    value: 496
+    location: Floor
+    colors:
+      - Red
+  - name: VFX_FNF_SUMMON_GATE
+    value: 32
+    desc: | 
+      Three large stone pillars rise from the floor and a bright beam of fire comes down from above.
+    location: Area
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_FNF_SUMMON_MONSTER_1
+    value: 33
+    desc: | 
+      Explosion of gray smoke
+    location: About Body
+    colors:
+      - Gray
+  - name: VFX_FNF_SUMMON_MONSTER_2
+    value: 34
+    desc: | 
+      Translucent design on floor and white light about body
+    location: About Body
+    colors:
+      - Purple
+      - white
+  - name: VFX_FNF_SUMMON_MONSTER_3
+    value: 35
+    desc: | 
+      Translucent design on floor and white/blue light rising about body.
+    location: About Body
+    colors:
+      - White
+      - yellow
+  - name: VFX_FNF_SUMMON_UNDEAD
+    value: 36
+    desc: | 
+      White light bursts from body
+    location: About Body
+    colors:
+      - White
+  - name: VFX_FNF_SUMMONDRAGON
+    value: 481
+  - name: VFX_FNF_SUNBEAM
+    value: 37
+    desc: | 
+      Huge yellow light floods area.
+    location: Area
+    colors:
+      - Yellow
+  - name: VFX_FNF_SWINGING_BLADE
+    value: 473
+  - name: VFX_FNF_TIME_STOP
+    value: 38
+    desc: | 
+      Translucent rings of blue surround area.
+    location: Area
+    colors:
+      - Blue
+      - white
+  - name: VFX_FNF_UNDEAD_DRAGON
+    value: 488
+  - name: VFX_FNF_WAIL_O_BANSHEES
+    value: 39
+    desc: | 
+      Banshee in fetal position above head suddenly screams and a white burst of energy is sent out in a ring.
+    location: Area
+    colors:
+      - White
+  - name: VFX_FNF_WEIRD
+    value: 40
+    desc: | 
+      A large 3-headed creature comes up from the ground and lashes out.
+    location: Area
+  - name: VFX_FNF_WORD
+    value: 41
+    desc: | 
+      Large yellow floor design about 10m across.
+    location: Area
+    colors:
+      - Yellow
+seealso:
+  constants:
+    - VFX_BEAM_*
+    - VFX_COM_*
+    - VFX_DUR_*
+    - VFX_EYES_*
+    - VFX_IMP_*
+author: NWN Lexicon Group
+editor: KooKoo

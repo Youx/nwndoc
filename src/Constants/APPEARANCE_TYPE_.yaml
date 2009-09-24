@@ -1,0 +1,822 @@
+---
+type: Constants
+category: APPEARANCE_TYPE_*
+shortdesc: | 
+  Determines the physical appearance of a creature.
+constants:
+  - name: APPEARANCE_TYPE_ALLIP
+    value: 186
+  - name: APPEARANCE_TYPE_ANIMATED_CHEST
+    value: 469
+  - name: APPEARANCE_TYPE_ARANEA
+    value: 157
+  - name: APPEARANCE_TYPE_ARCH_TARGET
+    value: 200
+  - name: APPEARANCE_TYPE_ARIBETH
+    value: 190
+  - name: APPEARANCE_TYPE_ASABI_CHIEFTAIN
+    value: 353
+  - name: APPEARANCE_TYPE_ASABI_SHAMAN
+    value: 354
+  - name: APPEARANCE_TYPE_ASABI_WARRIOR
+    value: 355
+  - name: APPEARANCE_TYPE_AZER_FEMALE
+    value: 429
+  - name: APPEARANCE_TYPE_AZER_MALE
+    value: 428
+  - name: APPEARANCE_TYPE_BADGER
+    value: 8
+  - name: APPEARANCE_TYPE_BADGER_DIRE
+    value: 9
+  - name: APPEARANCE_TYPE_BALOR
+    value: 38
+  - name: APPEARANCE_TYPE_BARTENDER
+    value: 234
+  - name: APPEARANCE_TYPE_BASILISK
+    value: 369
+  - name: APPEARANCE_TYPE_BAT
+    value: 10
+  - name: APPEARANCE_TYPE_BAT_HORROR
+    value: 11
+  - name: APPEARANCE_TYPE_BEAR_BLACK
+    value: 12
+  - name: APPEARANCE_TYPE_BEAR_BROWN
+    value: 13
+  - name: APPEARANCE_TYPE_BEAR_DIRE
+    value: 15
+  - name: APPEARANCE_TYPE_BEAR_KODIAK
+    value: 204
+  - name: APPEARANCE_TYPE_BEAR_POLAR
+    value: 14
+  - name: APPEARANCE_TYPE_BEETLE_FIRE
+    value: 18
+  - name: APPEARANCE_TYPE_BEETLE_SLICER
+    value: 17
+  - name: APPEARANCE_TYPE_BEETLE_STAG
+    value: 19
+  - name: APPEARANCE_TYPE_BEETLE_STINK
+    value: 20
+  - name: APPEARANCE_TYPE_BEGGER
+    value: 220
+  - name: APPEARANCE_TYPE_BEHOLDER
+    value: 401
+  - name: APPEARANCE_TYPE_BEHOLDER_EYEBALL
+    value: 403
+  - name: APPEARANCE_TYPE_BEHOLDER_MAGE
+    value: 402
+  - name: APPEARANCE_TYPE_BEHOLDER_MOTHER
+    value: 472
+  - name: APPEARANCE_TYPE_BLOOD_SAILER
+    value: 221
+  - name: APPEARANCE_TYPE_BOAR
+    value: 21
+  - name: APPEARANCE_TYPE_BOAR_DIRE
+    value: 22
+  - name: APPEARANCE_TYPE_BODAK
+    value: 23
+  - name: APPEARANCE_TYPE_BUGBEAR_A
+    value: 29
+  - name: APPEARANCE_TYPE_BUGBEAR_B
+    value: 30
+  - name: APPEARANCE_TYPE_BUGBEAR_CHIEFTAIN_A
+    value: 25
+  - name: APPEARANCE_TYPE_BUGBEAR_CHIEFTAIN_B
+    value: 26
+  - name: APPEARANCE_TYPE_BUGBEAR_SHAMAN_A
+    value: 27
+  - name: APPEARANCE_TYPE_BUGBEAR_SHAMAN_B
+    value: 28
+  - name: APPEARANCE_TYPE_BULETTE
+    value: 481
+  - name: APPEARANCE_TYPE_CAT_CAT_DIRE
+    value: 95
+  - name: APPEARANCE_TYPE_CAT_COUGAR
+    value: 203
+  - name: APPEARANCE_TYPE_CAT_CRAG_CAT
+    value: 94
+  - name: APPEARANCE_TYPE_CAT_JAGUAR
+    value: 98
+  - name: APPEARANCE_TYPE_CAT_KRENSHAR
+    value: 96
+  - name: APPEARANCE_TYPE_CAT_LEOPARD
+    value: 93
+  - name: APPEARANCE_TYPE_CAT_LION
+    value: 97
+  - name: APPEARANCE_TYPE_CAT_MPANTHER
+    value: 306
+  - name: APPEARANCE_TYPE_CAT_PANTHER
+    value: 202
+  - name: APPEARANCE_TYPE_CHICKEN
+    value: 31
+  - name: APPEARANCE_TYPE_COCKATRICE
+    value: 368
+  - name: APPEARANCE_TYPE_COMBAT_DUMMY
+    value: 201
+  - name: APPEARANCE_TYPE_CONVICT
+    value: 238
+  - name: APPEARANCE_TYPE_COW
+    value: 34
+  - name: APPEARANCE_TYPE_CULT_MEMBER
+    value: 212
+  - name: APPEARANCE_TYPE_DEEP_ROTHE
+    value: 416
+  - name: APPEARANCE_TYPE_DEER
+    value: 35
+  - name: APPEARANCE_TYPE_DEER_STAG
+    value: 37
+  - name: APPEARANCE_TYPE_DEMI_LICH
+    value: 430
+  - name: APPEARANCE_TYPE_DEVIL
+    value: 392
+  - name: APPEARANCE_TYPE_DOG
+    value: 176
+  - name: APPEARANCE_TYPE_DOG_BLINKDOG
+    value: 174
+  - name: APPEARANCE_TYPE_DOG_DIRE_WOLF
+    value: 175
+  - name: APPEARANCE_TYPE_DOG_FENHOUND
+    value: 177
+  - name: APPEARANCE_TYPE_DOG_HELL_HOUND
+    value: 179
+  - name: APPEARANCE_TYPE_DOG_SHADOW_MASTIF
+    value: 180
+  - name: APPEARANCE_TYPE_DOG_WINTER_WOLF
+    value: 184
+  - name: APPEARANCE_TYPE_DOG_WOLF
+    value: 181
+  - name: APPEARANCE_TYPE_DOG_WORG
+    value: 185
+  - name: APPEARANCE_TYPE_DOOM_KNIGHT
+    value: 40
+  - name: APPEARANCE_TYPE_DRACOLICH
+    value: 405
+  - name: APPEARANCE_TYPE_DRAGON_BLACK
+    value: 41
+  - name: APPEARANCE_TYPE_DRAGON_BLUE
+    value: 47
+  - name: APPEARANCE_TYPE_DRAGON_BRASS
+    value: 42
+  - name: APPEARANCE_TYPE_DRAGON_BRONZE
+    value: 45
+  - name: APPEARANCE_TYPE_DRAGON_COPPER
+    value: 43
+  - name: APPEARANCE_TYPE_DRAGON_GOLD
+    value: 46
+  - name: APPEARANCE_TYPE_DRAGON_GREEN
+    value: 48
+  - name: APPEARANCE_TYPE_DRAGON_PRIS
+    value: 425
+  - name: APPEARANCE_TYPE_DRAGON_RED
+    value: 49
+  - name: APPEARANCE_TYPE_DRAGON_SHADOW
+    value: 418
+  - name: APPEARANCE_TYPE_DRAGON_SILVER
+    value: 44
+  - name: APPEARANCE_TYPE_DRAGON_WHITE
+    value: 50
+  - name: APPEARANCE_TYPE_DRIDER
+    value: 406
+  - name: APPEARANCE_TYPE_DRIDER_CHIEF
+    value: 407
+  - name: APPEARANCE_TYPE_DRIDER_FEMALE
+    value: 446
+  - name: APPEARANCE_TYPE_DROW_CLERIC
+    value: 215
+  - name: APPEARANCE_TYPE_DROW_FEMALE_1
+    value: 478
+  - name: APPEARANCE_TYPE_DROW_FEMALE_2
+    value: 479
+  - name: APPEARANCE_TYPE_DROW_FIGHTER
+    value: 216
+  - name: APPEARANCE_TYPE_DROW_MATRON
+    value: 410
+  - name: APPEARANCE_TYPE_DROW_SLAVE
+    value: 408
+  - name: APPEARANCE_TYPE_DROW_WARRIOR_1
+    value: 476
+  - name: APPEARANCE_TYPE_DROW_WARRIOR_2
+    value: 477
+  - name: APPEARANCE_TYPE_DROW_WARRIOR_3
+    value: 480
+  - name: APPEARANCE_TYPE_DROW_WIZARD
+    value: 409
+  - name: APPEARANCE_TYPE_DUERGAR_CHIEF
+    value: 412
+  - name: APPEARANCE_TYPE_DRUEGAR_CLERIC
+    value: 218
+  - name: APPEARANCE_TYPE_DRUEGAR_FIGHTER
+    value: 217
+  - name: APPEARANCE_TYPE_DUERGAR_SLAVE
+    value: 411
+  - name: APPEARANCE_TYPE_DRYAD
+    value: 51
+  - name: APPEARANCE_TYPE_DWARF
+    value: 0
+  - name: APPEARANCE_TYPE_DWARF_GOLEM
+    value: 474
+  - name: APPEARANCE_TYPE_DWARF_HALFORC
+    value: 475
+  - name: APPEARANCE_TYPE_DWARF_NPC_FEMALE
+    value: 248
+  - name: APPEARANCE_TYPE_DWARF_NPC_MALE
+    value: 249
+  - name: APPEARANCE_TYPE_ELEMENTAL_AIR
+    value: 52
+  - name: APPEARANCE_TYPE_ELEMENTAL_AIR_ELDER
+    value: 53
+  - name: APPEARANCE_TYPE_ELEMENTAL_EARTH
+    value: 56
+  - name: APPEARANCE_TYPE_ELEMENTAL_EARTH_ELDER
+    value: 57
+  - name: APPEARANCE_TYPE_ELEMENTAL_FIRE
+    value: 60
+  - name: APPEARANCE_TYPE_ELEMENTAL_FIRE_ELDER
+    value: 61
+  - name: APPEARANCE_TYPE_ELEMENTAL_WATER
+    value: 69
+  - name: APPEARANCE_TYPE_ELEMENTAL_WATER_ELDER
+    value: 68
+  - name: APPEARANCE_TYPE_ELF
+    value: 1
+  - name: APPEARANCE_TYPE_ELF_NPC_FEMALE
+    value: 245
+  - name: APPEARANCE_TYPE_ELF_NPC_MALE_01
+    value: 246
+  - name: APPEARANCE_TYPE_ELF_NPC_MALE_02
+    value: 247
+  - name: APPEARANCE_TYPE_ETTERCAP
+    value: 166
+  - name: APPEARANCE_TYPE_ETTIN
+    value: 72
+  - name: APPEARANCE_TYPE_FAERIE_DRAGON
+    value: 374
+  - name: APPEARANCE_TYPE_FAIRY
+    value: 55
+  - name: APPEARANCE_TYPE_FALCON
+    value: 144
+  - name: APPEARANCE_TYPE_FEMALE_01
+    value: 222
+  - name: APPEARANCE_TYPE_FEMALE_02
+    value: 223
+  - name: APPEARANCE_TYPE_FEMALE_03
+    value: 224
+  - name: APPEARANCE_TYPE_FEMALE_04
+    value: 225
+  - name: APPEARANCE_TYPE_FORMIAN_MYRMARCH
+    value: 362
+  - name: APPEARANCE_TYPE_FORMIAN_QUEEN
+    value: 363
+  - name: APPEARANCE_TYPE_FORMIAN_WARRIOR
+    value: 361
+  - name: APPEARANCE_TYPE_FORMIAN_WORKER
+    value: 360
+  - name: APPEARANCE_TYPE_GARGOYLE
+    value: 73
+  - name: APPEARANCE_TYPE_GELATINOUS_CUBE
+    value: 470
+  - name: APPEARANCE_TYPE_GHAST
+    value: 74
+  - name: APPEARANCE_TYPE_GHOUL
+    value: 76
+  - name: APPEARANCE_TYPE_GHOUL_LORD
+    value: 77
+  - name: APPEARANCE_TYPE_GIANT_FIRE
+    value: 80
+  - name: APPEARANCE_TYPE_GIANT_FIRE_FEMALE
+    value: 351
+  - name: APPEARANCE_TYPE_GIANT_FROST
+    value: 81
+  - name: APPEARANCE_TYPE_GIANT_FROST_FEMALE
+    value: 350
+  - name: APPEARANCE_TYPE_GIANT_HILL
+    value: 78
+  - name: APPEARANCE_TYPE_GIANT_MOUNTAIN
+    value: 79
+  - name: APPEARANCE_TYPE_GNOLL_WARRIOR
+    value: 388
+  - name: APPEARANCE_TYPE_GNOLL_WIZ
+    value: 389
+  - name: APPEARANCE_TYPE_GNOME
+    value: 2
+  - name: APPEARANCE_TYPE_GNOME_NPC_FEMALE
+    value: 243
+  - name: APPEARANCE_TYPE_GNOME_NPC_MALE
+    value: 244
+  - name: APPEARANCE_TYPE_GOBLIN_A
+    value: 86
+  - name: APPEARANCE_TYPE_GOBLIN_B
+    value: 87
+  - name: APPEARANCE_TYPE_GOBLIN_CHIEF_A
+    value: 82
+  - name: APPEARANCE_TYPE_GOBLIN_CHIEF_B
+    value: 83
+  - name: APPEARANCE_TYPE_GOBLIN_SHAMAN_A
+    value: 84
+  - name: APPEARANCE_TYPE_GOBLIN_SHAMAN_B
+    value: 85
+  - name: APPEARANCE_TYPE_GOLEM_ADAMANTIUM
+    value: 421
+  - name: APPEARANCE_TYPE_GOLEM_BONE
+    value: 24
+  - name: APPEARANCE_TYPE_GOLEM_CLAY
+    value: 91
+  - name: APPEARANCE_TYPE_GOLEM_DEMONFLESH
+    value: 468
+  - name: APPEARANCE_TYPE_GOLEM_FLESH
+    value: 88
+  - name: APPEARANCE_TYPE_GOLEM_IRON
+    value: 89
+  - name: APPEARANCE_TYPE_GOLEM_MITHRAL
+    value: 420
+  - name: APPEARANCE_TYPE_GOLEM_STONE
+    value: 92
+  - name: APPEARANCE_TYPE_GORGON
+    value: 367
+  - name: APPEARANCE_TYPE_GRAY_OOZE
+    value: 393
+  - name: APPEARANCE_TYPE_GREY_RENDER
+    value: 205
+  - name: APPEARANCE_TYPE_GYNOSPHINX
+    value: 365
+  - name: APPEARANCE_TYPE_HALF_ELF
+    value: 4
+  - name: APPEARANCE_TYPE_HALF_ORC
+    value: 5
+  - name: APPEARANCE_TYPE_HALF_ORC_NPC_FEMALE
+    value: 252
+  - name: APPEARANCE_TYPE_HALF_ORC_NPC_MALE_01
+    value: 253
+  - name: APPEARANCE_TYPE_HALF_ORC_NPC_MALE_02
+    value: 254
+  - name: APPEARANCE_TYPE_HALFLING
+    value: 3
+  - name: APPEARANCE_TYPE_HALFLING_NPC_FEMALE
+    value: 250
+  - name: APPEARANCE_TYPE_HALFLING_NPC_MALE
+    value: 251
+  - name: APPEARANCE_TYPE_HARPY
+    value: 419
+  - name: APPEARANCE_TYPE_HELMED_HORROR
+    value: 100
+  - name: APPEARANCE_TYPE_HEURODIS_LICH
+    value: 370
+  - name: APPEARANCE_TYPE_HOBGOBLIN_WARRIOR
+    value: 390
+  - name: APPEARANCE_TYPE_HOBGOBLIN_WIZARD
+    value: 391
+  - name: APPEARANCE_TYPE_HOOK_HORROR
+    value: 102
+  - name: APPEARANCE_TYPE_HOUSE_GUARD
+    value: 219
+  - name: APPEARANCE_TYPE_HUMAN
+    value: 6
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_01
+    value: 255
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_02
+    value: 256
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_03
+    value: 257
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_04
+    value: 258
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_05
+    value: 259
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_06
+    value: 260
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_07
+    value: 261
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_08
+    value: 262
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_09
+    value: 263
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_10
+    value: 264
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_11
+    value: 265
+  - name: APPEARANCE_TYPE_HUMAN_NPC_FEMALE_12
+    value: 266
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_01
+    value: 267
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_02
+    value: 268
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_03
+    value: 269
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_04
+    value: 270
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_05
+    value: 271
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_06
+    value: 272
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_07
+    value: 273
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_08
+    value: 274
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_09
+    value: 275
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_10
+    value: 276
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_11
+    value: 277
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_12
+    value: 278
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_13
+    value: 279
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_14
+    value: 280
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_15
+    value: 281
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_16
+    value: 282
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_17
+    value: 283
+  - name: APPEARANCE_TYPE_HUMAN_NPC_MALE_18
+    value: 284
+  - name: APPEARANCE_TYPE_IMP
+    value: 105
+  - name: APPEARANCE_TYPE_INN_KEEPER
+    value: 233
+  - name: APPEARANCE_TYPE_INTELLECT_DEVOURER
+    value: 117
+  - name: APPEARANCE_TYPE_INVALID
+    value: -1
+    desc: | 
+      Invalid appearance type.
+  - name: APPEARANCE_TYPE_INVISIBLE_HUMAN_MALE
+    value: 298
+  - name: APPEARANCE_TYPE_INVISIBLE_STALKER
+    value: 64
+  - name: APPEARANCE_TYPE_KID_FEMALE
+    value: 242
+  - name: APPEARANCE_TYPE_KID_MALE
+    value: 241
+  - name: APPEARANCE_TYPE_KOBOLD_A
+    value: 302
+  - name: APPEARANCE_TYPE_KOBOLD_B
+    value: 305
+  - name: APPEARANCE_TYPE_KOBOLD_CHIEF_A
+    value: 300
+  - name: APPEARANCE_TYPE_KOBOLD_CHIEF_B
+    value: 303
+  - name: APPEARANCE_TYPE_KOBOLD_SHAMAN_A
+    value: 301
+  - name: APPEARANCE_TYPE_KOBOLD_SHAMAN_B
+    value: 304
+  - name: APPEARANCE_TYPE_LANTERN_ARCHON
+    value: 103
+  - name: APPEARANCE_TYPE_LICH
+    value: 39
+  - name: APPEARANCE_TYPE_LIZARDFOLK_A
+    value: 134
+  - name: APPEARANCE_TYPE_LIZARDFOLK_B
+    value: 135
+  - name: APPEARANCE_TYPE_LIZARDFOLK_SHAMAN_A
+    value: 132
+  - name: APPEARANCE_TYPE_LIZARDFOLK_SHAMAN_B
+    value: 133
+  - name: APPEARANCE_TYPE_LIZARDFOLK_WARRIOR_A
+    value: 130
+  - name: APPEARANCE_TYPE_LIZARDFOLK_WARRIOR_B
+    value: 131
+  - name: APPEARANCE_TYPE_LUSKAN_GUARD
+    value: 211
+  - name: APPEARANCE_TYPE_MALE_01
+    value: 226
+  - name: APPEARANCE_TYPE_MALE_02
+    value: 227
+  - name: APPEARANCE_TYPE_MALE_03
+    value: 228
+  - name: APPEARANCE_TYPE_MALE_04
+    value: 229
+  - name: APPEARANCE_TYPE_MALE_05
+    value: 230
+  - name: APPEARANCE_TYPE_MANTICORE
+    value: 366
+  - name: APPEARANCE_TYPE_MEDUSA
+    value: 352
+  - name: APPEARANCE_TYPE_MEPHISTO_BIG
+    value: 404
+  - name: APPEARANCE_TYPE_MEPHISTO_NORM
+    value: 471
+  - name: APPEARANCE_TYPE_MEPHIT_AIR
+    value: 106
+  - name: APPEARANCE_TYPE_MEPHIT_DUST
+    value: 107
+  - name: APPEARANCE_TYPE_MEPHIT_EARTH
+    value: 108
+  - name: APPEARANCE_TYPE_MEPHIT_FIRE
+    value: 109
+  - name: APPEARANCE_TYPE_MEPHIT_ICE
+    value: 110
+  - name: APPEARANCE_TYPE_MEPHIT_MAGMA
+    value: 114
+  - name: APPEARANCE_TYPE_MEPHIT_OOZE
+    value: 112
+  - name: APPEARANCE_TYPE_MEPHIT_SALT
+    value: 111
+  - name: APPEARANCE_TYPE_MEPHIT_STEAM
+    value: 113
+  - name: APPEARANCE_TYPE_MEPHIT_WATER
+    value: 115
+  - name: APPEARANCE_TYPE_MINDFLAYER
+    value: 413
+  - name: APPEARANCE_TYPE_MINDFLAYER_2
+    value: 414
+  - name: APPEARANCE_TYPE_MINDFLAYER_ALHOON
+    value: 415
+  - name: APPEARANCE_TYPE_MINOGON
+    value: 119
+  - name: APPEARANCE_TYPE_MINOTAUR
+    value: 120
+  - name: APPEARANCE_TYPE_MINOTAUR_CHIEFTAIN
+    value: 121
+  - name: APPEARANCE_TYPE_MINOTAUR_SHAMAN
+    value: 122
+  - name: APPEARANCE_TYPE_MOHRG
+    value: 123
+  - name: APPEARANCE_TYPE_MUMMY_COMMON
+    value: 58
+  - name: APPEARANCE_TYPE_MUMMY_FIGHTER_2
+    value: 59
+  - name: APPEARANCE_TYPE_MUMMY_GREATER
+    value: 124
+  - name: APPEARANCE_TYPE_MUMMY_WARRIOR
+    value: 125
+  - name: APPEARANCE_TYPE_NW_MILITIA_MEMBER
+    value: 210
+  - name: APPEARANCE_TYPE_NWN_AARIN
+    value: 188
+  - name: APPEARANCE_TYPE_NWN_ARIBETH_EVIL
+    value: 189
+  - name: APPEARANCE_TYPE_NWN_HAEDRALINE
+    value: 191
+  - name: APPEARANCE_TYPE_NWN_MAUGRIM
+    value: 193
+  - name: APPEARANCE_TYPE_NWN_MORAG
+    value: 192
+  - name: APPEARANCE_TYPE_NWN_NASHER
+    value: 296
+  - name: APPEARANCE_TYPE_NWN_SEDOS
+    value: 297
+  - name: APPEARANCE_TYPE_NYMPH
+    value: 126
+  - name: APPEARANCE_TYPE_OBJECT_BLUE
+    value: 436
+  - name: APPEARANCE_TYPE_OBJECT_BOAT
+    value: 473
+  - name: APPEARANCE_TYPE_OBJECT_CANDLE
+    value: 433
+  - name: APPEARANCE_TYPE_OBJECT_CHAIR
+    value: 431
+  - name: APPEARANCE_TYPE_OBJECT_CHEST
+    value: 434
+  - name: APPEARANCE_TYPE_OBJECT_CYAN
+    value: 437
+  - name: APPEARANCE_TYPE_OBJECT_FLAME_LARGE
+    value: 445
+  - name: APPEARANCE_TYPE_OBJECT_FLAME_MEDIUM
+    value: 444
+  - name: APPEARANCE_TYPE_OBJECT_FLAME_SMALL
+    value: 443
+  - name: APPEARANCE_TYPE_OBJECT_GREEN
+    value: 438
+  - name: APPEARANCE_TYPE_OBJECT_ORANGE
+    value: 440
+  - name: APPEARANCE_TYPE_OBJECT_PURPLE
+    value: 442
+  - name: APPEARANCE_TYPE_OBJECT_RED
+    value: 441
+  - name: APPEARANCE_TYPE_OBJECT_TABLE
+    value: 432
+  - name: APPEARANCE_TYPE_OBJECT_WHITE
+    value: 435
+  - name: APPEARANCE_TYPE_OBJECT_YELLOW
+    value: 439
+  - name: APPEARANCE_TYPE_OCHRE_JELLY_LARGE
+    value: 394
+  - name: APPEARANCE_TYPE_OCHRE_JELLY_MEDIUM
+    value: 396
+  - name: APPEARANCE_TYPE_OCHRE_JELLY_SMALL
+    value: 398
+  - name: APPEARANCE_TYPE_OGRE
+    value: 127
+  - name: APPEARANCE_TYPE_OGRE_CHIEFTAIN
+    value: 128
+  - name: APPEARANCE_TYPE_OGRE_CHIEFTAINB
+    value: 208
+  - name: APPEARANCE_TYPE_OGRE_MAGE
+    value: 129
+  - name: APPEARANCE_TYPE_OGRE_MAGEB
+    value: 209
+  - name: APPEARANCE_TYPE_OGREB
+    value: 207
+  - name: APPEARANCE_TYPE_OLD_MAN
+    value: 239
+  - name: APPEARANCE_TYPE_OLD_WOMAN
+    value: 240
+  - name: APPEARANCE_TYPE_ORC_A
+    value: 140
+  - name: APPEARANCE_TYPE_ORC_B
+    value: 141
+  - name: APPEARANCE_TYPE_ORC_CHIEFTAIN_A
+    value: 136
+  - name: APPEARANCE_TYPE_ORC_CHIEFTAIN_B
+    value: 137
+  - name: APPEARANCE_TYPE_ORC_SHAMAN_A
+    value: 138
+  - name: APPEARANCE_TYPE_ORC_SHAMAN_B
+    value: 139
+  - name: APPEARANCE_TYPE_OX
+    value: 142
+  - name: APPEARANCE_TYPE_PARROT
+    value: 7
+  - name: APPEARANCE_TYPE_PENGUIN
+    value: 206
+  - name: APPEARANCE_TYPE_PLAGUE_VICTIM
+    value: 231
+  - name: APPEARANCE_TYPE_PROSTITUTE_01
+    value: 236
+  - name: APPEARANCE_TYPE_PROSTITUTE_02
+    value: 237
+  - name: APPEARANCE_TYPE_PSEUDODRAGON
+    value: 375
+  - name: APPEARANCE_TYPE_QUASIT
+    value: 104
+  - name: APPEARANCE_TYPE_RAKSHASA_BEAR_MALE
+    value: 294
+  - name: APPEARANCE_TYPE_RAKSHASA_TIGER_FEMALE
+    value: 290
+  - name: APPEARANCE_TYPE_RAKSHASA_TIGER_MALE
+    value: 293
+  - name: APPEARANCE_TYPE_RAKSHASA_WOLF_MALE
+    value: 295
+  - name: APPEARANCE_TYPE_RAT
+    value: 386
+  - name: APPEARANCE_TYPE_RAT_DIRE
+    value: 387
+  - name: APPEARANCE_TYPE_RAVEN
+    value: 145
+  - name: APPEARANCE_TYPE_SAHUAGIN
+    value: 65
+  - name: APPEARANCE_TYPE_SAHUAGIN_LEADER
+    value: 66
+  - name: APPEARANCE_TYPE_SAHUAGIN_CLERIC
+    value: 67
+  - name: APPEARANCE_TYPE_SEA_HAG
+    value: 454
+  - name: APPEARANCE_TYPE_SEAGULL_FLYING
+    value: 291
+  - name: APPEARANCE_TYPE_SEAGULL_WALKING
+    value: 292
+  - name: APPEARANCE_TYPE_SHADOW
+    value: 146
+  - name: APPEARANCE_TYPE_SHADOW_FIEND
+    value: 147
+  - name: APPEARANCE_TYPE_SHARK_MAKO
+    value: 447
+  - name: APPEARANCE_TYPE_SHARK_HAMMERHEAD
+    value: 448
+  - name: APPEARANCE_TYPE_SHARK_GOBLIN
+    value: 449
+  - name: APPEARANCE_TYPE_SHIELD_GUARDIAN
+    value: 90
+  - name: APPEARANCE_TYPE_SHOP_KEEPER
+    value: 232
+  - name: APPEARANCE_TYPE_SKELETAL_DEVOURER
+    value: 36
+  - name: APPEARANCE_TYPE_SKELETON_CHIEFTAIN
+    value: 182
+  - name: APPEARANCE_TYPE_SKELETON_COMMON
+    value: 63
+  - name: APPEARANCE_TYPE_SKELETON_MAGE
+    value: 148
+  - name: APPEARANCE_TYPE_SKELETON_PRIEST
+    value: 62
+  - name: APPEARANCE_TYPE_SKELETON_WARRIOR
+    value: 150
+  - name: APPEARANCE_TYPE_SKELETON_WARRIOR_1
+    value: 70
+  - name: APPEARANCE_TYPE_SKELETON_WARRIOR_2
+    value: 71
+  - name: APPEARANCE_TYPE_SLAAD_BLACK
+    value: 426
+  - name: APPEARANCE_TYPE_SLAAD_BLUE
+    value: 151
+  - name: APPEARANCE_TYPE_SLAAD_DEATH
+    value: 152
+  - name: APPEARANCE_TYPE_SLAAD_GRAY
+    value: 153
+  - name: APPEARANCE_TYPE_SLAAD_GREEN
+    value: 154
+  - name: APPEARANCE_TYPE_SLAAD_RED
+    value: 155
+  - name: APPEARANCE_TYPE_SLAAD_WHITE
+    value: 427
+  - name: APPEARANCE_TYPE_SPECTRE
+    value: 156
+  - name: APPEARANCE_TYPE_SPHINX
+    value: 364
+  - name: APPEARANCE_TYPE_SPIDER_DEMON
+    value: 422
+  - name: APPEARANCE_TYPE_SPIDER_DIRE
+    value: 158
+  - name: APPEARANCE_TYPE_SPIDER_GIANT
+    value: 159
+  - name: APPEARANCE_TYPE_SPIDER_PHASE
+    value: 160
+  - name: APPEARANCE_TYPE_SPIDER_SWORD
+    value: 161
+  - name: APPEARANCE_TYPE_SPIDER_WRAITH
+    value: 162
+  - name: APPEARANCE_TYPE_STINGER
+    value: 356
+  - name: APPEARANCE_TYPE_STINGER_CHIEFTAIN
+    value: 358
+  - name: APPEARANCE_TYPE_STINGER_MAGE
+    value: 359
+  - name: APPEARANCE_TYPE_STINGER_WARRIOR
+    value: 357
+  - name: APPEARANCE_TYPE_SUCCUBUS
+    value: 163
+  - name: APPEARANCE_TYPE_SVIRF_FEMALE
+    value: 424
+  - name: APPEARANCE_TYPE_SVIRF_MALE
+    value: 423
+  - name: APPEARANCE_TYPE_TROGLODYTE
+    value: 451
+  - name: APPEARANCE_TYPE_TROGLODYTE_WARRIOR
+    value: 452
+  - name: APPEARANCE_TYPE_TROGLODYTE_CLERIC
+    value: 453
+  - name: APPEARANCE_TYPE_TROLL
+    value: 167
+  - name: APPEARANCE_TYPE_TROLL_CHIEFTAIN
+    value: 164
+  - name: APPEARANCE_TYPE_TROLL_SHAMAN
+    value: 165
+  - name: APPEARANCE_TYPE_UMBERHULK
+    value: 168
+  - name: APPEARANCE_TYPE_UTHGARD_ELK_TRIBE
+    value: 213
+  - name: APPEARANCE_TYPE_UTHGARD_TIGER_TRIBE
+    value: 214
+  - name: APPEARANCE_TYPE_VAMPIRE_FEMALE
+    value: 288
+  - name: APPEARANCE_TYPE_VAMPIRE_MALE
+    value: 289
+  - name: APPEARANCE_TYPE_VROCK
+    value: 101
+  - name: APPEARANCE_TYPE_WAITRESS
+    value: 235
+  - name: APPEARANCE_TYPE_WAR_DEVOURER
+    value: 54
+  - name: APPEARANCE_TYPE_WERECAT
+    value: 99
+  - name: APPEARANCE_TYPE_WERERAT
+    value: 170
+  - name: APPEARANCE_TYPE_WEREWOLF
+    value: 171
+  - name: APPEARANCE_TYPE_WIGHT
+    value: 172
+  - name: APPEARANCE_TYPE_WILL_O_WISP
+    value: 116
+  - name: APPEARANCE_TYPE_WRAITH
+    value: 187
+  - name: APPEARANCE_TYPE_WYRMLING_BLACK
+    value: 378
+  - name: APPEARANCE_TYPE_WYRMLING_BLUE
+    value: 377
+  - name: APPEARANCE_TYPE_WYRMLING_BRASS
+    value: 381
+  - name: APPEARANCE_TYPE_WYRMLING_BRONZE
+    value: 383
+  - name: APPEARANCE_TYPE_WYRMLING_COPPER
+    value: 382
+  - name: APPEARANCE_TYPE_WYRMLING_GOLD
+    value: 385
+  - name: APPEARANCE_TYPE_WYRMLING_GREEN
+    value: 379
+  - name: APPEARANCE_TYPE_WYRMLING_RED
+    value: 376
+  - name: APPEARANCE_TYPE_WYRMLING_SILVER
+    value: 384
+  - name: APPEARANCE_TYPE_WYRMLING_WHITE
+    value: 380
+  - name: APPEARANCE_TYPE_YUAN_TI
+    value: 285
+  - name: APPEARANCE_TYPE_YUAN_TI_CHIEFTEN
+    value: 286
+  - name: APPEARANCE_TYPE_YUAN_TI_WIZARD
+    value: 287
+  - name: APPEARANCE_TYPE_ZOMBIE
+    value: 198
+  - name: APPEARANCE_TYPE_ZOMBIE_ROTTING
+    value: 195
+  - name: APPEARANCE_TYPE_ZOMBIE_TYRANT_FOG
+    value: 199
+  - name: APPEARANCE_TYPE_ZOMBIE_WARRIOR_1
+    value: 196
+  - name: APPEARANCE_TYPE_ZOMBIE_WARRIOR_2
+    value: 197
+seealso:
+  functions:
+    - GetAppearanceType
+    - SetCreatureAppearanceType

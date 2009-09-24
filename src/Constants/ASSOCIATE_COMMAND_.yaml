@@ -1,0 +1,92 @@
+---
+type: Constants
+category: ASSOCIATE_COMMAND_*
+shortdesc: | 
+  Used to define various commands that can be issued to NPC associates.
+constants:
+  - name: ASSOCIATE_COMMAND_ATTACKNEAREST
+    value: -3
+    desc: | 
+      Instructs the NPC associate to attack the nearest enemy.
+  - name: ASSOCIATE_COMMAND_DISARMTRAP
+    value: -20
+    desc: | 
+      Instructs the NPC to disarm a trap.
+  - name: ASSOCIATE_COMMAND_FOLLOWMASTER
+    value: -5
+    desc: | 
+      Instructs the NPC associate to follow the master.
+  - name: ASSOCIATE_COMMAND_GUARDMASTER
+    value: -7
+    desc: | 
+      Instructs the NPC associate to guard the master.
+  - name: ASSOCIATE_COMMAND_HEALMASTER
+    value: -4
+    desc: | 
+      Instructs the NPC associate to heal its related master.
+  - name: ASSOCIATE_COMMAND_INVENTORY
+    value: -19
+    desc: | 
+      Instructs the NPC to open their inventory for you (only in SoU)
+  - name: ASSOCIATE_COMMAND_LEAVEPARTY
+    value: -17
+    desc: | 
+      Used to disband a henchman NPC associate.
+  - name: ASSOCIATE_COMMAND_MASTERATTACKEDOTHER
+    value: -15
+    desc: | 
+      Used to signal that the master attacked another creature.
+  - name: ASSOCIATE_COMMAND_MASTERFAILEDLOCKPICK
+    value: -6
+    desc: | 
+      Signals that the master just failed in an attempt to open a lock, whether the attempt was bashing, lock picking, or just trying to open an object.
+  - name: ASSOCIATE_COMMAND_MASTERGOINGTOBEATTACKED
+    value: -16
+    desc: | 
+      Used to signal that the master is about to be attacked.
+  - name: ASSOCIATE_COMMAND_MASTERSAWTRAP
+    value: -14
+    desc: | 
+      Used to signal that the master saw a trap.
+  - name: ASSOCIATE_COMMAND_MASTERUNDERATTACK
+    value: -11
+    desc: | 
+      Used to signal that the master is currently under attack.
+  - name: ASSOCIATE_COMMAND_PICKLOCK
+    value: -18
+    desc: | 
+      Instructs the NPC to pick a lock.
+  - name: ASSOCIATE_COMMAND_RELEASEDOMINATION
+    value: -12
+    desc: | 
+      Used to release a dominated (charmed or otherwise magically enchanted) creature NPC associate from service.
+  - name: ASSOCIATE_COMMAND_STANDGROUND
+    value: -2
+    desc: | 
+      Instructs the NPC associate to stand their ground and not perform any other action. The NPC associate will not move during the OnHeartbeat script.
+  - name: ASSOCIATE_COMMAND_TOGGLECASTING
+    value: -21
+  - name: ASSOCIATE_COMMAND_TOGGLESEARCH
+    value: -23
+  - name: ASSOCIATE_COMMAND_TOGGLESTEALTH
+    value: -22
+  - name: ASSOCIATE_COMMAND_UNPOSSESSFAMILIAR
+    value: -13
+    desc: | 
+      Used to unpossess a familiar currently possessed by a PC.
+  - name: ASSOCIATE_COMMAND_UNSUMMONANIMALCOMPANION
+    value: -9
+    desc: | 
+      Used to unsummon an animal companion NPC associate.
+  - name: ASSOCIATE_COMMAND_UNSUMMONFAMILIAR
+    value: -8
+    desc: | 
+      Used to unsummon a familiar NPC associate.
+  - name: ASSOCIATE_COMMAND_UNSUMMONSUMMONED
+    value: -10
+    desc: | 
+      Used to unsummon a summoned creature NPC associate.
+seealso:
+  functions:
+    - GetLastAssociateCommand
+    - SetAssociateListenPatterns

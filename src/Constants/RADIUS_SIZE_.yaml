@@ -1,0 +1,34 @@
+---
+type: Constants
+category: RADIUS_SIZE_*
+shortdesc: | 
+  Different degrees of radius size used in area-based functions.
+constants:
+  - name: RADIUS_SIZE_COLOSSAL
+    value: 10.0f
+    desc: | 
+      Largest circle. Currently set to be 10 meters.
+  - name: RADIUS_SIZE_GARGANTUAN
+    value: 8.33f
+    desc: | 
+      Gigantic circle. Currently set to be 8.33 meters.
+  - name: RADIUS_SIZE_HUGE
+    value: 6.67f
+    desc: | 
+      Huge circle. Currently set to be 6.67 meters.
+  - name: RADIUS_SIZE_LARGE
+    value: 5.0f
+    desc: | 
+      Large circle. Currently set to be 5 meters.
+  - name: RADIUS_SIZE_MEDIUM
+    value: 3.33f
+    desc: | 
+      Medium circle. Currently set to be 3.33 meters.
+  - name: RADIUS_SIZE_SMALL
+    value: 1.67f
+    desc: | 
+      Smallest circle. Currently set to 1.67 meters.
+seealso:
+  functions:
+    - GetFirstObjectInShape
+    - TalentCureCondition

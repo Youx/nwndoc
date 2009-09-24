@@ -1,0 +1,293 @@
+---
+type: Constants
+category: TRACK_*
+shortdesc: | 
+  Musical tracks played throughout the game.
+constants:
+  - name: TRACK_BATTLE_ARIBETH
+    value: 47
+    desc: | 
+      Track title "Combat Aribeth".
+  - name: TRACK_BATTLE_CITY1
+    value: 40
+    desc: | 
+      Track title "City Combat 1".
+  - name: TRACK_BATTLE_CITY2
+    value: 41
+    desc: | 
+      Track title "City Combat 2".
+  - name: TRACK_BATTLE_CITY3
+    value: 42
+    desc: | 
+      Track title "City Combat 3".
+  - name: TRACK_BATTLE_CITYBOSS
+    value: 43
+    desc: | 
+      Track titled "Boss Combat City".
+  - name: TRACK_BATTLE_DESERT
+    value: 57
+    desc: | 
+      Track titled "Desert Combat".
+  - name: TRACK_BATTLE_DRAGON
+    value: 46
+    desc: | 
+      Track titled "Dragon Combat".
+  - name: TRACK_BATTLE_DUNGEON1
+    value: 37
+    desc: | 
+      Track titled "Dungeon Combat 1".
+  - name: TRACK_BATTLE_DUNGEON2
+    value: 38
+    desc: | 
+      Track titled "Dungeon Combat 2".
+  - name: TRACK_BATTLE_DUNGEON3
+    value: 39
+    desc: | 
+      Track titled "Dungeon Combat 3".
+  - name: TRACK_BATTLE_ENDBOSS
+    value: 48
+    desc: | 
+      Track titled "Final Boss Combat Source Stone".
+  - name: TRACK_BATTLE_FOREST1
+    value: 35
+    desc: | 
+      Track titled "Forest Combat 1".
+  - name: TRACK_BATTLE_FOREST2
+    value: 36
+    desc: | 
+      Track titled "Forest Combat 2".
+  - name: TRACK_BATTLE_FORESTBOSS
+    value: 44
+    desc: | 
+      Track titled "Boss Combat Forest".
+  - name: TRACK_BATTLE_LIZARDBOSS
+    value: 45
+    desc: | 
+      Track titled "Boss Lizardfolk".
+  - name: TRACK_BATTLE_RURAL1
+    value: 34
+    desc: | 
+      Track titled "Rural Combat 1".
+  - name: TRACK_BATTLE_WINTER
+    value: 60
+  - name: TRACK_CASTLE
+    value: 50
+    desc: | 
+      Track titled "Generic Castle Interior".
+  - name: TRACK_CITYDOCKDAY
+    value: 17
+    desc: | 
+      Track titled "City Docks Day".
+  - name: TRACK_CITYDOCKNIGHT
+    value: 18
+    desc: | 
+      Track titled "City Docks Night".
+  - name: TRACK_CITYMARKET
+    value: 20
+    desc: | 
+      Track titled "City Marketplace".
+  - name: TRACK_CITYNIGHT
+    value: 21
+    desc: | 
+      Track titled "City Night".
+  - name: TRACK_CITYSLUMDAY
+    value: 15
+    desc: | 
+      Track titled "City Slum Day".
+  - name: TRACK_CITYSLUMNIGHT
+    value: 16
+    desc: | 
+      Track titled "City Slum Night".
+  - name: TRACK_CITYWEALTHY
+    value: 19
+    desc: | 
+      Track titled "City Wealthy".
+  - name: TRACK_CRYPT1
+    value: 11
+    desc: | 
+      Track titled "Crypt 1".
+  - name: TRACK_CRYPT2
+    value: 12
+    desc: | 
+      Track titled "Crypt 2".
+  - name: TRACK_DESERT_DAY
+    value: 58
+    desc: | 
+      Track titled "Desert Day".
+  - name: TRACK_DESERT_NIGHT
+    value: 61
+    desc: | 
+      Track titled "Desert Night".
+  - name: TRACK_DUNGEON1
+    value: 7
+    desc: | 
+      Track titled "Generic Dungeon".
+  - name: TRACK_EVILDUNGEON1
+    value: 13
+    desc: | 
+      Track titled "Evil Dungeon 1".
+  - name: TRACK_EVILDUNGEON2
+    value: 14
+    desc: | 
+      Track titled "Evil Dungeon 2".
+  - name: TRACK_FORESTDAY1
+    value: 4
+    desc: | 
+      Track titled "Forest Day 1".
+  - name: TRACK_FORESTDAY2
+    value: 5
+    desc: | 
+      Track titled "Forest Day 2".
+  - name: TRACK_FORESTNIGHT
+    value: 6
+    desc: | 
+      Track titled "Forest Night".
+  - name: TRACK_HOTU_BATTLE_BOSS1
+    value: 74
+    desc: | 
+      Track titled "XP2 - Battle, Matron".
+  - name: TRACK_HOTU_BATTLE_BOSS2
+    value: 75
+    desc: | 
+      Track titled "XP 2 - Battle, Final".
+  - name: TRACK_HOTU_BATTLE_HELL
+    value: 73
+    desc: | 
+      Track titled "XP2 - Battle, Chapter 3".
+  - name: TRACK_HOTU_BATTLE_LARGE
+    value: 72
+    desc: | 
+      Track titled "XP2 - Battle, Large".
+  - name: TRACK_HOTU_BATTLE_MED
+    value: 71
+    desc: | 
+      Track titled "XP2 - Battle, Medium".
+  - name: TRACK_HOTU_BATTLE_SMALL
+    value: 70
+    desc: | 
+      Track titled "XP2 - Battle, Small".
+  - name: TRACK_HOTU_DRACOLICH
+    value: 69
+    desc: | 
+      Track titled "XP2 - Dracolich".
+  - name: TRACK_HOTU_FIREPLANE
+    value: 66
+    desc: | 
+      Track title = "XP2 - Beholder Caves"
+  - name: TRACK_HOTU_HELLFROZEOVER
+    value: 68
+    desc: | 
+      Track titled "XP2 - Chapter 3".
+  - name: TRACK_HOTU_QUEEN
+    value: 67
+    desc: | 
+      Track titled "XP2 - Queen of the Shattered Mirror".
+  - name: TRACK_HOTU_REBELCAMP
+    value: 65
+    desc: | 
+      Track titled "XP2 - Rebel Camp".
+  - name: TRACK_HOTU_THEME
+    value: 62
+    desc: | 
+      Track titled "XP2 - Theme".
+  - name: TRACK_HOTU_UNDERMOUNTAIN
+    value: 64
+    desc: | 
+      Track titled "XP2 - Undermountain".
+  - name: TRACK_HOTU_WATERDEEP
+    value: 63
+    desc: | 
+      Track titled "XP2 - Waterdeep".
+  - name: TRACK_MINES1
+    value: 9
+  - name: TRACK_MINES2
+    value: 10
+  - name: TRACK_RICHHOUSE
+    value: 25
+    desc: | 
+      Track titled "Generic Wealthy House".
+  - name: TRACK_RURALDAY1
+    value: 1
+    desc: | 
+      Track titled "Rural Day 1".
+  - name: TRACK_RURALDAY2
+    value: 2
+    desc: | 
+      Track titled "Rural Day 2".
+  - name: TRACK_RURALNIGHT
+    value: 3
+    desc: | 
+      Track titled "Rural Night".
+  - name: TRACK_SEWER
+    value: 8
+    desc: | 
+      Track titled "Sewer".
+  - name: TRACK_STORE
+    value: 26
+    desc: | 
+      Track titled "Generic Store".
+  - name: TRACK_TAVERN1
+    value: 22
+    desc: | 
+      Track titled "Tavern 1".
+  - name: TRACK_TAVERN2
+    value: 23
+    desc: | 
+      Track titled "Tavern 2".
+  - name: TRACK_TAVERN3
+    value: 24
+    desc: | 
+      Track titled "Tavern 3".
+  - name: TRACK_TAVERN4
+    value: 56
+    desc: | 
+      Track titled "Tavern 4".
+  - name: TRACK_TEMPLEEVIL
+    value: 28
+    desc: | 
+      Track titled "Evil Temple".
+  - name: TRACK_TEMPLEGOOD
+    value: 27
+    desc: | 
+      Track titled "Good Temple".
+  - name: TRACK_TEMPLEGOOD2
+    value: 49
+    desc: | 
+      Track titled "Good Temple 2".
+  - name: TRACK_THEME_ARIBETH1
+    value: 51
+    desc: | 
+      Track titled "Aribeth Theme 1".
+  - name: TRACK_THEME_ARIBETH2
+    value: 52
+    desc: | 
+      Track titled "Aribeth Theme 2".
+  - name: TRACK_THEME_CHAPTER1
+    value: 30
+  - name: TRACK_THEME_CHAPTER2
+    value: 31
+  - name: TRACK_THEME_CHAPTER3
+    value: 32
+  - name: TRACK_THEME_CHAPTER4
+    value: 33
+  - name: TRACK_THEME_GEND
+    value: 53
+    desc: | 
+      Track titled "Theme Aarin Gend".
+  - name: TRACK_THEME_MAUGRIM
+    value: 54
+    desc: | 
+      Track titled "Theme Maugrim".
+  - name: TRACK_THEME_MORAG
+    value: 55
+    desc: | 
+      Track titled "Theme Morag".
+  - name: TRACK_THEME_NWN
+    value: 29
+    desc: | 
+      Track titled "NWN City Theme".
+  - name: TRACK_WINTER_DAY
+    value: 59
+    desc: | 
+      Track titled "Winter Day".
+seealso:

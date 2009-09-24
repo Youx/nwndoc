@@ -1,0 +1,18 @@
+---
+type: Constants
+category: PLAYER_CHAR_*
+shortdesc: | 
+  Used for testing if a PC is actually controlled by a player.
+constants:
+  - name: PLAYER_CHAR_IS_PC
+    value: TRUE
+    desc: | 
+      Same as TRUE.
+  - name: PLAYER_CHAR_NOT_PC
+    value: FALSE
+    desc: | 
+      Same as FALSE.
+seealso:
+  functions:
+    - GetNearestCreature
+    - GetNearestCreatureToLocation

@@ -1,0 +1,40 @@
+---
+type: Constants
+category: X2_TL_GROUNDTILE_*
+shortdesc: | 
+  Tile visual effects for use with the tile magic (tm) system.
+requirements: |
+  #include "x2_inc_toollib"
+
+constants:
+  - name: X2_TL_GROUNDTILE_CAVEFLOOR
+    value: 406
+    desc: | 
+      A cave floor tile visual effect. Refer to visualeffects.2da, row number 406.
+  - name: X2_TL_GROUNDTILE_GRASS
+    value: 402
+    desc: | 
+      A grass tile visual effect. Refer to visualeffects.2da, row number 402.
+  - name: X2_TL_GROUNDTILE_ICE
+    value: 426
+    desc: | 
+      An ice groundtile visual effect. Refer to visualeffects.2da, row number 426.
+  - name: X2_TL_GROUNDTILE_LAVA
+    value: 350
+    desc: | 
+      A lava tile visual effect. Refer to visualeffects.2da, row number 350.
+  - name: X2_TL_GROUNDTILE_LAVA_FOUNTAIN
+    value: 349
+    desc: | 
+      A lava fountain tile visual effect. Refer to visualeffects.2da, row number 347.
+  - name: X2_TL_GROUNDTILE_SEWER_WATER
+    value: 461
+    desc: | 
+      A sewer water tile visual effect. Refer to visualeffects.2da, row number 461.
+  - name: X2_TL_GROUNDTILE_WATER
+    value: 401
+    desc: | 
+      A water tile visual effect. Refer to visualeffects.2da, row number 401.
+seealso:
+  functions:
+    - TLChangeAreaGroundTiles

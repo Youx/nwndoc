@@ -1,0 +1,31 @@
+---
+type: Constants
+category: IP_CONST_POISON_*
+shortdesc: | 
+  Itemproperty constants relating to OnHit: poison.
+constants:
+  - name: IP_CONST_POISON_1D2_CHADAMAGE
+    value: 5
+    desc: | 
+      Poison does 1d2 charisma damage.
+  - name: IP_CONST_POISON_1D2_CONDAMAGE
+    value: 2
+    desc: | 
+      Poison does 1d2 constitution damage.
+  - name: IP_CONST_POISON_1D2_DEXDAMAGE
+    value: 1
+    desc: | 
+      Poison does 1d2 dexterity damage.
+  - name: IP_CONST_POISON_1D2_INTDAMAGE
+    value: 3
+    desc: | 
+      Poison does 1d2 intelligence damage.
+  - name: IP_CONST_POISON_1D2_STRDAMAGE
+    value: 0
+    desc: | 
+      Poison does 1d2 strength damage.
+  - name: IP_CONST_POISON_1D2_WISDAMAGE
+    value: 4
+    desc: | 
+      Poison does 1d2 wisdom damage.
+seealso:

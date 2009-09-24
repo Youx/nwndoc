@@ -1,0 +1,1129 @@
+---
+type: Constants
+category: VFX_DUR_*
+shortdesc: | 
+  Temporary visual effects that last for a specified duration. These constants are actually integers which can be found in nwscript.nss and refer to row numbers in the file visualeffects.2da - this file also contains visual effects for which there are no constants. If you want to use one of those, just use EffectVisualEffect(XXX) XXX is the row number.
+constants:
+  - name: VFX_DUR_ANTI_LIGHT_10
+    value: 248
+    desc: | 
+      Temporary lighting effect; darken area and change of light color.
+    location: Area
+  - name: VFX_DUR_AURA_BLUE
+    value: 550
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_AURA_BLUE_DARK
+    value: 562
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_AURA_BLUE_LIGHT
+    value: 563
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_AURA_BROWN
+    value: 555
+    location: About Body
+    colors:
+      - Brown
+  - name: VFX_DUR_AURA_COLD
+    value: 267
+    desc: | 
+      Orbiting effect 5m from the body.
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_AURA_CYAN
+    value: 557
+    location: About Body
+    colors:
+      - Cyan
+  - name: VFX_DUR_AURA_DISEASE
+    value: 270
+    desc: | 
+      Orbiting effect 5m from the body.
+    location: About Body
+    colors:
+      - Green
+      - brown
+  - name: VFX_DUR_AURA_DRAGON_FEAR
+    value: 291
+    desc: | 
+      Orbiting effect 10m from the body.
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_DUR_AURA_FIRE
+    value: 268
+    desc: | 
+      Orbiting effect 5m from the body.
+    location: About Body
+    colors:
+      - Fire
+      - yellow
+  - name: VFX_DUR_AURA_GREEN
+    value: 549
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_AURA_GREEN_DARK
+    value: 558
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_AURA_GREEN_LIGHT
+    value: 559
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_AURA_MAGENTA
+    value: 551
+    location: About Body
+    colors:
+      - Magenta
+  - name: VFX_DUR_AURA_ODD
+    value: 271
+    desc: | 
+      Orbiting effect 5m from the body.
+    location: About Body
+  - name: VFX_DUR_AURA_ORANGE
+    value: 554
+    location: About Body
+    colors:
+      - Orange
+  - name: VFX_DUR_AURA_POISON
+    value: 269
+    desc: | 
+      Orbiting effect 5m from the body.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_AURA_PULSE_BLUE_BLACK
+    value: 529
+    location: About Body
+    colors:
+      - Blue
+      - black
+  - name: VFX_DUR_AURA_PULSE_BLUE_GREEN
+    value: 523
+    location: About Body
+    colors:
+      - Blue
+      - green
+  - name: VFX_DUR_AURA_PULSE_BLUE_WHITE
+    value: 513
+    location: About Body
+    colors:
+      - Blue
+      - white
+  - name: VFX_DUR_AURA_PULSE_BLUE_YELLOW
+    value: 528
+    location: About Body
+    colors:
+      - Blue
+      - yellow
+  - name: VFX_DUR_AURA_PULSE_BROWN_BLACK
+    value: 536
+    location: About Body
+    colors:
+      - Brown
+      - black
+  - name: VFX_DUR_AURA_PULSE_BROWN_WHITE
+    value: 519
+    location: About Body
+    colors:
+      - Brown
+      - white
+  - name: VFX_DUR_AURA_PULSE_CYAN_BLACK
+    value: 534
+    location: About Body
+    colors:
+      - Cyan
+      - black
+  - name: VFX_DUR_AURA_PULSE_CYAN_BLUE
+    value: 539
+    location: About Body
+    colors:
+      - Cyan
+      - blue
+  - name: VFX_DUR_AURA_PULSE_CYAN_GREEN
+    value: 538
+    location: About Body
+    colors:
+      - Cyan
+      - green
+  - name: VFX_DUR_AURA_PULSE_CYAN_RED
+    value: 540
+    location: About Body
+    colors:
+      - Cyan
+      - red
+  - name: VFX_DUR_AURA_PULSE_CYAN_WHITE
+    value: 517
+    location: About Body
+    colors:
+      - Cyan
+      - white
+  - name: VFX_DUR_AURA_PULSE_CYAN_YELLOW
+    value: 541
+    location: About Body
+    colors:
+      - Cyan
+      - yellow
+  - name: VFX_DUR_AURA_PULSE_GREEN_BLACK
+    value: 531
+    location: About Body
+    colors:
+      - Green
+      - black
+  - name: VFX_DUR_AURA_PULSE_GREEN_WHITE
+    value: 514
+    location: About Body
+    colors:
+      - Green
+      - white
+  - name: VFX_DUR_AURA_PULSE_GREEN_YELLOW
+    value: 526
+    location: About Body
+    colors:
+      - Green
+      - yellow
+  - name: VFX_DUR_AURA_PULSE_GREY_BLACK
+    value: 522
+    location: About Body
+    colors:
+      - Grey
+      - black
+  - name: VFX_DUR_AURA_PULSE_GREY_WHITE
+    value: 521
+    location: About Body
+    colors:
+      - Grey
+      - white
+  - name: VFX_DUR_AURA_PULSE_MAGENTA_BLACK
+    value: 533
+    location: About Body
+    colors:
+      - Magenta
+      - black
+  - name: VFX_DUR_AURA_PULSE_MAGENTA_BLUE
+    value: 542
+    location: About Body
+    colors:
+      - Magenta
+      - blue
+  - name: VFX_DUR_AURA_PULSE_MAGENTA_GREEN
+    value: 544
+    location: About Body
+    colors:
+      - Magenta
+      - green
+  - name: VFX_DUR_AURA_PULSE_MAGENTA_RED
+    value: 543
+    location: About Body
+    colors:
+      - Magenta
+      - red
+  - name: VFX_DUR_AURA_PULSE_MAGENTA_WHITE
+    value: 516
+    location: About Body
+    colors:
+      - Magenta
+      - white
+  - name: VFX_DUR_AURA_PULSE_MAGENTA_YELLOW
+    value: 545
+    location: About Body
+    colors:
+      - Magenta
+      - yellow
+  - name: VFX_DUR_AURA_PULSE_ORANGE_BLACK
+    value: 535
+    location: About Body
+    colors:
+      - Orange
+      - black
+  - name: VFX_DUR_AURA_PULSE_ORANGE_WHITE
+    value: 518
+    location: About Body
+    colors:
+      - Orange
+      - white
+  - name: VFX_DUR_AURA_PULSE_PURPLE_BLACK
+    value: 537
+    location: About Body
+    colors:
+      - Purple
+      - black
+  - name: VFX_DUR_AURA_PULSE_PURPLE_WHITE
+    value: 520
+    location: About Body
+    colors:
+      - Purple
+      - white
+  - name: VFX_DUR_AURA_PULSE_RED_BLACK
+    value: 530
+    location: About Body
+    colors:
+      - Red
+      - black
+  - name: VFX_DUR_AURA_PULSE_RED_BLUE
+    value: 524
+    location: About Body
+    colors:
+      - Red
+      - blue
+  - name: VFX_DUR_AURA_PULSE_RED_GREEN
+    value: 527
+    location: About Body
+    colors:
+      - Red
+      - green
+  - name: VFX_DUR_AURA_PULSE_RED_ORANGE
+    value: 546
+    location: About Body
+    colors:
+      - Red
+      - orange
+  - name: VFX_DUR_AURA_PULSE_RED_WHITE
+    value: 512
+    location: About Body
+    colors:
+      - Red
+      - white
+  - name: VFX_DUR_AURA_PULSE_RED_YELLOW
+    value: 525
+    location: About Body
+    colors:
+      - Red
+      - yellow
+  - name: VFX_DUR_AURA_PULSE_YELLOW_BLACK
+    value: 532
+    location: About Body
+    colors:
+      - Yellow
+      - black
+  - name: VFX_DUR_AURA_PULSE_YELLOW_ORANGE
+    value: 547
+    location: About Body
+    colors:
+      - Yellow
+      - orange
+  - name: VFX_DUR_AURA_PULSE_YELLOW_WHITE
+    value: 515
+    location: About Body
+    colors:
+      - Yellow
+      - white
+  - name: VFX_DUR_AURA_PURPLE
+    value: 556
+    location: About Body
+    colors:
+      - Purple
+  - name: VFX_DUR_AURA_RED
+    value: 548
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_DUR_AURA_RED_DARK
+    value: 560
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_DUR_AURA_RED_LIGHT
+    value: 561
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_DUR_AURA_SILENCE
+    value: 272
+    desc: | 
+      Orbiting effect 5m from the body.
+    location: About Body
+  - name: VFX_DUR_AURA_WHITE
+    value: 553
+    location: About Body
+    colors:
+      - White
+  - name: VFX_DUR_AURA_YELLOW
+    value: 552
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_DUR_AURA_YELLOW_DARK
+    value: 564
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_DUR_AURA_YELLOW_LIGHT
+    value: 565
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_DUR_BARD_SONG
+    value: 277
+    desc: | 
+      Floating notes over PC head.
+    location: Above Head
+    colors:
+      - White
+  - name: VFX_DUR_BIGBYS_CLENCHED_FIST
+    value: 316
+    desc: | 
+      A great, green hand which appears to hammer down on the target.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_BIGBYS_CRUSHING_HAND
+    value: 317
+    desc: | 
+      A great, green hand which crushes the target by squeezing it.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_BIGBYS_GRASPING_HAND
+    value: 318
+    desc: | 
+      A great, green hand holding the target tight.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_BIGBYS_INTERPOSING_HAND
+    value: 314
+    desc: | 
+      A great, green hand spinning around the target.
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_BLACKOUT
+    value: 5
+    desc: | 
+      Creates a completely dark area fullscreen.
+    location: Area
+    colors:
+      - Black
+  - name: VFX_DUR_BLIND
+    value: 247
+  - name: VFX_DUR_BLINDVISION
+    value: 242
+  - name: VFX_DUR_BLUR
+    value: 0
+    desc: | 
+      Creates a pulsating aura, colored blue and white.
+    location: About body
+    colors:
+      - Blue
+      - white
+  - name: VFX_DUR_BUBBLES
+    value: 566
+    desc: | 
+      Small bubbles floating upwards
+    location: Above Head
+    colors:
+      - White
+  - name: VFX_DUR_CALTROPS
+    value: 319
+    desc: | 
+      Caltrops (pointy sharp things) are spread out in an area around the target.
+  - name: VFX_DUR_CESSATE_NEGATIVE
+    value: 207
+    desc: | 
+      Causes a small animation to occur to signal that an effect has worn off. The CESSATE effects POSITIVE and NEGATIVE are "effect active" and "effect inactive" effects. Example: Apply both effects at the same time with a duration of 10 seconds. Then first the CESSATE_POSITIVE effect will appear. At the end of the 10 seconds the CESSATE_NEGATIVE effect will appear. So using the CESSATE_NEGATIVE saves the hassle of an additional DelayCommand.
+    location: Above Head
+    colors:
+      - Purple
+  - name: VFX_DUR_CESSATE_NEUTRAL
+    value: 205
+    desc: | 
+      Causes a small animation to occur to signal that a neutral effect has worn off (colored balls that disappear fast).
+    location: Above Head
+    colors:
+      - Purple
+  - name: VFX_DUR_CESSATE_POSITIVE
+    value: 206
+    desc: | 
+      Causes a small animation to occur to signal that an effect has worn off (bright balls that disappear fast). The CESSATE effects POSITIVE and NEGATIVE are "effect active" and "effect inactive" effects. Example: Apply both effects at the same time with a duration of 10 seconds. Then first the CESSATE_POSITIVE effect will appear. At the end of the 10 seconds the CESSATE_NEGATIVE effect will appear. So using the CESSATE_NEGATIVE saves the hassle of an additional DelayCommand.
+    location: Above Head
+  - name: VFX_DUR_CUTSCENE_INVISIBILITY
+    value: 355
+    desc: | 
+      Makes the target completely invisible - true seeing won't work, hovering the mouse over the invisible avatar or holding down the tab key won't display the name of the invisible character. Very useful in cutscenes, as the screen will always be centered on the PC - thus, moving an invisible PC makes it look like the camera is moving.
+    location: About Body
+    colors:
+      - None
+      - clear
+  - name: VFX_DUR_DARKNESS
+    value: 1
+    desc: | 
+      Creates a dark area around target.
+    location: Area
+    colors:
+      - Dark
+  - name: VFX_DUR_DARKVISION
+    value: 182
+  - name: VFX_DUR_DEATH_ARMOR
+    value: 463
+  - name: VFX_DUR_ELEMENTAL_SHIELD
+    value: 147
+    desc: | 
+      Fiery circular pattern on the floor.
+    location: Floor
+    colors:
+      - Blue
+      - fire
+  - name: VFX_DUR_ENTANGLE
+    value: 2
+    desc: | 
+      A single bush entangles the feet.
+    location: Floor
+    colors:
+      - Green
+  - name: VFX_DUR_ETHEREAL_VISAGE
+    value: 10
+    desc: | 
+      Translucent ghost image with short visual effect above head.
+    location: Above Head
+    colors:
+      - Purple
+  - name: VFX_DUR_FLAG_BLUE
+    value: 304
+    desc: | 
+      A flag or banner on a pole sticking out vertically from the target's back. Looks perfectly odd when applied to a PC.
+    location: Torso
+    colors:
+      - Blue, white
+  - name: VFX_DUR_FLAG_GOLD
+    value: 305
+    desc: | 
+      A flag or banner on a pole sticking out vertically from the target's back. Looks perfectly odd when applied to a PC.
+    location: Torso
+    colors:
+      - Purple, white
+    desc: | 
+      NOTE: This value is incorrect (same value as VFX_DUR_FLAG_PURPLE_FIXED) but left in for back compatibility. To get the gold flag, use VFX_DUR_FLAG_GOLD_FIXED.
+  - name: VFX_DUR_FLAG_GOLD_FIXED
+    value: 306
+    desc: | 
+      A flag or banner on a pole sticking out vertically from the target's back. Looks perfectly odd when applied to a PC.
+    location: Torso
+    colors:
+      - Yellow, black
+    desc: | 
+      NOTE: This is the same integer value as VFX_DUR_FLAG_PURPLE.
+  - name: VFX_DUR_FLAG_PURPLE
+    value: 306
+    desc: | 
+      A flag or banner on a pole sticking out vertically from the target's back. Looks perfectly odd when applied to a PC.
+    location: Torso
+    colors:
+      - Yellow
+      - black
+    desc: | 
+      NOTE: This value is incorrect (same value as VFX_DUR_FLAG_GOLD_FIXED) but left in for back compatibility. To get the purple flag, use VFX_DUR_FLAG_PURPLE_FIXED.
+  - name: VFX_DUR_FLAG_PURPLE_FIXED
+    value: 305
+    desc: | 
+      A flag or banner on a pole sticking out vertically from the target's back. Looks perfectly odd when applied to a PC.
+    location: Torso
+    colors:
+      - Purple
+      - white
+    desc: | 
+      NOTE: This is the same integer value as VFX_DUR_FLAG_GOLD.
+  - name: VFX_DUR_FLAG_RED
+    value: 303
+    desc: | 
+      A flag or banner on a pole sticking out vertically from the target's back. Looks perfectly odd when applied to a PC.
+    location: Torso
+    colors:
+      - Red
+      - white
+  - name: VFX_DUR_FLIES
+    value: 480
+    colors:
+      - Black
+  - name: VFX_DUR_FREEDOM_OF_MOVEMENT
+    value: 3
+    desc: | 
+      Green translucent floor design.
+    location: Floor
+    colors:
+      - Green
+  - name: VFX_DUR_FREEZE_ANIMATION
+    value: 352
+    desc: | 
+      Causes a creature to freeze in midanimation. It can be problematic using this for statues: If you script a creature to play an animation, then freeze the creature in the middle of it, you'd expect it to stand that way for the duration of this visual effect. It works perfectly well if the PC is nearby when the visual effect here is applied. If, however, the PC doesn't see the animation being played, and sometimes even if he leaves the area and then comes back, the PC will see the NPC standing frozen, and stiff as a board.
+  - name: VFX_DUR_GHOST_SMOKE
+    value: 425
+    colors:
+      - White
+  - name: VFX_DUR_GHOST_SMOKE_2
+    value: 479
+  - name: VFX_DUR_GHOST_TRANSPARENT
+    value: 424
+    location: About Body
+    colors:
+      - Purple
+  - name: VFX_DUR_GHOSTLY_PULSE
+    value: 240
+    desc: | 
+      Pulsating from solid appearance to translucent.
+    location: About Body
+  - name: VFX_DUR_GHOSTLY_VISAGE
+    value: 9
+    desc: | 
+      Translucent ghost image.
+  - name: VFX_DUR_GHOSTLY_VISAGE_NO_SOUND
+    value: 478
+  - name: VFX_DUR_GLOBE_INVULNERABILITY
+    value: 4
+    desc: | 
+      White globe around target.
+  - name: VFX_DUR_GLOBE_MINOR
+    value: 220
+    desc: | 
+      Weaker-looking globe.
+  - name: VFX_DUR_GLOW_BLUE
+    value: 410
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_GLOW_BROWN
+    value: 419
+    location: About Body
+    colors:
+      - Brown
+  - name: VFX_DUR_GLOW_GREEN
+    value: 415
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_GLOW_GREY
+    value: 421
+    location: About Body
+    colors:
+      - Grey
+  - name: VFX_DUR_GLOW_LIGHT_BLUE
+    value: 408
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_GLOW_LIGHT_BROWN
+    value: 420
+    location: About Body
+    colors:
+      - Brown
+  - name: VFX_DUR_GLOW_LIGHT_GREEN
+    value: 416
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_GLOW_LIGHT_ORANGE
+    value: 418
+    location: About Body
+    colors:
+      - Orange
+  - name: VFX_DUR_GLOW_LIGHT_PURPLE
+    value: 423
+    location: About Body
+    colors:
+      - Purple
+  - name: VFX_DUR_GLOW_LIGHT_RED
+    value: 412
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_DUR_GLOW_LIGHT_YELLOW
+    value: 414
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_DUR_GLOW_ORANGE
+    value: 417
+    location: About Body
+    colors:
+      - Orange
+  - name: VFX_DUR_GLOW_PURPLE
+    value: 409
+    location: About Body
+    colors:
+      - Purple
+  - name: VFX_DUR_GLOW_RED
+    value: 411
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_DUR_GLOW_WHITE
+    value: 422
+    location: About Body
+    colors:
+      - White
+  - name: VFX_DUR_GLOW_YELLOW
+    value: 413
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_DUR_GLYPH_OF_WARDING
+    value: 445
+    location: Floor
+    colors:
+      - Yellow
+  - name: VFX_DUR_ICESKIN
+    value: 465
+    location: About Body
+    colors:
+      - White
+  - name: VFX_DUR_INFERNO
+    value: 474
+    colors:
+      - Fire
+  - name: VFX_DUR_INFERNO_CHEST
+    value: 498
+    colors:
+      - Fire
+  - name: VFX_DUR_INFERNO_NO_SOUND
+    value: 505
+  - name: VFX_DUR_INVISIBILITY
+    value: 6
+    desc: | 
+      Makes the creature invisible (difficult to see).
+    location: About Body
+  - name: VFX_DUR_IOUNSTONE
+    value: 403
+  - name: VFX_DUR_IOUNSTONE_BLUE
+    value: 500
+    colors:
+      - Blue
+  - name: VFX_DUR_IOUNSTONE_GREEN
+    value: 502
+    colors:
+      - Green
+  - name: VFX_DUR_IOUNSTONE_RED
+    value: 499
+    colors:
+      - Red
+  - name: VFX_DUR_IOUNSTONE_YELLOW
+    value: 501
+  - name: VFX_DUR_LIGHT
+    value: 148
+    desc: | 
+      No noticeable effect.
+  - name: VFX_DUR_LIGHT_BLUE_5
+    value: 153
+    desc: | 
+      Creates an area of colored blue light in a 5 foot radius.
+    location: Floor
+    colors:
+      - Blue
+  - name: VFX_DUR_LIGHT_BLUE_10
+    value: 154
+    desc: | 
+      Creates an area of colored blue light in a 10 foot radius.
+    location: Floor
+    colors:
+      - Blue
+  - name: VFX_DUR_LIGHT_BLUE_15
+    value: 155
+    desc: | 
+      Creates an area of colored blue light in a 15 foot radius.
+    location: Floor
+    colors:
+      - Blue
+  - name: VFX_DUR_LIGHT_BLUE_20
+    value: 156
+    desc: | 
+      Creates an area of colored blue light in a 20 foot radius.
+    location: Floor
+    colors:
+      - Blue
+  - name: VFX_DUR_LIGHT_GREY_5
+    value: 177
+    desc: | 
+      Creates an area of colored grey light in a 5 foot radius.
+    location: Floor
+    colors:
+      - Green
+    desc: | 
+      NOTE: Something strange going on here. The numerical value is the same but the readable text is not.	
+  - name: VFX_DUR_LIGHT_GREY_10
+    value: 178
+    desc: | 
+      Creates an area of colored grey light in a 10 foot radius.
+    location: Floor
+    colors:
+      - Green
+    desc: | 
+      NOTE: Something strange going on here. The numerical value is the same but the readable text is not.	
+  - name: VFX_DUR_LIGHT_GREY_15
+    value: 179
+    desc: | 
+      Creates an area of colored grey light in a 15 foot radius.
+    location: Floor
+    colors:
+      - Green
+    desc: | 
+      NOTE: Something strange going on here. The numerical value is the same but the readable text is not.	
+  - name: VFX_DUR_LIGHT_GREY_20
+    value: 180
+    desc: | 
+      Creates an area of colored grey light in a 20 foot radius.
+    location: Floor
+    colors:
+      - Grey
+  - name: VFX_DUR_LIGHT_ORANGE_5
+    value: 169
+    desc: | 
+      Creates an area of colored orange light in a 5 foot radius.
+    location: Floor
+    colors:
+      - Orange
+  - name: VFX_DUR_LIGHT_ORANGE_10
+    value: 170
+    desc: | 
+      Creates an area of colored orange light in a 10 foot radius.
+    location: Floor
+    colors:
+      - Orange
+  - name: VFX_DUR_LIGHT_ORANGE_15
+    value: 171
+    desc: | 
+      Creates an area of colored orange light in a 15 foot radius.
+    location: Floor
+    colors:
+      - Orange
+  - name: VFX_DUR_LIGHT_ORANGE_20
+    value: 172
+    desc: | 
+      Creates an area of colored orange light in a 20 foot radius.
+    location: Floor
+    colors:
+      - Orange
+  - name: VFX_DUR_LIGHT_PURPLE_5
+    value: 161
+    desc: | 
+      Creates an area of colored purple light in a 5 foot radius.
+    location: Floor
+    colors:
+      - Purple
+  - name: VFX_DUR_LIGHT_PURPLE_10
+    value: 162
+    desc: | 
+      Creates an area of colored purple light in a 10 foot radius.
+    location: Floor
+    colors:
+      - Purple
+  - name: VFX_DUR_LIGHT_PURPLE_15
+    value: 163
+    desc: | 
+      Creates an area of colored purple light in a 15 foot radius.
+    location: Floor
+    colors:
+      - Purple
+  - name: VFX_DUR_LIGHT_PURPLE_20
+    value: 164
+    desc: | 
+      Creates an area of colored purple light in a 20 foot radius.
+    location: Floor
+    colors:
+      - Purple
+  - name: VFX_DUR_LIGHT_RED_5
+    value: 165
+    desc: | 
+      Creates an area of colored red light in a 5 foot radius.
+    location: Floor
+    colors:
+      - Red
+  - name: VFX_DUR_LIGHT_RED_10
+    value: 166
+    desc: | 
+      Creates an area of colored red light in a 10 foot radius.
+    location: Floor
+    colors:
+      - Red
+  - name: VFX_DUR_LIGHT_RED_15
+    value: 167
+    desc: | 
+      Creates an area of colored red light in a 15 foot radius.
+    location: Floor
+    colors:
+      - Red
+  - name: VFX_DUR_LIGHT_RED_20
+    value: 168
+    desc: | 
+      Creates an area of colored red light in a 20 foot radius.
+    location: Floor
+    colors:
+      - Red
+  - name: VFX_DUR_LIGHT_WHITE_5
+    value: 173
+    desc: | 
+      Creates an area of colored white light in a 5 foot radius.
+    location: Floor
+    colors:
+      - White
+  - name: VFX_DUR_LIGHT_WHITE_10
+    value: 174
+    desc: | 
+      Creates an area of colored white light in a 10 foot radius.
+    location: Floor
+    colors:
+      - White
+  - name: VFX_DUR_LIGHT_WHITE_15
+    value: 175
+    desc: | 
+      Creates an area of colored white light in a 15 foot radius.
+    location: Floor
+    colors:
+      - White
+  - name: VFX_DUR_LIGHT_WHITE_20
+    value: 176
+    desc: | 
+      Creates an area of colored white light in a 20 foot radius.
+    location: Floor
+    colors:
+      - White
+  - name: VFX_DUR_LIGHT_YELLOW_5
+    value: 157
+    desc: | 
+      Creates an area of colored yellow light in a 5 foot radius.
+    location: Floor
+    colors:
+      - Yellow
+  - name: VFX_DUR_LIGHT_YELLOW_10
+    value: 158
+    desc: | 
+      Creates an area of colored yellow light in a 10 foot radius.
+    location: Floor
+    colors:
+      - Yellow
+  - name: VFX_DUR_LIGHT_YELLOW_15
+    value: 159
+    desc: | 
+      Creates an area of colored yellow light in a 15 foot radius.
+    location: Floor
+    colors:
+      - Yellow
+  - name: VFX_DUR_LIGHT_YELLOW_20
+    value: 160
+    desc: | 
+      Creates an area of colored yellow light in a 20 foot radius.
+    location: Floor
+    colors:
+      - Yellow
+  - name: VFX_DUR_LOWLIGHTVISION
+    value: 243
+  - name: VFX_DUR_MAGIC_RESISTANCE
+    value: 249
+    desc: | 
+      Translucent blue orbital pattern about body.
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_MAGICAL_SIGHT
+    value: 229
+    desc: | 
+      Little eyes orbiting the head.
+    location: About Head
+    colors:
+      - Multi
+  - name: VFX_DUR_MIND_AFFECTING_DISABLED
+    value: 208
+    desc: | 
+      Shimmering light about the head.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_DUR_MIND_AFFECTING_DOMINATED
+    value: 209
+    desc: | 
+      Shimmering light about the head.
+    location: About Head
+    colors:
+      - White
+      - blue
+  - name: VFX_DUR_MIND_AFFECTING_FEAR
+    value: 218
+    desc: | 
+      Rotating flaming skulls.
+    location: About Head
+    colors:
+      - Black
+      - yellow
+      - fire
+  - name: VFX_DUR_MIND_AFFECTING_NEGATIVE
+    value: 7
+    desc: | 
+      Shimmering light about the head.
+    location: About Head
+    colors:
+      - Blue
+      - white
+  - name: VFX_DUR_MIND_AFFECTING_POSITIVE
+    value: 8
+    desc: | 
+      Short spears of light slanting up and away from head and rotating in an orbit.
+    location: About Head
+    colors:
+      - White
+  - name: VFX_DUR_MIRV_ACID
+    value: 245
+    desc: | 
+      An acid arrow.
+    location: To Body
+    colors:
+      - Green
+  - name: VFX_DUR_PARALYZE_HOLD
+    value: 82
+    desc: | 
+      White pattern orbiting the body.
+    location: About Body
+    colors:
+      - White
+  - name: VFX_DUR_PARALYZED
+    value: 232
+    desc: | 
+      Like blur, but colors white and red.
+    location: About Body
+    colors:
+      - White
+      - red
+  - name: VFX_DUR_PETRIFY
+    value: 351
+    desc: | 
+      Re-textures a creature with a "stone" appearance. Does not actually petrify the creature (it can still move and everything).
+    location: About Body
+    colors:
+      - Stone
+  - name: VFX_DUR_PIXIEDUST
+    value: 321
+    location: About Body
+    colors:
+      - Green
+  - name: VFX_DUR_PROT_BARKSKIN
+    value: 11
+    desc: | 
+      Re-textures a creature with a "wood" appearance.
+    location: About Body
+    colors:
+      - Wood, brown
+  - name: VFX_DUR_PROT_EPIC_ARMOR
+    value: 495
+  - name: VFX_DUR_PROT_EPIC_ARMOR_2
+    value: 497
+  - name: VFX_DUR_PROT_GREATER_STONESKIN
+    value: 12
+    desc: | 
+      Re-textures a creature with a "stone" appearance.
+    location: About Body
+    colors:
+      - Stone
+  - name: VFX_DUR_PROT_PREMONITION
+    value: 13
+    desc: | 
+      Blue mist forming about body
+    location: About Body
+    colors:
+      - Blue
+  - name: VFX_DUR_PROT_SHADOW_ARMOR
+    value: 14
+    desc: | 
+      Create a "shadow armor" effect (re-texturing the object with a moving black/white pattern).
+    location: About Body
+    colors:
+      - Black, white
+  - name: VFX_DUR_PROT_STONESKIN
+    value: 15
+    desc: | 
+      Re-textures a creature with a "stone" appearance.
+    location: About Body
+    colors:
+      - Stone
+  - name: VFX_DUR_PROTECTION_ELEMENTS
+    value: 224
+    desc: | 
+      Yellow/White engulf effect.
+    location: About Body
+    colors:
+      - White
+      - yellow
+  - name: VFX_DUR_PROTECTION_EVIL_MAJOR
+    value: 228
+    desc: | 
+      Red engulf effect.
+    location: About Body
+    colors:
+      - Red
+  - name: VFX_DUR_PROTECTION_EVIL_MINOR
+    value: 227
+    desc: | 
+      Red floating lights above head.
+    location: Above Head
+    colors:
+      - Red
+  - name: VFX_DUR_PROTECTION_GOOD_MAJOR
+    value: 226
+    desc: | 
+      Yellow engulf effect.
+    location: About Body
+    colors:
+      - Yellow
+  - name: VFX_DUR_PROTECTION_GOOD_MINOR
+    value: 225
+    desc: | 
+      Yellow floating lights above head.
+    location: Above Head
+    colors:
+      - Yellow
+  - name: VFX_DUR_SANCTUARY
+    value: 16
+    desc: | 
+      White dancing lights around body.
+    location: About Body
+    colors:
+      - White
+      - purple
+  - name: VFX_DUR_SMOKE
+    value: 320
+    colors:
+      - White
+  - name: VFX_DUR_SPELLTURNING
+    value: 138
+    desc: | 
+      Bright blue effect.
+    location: Floor
+    colors:
+      - Blue
+  - name: VFX_DUR_STONEHOLD
+    value: 476
+    location: About Body
+  - name: VFX_DUR_TENTACLE
+    value: 346
+  - name: VFX_DUR_ULTRAVISION
+    value: 244
+  - name: VFX_DUR_WEB
+    value: 17
+    desc: | 
+      Web on target.
+    location: Feet
+    colors:
+      - White
+  - name: VFX_DUR_WEB_MASS
+    value: 230
+    desc: | 
+      Web covering area.
+    location: Area
+    colors:
+      - White
+seealso:
+  functions:
+    - EffectPetrify
+  constants:
+    - VFX_BEAM_*
+    - VFX_COM_*
+    - VFX_EYES_*
+    - VFX_FNF_*
+    - VFX_IMP_*
+author: NWN Lexicon Group
+editor: KooKoo

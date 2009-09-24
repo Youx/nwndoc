@@ -1,0 +1,23 @@
+---
+type: Constants
+category: REPUTATION_TYPE_*
+shortdesc: | 
+  Determines how creatures react to one another.
+constants:
+  - name: REPUTATION_TYPE_ENEMY
+    value: 1
+    desc: | 
+      Offensive, violent towards.
+  - name: REPUTATION_TYPE_FRIEND
+    value: 0
+    desc: | 
+      Friendly.
+  - name: REPUTATION_TYPE_NEUTRAL
+    value: 2
+    desc: | 
+      Passive.
+seealso:
+  functions:
+    - SetIsTemporaryEnemy
+    - SetIsTemporaryFriend
+    - SetIsTemporaryNeutral

@@ -1,0 +1,32 @@
+---
+type: Constants
+category: ASSOCIATE_TYPE_*
+shortdesc: | 
+  Various groups of NPC companions available to a play character.
+constants:
+  - name: ASSOCIATE_TYPE_ANIMALCOMPANION
+    value: 2
+    desc: | 
+      An animal companion NPC follower. Note that animal companions are different from a wizard's or sorcerer's familiar.
+  - name: ASSOCIATE_TYPE_DOMINATED
+    value: 5
+    desc: | 
+      A charmed or otherwise magically enchanted NPC follower.
+  - name: ASSOCIATE_TYPE_FAMILIAR
+    value: 3
+    desc: | 
+      A wizard's or sorcerer's familiar NPC follower. Note that familiars are different than animal companions.
+  - name: ASSOCIATE_TYPE_HENCHMAN
+    value: 1
+    desc: | 
+      An NPC henchman.
+  - name: ASSOCIATE_TYPE_NONE
+    value: 0
+  - name: ASSOCIATE_TYPE_SUMMONED
+    value: 4
+    desc: | 
+      An NPC, usually a creature, summoned by a spell (such as Animal Summoning or Monster Summoning) or item to do the bidding of the caller.
+seealso:
+  functions:
+    - GetAssociate
+    - GetAssociateType

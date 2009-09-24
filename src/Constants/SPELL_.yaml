@@ -1,0 +1,1114 @@
+---
+type: Constants
+category: SPELL_*
+shortdesc: | 
+  Magical spells cast by classes such as wizards, sorcerers, bards, clerics, and druids. More information about what the spells do can be found in the descriptions in manuals / spell scrolls, and by looking in the "spells.2da" file. Known bug: the spells which summon elements (Summon Creature VII through IX) can successfully summon air, water, and fire elements, but earth elements cannot be summoned.
+constants:
+  - name: SPELL_ACID_FOG
+    value: 0
+    desc: | 
+      Creates a billowing mass of misty vapors similar to a solid fog spell. Each round the fog deals 2d6 points of acid damage to creatures within it. 3rd edition PHB p 172.
+  - name: SPELL_ACID_SPLASH
+    value: 424
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster fires a small orb of acid at the target for 1d3 points of acid damage.
+  - name: SPELL_ACTIVATE_ITEM_PORTAL
+    value: 472
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell fires the script x0_s3_portal, which doesn’t seem to do much outside of what it was originally intended for, most likely the SoU expansion.
+  - name: SPELL_ACTIVATE_ITEM_SELF2
+    value: 428
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A spell that can be generically used to make your own spells. It fires a script which signals the module’s OnActivateItem event with oItem being the spell casting item, lLocal being the location targeted by the spell, and oTarget being the object targeted by the spell. In the OnActivateItem event, you can the use GetItemActivator() to get who’s casting the spell – GetLastSpellCaster() won’t work.
+  - name: SPELL_AID
+    value: 1
+    desc: | 
+      The subject of an Aid spell gets the effect of a Bless spell (+1 attack rolls, morale bonus, and saves against fear rolls) and 1d8 temporary hit points. 3rd edition PHB p 172.
+  - name: SPELL_ALL_SPELLS
+    value: -1
+    desc: | 
+      A representational value of all spells.
+  - name: SPELL_AMPLIFY
+    value: 442
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster or a target gains a +20 bonus to Listen checks.
+  - name: SPELL_ANIMATE_DEAD
+    value: 2
+    desc: | 
+      Turns the bones or bodies of dead creatures into undead skeletons or zombies that follow spoken commands. A maximum of 2 HD per caster level of undead may be animated and controlled by means of this spell at any one time. 3rd edition PHB p 174.
+  - name: SPELL_AURA_OF_VITALITY
+    value: 372
+    desc: | 
+      All allies within the area of effect gain +4 Str, Con, Dex. Magic of Faerun.
+  - name: SPELL_AURAOFGLORY
+    value: 429
+  - name: SPELL_AWAKEN
+    value: 363
+    desc: | 
+      Awaken a tree or animal to humanlike sentience. 3rd edition PHB p 177.
+  - name: SPELL_BALAGARNSIRONHORN
+    value: 436
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster creates a deep, resonant vibration that shakes all creatures in the area of effect from their feet if they fail a strength check (as if the caster had a strength of 20). Every creature that falls will be knocked down for one round.
+  - name: SPELL_BALL_LIGHTNING
+    value: 516
+  - name: SPELL_BANE
+    value: 449
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Bane fills the caster's enemies with fear and doubt. They suffer a -1 penalty on their attack rolls and a -1 penalty on saving throws against fear.
+  - name: SPELL_BANISHMENT
+    value: 430
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster is able to cause all summoned creatures, familiars, animal companions, and Outsiders in the area of effect to be destroyed. A number of creatures equal to twice the caster's level in HD can be banished.
+  - name: SPELL_BARKSKIN
+    value: 3
+    desc: | 
+      Makes a creatures skin as tough as bark. Grants a +3 natural armor bonus to AC, increased to +4 at 6th level and +5 at 12th level. 3rd edition PHB p 177.
+  - name: SPELL_BATTLETIDE
+    value: 517
+  - name: SPELL_BESTOW_CURSE
+    value: 4
+    desc: | 
+      Place a permanent curse on a creature. The curse may be a -6 decrease to one ability score (minimum: 1), a -4 enhancement penalty on attacks rolls, saving throws, ability checks, and skill checks; or each turn the creature has a 50% chance to act normally - otherwise the creature takes no action. 3rd edition PHB p 178.
+  - name: SPELL_BIGBYS_CLENCHED_FIST
+    value: 462
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A giant hand appears and attacks the target, once each round for the duration of the spell. Each hit causes 1d8+11 points of damage to the target and if they fail their saving throw they are stunned for that round as well.
+  - name: SPELL_BIGBYS_CRUSHING_HAND
+    value: 463
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A giant hand appears and attacks the target. If it hits and succeeds in a grapple check, the target is held fast for the duration of the spell and suffers 2d6+12 points of damage each round.
+  - name: SPELL_BIGBYS_FORCEFUL_HAND
+    value: 460
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A giant hand appears and attempts to bull rush one target. The hand gains a +14 bonus on the Strength check. A target that is bull rushed is knocked down and is dazed for the duration of the spell.
+  - name: SPELL_BIGBYS_GRASPING_HAND
+    value: 461
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A giant hand appears and attacks the target. If the hand hits and succeeds in a grapple check the opponent will be held for the duration of the spell.
+  - name: SPELL_BIGBYS_INTERPOSING_HAND
+    value: 459
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A giant hand appears over the target, making it difficult for him to attack. He receives a -10 penalty to all attack rolls for the duration of the spell.
+  - name: SPELL_BLACK_BLADE_OF_DISASTER
+    value: 533
+  - name: SPELL_BLACKSTAFF
+    value: 541
+  - name: SPELL_BLADE_BARRIER
+    value: 5
+    desc: | 
+      Creates a spinning disk of razor sharp blades. Any creature passing through the blade barrier takes 1d6 points of damage per caster level (maximum 20d6). 3rd edition PHB p 179.
+  - name: SPELL_BLADE_THIRST
+    value: 535
+  - name: SPELL_BLESS
+    value: 6
+    desc: | 
+      Bless fills allies with courage; they gain a morale bonus of +1 on attack rolls and a +1 on saving throws against fear effects. 3rd edition PHB p 180.
+  - name: SPELL_BLESS_WEAPON
+    value: 537
+    desc: | 
+      Makes a weapon striek true against evil foes. All critical rolls against evil foes are automatically successful (so every threat is a critical hit). The weapon negates the damage reduction of evil creatures and is capable of striking evil incorporeal creatures as if it had a +1 enhancement bonus. 3rd edition PHB p 180.
+  - name: SPELL_BLINDNESS_AND_DEAFNESS
+    value: 8
+    desc: | 
+      The creature becomes blind or deaf, choosen by the caster. 3rd edition PHB p 180.
+  - name: SPELL_BLOOD_FRENZY
+    value: 422
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster enters a rage similar to that of a barbarian. The caster gains a +2 bonus to Strength and Constitution and a +1 bonus to Will saves, while suffering a -1 penalty to AC.
+  - name: SPELL_BOMBARDMENT
+    value: 423
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Rocks fall from the sky, causing 1d8 points of damage per caster level (max 10d8) to all enemies in the area.
+  - name: SPELL_BULLS_STRENGTH
+    value: 9
+    desc: | 
+      The recipient of this spell becomes stronger. The spell grants an enchancement bonus to strength of 1d4 + 1 points. 3rd edition PHB p 181.
+  - name: SPELL_BURNING_HANDS
+    value: 10
+    desc: | 
+      A thin sheet of searing flame shoots from the caster's outspread fingertips inflicting 1d4 points of damage per caster level (maximum 5d4). 3rd edition PHB p 182.
+  - name: SPELL_CALL_LIGHTNING
+    value: 11
+    desc: | 
+      Evoke bolts of lightning while remaining in a stormy area. The caster may evoke a bolt of lightening once every ten minutes. A bolt inflicts 1d10 per caster level of electrical damage (maximum 10d10). 3rd edition PHB p 182.
+  - name: SPELL_CAMOFLAGE
+    value: 421
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The misspelling of the spell name is Bioware’s, not mine. The caster's coloring changes to match the surroundings, gaining a +10 competence bonus to any Hide checks.
+  - name: SPELL_CATS_GRACE
+    value: 13
+    desc: | 
+      The transmuted creature becomes more graceful, agile, and coordinated. Grants an enhancement bonus to dexterity of 1d4 + 1 points. 3rd edition PHB p 182.
+  - name: SPELL_CHAIN_LIGHTNING
+    value: 14
+    desc: | 
+      Creates an electrical discharge that begins as a single stroke commencing from the caster's fingertips. Strikes one creature initially and then arcs to other targets. Deals 1d6 points of electical damage per caster level (maximum 20d6) and arc to as many additional targets as the caster's level and deal half as many damage dice (rounded down) to each additional target. 3rd edition PHB p 182.
+  - name: SPELL_CHARGER
+    value: 500
+    desc: | 
+      NOTE: This has the same integer value (500) as SPELL_DECK_OF_MANY_THINGS.
+  - name: SPELL_CHARM_MONSTER
+    value: 15
+    desc: | 
+      As the spell charm person, but the spell is not restricted by creature type or size. 3rd edition PHB p 183.
+  - name: SPELL_CHARM_PERSON
+    value: 16
+    desc: | 
+      Makes a humanoid of medium-size or smaller regard the caster as a trusted friend and ally and perceive the caster's words and actions in a most favorable way. 3rd edition PHB p 183.
+  - name: SPELL_CHARM_PERSON_OR_ANIMAL
+    value: 17
+    desc: | 
+      As the spell charm person, but this spell can effect an animal. 3rd edition PHB p 183.
+  - name: SPELL_CIRCLE_OF_DEATH
+    value: 18
+    desc: | 
+      A circle of death snuffs out the life forces of living creatures, killing them instantly. Slays 1d4 HD worth of living creatures per caster level (maximum 20d4). 3rd edition PHB p 184.
+  - name: SPELL_CIRCLE_OF_DOOM
+    value: 19
+    desc: | 
+      Negative energy bursts in all directions from the point of origin, dealing 1d8 + 1 point per caster level (maximum +20 points). Heals undead in its area of effect rather than harming them. 3rd edition PHB p 184.
+  - name: SPELL_CLAIRAUDIENCE_AND_CLAIRVOYANCE
+    value: 20
+    desc: | 
+      Enables the caster to concentrate upon some locale and hear or see (caster choice) almost as if the caster were there. 3rd edition PHB p 184.
+  - name: SPELL_CLARITY
+    value: 21
+  - name: SPELL_CLOAK_OF_CHAOS
+    value: 22
+    desc: | 
+      A random pattern of color surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by lawful creatures, and confusing lawful creatures then they strike the subjects. Gain a +4 deflection bonus to AC and a +4 resistance bonus to saves. Gain SR 25 against lawful spells and spells cast by lawful creatures. Blocks possession and mental influence. 3rd edition PHB p 184.
+  - name: SPELL_CLOUD_OF_BEWILDERMENT
+    value: 569
+  - name: SPELL_CLOUDKILL
+    value: 23
+    desc: | 
+      Generates a bank of fog with ghastly yellowish green and poisonous vapors. Any living creature with 3 or fewer HD dies, and any creature with 4 to 6 HD must make fortitude saving throws or die. 3rd edition PHB p 185.
+  - name: SPELL_COLOR_SPRAY
+    value: 24
+    desc: | 
+      A vivid cone of clashing colors springs forth from the caster's hand, stunning creatures, blinding them, or even knocking them unconcious. The closest 1d6 creatures to the caster are affected, and the effect depends on the HD of the creatures affected. 3rd edition PHB p 185.
+  - name: SPELL_COMBUST
+    value: 518
+  - name: SPELL_CONE_OF_COLD
+    value: 25
+    desc: | 
+      Creates an area of extreme cold, originating from the caster's hand and extending outward in a cone. It drains heat, causing 1d6 points of cold damage per caster level (maximum 15d6). 3rd edition PHB p 186.
+  - name: SPELL_CONFUSION
+    value: 26
+    desc: | 
+      Creatures affected by the spell behave randomly. 3rd edition PHB p 186.
+  - name: SPELL_CONTAGION
+    value: 27
+    desc: | 
+      The subject contracts a disease, which strikes immediately. The inflicted disease can be blinding sickness, cackle fever, filth fever, mindfire, red ache, the shakes, or slimy doom (see 3rd edition DMG p 75 for descriptions of diseases). 3rd edition PHB p 187.
+  - name: SPELL_CONTINUAL_FLAME
+    value: 419
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This creates a magical flame that burns as bright as a torch until dispelled.
+  - name: SPELL_CONTROL_UNDEAD
+    value: 28
+    desc: | 
+      Enables the caster to control undead creatures for a short period of time. 3rd edition PHB p 188.
+  - name: SPELL_CRAFT_HARPER_ITEM
+    value: 479
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s2_HarpItem. Description from header of that script Will create various items. Can create a Harper Pin, which allows another to gain access to the Harper Prestige Class. It will also grant a token AC bonus. (Floodgate will have to script the Harper Item granting access to Harper levels themselves, the description will have to remain vague). 100 gp, 50xp Can also create a potion of Cat's Grace or a Potion of Eagle's Splendor. 60gp, 5xp is the cost
+  - name: SPELL_CREATE_GREATER_UNDEAD
+    value: 29
+    desc: | 
+      As create undead, except that this spell allows you to create more powerful and intelligent sorts of undead, based on caster level. 3rd edition PHB p 189.
+  - name: SPELL_CREATE_UNDEAD
+    value: 30
+    desc: | 
+      A much more potent spell than animate dead, this spell allows the caster to create more powerful sorts of undead: ghasts, ghouls, shadow wights, and wraiths (depending on caster level). Undead created by this spell are not automatically under the control of the caster. 3rd edition PHB p 189.
+  - name: SPELL_CREEPING_DOOM
+    value: 364
+    desc: | 
+      Calls forth a mass of 1,000 venomous biting and stinging spiders, scorpions, beetles, and centipedes. Each vermin in the mass inflicts one point of damage to a creature in the area of effect of the spell and dies, thus allowing the mass to inflict up to 1000 hit points of damage total. 3rd edition PHB p 190.
+  - name: SPELL_CRUMBLE
+    value: 512
+  - name: SPELL_CURE_CRITICAL_WOUNDS
+    value: 31
+    desc: | 
+      Heals 4d8 + 1 point per caster level (up to a maximum of +20 points). 3rd edition PHB p 190.
+  - name: SPELL_CURE_LIGHT_WOUNDS
+    value: 32
+    desc: | 
+      Heals 1d8 + 1 point per caster level (up to a maximum of +5 points). 3rd edition PHB p 190.
+  - name: SPELL_CURE_MINOR_WOUNDS
+    value: 33
+    desc: | 
+      Heals 1 hit point. 3rd edition PHB p 190.
+  - name: SPELL_CURE_MODERATE_WOUNDS
+    value: 34
+    desc: | 
+      Heals 2d8 + 1 point per caster level (up to a maximum of +10 points). 3rd edition PHB p 190.
+  - name: SPELL_CURE_SERIOUS_WOUNDS
+    value: 35
+    desc: | 
+      Heals 3d8 + 1 point per caster level (up to a maximum of +15 points). 3rd edition PHB p 190.
+  - name: SPELL_DARKFIRE
+    value: 548
+  - name: SPELL_DARKNESS
+    value: 36
+    desc: | 
+      Causes an object to radiate darkness out to a 20-foot radius. Not even creatures with darkvision can see in an area shrouded with magical darkness. 3rd edition PHB p 190.
+  - name: SPELL_DARKVISION
+    value: 365
+    desc: | 
+      The subject gains the ability to see 60 feet even in total darkness. 3rd edition PHB p 191.
+  - name: SPELL_DAZE
+    value: 37
+    desc: | 
+      Clouds the mind of a humanoid of medium-size or smaller so it takes no actions. Humanoids of 5 HD or more are unaffected. 3rd edition PHB p 191.
+  - name: SPELL_DEAFENING_CLANG
+    value: 536
+  - name: SPELL_DEATH_ARMOR
+    value: 519
+  - name: SPELL_DEATH_WARD
+    value: 38
+    desc: | 
+      The subject is immune to all death spells and magical death effects. 3rd edition PHB p 191.
+  - name: SPELL_DECHARGER
+    value: 510
+  - name: SPELL_DECK_AVATAR
+    value: 503
+  - name: SPELL_DECK_BUTTERFLYSPRAY
+    value: 505
+  - name: SPELL_DECK_GEMSPRAY
+    value: 504
+  - name: SPELL_DECK_OF_MANY_THINGS
+    value: 500
+    desc: | 
+      NOTE: This has the same integer value (500) as SPELL_CHARGER.
+  - name: SPELL_DELAYED_BLAST_FIREBALL
+    value: 39
+    desc: | 
+      As fireball, except this spell is more powerful and can detonate up to 5 rounds after the spell is cast. The blast delivers 1d6 points of fire damage per caster level (up to a maximum of 20d6). 3rd edition PHB p 191.
+  - name: SPELL_DESTRUCTION
+    value: 366
+    desc: | 
+      Instantly slays the subject and consumes its remains utterly in a holy (or unholy) fire. If the target successfully makes a fortitude saving throw, it suffers 10d6 points of damage instead. 3rd edition PHB p 192.
+  - name: SPELL_DIRGE
+    value: 445
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster's song draws the energies of death and destruction. Any enemies in the area of effect suffer 2 points of Strength and Dexterity ability score damage each round. If the enemy leaves the area of effect, their Strength and Dexterity are restored.
+  - name: SPELL_DISMISSAL
+    value: 40
+    desc: | 
+      Forces an extraplanar creature back to its proper plane. 3rd edition PHB p 196.
+  - name: SPELL_DISPEL_MAGIC
+    value: 41
+    desc: | 
+      Can be used to dispel magical effects that are being cast or currently ongoing. 3rd edition PHB p 196.
+  - name: SPELL_DISPLACEMENT
+    value: 458
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The target gains 50% concealment, displacing the caster's image several feet to the side, similar to the abilities of a displacer beast.
+  - name: SPELL_DIVINE_FAVOR
+    value: 414
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster gains a +1 bonus to attack and weapon damage rolls for every three caster levels (at least +1, to a maximum of +5).
+  - name: SPELL_DIVINE_MIGHT
+    value: 473
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s2_divmight. Description from header of that script “Up to (turn undead amount) per day the character may add his Charisma bonus to all weapon damage for a number of rounds equal to the Charisma bonus.”
+  - name: SPELL_DIVINE_POWER
+    value: 42
+    desc: | 
+      Calling upon the divine power of the caster's patron, the caster imbues himself with strength and skill in combat, gaining the base attack bonus of a fighter of the casters total character level, an enhancement bonus to strength sufficient enough to raise the caster's strength score to 18 (if not already 18 or higher) and one additional hit point per level. 3rd edition PHB p 197.
+  - name: SPELL_DIVINE_SHIELD
+    value: 474
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s2_divshield. Description from header of that script “Up to [turn undead] times per day the character may add his Charisma bonus to his armor class for a number of rounds equal to the Charisma bonus.”
+  - name: SPELL_DOMINATE_ANIMAL
+    value: 43
+    desc: | 
+      Enchant an animal and direct it with simple commands such as "attack", "run", and "fetch". 3rd edition PHB p 197.
+  - name: SPELL_DOMINATE_MONSTER
+    value: 44
+    desc: | 
+      As dominate person, except this spell is not restricted by creature type or size. 3rd edition PHB p 197.
+  - name: SPELL_DOMINATE_PERSON
+    value: 45
+    desc: | 
+      Control the actions of any humanoid that is medium-size or smaller. 3rd edition PHB p 197.
+  - name: SPELL_DOOM
+    value: 46
+    desc: | 
+      Fills a single subject with a feeling of horrible dread and causes her to weaken and lose confidence. The subject is shaken, suffering a -2 morale penalty to attack rolls, checks, and saving throws.
+  - name: SPELL_DROWN
+    value: 437
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster creates water in the lungs of a target creature. Any drowned creature takes 90% of its current hit points as damage. Golems and other nonliving creatures cannot be drowned.
+  - name: SPELL_EAGLE_SPLEDOR
+    value: 354
+    desc: | 
+      Adds an enhancement bonus of 1d4+1 to Charisma-based skills. (TnB, FRCS p.68)
+  - name: SPELL_EARTHQUAKE
+    value: 426
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster causes a massive earthquake around himself, causing 1d6 points of damage per caster level (to a maximum of 10d6) to all creatures in the area of effect. The caster is not affected by the earthquake.
+  - name: SPELL_ELECTRIC_JOLT
+    value: 439
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster does 1d3 points of electrical damage to a target.
+  - name: SPELL_ELEMENTAL_SHIELD
+    value: 47
+  - name: SPELL_ELEMENTAL_SUMMONING_ITEM
+    value: 502
+  - name: SPELL_ELEMENTAL_SWARM
+    value: 48
+    desc: | 
+      Opens a portal to an elemental plane allowing the caster to summon elements from that plane. 3rd edition PHB p 198.
+  - name: SPELL_ENDURANCE
+    value: 49
+    desc: | 
+      The subject gains greater vitality and stamina, granting an enhancement bonus of 1d4 + 1 points to constitution. 3rd edition PHB p 199.
+  - name: SPELL_ENDURE_ELEMENTS
+    value: 50
+    desc: | 
+      Grants a creature limited protection to damage from whichever one of five energy types selected: acid, cold, electricity, fire, or sonic. Each round the spell absorbs the first 5 points of damage from the specified energy type. 3rd edition PHB p 199.
+  - name: SPELL_ENERGY_BUFFER
+    value: 369
+    desc: | 
+      5th level. Touch spell (caster). Absorbs 1d6 points per caster level of engery damage. (TnB p.87)
+  - name: SPELL_ENERGY_DRAIN
+    value: 51
+    desc: | 
+      As ennervation, except the creature struck gains 2d4 negative levels, and the negative levels last longer. 3rd edition PHB p 199.
+  - name: SPELL_ENERVATION
+    value: 52
+    desc: | 
+      Releases a black bolt of cracking negative energy that suppresses the life force of any living creature it strikes (the caster must make a ranged touch attack to hit). If the attack succeeds, the subject gains 1d4 negative levels. If the subject has at least as many negative levels as HD, it dies. 3rd edition PHB p 199.
+  - name: SPELL_ENTANGLE
+    value: 53
+    desc: | 
+      Grasses, weeds, bushes, and even trees wrap, twist, and entwine about creatures in the area or those who enter the area, holding them fast. 3rd edition PHB p 200.
+  - name: SPELL_ENTROPIC_SHIELD
+    value: 418
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A magical field appears around the caster, causing any nearby enemies a 20% chance to miss on ranged attacks.
+  - name: SPELL_EPIC_DRAGON_KNIGHT
+    value: 638
+  - name: SPELL_EPIC_HELLBALL
+    value: 636
+  - name: SPELL_EPIC_MAGE_ARMOR
+    value: 639
+  - name: SPELL_EPIC_MUMMY_DUST
+    value: 637
+  - name: SPELL_EPIC_RUIN
+    value: 640
+  - name: SPELL_ETHEREAL_VISAGE
+    value: 121
+  - name: SPELL_ETHEREALNESS
+    value: 443
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Like sanctuary except almost always guaranteed to work. Lasts one turn per level.
+  - name: SPELL_EVARDS_BLACK_TENTACLES
+    value: 375
+    desc: | 
+      Conjures 1d4 + 1 per caster level rubbery black tentacles. These tentacles are large (10 feet long), AC 16, 1 hit point per caster level, an attack bonus of +1 per caster level, and a strength score of 19 (+4 bonus). 3rd edition PHB p 201.
+  - name: SPELL_EXPEDITIOUS_RETREAT
+    value: 456
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster becomes 150% faster than their normal movement rate, allowing them to flee from dangerous encounters. This spell has no effect if the caster is already hasted.
+  - name: SPELL_FEAR
+    value: 54
+    desc: | 
+      An invisible cone of terror causes living creature to become panicked. They suffer a -2 morale penalty on saving throws and flee from the caster. 3rd edition PHB p 203.
+  - name: SPELL_FEEBLEMIND
+    value: 55
+    desc: | 
+      The subject's intelligence spell drops to 1, roughly the intellect of a lizard. 3rd edition PHB p 203.
+  - name: SPELL_FIND_TRAPS
+    value: 377
+    desc: | 
+      The caster gains intuitive insite into the workings of traps and may use the search skill to detect traps just as a rogue can, but gain no special bonus on search checks. 3rd edition PHB p 203.
+  - name: SPELL_FINGER_OF_DEATH
+    value: 56
+    desc: | 
+      Slays one living creature within range. The subject is entitled to a fortitude saving throw to survive; if successful the subject suffers 3d6 + 1 point per caster level of damage. 3rd edition PHB p 203.
+  - name: SPELL_FIRE_STORM
+    value: 57
+    desc: | 
+      Creates a zone of destruction around the caster within which all living creatures are pummeled with fire. Deals 1d6 points of fire damage per caster level (up to a maximum of 20d6). 3rd edition PHB.
+  - name: SPELL_FIREBALL
+    value: 58
+    desc: | 
+      Causes a burst of flame that detonates with a low roar and deals 1d6 points of fire damage per caster level (up to a maximum of 10d6). 3rd edition PHB p 204.
+  - name: SPELL_FIREBRAND
+    value: 440
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Masses of flame (one per caster level) appear and randomly target and hit any hostile creature in the area of effect. If there are more creatures than balls of flame, only the closest targets will be damaged. If there are more balls of flame than creatures, the excess balls of flame disappear. Each ball of flame explodes for 1d6 points of damage per caster level (max 15d6).
+  - name: SPELL_FLAME_ARROW
+    value: 59
+    desc: | 
+      Creates flames that turn normal arrows, bolts, and stones into fiery projectiles or create fiery bolts and shoot them at enemies. 3rd edition PHB p 205.
+  - name: SPELL_FLAME_LASH
+    value: 60
+  - name: SPELL_FLAME_STRIKE
+    value: 61
+    desc: | 
+      Produces a vertical column of divine fire roaring downward, dealing 1d6 points of damage per caster level (to a maximum of 15d6). Half of the damage is fire damage, the other half is from divine power. 3rd edition PHB p 205.
+  - name: SPELL_FLAME_WEAPON
+    value: 542
+  - name: SPELL_FLARE
+    value: 416
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A burst of hot light is fired from the caster to one target, making it suffer a -1 penalty to attack rolls.
+  - name: SPELL_FLESH_TO_STONE
+    value: 485
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The subject and all possessions it carries turns into a mindless, inert statue. Only a stone to flesh spell can restore the subject to normal. * Under Normal difficulty or easier, the duration is one round per caster level. Higher difficulty settings make the petrification permanent. As well, if the caster rests, any creatures turned to stone by him will be restored, as if the stone to flesh spell had been cast upon them.
+  - name: SPELL_FLYING_DEBRIS
+    value: 620
+  - name: SPELL_FOXS_CUNNING
+    value: 356
+    desc: | 
+      Touch spell. Gives 1d4+1 enhancement bonus to Intelligence. (TnB p.89)
+  - name: SPELL_FREEDOM_OF_MOVEMENT
+    value: 62
+    desc: | 
+      Enables the caster or subject touched to move and attack normally for the duration of the spell, even under the influence of magic that usually impedes movement. 3rd edition PHB p 207.
+  - name: SPELL_GATE
+    value: 63
+    desc: | 
+      Creatures a link between the casters current plane of existance and any plane desired, allowing travel between either plane. The caster may also call a particular individal or type of being through the gate. 3rd edition PHB p 208.
+  - name: SPELL_GEDLEES_ELECTRIC_LOOP
+    value: 520
+  - name: SPELL_GHOSTLY_VISAGE
+    value: 120
+  - name: SPELL_GHOUL_TOUCH
+    value: 64
+    desc: | 
+      Allows the caster to paralyze a single humanoid for 1d6 + 2 rounds with a successful melee attack hit. 3rd edition PHB p 209.
+  - name: SPELL_GLOBE_OF_INVULNERABILITY
+    value: 65
+    desc: | 
+      As minor globe of invulnerability, except this spell also excludes 4th-level spells and spell-like effects. 3rd edition PHB p 209.
+  - name: SPELL_GLYPH_OF_WARDING
+    value: 549
+  - name: SPELL_GREASE
+    value: 66
+    desc: | 
+      A grease spell covers a solid surface with a layer of slippery grease. 3rd edition PHB p 210.
+  - name: SPELL_GREAT_THUNDERCLAP
+    value: 515
+  - name: SPELL_GREATER_BULLS_STRENGTH
+    value: 360
+    desc: | 
+      Improved version of bull's strength. Exact effect is unknown.
+  - name: SPELL_GREATER_CATS_GRACE
+    value: 361
+    desc: | 
+      Improved version of cat's grace. Exact effect is unknown.
+  - name: SPELL_GREATER_DISPELLING
+    value: 67
+    desc: | 
+      As dispel magic, except that the maximum bonus on the dispel check is +20 instead of +10. 3rd edition PHB p 210.
+  - name: SPELL_GREATER_EAGLE_SPLENDOR
+    value: 357
+    desc: | 
+      Improved version of eagle splendor. Exact effect is unknown.
+  - name: SPELL_GREATER_ENDURANCE
+    value: 362
+    desc: | 
+      Improved version of endurace. Exact effect is unknown.
+  - name: SPELL_GREATER_FOXS_CUNNING
+    value: 359
+    desc: | 
+      Improved version of fox's cunning. Exact effect is unknown.
+  - name: SPELL_GREATER_MAGIC_FANG
+    value: 453
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell strengthens the caster's animal companion, giving it +1 to hit and +1 to damage for every three levels of the caster (maximum of +5). It also grants the creature an enchantment bonus equal to the hit/damage bonus given.
+  - name: SPELL_GREATER_MAGIC_WEAPON
+    value: 545
+    desc: | 
+      Gives a weapon an enhancement bonus to attack and damage of +1 per every three caster levels (maximum +5). 3rd edition PHB p 210.
+  - name: SPELL_GREATER_OWLS_WISDOM
+    value: 358
+    desc: | 
+      Improved version of owl's wisdom. Exact effect is unknown.
+  - name: SPELL_GREATER_PLANAR_BINDING
+    value: 69
+    desc: | 
+      As lesser planar binding, except the caster may call a single creature of up to 24 HD or a number of creatures of the same type who's HD total no more than 24. 3rd edition PHB p 211.
+  - name: SPELL_GREATER_RESTORATION
+    value: 70
+    desc: | 
+      As lesser restoration, except the spell dispels all negative energy levels afflicting the healed creature, restoring the creature to the highest leve it had previously achieved. 3rd edition PHB p 211.
+  - name: SPELL_GREATER_SHADOW_CONJURATION_ACID_ARROW
+    value: 350
+    desc: | 
+      As Melf's acid arrow, except the spell is woven using material from the Plane of Shadow. The creature struck is allowed a will save; if successful the creature only takes 20% of the damage total. 3rd edition PHB p 211.
+  - name: SPELL_GREATER_SHADOW_CONJURATION_MINOR_GLOBE
+    value: 353
+    desc: | 
+      As minor globe of invulnerability, except the spell is woven using material from the Plane of Shadow and is less potent. 3rd edition PHB p 211.
+  - name: SPELL_GREATER_SHADOW_CONJURATION_MIRROR_IMAGE
+    value: 351
+    desc: | 
+      As mirror image, except the spell is woven using material from the Plane of Shadow and is less potent. 3rd edition PHB p 211.
+  - name: SPELL_GREATER_SHADOW_CONJURATION_SUMMON_SHADOW
+    value: 349
+    desc: | 
+      As summon shadow, except the spell is woven using material from the Plane of Shadow and is less potent. 3rd edition PHB p 211.
+  - name: SPELL_GREATER_SHADOW_CONJURATION_WEB
+    value: 352
+    desc: | 
+      As web, except the spell is woven using material from the Plane of Shadow and is less potent. 3rd edition PHB p 211.
+  - name: SPELL_GREATER_SPELL_BREACH
+    value: 72
+    desc: | 
+      Improved version of spell breach. Exact effect is unknown.
+  - name: SPELL_GREATER_SPELL_MANTLE
+    value: 73
+    desc: | 
+      Improved version of spell mantle. Exact effect is unknown.
+  - name: SPELL_GREATER_STONESKIN
+    value: 74
+    desc: | 
+      Improved version of stone skin. Exact effect is unknown.
+  - name: SPELL_GRENADE_ACID
+    value: 469
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GRENADE_CALTROPS
+    value: 471
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GRENADE_CHICKEN
+    value: 470
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GRENADE_CHOKING
+    value: 467
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GRENADE_FIRE
+    value: 464
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GRENADE_HOLY
+    value: 466
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GRENADE_TANGLE
+    value: 465
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GRENADE_THUNDERSTONE
+    value: 468
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell is used by the new grenadelike weapons.
+  - name: SPELL_GUST_OF_WIND
+    value: 75
+  - name: SPELL_HAMMER_OF_THE_GODS
+    value: 76
+  - name: SPELL_HARM
+    value: 77
+    desc: | 
+      Harm charges a subject with negative energy that causes the loss of all but 1d4 hit points. 3rd edition PHB p 212.
+  - name: SPELL_HASTE
+    value: 78
+    desc: | 
+      The subject moves and acts more quickly than normal, gaining an extra partial action during his turn, a +4 haste bonus to AC, and jump one and a half times as far as normal. 3rd edition PHB p 212.
+  - name: SPELL_HEAL
+    value: 79
+    desc: | 
+      Channels positive energy into a creature to wipe away disease and injury. It completely cures all diseases, blindness, deafness, hit point damage, and all temporary ability damage. It neutralizes poisons in the subject's system so no additional damage or effects are suffered. It offsets a feeblemind spell. It cures those mental disorders caused by spells or injury to the brain. 3rd edition PHB p 213.
+  - name: SPELL_HEALING_CIRCLE
+    value: 80
+    desc: | 
+      Positive energy spreads out in all directions from the point of origin, curing 1d8 points of damage +1 point per caster level (maximum +20 points) to nearby living allies. 3rd edition PHB p 213.
+  - name: SPELL_HEALING_STING
+    value: 514
+  - name: SPELL_HEALINGKIT
+    value: 506
+  - name: SPELL_HOLD_ANIMAL
+    value: 81
+    desc: | 
+      Like the spell hold person, except this spell affects an animal instead. 3rd edition PHB p 214.
+  - name: SPELL_HOLD_MONSTER
+    value: 82
+    desc: | 
+      As hold person, except this spell holds any living creature that fails its will save. 3rd edition PHB p 214.
+  - name: SPELL_HOLD_PERSON
+    value: 83
+    desc: | 
+      The subject freezes in place, standing helpless. He is aware nad breathes normally, but cannot take any physical actions, even speech. 3rd edition PHB p 214.
+  - name: SPELL_HOLY_AURA
+    value: 84
+    desc: | 
+      A brilliant divine radiance surrounds the subjects, protecting them from attacks, granting them resistance to spells cast by eveil creatures, and blinding evil creatures when they strike the subjects. 3rd edition PHB p 214.
+  - name: SPELL_HOLY_SWORD
+    value: 538
+    desc: | 
+      Allows the caster to channel holy power into a sword, or any other weapon the caster chooses. The weapon acts as a +5 magic weapon and deals double damage against evil opponents. 3rd edition PHB p 215.
+  - name: SPELL_HORIZIKAULS_BOOM
+    value: 521
+  - name: SPELL_HORRID_WILTING
+    value: 367
+    desc: | 
+      Evaporates moisture from the bodies of all the subject living creatures, dealing 1d8 points of damage per caster level (maximum 25d8). 3rd edition PHB p 215.
+  - name: SPELL_ICE_DAGGER
+    value: 543
+  - name: SPELL_ICE_STORM
+    value: 368
+    desc: | 
+      Greater hailstones pound down, inflcting 5d6 points of damage to creatures in their path; the damage is 3d6 impact plus 2d6 cold based. 3rd edition PHB p 216.
+  - name: SPELL_IDENTIFY
+    value: 86
+    desc: | 
+      Identifies the single most basic function of a magic item, including how to activate that funciton. 3rd edition PHB p 216.
+  - name: SPELL_IMPLOSION
+    value: 87
+    desc: | 
+      Creates a destructive resonance in a corporeal creature's body. For each round the caster concentrates, he causes one creature to collapse in on itself, killing it. 3rd edition PHB p 216.
+  - name: SPELL_IMPROVED_INVISIBILITY
+    value: 88
+  - name: SPELL_INCENDIARY_CLOUD
+    value: 89
+  - name: SPELL_INFERNO
+    value: 446
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster causes a target to ignite into flame. Each round the target will suffer 2d6 points of fire damage.
+  - name: SPELL_INFESTATION_OF_MAGGOTS
+    value: 513
+  - name: SPELL_INFLICT_CRITICAL_WOUNDS
+    value: 435
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. If the caster succeeds in striking an opponent with a touch attack, the target suffers 4d8 points of damage, + 1 point per caster level to a maximum of +20. Inflict spells have a reverse effect when used on undead, causing the targeted undead to take an amount of healing equal to what the spell normally damages.
+  - name: SPELL_INFLICT_LIGHT_WOUNDS
+    value: 432
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. If the caster succeeds in striking an opponent with a touch attack, the target suffers 1d8 points of damage, + 1 point per caster level to a maximum of +5. Inflict spells have a reverse effect when used on undead, causing the targeted undead to take an amount of healing equal to what the spell normally damages.
+  - name: SPELL_INFLICT_MINOR_WOUNDS
+    value: 431
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. If the caster succeeds in striking an opponent with a touch attack, the target suffers 1 point of damage. Inflict spells have a reverse effect when used on undead, causing the targeted undead to take an amount of healing equal to what the spell normally damages.
+  - name: SPELL_INFLICT_MODERATE_WOUNDS
+    value: 433
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. If the caster succeeds in striking an opponent with a touch attack, the target suffers 2d8 points of damage, + 1 point per caster level to a maximum of +10. Inflict spells have a reverse effect when used on undead, causing the targeted undead to take an amount of healing equal to what the spell normally damages.
+  - name: SPELL_INFLICT_SERIOUS_WOUNDS
+    value: 434
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. If the caster succeeds in striking an opponent with a touch attack, the target suffers 3d8 points of damage, + 1 point per caster level to a maximum of +15. Inflict spells have a reverse effect when used on undead, causing the targeted undead to take an amount of healing equal to what the spell normally damages.
+  - name: SPELL_INVISIBILITY
+    value: 90
+  - name: SPELL_INVISIBILITY_PURGE
+    value: 91
+  - name: SPELL_INVISIBILITY_SPHERE
+    value: 92
+  - name: SPELL_IOUN_STONE_BLUE
+    value: 557
+  - name: SPELL_IOUN_STONE_DEEP_RED
+    value: 558
+  - name: SPELL_IOUN_STONE_DUSTY_ROSE
+    value: 554
+  - name: SPELL_IOUN_STONE_PALE_BLUE
+    value: 555
+  - name: SPELL_IOUN_STONE_PINK
+    value: 559
+  - name: SPELL_IOUN_STONE_PINK_GREEN
+    value: 560
+  - name: SPELL_IOUN_STONE_SCARLET_BLUE
+    value: 556
+  - name: SPELL_IRONGUTS
+    value: 522
+  - name: SPELL_ISAACS_GREATER_MISSILE_STORM
+    value: 448
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A number of energy missiles (one per caster level but to a maximum of 20) appear and randomly target and hit any hostile creature in the area of effect. If there are more creatures than missiles, only the closest targets will be damaged. If there are more missiles than creatures, one of the creatures will be hit with multiple missiles. Each missile does 2d6 points of damage.
+  - name: SPELL_ISAACS_LESSER_MISSILE_STORM
+    value: 447
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A number of energy missiles (one per caster level but to a maximum of 10) appear and randomly target and hit any hostile creature in the area of effect. If there are more creatures than missiles, only the closest targets will be damaged. If there are more missiles than creatures, one of the creatures will be hit with multiple missiles. Each missile does 1d6 points of damage.
+  - name: SPELL_KEEN_EDGE
+    value: 539
+  - name: SPELL_KNOCK
+    value: 93
+  - name: SPELL_KOBOLD_JUMP
+    value: 511
+  - name: SPELL_LEGEND_LORE
+    value: 376
+  - name: SPELL_LESSER_DISPEL
+    value: 94
+  - name: SPELL_LESSER_MIND_BLANK
+    value: 95
+  - name: SPELL_LESSER_PLANAR_BINDING
+    value: 96
+  - name: SPELL_LESSER_RESTORATION
+    value: 97
+  - name: SPELL_LESSER_SPELL_BREACH
+    value: 98
+  - name: SPELL_LESSER_SPELL_MANTLE
+    value: 99
+  - name: SPELL_LIGHT
+    value: 100
+  - name: SPELL_LIGHTNING_BOLT
+    value: 101
+  - name: SPELL_MAGE_ARMOR
+    value: 102
+  - name: SPELL_MAGIC_CIRCLE_AGAINST_CHAOS
+    value: 103
+  - name: SPELL_MAGIC_CIRCLE_AGAINST_EVIL
+    value: 104
+  - name: SPELL_MAGIC_CIRCLE_AGAINST_GOOD
+    value: 105
+  - name: SPELL_MAGIC_CIRCLE_AGAINST_LAW
+    value: 106
+  - name: SPELL_MAGIC_FANG
+    value: 452
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell strengthens the caster's animal companion, giving it +1 to hit and +1 to damage. It also grants the creature the ability to strike as if it were a +1 weapon (so it can bypass other creature's damage reduction).
+  - name: SPELL_MAGIC_MISSILE
+    value: 107
+    desc: | 
+      A missile of magical energy darts forth from the caster's fingertip and unerringly strikes its target, dealing 1d4 + 1 points of damage. For every two levels of experience past 1st, the caster gains another missile (up to a maximum of 5 at 9th level). "Galstaff, you enter the door to the north…"
+  - name: SPELL_MAGIC_VESTMENT
+    value: 546
+  - name: SPELL_MAGIC_WEAPON
+    value: 544
+  - name: SPELL_MASS_BLINDNESS_AND_DEAFNESS
+    value: 110
+  - name: SPELL_MASS_CAMOFLAGE
+    value: 455
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The misspelling in the spell name is Bioware’s, not mine. All allies in the area of effect gain a +10 bonus to their hide skill.
+  - name: SPELL_MASS_CHARM
+    value: 111
+  - name: SPELL_MASS_HASTE
+    value: 113
+    desc: | 
+      As haste, except that it affects multiple creatures. 3rd edition PHB p 226.
+  - name: SPELL_MASS_HEAL
+    value: 114
+  - name: SPELL_MELFS_ACID_ARROW
+    value: 115
+    desc: | 
+      A creature who is struck by the acid arrow suffers 2d4 points of damage and the acid lasts for another round for every three levels of the caster (up to a maximum of 7 rounds). 3rd edition PHB p 227.
+  - name: SPELL_MESTILS_ACID_BREATH
+    value: 523
+  - name: SPELL_MESTILS_ACID_SHEATH
+    value: 524
+  - name: SPELL_METEOR_SWARM
+    value: 116
+  - name: SPELL_MIND_BLANK
+    value: 117
+  - name: SPELL_MIND_FOG
+    value: 118
+  - name: SPELL_MINOR_GLOBE_OF_INVULNERABILITY
+    value: 119
+  - name: SPELL_MONSTROUS_REGENERATION
+    value: 525
+  - name: SPELL_MORDENKAINENS_DISJUNCTION
+    value: 122
+  - name: SPELL_MORDENKAINENS_SWORD
+    value: 123
+  - name: SPELL_NATURES_BALANCE
+    value: 124
+  - name: SPELL_NEGATIVE_ENERGY_BURST
+    value: 370
+  - name: SPELL_NEGATIVE_ENERGY_PROTECTION
+    value: 125
+  - name: SPELL_NEGATIVE_ENERGY_RAY
+    value: 371
+  - name: SPELL_NEUTRALIZE_POISON
+    value: 126
+  - name: SPELL_ONE_WITH_THE_LAND
+    value: 420
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster forges a strong link with nature, gaining a +4 competence bonus to Animal Empathy, Hide, Move Silently, and Set Trap skills.
+  - name: SPELL_OWLS_INSIGHT
+    value: 438
+  - name: SPELL_OWLS_WISDOM
+    value: 355
+  - name: SPELL_PHANTASMAL_KILLER
+    value: 127
+  - name: SPELL_PLANAR_ALLY
+    value: 451
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. An Outsider is summoned to assist the caster. The type of Outsider varies with the caster's alignment.
+  - name: SPELL_PLANAR_BINDING
+    value: 128
+  - name: SPELL_POISON
+    value: 129
+  - name: SPELL_POLYMORPH_SELF
+    value: 130
+    desc: | 
+      Polymorphs the caster into another creature for the duration of the spell. Polymorphing a PC causes them to trigger the OnExit and OnEnter events (in that order).
+  - name: SPELL_POWER_WORD_KILL
+    value: 131
+  - name: SPELL_POWER_WORD_STUN
+    value: 132
+  - name: SPELL_POWERSTONE
+    value: 507
+  - name: SPELL_PRAYER
+    value: 133
+  - name: SPELL_PREMONITION
+    value: 134
+  - name: SPELL_PRISMATIC_SPRAY
+    value: 135
+  - name: SPELL_PROTECTION__FROM_CHAOS
+    value: 136
+  - name: SPELL_PROTECTION_FROM_ELEMENTS
+    value: 137
+  - name: SPELL_PROTECTION_FROM_EVIL
+    value: 138
+  - name: SPELL_PROTECTION_FROM_GOOD
+    value: 139
+  - name: SPELL_PROTECTION_FROM_LAW
+    value: 140
+  - name: SPELL_PROTECTION_FROM_SPELLS
+    value: 141
+  - name: SPELL_QUILLFIRE
+    value: 425
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster throws poisonous quills at a target, doing 1d8 points of damage (+1 per 2 levels of the caster - max +5), plus inflicting Scorpion Venom on the target if they fail a Fortitude save.
+  - name: SPELL_RAISE_DEAD
+    value: 142
+  - name: SPELL_RAY_OF_ENFEEBLEMENT
+    value: 143
+  - name: SPELL_RAY_OF_FROST
+    value: 144
+  - name: SPELL_REGENERATE
+    value: 374
+  - name: SPELL_REMOVE_BLINDNESS_AND_DEAFNESS
+    value: 145
+  - name: SPELL_REMOVE_CURSE
+    value: 146
+  - name: SPELL_REMOVE_DISEASE
+    value: 147
+  - name: SPELL_REMOVE_FEAR
+    value: 148
+  - name: SPELL_REMOVE_PARALYSIS
+    value: 149
+  - name: SPELL_RESIST_ELEMENTS
+    value: 150
+  - name: SPELL_RESISTANCE
+    value: 151
+  - name: SPELL_RESTORATION
+    value: 152
+  - name: SPELL_RESURRECTION
+    value: 153
+  - name: SPELL_ROD_OF_WONDER
+    value: 499
+  - name: SPELL_SANCTUARY
+    value: 154
+  - name: SPELL_SCARE
+    value: 155
+  - name: SPELL_SCINTILLATING_SPHERE
+    value: 526
+  - name: SPELL_SEARING_LIGHT
+    value: 156
+  - name: SPELL_SEE_INVISIBILITY
+    value: 157
+  - name: SPELL_SHADES_CONE_OF_COLD
+    value: 340
+  - name: SPELL_SHADES_FIREBALL
+    value: 341
+  - name: SPELL_SHADES_STONESKIN
+    value: 342
+  - name: SPELL_SHADES_SUMMON_SHADOW
+    value: 324
+  - name: SPELL_SHADES_WALL_OF_FIRE
+    value: 343
+  - name: SPELL_SHADOW_CONJURATION_DARKNESS
+    value: 345
+  - name: SPELL_SHADOW_CONJURATION_INIVSIBILITY
+    value: 346
+  - name: SPELL_SHADOW_CONJURATION_MAGE_ARMOR
+    value: 347
+  - name: SPELL_SHADOW_CONJURATION_MAGIC_MISSILE
+    value: 348
+  - name: SPELL_SHADOW_CONJURATION_SUMMON_SHADOW
+    value: 344
+  - name: SPELL_SHADOW_DAZE
+    value: 475
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_S2_Daze. Description from header of that script “Will save or be dazed for 5 rounds.”
+  - name: SPELL_SHADOW_EVADE
+    value: 477
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script X0_S2_ShadEvade. Description from header of that script Gives the caster the following bonuses Level 4 5% concealment 5/+1 DR +1 AC Level 6 10% concealment 5/+2 DR +2 AC Level 8 15% concealment 10/+2 DR +3 AC Level 10 20% concealment 10/+3 DR +4 AC Lasts 5 rounds
+  - name: SPELL_SHADOW_SHIELD
+    value: 160
+  - name: SPELL_SHAPECHANGE
+    value: 161
+  - name: SPELL_SHELGARNS_PERSISTENT_BLADE
+    value: 534
+  - name: SPELL_SHIELD
+    value: 417
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster gains a +4 bonus to AC. As well, the caster is immune to the spell magic missile for the duration of the shield.
+  - name: SPELL_SHIELD_OF_FAITH
+    value: 450
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The target gains a +2 deflection bonus to their armor class, with an additional +1 bonus for every six levels of the caster (maximum of +5).
+  - name: SPELL_SHIELD_OF_LAW
+    value: 162
+  - name: SPELL_SILENCE
+    value: 163
+  - name: SPELL_SLAY_LIVING
+    value: 164
+  - name: SPELL_SLEEP
+    value: 165
+  - name: SPELL_SLOW
+    value: 166
+  - name: SPELL_SOUND_BURST
+    value: 167
+  - name: SPELL_SPELL_MANTLE
+    value: 169
+  - name: SPELL_SPELL_RESISTANCE
+    value: 168
+  - name: SPELL_SPELLSTAFF
+    value: 508
+  - name: SPELL_SPHERE_OF_CHAOS
+    value: 170
+  - name: SPELL_SPIKE_GROWTH
+    value: 454
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Covers the terrain with small spikes. Any creature will suffer 1d4 points of damage each round that they remain within the afflicted area. These spikes can damage the victim's legs, so that even once they are free of the spike growth, their movement rate is slowed for a day.
+  - name: SPELL_STINKING_CLOUD
+    value: 171
+  - name: SPELL_STONE_BONES
+    value: 527
+  - name: SPELL_STONE_TO_FLESH
+    value: 486
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. This spell restores a petrified creature to its normal state, restoring life and goods.
+  - name: SPELL_STONEHOLD
+    value: 547
+  - name: SPELL_STONESKIN
+    value: 172
+  - name: SPELL_STORM_OF_VENGEANCE
+    value: 173
+  - name: SPELL_SUMMON_CREATURE_I
+    value: 174
+  - name: SPELL_SUMMON_CREATURE_II
+    value: 175
+  - name: SPELL_SUMMON_CREATURE_III
+    value: 176
+  - name: SPELL_SUMMON_CREATURE_IV
+    value: 177
+  - name: SPELL_SUMMON_CREATURE_V
+    value: 179
+  - name: SPELL_SUMMON_CREATURE_VI
+    value: 180
+  - name: SPELL_SUMMON_CREATURE_VII
+    value: 181
+  - name: SPELL_SUMMON_CREATURE_VIII
+    value: 182
+  - name: SPELL_SUMMON_CREATURE_IX
+    value: 178
+  - name: SPELL_SUMMON_SHADOW
+    value: 476
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script X0_S2_ShadSum. Description from header of that script “PRESTIGE CLASS VERSION. Spell powerful ally from the shadow plane to battle for the wizard.”
+  - name: SPELL_SUNBEAM
+    value: 183
+  - name: SPELL_SUNBURST
+    value: 427
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. A brilliant explosion occurs where the caster directs causing 1d6 points of damage per caster level to all undead creatures to a maximum of 25d6 (6d6 points of damage to creatures that are not undead). Vampires are destroyed instantly if they fail a Reflex saving throw. All enemies in the area of effect must also make a successful Reflex saving throw or be blinded permanently (the blindness can only be magically removed).
+  - name: SPELL_TASHAS_HIDEOUS_LAUGHTER
+    value: 457
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. If the target fails their saving throw they will begin laughing hysterically. They will be unable to defend themselves until the spell wears off. A creature whose racial type is different from the caster's gains a +4 bonus on its saving throw because humor doesn't 'translate' well.
+  - name: SPELL_TENSERS_TRANSFORMATION
+    value: 184
+  - name: SPELL_TIME_STOP
+    value: 185
+  - name: SPELL_TRAP_ARROW
+    value: 487
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s3_arrow. Description from header of that script "Fires arrow(s) at the target and surrounding targets with increasing damage and attack bonuses for higher caster level."
+  - name: SPELL_TRAP_BOLT
+    value: 488
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s3_bolt. Description from header of that script “Launches a crossbow bolt at a single target, with increasing attack and damage penalties at higher levels.”
+  - name: SPELL_TRAP_DART
+    value: 493
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s3_dart. Description from header of that script “Shoots a dart at the target. The dart animation is produced by the projectile specifications for this spell in the spells.2da file, so this merely does a check for a hit and applies damage as appropriate.”
+  - name: SPELL_TRAP_SHURIKEN
+    value: 494
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s3_shurik. Description from header of that script “Shoots a shuriken at the target. The shuriken animation effect is produced by the projectile settings in spells.2da; this impact script merely does the hit check and applies the damage.”
+  - name: SPELL_TRUE_SEEING
+    value: 186
+  - name: SPELL_TRUE_STRIKE
+    value: 415
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Through magical intuition the caster gains a +20 bonus to attack rolls.
+  - name: SPELL_TYMORAS_SMILE
+    value: 478
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. Fires the script x0_s2_HarpSmile. Description from header of that script “+2 luck bonus on all saving throws for 5 turns.”
+  - name: SPELL_UNDEATH_TO_DEATH
+    value: 528
+  - name: SPELL_UNDEATHS_ETERNAL_FOE
+    value: 444
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. All allies in the area of effect will receive the following bonuses: immunity to negative damage, immunity to level/energy drain, immunity to ability score decreases, immunity to poisons, and immunity to diseases.
+  - name: SPELL_UNHOLY_AURA
+    value: 187
+  - name: SPELL_VAMPIRIC_TOUCH
+    value: 188
+  - name: SPELL_VINE_MINE
+    value: 529
+  - name: SPELL_VINE_MINE_CAMOUFLAGE
+    value: 532
+  - name: SPELL_VINE_MINE_ENTANGLE
+    value: 530
+  - name: SPELL_VINE_MINE_HAMPER_MOVEMENT
+    value: 531
+  - name: SPELL_VIRTUE
+    value: 189
+  - name: SPELL_WAIL_OF_THE_BANSHEE
+    value: 190
+  - name: SPELL_WALL_OF_FIRE
+    value: 191
+  - name: SPELL_WAR_CRY
+    value: 373
+  - name: SPELL_WEB
+    value: 192
+  - name: SPELL_WEIRD
+    value: 193
+  - name: SPELL_WORD_OF_FAITH
+    value: 194
+  - name: SPELL_WOUNDING_WHISPERS
+    value: 441
+    desc: | 
+      New spell from the Shadows of Undrentide expansion. The caster is surrounded with whispers that injure any creature that hits the caster for 1d6 + 1 / level points of sonic damage.
+seealso:
+  functions:
+    - ActionCastFakeSpellAtLocation
+    - ActionCastFakeSpellAtObject
+    - ActionCastSpellAtLocation
+    - ActionCastSpellAtObject
+    - CompareLastSpellCast
+    - DecrementRemainingSpellUses
+    - EffectSanctuary
+    - EffectSpellImmunity
+    - EventSpellCastAt
+    - GetHasSpell
+    - GetHasSpellEffect
+    - GetIdFromTalent
+    - GetLastGenericSpellCast
+    - GetLastSpell
+    - GetNearestCreature
+    - GetNearestCreatureToLocation
+    - GetSpellBreachProtection
+    - GetSpellId
+    - HasSpell
+    - IPGetIPConstCastSpellFromSpellID
+    - RemoveProtections
+    - SetLastGenericSpellCast
+    - TalentSpell
+    - TriggerProjectileTrap

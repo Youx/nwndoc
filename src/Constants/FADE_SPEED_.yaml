@@ -1,0 +1,30 @@
+---
+type: Constants
+category: FADE_SPEED_*
+shortdesc: | 
+  Determines the amount of time a fade screen effect takes.
+constants:
+  - name: FADE_SPEED_FAST
+    value: 0.017
+    desc: | 
+      Fast fade speed.
+  - name: FADE_SPEED_FASTEST
+    value: 0.25
+    desc: | 
+      Fastest fade speed.
+  - name: FADE_SPEED_MEDIUM
+    value: 0.01
+    desc: | 
+      Medium fade speed.
+  - name: FADE_SPEED_SLOW
+    value: 0.005
+    desc: | 
+      Slow fade speed.
+  - name: FADE_SPEED_SLOWEST
+    value: 0.003
+    desc: | 
+      Slowest fade speed.
+seealso:
+  functions:
+    - FadeFromBlack
+    - FadeToBlack

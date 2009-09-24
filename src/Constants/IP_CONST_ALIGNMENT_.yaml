@@ -1,0 +1,49 @@
+---
+type: Constants
+category: IP_CONST_ALIGNMENT_*
+shortdesc: | 
+  Itemproperty constants relating to specific alignments, such as AC bonus against an alignment.
+constants:
+  - name: IP_CONST_ALIGNMENT_CE
+    value: 8
+    desc: | 
+      Chaotic evil.
+  - name: IP_CONST_ALIGNMENT_CG
+    value: 6
+    desc: | 
+      Chaotic good.
+  - name: IP_CONST_ALIGNMENT_CN
+    value: 7
+    desc: | 
+      Chaotic neutral.
+  - name: IP_CONST_ALIGNMENT_LE
+    value: 2
+    desc: | 
+      Lawful evil.
+  - name: IP_CONST_ALIGNMENT_LG
+    value: 0
+    desc: | 
+      Lawful good.
+  - name: IP_CONST_ALIGNMENT_LN
+    value: 1
+    desc: | 
+      Lawful neutral.
+  - name: IP_CONST_ALIGNMENT_NE
+    value: 5
+    desc: | 
+      Neutral evil.
+  - name: IP_CONST_ALIGNMENT_NG
+    value: 3
+    desc: | 
+      Neutral good.
+  - name: IP_CONST_ALIGNMENT_TN
+    value: 4
+    desc: | 
+      True neutral.
+seealso:
+  functions:
+    - ItemPropertyACBonusVsSAlign
+    - ItemPropertyAttackBonusVsSAlign
+    - ItemPropertyDamageBonusVsSAlign
+    - ItemPropertyEnhancementBonusVsSAlign
+    - ItemPropertyLimitUseBySAlign

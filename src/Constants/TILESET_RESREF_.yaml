@@ -1,0 +1,83 @@
+---
+type: Constants
+category: TILESET_RESREF_*
+shortdesc: | 
+  The following resrefs (string format) must match those in the tileset's set file.
+constants:
+  - name: TILESET_RESREF_BEHOLDER_CAVES
+    value: tib01
+    desc: | 
+      Beholder Caves
+  - name: TILESET_RESREF_CASTLE_INTERIOR
+    value: tic01
+    desc: | 
+      Castle Interior
+  - name: TILESET_RESREF_CITY_EXTERIOR
+    value: tcn01
+    desc: | 
+      City Exterior
+  - name: TILESET_RESREF_CITY_INTERIOR
+    value: tin01
+    desc: | 
+      City Interior
+  - name: TILESET_RESREF_CRYPT
+    value: tdc01
+    desc: | 
+      Crypt
+  - name: TILESET_RESREF_DESERT
+    value: ttd01
+    desc: | 
+      Desert
+  - name: TILESET_RESREF_DROW_INTERIOR
+    value: tid01
+    desc: | 
+      Drow Interior
+  - name: TILESET_RESREF_DUNGEON
+    value: tde01
+    desc: | 
+      Dungeon
+  - name: TILESET_RESREF_FOREST
+    value: ttf01
+    desc: | 
+      Forest
+  - name: TILESET_RESREF_FROZEN_WASTES
+    value: tti01
+    desc: | 
+      Frozen Wastes
+  - name: TILESET_RESREF_ILLITHID_INTERIOR
+    value: tii01
+    desc: | 
+      Illithid Interior
+  - name: TILESET_RESREF_MICROSET
+    value: tms01
+    desc: | 
+      Microset
+  - name: TILESET_RESREF_MINES_AND_CAVERNS
+    value: tdm01
+    desc: | 
+      Mines and Caverns
+  - name: TILESET_RESREF_RUINS
+    value: tdr01
+    desc: | 
+      Ruins
+  - name: TILESET_RESREF_RURAL
+    value: ttr01
+    desc: | 
+      Rural
+  - name: TILESET_RESREF_RURAL_WINTER
+    value: tts01
+    desc: | 
+      Rural Winter
+  - name: TILESET_RESREF_SEWERS
+    value: tds01
+    desc: | 
+      Sewers
+  - name: TILESET_RESREF_UNDERDARK
+    value: ttu01
+    desc: | 
+      Underdark
+seealso:
+  functions:
+    - GetTilesetResRef
+author: Mistress
+

@@ -1,0 +1,34 @@
+---
+type: Constants
+category: SKYBOX_*
+shortdesc: | 
+  Skybox constants must match those in the skyboxes.2da file. They are to be used with the SetSkyBox() function.
+constants:
+  - name: SKYBOX_DESERT_CLEAR
+    value: 3
+    desc: | 
+      A clear desert skybox, useful on any of the outdoor desert tilesets (one of which comes with Shadows of Ulrentide).
+  - name: SKYBOX_GRASS_CLEAR
+    value: 1
+    desc: | 
+      A generic looking, clear-grass skybox. This is best used in a rural-type tileset, but looks fine in any city.
+  - name: SKYBOX_GRASS_STORM
+    value: 2
+    desc: | 
+      This is a dark, thunderstorm-like skybox. It is good to use it in the same places you'd use the GRASS_CLEAR constant, and is useful for anywhere a storm is going on.
+  - name: SKYBOX_ICY
+    value: 5
+    desc: | 
+      A very white, cold and icy looking landscape - best used in the Hordes of the Underdark ice tileset, or with Shadows of Ulrentide's winter rural setting. Goes well with snow.
+  - name: SKYBOX_NONE
+    value: 0
+    desc: | 
+      No skybox. Turns it off. Poof, no sky. Of course, without any GetSkyBox(), why you'd want to make it so a PC just sees nothing (given you have set the fog back far enough) in an area might be hard to judge. No skybox is of course better performance, however.
+  - name: SKYBOX_WINTER_CLEAR
+    value: 4
+    desc: | 
+      This is a clear winter landscape and sky. Best used in Shaodow of Ulrentides winter rural tileset, or any one which is snowing and outdoors. Generally, the Icy one can be a little too...icy for most snow, and this makes it look a lot less like the landscape is actual ice.
+seealso:
+  functions:
+    - GetSkyBox
+    - SetSkyBox

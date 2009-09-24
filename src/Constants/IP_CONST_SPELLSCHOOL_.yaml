@@ -1,0 +1,41 @@
+---
+type: Constants
+category: IP_CONST_SPELLSCHOOL_*
+shortdesc: | 
+  Itemproperty constants relating to spell schools.
+constants:
+  - name: IP_CONST_SPELLSCHOOL_ABJURATION
+    value: 0
+    desc: | 
+      Abjuration spells.
+  - name: IP_CONST_SPELLSCHOOL_CONJURATION
+    value: 1
+    desc: | 
+      Conjuration spells.
+  - name: IP_CONST_SPELLSCHOOL_DIVINATION
+    value: 2
+    desc: | 
+      Divination spells.
+  - name: IP_CONST_SPELLSCHOOL_ENCHANTMENT
+    value: 3
+    desc: | 
+      Enchantment spells.
+  - name: IP_CONST_SPELLSCHOOL_EVOCATION
+    value: 4
+    desc: | 
+      Evocation spells.
+  - name: IP_CONST_SPELLSCHOOL_ILLUSION
+    value: 5
+    desc: | 
+      Illusion spells.
+  - name: IP_CONST_SPELLSCHOOL_NECROMANCY
+    value: 6
+    desc: | 
+      Necromancy spells.
+  - name: IP_CONST_SPELLSCHOOL_TRANSMUTATION
+    value: 7
+    desc: | 
+      Transmutation spells.
+seealso:
+  functions:
+    - ItemPropertySpellImmunitySchool

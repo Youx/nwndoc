@@ -1,0 +1,89 @@
+---
+type: Constants
+category: CREATURE_PART_*
+shortdesc: | 
+  For use with GetCreatureBodyPart() and SetCreatureBodyPart(). These constants must match those in the CAPart.2da
+constants:
+  - name: CREATURE_PART_BELT
+    value: 8
+    desc: | 
+      Belt
+  - name: CREATURE_PART_HEAD
+    value: 20
+    desc: | 
+      Head
+  - name: CREATURE_PART_LEFT_BICEP
+    value: 13
+    desc: | 
+      Left Bicep
+  - name: CREATURE_PART_LEFT_FOOT
+    value: 1
+    desc: | 
+      Left Foot
+  - name: CREATURE_PART_LEFT_FOREARM
+    value: 11
+    desc: | 
+      Left Forearm
+  - name: CREATURE_PART_LEFT_HAND
+    value: 17
+    desc: | 
+      Left Hand
+  - name: CREATURE_PART_LEFT_SHIN
+    value: 3
+    desc: | 
+      Left Shin
+  - name: CREATURE_PART_LEFT_SHOULDER
+    value: 15
+    desc: | 
+      Left Shoulder
+  - name: CREATURE_PART_LEFT_THIGH
+    value: 4
+    desc: | 
+      Left Thigh
+  - name: CREATURE_PART_NECK
+    value: 9
+    desc: | 
+      Neck
+  - name: CREATURE_PART_PELVIS
+    value: 6
+    desc: | 
+      Pelvis
+  - name: CREATURE_PART_RIGHT_BICEP
+    value: 12
+    desc: | 
+      Right Bicep
+  - name: CREATURE_PART_RIGHT_FOOT
+    value: 0
+    desc: | 
+      Right Foot
+  - name: CREATURE_PART_RIGHT_FOREARM
+    value: 10
+    desc: | 
+      Right Forearm
+  - name: CREATURE_PART_RIGHT_HAND
+    value: 16
+    desc: | 
+      Right Hand
+  - name: CREATURE_PART_RIGHT_SHIN
+    value: 2
+    desc: | 
+      Right Shin
+  - name: CREATURE_PART_RIGHT_SHOULDER
+    value: 14
+    desc: | 
+      Right Shoulder
+  - name: CREATURE_PART_RIGHT_THIGH
+    value: 5
+    desc: | 
+      Right Thigh
+  - name: CREATURE_PART_TORSO
+    value: 7
+    desc: | 
+      Torso
+seealso:
+  functions:
+    - GetCreatureBodyPart
+    - SetCreatureBodyPart
+author: Mistress
+editor: KooKoo
+

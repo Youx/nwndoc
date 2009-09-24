@@ -1,0 +1,21 @@
+---
+type: Constants
+category: INVENTORY_DISTURB_TYPE_*
+shortdesc: | 
+  The list of possible ways an inventory can be disturbed.
+constants:
+  - name: INVENTORY_DISTURB_TYPE_ADDED
+    value: 0
+    desc: | 
+      Indicates that an item was added from an inventory.
+  - name: INVENTORY_DISTURB_TYPE_REMOVED
+    value: 1
+    desc: | 
+      Indicates that an item was removed from an inventory.
+  - name: INVENTORY_DISTURB_TYPE_STOLEN
+    value: 2
+    desc: | 
+      Indicates that an item was stolen from an inventory.
+seealso:
+  functions:
+    - GetInventoryDisturbType

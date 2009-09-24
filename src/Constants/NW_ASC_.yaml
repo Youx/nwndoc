@@ -1,0 +1,65 @@
+---
+type: Constants
+category: NW_ASC_*
+shortdesc: | 
+  Covers miscellaneous skills and settings not categorized into other subgroups. These are not actually constants, and do not exist in nwscript.nss.
+requirements: |
+  #include "x0_i0_assoc"
+
+constants:
+  - name: NW_ASC_DISARM_TRAPS
+    value: 0x00004000
+    desc: | 
+      Causes the NPC associate to automatically disarm traps that are spotted by the NPC or associated master.
+  - name: NW_ASC_HAVE_MASTER
+    value: 0x80000000
+    desc: | 
+      Used to determine if an NPC associate currently has a master.
+  - name: NW_ASC_IS_BUSY
+    value: 0x40000000
+    desc: | 
+      Used to determine if an NPC associate is currently busy. Busy only occurs when they are bashing or picking a lock.
+  - name: NW_ASC_MASTER_GONE
+    value: 0x10000000
+  - name: NW_ASC_MASTER_REVOKED
+    value: 0x20000000
+  - name: NW_ASC_MODE_DEFEND_MASTER
+    value: 0x04000000
+    desc: | 
+      Used to set the NPC associate to guard the master. AttackNearest removes this setting if it is set.
+  - name: NW_ASC_MODE_DYING
+    value: 0x00010000
+    desc: | 
+      Playing Dead mode, used to make sure the associate is not targeted while dying.
+  - name: NW_ASC_MODE_STAND_GROUND
+    value: 0x08000000
+    desc: | 
+      Causes the NPC associate to ignore move to object during the OnHeartbeat event. If this is set to false, the NPC associate is in follow mode.
+  - name: NW_ASC_OVERKILL_CASTING
+    value: 0x00000400
+    desc: | 
+      Causes the NPC associate to use the maximum combat rating spell currently available at their current level.
+  - name: NW_ASC_POWER_CASTING
+    value: 0x00000800
+    desc: | 
+      Causes the NPC associate to use double combat rating spells, if available.
+  - name: NW_ASC_RETRY_OPEN_LOCKS
+    value: 0x00000200
+    desc: | 
+      Automatically forces the NPC associate to retry opening a failed open lock attempt by the master ("I can pick that in no time!; Aye, its done!").
+  - name: NW_ASC_SCALED_CASTING
+    value: 0x00001000
+    desc: | 
+      Causes the NPC associate to use spells at combat rating plus 4 (CR + 4), if available.
+  - name: NW_ASC_USE_CUSTOM_DIALOGUE
+    value: 0x00002000
+    desc: | 
+      Causes the NPC associate to use a specified custom dialogue conversation script.
+  - name: NW_ASC_USE_RANGED_WEAPON
+    value: 0x00008000
+    desc: | 
+      Causes the NPC associate to use ranged weapons instead of melee attacks. When setting this state, its also probably a good idea to enable NW_ASC_DISTANCE_6_METERS for following distance.
+seealso:
+  functions:
+    - GetAssociateState
+    - SetAssociateState

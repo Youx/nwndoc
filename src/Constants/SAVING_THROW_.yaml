@@ -1,0 +1,27 @@
+---
+type: Constants
+category: SAVING_THROW_*
+shortdesc: | 
+  Core saving throws.
+constants:
+  - name: SAVING_THROW_ALL
+    value: 0
+    desc: | 
+      All saving throws (Fortitude, Reflex, Will).
+  - name: SAVING_THROW_FORT
+    value: 1
+    desc: | 
+      Fortitude saving throw.
+  - name: SAVING_THROW_REFLEX
+    value: 2
+    desc: | 
+      Reflex saving throw.
+  - name: SAVING_THROW_WILL
+    value: 3
+    desc: | 
+      Will saving throw.
+seealso:
+  functions:
+    - EffectSavingThrowDecrease
+    - EffectSavingThrowIncrease
+    - MySavingThrow

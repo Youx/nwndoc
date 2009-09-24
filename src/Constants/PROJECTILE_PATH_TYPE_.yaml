@@ -1,0 +1,33 @@
+---
+type: Constants
+category: PROJECTILE_PATH_TYPE_*
+shortdesc: | 
+  Different types of project paths (the path a missile weapon or other projectile follows as it travels).
+constants:
+  - name: PROJECTILE_PATH_TYPE_ACCELERATING
+    value: 4
+    desc: | 
+      Increases in speed as the projectile travels its path to its destination.
+  - name: PROJECTILE_PATH_TYPE_BALLISTIC
+    value: 2
+    desc: | 
+      Fires in a arc - like a catapult would - to the target.
+  - name: PROJECTILE_PATH_TYPE_DEFAULT
+    value: 0
+    desc: | 
+      Standard path.
+  - name: PROJECTILE_PATH_TYPE_HIGH_BALLISTIC
+    value: 3
+    desc: | 
+      As ballistic, but a much higher arc.
+  - name: PROJECTILE_PATH_TYPE_HOMING
+    value: 1
+    desc: | 
+      Follows a target.
+seealso:
+  functions:
+    - ActionCastFakeSpellAtLocation
+    - ActionCastFakeSpellAtObject
+    - ActionCastSpellAtLocation
+    - ActionCastSpellAtObject
+    - TriggerProjectileTrap

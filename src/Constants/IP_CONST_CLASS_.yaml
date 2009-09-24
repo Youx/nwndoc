@@ -1,0 +1,54 @@
+---
+type: Constants
+category: IP_CONST_CLASS_*
+shortdesc: | 
+  Itemproperty constants relating to classes.
+constants:
+  - name: IP_CONST_CLASS_BARBARIAN
+    value: 0
+    desc: | 
+      Barbarian.
+  - name: IP_CONST_CLASS_BARD
+    value: 1
+    desc: | 
+      Bard.
+  - name: IP_CONST_CLASS_CLERIC
+    value: 2
+    desc: | 
+      Cleric.
+  - name: IP_CONST_CLASS_DRUID
+    value: 3
+    desc: | 
+      Druid.
+  - name: IP_CONST_CLASS_FIGHTER
+    value: 4
+    desc: | 
+      Fighter.
+  - name: IP_CONST_CLASS_MONK
+    value: 5
+    desc: | 
+      Monk.
+  - name: IP_CONST_CLASS_PALADIN
+    value: 6
+    desc: | 
+      Paladin
+  - name: IP_CONST_CLASS_RANGER
+    value: 7
+    desc: | 
+      Ranger.
+  - name: IP_CONST_CLASS_ROGUE
+    value: 8
+    desc: | 
+      Rogue.
+  - name: IP_CONST_CLASS_SORCERER
+    value: 9
+    desc: | 
+      Sorcerer.
+  - name: IP_CONST_CLASS_WIZARD
+    value: 10
+    desc: | 
+      Wizard.
+seealso:
+  functions:
+    - ItemPropertyBonusLevelSpell
+    - ItemPropertyLimitUseByClass

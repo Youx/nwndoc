@@ -1,0 +1,30 @@
+---
+type: Constants
+category: GENDER_*
+shortdesc: | 
+  List of genders
+constants:
+  - name: GENDER_BOTH
+    value: 2
+    desc: | 
+      Specifies the male and female gender.
+  - name: GENDER_FEMALE
+    value: 1
+    desc: | 
+      Specifies the female gender.
+  - name: GENDER_MALE
+    value: 0
+    desc: | 
+      Specifies the male gender.
+  - name: GENDER_NONE
+    value: 4
+    desc: | 
+      Specifies the lack of gender.
+  - name: GENDER_OTHER
+    value: 3
+    desc: | 
+      Specifies a gender that isn't male or female (or none).
+seealso:
+  functions:
+    - GetGender
+    - GetStringByStrRef

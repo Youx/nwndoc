@@ -1,0 +1,13 @@
+---
+type: Constants
+category: IP_CONST_AMMOTYPE_*
+shortdesc: | 
+  Different types of ranged ammuniations.
+constants:
+  - name: IP_CONST_AMMOTYPE_ARROW
+    value: 0
+  - name: IP_CONST_AMMOTYPE_BOLT
+    value: 1
+  - name: IP_CONST_AMMOTYPE_BULLET
+    value: 2
+seealso:

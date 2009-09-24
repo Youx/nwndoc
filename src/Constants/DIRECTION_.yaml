@@ -1,0 +1,25 @@
+---
+type: Constants
+category: DIRECTION_*
+shortdesc: | 
+  Used for determining compass direction.
+constants:
+  - name: DIRECTION_EAST
+    value: 0.0
+    desc: | 
+      East.
+  - name: DIRECTION_NORTH
+    value: 90.0
+    desc: | 
+      North.
+  - name: DIRECTION_SOUTH
+    value: 270.0
+    desc: | 
+      South.
+  - name: DIRECTION_WEST
+    value: 180.0
+    desc: | 
+      West.
+seealso:
+  functions:
+    - SetFacing

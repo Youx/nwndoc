@@ -1,0 +1,40 @@
+---
+type: Constants
+category: ALIGNMENT_*
+shortdesc: | 
+  Alignment settings (covers both ethos and disposition).
+constants:
+  - name: ALIGNMENT_ALL
+    value: 0
+    desc: | 
+      Symbolizes any of the standard alignment settings and performs different effects dependent upon the calling function.
+  - name: ALIGNMENT_CHAOTIC
+    value: 3
+    desc: | 
+      Chaotic characters follow their consciences, resent being told what to do, favor new ideas over tradition, and do what they promise if they feel like it. The chaotic ethos includes the three standard dispositions good (CG - "Rebel"), neutral (CN - "Free Spirit"), and evil (CE - "Destroyer").
+  - name: ALIGNMENT_EVIL
+    value: 5
+    desc: | 
+      Evil implies hurting, oppressing, and killing others, whether for fun or profit.
+  - name: ALIGNMENT_GOOD
+    value: 4
+    desc: | 
+      Good implies altruism, respect for life, and a concern for the dignity of sentient beings.
+  - name: ALIGNMENT_LAWFUL
+    value: 2
+    desc: | 
+      Lawful characters tell the truth, keep their word, respect authority, honor tradition, and judge those who fall short of their duties. The lawful ethos includes the three standard dispositions: good (LG - "Crusader"), neutral (LN - "Judge"), and evil (LE - "Dominator").
+  - name: ALIGNMENT_NEUTRAL
+    value: 1
+    desc: | 
+      This constant represents both the ethos and disposition of neutral. Characters who are neutral in ethos have a normal respect for authority and feel nether a compulsion to obey nor to rebel. The neutral ethos includes the three standard dispositions good (NG - "Benefactor"), neutral (N, "Undecided"), and evil (NE - "Malefactor").
+seealso:
+  functions:
+    - AdjustAlignment
+    - AdjustAlignmentOnAll
+    - CreateProtectionFromAlignmentLink
+    - DoGiveXP
+    - GetAlignmentGoodEvil
+    - GetAlignmentLawChaos
+    - RewardXP
+    - VersusAlignmentEffect
