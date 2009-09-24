@@ -6,25 +6,30 @@ require 'fileutils'
 
 # Included
 require 'lib/highlight'
-require 'lib/albino'
+#require 'lib/albino'
 
 # Gems
 require 'RedCloth'
 require 'liquid'
 require 'json'
 
+# Change this to output to a different directory
 PREFIX_DIR = 'output'
 
+# Directory containing templates - do not change
+TEMPLATE_DIR = 'templates'
+
+# The sources for the YAML and files we copy
 SRC_YAML = FileList['src/Functions/*.yaml','src/Constants/*.yaml']
 SRC_COPY = FileList['index.html','panel/index.html','js/*.js','css/*.css','i/*.png','README.html']
 
+# The outputs from the YAML and files we copy
 OUT_HTML = SRC_YAML.collect{|x| x.sub('src',PREFIX_DIR).ext('html')}
 OUT_COPY = SRC_COPY.collect{|x| File.join(PREFIX_DIR, x)}
-
-TEMPLATE_DIR = 'templates'
 SEARCH_INDEX_JS = File.join('output','panel','search_index.js')
 TREE_JS = File.join('output','panel','tree.js')
 
+# Load the templates only once
 TEMPLATES = {
   :functions => [
     Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'functions.liquid'))),
@@ -42,7 +47,8 @@ directory File.join(PREFIX_DIR, 'css')
 directory File.join(PREFIX_DIR, 'js')
 directory File.join(PREFIX_DIR, 'i')
 
-
+# For each type of doc, we have a class with the same name
+# as the directory
 class Functions
   def Functions.searchIndex(data)
     return [data['name'].downcase]
@@ -59,7 +65,7 @@ class Functions
   
   def Functions.tree_els(data)
     return [[data['name'], "Functions/#{data['name']}.html","",[]]]
-	end
+  end
 	
   def Functions.tree_parents(data)
     return data['seealso']['categories'].collect do |c|
@@ -82,7 +88,6 @@ class Functions
       		o.write(render2)
       	end
       end
-      print('F')
     end
   end
 end
@@ -131,12 +136,11 @@ class Constants
   	  		o.write(render2)
   	  	end
   	  end
-  	  print('C')
   	end
   end
 end
 
-# Instructions on how to generate search_index.js
+# Instructions on how to generate output/panel/search_index.js
 file SEARCH_INDEX_JS => [File.join(PREFIX_DIR,'panel'), SRC_YAML].flatten do
   search_data = {}
   search_data['badges'] = ['nwn']
@@ -161,6 +165,7 @@ file SEARCH_INDEX_JS => [File.join(PREFIX_DIR,'panel'), SRC_YAML].flatten do
   end
 end
 
+# Instructions on how to generate output/panel/tree.js
 file TREE_JS => [File.join(PREFIX_DIR,'panel'), SRC_YAML].flatten do
   tree = []
   SRC_YAML.each do |src|

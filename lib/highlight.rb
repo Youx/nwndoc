@@ -1,7 +1,8 @@
 require 'rubygems'
+require 'coderay'
 require 'liquid'
 
-require 'lib/albino'
+require 'lib/nwnlexer.rb'
 
 class HighlightBlock < Liquid::Block
     include Liquid::StandardFilters
@@ -25,11 +26,11 @@ class HighlightBlock < Liquid::Block
     end
 
     def render(context)
-      render_pygments(context, super.to_s)
+      render_coderay(context, super.to_s)
     end
 
-    def render_pygments(context, code)
-      return "<notextile>" + Albino.new(code, @lang).to_s(@options) + "</notextile>"
+    def render_coderay(context, code)
+      return "<notextile>" + CodeRay.scan(code, :nwn).div(:css => :class) + "</notextile>"
     end
 end
 
