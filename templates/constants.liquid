@@ -16,10 +16,11 @@ h4. Constants List
 {% for c in constants.constants %}|<. {{c.name}} |=. {{c.value}} |<>. {{c.desc}} |
 {% endfor %}
 
-
+{% if constants.author or constants.editor or constants.additional_contributors %}
 h4. From NWNLexicon thanks to :
 
 {% if constants.author %}Author : {{constants.author}}
 {% endif %}{% if constants.editor %}Editor : {{constants.editor}}
 {% endif %}{% if constants.additional_contributors %}Additional Contributors : {{constants.additional_contributors | join: ', '}}
+{% endif %}
 {% endif %}

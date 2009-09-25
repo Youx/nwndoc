@@ -25,9 +25,11 @@ h4. Example
 {% endhighlight %}
 {% endif %}
 
+{% if event.author or event.editor or event.additional_contributors %}
 h4. From NWNLexicon thanks to :
 
 {% if constants.author %}Author : {{constants.author}}
 {% endif %}{% if constants.editor %}Editor : {{constants.editor}}
 {% endif %}{% if constants.additional_contributors %}Additional Contributors : {{constants.additional_contributors | join:', '}}
+{% endif %}
 {% endif %}

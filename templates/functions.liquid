@@ -44,9 +44,11 @@ h4. Example
 {% endhighlight %}
 {% endif %}
 
+{% if function.author or function.editor or function.additional_contributors %}
 h4. From NWNLexicon thanks to :
 
 {% if function.author %}Author : {{function.author}}
 {% endif %}{% if function.editor %}Editor : {{function.editor}}
 {% endif %}{% if function.additional_contributors %}Additional Contributors : {{function.additional_contributors | join: ', '}}
+{% endif %}
 {% endif %}
