@@ -1,0 +1,15 @@
+---
+type: Function
+name: OnPlayerRespawn
+description: | 
+  The script attached to this event fires when the player selected the "Respawn" button after dying. Normally the player would respawn where he or she died with no penalties and back to full health; however it typically makes sense to teleport the PC back to another area (or save location if this is a party-based module so as not to annoy the other players) and hit them for an XP and/or gold penalty.
+trigger: A player pressed the "Respawn" button on the "Death GUI Panel" popup dialog after dying.
+remarks: |
+  The script "nw_o0_respawn" resurrects the PC, removes all adverse effects, and applies a XP and gold penalty. Also determines if there is a waypoint tagged "NW_DEATH_TEMPLE" and teleports the PC there. If there is no "NW_DEATH_TEMPLE" waypoint, then the PC is resurrected where he fell.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetLastRespawnButtonPresser

@@ -1,0 +1,15 @@
+---
+type: Function
+name: OnUsed
+description: | 
+  The script attached to this event fires when an item is used. This can be used to open a door or set off a trap when a lever is pulled or a brazier is extinguished.
+trigger: When a placeable object is used.
+remarks: |
+  You can use DoPlaceableObjectAction to make a lever move position (EG: On or Off), and SetPlaceableIllumination can turn on/off a light source, for example, a brazier.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Placeable Object
+  functions:
+    - GetLastUsedBy

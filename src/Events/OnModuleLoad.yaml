@@ -1,0 +1,12 @@
+---
+type: Function
+name: OnModuleLoad
+description: | 
+  The script attached to this event fires when the module is first loaded. This is a good place to initialize any variables that need to be initialized.
+trigger: When a module is initially loaded.
+  Remarks
+  For 1.60+, for new modules a default script called x2_mod_def_load will be put in this event hook, which is required for Use Magical Device settings to be set, as well as other module settings. This is not required, however.
+seealso:
+  categories:
+    - Objects with Events
+    - Module

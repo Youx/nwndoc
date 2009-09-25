@@ -1,0 +1,12 @@
+---
+type: Function
+name: OnOpenStore
+description: | 
+  The script attached to this event occurs whenever a merchant is opened.
+trigger: When a merchant is opened by a PC.
+seealso:
+  categories:
+    - Objects with Events
+    - Merchant
+  functions:
+    - GetLastOpenedBy

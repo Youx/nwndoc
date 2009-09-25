@@ -1,0 +1,33 @@
+---
+type: Function
+name: OnOpen
+description: | 
+  The script attached to this event fires when an object has been opened.
+trigger: Door or placeable object was opened.
+remarks: |
+  Only placeable objects with inventories (has the "Has Inventory" check box checked) can be opened. If a placable object is opened, it doesn't mean anything has been, will be, or might be taken from it. Also, there is no real way to set a state of a placable - unlike a door, which can be closed again. Placables are only closed if the creature opening them is stopped (ClearAllActions()), killed, removed, or moves away and so forth.
+
+example: |
+  // In an doors On Open event, we close ourselves after 15 seconds
+  // because of drafts.
+  void CloseMe()
+  {
+      // Can't close ourselves twice
+      if(GetIsOpen(OBJECT_SELF))
+      {
+          ActionCloseDoor(OBJECT_SELF);
+          SpeakString("*A draft closes this door*);
+      }
+  }
+  void main()
+  {
+      // 15 second delay in the On Open event.
+      DelayCommand(15.0, CloseMe());
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Door
+    - Placeable Object
+  functions:
+    - GetLastOpenedBy

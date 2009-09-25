@@ -1,0 +1,48 @@
+---
+type: Function
+name: OnAreaTransitionClick
+description: | 
+  The script attached to this event fires when the PC enters an area transition. If a script is specified for this event then you are responsible for setting up and performing the transition manually, as the default transition will no longer function.
+trigger: When an area transition has been entered.
+remarks: |
+  OnAreaTransitionClick applies only to doors, not to areas. If this script is not specified, then the default file NW_G0_Transition will fire.
+
+example: |
+  // Take the clicking object on the door to a waypoint "EVIL" if they are evil,
+  // "GOOD" if they are good, and "NEUTRAL" if they are neutral.
+  // It is a simple alignment-based example to move them.
+  void main()
+  {
+      // Get PC clicker
+      object oPC = GetClickingObject();
+      // Get thier alignment
+      int nAlignment = GetAlignmentGoodEvil(oPC);
+      // Declare target waypoint
+      object oTarget;
+      // Evil
+      if(nAlignment == ALIGNMENT_EVIL)
+      {
+          oTarget = GetWaypointByTag("EVIL");
+      }
+      // Good
+      else if(nAlignment == ALIGNMENT_GOOD)
+      {
+          oTarget = GetWaypointByTag("GOOD");
+      }
+      // Else must be neutral
+      else
+      {
+          oTarget = GetWaypointByTag("NEUTRAL");
+      }
+      // Move oPC, the Player, to oTarget
+      AssignCommand(oPC, JumpToObject(oTarget));
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Door
+    - Trigger
+  functions:
+    - GetClickingObject
+    - GetEnteringObject
+    - GetTransitionTarget

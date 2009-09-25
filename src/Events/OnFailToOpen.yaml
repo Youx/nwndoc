@@ -1,0 +1,25 @@
+---
+type: Function
+name: OnFailToOpen
+description: | 
+  The script attached to this event fires when an attempt to open a door fails which could signal another event to spawn creatures to investigate the noise, notify the opening that they need a key or the door cannot be opened by normal means, or a variety of other things.
+trigger: A creature failing to open a door, due to it being locked somehow.
+remarks: |
+  This mainly is useful for feedback - or a special kind of key, or triggering a special "locked door" conversation. Unlike On Open or On Closed, this will fire when they cannot open a door. It doesn't seem to be the case that you can force a door to stay open - therefore, any door that has this event fired must basically be closed already. For this event to fire, the minimum requirements are that it is open, and is locked (GetIsLocked() == TRUE). These two should always be true when the script fires. Note: Whenever a door is locked, and thusly this event fires, there is always a clunk, handle rattle and so on, even if you allow the door to then open. Adding a conversation (do you wish to use XXX to open this door?) helps make it a little less odd.
+
+example: |
+  // example by Fred Brent
+  void main()
+  {
+      object oPC = GetClickingObject();
+      if (GetIsObjectValid(oPC))
+          AssignCommand(oPC, SpeakString("I need to find the key..."));
+      else
+          SpeakString("NO VALID TEMP PC");
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Door
+  functions:
+    - GetClickingObject

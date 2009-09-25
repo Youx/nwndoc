@@ -1,0 +1,18 @@
+---
+type: Function
+name: OnDisturbed
+description: | 
+  The script attached to this event fires when the inventory of the object is changed at all. The inventory can be disturbed by a pickpocket attempt or the removal of items from a placeable object.
+trigger: Something has been added or removed from a creature's or placeable object's inventory.
+remarks: |
+  Since a creature can't have an item added or remove from its inventory (it's not a container), then if its inventory is disturbed something must have been stolen. The creature finds a valid target and attacks.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+    - Placeable Object
+  functions:
+    - GetInventoryDisturbItem
+    - GetInventoryDisturbType
+    - GetLastDisturbed

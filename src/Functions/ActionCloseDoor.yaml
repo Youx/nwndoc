@@ -13,7 +13,7 @@ description: |
   This same function can be attached to a door object to have it close itself. (oDoor=OBJECT_SELF)
 version: 1.61
 example: |
-  From David Gaider's scripting FAQ and tutorial:
+  // From David Gaider's scripting FAQ and tutorial:
   // set in a door's OnHeartbeat script, this will cause
   // it to close and lock itself at dusk
   // and unlock itself at dawn

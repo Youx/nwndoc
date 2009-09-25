@@ -20,14 +20,14 @@ PREFIX_DIR = 'output'
 TEMPLATE_DIR = 'templates'
 
 # The sources for the YAML and files we copy
-SRC_YAML = FileList['src/Functions/*.yaml','src/Constants/*.yaml']
+SRC_YAML = FileList['src/Functions/*.yaml','src/Constants/*.yaml','src/Events/*.yaml']
 SRC_COPY = FileList['index.html','panel/index.html','js/*.js','css/*.css','i/*.png','README.html']
 
 # The outputs from the YAML and files we copy
 OUT_HTML = SRC_YAML.collect{|x| x.sub('src',PREFIX_DIR).ext('html')}
 OUT_COPY = SRC_COPY.collect{|x| File.join(PREFIX_DIR, x)}
-SEARCH_INDEX_JS = File.join('output','panel','search_index.js')
-TREE_JS = File.join('output','panel','tree.js')
+SEARCH_INDEX_JS = File.join(PREFIX_DIR,'panel','search_index.js')
+TREE_JS = File.join(PREFIX_DIR,'panel','tree.js')
 
 # Load the templates only once
 TEMPLATES = {
@@ -36,12 +36,16 @@ TEMPLATES = {
     Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'functions.html')))],
   :constants => [
     Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'constants.liquid'))),
-    Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'constants.html')))]
+    Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'constants.html')))],
+  :events => [
+    Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'events.liquid'))),
+    Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'events.html')))],
 }
 
 directory PREFIX_DIR
 directory File.join(PREFIX_DIR, 'Functions')
 directory File.join(PREFIX_DIR, 'Constants')
+directory File.join(PREFIX_DIR, 'Events')
 directory File.join(PREFIX_DIR, 'panel')
 directory File.join(PREFIX_DIR, 'css')
 directory File.join(PREFIX_DIR, 'js')
@@ -78,7 +82,8 @@ class Functions
   end
   
   def Functions.generate(src, out)
-    file out => [File.join(PREFIX_DIR, 'Functions'), src] do
+    file out => [File.join(TEMPLATE_DIR, 'functions.liquid'), File.join(TEMPLATE_DIR, 'functions.html'),
+      File.join(PREFIX_DIR, 'Functions'), src] do
       File.open(src) do |f|
         data=YAML::load(f)
         render1 = TEMPLATES[:functions][0].render('function' => data)
@@ -87,6 +92,7 @@ class Functions
       	File.open(out,'w') do |o|
       		o.write(render2)
       	end
+        puts("Generating #{out}")
       end
     end
   end
@@ -126,7 +132,8 @@ class Constants
   end
   
   def Constants.generate(src, out)
-    file out => [File.join(PREFIX_DIR, 'Constants'), src] do
+    file out => [File.join(TEMPLATE_DIR, 'constants.liquid'), File.join(TEMPLATE_DIR, 'constants.html'),
+      File.join(PREFIX_DIR, 'Constants'), src] do
       File.open(src) do |f|
         data=YAML::load(f)
         render1 = TEMPLATES[:constants][0].render('constants' => data)
@@ -136,7 +143,55 @@ class Constants
   	  		o.write(render2)
   	  	end
   	  end
+	  puts("Generating #{out}")
   	end
+  end
+end
+
+# For each type of doc, we have a class with the same name
+# as the directory
+class Events
+  def Events.searchIndex(data)
+    return [data['name'].downcase]
+  end
+  
+  def Events.longSearchIndex(data)
+    return [data['name'].downcase]
+  end
+  
+  def Events.info(data)
+    return [[ data['name'], data["seealso"]["categories"].join(' / '), 
+      "Events/#{data['name']}.html", "", data['description'], 1,0]]
+  end
+  
+  def Events.tree_els(data)
+    return [[data['name'], "Events/#{data['name']}.html","",[]]]
+  end
+	
+  def Events.tree_parents(data)
+    return data['seealso']['categories'].collect do |c|
+      [c, "", "", []]
+    end
+  end
+  
+  def Events.tree_base()
+    return ["Events","README.html","",[]]
+  end
+  
+  def Events.generate(src, out)
+    file out => [File.join(TEMPLATE_DIR, 'events.liquid'), File.join(TEMPLATE_DIR, 'events.html'),
+      File.join(PREFIX_DIR, 'Events'), src] do
+      File.open(src) do |f|
+        data=YAML::load(f)
+        render1 = TEMPLATES[:events][0].render('event' => data)
+        redcloth = RedCloth.new(render1).to_html
+      	render2 = TEMPLATES[:events][1].render('content' => redcloth, 'event' => data)
+      	File.open(out,'w') do |o|
+      		o.write(render2)
+      	end
+        puts("Generating #{out}")
+      end
+    end
   end
 end
 
@@ -212,7 +267,7 @@ SRC_COPY.each do |srcfile|
   outfile = File.join(PREFIX_DIR, srcfile)
   parent_dir = File.dirname(outfile)
   file outfile => [parent_dir, srcfile] do
-    FileUtils.cp(srcfile, outfile)
+    cp(srcfile, outfile)
   end
 end
 

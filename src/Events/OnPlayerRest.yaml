@@ -1,0 +1,29 @@
+---
+type: Function
+name: OnPlayerRest
+description: | 
+  The script attached to this event fires when a player attempts to rest, cancels resting, or resting is finished. It can be used to spawn some creatures around the PC to constantly badger him or her and prevent a successful rest in some areas or prevent natural healing altogether from a curse bestowed upon the player.
+trigger: When the player presses the "Rest" button (starting or cancelling a rest) or when the rest is finished. ActionRest will fire this, but ForceRest will not.
+remarks: |
+  If you want to control when a PC can rest, capture this event when GetLastRestEventType() returns REST_EVENTTYPE_REST_STARTED; then use AssignCommand() on the PC to ClearAllActions(). This prevents the attempted rest from completing. This event fires twice: once when the rest event begins, and again when it ends. Therefore, any scripts used for this event will execute twice, and any effects created by them will be duplicated. Use the GetLastRestEventType() function and the REST_EVENTTYPE_REST_* constants to determine which stage of the resting event is taking place.
+
+example: |
+  // prevents a PC from resting
+  // period
+  void main()
+  {
+       object oPC = GetLastPCRested();
+       // capture begin rest attempts
+       if (GetLastRestEventType() == REST_EVENTTYPE_REST_STARTED)
+       {
+            // fun, fun, fun!
+            AssignCommand(oPC, ClearAllActions());
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetLastPCRested
+    - GetLastRestEventType

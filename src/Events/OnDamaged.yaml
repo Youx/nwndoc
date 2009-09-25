@@ -1,0 +1,53 @@
+---
+type: Function
+name: OnDamaged
+description: | 
+  The script attached to this event fires when the object is damaged.
+trigger: Creature, door, or placeable object has lost hit points, apart from instant death.
+remarks: |
+  If a creature was hurt by someone they cannot see, they attempt to search for the attacker; if they can see their attacker, they locate the target and attack it.
+
+bugs: |
+  GetDamageDealtByType will only return damage amounts for EffectDamage, and so no phisical attack damage will be picked up.
+
+example: |
+  // place in a creature's OnDamaged event
+  // when the creature loses more than half of his hit points, he
+  // will retreat to a waypoint tagged "CAVE_EXIT" and disappear
+  void main()
+  {
+       int nEvent = GetUserDefinedEventNumber();
+       if (nEvent = 1006) // OnDamaged event
+       {
+            int nMaxHP = GetMaxHitPoints(); // OBJECT_SELF (the caller) is default
+            int nCurHP = GetCurrentHitPoints(); // OBJECT_SELF (the caller) is default
+            // if less than half of maximum
+            if (nCurHP < (nMaxHP / 2))
+            {
+                 // stop whatever the creature is doing
+                 ClearAllActions();
+                 // cry out in fear
+                 ActionSpeakString("I'm being violated!");
+                 // get the hell outta Dodge
+                 ActionMoveToObject(GetObjectByTag("CAVE_EXIT"), TRUE);
+                 // destroy itself (simulate a clean getaway)
+                 ActionDoCommand(DestroyObject(OBJECT_SELF));
+                 // accept no further AI commands (destroyed!)
+                 SetCommandable(FALSE);
+            }
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+    - Door
+    - Placeable Object
+  functions:
+    - DetermineCombatRound
+    - GetCurrentHitPoints
+    - GetCurrentHitPoints
+    - GetDamageDealtByType
+    - GetLastDamager
+    - GetMaxHitPoints
+    - GetTotalDamageDealt

@@ -1,0 +1,31 @@
+---
+type: Function
+name: OnClientEnter
+description: | 
+  The script attached to this event fires when a client enters the module. This can be used to perform some initialization of variables for a particular PC or reset encounters.
+trigger: Whenever a player logs into a server or starts the module. It does not fire when a player loads up a singleplayer (only) module.
+remarks: |
+  All of the items that the PC possesses are re-acquired, causing the module's OnAcquireItem event to fire for each of those items. This means that, if you're using some item restriction script OnAcquireItem, you won't have to put it in OnClientEnter - it is ALL taken care off :) Please also note that you can NOT assign actions to the PC (say, equipping a nice shiny sword you create) until a PC is in an area - fully loaded. If you do (by the use of AssignCommand()) it will usually fully crash the client (or the game itself). This is not a bug, but will happen anytime an action is assigned to a PC when they are in "void" when loading. The reason for the above occuring is the fact this event fires before the PC has loaded any areas - and as soon as they choose thier PC character file to use, while the OnEnter event for Area's only fires when a PC finally appears into an area and has loaded it. To assign the equipping of such items a suitable OnEnter event for the start area of a module would work. In addition, although it requires a lot more testing (because of various load times differing) a delayed assigned command can work. The best way, but most complicated, is a short-delayed check of the area the PC is in - if GetIsObjectValid(GetArea(GetEnteringObject())) is TRUE, then any AssignCommands() will work fine. If FALSE, it might still crash the game.
+
+bugs: |
+  GetExitingObject() doesn't return a valid object that you can assign a database value to.
+
+example: |
+  // logs the login name and IP address of the player who just
+  // joined the server (or started the module)
+  void main()
+  {
+       object oPC = GetEnteringObject();
+       if (GetIsPC(oPC))
+       {
+            PrintString(GetPCPlayerName(oPC) + " (" +
+                 GetPCIPAddress(oPC) + ")"
+            );
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetEnteringObject

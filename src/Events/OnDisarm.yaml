@@ -1,0 +1,27 @@
+---
+type: Function
+name: OnDisarm
+description: | 
+  The script attached to this event fires when a trap has been successfully disarmed. This could be used to award experience points or make it easier to discover other traps of similiar design.
+trigger: When a trap has been disarmed, always when it is disarmed and sometimes when you recover a trap (see Remarks, below).
+bugs: |
+  When used with a trap placed on a door, the OnDisarm event fires both when you disable the trap, and when you recover the trap. A standard trap (trigger on the floor) only fires when you disarm, not recover the trap.
+
+example: |
+  // awards the disarming creature/PC 1000 XP for successfully
+  // disarming a trap when this script it placed in the trap's 
+  // OnDisarm event
+  void main()
+  {
+       object oPC = GetLastDisarmed();
+       if (GetIsPC(oPC))
+       {
+            GiveXPToCreature(oPC, 1000);
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Trap
+  functions:
+    - GetLastDisarmed

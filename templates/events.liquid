@@ -1,0 +1,26 @@
+
+{% if event.description %}
+h4. Description
+
+{{ event.description }}
+{% endif %}
+
+{% if event.remarks %}
+h4. Remarks
+
+{{ event.remarks }}
+{% endif %}
+
+{% if event.bugs %}
+h4. Known bugs
+
+{{ event.bugs }}
+{% endif %}
+
+{% if event.example %}
+h4. Example
+
+{% highlight nw %}
+{{ event.example }}
+{% endhighlight %}
+{% endif %}

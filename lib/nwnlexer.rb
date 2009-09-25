@@ -9,15 +9,15 @@ module Scanners
 
     RESERVED_WORDS = [
       'break', 'case', 'continue', 'default', 'do', 'else',
-      'for', 'if', 'return', 'switch', 'while',
-      'static', 'auto',
-      'const',
+      'for', 'if', 'return', 'switch', 'while', 'struct',
+      'static', 'auto', 'const'
     ]
 
     PREDEFINED_TYPES = [
-      'int', 'string', 'void',
-      'float', 'location', 'effect', 'action',
-      'bool', 'object'
+      'action', 'command',
+      'effect', 'event', 'float', 'int',
+      'itemproperty', 'location', 'object',
+      'string', 'vector', 'void'
     ]
 
     PREDEFINED_CONSTANTS = [

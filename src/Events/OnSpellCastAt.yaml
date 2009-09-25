@@ -1,0 +1,23 @@
+---
+type: Function
+name: OnSpellCastAt
+description: | 
+  The script attached to this event fires when the object becomes the target of a spell. This can include responses such as casting a spell of the object's own, dying, disappearing, getting stronger (absorbing the magical effect), etc.
+trigger: A spell has been cast at the creature, door, or placeable object. It only fires when EventSpellCastAt is fired on the object.
+remarks: |
+  If a harmful spell has been cast on the creature and that creature is not already in combat, it becomes hostile.
+
+bugs: |
+  GetLastSpellCaster cannot return any area of effects which fire the event, and so may return OBJECT_INVALID. Not sure if this is intended, although Bioware's own Area of Effect reaction code in the event does take it into account and dispels the creatures own location.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+    - Door
+    - Placeable Object
+  functions:
+    - DetermineCombatRound
+    - GetLastSpell
+    - GetLastSpellCaster
+    - GetLastSpellHarmful

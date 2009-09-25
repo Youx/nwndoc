@@ -1,0 +1,15 @@
+---
+type: Function
+name: OnCombatRoundEnd
+description: | 
+  The script attached to this event fires at the end of each combat round (every six seconds in NWN). It will fire every 3 seconds for hasted creature. Combat can be cancled on a creature by ClearAllActions(TRUE).
+trigger: Combat round has ended.
+remarks: |
+  Unless there is a special behavior set or the set warnings flag in OnSpawn has been set, a new combat round is initiated.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+  functions:
+    - DetermineCombatRound

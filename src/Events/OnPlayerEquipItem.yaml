@@ -1,0 +1,16 @@
+---
+type: Function
+name: OnPlayerEquipItem
+description: | 
+  The script attached to this event fires whenever a PC equips an item. It can be useful in restricting the use of an item in certain areas, for example.
+trigger: PC equips an item (after the item has been successfully equipped).
+remarks: |
+  With Hordes of the Underdark, BioWare has introduced a generic tag based system covering all of the module related item events. View the scripts x2_mod_def_equ, x2_mod_def_unequ, x2_mod_def_unaqu, x2_mod_def_aqu, x2_mod_def_act, and IN PARTICULAR, x2_it_example for more information if you wish to use the BioWare way of doing it. It is unknown by the Lexicon's authors, at this time, if the system is available on non-Hordes of the Underdark installations.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetPCItemLastEquipped
+    - GetPCItemLastEquippedBy

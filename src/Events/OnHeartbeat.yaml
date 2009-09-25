@@ -1,0 +1,18 @@
+---
+type: Function
+name: OnHeartbeat
+description: | 
+  The script associated with this event fires every six seconds (the span of a combat round in NWN). This is good for a script that needs to check for something repeatedly or perform an action regularly. Be aware that too many OnHeartbeat scripts can be processor costly. Use other types of event scripts when possible. Area of effects can have a Heartbeat script defined when created.
+trigger: Every six seconds that pass (one round). If many OnHeartbeat events have to run at the same time, some will get low priority. It appears, at least, that objects in areas where there are no PCs get low priority. In testing modules with many heartbeats, some of these heartbeats would fire irregularly, and with up to 15 second intervals.
+  Remarks
+  When used for a creature, conditions set within the OnSpawn script are checked and executed if they are applicable; these include "fast buff" for enemies (used when a PC draws within a certain range to simulate preparation), day/night postings for the WalkWayPoints() function, and the standard ambient animations used by creatures when standing around. Though the PC doesn't have an OnHeartbeat event, if you create a script called "default", it will automatically trigger every PC heartbeat. It would be wiser to use the modules OnHeartbeat however. Setting the AI level to AI_LEVEL_HIGH on a creature will force the heartbeat to fire as if a PC was in the area. This is useful for monsters you want to travel across multiple area's with waypoints, but is costly on the CPU. Area of effects can have a Heartbeat script defined, and can apply damage (such as Acid Fog does) to everyone in the area, each combat round.
+seealso:
+  categories:
+    - Objects with Events
+    - Area
+    - Creature
+    - Door
+    - Encounter
+    - Module
+    - Placeable Object
+    - Trigger

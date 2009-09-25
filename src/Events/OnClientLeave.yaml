@@ -1,0 +1,41 @@
+---
+type: Function
+name: OnClientLeave
+description: | 
+  The script attached to this event fires when a client leaves the module. This can be used to remove any custom creatures spawned because of the appearance of a particular PC or a variety of other things. During this event, the player has already left. All data that pertains to the player is unavailable (GetPCPlayerName, GetPCPublicCDKey, GetPCIPAddress) and the player has become detatched from the character object, hence GetIsPC returns false. If you want any of this information at time of client leave, you must have already stored this information (on client enter is a good time to do this). Also, due to this, no locals can be stored on the PC at this time. If you want to store information pertaining to the player during this event, store it on the module with something to indicate which player and character it is for.
+trigger: Whenever a player logs out of a server or leaves the module.
+remarks: |
+  You can get any information off the GetExtingObject(), which basically means you can store, for example, thier location, and get it locally - SetLocalLocation() and GetLocalLocation() respectivly. There is also little point having anything in this in single player modules. The player never leaves - they can only exit (and thus either start again, or load up a saved game).
+
+bugs: |
+  GetPlayername doesn't work properly during this event; it does not return an object that can be saved to the database. See above for reasons, and the other functions that do not return data.
+
+example: |
+  // In the Client Exit, the actual object (now almost like a dead-AI
+  // NPC) still exsists, but the PC's properties do not.
+  // In this example, we know GetName will work, such as a
+  // characters name "Hero". If we used GetPlayername(), it
+  // wouldn't return a valid string, mearly "".
+  // Other things that would be useful might be GetLocalInt(), 
+  // GetLocalString(), GetLocalLocation() and so on. These might
+  // be stored to the database, for example, for when they re-log
+  // into the server next time.
+  void main()
+  {
+      // Valid data we could use:
+      object oPC = GetExitingObject();
+      // If they have an item, of tag SHOUT_EXIT, we shout to the
+      // world we have exited. As it is the module shouting, it should 
+      // appear as "[SERVER]" as the shouter name.
+      if(GetIsObjectValid(GetItemPossessedBy(oPC, "SHOUT_EXIT"))
+      {
+          // Shout
+          SpeakString("Leaving!" + GetName(oPC), TALKVOLUME_SHOUT);
+      }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetExitingObject

@@ -1,0 +1,12 @@
+---
+type: Function
+name: OnSpawn
+description: | 
+  The script attached to this event fires when the creature is first spawned and allows you to specify the default behaviors for the creature (i.e. does the creature flee when attacked, walk a set of waypoints, etc).
+trigger: Creating the creature. It will fire intantly even if the game is paused.
+  Remarks
+  Bioware's default AI will create a random amount of treasure, and set up any uncommented spawn options. With new "variables" introduced in 1.60, you can set certain creatures to do things with one spawn script, retrieving the variables with the normal GetLocal functions.
+seealso:
+  categories:
+    - Objects with Events
+    - Creature

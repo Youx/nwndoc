@@ -1,0 +1,12 @@
+---
+type: Function
+name: OnTrapTriggered
+description: | 
+  The script attached to this event fires when a trap is triggered. This could be used to spawn some creatures nearby who hear bells going off as part of a trap or include additional nasty effects to the trap springer (and anyone in its area of effect) above and beyond the standard effect.
+trigger: GetEnteringObject() will return who just triggered the trap.
+  Remarks
+  Remember, traps applied onto doors and placeables also have an OnTrapTriggered event. If this is defined, then it will override any default scripts that may apply damage. This is how Bioware made most of thier custom spell traps (And how you can do yours).
+seealso:
+  categories:
+    - Objects with Events
+    - Trap

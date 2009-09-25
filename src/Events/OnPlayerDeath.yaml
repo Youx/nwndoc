@@ -1,0 +1,19 @@
+---
+type: Function
+name: OnPlayerDeath
+description: | 
+  The script attached to this event fires when a player has been reduced to -10 hit points or less. This event could be used to create changes in the storyline, record the deaths of all the players on the server to display at the town square, etc.
+trigger: Occurs when a PC dies.
+remarks: |
+  The "nw_o0_death" script is normally used for this module event. This script clears the relationship of the standard factions to the player and determines when the "Death GUI Panel" appears that allows the player to exit NWN or respawn.
+
+bugs: |
+  GetLastKiller() only works for NPC's, and GetLastHostileActor() can be used in its place. This is intended behaviour.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetLastHostileActor
+    - GetLastPlayerDied

@@ -1,0 +1,20 @@
+---
+type: Function
+name: OnLock
+description: | 
+  The script attached to this event fires when when an object has been locked.
+trigger: The door or placeable object has been locked by another object.
+remarks: |
+  Only placeables that can be opened can be locked or unlocked.
+
+bugs: |
+  OnLock and OnUnLock didn’t use to work. As of patch version 1.29 (or probably 1.28), the events fire as they should.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Door
+    - Placeable Object
+  functions:
+    - GetLastLocked
+    - GetLockLockDC

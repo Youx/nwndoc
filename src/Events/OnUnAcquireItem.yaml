@@ -1,0 +1,16 @@
+---
+type: Function
+name: OnUnAcquireItem
+description: | 
+  The script attached to this event fires when an item is removed from the PC's inventory. It can be useful to stop the Balor you have chasing the rogue when he drops the Vorpal Longsword +3 he just found or place the item in a common location (such as the Divining Pool in the Halls of Justice) if it is a Plot item.
+trigger: When an item has been dropped or removed.
+bugs: |
+  This event does not fire when an item that is stacked in inventory is lost (i.e. a potion that is stacked is used) or when gold is spent or taken. when a potion is used OnUnacquire is fired. GetModuleItemLost() returns OBJECT_INVALID so no tag, name or object of this specific potion can be scripted without some serious workarounds. This will also occur if the potion resides in a stack. The current version (as of 1.30) says that the event won't fire if potions are stacked - this is not true. When a thrown object is thrown (i.e. in combat) OnUnacquire is fired - ONLY IF THE OBJECT IS THE LAST IN A STACK. This event is fired by a valid object that has no tag (GetTag( GetModuleItemLost() ) == "" but GetIsObjectValid( GetModuleItemLost() ) == TRUE).
+
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetModuleItemLost
+    - GetModuleItemLostBy

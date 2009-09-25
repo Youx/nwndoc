@@ -1,0 +1,25 @@
+---
+type: Function
+name: OnActivateItem
+description: | 
+  The script attached to this event fires when an item is activated that it is in the PC's inventory. This is useful when a particular item must be used at a location to proceed (such as opening a door) or causes a creature to be summoned.
+trigger: Whenever an item that has the item property spell "Unique Power" (targeted) or "Unique Power - Self Only" (self) casts its spell.
+remarks: |
+  For all purposes, the module owns the event, not the PC using the item. This means, for instance, that if you make a unique power item that damages creatures, the module and not the PC will be accredited with damaging the creatures. And if the item is used to kill a creature, the PC will gain no XP for this, as the module will get credit for the kill.
+
+example: |
+  // Taken from x0_onitemactv, original idea by tjm. 
+  // Generic OnItemActivate script.
+  void main()
+  {
+      ExecuteScript(GetTag(GetItemActivated()), OBJECT_SELF);
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetItemActivated
+    - GetItemActivatedTarget
+    - GetItemActivatedTargetLocation
+    - GetItemActivator

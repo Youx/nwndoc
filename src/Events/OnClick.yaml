@@ -1,0 +1,15 @@
+---
+type: Function
+name: OnClick
+description: | 
+  The script attached to this event fires when a trigger is entered by a PC.
+trigger: When the trigger is clicked on.
+remarks: |
+  Most types of area transitions use this event (although a trigger that is setup as the "Area Transition" type can make use of the wizard to do so).
+
+seealso:
+  categories:
+    - Objects with Events
+    - Trigger
+  functions:
+    - GetClickingObject

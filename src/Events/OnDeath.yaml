@@ -1,0 +1,25 @@
+---
+type: Function
+name: OnDeath
+description: | 
+  The script attached to this event fires when the object dies for any reason. It can be used to force the object to drop treasure, respawn at a new location, or cause a creature to spawn (or reincarnate!). DestroyObject will not trigger this event, although DM kill will (with an invalid last killer).
+trigger: When the creature, door, or placeable object has been killed (normally by reduction to 0 or less hit points).
+remarks: |
+  Scripts that execute in this event should have their actions take effect immediately. Using DelayCommand will work only so long as the object/corpse remains. Although AssignCommand could be used to place an instruction in the action queue of another object, for example an invisible object placeable or the module itself. Destruction animations for doors and placeable objects occur automatically. If a creature dies, it checks to see if the creature was non-evil and had Commoner levels - if so it automatically changes the killer's alignment a little towards evil. It also emits standard shouts for help to any creatures within range who are setup to listen for them. Straight after this script is fired, the last killer is awarded experience from the hardcoded Bioware system (even if set to 0%). As of 1.60, the default OnDeath is filled in for Doors and Placeables, which spawns wood/metal for crafting armor/weapons. Also note that if DestroyObject(OBJECT_SELF) is used in the OnDeath event, it will also cause associated UserDefined events, ie the Death event, to not execute at all.
+
+example: |
+  // Creates a death visual effect at the dead creatures location - a implosion visual.
+  void main()
+  {
+      location lSelf = GetLocation(OBJECT_SELF);
+      effect eVis = EffectVisualEffect(VFX_FNF_IMPLOSION);
+      ApplyEffectAtLocation(DURATION_TYPE_INSTANT, eVis, lSelf);
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+    - Door
+    - Placeable Object
+  functions:
+    - GetLastKiller

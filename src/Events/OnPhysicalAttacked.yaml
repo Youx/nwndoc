@@ -1,0 +1,70 @@
+---
+type: Function
+name: OnPhysicalAttacked
+description: | 
+  The script attached to this event fires each time the object takes physical damage. This could be used for a reaction to the attack such as changing weapons, fleeing, surrendering, etc.
+trigger: A physical attack is brought against a creature, door, or placeable object. It doesn't need to hit or damage to trigger it.
+remarks: |
+  If a creature is attacked and not currently in combat, it goes hostile and emits appropriate shouts to alert allies nearby. It should also be possible to use this routine to allow a member of a non hostile faction to issue a warning to a PC that attacked them, going hostile only on a second attack. At least that seems to be the purpose of the 'NW_FLAG_SET_WARNINGS' flag found in the on spawn routine. However, because the code that makes the faction and allied faction members hostile to the offending player is hard-coded into the engine itself, it is impossible to know for sure why a particular creature has become hostile. As such there seems to be no easy way to actually get this functionality working. This event is really well used in any kind of archery content/dummy attacking/hitting something, as it fires even if the attacker doesn't damage it. Also, as placables have an effective AC of 0, meaning only a definite miss (a roll of 1 on the d20) will not hit it, should mean that almost all attacks against placables have landed home.
+
+example: |
+  // A simple script to show the use of all the functions useful to the
+  // physical attacked event.
+  void main()
+  {
+      // Get attacker, and the other parts.
+      object oAttacker = GetLastAttacker();
+      // Get the last weapon used to hit us, IE: From this attack.
+      // * Most useful for disolving enemy weapons/taking them/disarming 
+      // them, but very very evil if you do
+      object oWeapon = GetLastWeaponUsed(oAttacker);
+      // Returns COMBAT_MODE_*, so perhaps parry, or rapid shot.
+      // * These are "always on" and togglable, of course.
+      int nMode = GetLastAttackMode(oAttacker);
+      // Returns SPECIAL_ATTACK_*, so if anything, a usable feat
+      // like knockdown, disarm and so on.
+      int nAttackType = GetLastAttackType(oAttacker);
+      // If they used a weapon tagged as "HEAL_THE_MONSTER", we
+      // are healed 40 hit points
+      if(GetTag(oWeapon) == "HEAL_THE_MONSTER")
+      {
+          effect eHeal = EffectHeal(40);
+          ApplyEffectToObject(DURATION_TYPE_INSTANT, eHeal, OBJECT_SELF);
+      }
+      // If they used expertise or the improved version, we need more
+      // attack, we add +5 or +10 to hit them easier, for 6 seconds.
+      if(nMode == COMBAT_MODE_IMPROVED_EXPERTISE)
+      {
+          // Apply +10 attack
+          effect eAttack10 = EffectAttackIncrease(10);
+          ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eAttack10, OBJECT_SELF, 6.0);
+      }
+      else if(nMode == COMBAT_MODE_EXPERTISE)
+      {
+          // Apply +5 attack
+          effect eAttack5 = EffectAttackIncrease(5);
+          ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eAttack5, OBJECT_SELF, 6.0);
+      }
+      // If they made an attempt at knockdown, we add +10 disiplin
+      // for 12 seconds.
+      if(nAttackType == SPECIAL_ATTACK_KNOCKDOWN ||
+         nAttackType == SPECIAL_ATTACK_IMPROVED_KNOCKDOWN)
+      {
+          // Apply +10 discipline 
+          effect eSkill = EffectSkillIncrease(10, SKILL_DISCIPLINE);
+          ApplyEffectToObject(DURATION_TYPE_TEMPORARY, eSkill, OBJECT_SELF, 12.0);
+      }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+    - Door
+    - Placeable Object
+  functions:
+    - DetermineCombatRound
+    - GetLastAttacker
+    - GetLastAttackMode
+    - GetLastAttackType
+    - GetLastDamager
+    - GetLastWeaponUsed

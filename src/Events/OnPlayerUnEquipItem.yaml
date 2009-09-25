@@ -1,0 +1,37 @@
+---
+type: Function
+name: OnPlayerUnEquipItem
+description: | 
+  Fires whenever a PC unequips an item. Can be useful for creating truly cursed items that can't even be unequipped.
+trigger: PC unequips an item (prior to the item actually being unequipped).
+remarks: |
+  With Hordes of the Underdark, BioWare has introduced a generic tag based system covering all of the module related item events. View the scripts x2_mod_def_equ, x2_mod_def_unequ, x2_mod_def_unaqu, x2_mod_def_aqu, x2_mod_def_act, and IN PARTICULAR, x2_it_example for more information if you wish to use the BioWare way of doing it. It is unknown by the Lexicon's authors, at this time, if the system is available on non-Hordes of the Underdark installations. By using GetItemPossessor(oItem) you can check several things in this event. Firstly, if the PC dropped it or not, secondly, if he just sold it straight out of his inventory slot, and thirdly, if it is in barter (if the items location is invalid, and the possessor invalid, it is in a barter screen - in limbo). Of course, if the possessor is still the PC, then he just moved it into his inventory. Because of how you can drop items/sell items right from slots, the only way to force a PC to never unequip an item is to make sure it has the cursed flag set (so it cannot be sold, or moved out of a creatures inventory). This means any ActionEquipItem()'s will pass sucessfully.
+
+example: |
+  // PC can't take off any cursed necklaces, Ever. *evil grin*
+  // Note: It is best, no, normally required, that the item that cannot
+  // be unequipped to be cursed. This means a PC cannot drop it
+  // from thier inventory slot, right onto the ground, and thus the 
+  // script fail.
+  void main()
+  {
+      // Get the objects for use with this event.
+      object oPC=GetPCItemLastUnequippedBy();
+      object oItem=GetPCItemLastUnequipped();
+      // This could be a tag check, but does need to check it is an neck
+      // item, so it can be equipped to the right slot.
+      if (GetItemCursedFlag(oItem) &&
+          GetBaseItemType(oItem) == BASE_ITEM_AMULET)
+      {
+          AssignCommand(oPC, ClearAllActions());
+          AssignCommand(oPC, ActionEquipItem(oItem, INVENTORY_SLOT_NECK));
+      }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetItemPossessor
+    - GetPCItemLastUnequipped
+    - GetPCItemLastUnequippedBy

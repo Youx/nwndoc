@@ -1,0 +1,19 @@
+---
+type: Function
+name: OnUnlock
+description: | 
+  The script attached to this event fires when an item has been unlocked. Giving experience to the unlocker, or even making sure they cannot unlock it in combat (using SetLocked to re-set the lock).
+trigger: Door or placeable was unlocked.
+remarks: |
+  Only placeables that can be opened can be locked or unlocked. Only when unlocking the door via. Open Lock skill or Key will trigger this. SetLocked will not, nor will DM Force lock.
+
+bugs: |
+  OnLock and OnUnLock didn’t use to work. As of patch version 1.29 (or probably 1.28), the events fire as they should.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Door
+    - Placeable Object
+  functions:
+    - GetLastUnlocked

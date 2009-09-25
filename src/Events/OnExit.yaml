@@ -1,0 +1,37 @@
+---
+type: Function
+name: OnExit
+description: | 
+  The script attached to this event fires when an area, trigger, or encounter boundry is exited. This can be used for such effects as slaying all the zombies that just animated to kill the intruding tomb robbing PC or removing the Holy Grail from the PC's inventory and triggering a series of encounters that send creatures after the PC. Area of effects also can have On Exit events defined when they are created.
+trigger: Something left the current area, encounter, or trigger (not necessarily a PC).
+remarks: |
+  Polymorphing a PC causes them to trigger the OnExit and OnEnter events (in that order). The OnExit event fires for an Area of Effect if it is dispelled or runs out of duration. For spells such as Acid Fog, it removes the slowing effect.
+
+example: |
+  // see the OnEnter event for the stage for the below script
+  // sends "HUNTER" home (aptly named "HUNTER_CAVE") if
+  // the PC leaves the area
+  void main()
+  {
+       object oExiting = GetExitingObject();
+       object oMonster = GetObjectByTag("HUNTER");
+       object oCave = GetObjectByTag("HUNTER_CAVE");
+       if (GetIsPC(oExiting))
+       {
+            SetLocalObject(OBJECT_SELF, "PC_Entered", OBJECT_INVALID);
+       }
+       // if "HUNTER" is leaving while giving chase, send him home
+       if (oExiting == oMonster)
+       {
+            AssignCommand(oMonster, ClearAllActions());
+            AssignCommand(oMonster, ActionMoveToObject(oCave));
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Area
+    - Encounter
+    - Trigger
+  functions:
+    - GetExitingObject

@@ -1,0 +1,45 @@
+---
+type: Function
+name: OnConversation
+description: | 
+  The script attached to this event fires whenever the dialogue with another creature ends or when a shout is heard. PC's speaking can fire this, and is a good way of getting them to specifically answer a riddle or password.
+trigger: The creature has been clicked on for conversation or someone has audibly spoken.
+remarks: |
+  By default, if the creature has been clicked on for conversation, it will stop what it is doing and begin dialogue (if it can). Otherwise the script checks to see if a spoken (sometimes typed) phrase is recognizeable and if the creature has been set up to recognize combat shouts. Only if the creature is listening (SetListening) will this event fire at all. Once the creature is set to listening, they will only hear things set by SetListeningPattern. The script nw_g0_conversat will fire if there is no OnConversation script supplied, and will start thier conversation if it is someone clicking on them. This also applies to PC's, and you can see for yourself when they face you and speak thier hello voicechat, in game, by using "Conversation" on them.
+
+example: |
+  // When we here shout 100, we hear anything (See SetListeningPattern), 
+  // and we can check if they spoke the right password.
+  void main()
+  {
+      // Get the number
+      int nMatch = GetListenPatternNumber();
+      // If nMatch is -1, it means we were clicked on
+      if(nMatch == -1)
+      {
+          SpeakString("Stop touching me!");
+      }
+      // We only check for the password if nMatch is 100, IE: "**"
+      else if(nMatch == 100)
+      {
+          // Get string they spoke (Set up via.
+          // SetListenPattern(OBJECT_SELF, "**", 100); )
+          // We will get it in capitals (so not case sensitive).
+          // * Note: GetMatchedSubstring will only be 1 value for **, 
+          //    so we get the 0 value for it.
+          string sSpoken = GetStringUpperCase(GetMatchedSubstring(0));
+          // The password is "happy".
+          if(FindSubString(sSpoken, "HAPPY") >= 0)
+          {
+              SpeakString("You got the password correct!");
+          }
+      }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+  functions:
+    - GetLastSpeaker
+    - GetListenPatternNumber
+    - GetMatchedSubstring

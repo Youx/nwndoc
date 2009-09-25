@@ -1,0 +1,14 @@
+---
+type: Function
+name: OnRested
+description: | 
+  The script attached to this event fires when the creature attempts to rest. It can be used to customize the behavior of the creature so that instead of just sitting down it could drink from a tankard or dance around to regain lost hit points.
+trigger: The creature has rested via ActionRest(). Henchmen resting with thier masters *should* also trigger this.
+  Remarks
+  Creatures don't normally rest so there is no default AI script behavior defined. This fires once, and so GetLastRestEventType will not work with this event.
+  Known Bugs
+  Up to version 1.60, this didn't ever ever work. As of 1.60, it does fire.
+seealso:
+  categories:
+    - Objects with Events
+    - Creature

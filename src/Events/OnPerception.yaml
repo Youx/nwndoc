@@ -1,0 +1,42 @@
+---
+type: Function
+name: OnPerception
+description: | 
+  The script attached to this event will fire whenever another creature perceives another creature or PC. Common uses of this script include having the creature yell a battle cry, greet the PC, or run away.
+trigger: Something has entered the creature's perception radius, but is not automatically detected. Note that something does not neccessarily mean a PC. It can fire when a NPC or PC is teleported out of the area, as well as if an NPC's corpse disappears.
+remarks: |
+  The OnPerception generic AI gives priority to first going into search mode if an enemy has suddenly vanished, then telling the creature to combat an enemy that has appeared. GetLastPerception values, as the descriptions imply, will only return a maxium of 2 TRUE values - an object cannot vanish and become heard, for instance, but it can vanish and become inaudiable at the same time.
+
+example: |
+  // creature turns towards anyone he sees
+  // if the creature seen is female, the NPC bows
+  void main()
+  {
+       int nEvent = GetUserDefinedEventNumber();
+       if (nEvent == 1002) //  OnPerception event
+       {
+            object oTarget = GetLastPerceived();
+            // check for sight
+            if (GetLastPerceptionSeen())
+            {
+                 ActionDoCommand(SetFacingPoint(GetPosition(oTarget)));
+                 // if they female, bow
+                 if (GetGender(oTarget) == GENDER_FEMALE)
+                 {
+                      ActionWait(0.5);
+                      ActionPlayAnimation(ANIMATION_FIREFORGET_BOW);
+                 }
+            }
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+  functions:
+    - DetermineCombatRound
+    - GetLastPerceived
+    - GetLastPerceptionHeard
+    - GetLastPerceptionInaudible
+    - GetLastPerceptionSeen
+    - GetLastPerceptionVanished

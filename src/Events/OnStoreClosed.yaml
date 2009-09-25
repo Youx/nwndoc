@@ -1,0 +1,27 @@
+---
+type: Function
+name: OnStoreClosed
+description: | 
+  The script attached to this event occurs when the store a PC is currently using is closed. Perhaps use in a multiplayer enviroment to clean up gross amounts of sold items, or change the stock.
+trigger: When a store in use by a PC is closed.
+remarks: |
+  By default no script is attached to this event. Note: The lexicon previous had this under "OnCloseStore". It is actually meant to be "OnStoreClosed".
+
+bugs: |
+  GetLastClosedBy() does now return the last PC to close the store, fixed in 1.62. OnStoreClosed scripts now function properly when loaded from saved games, in the 1.64 patch.
+
+example: |
+  // When this store is closed, it is actually destroyed. One time 
+  // deals have a new meaning now, given you cannot open stores
+  // which are not there.
+  void main()
+  {
+      // Store closed
+      DestroyObject(OBJECT_SELF);
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Merchant
+  functions:
+    - GetLastClosedBy

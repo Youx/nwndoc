@@ -1,0 +1,28 @@
+---
+type: Function
+name: OnClose
+description: | 
+  The script attached to this event fires when the object is closed and can be used to analyze the contents of the container and open a nearby door or raise an alarm after the PC thinks they they have gotten away with the gold scott free.
+trigger: When a door or placeable object has been closed.
+remarks: |
+  Not all placeable objects fire this event; only those that can actually be closed do.
+
+example: |
+  // put in a chest (obviously this will not work on a door)
+  // if the chest's inventory is empty, give it 100 gold pieces
+  void main()
+  {
+       // see if we have an item
+       object oItem = GetFirstItemInInventory();
+       if (!GetIsObjectValid(oItem))
+       {
+            CreateItemOnObject("NW_IT_GOLD001", OBJECT_SELF, 100);
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Door
+    - Placeable Object
+  functions:
+    - GetLastClosedBy

@@ -1,0 +1,12 @@
+---
+type: Function
+name: OnPlayerLevelUp
+description: | 
+  Occurs when a PC has gained a new level. Fires right after the player has clicked okay to confirm the choices he has made for the gained level. There’s no way to prevent the level from occurring, but you can script it so that the PC is knocked back a level right after he has gained it.
+trigger: When a PC gains a new level.
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetPCLevellingUp

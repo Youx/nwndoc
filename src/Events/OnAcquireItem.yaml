@@ -1,0 +1,36 @@
+---
+type: Function
+name: OnAcquireItem
+description: | 
+  The script attached to this event fires when an item is acquired. The item can be tested against a list of items, and if the item is found an event could occur such as the corpses around the PC arising to fight them in undeath or a journal entry is made. It also fires whenever the OnClientEnter script would fire for a PC. It fires before the OnClientEnter Event starts, for all the items in the PC's inventory (including those equipped!) This is new, quite recent behavior change for this event.
+trigger: Whenever an item is added to someone's inventory.
+remarks: |
+  Since GetModuleItemAcquiredStackSize() returns the change in stack sizes if something is added to an exsisting stack, it will fire for when a PC picks up a potion and it is adding to an exsisting stack of potions. If GetModuleItemAcquiredFrom() is invalid, it could have been from a Barter screen or the ground. Pickpocketed items do trigger the module events, and such stolen items are automatically marked as stolen - retrievable by GetStolenFlag(object oItem).
+
+bugs: |
+  This event does not fire when a PC picks up gold.
+
+example: |
+  // Writes an entry in the logfile whenever a PC acquires an
+  // item, if the script is put OnAcquireItem. The entry will
+  // contain info about the PC acquiring the item, the item,
+  // and the object the item was acquired from
+  void main()
+  {
+       object oItem = GetModuleItemAcquired();
+       object oPC = GetModuleItemAcquiredBy();
+       // Note: you can use GetItemPossessor(oItem); to get oPC
+       object oLostBy = GetModuleItemAcquiredFrom();
+       string sLog = GetName(oPC) + " acquired " + GetName(oItem) + " from " + GetName(oLostBy);
+       PrintString(sLog);
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetItemPossessor
+    - GetModuleItemAcquired
+    - GetModuleItemAcquiredBy
+    - GetModuleItemAcquiredFrom
+    - GetModuleItemAcquiredStackSize

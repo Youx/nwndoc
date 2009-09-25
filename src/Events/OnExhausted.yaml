@@ -1,0 +1,11 @@
+---
+type: Function
+name: OnExhausted
+description: | 
+  The script attached to this event fires when the last member of a party of creatures spawned by an encounter dies, and can be used to open a previously unopenable door or signal another event.
+  Known Bugs
+  OnExhausted does not work correctly if a player dies and reloads after an encoutner is spawned, but before killing all of the monsters in the encounter. After reloading, if the player kills the previously spawned monsters, the OnExhausted event for that encounter will not fire.
+seealso:
+  categories:
+    - Objects with Events
+    - Encounter

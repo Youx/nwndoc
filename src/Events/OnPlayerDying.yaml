@@ -1,0 +1,15 @@
+---
+type: Function
+name: OnPlayerDying
+description: | 
+  The script attached to this event fires when the PC has been reduced to 0 hit points, but not at -10 (this state is considered unconcious). It is possible to just outright kill the PC at this point if there's no one around for ressurrections, but once below 0 hit points the unconcious PC will steadily lose hit points until dead.
+trigger: When a PC has been reduced to less than 0 hit points.
+remarks: |
+  "nw_o0_dying" is the default script for this event which applies the EffectDeath effect to the PC to kill him quickly and fire the OnPlayerDeath event. If this script is removed the PC remains disabled indefinately. You can use EffectHitPointChangeWhenDying to make the PC die more. See EffectHitPointChangeWhenDying for more information. The dying done by this is removed once healing (EffectHeal/Healing kit) is applied, or they go above 0 or below -10 hit points. This will not fire when a PC is instantly put at -10 or less hit points, for example EffectDeath, or a massive amount of damage at once.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetLastPlayerDying

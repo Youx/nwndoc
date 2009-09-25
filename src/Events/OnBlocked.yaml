@@ -1,0 +1,15 @@
+---
+type: Function
+name: OnBlocked
+description: | 
+  The script attached to this event fires when a creature is blocked by a door. It can be used for a dramatic door crashing down scene or cause the creature to stop pursuit of anything it was chasing. The blocked event only fires for Doors and Creatures.
+trigger: When a door or creature blocks a creature's movement.
+remarks: |
+  As of patch 1.60, the OnBlocked event fires for being blocked by creatures as well as doors. GetBlockingDoor() returns the thing blocking the path. DoDoorAction (and GetIsDoorActionPossible) will not work on creatures, of course. By default, if the creature is smart enough to use a door (Intelligence 5+) it will first attempt to open the door and if that is not possible it will attempt to bash it down, then resume its path (DoDoorAction is added to the top of a creatures action queue).
+
+seealso:
+  categories:
+    - Objects with Events
+    - Creature
+  functions:
+    - GetBlockingDoor

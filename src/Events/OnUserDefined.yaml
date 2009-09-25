@@ -1,0 +1,38 @@
+---
+type: Function
+name: OnUserDefined
+description: | 
+  The script attached to this event fires depending on settings made during the OnSpawn event for creatures and some general level blanket signals for all objects (including creatures). Typically this script is a switch/case statement that does something different depending on the signal (numerical value) sent to it by an event that calls the script. This event makes it very easy to retain the default behavior of an object while adding custom mannerisms of your own.
+trigger: A script has used the SignalEvent() function.
+remarks: |
+  In a script that generates a user-defined event, use the EventUserDefined(int) function to generate the appropriate internal event identification number which can be consumed in the OnUserDefined script. Also note that the UserDefined Death event is considered unreliable by Bioware. This is because the UserDefined event runs after the calling event has finished, in this case OnDeath. And as such, a call to DestroyObject(OBJECT_SELF) in the OnDeath event will remove the object, closing its action queue and thus prevent the UserDefined Death event from executing.
+
+example: |
+  // OnUserDefined exists as an event for many objects
+  // to invoke it for a module, try something like...
+  // SignalEvent(GetModule(), EventUserDefined(112));
+  // then say we want to capture user-defined event number 112
+  // in our module's OnUserDefined event...
+  void main()
+  {
+       switch (GetUserDefinedEventNumber())
+       {
+            case 112:
+                 PrintString("Event #112 occured!");
+                 break;
+            // ... additional case statements for other user-defined
+            // events can be added as neccessary
+       }
+  }
+seealso:
+  categories:
+    - Objects with Events
+    - Area
+    - Creature
+    - Door
+    - Encounter
+    - Module
+    - Placeable Object
+    - Trigger
+  functions:
+    - GetUserDefinedEventNumber

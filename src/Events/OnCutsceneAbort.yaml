@@ -1,0 +1,15 @@
+---
+type: Function
+name: OnCutsceneAbort
+description: | 
+  This event fires when a PC tries to cancel a cutscene. Can be used to take the PC out of cutscene mode, remove cutscene invisibility from him, clear all cutscene objects of their action queues, and set the game state to the way it would be when the cutscene finished normally.
+trigger: A player who is in SetCutsceneMode hits the escape button.
+remarks: |
+  Simply hitting escape while in a cutscene doesn't do anything except fire this event. You'll have to script everything yourself to take the PC out of the cutscene, including all cutscene objects of their action queues, SetCutsceneMode to FALSE, and remove invisibily effects from the PC if applied.
+
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetLastPCToCancelCutscene
