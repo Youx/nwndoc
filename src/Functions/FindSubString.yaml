@@ -6,15 +6,19 @@ return: int
 parameters:
   - type: string
     name: sString
-    desc: | sSubString
-
+    desc: The string to look in
   - type: string
     name: sSubString
+    desc: The string we look for
+  - type: int
+    name: nStart
+    default: 0
+    desc: The character position to start searching at (from the left end of the string)
 description: |
   Returns an integer value representing the position of sSubstring in sString. The search is case sensitive. 
   Returns a base zero index of where sSubstring starts in sString if found. 
   Returns -1 if sSubstring is not found to exist in sString. 
-version: 1.22
+version: 1.69
 example: |
   //Example 1 - The following would return a value of 0.
     int nPostion = FindSubString("testing","test");
@@ -24,6 +28,10 @@ example: |
     int nPostion = FindSubString("testing","mike");
   //Example 4 - The following would return a value of -1.
     int nPostion = FindSubString("testing","Test");
+  //Example 5 - The following would return a value of -1.
+    int nPostion = FindSubString("testing","test", 2);
+  //Example 6 - The following would return a value of 2.
+    int nPostion = FindSubString("aztesting","test", 2);
 seealso:
   functions:
     - GetStringLeft

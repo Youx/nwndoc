@@ -15,15 +15,16 @@ parameters:
 
 description: |
   Sets the creature's PhenoType (body type) to the type specified. 
-  nPhenoType has 3 valid values currently: 
+  nPhenoType has 20 valid values currently: 
   nPhenoType = PHENOTYPE_NORMAL 
   nPhenoType = PHENOTYPE_BIG 
-  nPhenoType = PHENOTYPE_CUSTOM - The custom PhenoType should only ever be used if you have specifically created your own custom content that requires the use of a new PhenoType and you have specified the appropriate custom PhenoType in your custom content. SetPhenoType will only work on part based creature (i.e. the starting default playable races).
+  nPhenoType = PHENOTYPE_CUSTOM1 - PHENOTYPE_CUSTOM18
+  The custom PhenoType should only ever be used if you have specifically created your own custom content that requires the use of a new PhenoType and you have specified the appropriate custom PhenoType in your custom content. SetPhenoType will only work on part based creature (i.e. the starting default playable races).
 remarks: |
   Note that a phenotype is only valid for the default 7 PC races (Dwarf, Human, Half Elf, Half Orc, Elf, Gnome and Halfling). 
   It is basically the "Fat/Thin" option given when you create your character, however, custom content creators can have a better and more varied use for it as there will no doubt be. 
-  Although 1.64 only supports an extra custom phenotype, there will cirtainly be up to 9 in total at one stage or another in a future patch.
-version: 1.64
+  As of 1.69, this function supports 99 phenotypes in total.
+version: 1.69
 example: |
   // Sets the PC's phenotype, in a conversation (maybe some 
   // growth-type one) to the big version.
@@ -42,7 +43,8 @@ seealso:
   categories:
     - Miscellaneous
   constants:
-    - PHENOTYPE_* Constants
+    - PHENOTYPE_*
 author: Jasperre
 additional_contributors:
   - Jasperre
+  - Hugo Camboulive

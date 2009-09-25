@@ -1,0 +1,38 @@
+---
+type: Function
+name: OnPlayerChat
+description: | 
+  The script attached to this event fires each time a player sends a chat message. This event could be used to translate what a player says to another language (ex : the player speaks in elven), or add emotes on talk (ex : the player says *sit* and the character sits down).
+trigger: Each time a player send a message.
+remarks: |
+  This event basically intercepts everything that is said on the module, including on the DM channel, etc...
+
+example: |
+  // If the player's INT is < 6, he can only say
+  // "guuuh guuuuh"
+  void main()
+  {
+    object oPC = GetPCChatSpeaker();
+    string message = GetPCChatMessage();
+    int volume = GetPCChatVolume();
+    string stupidmsg = "Guuuh guuuuh";
+    if (GetAbilityScore(oPC, ABILITY_INTELLIGENCE) < 6 && 
+      (volume == TALKVOLUME_TALK || volume == TALKVOLUME_WHISPER)) {
+      SetPCChatMessage(stupidmsg);
+    } else {
+      SetPCChatMessage(message);
+    }
+  }
+version: 1.69
+seealso:
+  categories:
+    - Objects with Events
+    - Module
+  functions:
+    - GetPCChatSpeaker
+    - GetPCChatMessage
+    - GetPCChatVolume
+    - SetPCChatMessage
+    - SetPCChatVolume
+
+author: Hugo Camboulive

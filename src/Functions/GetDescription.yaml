@@ -1,0 +1,28 @@
+---
+type: Function
+name: GetDescription
+return: string
+shortdesc: Get the description of an object
+parameters:
+  - type: object
+    name: oObject
+    desc: The object from which you are obtaining the description
+  - type: int
+    name: bOriginalDescription
+    default: FALSE
+    desc: return the original description (set in the module) or the one set by scripts.
+  - type: int
+    name: bIdentifiedDescription
+    default: TRUE
+    desc: If oObject is an item, return either the identified or unidentified description.
+description: | 
+  Get the description of an object which can be a creature, item, placeable, door, trigger, or module.
+  This can return the original description or the one set by a script.
+  If the object is an item, we can return either the identified description or the unidentified description.
+version: 1.69
+seealso:
+  functions:
+    - SetDescription
+  categories:
+    - GetDataFromObject
+    - Module

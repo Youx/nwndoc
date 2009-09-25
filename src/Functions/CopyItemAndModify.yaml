@@ -43,11 +43,12 @@ description: |
   iNewValue: Model # 
   iType: ITEM_APPR_TYPE_ARMOR_COLOR 
   iIndex: ITEM_APPR_ARMOR_COLOR_* 
-  iNewValue: 0-63
+  iNewValue: 0-175
 remarks: |
   Returns the copied object. 
   Note that the original item isn't destroyed by this function. You'll have to destroy it manually to really make it seem like the item is being modified.
-version: 1.61
+  As of 1.69, this command works with both the old and new cloak systems and allows more colors.
+version: 1.69
 seealso:
   functions:
     - CopyItem

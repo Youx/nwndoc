@@ -1,0 +1,19 @@
+---
+type: Function
+name: ItemPropertyMaterial
+return: itemproperty
+shortdesc: Returns Item property Material
+parameters:
+  - type: int
+    name: nMaterialType
+    desc: 0-77, see iprp_matcost.2da
+description: |
+  Return Item Property Material. You need to specify the Material Type.
+  Note : The Material Type property will only affect the cost of the item if you modify the cost in the iprp_matcost.2da
+version: 1.69
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation

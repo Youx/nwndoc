@@ -30,3 +30,5 @@ seealso:
     - ActionSpeakStringByStrRef
     - SpeakString
     - SpeakStringByStrRef
+    - GetPCChatVolume
+    - SetPCChatVolume

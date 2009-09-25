@@ -46,9 +46,9 @@ bugs: |
   SPELL_EAGLE_SPLENDOR 
   SPELL_FOXS_CUNNING 
   SPELL_OWLS_WISDOM 
-  As with all ActionCastSpellXXX, Ranger and Paladin spells do not work properley. nMetaMagic is ignored in the spell script (GetMetaMagicFeat() returns -1 in the spell script). 
   1.64 does fix the problem with sub-dial spells. These can now be cast correctly using these functions. It doesn't mention any fixes for the above issues however.
-version: 1.64
+  1.68 does fix the problem with Ranger and Paladin spells not working properly. (nMetaMagic was ignored in the spell script)
+version: 1.68
 example: |
   // The script below is placed on the OnUse Event handler for a placeable, in our
   // example a lever. When used it casts a Magic Missile spell at the target. In this case

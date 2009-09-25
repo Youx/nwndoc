@@ -161,7 +161,7 @@ class Events
   
   def Events.info(data)
     return [[ data['name'], data["seealso"]["categories"].join(' / '), 
-      "Events/#{data['name']}.html", "", data['description'], 1,0]]
+      "Events/#{data['name']}.html", "", data['trigger'], 1,0]]
   end
   
   def Events.tree_els(data)

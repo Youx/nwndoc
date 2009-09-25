@@ -7,15 +7,16 @@ parameters:
   - type: object
     name: oSubject
     desc: | Target to have alignment adjusted.
-
   - type: int
     name: nAlignment
     desc: | ALIGNMENT_*
-
   - type: int
     name: nShift
     desc: | The desired amount to shift the alignment (numeric range from -100 to 100).
-
+  - type: int
+    name: bAllPartyMembers
+    default: TRUE
+    desc: | When TRUE, the alignment shift also has a diminished affect on all members of the party.
 description: |
   Adjust the alignment of a oSubject. 
   ALIGNMENT_LAWFUL, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD, ALIGNMENT_EVIL: alignment will be shifted in the direction specified. 
@@ -28,12 +29,12 @@ remarks: |
   However, if the alignment shift is sufficiently large, then the characters alignment will 'skip' a band. In the case given here, an alignment shift of 41 points or more would be sufficient to give the character an evil alignment, with a good/evil value of 15. 
   Example for ALIGNMENT_NEUTRAL: if oSubject has a law/chaos value of 10 (i.e. chaotic) and a good/evil value of 85 (i.e. good) then if nShift is 15, the law/chaos value will become (10+15)=25 and the good/evil value will become (85-15)=70. 
   Note, the ALIGNMENT_NEUTRAL shift will at most take the alignment value to 50 and not beyond (above or below). 
-  Characters in a party with a PC who is the target of an AdjustAlignment will also have their alignments affected as well. The perpetrator of the act (oSubject) receives the full adjustment to their alignment. Party members of the target receive a 20% adjustment to their alignment rounded up, ie a minimum of 1 point. 
+  Characters in a party with a PC who is the target of an AdjustAlignment will also have their alignments affected as well, except if bAllPartyMembers is set to FALSE. The perpetrator of the act (oSubject) receives the full adjustment to their alignment. Party members of the target receive a 20% adjustment to their alignment rounded up, ie a minimum of 1 point. 
   Also note that current alignment of the party members has no effect on the 'knock on' adjustment. That is, if a Lawful Neutral party member performs a chaotic act, the alignment of Chaotic party members will be shifted towards chaotic as well. 
   Adjust alignment does not affect DMs.
 bugs: |
   An alignment shift for the PC doesnt have a knock on effect on the associate. Although an alignment shift for an associate will have a knock on effect on the PC.
-version: 1.61
+version: 1.69
 seealso:
   functions:
     - AdjustAlignmentOnAll

@@ -1,0 +1,26 @@
+---
+type: Function
+name: SetPCChatMessage
+shortdesc: Set the last player chat message in a OnPlayerChat event.
+return: void
+parameters:
+  - type: string
+    name: sNewChatMessage
+    default: ""
+    desc: The new chat text to be sent onto other players
+description: |
+  Set the last player chat(text) message before it gets sent to other players.
+  An empty string will cause the chat message to be discarded. 
+  Should only be called from a module's OnPlayerChat event script.
+  NB : The new chat message gets sent after the OnPlayerChat script exits
+version: 1.69
+seealso:
+  functions:
+    - GetPCChatVolume
+    - GetPCChatMessage
+    - SetPCChatVolume
+    - GetPCChatSpeaker
+  categories:
+    - Chat
+  events:
+    - OnPlayerChat

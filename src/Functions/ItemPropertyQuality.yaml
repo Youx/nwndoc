@@ -1,0 +1,19 @@
+---
+type: Function
+name: ItemPropertyQuality
+return: itemproperty
+shortdesc: Returns Item property Quality
+parameters:
+  - type: int
+    name: nQuality
+    desc: IP_CONST_QUALITY_*. The Quality of the item property to create (see iprp_qualcost.2da)
+description: |
+  Return Item Property Quality. You need to specify the Quality.
+  Note : The quality property will only affect the cost of the item if you modify the cost in the iprp_qualcost.2da
+version: 1.69
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation

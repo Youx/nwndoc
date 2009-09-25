@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetPCChatMessage
+shortdesc: Get the last player chat message in a OnPlayerChat event.
+return: string
+parameters:
+description: |
+  Get the last player chat(text) message that was sent. Should only be called from a module's OnPlayerChat event script.
+  Returns an empty string "" on error.
+  NB : Private tells do not trigger a OnPlayerChat event
+version: 1.69
+seealso:
+  functions:
+    - GetPCChatVolume
+    - SetPCChatMessage
+    - SetPCChatVolume
+    - GetPCChatSpeaker
+  categories:
+    - Chat
+  events:
+    - OnPlayerChat

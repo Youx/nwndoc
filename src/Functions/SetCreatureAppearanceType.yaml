@@ -18,8 +18,9 @@ remarks: |
   This will alter a creature's appearance. Unlike EffectPolymorph, most stats do not change with this command. Cirtain ones (creature size, default speed) do, if they are in the appearance.2da file. Will not change race. Also see known bugs. 
   There may be appearance types you can use with this command which don't have associated constants. Look in your appearance.2da file - for instance, in version 1.61, there's no APPEARANCE_TYPE_BEHOLDER, but using the row number (401) should do the trick, if you have the correct expansion pack installed, that is.
 bugs: |
-  If your creature has, for example, a speed setting of "DM Speed" (super-fast!) and then is turned into a golem (or some other normally slow creature) it then uses the new appearance's speed. It keeps that speed even if it is changed back into its original form.
-version: 1.64
+  If your creature has, for example, a speed setting of "DM Speed" (super-fast!) and then is turned into a golem (or some other normally slow creature) it then uses the new appearance's speed.
+  As of 1.69, it does not keep that speed if it is changed back into its original form.
+version: 1.69
 example: |
   // script to change us into an Adamantium Golem.
   void main()

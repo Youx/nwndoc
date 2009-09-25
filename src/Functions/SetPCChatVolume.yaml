@@ -1,0 +1,28 @@
+---
+type: Function
+name: SetPCChatVolume
+shortdesc: Set the last player chat message's volume in a OnPlayerChat event.
+return: void
+parameters:
+  - type: int
+    name: nTalkVolume
+    default: TALKVOLUME_TALK
+    desc: The new volume of the chat text to be sent onto other players
+description: |
+  Set the last player chat(text) volume before it gets sent to other players.
+  Returns on of the TALKVOLUME_* constants based on the volume setting that the player used to send the chat message
+  Should only be called from a module's OnPlayerChat event script.
+  NB : The new chat message gets sent after the OnPlayerChat script exits
+version: 1.69
+seealso:
+  functions:
+    - GetPCChatMessage
+    - GetPCChatSpeaker
+    - GetPCChatVolume
+    - SetPCChatMessage
+  categories:
+    - Chat
+  events:
+    - OnPlayerChat
+  constants:
+    - TALKVOLUME_*

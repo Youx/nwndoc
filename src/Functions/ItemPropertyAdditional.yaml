@@ -1,0 +1,19 @@
+---
+type: Function
+name: ItemPropertyAdditional
+return: itemproperty
+shortdesc: Returns a generic Additional Item property.
+parameters:
+  - type: int
+    name: nAdditionalProperty
+    desc: IP_CONST_ADDITIONAL_*. The item property to create (see iprp_addcost.2da)
+description: |
+  Return a generic Additional Item Property. You need to specify the additional property.
+  Note : The additional property will only affect the cost of the item if you modify the cost in the iprp_addcost.2da
+version: 1.69
+seealso:
+  functions:
+    - AddItemProperty
+    - IPSafeAddItemProperty
+  categories:
+    - Item Creation

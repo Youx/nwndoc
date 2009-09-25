@@ -32,9 +32,9 @@ remarks: |
   Use this function when you wish to cast a spell at a particular location. The object calling this function will become the origin of the casting. For example a fireball trap that triggers over a chest. Note that spells cast with this function will actually apply their damage and/or effects; for visuals only, see ActionCastFakeSpellAtLocation.
 bugs: |
   For some reason, any memorised spells which are prepared metamagically (A Empowered Fireball for example) cause this to not work correctly. Cheat-cast, or non-metamagically prepared spells work correctly, however, as do if they are passed into ActionCastSpellAtObject. 
-  As with all ActionCastSpellXXX, Ranger and Paladin spells do not work properley. nMetaMagic is ignored in the spell script (GetMetaMagicFeat() returns -1 in the spell script). 
   1.64 does fix the problem with sub-dial spells. These can now be cast correctly using these functions. It doesn't mention any fixes for the above issues however.
-version: 1.64
+  1.68 does fix the problem with Ranger and Paladin spells not working properly. (nMetaMagic was ignored in the spell script)
+version: 1.68
 example: |
   // The script below is placed on the OnUse Event handler for a placeable, in our
   // example a lever. When used it casts a Fireball spell at the target. In this case

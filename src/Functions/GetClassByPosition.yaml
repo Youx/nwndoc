@@ -19,7 +19,8 @@ description: |
   Returns CLASS_TYPE_INVALID if the oCreature does not have a class in nClassPosition (i.e. a single-class creature will only have a value when nClassLocation = 1) or if oCreature is not a valid creature.
 bugs: |
   In versions 1.59 - 1.61, this function didn't work with the prestige classes from Hordes of the Underdark. According to BioWare, this will most likely be fixed in patch 1.62.
-version: 1.61
+  As of 1.67, this also works with community based custom classes.
+version: 1.67
 seealso:
   functions:
     - GetLevelByPosition

@@ -1,0 +1,25 @@
+---
+type: Function
+name: GetPCChatVolume
+shortdesc: Get the last player chat message's volume in a OnPlayerChat event.
+return: int
+parameters:
+description: |
+  Get the volume of the last player chat(text) message  that was sent. 
+  Returns on of the TALKVOLUME_* constants based on the volume setting that the player used to send the chat message
+  Should only be called from a module's OnPlayerChat event script.
+  Returns -1 on error.
+  NB : Private tells do not trigger a OnPlayerChat event
+version: 1.69
+seealso:
+  functions:
+    - GetPCChatMessage
+    - GetPCChatSpeaker
+    - SetPCChatMessage
+    - SetPCChatVolume
+  categories:
+    - Chat
+  events:
+    - OnPlayerChat
+  constants:
+    - TALKVOLUME_*

@@ -1,0 +1,21 @@
+---
+type: Function
+name: GetPCChatSpeaker
+shortdesc: Get the last player who spoke, in a OnPlayerChat event.
+return: object
+parameters:
+description: |
+  Get the PC that sent the last player chat(text) message. Should only be called from a module's OnPlayerChat event script.
+  Returns OBJECT_INVALID on error.
+  NB : Private tells do not trigger a OnPlayerChat event
+version: 1.69
+seealso:
+  functions:
+    - GetPCChatMessage
+    - GetPCChatVolume
+    - SetPCChatMessage
+    - SetPCChatVolume
+  categories:
+    - Chat
+  events:
+    - OnPlayerChat

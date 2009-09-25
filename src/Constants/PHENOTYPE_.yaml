@@ -8,10 +8,10 @@ constants:
     value: 2
     desc: | 
       The "Big" phenotype is one of the 2 default options when you create your character - its the larger, slightly fatter and/or more muscly version of chracters.
-  - name: PHENOTYPE_CUSTOM1
-    value: to
+  - name: PHENOTYPE_CUSTOM1-18
+    value: ???
     desc: | 
-      As noted in the SetPhenoType() function, this can only be used if a custom content creator knows what they are doing, and add the correct parts to a hakpack file. It would be then used to set a PC's phenotype so cirtain parts of the player will change appearance, and others stay the same, so horses and other similar things can be added, but they still have the same armor/weapons equipped and visible. Although 1.64 only supports an extra custom phenotype, there will cirtainly be up to 9 in total at one stage or another in a future patch.
+      As noted in the SetPhenoType() function, this can only be used if a custom content creator knows what they are doing, and add the correct parts to a hakpack file. It would be then used to set a PC's phenotype so cirtain parts of the player will change appearance, and others stay the same, so horses and other similar things can be added, but they still have the same armor/weapons equipped and visible. As of 1.69, there should be 99 values.
   - name: PHENOTYPE_NORMAL
     value: 0
     desc: | 

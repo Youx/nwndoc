@@ -1,0 +1,22 @@
+---
+type: Constants
+category: COLOR_CHANNEL_*
+shortdesc: Color channel constants are meant to be used with the functions GetColor() and SetColor().
+constants:
+  - name: COLOR_CHANNEL_HAIR
+    value: ???
+    desc: | Used to return the color of the hair of a creature.
+  - name: COLOR_CHANNEL_SKIN
+    value: ???
+    desc: | Used to return the color of the skin of a creature.
+  - name: COLOR_CHANNEL_TATOO_1
+    value: ???
+    desc: | Used to return the first color of the tatoos of a creature
+  - name: COLOR_CHANNEL_TATOO_2
+    value: ???
+    desc: | Used to return the second color of the tatoos of a creature
+version: 1.69
+seealso:
+  functions:
+    - GetColor
+    - SetColor

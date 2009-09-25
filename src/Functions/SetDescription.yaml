@@ -1,0 +1,27 @@
+---
+type: Function
+name: SetDescription
+return: void
+shortdesc: Set the description of an object
+parameters:
+  - type: object
+    name: oObject
+    desc: The object for which you are changing the description
+  - type: string
+    name: sNewDescription
+    default: ""
+    desc: the new description the object will use.
+  - type: int
+    name: bIdentifiedDescription
+    default: TRUE
+    desc: If oObject is an item, set either the identified or unidentified description.
+description: | 
+  Set the description of an object which can be a creature, item, placeable, door, trigger, or module.
+  If the object is an item, we can set either the identified description or the unidentified description.
+version: 1.69
+seealso:
+  functions:
+    - GetDescription
+  categories:
+    - Get Data From Object
+    - Module

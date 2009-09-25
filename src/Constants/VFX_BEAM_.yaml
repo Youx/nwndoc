@@ -27,6 +27,13 @@ constants:
     colors:
       - Blue
       - white
+  - name: VFX_BEAM_DISINTEGRATE
+    value: ???
+    desc: |
+      ???
+    location: Body
+    colors:
+      - ???
   - name: VFX_BEAM_EVIL
     value: 214
     desc: | 

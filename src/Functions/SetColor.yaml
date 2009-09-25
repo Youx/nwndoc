@@ -1,0 +1,25 @@
+---
+type: Function
+name: SetColor
+return: void
+shortdesc: Get the color of a creature
+parameters:
+  - type: object
+    name: oObject
+    desc: The object from which you are obtaining the color (can be a creature that has color information)
+  - type: int
+    name: nColorChannel
+    desc: The color channel that you want to get the color value of (COLOR_CHANNEL_*)
+  - type: int
+    name: nColorValue
+    desc: The color you want to set (0-175)
+description: | 
+  Set the color of a creature that has color information (like the playable races) for a color channel (skin, hair, tatoo1, tatoo2).
+version: 1.69
+seealso:
+  functions:
+    - GetColor
+  categories:
+    - Get Data From Object
+  constants:
+    - COLOR_CHANNEL_*
