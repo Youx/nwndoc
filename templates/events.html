@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="banner">
-		<h1>Events > {{ event.seealso.categories | join("/") }} > {{ event.name }}</h1>
+		<h1>Events > {{ event.seealso.categories | join: " / " }} > {{ event.name }}</h1>
 	</div>
 	<div id="bodyContent">
   	<div id="content">

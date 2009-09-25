@@ -26,18 +26,22 @@
         <h2>Welcome to NWNDoc</h2>
 <p>
 NWNDoc is a developper documentation to the NWNScript language, used in the
-game Neverwinter Nights. It is based on NWNLexicon but with better search options.
+game Neverwinter Nights. It is based on <a href="http://www.nwnlexicon.com">NWNLexicon</a> but with better search options.
 </p>
 
 <h2>Getting Started</h2>
 <p>
-Just write part of a function name in the left bar and here you go!
+Just write part of a function name in the left bar and off you go!
 </p>
+
+<h2>Getting your own version</h2>
+<p>If you're using this site from the web, you can download it locally from <a href="http://github.com/Youx/nwndoc/downloads/">here</a>. No php, database, web server or anything is required. Download, extract, launch index.html in your favourite browser.</p>
 
 <h2>How it works</h2>
 
 <h3>Sources</h3>
-<p>NWNDoc uses NWNLexicon as it sources.</p>
+<p>NWNDoc uses <a href="http://www.nwnlexicon.com">NWNLexicon</a> as it sources.</p>
+<p>You can check out all the source data and generation code from <a href="http://github.com/Youx/nwndoc">nwndoc's project page</a></p>
 
 <h3>Format</h3>
 <p>However, the HTML files were translated into a descriptive format
@@ -113,23 +117,20 @@ and we can span it on multiple lines.
 	<li>liquid (a ruby gem)</li>
 	<li>RedCloth (a ruby gem)</li>
 	<li>json (a ruby gem)</li>
-	<li>Patience. Generating thousands of files can take some time (5-10 few minutes on my C2D)</li>
+	<li>coderay (a ruby gem)</li>
+	<li>A little time, generating everything takes about 20s on my computer.</li>
 </ul>
 
 <h3>What needs to be done</h3>
-<p>At the moment, the project is really messy and at a basic stage :</p>
 <ul>
-	<li>Move the generation to a cleaner rake system</li>
-	<li>Add all functions, I haven't put all the lexicon in it yet</li>
-	<li>Add all constants and other stuff</li>
-	<li>Add documentation for 1.69 stuff</li>
-	<li>Add links to functions/constants in the pages</li>
+	<li>Add some stuff, like VFX images, data types, more examples for 1.69 functions, ...</li>
+	<li>Add automatic linking to functions/constants in the pages</li>
 </ul>
 
 <h3>I used stuff from : </h3>
 <ul>
-	<li>The sdoc project, that created the search function</li>
-	<li>The jekyll project for the syntax highlighting bindings and the concept to generate static html from YAML/Textile</li>
+	<li>The <a href="http://github.com/voloko/sdoc">sdoc</a> project, that created the search function</li>
+	<li>The <a href="http://github.com/mojombo/jekyll">jekyll</a> project for the syntax highlighting bindings and the concept to generate static html from YAML/Textile</li>
 </ul>
 </div>
     </div>

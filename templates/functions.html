@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="banner">
-		<h1>{{function.type}} > {{ function.seealso.categories | join("/") }} > {{ function.name }}</h1>
+		<h1>{{function.type}} > {{ function.seealso.categories | join: " / " }} > {{ function.name }}</h1>
 	</div>
 	<div id="bodyContent">
   	<div id="content">
