@@ -10,8 +10,9 @@ h4. Requirements
 
 h4. Constants List
 
+table(constants).
 |_. Constant |_. Value |_. Description |
-{% for c in constants.constants %}|<. {{c.name}} |=. {{c.value}} |<>. {{c.desc}} |
+{% for c in constants.constants %}({% cycle 'line1', 'line2'%}).|<. {{c.name}} |=. {{c.value}} |<>. {{c.desc}} |
 {% endfor %}
 
 {% if constants.author or constants.editor or constants.additional_contributors %}

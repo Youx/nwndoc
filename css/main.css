@@ -261,3 +261,15 @@ tt {
 {
     font-size: 0.85em;
 }
+
+table.constants tr th {
+  padding-right: 2em;
+  padding-left: 2em;
+}
+tr.line1 {
+  background-color: white;
+}
+
+tr.line2 {
+  background-color: rgb(237, 243, 254);
+}

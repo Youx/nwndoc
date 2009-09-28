@@ -342,7 +342,7 @@ constants:
     value: 437
     desc: | 
       New spell from the Shadows of Undrentide expansion. The caster creates water in the lungs of a target creature. Any drowned creature takes 90% of its current hit points as damage. Golems and other nonliving creatures cannot be drowned.
-  - name: SPELL_EAGLE_SPLEDOR
+  - name: SPELL_EAGLE_SPLENDOR
     value: 354
     desc: | 
       Adds an enhancement bonus of 1d4+1 to Charisma-based skills. (TnB, FRCS p.68)

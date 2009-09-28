@@ -3,10 +3,10 @@
 require 'rubygems'
 require 'yaml'
 require 'fileutils'
+require 'open3'
 
 # Included
 require 'lib/highlight'
-#require 'lib/albino'
 
 # Gems
 require 'RedCloth'
@@ -15,6 +15,7 @@ require 'json'
 
 # Change this to output to a different directory
 PREFIX_DIR = 'output'
+NWNDOC_VERSION = '0.6.1'
 
 # Directory containing templates - do not change
 TEMPLATE_DIR = 'templates'
@@ -155,7 +156,7 @@ class Constants
       data=YAML::load_file(src)
       render1 = TEMPLATES[:constants][0].render('constants' => data)
       redcloth = RedCloth.new(render1).to_html
-  	  render2 = TEMPLATES[:constants][1].render('content' => redcloth, 'title' => File.basename(src,'yaml'))
+  	  render2 = TEMPLATES[:constants][1].render('content' => redcloth, 'title' => src.gsub('.yaml', '*'))
   	  File.open(out,'w') do |o|
   	  	o.write(render2)
   	  end
@@ -316,6 +317,13 @@ file 'index.yaml' => SRC_YAML do
   end
 end
 
-#multitask :generate_yaml => OUT_HTML
-
 task :default => [PREFIX_DIR, OUT_COPY, SEARCH_INDEX_JS, TREE_JS, OUT_HTML].flatten
+
+task :archive => :default do
+  name = "nwndoc-#{NWNDOC_VERSION}"
+  mv PREFIX_DIR, name
+  Open3.popen3("7za a -t7z #{name}.7z -mx=9 -ms=on -mf -m0=PPMd #{name}") { |stdin, stdout, stderr|
+    puts(stdout.read)
+  }
+  mv name, PREFIX_DIR
+end
