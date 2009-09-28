@@ -25,7 +25,7 @@ parameters:
 
 description: |
   Using this function in a script adds ActionStartConversation to the executing object's Action Queue. 
-  When an object executes ActionStartConversation, it attempts to use the dialogue file specified as sDialogResRef to start conversing with the target, oObjectToConverseWith. If the target is not a PC, the target's onConversation event fires. 
+  When an object executes ActionStartConversation, it attempts to use the dialogue file specified as sDialogResRef to start conversing with the target, oObjectToConverseWith. If the target is not a PC, the target's OnConversation event fires. 
   sResRef is the filename resource reference of a conversation file. If no sResRef is specified, then default conversation of whichever object is not the PC is used (set in its properties in the Toolset). 
   If bPrivateConversation is TRUE, then the conversation remains between the PC and the other object, nothing else can see the text appearing. Otherwise, if FALSE (by default) the conversation is broadcast as chat, and 'audible' to other players. 
   bPlayHello, if FALSE, should stop the voicechat, VOICE_CHAT_HELLO, being played by the NPC (or whatever it may be that has a sound set) when a conversation is started. Obviously, this only applies to creatures with soundsets anyway.
@@ -78,10 +78,10 @@ example: |
    * In the OnEnter script of a trigger, an NPC with the
    * tag "rat_boy" will run towards the PC and attempt to 
    * start his default conversation.  The conversation will
-   * be audible to others. Also, Rat Boy's onConversation
+   * be audible to others. Also, Rat Boy's OnConversation
    * event will fire, and if present, should conclude with
    * BeginConversation. If a different conversation resref is
-   * set during the execution of the onConversation script,
+   * set during the execution of the OnConversation script,
    * that conversation will be begun.
    */
   object oBoy = GetObjectByTag("rat_boy");

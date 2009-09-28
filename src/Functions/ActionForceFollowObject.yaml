@@ -22,7 +22,7 @@ remarks: |
   Conversations files usually have two events that call to the "nw_walk_wp" script (assigned by default). That script calls a ClearAllActions(), removing the ActionForceFollowObject resulting in the follow being cancelled. 
   OnHeartbeat, OnDamaged, and other creature events can ClearAllActions resulting in the follow being cancelled.
 bugs: |
-  While not really a bug, some have complained of a "stutter step" with an NPC following a walking leader. This seems to be because the follower is made to always run with this function and catches up to the leader too quickly. If this is a problem, an alternative script to this could possibly use ActionMoveToObject in onHeartBeat with the leader as the target.
+  While not really a bug, some have complained of a "stutter step" with an NPC following a walking leader. This seems to be because the follower is made to always run with this function and catches up to the leader too quickly. If this is a problem, an alternative script to this could possibly use ActionMoveToObject in OnHeartBeat with the leader as the target.
 version: 1.61
 example: |
   // Heartbeat of a Deer summoned using EffectSummonCreature()

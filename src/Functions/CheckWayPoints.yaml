@@ -10,7 +10,7 @@ parameters:
     desc: | The creature to check for valid waypoints. (Default: OBJECT_SELF)
 
 description: |
-  This function takes oWalker's tag, and looks for waypoint tags with matching names: "POST_<tag>" and "WP_<tag>_01" (always checked). If the NW_FLAG_DAY_NIGHT_POSTING spawn-in condition has been set in oWalker's onSpawn script, then "NIGHT_<tag>" and "WN_<tag>" are also sought. 
+  This function takes oWalker's tag, and looks for waypoint tags with matching names: "POST_<tag>" and "WP_<tag>_01" (always checked). If the NW_FLAG_DAY_NIGHT_POSTING spawn-in condition has been set in oWalker's OnSpawn script, then "NIGHT_<tag>" and "WN_<tag>" are also sought. 
   If ANY of these new tags is the tag of a valid waypoint the function returns true.
 remarks: |
   CheckWayPoints could be useful as a sanity check on NPCs with waypoints. 

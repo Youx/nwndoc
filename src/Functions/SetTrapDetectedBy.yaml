@@ -26,7 +26,7 @@ remarks: |
   Furthermore, the fact that the function returns an integer means that it can't be delayed. If you want to delay it, you'll have to create a wrapper function as shown below, and call that instead.
 version: 1.67
 example: |
-  // script to be used in objects onUsed event
+  // script to be used in objects OnUsed event
   // makes user detect the trap on object with tag "Chest1"
   void main()
   {

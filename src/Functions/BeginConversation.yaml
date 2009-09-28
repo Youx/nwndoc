@@ -22,7 +22,7 @@ remarks: |
   Either the executing object or the oObjectToDialog must be a PC.
 version: 1.22
 example: |
-  // This script in an NPC's onConversation chooses a different 
+  // This script in an NPC's OnConversation chooses a different 
   // conversation file depending on the area the NPC's found in.
   void main() {
     // Get the area name

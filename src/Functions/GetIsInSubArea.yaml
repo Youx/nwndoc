@@ -15,7 +15,7 @@ parameters:
 
 description: |
   Is this creature in the given subarea? (trigger, area of effect object, etc..) 
-  This function will tell you if the creature has triggered an onEnter event, not if it is physically within the space of the subarea.
+  This function will tell you if the creature has triggered an OnEnter event, not if it is physically within the space of the subarea.
 version: 1.61
 seealso:
   categories:
