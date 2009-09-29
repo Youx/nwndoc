@@ -1,6 +1,7 @@
 ---
 type: Function
 name: log
+donotindex: true
 shortdesc: This function calculates the logarithmic value of fValue
 return: float
 parameters:

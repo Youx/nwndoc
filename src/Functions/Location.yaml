@@ -1,6 +1,7 @@
 ---
 type: Function
 name: Location
+donotindex: true
 shortdesc: Set the value of a Location data structure
 return: location
 parameters:

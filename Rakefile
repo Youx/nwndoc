@@ -15,7 +15,7 @@ require 'json'
 
 # Change this to output to a different directory
 PREFIX_DIR = 'output'
-NWNDOC_VERSION = '0.6.1'
+NWNDOC_VERSION = '0.6.2'
 
 # Directory containing templates - do not change
 TEMPLATE_DIR = 'templates'
@@ -83,6 +83,7 @@ class Functions
   end
   
   def Functions.index_link(data)
+    return {} if (data['donotindex'])
     return {data['name'] => "../Functions/#{data['name']}.html"}
   end
   
