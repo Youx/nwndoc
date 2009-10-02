@@ -22,7 +22,7 @@ TEMPLATE_DIR = 'templates'
 
 # The sources for the YAML and files we copy
 SRC_YAML = FileList['src/Functions/*.yaml','src/Constants/*.yaml','src/Events/*.yaml']
-SRC_COPY = FileList['index.html','panel/index.html','js/*.js','css/*.css','i/*.png','README.html']
+SRC_COPY = FileList['index.html','panel/index.html','js/*.js','css/*.css','i/*.png']
 
 # The outputs from the YAML and files we copy
 OUT_HTML = SRC_YAML.collect{|x| x.sub('src',PREFIX_DIR).ext('html')}
@@ -318,7 +318,14 @@ file 'index.yaml' => SRC_YAML do
   end
 end
 
-task :default => [PREFIX_DIR, OUT_COPY, SEARCH_INDEX_JS, TREE_JS, OUT_HTML].flatten
+file File.join(PREFIX_DIR, 'README.html') => 'README.textile' do
+  data = RedCloth.new(File.read('README.textile')).to_html
+  File.open(File.join(PREFIX_DIR, 'README.html'),'w') do |o|
+    o.write(data)
+  end
+end
+
+task :default => [PREFIX_DIR, OUT_COPY, SEARCH_INDEX_JS, TREE_JS, OUT_HTML, File.join(PREFIX_DIR, 'README.html')].flatten
 
 task :archive => :default do
   name = "nwndoc-#{NWNDOC_VERSION}"
