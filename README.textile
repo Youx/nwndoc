@@ -109,7 +109,7 @@ and we can span it on multiple lines.
 
 h4. Textile -> HTML
 
-The textile file is then processed by textile, h1. is replaced by stuff like \<h1\>\</h1\> and we have a html file
+The textile file is then processed by textile, @h1.@ is replaced by stuff like @<h1></h1>@ and we have a html file
 
 h3. Indexing
 
@@ -126,11 +126,11 @@ h3. How to build
 
 If you are a developer and want to generate all the HTML files and javascript, you will need :
 
-* ruby
-* liquid (a ruby gem)
-* RedCloth (a ruby gem)
-* json (a ruby gem)
-* coderay (a ruby gem)
+* "ruby":http://www.ruby-lang.org
+* liquid (a ruby gem) -> @sudo gem install liquid@
+* RedCloth (a ruby gem) -> @sudo gem install RedCloth@
+* json (a ruby gem) -> @sudo gem install json@
+* coderay (a ruby gem) -> @sudo gem install coderay@
 * A little time, generating everything takes about 1-2 minutes on my computer.
 
 h3. What needs to be done
@@ -141,6 +141,7 @@ h3. I used stuff from :
 
 * The "sdoc":http://github.com/voloko/sdoc project, that created the search function
 * The "jekyll":http://github.com/mojombo/jekyll project for the syntax highlighting bindings and the concept to generate static html from YAML/Textile
+* "NWNLexicon":http://www.nwnlexicon.com of course for the content
 
 <notextile>
 </div></div></div>

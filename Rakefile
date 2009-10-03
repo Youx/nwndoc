@@ -323,6 +323,7 @@ file File.join(PREFIX_DIR, 'README.html') => 'README.textile' do
   File.open(File.join(PREFIX_DIR, 'README.html'),'w') do |o|
     o.write(data)
   end
+  puts(File.join(PREFIX_DIR, 'README.html'))
 end
 
 task :default => [PREFIX_DIR, OUT_COPY, SEARCH_INDEX_JS, TREE_JS, OUT_HTML, File.join(PREFIX_DIR, 'README.html')].flatten
