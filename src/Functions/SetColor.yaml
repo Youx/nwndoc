@@ -15,7 +15,20 @@ parameters:
     desc: The color you want to set (0-175)
 description: | 
   Set the color of a creature that has color information (like the playable races) for a color channel (skin, hair, tatoo1, tatoo2).
+remarks: |
+  There is a good dye color chart "here":http://wiki.avlis.org/DynamicDyeColorChart
 version: 1.69
+example: |
+  /* Put this in the placeable OnUsed and it will transform
+   * the elf player to a drow */
+  void main()
+  {
+    object oPC = GetLastUsedBy();
+    if (GetRacialType(oPC) == RACIAL_TYPE_ELF) {
+      SetColor(oPC, COLOR_CHANNEL_HAIR, 164);
+      SetColor(oPC, COLOR_CHANNEL_SKIN, 165);
+    }
+  }
 seealso:
   functions:
     - GetColor
