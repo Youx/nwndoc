@@ -1,0 +1,7 @@
+---
+type: type
+name: float
+desc: |
+  A 32-bit floating point number. Maximum 3.402823e38, minimum -3.402823e38, default 0.0. Note that when initializing or setting a literal value to a float, you must include a decimal point and at least one number after the decimal, plus a lower case "f".
+example: |
+  float fCurrency = 19.99f;

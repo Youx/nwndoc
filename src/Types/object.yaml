@@ -1,0 +1,7 @@
+---
+type: type
+name: object
+desc: |
+  An integer that represents a particular object in the world (essentially a pointer to a real object).
+example: |
+  object oSucks = GetLastPlayerDied();

@@ -1,0 +1,5 @@
+---
+type: type
+name: itemproperty
+desc: |
+  Contains information which defines the various property which an item has.

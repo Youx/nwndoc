@@ -1,0 +1,10 @@
+---
+type: type
+name: vector
+desc: |
+  A structure of three floats, useful for defining positions and orientation vectors. To access the components of the vector, you can use the dot operator to get the x, y, and z components of the vector. The default value of a vector is { 0, 0, 0 } (or x = 0, y = 0, z = 0).
+example: |
+  vector v = GetPosition(OBJECT_SELF) - GetPosition(oidTargetObject);
+  vector v2 = Vector(1.0f, 2.0f, 3.0f);
+  PrintFloat(v2.x);
+  float fDistanceToTarget = sqrt(v.x * v.x + v.y * v.y + v.z * v.z);

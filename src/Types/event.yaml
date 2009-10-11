@@ -1,0 +1,10 @@
+---
+type: type
+name: event
+desc: |
+  All of the "events" that run scripts within the scripting language have thier own "event" creation functions, which you can give to any object.
+example: |
+  // this signal's oldTarget to behave as if they were
+  // just attacked by OBJECT_SELF
+  event evAttacked = EventOnAttacked(OBJECT_SELF);
+  SignalEvent(oldTarget, evAttacked);

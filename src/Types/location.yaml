@@ -1,0 +1,7 @@
+---
+type: type
+name: location
+desc: |
+  A location has three components: the object ID of the area, a vector representing the position within the area, and a floating point number representing the facing.
+example: |
+  location loc = Location(objArea, vecPosition, fFacing);

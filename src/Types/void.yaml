@@ -1,0 +1,10 @@
+---
+type: type
+name: void
+desc: |
+  A null data type. Functions set to void don't return an assignable value. Only functions of type void can be assigned to the Action Queue.
+example: |
+  void DeductXP(object oPC)
+  {
+    // deduct some XP in here...
+  }

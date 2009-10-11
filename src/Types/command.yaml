@@ -1,0 +1,5 @@
+---
+type: type
+name: command
+desc: |
+  A void-returning function, whether it is user defined or engine-defined. This is used by the DelayCommand() and AssignCommand() functions.

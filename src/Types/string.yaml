@@ -1,0 +1,7 @@
+---
+type: type
+name: string
+desc: |
+  A string of characters of arbitrary length, terminated by a NULL character. Default value is an empty string (""). Strings can be concatenated (that is, combined) by using the plus ("+") sign. A string can be compared for equality against another string by using the double equals ("==") equality tester, or for inequality by using the "!=" equaliter tester. When testing for string equality, strings are case-sensitive (that is "SoME CHaRaCTeR NaMe" does not equal "some character name").
+example: |
+  string sHero = "Galryx";

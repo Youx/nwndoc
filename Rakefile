@@ -15,13 +15,13 @@ require 'json'
 
 # Change this to output to a different directory
 PREFIX_DIR = 'output'
-NWNDOC_VERSION = '0.6.2'
+NWNDOC_VERSION = '0.7.0'
 
 # Directory containing templates - do not change
 TEMPLATE_DIR = 'templates'
 
 # The sources for the YAML and files we copy
-SRC_YAML = FileList['src/Functions/*.yaml','src/Constants/*.yaml','src/Events/*.yaml']
+SRC_YAML = FileList['src/Functions/*.yaml','src/Constants/*.yaml','src/Events/*.yaml', 'src/Types/*.yaml']
 SRC_COPY = FileList['index.html','panel/index.html','js/*.js','css/*.css','i/*.png']
 
 # The outputs from the YAML and files we copy
@@ -41,12 +41,16 @@ TEMPLATES = {
   :events => [
     Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'events.liquid'))),
     Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'events.html')))],
+  :types => [
+    Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'types.liquid'))),
+    Liquid::Template.parse(File.read(File.join(TEMPLATE_DIR, 'types.html')))]
 }
 
 directory PREFIX_DIR
 directory File.join(PREFIX_DIR, 'Functions')
 directory File.join(PREFIX_DIR, 'Constants')
 directory File.join(PREFIX_DIR, 'Events')
+directory File.join(PREFIX_DIR, 'Types')
 directory File.join(PREFIX_DIR, 'panel')
 directory File.join(PREFIX_DIR, 'css')
 directory File.join(PREFIX_DIR, 'js')
@@ -215,6 +219,50 @@ class Events
   end
 end
 
+class Types
+  def Types.searchIndex(data)
+    return [data['name'].downcase]
+  end
+  
+  def Types.longSearchIndex(data)
+    return [data['name'].downcase]
+  end
+  
+  def Types.info(data)
+    return [[ data['name'], '', 
+      "Types/#{data['name']}.html", "", '', 1,0]]
+  end
+  
+  def Types.tree_els(data)
+    return []
+  end
+	
+  def Types.tree_parents(data)
+    return [[data['name'], "Types/#{data['name']}.html","",[]]]
+  end
+  
+  def Types.tree_base()
+    return ["Data Types","README.html","",[]]
+  end
+  
+  def Types.index_link(data)
+    return {data['name'] => "../Types/#{data['name']}.html"}
+  end
+  
+  def Types.generate(src, out)
+    file out => ['index.yaml', File.join(TEMPLATE_DIR, 'types.liquid'), File.join(TEMPLATE_DIR, 'types.html'),
+                  File.join(PREFIX_DIR, 'Types'), src] do
+      data=YAML::load_file(src)
+      render1 = TEMPLATES[:types][0].render('type' => data)
+      redcloth = RedCloth.new(render1).to_html
+      render2 = TEMPLATES[:types][1].render('content' => redcloth, 'type' => data)
+      File.open(out,'w') do |o|
+      	o.write(render2)
+      end
+      puts("Generating #{out}")
+    end
+  end
+end
 # Instructions on how to generate output/panel/search_index.js
 file SEARCH_INDEX_JS => [File.join(PREFIX_DIR,'panel'), SRC_YAML].flatten do
   search_data = {}
@@ -248,7 +296,7 @@ file TREE_JS => [File.join(PREFIX_DIR,'panel'), SRC_YAML].flatten do
 
     # If the tree root (ex : "Functions", "Constants", ...)
     # does not exist, we create it
-    tree_root = tree.find {|x| x[0] == cat}
+    tree_root = tree.find {|x| x[0] == my_class.tree_base[0]}
     if !tree_root
       tree_root = my_class.tree_base()
       tree.push(tree_root)

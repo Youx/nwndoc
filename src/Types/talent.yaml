@@ -1,0 +1,8 @@
+---
+type: type
+name: talent
+desc: |
+  A talent represents a feat, skill, or spell.
+example: |
+  talent tHvyArmor = TalentFeat(FEAT_ARMOR_PROFICIENCY_HEAVY);
+  talent tTurnUndead = TalentFeat(SPELLABILITY_TURN_UNDEAD);

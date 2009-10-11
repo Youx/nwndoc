@@ -1,6 +1,7 @@
 ---
 type: Function
 name: PC
+donotindex: true
 shortdesc: debug function for displaying strings. Returns the first pc in the area
 return: object
 parameters:

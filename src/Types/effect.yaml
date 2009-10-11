@@ -1,0 +1,8 @@
+---
+type: type
+name: effect
+desc: |
+  Each effect that you're allowed to place on an object actually has a constructor within the scripting language that you are then alllowed to use in ApplyEffectToObject().
+example: |
+  effect eConPenalty = EffectAbilityDecrease(ABILITY_CONSTITUTION, 1);
+  ApplyEffectToObject(DURATION_TYPE_PERMANENT, eConPenalty, oTargetPC);

@@ -17,7 +17,7 @@ module Scanners
       'action', 'command',
       'effect', 'event', 'float', 'int',
       'itemproperty', 'location', 'object',
-      'string', 'vector', 'void'
+      'string', 'talent', 'vector', 'void'
     ]
 
     PREDEFINED_CONSTANTS = [

@@ -1,0 +1,8 @@
+---
+type: type
+name: int
+desc: |
+  A signed 32-bit number. This is an actual number without a decimal and can be negative. Maximum 2,147,483,647, minimum -2,147,483,648, default 0.
+example: |
+  int iAge = 23;
+  int iResult = 2 + 2;

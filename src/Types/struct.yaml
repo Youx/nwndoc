@@ -1,0 +1,11 @@
+---
+type: type
+name: struct
+desc: |
+  A structure of different variable types combined into a single variable. Can be used with functions to decrease their complexity by returning many values at once.
+example: |
+  struct Name
+  {
+    string First;
+    string Last;
+  };

@@ -1,0 +1,7 @@
+---
+type: type
+name: const
+desc: |
+  An unchanging value, usually an integer. Used in place of "magic numbers" to make code more readible. Only int, string, and float data types may be used as constant.
+example: |
+  int iOuch = DURATION_TYPE_PERMANENT;

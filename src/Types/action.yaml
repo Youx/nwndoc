@@ -1,0 +1,6 @@
+---
+type: type
+name: action
+desc: |
+  An action. This not a usable keyword, but BioWare uses it as a parameter type for DelayCommand, AssignCommand, and ActionDoCommand. It is not possible to create a function using the action data type as a parameter's data type.
+
