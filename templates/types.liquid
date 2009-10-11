@@ -1,0 +1,13 @@
+
+{% if type.desc %}
+h4. Description
+
+{{ type.desc }}
+{% endif %}
+
+{% if type.example %}
+h4. Example
+
+{% highlight nw %}{{ type.example }}{% endhighlight %}
+{% endif %}
+
